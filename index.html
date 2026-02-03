@@ -7,7 +7,7 @@
 <meta name="description" content="Mindmap phân tầng AI ecosystem 2026 — Drill down từ Xu hướng → Nền tảng">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --bg:#07080d;--surface:#0e1019;--border:#1a1f2e;
@@ -16,7 +16,7 @@
   --green:#10b981;--rose:#f43f5e;--blue:#3b82f6;--teal:#14b8a6;--orange:#f59e0b;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
 ::selection{background:rgba(99,102,241,.3);color:#fff}
 
 /* ═══ BG ═══ */
@@ -61,9 +61,9 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .lb-num{font-size:1.8rem;font-weight:900;font-family:'JetBrains Mono',monospace;opacity:.12;line-height:1;min-width:36px}
 .lb-icon{font-size:1.5rem}
 .lb-text{flex:1;min-width:0}
-.lb-name{font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
+.lb-name{font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
 .lb-en{font-size:.55rem;font-family:'JetBrains Mono',monospace;font-weight:500;opacity:.35;text-transform:uppercase;letter-spacing:.08em}
-.lb-desc{font-size:.7rem;color:var(--dim);margin-top:2px}
+.lb-desc{font-size:.82rem;color:var(--dim);margin-top:2px;font-weight:400}
 .lb-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .lb-count{font-size:.6rem;color:var(--muted);font-family:'JetBrains Mono',monospace;padding:3px 8px;background:rgba(255,255,255,.03);border-radius:5px}
 .lb-arrow{font-size:.8rem;color:var(--muted);transition:transform .3s}
@@ -75,42 +75,42 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .layer-content{padding:0 20px 20px}
 
 /* ═══ SECTION ═══ */
-.sec{margin-bottom:16px}
+.sec{margin-bottom:22px}
 .sec:last-child{margin-bottom:0}
-.sec-head{font-size:.88rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;padding-left:4px}
+.sec-head{font-size:1.05rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;padding-left:4px}
 .sec-badge{font-size:.48rem;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.04em}
 
 /* ═══ CARDS ═══ */
-.cgrid{display:grid;gap:8px}
+.cgrid{display:grid;gap:12px}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
 .g4{grid-template-columns:repeat(4,1fr)}
 @media(max-width:1100px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
 
-.card{border-radius:10px;padding:14px;position:relative;transition:transform .2s,box-shadow .2s;cursor:default;overflow:hidden}
+.card{border-radius:10px;padding:18px;position:relative;transition:transform .2s,box-shadow .2s;cursor:default;overflow:hidden}
 .card[data-exp]{cursor:pointer}
 .card[data-exp]:hover{transform:translateY(-1px)}
 .card-bar{position:absolute;top:0;left:0;width:3px;height:100%;border-radius:3px 0 0 3px}
 .card-head{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
-.card-name{font-size:.78rem;font-weight:700}
-.card-desc{font-size:.65rem;color:var(--dim);line-height:1.5;margin-top:5px}
+.card-name{font-size:.9rem;font-weight:700}
+.card-desc{font-size:.78rem;color:var(--dim);line-height:1.65;margin-top:5px;font-weight:400}
 .card-expand{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
 .card.open .card-expand{grid-template-rows:1fr}
 .card-expand-inner{overflow:hidden}
-.card-detail{font-size:.6rem;color:var(--muted);line-height:1.55;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.04)}
+.card-detail{font-size:.72rem;color:var(--muted);line-height:1.65;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.04);font-weight:400}
 .card-chevron{position:absolute;top:11px;right:11px;font-size:.55rem;color:var(--muted);transition:transform .25s}
 .card.open .card-chevron{transform:rotate(180deg)}
 
 .mono{font-family:'JetBrains Mono',monospace;font-weight:500}
 .tags{display:flex;flex-wrap:wrap;gap:2px;margin-top:5px}
-.tag{font-family:'JetBrains Mono',monospace;font-size:.52rem;font-weight:500;padding:1px 5px;border-radius:3px;color:var(--dim)}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:500;padding:1px 5px;border-radius:3px;color:var(--dim)}
 .tag-hot{animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
-.note{margin-top:5px;padding:5px 7px;border-radius:5px;font-size:.58rem;line-height:1.4}
+.note{margin-top:5px;padding:5px 7px;border-radius:5px;font-size:.68rem;line-height:1.4;font-weight:400}
 .sub-item{margin-top:4px;padding:5px 7px;border-radius:5px}
-.sub-item-t{font-size:.66rem;font-weight:600;margin-bottom:1px}
-.sub-item-d{font-size:.58rem;color:var(--dim);line-height:1.4}
+.sub-item-t{font-size:.78rem;font-weight:600;margin-bottom:1px}
+.sub-item-d{font-size:.7rem;color:var(--dim);line-height:1.6;font-weight:400}
 .levels{display:flex;gap:3px;margin-top:5px;flex-wrap:wrap}
 .lv{font-size:.52rem;padding:2px 5px;border-radius:4px;font-weight:600}
 
@@ -151,7 +151,7 @@ footer .links a:hover{border-color:rgba(255,255,255,.1);color:var(--dim)}
 
 /* ═══ EXPAND ALL / COLLAPSE ALL ═══ */
 .toggle-all{display:flex;justify-content:center;gap:8px;margin-bottom:16px}
-.toggle-btn{font-family:'Outfit',sans-serif;font-size:.65rem;font-weight:600;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:6px 14px;cursor:pointer;transition:all .2s}
+.toggle-btn{font-family:'Be Vietnam Pro',sans-serif;font-size:.65rem;font-weight:600;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:6px 14px;cursor:pointer;transition:all .2s}
 .toggle-btn:hover{color:var(--text);border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.05)}
 </style>
 </head>
