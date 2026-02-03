@@ -113,26 +113,6 @@ body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--te
 .sub-item-d{font-size:.7rem;color:var(--dim);line-height:1.6;font-weight:400}
 .levels{display:flex;gap:3px;margin-top:5px;flex-wrap:wrap}
 .lv{font-size:.52rem;padding:2px 5px;border-radius:4px;font-weight:600}
-
-/* ═══ WORKFLOW ═══ */
-.wf-sec{margin-top:20px;padding:16px;border-radius:12px}
-.wf-title{font-size:.88rem;font-weight:700;margin-bottom:12px}
-.wf-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.wf-step{flex:1;min-width:100px;padding:8px;border-radius:7px;text-align:center}
-.wf-num{font-size:.55rem;font-weight:700}
-.wf-name{font-size:.68rem;font-weight:600;margin-top:1px}
-.wf-detail{font-size:.52rem;color:var(--dim);margin-top:1px}
-.wf-arrow{font-size:.8rem;flex-shrink:0;opacity:.2}
-
-/* ═══ RELATIONS ═══ */
-.rel-sec{margin-top:20px;padding:16px;border-radius:12px}
-.rel-title{font-size:.88rem;font-weight:800;margin-bottom:10px}
-.rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:5px}
-.rel-item{display:flex;align-items:center;gap:5px;padding:5px 8px;border-radius:5px;font-size:.62rem}
-.rel-from{font-weight:600;white-space:nowrap}
-.rel-arrow{font-weight:700;flex-shrink:0}
-.rel-to{color:var(--dim)}
-
 /* ═══ FOOTER ═══ */
 footer{position:relative;z-index:2;text-align:center;padding:28px 24px 36px;border-top:1px solid rgba(255,255,255,.03);margin-top:32px}
 footer .cr{font-size:.65rem;color:var(--dim)}
@@ -267,39 +247,6 @@ async function init(){
 
     h+=`</div></div></div>`;
   });
-
-  // ═══ WORKFLOW ═══
-  if(D.workflow){
-    h+=`<div class="wf-sec fi" style="background:${bg('orange',.04)};border:1px solid ${bd('orange',.1)}">
-      <div class="wf-title" style="color:${tx('orange')}">⚙️ ${D.workflow.title}</div>
-      <div class="wf-row">`;
-    D.workflow.steps.forEach((st,i)=>{
-      if(i>0) h+=`<div class="wf-arrow" style="color:${tx('orange')}">→</div>`;
-      h+=`<div class="wf-step" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:7px">
-        <div class="wf-num" style="color:${tx('orange')}">${st.num} ${st.label}</div>
-        <div class="wf-name">${st.name}</div>
-        <div class="wf-detail">${st.detail}</div>
-      </div>`;
-    });
-    h+=`</div>`;
-    if(D.workflow.note) h+=`<div class="note" style="margin-top:8px;background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${D.workflow.note}</div>`;
-    h+=`</div>`;
-  }
-
-  // ═══ RELATIONS ═══
-  if(D.relations){
-    h+=`<div class="rel-sec fi" style="background:${bg('green',.03)};border:1px solid ${bd('green',.08)}">
-      <div class="rel-title" style="color:${tx('green')}">🔗 Liên kết chéo giữa các tầng</div>
-      <div class="rel-grid">`;
-    D.relations.forEach(r=>{
-      h+=`<div class="rel-item" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03)">
-        <span class="rel-from">${r.from}</span>
-        <span class="rel-arrow" style="color:${tx('green')}">${r.arrow}</span>
-        <span class="rel-to">${r.to}</span>
-      </div>`;
-    });
-    h+=`</div></div>`;
-  }
 
   // ═══ FOOTER ═══
   h+=`<footer class="fi">
