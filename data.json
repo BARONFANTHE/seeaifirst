@@ -1,26 +1,66 @@
 {
   "meta": {
     "title": "AI Ecosystem Mindmap 2026",
-    "subtitle": "Protocols · Frameworks · Agents · Memory · Skills · Coding Tools · Trends",
+    "subtitle": "Phân tầng từ Nền tảng → Ứng dụng → Xu hướng",
     "lastUpdated": "2026-02-03",
     "updatedBy": "Claude AI + Baron",
-    "version": "2.0"
+    "version": "3.0"
   },
-  "legend": [
-    { "color": "indigo", "label": "Protocols" },
-    { "color": "blue", "label": "Orchestration" },
-    { "color": "cyan", "label": "Memory" },
-    { "color": "purple", "label": "Platforms" },
-    { "color": "sky", "label": "Coding Agents" },
-    { "color": "teal", "label": "Skills" },
-    { "color": "rose", "label": "Agent Frameworks" },
-    { "color": "orange", "label": "Quy trình" },
-    { "color": "green", "label": "Trends 2026" }
+  "layers": [
+    {
+      "level": 1,
+      "id": "foundation",
+      "name": "Nền Tảng",
+      "nameEn": "Foundation",
+      "icon": "🔌",
+      "desc": "Protocols chuẩn hóa giao tiếp — mọi thứ khác xây trên lớp này",
+      "color": "indigo",
+      "sectionIds": ["protocols"]
+    },
+    {
+      "level": 2,
+      "id": "infrastructure",
+      "name": "Hạ Tầng",
+      "nameEn": "Infrastructure",
+      "icon": "🏗️",
+      "desc": "Frameworks xây agents + Platforms chạy chúng",
+      "color": "purple",
+      "sectionIds": ["frameworks", "platforms"]
+    },
+    {
+      "level": 3,
+      "id": "intelligence",
+      "name": "Trí Tuệ",
+      "nameEn": "Intelligence",
+      "icon": "🧠",
+      "desc": "Memory giữ context · Skills mở rộng khả năng · Orchestration phối hợp",
+      "color": "cyan",
+      "sectionIds": ["memory", "skills", "orchestration"]
+    },
+    {
+      "level": 4,
+      "id": "applications",
+      "name": "Ứng Dụng",
+      "nameEn": "Applications",
+      "icon": "🛠️",
+      "desc": "Công cụ AI coding và quy trình tạo ứng dụng thực tế",
+      "color": "sky",
+      "sectionIds": ["coding-agents"]
+    },
+    {
+      "level": 5,
+      "id": "landscape",
+      "name": "Xu Hướng",
+      "nameEn": "Landscape",
+      "icon": "🌍",
+      "desc": "Những xu hướng đang định hình tương lai AI 2026",
+      "color": "green",
+      "sectionIds": ["trends"]
+    }
   ],
   "sections": [
     {
       "id": "protocols",
-      "num": 1,
       "title": "Protocols — Nền tảng giao tiếp chuẩn",
       "color": "indigo",
       "badge": "🔥 Foundation",
@@ -48,39 +88,35 @@
       ]
     },
     {
-      "id": "orchestration",
-      "num": 2,
-      "title": "Claude-Flow & Orchestration — Điều phối multi-agent",
-      "color": "blue",
-      "gridCols": 3,
+      "id": "frameworks",
+      "title": "Agent Frameworks — Xây dựng AI agents",
+      "color": "rose",
+      "gridCols": 4,
       "cards": [
-        {
-          "icon": "🌊",
-          "name": "Claude-Flow",
-          "mono": true,
-          "desc": "Agent orchestration platform — kiến trúc <strong>Queen + Workers</strong>, switch giữa Claude/GPT/Gemini qua MCP.",
-          "tags": ["12.8k⭐", "MIT", "Multi-agent swarm", "HNSW vector", "60+ coding agents"]
-        },
-        {
-          "icon": "🐕",
-          "name": "OpenClaw",
-          "mono": true,
-          "desc": "Personal AI Assistant \"24/7 Jarvis\" — <strong>135k⭐</strong>. Focus: chat-based, 15+ channels (WhatsApp, Telegram, Zalo...).",
-          "detail": "Evolution: Clawdbot → Moltbot → OpenClaw",
-          "tags": ["SOUL.md", "Skills/ClawHub", "Session memory", "Multi-agent routing"]
-        },
-        {
-          "icon": "🐦",
-          "name": "Claude Squad",
-          "mono": true,
-          "desc": "Terminal app quản lý nhiều Claude Code + Codex sessions song song trong separate workspaces.",
-          "tags": ["Multi-workspace", "Parallel agents", "+ Aider support"]
-        }
+        { "icon": "🦜", "name": "LangGraph", "mono": true, "desc": "Stateful agent orchestration · LangChain ecosystem", "tags": ["14k⭐", "4.2M downloads/mo"] },
+        { "icon": "👥", "name": "CrewAI", "mono": true, "desc": "Role-based agent teams · Low-code orchestration", "tags": ["Multi-agent crews", "Free core"] },
+        { "icon": "🔷", "name": "AutoGen", "mono": true, "desc": "Microsoft · Multi-agent conversations · Scalable", "tags": ["Microsoft", "Flexible arch"] },
+        { "icon": "🟢", "name": "OpenAI Agents SDK", "mono": true, "desc": "Lightweight Python · Multi-agent + guardrails", "tags": ["11k⭐", "100+ LLMs"] },
+        { "icon": "🔶", "name": "Google ADK", "mono": true, "desc": "Agent Dev Kit · Gemini + Vertex AI · A2A native", "tags": ["A2A support", "Interactions API"] },
+        { "icon": "🦙", "name": "LlamaIndex", "mono": true, "desc": "RAG specialist · Knowledge-intensive workflows", "tags": ["RAG", "Data agents"] },
+        { "icon": "🔒", "name": "Pydantic AI", "mono": true, "desc": "Type-safe agents · Validated LLM outputs · Production", "tags": ["Type-safe", "Production"] },
+        { "icon": "💬", "name": "Rasa", "mono": true, "desc": "Conversational AI · Private infra · Voice + Studio", "tags": ["On-prem", "Voice"] }
+      ]
+    },
+    {
+      "id": "platforms",
+      "title": "Platforms & Config — Nền tảng AI & files hệ thống",
+      "color": "purple",
+      "gridCols": 4,
+      "cards": [
+        { "icon": "🌐", "name": "Claude.ai (Web)", "mono": true, "desc": "Chat interface với memory, search, tools", "tags": ["claude.ai", "session_handoff", "decision_log", "learned"] },
+        { "icon": "⌨️", "name": "Claude Code (CLI)", "mono": true, "desc": "Terminal-based coding agent — 200K context", "tags": ["claude.md", "+ claude-mem", "skills/", "hooks"], "tagColors": { "+ claude-mem": "green" } },
+        { "icon": "💬", "name": "ChatGPT (Web)", "mono": true, "desc": "Hệ thống files tương tự Claude.ai", "tags": ["G_instruction.ai", "session_handoff", "decision_log", "learned"], "tagColor": "rose" },
+        { "icon": "🔧", "name": "Codex CLI", "mono": true, "desc": "OpenAI's coding agent — CLI + Cloud sandbox", "tags": ["AGENTS.md", "Cloud sandbox", "/model /review"], "tagColor": "rose" }
       ]
     },
     {
       "id": "memory",
-      "num": 3,
       "title": "Memory Systems — Bộ nhớ xuyên phiên",
       "color": "cyan",
       "gridCols": 2,
@@ -109,68 +145,7 @@
       ]
     },
     {
-      "id": "platforms",
-      "num": 4,
-      "title": "Platforms & Config — Nền tảng AI & files hệ thống",
-      "color": "purple",
-      "gridCols": 4,
-      "cards": [
-        {
-          "icon": "🌐",
-          "name": "Claude.ai (Web)",
-          "mono": true,
-          "desc": "Chat interface với memory, search, tools",
-          "tags": ["claude.ai", "session_handoff", "decision_log", "learned"]
-        },
-        {
-          "icon": "⌨️",
-          "name": "Claude Code (CLI)",
-          "mono": true,
-          "desc": "Terminal-based coding agent — 200K context",
-          "tags": ["claude.md", "+ claude-mem", "skills/", "hooks"],
-          "tagColors": { "+ claude-mem": "green" }
-        },
-        {
-          "icon": "💬",
-          "name": "ChatGPT (Web)",
-          "mono": true,
-          "desc": "Hệ thống files tương tự Claude.ai",
-          "tags": ["G_instruction.ai", "session_handoff", "decision_log", "learned"],
-          "tagColor": "rose"
-        },
-        {
-          "icon": "🔧",
-          "name": "Codex CLI",
-          "mono": true,
-          "desc": "OpenAI's coding agent — CLI + Cloud sandbox",
-          "tags": ["AGENTS.md", "Cloud sandbox", "/model /review"],
-          "tagColor": "rose",
-          "note": "🔍 Nghiên cứu: claude-mem cho Codex? Hoặc tương đương?"
-        }
-      ]
-    },
-    {
-      "id": "coding-agents",
-      "num": 5,
-      "title": "AI Coding Agents — Công cụ code bằng AI",
-      "color": "sky",
-      "badge": "🔥 2026 Landscape",
-      "gridCols": 3,
-      "cards": [
-        { "icon": "🟣", "name": "Claude Code", "mono": true, "hot": true, "desc": "Anthropic · CLI agent · 200K context · Multi-file refactoring · Best for complex projects", "tags": ["Terminal", "Plugins", "Skills", "Hooks"] },
-        { "icon": "🟢", "name": "Cursor", "mono": true, "hot": true, "desc": "IDE agent · Composer + Agent mode · Best for daily coding · Multi-file context aware", "tags": ["VS Code fork", "Semantic search", "$20/mo"] },
-        { "icon": "🔵", "name": "Codex CLI", "mono": true, "desc": "OpenAI · CLI + Cloud · Task-centric · Deterministic multi-step", "tags": ["AGENTS.md", "Cloud sandbox", "ChatGPT plan"] },
-        { "icon": "🌊", "name": "Windsurf", "mono": true, "desc": "Cascade Flow architecture · $15/mo · GPT-5.2-Codex support · JetBrains plugin", "tags": ["IDE", "Budget-friendly", "MCP support"] },
-        { "icon": "🤖", "name": "GitHub Copilot", "mono": true, "desc": "Microsoft · Agent mode · VS Code native · Enterprise-ready", "tags": ["VS Code", "Enterprise", "Multi-model"] },
-        { "icon": "💎", "name": "Gemini CLI", "mono": true, "desc": "Google · Terminal · Skills compatible · ADK integration · 1M token context", "tags": ["Free tier", "Skills", "Extensions"] },
-        { "icon": "⚡", "name": "Cline / RooCode", "mono": true, "desc": "Open-source VS Code extension · Multi-model · MCP support · Community-driven", "tags": ["Open source", "Extension", "Flexible"] },
-        { "icon": "🌀", "name": "Kiro (AWS)", "mono": true, "desc": "\"AI IDE for adults\" — Spec-driven: requirements → design doc → task plan → implement", "tags": ["Spec-first", "AWS", "IDE + CLI"] },
-        { "icon": "🎨", "name": "Replit Agent", "mono": true, "desc": "Cloud agent · Full-stack generation · Best for beginners · Fast prototyping", "tags": ["Cloud", "Deploy", "No setup"] }
-      ]
-    },
-    {
       "id": "skills",
-      "num": 6,
       "title": "Skills Ecosystem — \"Bigger than MCP\"",
       "color": "teal",
       "badge": "🔥 Cambrian Explosion",
@@ -196,25 +171,36 @@
       ]
     },
     {
-      "id": "frameworks",
-      "num": 7,
-      "title": "Agent Frameworks — Xây dựng AI agents",
-      "color": "rose",
-      "gridCols": 4,
+      "id": "orchestration",
+      "title": "Orchestration — Điều phối multi-agent",
+      "color": "blue",
+      "gridCols": 3,
       "cards": [
-        { "icon": "🦜", "name": "LangGraph", "mono": true, "desc": "Stateful agent orchestration · LangChain ecosystem", "tags": ["14k⭐", "4.2M downloads/mo"] },
-        { "icon": "👥", "name": "CrewAI", "mono": true, "desc": "Role-based agent teams · Low-code orchestration", "tags": ["Multi-agent crews", "Free core"] },
-        { "icon": "🔷", "name": "AutoGen", "mono": true, "desc": "Microsoft · Multi-agent conversations · Scalable", "tags": ["Microsoft", "Flexible arch"] },
-        { "icon": "🟢", "name": "OpenAI Agents SDK", "mono": true, "desc": "Lightweight Python · Multi-agent + guardrails", "tags": ["11k⭐", "100+ LLMs"] },
-        { "icon": "🔶", "name": "Google ADK", "mono": true, "desc": "Agent Dev Kit · Gemini + Vertex AI · A2A native", "tags": ["A2A support", "Interactions API"] },
-        { "icon": "🦙", "name": "LlamaIndex", "mono": true, "desc": "RAG specialist · Knowledge-intensive workflows", "tags": ["RAG", "Data agents"] },
-        { "icon": "🔒", "name": "Pydantic AI", "mono": true, "desc": "Type-safe agents · Validated LLM outputs · Production", "tags": ["Type-safe", "Production"] },
-        { "icon": "💬", "name": "Rasa", "mono": true, "desc": "Conversational AI · Private infra · Voice + Studio", "tags": ["On-prem", "Voice"] }
+        { "icon": "🌊", "name": "Claude-Flow", "mono": true, "desc": "Agent orchestration platform — kiến trúc <strong>Queen + Workers</strong>, switch giữa Claude/GPT/Gemini qua MCP.", "tags": ["12.8k⭐", "MIT", "Multi-agent swarm", "HNSW vector", "60+ coding agents"] },
+        { "icon": "🐕", "name": "OpenClaw", "mono": true, "desc": "Personal AI Assistant \"24/7 Jarvis\" — <strong>135k⭐</strong>. Focus: chat-based, 15+ channels (WhatsApp, Telegram, Zalo...).", "detail": "Evolution: Clawdbot → Moltbot → OpenClaw", "tags": ["SOUL.md", "Skills/ClawHub", "Session memory", "Multi-agent routing"] },
+        { "icon": "🐦", "name": "Claude Squad", "mono": true, "desc": "Terminal app quản lý nhiều Claude Code + Codex sessions song song trong separate workspaces.", "tags": ["Multi-workspace", "Parallel agents", "+ Aider support"] }
+      ]
+    },
+    {
+      "id": "coding-agents",
+      "title": "AI Coding Agents — Công cụ code bằng AI",
+      "color": "sky",
+      "badge": "🔥 2026 Landscape",
+      "gridCols": 3,
+      "cards": [
+        { "icon": "🟣", "name": "Claude Code", "mono": true, "hot": true, "desc": "Anthropic · CLI agent · 200K context · Multi-file refactoring · Best for complex projects", "tags": ["Terminal", "Plugins", "Skills", "Hooks"] },
+        { "icon": "🟢", "name": "Cursor", "mono": true, "hot": true, "desc": "IDE agent · Composer + Agent mode · Best for daily coding · Multi-file context aware", "tags": ["VS Code fork", "Semantic search", "$20/mo"] },
+        { "icon": "🔵", "name": "Codex CLI", "mono": true, "desc": "OpenAI · CLI + Cloud · Task-centric · Deterministic multi-step", "tags": ["AGENTS.md", "Cloud sandbox", "ChatGPT plan"] },
+        { "icon": "🌊", "name": "Windsurf", "mono": true, "desc": "Cascade Flow architecture · $15/mo · GPT-5.2-Codex support · JetBrains plugin", "tags": ["IDE", "Budget-friendly", "MCP support"] },
+        { "icon": "🤖", "name": "GitHub Copilot", "mono": true, "desc": "Microsoft · Agent mode · VS Code native · Enterprise-ready", "tags": ["VS Code", "Enterprise", "Multi-model"] },
+        { "icon": "💎", "name": "Gemini CLI", "mono": true, "desc": "Google · Terminal · Skills compatible · ADK integration · 1M token context", "tags": ["Free tier", "Skills", "Extensions"] },
+        { "icon": "⚡", "name": "Cline / RooCode", "mono": true, "desc": "Open-source VS Code extension · Multi-model · MCP support · Community-driven", "tags": ["Open source", "Extension", "Flexible"] },
+        { "icon": "🌀", "name": "Kiro (AWS)", "mono": true, "desc": "\"AI IDE for adults\" — Spec-driven: requirements → design doc → task plan → implement", "tags": ["Spec-first", "AWS", "IDE + CLI"] },
+        { "icon": "🎨", "name": "Replit Agent", "mono": true, "desc": "Cloud agent · Full-stack generation · Best for beginners · Fast prototyping", "tags": ["Cloud", "Deploy", "No setup"] }
       ]
     },
     {
       "id": "trends",
-      "num": 9,
       "title": "AI Trends 2026 — Xu hướng đang định hình tương lai",
       "color": "green",
       "badge": "🌍 Global",
@@ -241,7 +227,7 @@
       { "num": "③", "label": "Chọn Tech Stack", "name": "Architecture", "detail": "Agent(s) + shared skill" },
       { "num": "④", "label": "Implementation", "name": "Build & Deploy", "detail": "Agent(s) + shared skill" }
     ],
-    "note": "💡 <strong>Pattern chung:</strong> 1 agent hoặc nhiều agent cùng dùng 1 skill — cho phép tái sử dụng skill và phối hợp linh hoạt. Kết hợp Claude-Flow/OpenClaw để orchestrate multi-LLM trong mỗi bước. Memory systems (claude-mem, CLAUDE.md) giữ context xuyên suốt quy trình."
+    "note": "💡 <strong>Pattern chung:</strong> 1 agent hoặc nhiều agent cùng dùng 1 skill — cho phép tái sử dụng skill và phối hợp linh hoạt."
   },
   "relations": [
     { "from": "MCP", "arrow": "+", "to": "<strong>A2A</strong> = Bộ đôi protocol chuẩn: MCP cho tools, A2A cho agent-to-agent" },

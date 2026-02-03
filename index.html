@@ -4,242 +4,411 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Ecosystem Mindmap 2026</title>
-<meta name="description" content="Mindmap tổng hợp AI trends 2026: MCP, A2A protocols, Claude-Flow, AI Coding Agents, Skills ecosystem, Agent frameworks, Memory systems và xu hướng mới nhất.">
-<meta name="author" content="Baron">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="AI Ecosystem Mindmap 2026">
-<meta property="og:description" content="Tổng hợp Protocols, Frameworks, Agents, Memory, Skills, Coding Tools & Trends">
-<meta property="og:locale" content="vi_VN">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Mindmap phân tầng AI ecosystem 2026 — Drill down từ Xu hướng → Nền tảng">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
-<meta name="theme-color" content="#07090f">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#07090f;--bg2:#0d1117;--surface:#131a2b;--border:#1e2d4a;
-  --text:#e2e8f0;--text-dim:#7b8ba5;--text-muted:#4a5568;
-  --blue:#3b82f6;--cyan:#06b6d4;--purple:#8b5cf6;--orange:#f59e0b;
-  --green:#10b981;--rose:#f43f5e;--pink:#ec4899;--indigo:#6366f1;
-  --teal:#14b8a6;--amber:#f59e0b;--lime:#84cc16;--sky:#0ea5e9;
+  --bg:#07080d;--surface:#0e1019;--border:#1a1f2e;
+  --text:#e2e8f0;--dim:#8896ab;--muted:#4b5563;
+  --indigo:#6366f1;--purple:#8b5cf6;--cyan:#06b6d4;--sky:#0ea5e9;
+  --green:#10b981;--rose:#f43f5e;--blue:#3b82f6;--teal:#14b8a6;--orange:#f59e0b;
 }
-body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;scroll-behavior:smooth}
-::selection{background:rgba(99,102,241,0.3);color:#fff}
-.bg-grid{position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(59,130,246,0.04) 1px,transparent 0);background-size:32px 32px;pointer-events:none}
-.bg-glow{position:fixed;border-radius:50%;filter:blur(140px);opacity:0.12;pointer-events:none}
-.g1{top:-300px;left:-200px;width:700px;height:700px;background:var(--blue)}
-.g2{bottom:-300px;right:-200px;width:700px;height:700px;background:var(--purple)}
-.g3{top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:var(--cyan);opacity:0.06}
-header{position:relative;z-index:10;text-align:center;padding:40px 24px 12px}
-header h1{font-size:2.2rem;font-weight:900;letter-spacing:-0.04em;background:linear-gradient(135deg,var(--cyan),var(--blue),var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-header .sub{color:var(--text-dim);font-size:0.82rem;font-weight:300;margin-top:6px}
-header .date{color:var(--text-muted);font-size:0.68rem;margin-top:4px;font-family:'JetBrains Mono',monospace}
-.legend{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:10px 24px 0;position:relative;z-index:10}
-.legend-item{display:flex;align-items:center;gap:5px;font-size:0.65rem;color:var(--text-dim)}
-.legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.container{position:relative;z-index:5;max-width:1500px;margin:0 auto;padding:24px 16px 0}
-.section{margin-bottom:28px;opacity:0;transform:translateY(20px);transition:opacity 0.5s,transform 0.5s}
-.section.visible{opacity:1;transform:translateY(0)}
-.section-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-left:4px}
-.section-num{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:800;flex-shrink:0}
-.section-title{font-size:1.1rem;font-weight:800;letter-spacing:-0.02em}
-.section-badge{font-size:0.55rem;font-weight:600;padding:2px 8px;border-radius:8px;text-transform:uppercase;letter-spacing:0.06em}
-.card-grid{display:grid;gap:14px}
-.grid-2{grid-template-columns:repeat(2,1fr)}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.grid-4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:1100px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
-.card{border-radius:14px;padding:18px;position:relative;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s}
-.card:hover{transform:translateY(-2px)}
-.card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;border-radius:3px 0 0 3px}
-.card-name{font-size:0.85rem;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.card-desc{font-size:0.7rem;color:var(--text-dim);line-height:1.5;margin-bottom:8px}
-.card-detail{font-size:0.65rem;color:var(--text-muted);line-height:1.5}
-.mono{font-family:'JetBrains Mono',monospace;font-weight:500}
-.tag{display:inline-flex;align-items:center;gap:3px;font-family:'JetBrains Mono',monospace;font-size:0.58rem;font-weight:500;padding:2px 7px;border-radius:5px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--text-dim);margin-top:4px;margin-right:3px}
-.tag-hot{background:rgba(244,63,94,0.15);border-color:rgba(244,63,94,0.3);color:#fda4af;animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.6}}
-.note{margin-top:6px;padding:8px 10px;background:rgba(245,158,11,0.05);border:1px dashed rgba(245,158,11,0.18);border-radius:7px;font-size:0.65rem;color:#fcd34d;line-height:1.4}
-.sub-item{margin-top:6px;padding:8px 10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:8px}
-.sub-item-title{font-size:0.72rem;font-weight:600;margin-bottom:2px}
-.sub-item-desc{font-size:0.63rem;color:var(--text-dim);line-height:1.4}
-.level-row{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
-.level-badge{font-size:0.6rem;padding:3px 8px;border-radius:6px;font-weight:600}
-.flow-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.flow-step-box{flex:1;min-width:140px;padding:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;text-align:center}
-.flow-step-num{font-size:0.65rem;font-weight:700;color:var(--orange);margin-bottom:3px}
-.flow-step-name{font-size:0.75rem;font-weight:600}
-.flow-step-detail{font-size:0.6rem;color:var(--text-dim);margin-top:2px}
-.flow-arrow{color:rgba(245,158,11,0.3);font-size:1rem;flex-shrink:0}
-.relations{margin-top:28px;padding:20px;background:linear-gradient(135deg,rgba(16,185,129,0.05),rgba(6,182,212,0.03));border:1px solid rgba(16,185,129,0.12);border-radius:16px;opacity:0;transform:translateY(20px);transition:opacity 0.5s,transform 0.5s}
-.relations.visible{opacity:1;transform:translateY(0)}
-.relations h3{font-size:0.9rem;font-weight:800;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:8px}
-.rel-item{display:flex;align-items:center;gap:8px;padding:8px 12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:8px;font-size:0.7rem}
-.rel-from{font-weight:600;color:var(--text);white-space:nowrap}
-.rel-arrow{color:var(--green);font-weight:700;flex-shrink:0}
-.rel-to{color:var(--text-dim)}
-.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(99,102,241,0.15),transparent);margin:20px 0}
-footer{position:relative;z-index:10;text-align:center;padding:30px 24px 40px;border-top:1px solid rgba(99,102,241,0.1);opacity:0;transform:translateY(20px);transition:opacity 0.5s,transform 0.5s}
-footer.visible{opacity:1;transform:translateY(0)}
-#btt{position:fixed;bottom:24px;right:24px;z-index:50;width:42px;height:42px;border-radius:12px;border:1px solid rgba(99,102,241,0.25);background:rgba(13,17,23,0.9);backdrop-filter:blur(8px);color:var(--indigo);font-size:1.1rem;cursor:pointer;opacity:0;transition:opacity 0.3s,transform 0.3s;transform:translateY(8px)}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+::selection{background:rgba(99,102,241,.3);color:#fff}
 
-/* === Dynamic color classes generated per color name === */
+/* ═══ BG ═══ */
+.bg-grid{position:fixed;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(99,102,241,.025) 1px,transparent 0);background-size:48px 48px;pointer-events:none;z-index:0}
+
+/* ═══ STICKY NAV ═══ */
+.snav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(7,8,13,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.03);transform:translateY(-100%);transition:transform .3s}
+.snav.on{transform:translateY(0)}
+.snav-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:4px;height:46px;padding:0 16px;overflow-x:auto}
+.snav-brand{font-weight:800;font-size:.75rem;color:var(--dim);margin-right:8px;white-space:nowrap}
+.snav-btn{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:7px;font-size:.65rem;font-weight:600;color:var(--muted);cursor:pointer;white-space:nowrap;transition:all .2s;border:1px solid transparent;background:none}
+.snav-btn:hover{color:var(--dim);background:rgba(255,255,255,.04)}
+.snav-btn.active{color:var(--text);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.08)}
+.snav-dot{width:8px;height:8px;border-radius:3px;flex-shrink:0}
+
+/* ═══ HERO ═══ */
+.hero{position:relative;z-index:2;text-align:center;padding:48px 24px 24px}
+.hero h1{font-size:2.2rem;font-weight:900;letter-spacing:-.04em;background:linear-gradient(135deg,var(--cyan),var(--indigo),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .sub{color:var(--dim);font-size:.82rem;font-weight:300;margin-top:5px}
+.hero .meta{color:var(--muted);font-size:.6rem;margin-top:4px;font-family:'JetBrains Mono',monospace}
+
+/* ═══ TOWER ═══ */
+.tower{position:relative;z-index:2;max-width:640px;margin:24px auto 36px;padding:0 20px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.tower-row{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;cursor:pointer;transition:all .22s;border:1px solid rgba(255,255,255,.03);position:relative}
+.tower-row:hover{border-color:rgba(255,255,255,.09);transform:scale(1.015)}
+.tower-row.active{border-color:rgba(255,255,255,.14)}
+.tw-badge{font-size:.5rem;font-weight:800;width:20px;height:20px;display:flex;align-items:center;justify-content:center;border-radius:5px;flex-shrink:0}
+.tw-icon{font-size:1rem}
+.tw-name{font-size:.78rem;font-weight:700}
+.tw-en{font-size:.52rem;font-family:'JetBrains Mono',monospace;color:var(--muted);font-weight:500;margin-left:6px}
+.tw-count{font-size:.5rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-left:auto;padding-left:10px}
+.tower-line{width:2px;height:6px;border-radius:1px;opacity:.12}
+
+/* ═══ MAIN ═══ */
+.main{position:relative;z-index:2;max-width:1440px;margin:0 auto;padding:0 16px 48px}
+
+/* ═══ LAYER ACCORDION ═══ */
+.layer{margin-bottom:6px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.04);transition:border-color .3s}
+.layer.open{border-color:rgba(255,255,255,.08)}
+.layer-bar{display:flex;align-items:center;gap:12px;padding:16px 20px;cursor:pointer;transition:background .2s;user-select:none;position:relative}
+.layer-bar:hover{background:rgba(255,255,255,.015)}
+.lb-num{font-size:1.8rem;font-weight:900;font-family:'JetBrains Mono',monospace;opacity:.12;line-height:1;min-width:36px}
+.lb-icon{font-size:1.5rem}
+.lb-text{flex:1;min-width:0}
+.lb-name{font-size:1.1rem;font-weight:800;letter-spacing:-.02em}
+.lb-en{font-size:.55rem;font-family:'JetBrains Mono',monospace;font-weight:500;opacity:.35;text-transform:uppercase;letter-spacing:.08em}
+.lb-desc{font-size:.7rem;color:var(--dim);margin-top:2px}
+.lb-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.lb-count{font-size:.6rem;color:var(--muted);font-family:'JetBrains Mono',monospace;padding:3px 8px;background:rgba(255,255,255,.03);border-radius:5px}
+.lb-arrow{font-size:.8rem;color:var(--muted);transition:transform .3s}
+.layer.open .lb-arrow{transform:rotate(180deg)}
+
+/* Layer content */
+.layer-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.layer.open .layer-body{max-height:9999px}
+.layer-content{padding:0 20px 20px}
+
+/* ═══ SECTION ═══ */
+.sec{margin-bottom:16px}
+.sec:last-child{margin-bottom:0}
+.sec-head{font-size:.88rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px;padding-left:4px}
+.sec-badge{font-size:.48rem;font-weight:700;padding:2px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.04em}
+
+/* ═══ CARDS ═══ */
+.cgrid{display:grid;gap:8px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:1100px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+.card{border-radius:10px;padding:14px;position:relative;transition:transform .2s,box-shadow .2s;cursor:default;overflow:hidden}
+.card[data-exp]{cursor:pointer}
+.card[data-exp]:hover{transform:translateY(-1px)}
+.card-bar{position:absolute;top:0;left:0;width:3px;height:100%;border-radius:3px 0 0 3px}
+.card-head{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.card-name{font-size:.78rem;font-weight:700}
+.card-desc{font-size:.65rem;color:var(--dim);line-height:1.5;margin-top:5px}
+.card-expand{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.card.open .card-expand{grid-template-rows:1fr}
+.card-expand-inner{overflow:hidden}
+.card-detail{font-size:.6rem;color:var(--muted);line-height:1.55;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.04)}
+.card-chevron{position:absolute;top:11px;right:11px;font-size:.55rem;color:var(--muted);transition:transform .25s}
+.card.open .card-chevron{transform:rotate(180deg)}
+
+.mono{font-family:'JetBrains Mono',monospace;font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:2px;margin-top:5px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.52rem;font-weight:500;padding:1px 5px;border-radius:3px;color:var(--dim)}
+.tag-hot{animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+.note{margin-top:5px;padding:5px 7px;border-radius:5px;font-size:.58rem;line-height:1.4}
+.sub-item{margin-top:4px;padding:5px 7px;border-radius:5px}
+.sub-item-t{font-size:.66rem;font-weight:600;margin-bottom:1px}
+.sub-item-d{font-size:.58rem;color:var(--dim);line-height:1.4}
+.levels{display:flex;gap:3px;margin-top:5px;flex-wrap:wrap}
+.lv{font-size:.52rem;padding:2px 5px;border-radius:4px;font-weight:600}
+
+/* ═══ WORKFLOW ═══ */
+.wf-sec{margin-top:20px;padding:16px;border-radius:12px}
+.wf-title{font-size:.88rem;font-weight:700;margin-bottom:12px}
+.wf-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.wf-step{flex:1;min-width:100px;padding:8px;border-radius:7px;text-align:center}
+.wf-num{font-size:.55rem;font-weight:700}
+.wf-name{font-size:.68rem;font-weight:600;margin-top:1px}
+.wf-detail{font-size:.52rem;color:var(--dim);margin-top:1px}
+.wf-arrow{font-size:.8rem;flex-shrink:0;opacity:.2}
+
+/* ═══ RELATIONS ═══ */
+.rel-sec{margin-top:20px;padding:16px;border-radius:12px}
+.rel-title{font-size:.88rem;font-weight:800;margin-bottom:10px}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:5px}
+.rel-item{display:flex;align-items:center;gap:5px;padding:5px 8px;border-radius:5px;font-size:.62rem}
+.rel-from{font-weight:600;white-space:nowrap}
+.rel-arrow{font-weight:700;flex-shrink:0}
+.rel-to{color:var(--dim)}
+
+/* ═══ FOOTER ═══ */
+footer{position:relative;z-index:2;text-align:center;padding:28px 24px 36px;border-top:1px solid rgba(255,255,255,.03);margin-top:32px}
+footer .cr{font-size:.65rem;color:var(--dim)}
+footer .cr strong{color:var(--text)}
+footer .links{display:flex;justify-content:center;gap:6px;margin-top:8px}
+footer .links a{font-size:.55rem;color:var(--muted);text-decoration:none;padding:3px 8px;border:1px solid rgba(255,255,255,.05);border-radius:5px;transition:all .2s}
+footer .links a:hover{border-color:rgba(255,255,255,.1);color:var(--dim)}
+
+/* ═══ BTT ═══ */
+#btt{position:fixed;bottom:18px;right:18px;z-index:50;width:36px;height:36px;border-radius:9px;border:1px solid rgba(99,102,241,.18);background:rgba(7,8,13,.92);backdrop-filter:blur(8px);color:var(--indigo);font-size:.9rem;cursor:pointer;opacity:0;transition:all .3s;transform:translateY(6px);display:flex;align-items:center;justify-content:center}
+#btt.on{opacity:1;transform:translateY(0)}
+
+/* ═══ FADE IN ═══ */
+.fi{opacity:0;transform:translateY(14px);transition:opacity .45s,transform .45s}
+.fi.vis{opacity:1;transform:translateY(0)}
+
+/* ═══ EXPAND ALL / COLLAPSE ALL ═══ */
+.toggle-all{display:flex;justify-content:center;gap:8px;margin-bottom:16px}
+.toggle-btn{font-family:'Outfit',sans-serif;font-size:.65rem;font-weight:600;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:6px 14px;cursor:pointer;transition:all .2s}
+.toggle-btn:hover{color:var(--text);border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.05)}
 </style>
 </head>
 <body>
 <div class="bg-grid"></div>
-<div class="bg-glow g1"></div>
-<div class="bg-glow g2"></div>
-<div class="bg-glow g3"></div>
 
-<header>
+<nav class="snav" id="snav"><div class="snav-inner"><div class="snav-brand">🧠 AI Stack</div><div id="navBtns"></div></div></nav>
+
+<div class="hero">
   <h1 id="hTitle"></h1>
   <div class="sub" id="hSub"></div>
-  <div class="date" id="hDate"></div>
-</header>
-<div class="legend" id="legend"></div>
-<div class="container" id="app"></div>
+  <div class="meta" id="hMeta"></div>
+</div>
+
+<div class="tower" id="tower"></div>
+
+<div class="main" id="main">
+  <div class="toggle-all">
+    <button class="toggle-btn" onclick="toggleAll(true)">▼ Mở tất cả</button>
+    <button class="toggle-btn" onclick="toggleAll(false)">▲ Thu gọn</button>
+  </div>
+  <div id="layers"></div>
+</div>
+
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-// ============================
-// Color system
-// ============================
 const C={
-  blue:{bg:'59,130,246',text:'#93c5fd'},cyan:{bg:'6,182,212',text:'#67e8f9'},
-  purple:{bg:'139,92,246',text:'#c4b5fd'},orange:{bg:'245,158,11',text:'#fcd34d'},
-  green:{bg:'16,185,129',text:'#6ee7b7'},rose:{bg:'244,63,94',text:'#fda4af'},
-  indigo:{bg:'99,102,241',text:'#a5b4fc'},teal:{bg:'20,184,166',text:'#5eead4'},
-  sky:{bg:'14,165,233',text:'#7dd3fc'}
+  indigo:{bg:'99,102,241',t:'#a5b4fc'},purple:{bg:'139,92,246',t:'#c4b5fd'},
+  cyan:{bg:'6,182,212',t:'#67e8f9'},sky:{bg:'14,165,233',t:'#7dd3fc'},
+  green:{bg:'16,185,129',t:'#6ee7b7'},rose:{bg:'244,63,94',t:'#fda4af'},
+  blue:{bg:'59,130,246',t:'#93c5fd'},teal:{bg:'20,184,166',t:'#5eead4'},
+  orange:{bg:'245,158,11',t:'#fcd34d'}
 };
-const cv=(c)=>C[c]||C.blue;
-const cardStyle=(c)=>`background:linear-gradient(135deg,rgba(${cv(c).bg},0.07),rgba(${cv(c).bg},0.01));border:1px solid rgba(${cv(c).bg},0.15)`;
-const cardBefore=(c)=>`background:rgb(${cv(c).bg})`;
-const tagStyle=(c)=>`background:rgba(${cv(c).bg},0.1);border-color:rgba(${cv(c).bg},0.2);color:${cv(c).text}`;
+const g=c=>C[c]||C.indigo;
+const bg=(c,a=.07)=>`rgba(${g(c).bg},${a})`;
+const bd=(c,a=.15)=>`rgba(${g(c).bg},${a})`;
+const sl=c=>`rgb(${g(c).bg})`;
+const tx=c=>g(c).t;
 
-// ============================
-// Render engine
-// ============================
 async function init(){
-  const res=await fetch('data.json');
-  const D=await res.json();
-  
-  // Header
+  const D=await(await fetch('data.json')).json();
+  const sMap={};D.sections.forEach(s=>sMap[s.id]=s);
+
+  // Hero
   document.getElementById('hTitle').textContent='🧠 '+D.meta.title;
   document.getElementById('hSub').textContent=D.meta.subtitle;
-  document.getElementById('hDate').textContent=`Last updated: ${D.meta.lastUpdated} · ${D.meta.updatedBy} · v${D.meta.version}`;
-  document.title=D.meta.title;
+  document.getElementById('hMeta').textContent=`v${D.meta.version} · ${D.meta.lastUpdated} · ${D.meta.updatedBy}`;
 
-  // Legend
-  const leg=document.getElementById('legend');
-  leg.innerHTML=D.legend.map(l=>`<div class="legend-item"><div class="legend-dot" style="background:var(--${l.color})"></div>${l.label}</div>`).join('');
-
-  const app=document.getElementById('app');
-  let html='';
-
-  // Sections
-  D.sections.forEach((s,si)=>{
-    if(si>0) html+='<div class="divider"></div>';
-    html+=`<div class="section" data-anim>`;
-    html+=`<div class="section-header">`;
-    html+=`<div class="section-num" style="background:rgba(${cv(s.color).bg},0.15);color:var(--${s.color})">${s.num}</div>`;
-    html+=`<div class="section-title" style="color:var(--${s.color})">${s.title}</div>`;
-    if(s.badge) html+=`<span class="section-badge" style="background:rgba(244,63,94,0.15);color:#fda4af">${s.badge}</span>`;
-    html+=`</div>`;
-    html+=`<div class="card-grid grid-${s.gridCols}">`;
-    s.cards.forEach(c=>{html+=renderCard(c,s.color)});
-    html+=`</div></div>`;
+  // Count items per layer
+  const layerCounts={};
+  D.layers.forEach(l=>{
+    let n=0;
+    l.sectionIds.forEach(sid=>{if(sMap[sid])n+=sMap[sid].cards.length});
+    layerCounts[l.id]=n;
   });
 
-  // Workflow
+  // Render order: big→small (Layer 5→1)
+  const ordered=[...D.layers].sort((a,b)=>b.level-a.level);
+
+  // ═══ TOWER (pyramid overview) ═══
+  let tw='';
+  ordered.forEach((l,i)=>{
+    const w=50+l.level*10;
+    if(i>0) tw+=`<div class="tower-line" style="background:${sl(l.color)}"></div>`;
+    tw+=`<div class="tower-row" data-lid="${l.id}" onclick="jumpTo('${l.id}')" style="width:${w}%;background:${bg(l.color,.05)};border-color:${bd(l.color,.06)}">
+      <div class="tw-badge" style="background:${bg(l.color,.2)};color:${tx(l.color)}">L${l.level}</div>
+      <span class="tw-icon">${l.icon}</span>
+      <span class="tw-name" style="color:${tx(l.color)}">${l.name}</span>
+      <span class="tw-en">${l.nameEn}</span>
+      <span class="tw-count">${layerCounts[l.id]} items</span>
+    </div>`;
+  });
+  document.getElementById('tower').innerHTML=tw;
+
+  // ═══ NAV ═══
+  document.getElementById('navBtns').innerHTML=ordered.map(l=>
+    `<button class="snav-btn" data-nid="${l.id}" onclick="jumpTo('${l.id}')">
+      <span class="snav-dot" style="background:${sl(l.color)}"></span>${l.icon} ${l.name}
+    </button>`
+  ).join('');
+
+  // ═══ LAYER ACCORDIONS ═══
+  let h='';
+  ordered.forEach(layer=>{
+    const col=layer.color;
+    h+=`<div class="layer fi" id="L-${layer.id}" style="background:${bg(col,.02)}" data-layer>
+      <div class="layer-bar" onclick="toggleLayer('${layer.id}')">
+        <div class="lb-num" style="color:${tx(col)}">${layer.level}</div>
+        <div class="lb-icon">${layer.icon}</div>
+        <div class="lb-text">
+          <div class="lb-en" style="color:${tx(col)}">${layer.nameEn}</div>
+          <div class="lb-name" style="color:${tx(col)}">${layer.name}</div>
+          <div class="lb-desc">${layer.desc}</div>
+        </div>
+        <div class="lb-right">
+          <span class="lb-count">${layerCounts[layer.id]} items</span>
+          <span class="lb-arrow">▼</span>
+        </div>
+      </div>
+      <div class="layer-body"><div class="layer-content">`;
+
+    layer.sectionIds.forEach(sid=>{
+      const s=sMap[sid]; if(!s) return;
+      h+=`<div class="sec">`;
+      h+=`<div class="sec-head" style="color:${tx(s.color)}">${s.title}`;
+      if(s.badge) h+=` <span class="sec-badge" style="background:rgba(244,63,94,.12);color:#fda4af">${s.badge}</span>`;
+      h+=`</div>`;
+      h+=`<div class="cgrid g${s.gridCols}">`;
+      s.cards.forEach(c=>{h+=card(c,s.color)});
+      h+=`</div></div>`;
+    });
+
+    h+=`</div></div></div>`;
+  });
+
+  // ═══ WORKFLOW ═══
   if(D.workflow){
-    html+='<div class="divider"></div>';
-    html+=`<div class="section" data-anim>`;
-    html+=`<div class="section-header">`;
-    html+=`<div class="section-num" style="background:rgba(${cv(D.workflow.color).bg},0.15);color:var(--${D.workflow.color})">8</div>`;
-    html+=`<div class="section-title" style="color:var(--${D.workflow.color})">${D.workflow.title}</div>`;
-    html+=`</div><div class="flow-row">`;
+    h+=`<div class="wf-sec fi" style="background:${bg('orange',.04)};border:1px solid ${bd('orange',.1)}">
+      <div class="wf-title" style="color:${tx('orange')}">⚙️ ${D.workflow.title}</div>
+      <div class="wf-row">`;
     D.workflow.steps.forEach((st,i)=>{
-      if(i>0) html+=`<div class="flow-arrow">→</div>`;
-      html+=`<div class="flow-step-box"><div class="flow-step-num">${st.num} ${st.label}</div><div class="flow-step-name">${st.name}</div><div class="flow-step-detail">${st.detail}</div></div>`;
+      if(i>0) h+=`<div class="wf-arrow" style="color:${tx('orange')}">→</div>`;
+      h+=`<div class="wf-step" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.04);border-radius:7px">
+        <div class="wf-num" style="color:${tx('orange')}">${st.num} ${st.label}</div>
+        <div class="wf-name">${st.name}</div>
+        <div class="wf-detail">${st.detail}</div>
+      </div>`;
     });
-    html+=`</div>`;
-    if(D.workflow.note) html+=`<div class="note" style="margin-top:10px">${D.workflow.note}</div>`;
-    html+=`</div>`;
+    h+=`</div>`;
+    if(D.workflow.note) h+=`<div class="note" style="margin-top:8px;background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${D.workflow.note}</div>`;
+    h+=`</div>`;
   }
 
-  // Relations
+  // ═══ RELATIONS ═══
   if(D.relations){
-    html+='<div class="divider"></div>';
-    html+=`<div class="relations" data-anim><h3>🔗 Liên kết chéo giữa các thành phần</h3><div class="rel-grid">`;
+    h+=`<div class="rel-sec fi" style="background:${bg('green',.03)};border:1px solid ${bd('green',.08)}">
+      <div class="rel-title" style="color:${tx('green')}">🔗 Liên kết chéo giữa các tầng</div>
+      <div class="rel-grid">`;
     D.relations.forEach(r=>{
-      html+=`<div class="rel-item"><span class="rel-from">${r.from}</span><span class="rel-arrow">${r.arrow}</span><span class="rel-to">${r.to}</span></div>`;
+      h+=`<div class="rel-item" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03)">
+        <span class="rel-from">${r.from}</span>
+        <span class="rel-arrow" style="color:${tx('green')}">${r.arrow}</span>
+        <span class="rel-to">${r.to}</span>
+      </div>`;
     });
-    html+=`</div></div>`;
+    h+=`</div></div>`;
   }
 
-  // Footer
-  html+=`<footer data-anim>
-    <div style="font-size:0.7rem;color:var(--text-dim);margin-bottom:6px">Tạo bởi <strong style="color:var(--text)">Baron</strong> · Hỗ trợ bởi Claude AI · Data-driven from <span class="mono" style="font-size:0.6rem">data.json</span></div>
-    <div style="font-size:0.6rem;color:var(--text-muted)">Cập nhật: ${D.meta.lastUpdated} · v${D.meta.version}</div>
-    <div style="margin-top:10px;display:flex;justify-content:center;gap:10px">
-      <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener" style="font-size:0.6rem;color:var(--indigo);text-decoration:none;padding:4px 10px;border:1px solid rgba(99,102,241,0.2);border-radius:6px">MCP</a>
-      <a href="https://a2a-protocol.org" target="_blank" rel="noopener" style="font-size:0.6rem;color:var(--green);text-decoration:none;padding:4px 10px;border:1px solid rgba(16,185,129,0.2);border-radius:6px">A2A</a>
-      <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener" style="font-size:0.6rem;color:var(--teal);text-decoration:none;padding:4px 10px;border:1px solid rgba(20,184,166,0.2);border-radius:6px">Skills</a>
+  // ═══ FOOTER ═══
+  h+=`<footer class="fi">
+    <div class="cr">Tạo bởi <strong>Baron</strong> · Hỗ trợ bởi Claude AI · v${D.meta.version}</div>
+    <div class="links">
+      <a href="https://modelcontextprotocol.io" target="_blank">MCP Docs</a>
+      <a href="https://google.github.io/A2A" target="_blank">A2A Protocol</a>
+      <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank">Agent Skills</a>
+      <a href="https://github.com/BARONFANTHE/ai-mindmap" target="_blank">GitHub</a>
     </div>
   </footer>`;
 
-  app.innerHTML=html;
+  document.getElementById('layers').innerHTML=h;
 
-  // Scroll animations
-  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08});
-  document.querySelectorAll('[data-anim]').forEach(el=>obs.observe(el));
+  // Fade-in observer
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.05});
+  document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+  // Active nav tracking
+  const layerObs=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(e.isIntersecting){
+        const id=e.target.id.replace('L-','');
+        document.querySelectorAll('.snav-btn').forEach(b=>b.classList.toggle('active',b.dataset.nid===id));
+        document.querySelectorAll('.tower-row').forEach(r=>r.classList.toggle('active',r.dataset.lid===id));
+      }
+    });
+  },{threshold:.1,rootMargin:'-50px 0px -60% 0px'});
+  document.querySelectorAll('[data-layer]').forEach(el=>layerObs.observe(el));
+
+  // Card toggles
+  document.querySelectorAll('.card[data-exp]').forEach(c=>{
+    c.addEventListener('click',()=>c.classList.toggle('open'));
+  });
 }
 
-function renderCard(c,sectionColor){
-  const col=c.tagColor||sectionColor;
-  let h=`<div class="card" style="${cardStyle(col)}">`;
-  h+=`<div style="position:absolute;top:0;left:0;width:3px;height:100%;border-radius:3px 0 0 3px;${cardBefore(col)}"></div>`;
-  h+=`<div class="card-name">`;
+function card(c,col){
+  const tc=c.tagColor||col;
+  const hasExp=!!(c.detail||c.levels||c.subItems);
+  let h=`<div class="card${hasExp?'':' open'}" ${hasExp?'data-exp':''} style="background:${bg(tc,.04)};border:1px solid ${bd(tc,.08)}">`;
+  h+=`<div class="card-bar" style="background:${sl(tc)}"></div>`;
+  if(hasExp) h+=`<div class="card-chevron">▼</div>`;
+  h+=`<div class="card-head">`;
   if(c.icon) h+=`<span>${c.icon}</span>`;
-  h+=`<span ${c.mono?'class="mono"':''}>${c.name}</span>`;
-  if(c.hot) h+=`<span class="tag tag-hot">HOT</span>`;
-  if(c.extraBadges) c.extraBadges.forEach(b=>h+=`<span class="tag" style="${tagStyle('green')}">${b}</span>`);
+  h+=`<span class="card-name ${c.mono?'mono':''}">${c.name}</span>`;
+  if(c.hot) h+=`<span class="tag tag-hot" style="background:rgba(244,63,94,.15);border:1px solid rgba(244,63,94,.25);color:#fda4af">HOT</span>`;
+  if(c.extraBadges) c.extraBadges.forEach(b=>h+=`<span class="tag" style="background:${bg('green',.12)};color:${tx('green')}">${b}</span>`);
   h+=`</div>`;
   if(c.desc) h+=`<div class="card-desc">${c.desc}</div>`;
-  if(c.detail) h+=`<div class="card-detail">${c.detail}</div>`;
-  if(c.levels){
-    h+=`<div class="level-row">`;
-    c.levels.forEach(l=>h+=`<span class="level-badge" style="background:rgba(${cv('cyan').bg},0.15);color:#67e8f9">${l}</span>`);
-    h+=`</div>`;
-  }
-  if(c.subItems){
-    c.subItems.forEach(si=>{
-      h+=`<div class="sub-item"><div class="sub-item-title">${si.title}</div><div class="sub-item-desc">${si.desc}</div></div>`;
-    });
-  }
   if(c.tags){
-    h+=`<div style="margin-top:6px">`;
+    h+=`<div class="tags">`;
     c.tags.forEach(t=>{
-      const tc=(c.tagColors&&c.tagColors[t])||col;
-      h+=`<span class="tag" style="${tagStyle(tc)}">${t}</span>`;
+      const cc=(c.tagColors&&c.tagColors[t])||tc;
+      h+=`<span class="tag" style="background:${bg(cc,.1)};color:${tx(cc)}">${t}</span>`;
     });
     h+=`</div>`;
   }
-  if(c.note) h+=`<div class="note">${c.note}</div>`;
+  if(hasExp){
+    h+=`<div class="card-expand"><div class="card-expand-inner">`;
+    if(c.detail) h+=`<div class="card-detail">${c.detail}</div>`;
+    if(c.levels){
+      h+=`<div class="levels">`;
+      c.levels.forEach(l=>h+=`<span class="lv" style="background:${bg('cyan',.15)};color:#67e8f9">${l}</span>`);
+      h+=`</div>`;
+    }
+    if(c.subItems){
+      c.subItems.forEach(si=>{
+        h+=`<div class="sub-item" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03)">
+          <div class="sub-item-t">${si.title}</div>
+          <div class="sub-item-d">${si.desc}</div>
+        </div>`;
+      });
+    }
+    if(c.note) h+=`<div class="note" style="background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${c.note}</div>`;
+    h+=`</div></div>`;
+  } else {
+    if(c.note) h+=`<div class="note" style="background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${c.note}</div>`;
+  }
   h+=`</div>`;
   return h;
 }
 
-// Back to top
+function toggleLayer(id){
+  const el=document.getElementById('L-'+id);
+  if(!el) return;
+  el.classList.toggle('open');
+}
+
+function jumpTo(id){
+  const el=document.getElementById('L-'+id);
+  if(!el) return;
+  if(!el.classList.contains('open')) el.classList.add('open');
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function toggleAll(open){
+  document.querySelectorAll('[data-layer]').forEach(el=>{
+    if(open) el.classList.add('open'); else el.classList.remove('open');
+  });
+}
+
+// Scroll handlers
+const btt=document.getElementById('btt');
+const snav=document.getElementById('snav');
 window.addEventListener('scroll',()=>{
-  const b=document.getElementById('btt');
-  if(window.scrollY>400){b.style.opacity='1';b.style.transform='translateY(0)'}
-  else{b.style.opacity='0';b.style.transform='translateY(8px)'}
-});
+  const y=window.scrollY;
+  snav.classList.toggle('on',y>350);
+  btt.classList.toggle('on',y>250);
+},{passive:true});
 
 init();
 </script>
