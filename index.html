@@ -133,6 +133,10 @@ footer .links a:hover{border-color:rgba(255,255,255,.1);color:var(--dim)}
 .toggle-all{display:flex;justify-content:center;gap:8px;margin-bottom:16px}
 .toggle-btn{font-family:'Be Vietnam Pro',sans-serif;font-size:.65rem;font-weight:600;color:var(--dim);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:7px;padding:6px 14px;cursor:pointer;transition:all .2s}
 .toggle-btn:hover{color:var(--text);border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.05)}
+.card-sources{margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.05)}
+.card-sources-label{font-size:.62rem;color:var(--muted);margin-right:4px}
+.card-source-link{display:inline-block;font-size:.6rem;font-family:'JetBrains Mono',monospace;color:var(--dim);text-decoration:none;padding:2px 6px;margin:2px;border-radius:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);transition:all .2s}
+.card-source-link:hover{color:var(--text);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12)}
 </style>
 </head>
 <body>
@@ -285,7 +289,7 @@ async function init(){
 
 function card(c,col){
   const tc=c.tagColor||col;
-  const hasExp=!!(c.detail||c.levels||c.subItems);
+  const hasExp=!!(c.detail||c.levels||c.subItems||c.sources);
   let h=`<div class="card${hasExp?'':' open'}" ${hasExp?'data-exp':''} style="background:${bg(tc,.04)};border:1px solid ${bd(tc,.08)}">`;
   h+=`<div class="card-bar" style="background:${sl(tc)}"></div>`;
   if(hasExp) h+=`<div class="card-chevron">▼</div>`;
@@ -321,6 +325,7 @@ function card(c,col){
       });
     }
     if(c.note) h+=`<div class="note" style="background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${c.note}</div>`;
+    if(c.sources&&c.sources.length){h+=`<div class="card-sources"><span class="card-sources-label">📎 Nguồn:</span>${c.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener" class="card-source-link">${s.title} ↗</a>`).join('')}</div>`}
     h+=`</div></div>`;
   } else {
     if(c.note) h+=`<div class="note" style="background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${c.note}</div>`;
