@@ -4,7 +4,7 @@
     "subtitle": "Phân tầng từ Nền tảng → Ứng dụng → Xu hướng",
     "lastUpdated": "2026-02-03",
     "updatedBy": "Claude AI + Baron",
-    "version": "3.3"
+    "version": "4.0"
   },
   "layers": [
     {
@@ -408,33 +408,6 @@
           ]
         },
         {
-          "icon": "⌨️",
-          "name": "Claude Code (CLI)",
-          "mono": true,
-          "desc": "Agent lập trình chạy trong terminal — hiểu 200K token context, hỗ trợ plugins và skills.",
-          "added_date": "2026-02-03",
-          "tags": [
-            "claude.md",
-            "+ claude-mem",
-            "skills/",
-            "hooks"
-          ],
-          "tagColors": {
-            "+ claude-mem": "green"
-          },
-          "detail": "Agent lập trình mạnh nhất hiện tại — chạy trong terminal, hiểu 200K token context, có thể đọc/sửa/tạo nhiều file cùng lúc. Hệ sinh thái plugins phong phú: claude-mem (memory), claude-flow (orchestration), claude-squad (parallel sessions). Hỗ trợ hooks, custom slash commands, và MCP servers. Dùng CLAUDE.md làm project instructions.",
-          "sources": [
-            {
-              "title": "Claude Code Docs",
-              "url": "https://docs.claude.com/en/docs/claude-code/overview"
-            },
-            {
-              "title": "Claude Code Best Practices",
-              "url": "https://www.anthropic.com/engineering/claude-code-best-practices"
-            }
-          ]
-        },
-        {
           "icon": "💬",
           "name": "ChatGPT (Web)",
           "mono": true,
@@ -456,30 +429,6 @@
             {
               "title": "OpenAI Platform",
               "url": "https://platform.openai.com/"
-            }
-          ]
-        },
-        {
-          "icon": "🔧",
-          "name": "Codex CLI",
-          "mono": true,
-          "desc": "Agent code của OpenAI — chạy trong terminal hoặc cloud sandbox, xử lý task tuần tự.",
-          "added_date": "2026-02-03",
-          "tags": [
-            "AGENTS.md",
-            "Cloud sandbox",
-            "/model /review"
-          ],
-          "tagColor": "rose",
-          "detail": "Agent code của OpenAI chạy trong terminal — xử lý task tuần tự, chính xác. Chạy trong cloud sandbox (an toàn) hoặc local. Dùng AGENTS.md làm project instructions (tương tự CLAUDE.md). Hỗ trợ /model để đổi model, /review để review code. Tích hợp với ChatGPT plan — dùng được credits từ subscription.",
-          "sources": [
-            {
-              "title": "Codex CLI GitHub",
-              "url": "https://github.com/openai/codex"
-            },
-            {
-              "title": "OpenAI — Introducing Codex",
-              "url": "https://openai.com/index/introducing-codex/"
             }
           ]
         }
