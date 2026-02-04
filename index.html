@@ -153,6 +153,21 @@ footer .links a:hover{border-color:rgba(255,255,255,.1);color:var(--dim)}
 .card-sources-label{font-size:.62rem;color:var(--muted);margin-right:4px}
 .card-source-link{display:inline-block;font-size:.6rem;font-family:'JetBrains Mono',monospace;color:var(--dim);text-decoration:none;padding:2px 6px;margin:2px;border-radius:4px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);transition:all .2s}
 .card-source-link:hover{color:var(--text);background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.12)}
+
+/* ═══ SEARCH ═══ */
+.search-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);justify-content:center;align-items:flex-start;padding-top:min(20vh,160px)}
+.search-box{width:90%;max-width:560px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5);overflow:hidden}
+.search-input{width:100%;padding:16px 20px;font-family:'Be Vietnam Pro',sans-serif;font-size:.95rem;font-weight:400;color:var(--text);background:transparent;border:none;border-bottom:1px solid var(--border);outline:none}
+.search-input::placeholder{color:var(--muted)}
+.search-results{max-height:400px;overflow-y:auto}
+.search-result-item{display:flex;align-items:center;gap:8px;padding:10px 20px;cursor:pointer;transition:background .15s}
+.search-result-item:hover{background:rgba(255,255,255,.05)}
+.search-result-name{font-size:.82rem;font-weight:600;color:var(--text);white-space:nowrap}
+.search-result-desc{font-size:.72rem;color:var(--dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.search-empty{padding:20px;text-align:center;font-size:.78rem;color:var(--muted)}
+.search-trigger{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:6px 14px;font-family:'Be Vietnam Pro',sans-serif;font-size:.7rem;color:var(--muted);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;cursor:pointer;transition:all .2s}
+.search-trigger:hover{color:var(--dim);border-color:rgba(255,255,255,.12);background:rgba(255,255,255,.05)}
+.search-trigger kbd{font-family:'JetBrains Mono',monospace;font-size:.55rem;padding:2px 5px;border-radius:4px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:var(--dim)}
 </style>
 </head>
 <body>
@@ -164,6 +179,7 @@ footer .links a:hover{border-color:rgba(255,255,255,.1);color:var(--dim)}
   <h1 id="hTitle"></h1>
   <div class="sub" id="hSub"></div>
   <div class="meta" id="hMeta"></div>
+  <button class="search-trigger" onclick="openSearch()">🔍 Tìm kiếm <kbd>Ctrl+K</kbd></button>
 </div>
 
 <div class="tower" id="tower"></div>
@@ -177,6 +193,13 @@ footer .links a:hover{border-color:rgba(255,255,255,.1);color:var(--dim)}
 </div>
 
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <input class="search-input" id="searchInput" type="text" placeholder="Tìm kiếm tools, frameworks..." autocomplete="off">
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
 
 <script>
 const C={
@@ -194,9 +217,21 @@ const tx=c=>g(c).t;
 
 function slugify(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 
+let allCards=[];
+
 async function init(){
   const D=await(await fetch('data.json')).json();
   const sMap={};D.sections.forEach(s=>sMap[s.id]=s);
+
+  // Build search index
+  D.layers.forEach(layer=>{
+    layer.sectionIds.forEach(sid=>{
+      const s=sMap[sid]; if(!s) return;
+      s.cards.forEach(c=>{
+        allCards.push({name:c.name,desc:c.desc||'',detail:c.detail||'',icon:c.icon||'',slug:slugify(c.name)});
+      });
+    });
+  });
 
   // Hero
   document.getElementById('hTitle').textContent='🧠 '+D.meta.title;
@@ -398,6 +433,48 @@ window.addEventListener('scroll',()=>{
 
 window.addEventListener('hashchange',()=>{
   if(window.location.hash) navigateToCard(window.location.hash.slice(1));
+});
+
+// ═══ SEARCH ═══
+let searchTimeout;
+function openSearch(){
+  document.getElementById('searchOverlay').style.display='flex';
+  const inp=document.getElementById('searchInput');
+  inp.value='';
+  document.getElementById('searchResults').innerHTML='';
+  inp.focus();
+}
+function closeSearch(){document.getElementById('searchOverlay').style.display='none'}
+function doSearch(q){
+  const el=document.getElementById('searchResults');
+  if(!q.trim()){el.innerHTML='';return}
+  const query=q.toLowerCase();
+  const matched=allCards.filter(c=>
+    c.name.toLowerCase().includes(query)||
+    c.desc.toLowerCase().includes(query)||
+    c.detail.toLowerCase().includes(query)
+  ).slice(0,10);
+  if(!matched.length){el.innerHTML='<div class="search-empty">Không tìm thấy kết quả</div>';return}
+  el.innerHTML=matched.map(c=>{
+    const dt=c.desc.replace(/<[^>]*>/g,'');
+    const sn=dt.length>80?dt.slice(0,80)+'…':dt;
+    return `<div class="search-result-item" data-slug="${c.slug}"><span>${c.icon}</span><span class="search-result-name">${c.name}</span><span class="search-result-desc">${sn}</span></div>`;
+  }).join('');
+}
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();openSearch()}
+  if(e.key==='Escape')closeSearch();
+});
+document.getElementById('searchInput').addEventListener('input',e=>{
+  clearTimeout(searchTimeout);
+  searchTimeout=setTimeout(()=>doSearch(e.target.value),200);
+});
+document.getElementById('searchResults').addEventListener('click',e=>{
+  const item=e.target.closest('.search-result-item');
+  if(!item) return;
+  closeSearch();
+  navigateToCard(item.dataset.slug);
+  history.replaceState(null,'','#'+item.dataset.slug);
 });
 
 init();
