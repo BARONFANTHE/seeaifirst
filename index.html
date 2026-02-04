@@ -191,6 +191,8 @@ const bd=(c,a=.15)=>`rgba(${g(c).bg},${a})`;
 const sl=c=>`rgb(${g(c).bg})`;
 const tx=c=>g(c).t;
 
+function slugify(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+
 async function init(){
   const D=await(await fetch('data.json')).json();
   const sMap={};D.sections.forEach(s=>sMap[s.id]=s);
@@ -298,14 +300,20 @@ async function init(){
 
   // Card toggles
   document.querySelectorAll('.card[data-exp]').forEach(c=>{
-    c.addEventListener('click',()=>c.classList.toggle('open'));
+    c.addEventListener('click',()=>{
+      c.classList.toggle('open');
+      if(c.classList.contains('open')&&c.id) history.replaceState(null,'','#'+c.id);
+    });
   });
+
+  // Deep linking on page load
+  if(window.location.hash) navigateToCard(window.location.hash.slice(1));
 }
 
 function card(c,col){
   const tc=c.tagColor||col;
   const hasExp=!!(c.detail||c.levels||c.subItems||c.sources);
-  let h=`<div class="card${hasExp?'':' open'}" ${hasExp?'data-exp':''} style="background:${bg(tc,.04)};border:1px solid ${bd(tc,.08)}">`;
+  let h=`<div class="card${hasExp?'':' open'}" id="${slugify(c.name)}" ${hasExp?'data-exp':''} style="background:${bg(tc,.04)};border:1px solid ${bd(tc,.08)}">`;
   h+=`<div class="card-bar" style="background:${sl(tc)}"></div>`;
   if(hasExp) h+=`<div class="card-chevron">▼</div>`;
   h+=`<div class="card-head">`;
@@ -368,6 +376,15 @@ function toggleAll(open){
   });
 }
 
+function navigateToCard(hash){
+  const el=document.getElementById(hash);
+  if(!el) return;
+  const layer=el.closest('[data-layer]');
+  if(layer) jumpTo(layer.id.replace('L-',''));
+  el.classList.add('open');
+  setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'center'}),300);
+}
+
 // Scroll handlers
 const btt=document.getElementById('btt');
 const snav=document.getElementById('snav');
@@ -376,6 +393,10 @@ window.addEventListener('scroll',()=>{
   snav.classList.toggle('on',y>350);
   btt.classList.toggle('on',y>250);
 },{passive:true});
+
+window.addEventListener('hashchange',()=>{
+  if(window.location.hash) navigateToCard(window.location.hash.slice(1));
+});
 
 init();
 </script>
