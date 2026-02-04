@@ -2,7 +2,7 @@
 
 > Interactive mindmap tổng hợp AI ecosystem: Protocols, Frameworks, Agents, Memory, Skills, Coding Tools & Trends.
 
-**Live site:** [your-domain.vercel.app]
+**Live site:** https://ai-mindmap-ochre.vercel.app
 
 ## Quick Start
 
@@ -38,9 +38,10 @@ git push
 ## Architecture
 ```
 index.html    ← Renderer (đọc data.json, render UI)
-data.json     ← Content (9 sections, ~40 cards)
+data.json     ← Content (8 sections, 39 cards)
 CLAUDE.md     ← Context cho Claude Code
 skills/       ← Skills cho Claude Code
+.github/      ← Issue templates
 CHANGELOG.md  ← Lịch sử updates
 ```
 
@@ -51,18 +52,23 @@ CHANGELOG.md  ← Lịch sử updates
 - Data-driven: JSON → DOM rendering
 - Dark theme, glassmorphic design
 - Responsive, scroll animations
-- SEO: Open Graph, Twitter Cards, JSON-LD
+- SEO: Open Graph, Twitter Card meta tags
+
+## v3.5 Features
+- Search overlay (Ctrl+K / Cmd+K) — fuzzy search toàn bộ cards
+- Hash-based deep linking — chia sẻ link trực tiếp đến từng card
+- NEW badge tự động cho cards mới (≤14 ngày)
+- "Suggest a Tool" GitHub Issue template
 
 ## Sections
 1. **Protocols** — MCP, A2A
-2. **Orchestration** — Claude-Flow, OpenClaw, Claude Squad
-3. **Memory** — claude-mem, CLAUDE.md, ByteRover, MemGPT
-4. **Platforms** — Claude.ai, Claude Code, ChatGPT, Codex CLI
-5. **AI Coding Agents** — 9 tools comparison
-6. **Skills** — Universal agent skills (626+)
-7. **Agent Frameworks** — LangGraph, CrewAI, AutoGen...
-8. **Workflow** — 4-step app creation process
-9. **2026 Trends** — 9 major AI trends
+2. **Agent Frameworks** — LangGraph, CrewAI, AutoGen, OpenAI Agents SDK, Google ADK, LlamaIndex, Pydantic AI, Rasa
+3. **Platforms** — Claude.ai, Claude Code, ChatGPT, Codex CLI
+4. **Memory** — Claude-Mem, MemGPT/Letta, Mem0, Zep
+5. **Skills** — Universal agent skills (626+)
+6. **Orchestration** — Claude-Flow, OpenClaw, Claude Squad
+7. **AI Coding Agents** — Claude Code, Cursor, Codex CLI, Windsurf, Copilot, Gemini CLI, Cline, Kiro, Replit
+8. **2026 Trends** — Multi-Agent Systems, Interpretability, World Models, Generative Coding, and more
 
 ## License
 MIT
