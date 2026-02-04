@@ -116,6 +116,7 @@ body{font-family:'Be Vietnam Pro',sans-serif;background:var(--bg);color:var(--te
 .card-detail{font-size:.72rem;color:var(--muted);line-height:1.65;margin-top:7px;padding-top:7px;border-top:1px solid rgba(255,255,255,.04);font-weight:400}
 .card-chevron{position:absolute;top:11px;right:11px;font-size:.55rem;color:var(--muted);transition:transform .25s}
 .card.open .card-chevron{transform:rotate(180deg)}
+.new-badge{position:absolute;top:8px;right:28px;font-size:.5rem;font-weight:700;padding:2px 6px;border-radius:4px;background:rgba(16,185,129,.18);color:#6ee7b7;border:1px solid rgba(16,185,129,.25);letter-spacing:.04em;font-family:'JetBrains Mono',monospace}
 
 .mono{font-family:'JetBrains Mono',monospace;font-weight:500}
 .tags{display:flex;flex-wrap:wrap;gap:2px;margin-top:5px}
@@ -316,6 +317,7 @@ function card(c,col){
   let h=`<div class="card${hasExp?'':' open'}" id="${slugify(c.name)}" ${hasExp?'data-exp':''} style="background:${bg(tc,.04)};border:1px solid ${bd(tc,.08)}">`;
   h+=`<div class="card-bar" style="background:${sl(tc)}"></div>`;
   if(hasExp) h+=`<div class="card-chevron">▼</div>`;
+  if(c.added_date&&(Date.now()-new Date(c.added_date)<=14*864e5)) h+=`<span class="new-badge">NEW</span>`;
   h+=`<div class="card-head">`;
   if(c.icon) h+=`<span>${c.icon}</span>`;
   h+=`<span class="card-name ${c.mono?'mono':''}">${c.name}</span>`;
