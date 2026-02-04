@@ -1,134 +1,96 @@
-# 🧠 Mindmap Updater Skill
+# 🧠 Mindmap Update Skill — Data Reference
 
-## Mục đích
-Research thông tin AI mới nhất bằng web search → cập nhật `data.json` → Baron review → deploy.
+> Quick reference cho Claude Code khi sửa data.json. Research & evaluation do Claude.ai thực hiện.
 
-## Trigger phrases
-- "update mindmap", "cập nhật mindmap"
-- "research AI trends", "có gì mới trong AI"
-- "thêm [tool] vào mindmap"
-- "update section [name]"
+## Data Structure (actual)
 
-## Quy trình bắt buộc
-
-### Bước 1: Check trạng thái hiện tại
-```bash
-node -e "const d=JSON.parse(require('fs').readFileSync('data.json','utf8'));console.log('Version:',d.meta.version,'| Updated:',d.meta.lastUpdated,'| Sections:',d.sections.length,'| Total cards:',d.sections.reduce((a,s)=>a+s.cards.length,0))"
+```
+data.json
+├── layers[]                    # 5 layers (L1-L5)
+│   ├── id: "L1"
+│   ├── title: "Layer Title"
+│   └── sections[]              # 8 sections total
+│       ├── title: "Section Title"
+│       ├── emoji: "🔌"
+│       └── items[]             # Cards
+│           ├── name            # Tool/framework name
+│           ├── desc            # 1-line description (tiếng Việt)
+│           ├── added_date      # "YYYY-MM-DD" (for NEW badge, ≤14 days)
+│           ├── detail          # 2-4 lines (tiếng Việt)
+│           └── sources[]       # Links
+│               ├── label       # "GitHub", "Docs", "Website"
+│               └── url         # Full URL
+├── workflow[]                  # 4 steps (not rendered in UI)
+└── relations[]                 # 8 entries (not rendered in UI)
 ```
 
-### Bước 2: Xác định scope
-Hỏi Baron nếu chưa rõ:
-- Update **tất cả sections** hay **section cụ thể**?
-- Focus vào **30 ngày gần nhất** hay **topic cụ thể**?
+**Không có `meta` object.** Version tracking nằm trong CHANGELOG.md.
 
-### Bước 3: Research bằng web search
-Cho mỗi section cần update, search các keywords:
+## Card Schema
 
-| Section | Search queries gợi ý |
-|---------|----------------------|
-| protocols | `MCP protocol 2026 update`, `A2A protocol latest`, `AI agent protocol new` |
-| orchestration | `Claude-Flow github release`, `OpenClaw update 2026`, `AI orchestration tool` |
-| memory | `claude-mem update`, `AI agent memory system 2026`, `MemGPT Letta release` |
-| platforms | `Claude Code new features 2026`, `ChatGPT update`, `Codex CLI release` |
-| coding-agents | `AI coding agent 2026`, `Cursor AI update`, `new AI coding tool`, `Windsurf update` |
-| skills | `awesome-agent-skills github`, `AI agent skills ecosystem`, `claude code skills` |
-| frameworks | `LangGraph release 2026`, `CrewAI update`, `new AI agent framework`, `AutoGen update` |
-| trends | `AI trends February 2026`, `AI breakthrough 2026`, `AI industry news` |
-
-**Mỗi section search ít nhất 2-3 queries.** Ghi chú source URL cho mỗi finding.
-
-### Bước 4: Phân tích findings
-Với mỗi finding, đánh giá:
-- **Significance**: HIGH (thêm card mới / thay đổi lớn) | MEDIUM (update mô tả/tags) | LOW (skip)
-- **Confidence**: Có từ 2+ sources confirm không?
-- **Relevance**: Thuộc section nào?
-
-### Bước 5: Cập nhật data.json
-
-#### Thêm card mới (khi có tool/framework/protocol mới đáng chú ý):
 ```json
 {
-  "icon": "🔵",
   "name": "Tool Name",
-  "mono": true,
-  "hot": true,
-  "desc": "Mô tả ngắn tiếng Việt · Đặc điểm nổi bật",
-  "detail": "Chi tiết hơn nếu cần. Dùng <strong> cho emphasis, <br> cho line break.",
-  "tags": ["tag1", "tag2", "tag3"],
-  "note": "💡 Ghi chú quan trọng (optional)"
+  "desc": "Mô tả ngắn 1 dòng bằng tiếng Việt",
+  "added_date": "2026-02-04",
+  "detail": "Chi tiết 2-4 dòng tiếng Việt. Giải thích tại sao tool này quan trọng, stars, license, đặc điểm nổi bật.",
+  "sources": [
+    { "label": "GitHub", "url": "https://github.com/org/repo" },
+    { "label": "Docs", "url": "https://docs.example.com" }
+  ]
 }
 ```
 
-#### Update card cũ (khi thông tin thay đổi):
-- Cập nhật `desc` nếu có tính năng mới quan trọng
-- Cập nhật `tags` nếu stars/version thay đổi đáng kể (>20% change)
-- Thêm `"hot": true` nếu tool vừa có release lớn
-- Bỏ `"hot": true` nếu đã lâu không có update
+**Rules:**
+- `desc`: Max 1 dòng, tiếng Việt có dấu
+- `detail`: 2-4 dòng, tiếng Việt có dấu, include stars + license nếu có
+- `added_date`: Format YYYY-MM-DD, dùng ngày thêm card
+- `sources`: Ít nhất 1 link (GitHub preferred), max 3-4 links
+- **Thêm card mới vào cuối `items[]`** của section tương ứng
 
-#### Thêm section mới (hiếm khi):
-```json
-{
-  "id": "new-section",
-  "num": 10,
-  "title": "Section Title — Subtitle",
-  "color": "lime",
-  "badge": "🆕 New",
-  "gridCols": 3,
-  "cards": [...]
-}
-```
-Nhớ thêm vào `legend` array nữa.
+## Sections hiện tại
 
-### Bước 6: Update metadata
+| # | Section title (match by) | Emoji | Layer |
+|:-:|--------------------------|:-----:|:-----:|
+| 1 | Giao Thức & Tiêu Chuẩn | 🔌 | L5 |
+| 2 | Agent Frameworks | 🤖 | L4 |
+| 3 | Công Cụ Coding AI | 💻 | L4 |
+| 4 | Hệ Thống Memory | 🧠 | L3 |
+| 5 | Agent Skills & Plugins | 🛠️ | L3 |
+| 6 | Low-Code / No-Code | ⚡ | L2 |
+| 7 | Observability & Testing | 🔍 | L2 |
+| 8 | Xu Hướng 2026 | 🔮 | L1 |
+
+**Tìm section bằng `title` field**, không dùng index.
+
+## Validation
+
+Sau khi sửa data.json:
+
 ```bash
-node -e "const d=JSON.parse(require('fs').readFileSync('data.json','utf8'));const [a,b]=d.meta.version.split('.').map(Number);d.meta.version=a+'.'+(b+1);d.meta.lastUpdated=new Date().toISOString().split('T')[0];require('fs').writeFileSync('data.json',JSON.stringify(d,null,2));console.log('✅ Updated to v'+d.meta.version)"
-```
-
-### Bước 7: Validate
-```bash
+# 1. Validate JSON syntax
 node -e "JSON.parse(require('fs').readFileSync('data.json','utf8'));console.log('✅ JSON valid')"
+
+# 2. Count cards
+node -e "const d=JSON.parse(require('fs').readFileSync('data.json','utf8'));let t=0;d.layers.forEach(l=>l.sections.forEach(s=>{console.log(s.emoji,s.title,':',s.items.length,'cards');t+=s.items.length}));console.log('Total:',t,'cards')"
+
+# 3. Check new cards have required fields
+node -e "const d=JSON.parse(require('fs').readFileSync('data.json','utf8'));const req=['name','desc','added_date','detail','sources'];let ok=true;d.layers.forEach(l=>l.sections.forEach(s=>s.items.forEach(i=>{const m=req.filter(f=>!i[f]);if(m.length){console.log('❌',i.name||'UNNAMED','missing:',m.join(', '));ok=false}})));if(ok)console.log('✅ All cards have required fields')"
 ```
 
-### Bước 8: Tóm tắt cho Baron
-Format:
+## Commit Convention
+
 ```
-📊 Mindmap Update Summary (vX.Y → vX.Z)
-
-✅ Updated:
-- [section]: Mô tả ngắn thay đổi
-
-➕ Added:
-- [card name] vào [section]: Lý do
-
-📝 Sources:
-- URL 1 (finding)
-- URL 2 (finding)
-
-❓ Cần Baron quyết định:
-- [Gì đó chưa chắc chắn]
+feat(data): add [tool name] card to [section]
+feat(data): add N new cards for vX.Y
+fix(data): fix [description] in data.json
 ```
 
-Chờ Baron confirm "ok" hoặc "commit" trước khi:
-```bash
-git add data.json CHANGELOG.md
-git commit -m "🧠 Update mindmap vX.Y — [tóm tắt ngắn]"
-git push
-```
+## ⚠️ Constraints
 
-## Quy tắc vàng
-1. **KHÔNG bao giờ sửa index.html** — chỉ sửa data.json
-2. **KHÔNG xóa** card/section cũ trừ khi sai fact (thêm = OK, xóa = hỏi Baron)
-3. **Tiếng Việt** cho desc/detail, English cho tags/names
-4. **Validate JSON** sau mỗi lần sửa
-5. **Tóm tắt changes** cho Baron review trước khi commit
-6. **Ghi CHANGELOG.md** cho mỗi update
-
-## Available colors
-`blue`, `cyan`, `purple`, `orange`, `green`, `rose`, `indigo`, `teal`, `sky`, `lime`, `amber`, `pink`
-
-## Tag colors (optional override)
-Mặc định tag dùng màu section. Override cho card cụ thể:
-```json
-{ "tagColors": { "+ claude-mem": "green" } }
-```
-Hoặc override toàn card: `"tagColor": "rose"`
+- **CHỈ sửa `data.json`** — KHÔNG sửa index.html
+- **KHÔNG xóa** cards/sections — chỉ thêm hoặc update
+- **KHÔNG thay đổi** existing card order
+- **KHÔNG thêm fields** ngoài schema (name, desc, added_date, detail, sources)
+- **UTF-8 encoding** — tiếng Việt có dấu đầy đủ
+- **Report git diff** trước khi commit, chờ Baron confirm
