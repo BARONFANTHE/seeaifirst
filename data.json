@@ -85,6 +85,7 @@
           "mono": true,
           "hot": true,
           "desc": "Chuẩn kết nối của <strong>Anthropic</strong> — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như 'USB-C cho AI'.",
+          "added_date": "2026-02-03",
           "detail": "<strong>Agent ↔ Tool</strong> communication · Giống \"USB-C cho AI\" · Được OpenAI, Google DeepMind, Cursor, Replit, Sourcegraph adopt<br><strong>MCP Apps</strong> (Jan 2026): Extension mới — tools trả về interactive UI (dashboards, forms) trực tiếp trong conversation<br><strong>Skills over MCP</strong>: Experimental — skill discovery & distribution qua MCP primitives",
           "tags": [
             "Python SDK 21k⭐",
@@ -119,6 +120,7 @@
           "mono": true,
           "hot": true,
           "desc": "Giao thức của <strong>Google</strong> — giúp các AI agent nói chuyện và hợp tác với nhau, dù được xây từ bất kỳ nền tảng nào.",
+          "added_date": "2026-02-03",
           "detail": "<strong>Agent ↔ Agent</strong> communication · Bổ sung MCP (MCP = tools, A2A = agents)<br><strong>Agent Cards</strong>: JSON mô tả capabilities, cho phép agent discover nhau<br><strong>v0.3</strong> (Jul 2025): gRPC support, security cards, Python SDK mở rộng<br>150+ organizations support · Linux Foundation hosted",
           "tags": [
             "Google ADK native",
@@ -156,6 +158,7 @@
           "name": "LangGraph",
           "mono": true,
           "desc": "Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.",
+          "added_date": "2026-02-03",
           "tags": [
             "14k⭐",
             "4.2M downloads/mo"
@@ -181,6 +184,7 @@
           "name": "CrewAI",
           "mono": true,
           "desc": "Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.",
+          "added_date": "2026-02-03",
           "tags": [
             "Multi-agent crews",
             "Free core"
@@ -206,6 +210,7 @@
           "name": "AutoGen",
           "mono": true,
           "desc": "Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.",
+          "added_date": "2026-02-03",
           "tags": [
             "Microsoft",
             "Flexible arch"
@@ -227,6 +232,7 @@
           "name": "OpenAI Agents SDK",
           "mono": true,
           "desc": "SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.",
+          "added_date": "2026-02-03",
           "tags": [
             "11k⭐",
             "100+ LLMs"
@@ -248,6 +254,7 @@
           "name": "Google ADK",
           "mono": true,
           "desc": "Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.",
+          "added_date": "2026-02-03",
           "tags": [
             "A2A support",
             "Interactions API"
@@ -269,6 +276,7 @@
           "name": "LlamaIndex",
           "mono": true,
           "desc": "Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.",
+          "added_date": "2026-02-03",
           "tags": [
             "RAG",
             "Data agents"
@@ -294,6 +302,7 @@
           "name": "Pydantic AI",
           "mono": true,
           "desc": "Xây agent an toàn kiểu dữ liệu — đảm bảo output từ AI luôn đúng cấu trúc, sẵn sàng production.",
+          "added_date": "2026-02-03",
           "tags": [
             "Type-safe",
             "Production"
@@ -315,6 +324,7 @@
           "name": "Rasa",
           "mono": true,
           "desc": "Nền tảng chatbot và voice AI — chạy trên server riêng, kiểm soát hoàn toàn dữ liệu.",
+          "added_date": "2026-02-03",
           "tags": [
             "On-prem",
             "Voice"
@@ -348,6 +358,7 @@
           "name": "Claude.ai (Web)",
           "mono": true,
           "desc": "Giao diện chat của Anthropic — có bộ nhớ, tìm kiếm web và kết nối công cụ qua MCP.",
+          "added_date": "2026-02-03",
           "tags": [
             "claude.ai",
             "session_handoff",
@@ -375,6 +386,7 @@
           "name": "Claude Code (CLI)",
           "mono": true,
           "desc": "Agent lập trình chạy trong terminal — hiểu 200K token context, hỗ trợ plugins và skills.",
+          "added_date": "2026-02-03",
           "tags": [
             "claude.md",
             "+ claude-mem",
@@ -401,6 +413,7 @@
           "name": "ChatGPT (Web)",
           "mono": true,
           "desc": "Chat AI phổ biến nhất của OpenAI — có GPTs, search, tools và hệ thống nhớ riêng.",
+          "added_date": "2026-02-03",
           "tags": [
             "G_instruction.ai",
             "session_handoff",
@@ -425,6 +438,7 @@
           "name": "Codex CLI",
           "mono": true,
           "desc": "Agent code của OpenAI — chạy trong terminal hoặc cloud sandbox, xử lý task tuần tự.",
+          "added_date": "2026-02-03",
           "tags": [
             "AGENTS.md",
             "Cloud sandbox",
@@ -461,6 +475,7 @@
             "949⭐/24h"
           ],
           "desc": "Plugin giúp <strong>Claude Code</strong> có trí nhớ dài hạn — tự ghi lại kinh nghiệm, nén thông minh và nhớ cho lần làm việc sau.",
+          "added_date": "2026-02-03",
           "detail": "<strong>Kiến trúc:</strong> 5 lifecycle hooks (SessionStart → UserPromptSubmit → PostToolUse → Summary → SessionEnd)<br><strong>RAD</strong> (Retrieval Augmented Decisions): open standard mới — RAG captures knowledge, RAD captures intelligence<br><strong>Endless Mode</strong>: ~1000 tool uses (vs 50 mặc định), O(N) scaling",
           "levels": [
             "Lv.1 — Tra danh mục",
@@ -483,6 +498,7 @@
         {
           "icon": "📦",
           "name": "Hệ thống Memory khác",
+          "added_date": "2026-02-03",
           "subItems": [
             {
               "title": "CLAUDE.md (native)",
@@ -530,6 +546,7 @@
           "icon": "📚",
           "name": "Universal Agent Skills",
           "desc": "Skill là file .md chứa hướng dẫn cho AI agent — đơn giản nhưng hiệu quả, chạy được trên mọi AI coding tool.",
+          "added_date": "2026-02-03",
           "detail": "<strong>awesome-agent-skills</strong> (VoltAgent): 200+ skills từ official teams + community<br><strong>antigravity-awesome-skills</strong>: 626+ skills — \"OS for your AI Agent\"<br>Compatible: <strong>Claude Code, Codex, Gemini CLI, Cursor, Copilot, Windsurf, Antigravity, OpenCode</strong>",
           "tags": [
             "Google Labs",
@@ -552,6 +569,7 @@
         {
           "icon": "🔗",
           "name": "Skill Categories đáng chú ý",
+          "added_date": "2026-02-03",
           "subItems": [
             {
               "title": "Engineering & DevOps",
@@ -595,6 +613,7 @@
           "name": "Claude-Flow",
           "mono": true,
           "desc": "Nền tảng điều phối agent theo kiến trúc <strong>Queen + Workers</strong> — quản lý Claude, GPT, Gemini cùng lúc qua MCP.",
+          "added_date": "2026-02-03",
           "tags": [
             "12.8k⭐",
             "MIT",
@@ -615,6 +634,7 @@
           "name": "OpenClaw",
           "mono": true,
           "desc": "Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo. <strong>135k⭐</strong> trên GitHub.",
+          "added_date": "2026-02-03",
           "detail": "Evolution: Clawdbot → Moltbot → OpenClaw",
           "tags": [
             "SOUL.md",
@@ -634,6 +654,7 @@
           "name": "Claude Squad",
           "mono": true,
           "desc": "Ứng dụng terminal giúp chạy nhiều phiên Claude Code và Codex cùng lúc, mỗi phiên một workspace riêng.",
+          "added_date": "2026-02-03",
           "tags": [
             "Multi-workspace",
             "Parallel agents",
@@ -662,6 +683,7 @@
           "mono": true,
           "hot": true,
           "desc": "Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.",
+          "added_date": "2026-02-03",
           "tags": [
             "Terminal",
             "Plugins",
@@ -686,6 +708,7 @@
           "mono": true,
           "hot": true,
           "desc": "IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.",
+          "added_date": "2026-02-03",
           "tags": [
             "VS Code fork",
             "Semantic search",
@@ -708,6 +731,7 @@
           "name": "Codex CLI",
           "mono": true,
           "desc": "Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.",
+          "added_date": "2026-02-03",
           "tags": [
             "AGENTS.md",
             "Cloud sandbox",
@@ -726,6 +750,7 @@
           "name": "Windsurf",
           "mono": true,
           "desc": "IDE AI giá $15/tháng — kiến trúc Cascade Flow, hỗ trợ nhiều model và plugin JetBrains.",
+          "added_date": "2026-02-03",
           "tags": [
             "IDE",
             "Budget-friendly",
@@ -748,6 +773,7 @@
           "name": "GitHub Copilot",
           "mono": true,
           "desc": "Trợ lý code của Microsoft tích hợp sẵn trong VS Code — có Agent mode, mạnh cho doanh nghiệp.",
+          "added_date": "2026-02-03",
           "tags": [
             "VS Code",
             "Enterprise",
@@ -770,6 +796,7 @@
           "name": "Gemini CLI",
           "mono": true,
           "desc": "Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.",
+          "added_date": "2026-02-03",
           "tags": [
             "Free tier",
             "Skills",
@@ -792,6 +819,7 @@
           "name": "Cline / RooCode",
           "mono": true,
           "desc": "Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.",
+          "added_date": "2026-02-03",
           "tags": [
             "Open source",
             "Extension",
@@ -814,6 +842,7 @@
           "name": "Kiro (AWS)",
           "mono": true,
           "desc": "IDE AI của AWS theo hướng spec-first — từ yêu cầu → thiết kế → kế hoạch → code tự động.",
+          "added_date": "2026-02-03",
           "tags": [
             "Spec-first",
             "AWS",
@@ -836,6 +865,7 @@
           "name": "Replit Agent",
           "mono": true,
           "desc": "Agent trên cloud — tạo app full-stack nhanh, không cần cài đặt. Tốt nhất cho người mới bắt đầu.",
+          "added_date": "2026-02-03",
           "tags": [
             "Cloud",
             "Deploy",
@@ -867,6 +897,7 @@
           "name": "Multi-Agent Systems",
           "hot": true,
           "desc": "Hệ thống nhiều agent AI phối hợp — Gartner ghi nhận tăng <strong>1,445%</strong> quan tâm. 40% app doanh nghiệp sẽ dùng agent cuối 2026.",
+          "added_date": "2026-02-03",
           "detail": "Gartner ghi nhận lượng truy vấn về multi-agent systems tăng 1,445% từ Q1/2024 đến Q2/2025. Dự đoán 40% enterprise apps sẽ tích hợp AI agents cuối 2026 (vs 5% năm 2025). Đến 2027, 70% MAS sẽ dùng specialized agents thay vì general-purpose. Thị trường agentic AI từ $7.8B (2025) lên $52B (2030). Xu hướng: từ monolithic agents sang orchestrated teams — giống microservices revolution.",
           "sources": [
             {
@@ -887,6 +918,7 @@
           "icon": "🔍",
           "name": "Mechanistic Interpretability",
           "desc": "Nghiên cứu cách AI 'suy nghĩ' bên trong — giúp hiểu và kiểm soát hành vi AI tốt hơn. Đột phá 2026 theo MIT.",
+          "added_date": "2026-02-03",
           "detail": "MIT Technology Review chọn là 1 trong 10 Breakthrough Technologies 2026. Anthropic dùng 'kính hiển vi AI' phát hiện 34 triệu features trong Claude — từ 'sarcasm' đến 'DNA sequences'. OpenAI xây 'AI lie detector' dựa trên model internals. Google DeepMind phát hành Gemma Scope 2 — bộ toolkit interpretability mã nguồn mở lớn nhất. Mục tiêu: biến AI từ 'hộp đen' thành 'hộp kính' — hiểu được tại sao AI đưa ra quyết định.",
           "sources": [
             {
@@ -907,6 +939,7 @@
           "icon": "🌍",
           "name": "World Models",
           "desc": "AI mô phỏng thế giới thực — LeCun đầu tư $5B, Google và startup đua nhau phát triển. Thị trường gaming $276B vào 2030.",
+          "added_date": "2026-02-03",
           "detail": "AI mô phỏng thế giới thực — LeCun (Meta) đầu tư $5B+, Google và startup đua nhau phát triển. World models hiểu physics, dự đoán kết quả hành động trong môi trường 3D. Ứng dụng: tự lái xe, robotics, game development, simulation. Thị trường gaming $276B vào 2030 là động lực lớn. Gần đây: Genie 2 (Google), video generation models chuyển thành world simulators.",
           "sources": [
             {
@@ -923,6 +956,7 @@
           "icon": "💻",
           "name": "Generative Coding",
           "desc": "AI viết 30% code tại Microsoft, 25%+ tại Google. 'Tiếng Anh đang trở thành ngôn ngữ lập trình mới.'",
+          "added_date": "2026-02-03",
           "detail": "AI viết 30% code tại Microsoft, 25%+ tại Google. GitHub Copilot có tỷ lệ acceptance ~30% suggestions. MIT Technology Review chọn là Breakthrough 2026. Tuy nhiên Veracode phát hiện 45% code AI tạo ra chứa lỗ hổng bảo mật. Xu hướng: 'tiếng Anh đang trở thành ngôn ngữ lập trình mới' — developers chuyển từ viết code sang hướng dẫn AI viết code.",
           "sources": [
             {
@@ -939,6 +973,7 @@
           "icon": "🇨🇳",
           "name": "Chinese Open-Source AI",
           "desc": "DeepSeek R1 gây sốc giới AI — model suy luận mã nguồn mở từ Trung Quốc. Khoảng cách công nghệ giảm từ tháng xuống tuần.",
+          "added_date": "2026-02-03",
           "detail": "DeepSeek R1 gây sốc — model reasoning mã nguồn mở từ Trung Quốc, hiệu suất gần bằng GPT-4 với chi phí thấp hơn nhiều. Qwen (Alibaba) liên tục cập nhật, cạnh tranh trực tiếp với frontier models. Khoảng cách công nghệ Mỹ-Trung giảm từ tháng xuống tuần. Xu hướng: China không chỉ 'copy' mà đang 'innovate' — đặc biệt ở efficiency và cost optimization.",
           "sources": [
             {
@@ -959,6 +994,7 @@
           "icon": "🧠",
           "name": "Post-Training > Pre-Training",
           "desc": "Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.",
+          "added_date": "2026-02-03",
           "detail": "Xu hướng lớn: thay vì train model lớn hơn (pre-training tốn $100M+), giờ tập trung tinh chỉnh sau huấn luyện (post-training) bằng RLHF, DPO, RLAIF. Fine-tuning trở thành chìa khóa — model nhỏ + fine-tune tốt có thể đánh bại model lớn. Reasoning models (o1, o3, DeepSeek R1) chứng minh post-training quan trọng hơn kích thước model.",
           "sources": [
             {
@@ -975,6 +1011,7 @@
           "icon": "🏥",
           "name": "AI Drug Discovery",
           "desc": "Thuốc do AI khám phá bắt đầu thử nghiệm lâm sàng giai đoạn giữa/cuối. Tập trung: ung thư và bệnh hiếm.",
+          "added_date": "2026-02-03",
           "detail": "AI đẩy nhanh phát hiện thuốc mới — từ 10-15 năm xuống còn 2-3 năm cho giai đoạn khám phá. AlphaFold dự đoán cấu trúc protein, Isomorphic Labs (Google) hợp tác với Eli Lilly và Novartis. Insilico Medicine đưa thuốc AI-designed vào thử nghiệm lâm sàng giai đoạn II. Tập trung: ung thư, bệnh hiếm, thuốc kháng sinh mới.",
           "sources": [
             {
@@ -991,6 +1028,7 @@
           "icon": "⚡",
           "name": "AI Infrastructure",
           "desc": "Data center khổng lồ 1GW+, dùng cả điện hạt nhân cho AI. Thị trường từ $7.6B lên $52B vào 2030.",
+          "added_date": "2026-02-03",
           "detail": "Data center khổng lồ 1GW+ đang được xây dựng — dùng cả điện hạt nhân. Microsoft, Google, Amazon đều ký hợp đồng năng lượng hạt nhân dài hạn. Thị trường AI infrastructure từ $7.6B lên $52B vào 2030. NVIDIA H100/H200 thiếu hụt nghiêm trọng. Xu hướng: hyperscale AI data centers gần nguồn năng lượng rẻ (Texas, Scandinavia).",
           "sources": [
             {
@@ -1007,6 +1045,7 @@
           "icon": "🔐",
           "name": "AI Governance",
           "desc": "Agent AI giám sát các agent AI khác — đặt rào chắn an toàn và giữ con người trong vòng kiểm soát.",
+          "added_date": "2026-02-03",
           "detail": "Agent AI giám sát agent AI khác — 'governance agents' phát hiện policy violations. EU AI Act có hiệu lực đầy đủ 2026. Gartner dự đoán 2,000+ vụ kiện 'death by AI' cuối 2026 do thiếu guardrails. 'Bounded autonomy' — agent có giới hạn hành động rõ ràng, escalation paths khi không chắc chắn. Xu hướng: compliance-by-design thay vì compliance-as-afterthought.",
           "sources": [
             {
