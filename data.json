@@ -298,28 +298,6 @@
           ]
         },
         {
-          "icon": "🔒",
-          "name": "Pydantic AI",
-          "mono": true,
-          "desc": "Xây agent an toàn kiểu dữ liệu — đảm bảo output từ AI luôn đúng cấu trúc, sẵn sàng production.",
-          "added_date": "2026-02-03",
-          "tags": [
-            "Type-safe",
-            "Production"
-          ],
-          "detail": "Agent framework đặt type safety lên hàng đầu — dùng Pydantic models để validate input/output của agent, đảm bảo structured responses đúng schema. Hỗ trợ dependency injection, streaming, và model-agnostic (OpenAI, Anthropic, Gemini, Groq, Mistral). Phù hợp cho production systems cần reliability cao.",
-          "sources": [
-            {
-              "title": "Pydantic AI Docs",
-              "url": "https://ai.pydantic.dev/"
-            },
-            {
-              "title": "Pydantic AI GitHub",
-              "url": "https://github.com/pydantic/pydantic-ai"
-            }
-          ]
-        },
-        {
           "icon": "💬",
           "name": "Rasa",
           "mono": true,
@@ -342,6 +320,54 @@
             {
               "title": "Rasa Docs",
               "url": "https://rasa.com/docs/"
+            }
+          ]
+        },
+        {
+          "name": "Browser-Use",
+          "desc": "Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 73K+ stars",
+          "added_date": "2026-02-04",
+          "detail": "Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP server để dùng trong Claude Code/Cursor. Có Browser-Use Cloud cho deploy production. 73K+ stars, MIT license, Python SDK đơn giản chỉ vài dòng code.",
+          "sources": [
+            {
+              "title": "GitHub",
+              "url": "https://github.com/browser-use/browser-use"
+            },
+            {
+              "title": "Docs",
+              "url": "https://docs.browser-use.com"
+            }
+          ]
+        },
+        {
+          "name": "Pydantic AI",
+          "desc": "Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers",
+          "added_date": "2026-02-04",
+          "detail": "Pydantic AI mang triết lý type-safety của FastAPI vào thế giới AI agents. Structured output với Pydantic models, dependency injection, streaming, và built-in evaluation framework. Hỗ trợ MCP + A2A protocols, human-in-the-loop, và 40+ LLM providers. 14.6K stars, MIT license, phát triển bởi chính team tạo ra Pydantic — thư viện validation phổ biến nhất Python.",
+          "sources": [
+            {
+              "title": "GitHub",
+              "url": "https://github.com/pydantic/pydantic-ai"
+            },
+            {
+              "title": "Docs",
+              "url": "https://ai.pydantic.dev"
+            }
+          ]
+        },
+        {
+          "name": "Mastra",
+          "desc": "TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn",
+          "added_date": "2026-02-04",
+          "detail": "Mastra là framework agent ưu tiên TypeScript, xây dựng bởi team đứng sau Gatsby.js. Cung cấp graph-based workflows, built-in RAG với vector store, evaluation framework, và MCP client/server. Hỗ trợ 40+ model providers, human-in-the-loop, và memory management. 20.7K stars, active development, phù hợp cho TypeScript/Node.js developers muốn xây agent nhanh.",
+          "sources": [
+            {
+              "title": "GitHub",
+              "url": "https://github.com/mastra-ai/mastra"
+            },
+            {
+              "title": "Docs",
+              "url": "https://mastra.ai/docs"
             }
           ]
         }
@@ -532,6 +558,18 @@
               "url": "https://www.getzep.com/"
             }
           ]
+        },
+        {
+          "name": "MemOS",
+          "desc": "Hệ điều hành bộ nhớ thống nhất cho LLM — quản lý memory qua MemCube với hỗ trợ short-term và long-term",
+          "added_date": "2026-02-04",
+          "detail": "MemOS cung cấp kiến trúc memory layer chuẩn hóa cho AI agents với MemCube — đơn vị bộ nhớ cơ bản chứa cả dữ liệu và metadata. Hỗ trợ nhiều loại memory (parametric, activation, long-term) và tích hợp được với các framework phổ biến. ~4.9K stars, active development (v2.0.4, Jan 2026). Unique vì cung cấp unified memory interface mà Mem0/Zep chưa giải quyết trọn vẹn.",
+          "sources": [
+            {
+              "title": "GitHub",
+              "url": "https://github.com/MemTensor/MemOS"
+            }
+          ]
         }
       ]
     },
@@ -547,7 +585,7 @@
           "name": "Universal Agent Skills",
           "desc": "Skill là file .md chứa hướng dẫn cho AI agent — đơn giản nhưng hiệu quả, chạy được trên mọi AI coding tool.",
           "added_date": "2026-02-03",
-          "detail": "<strong>awesome-agent-skills</strong> (VoltAgent): 200+ skills từ official teams + community<br><strong>antigravity-awesome-skills</strong>: 626+ skills — \"OS for your AI Agent\"<br>Compatible: <strong>Claude Code, Codex, Gemini CLI, Cursor, Copilot, Windsurf, Antigravity, OpenCode</strong>",
+          "detail": "Hệ sinh thái Agent Skills đang bùng nổ — Anthropic đã chuẩn hóa format SKILL.md để dạy AI agents kỹ năng chuyên biệt. Antigravity Awesome Skills (631+ skills, V4.0) là bộ sưu tập lớn nhất, hỗ trợ Claude Code, Gemini CLI, Codex CLI, Cursor, OpenCode. VoltAgent cung cấp 200+ skills từ các team chính thức (Stripe, Cloudflare, Hugging Face, Sentry). Cài đặt đơn giản: npx antigravity-awesome-skills hoặc clone vào .agent/skills/.",
           "tags": [
             "Google Labs",
             "Hugging Face",
@@ -557,12 +595,16 @@
           ],
           "sources": [
             {
-              "title": "Awesome Agent Skills",
-              "url": "https://github.com/anthropics/awesome-agent-skills"
+              "title": "Antigravity Skills",
+              "url": "https://github.com/sickn33/antigravity-awesome-skills"
             },
             {
-              "title": "Antigravity Skills Collection",
-              "url": "https://github.com/anthropics/antigravity"
+              "title": "VoltAgent Skills",
+              "url": "https://github.com/VoltAgent/awesome-agent-skills"
+            },
+            {
+              "title": "Agent Skills (Anthropic)",
+              "url": "https://github.com/agentskills"
             }
           ]
         },
@@ -880,6 +922,38 @@
             {
               "title": "Replit Agent Docs",
               "url": "https://docs.replit.com/replitai/agent"
+            }
+          ]
+        },
+        {
+          "name": "OpenCode",
+          "desc": "Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 96K+ stars, MIT license",
+          "added_date": "2026-02-04",
+          "detail": "OpenCode do SST team phát triển, là open-source alternative cho Claude Code với 96K+ GitHub stars (Top 100 repos). Hỗ trợ OpenAI, Anthropic, Google, Groq, local models — không bị lock vào 1 provider. TUI đẹp (Bubble Tea), có LSP integration, session management, và multi-file editing. Viết bằng Go, cài qua npm/brew/curl. Tích hợp GitHub Actions để review PR tự động.",
+          "sources": [
+            {
+              "title": "GitHub",
+              "url": "https://github.com/anomalyco/opencode"
+            },
+            {
+              "title": "Website",
+              "url": "https://opencode.ai"
+            }
+          ]
+        },
+        {
+          "name": "Goose",
+          "desc": "Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM",
+          "added_date": "2026-02-04",
+          "detail": "Goose là open-source coding agent từ Block (formerly Square), viết bằng Rust cho performance cao. Khác Claude Code/Cursor ở chỗ: Goose tự chạy commands, install dependencies, debug errors — không chỉ suggest code. Mở rộng qua MCP extensions, có desktop app + CLI. 29.7K stars, Apache-2.0 license, hỗ trợ mọi LLM provider.",
+          "sources": [
+            {
+              "title": "GitHub",
+              "url": "https://github.com/block/goose"
+            },
+            {
+              "title": "Website",
+              "url": "https://block.github.io/goose"
             }
           ]
         }
