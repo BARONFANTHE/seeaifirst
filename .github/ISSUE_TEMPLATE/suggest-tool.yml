@@ -1,0 +1,65 @@
+name: "🛠️ Suggest a Tool"
+description: "Đề xuất tool/framework mới cho AI Mindmap"
+title: "[Suggest] "
+labels: ["suggestion"]
+body:
+  - type: input
+    id: tool-name
+    attributes:
+      label: "Tool Name"
+      placeholder: "e.g. LangGraph"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category"
+      options:
+        - Protocols & Standards
+        - Agent Frameworks
+        - Coding AI Tools
+        - Memory Systems
+        - Agent Skills & Plugins
+        - Low-Code / No-Code
+        - Observability & Testing
+        - Trends 2026
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: github-url
+    attributes:
+      label: "GitHub URL"
+      placeholder: "https://github.com/..."
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: "Website / Docs URL"
+      placeholder: "https://..."
+    validations:
+      required: false
+  - type: input
+    id: stars
+    attributes:
+      label: "GitHub Stars"
+      placeholder: "e.g. 15K"
+    validations:
+      required: false
+  - type: textarea
+    id: why-include
+    attributes:
+      label: "Why Include?"
+      description: "Tại sao tool này nên có trong AI Mindmap?"
+      placeholder: "Tool này giải quyết vấn đề gì? Có gì unique?"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Mô tả ngắn về tool (1-2 câu tiếng Việt)"
+      placeholder: "Framework mã nguồn mở cho..."
+    validations:
+      required: false
