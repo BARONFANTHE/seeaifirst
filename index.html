@@ -445,6 +445,78 @@ html, body {
   background: var(--hover); color: var(--text-secondary);
 }
 
+/* ═══ Detail View ═══ */
+.detail-panel {
+  max-width: 640px; margin: 0 auto; padding: 32px 32px 60px;
+  animation: fadeSlide 0.25s ease;
+}
+.detail-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 8px; border: none;
+  cursor: pointer; font-family: inherit;
+  font-size: 12px; font-weight: 500; margin-bottom: 20px;
+  background: var(--hover); color: var(--text-secondary);
+  transition: background 0.15s;
+}
+.detail-back:hover { background: var(--active); }
+.detail-breadcrumb {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--text-muted); margin-bottom: 20px;
+}
+.detail-title-row {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 8px; flex-wrap: wrap;
+}
+.detail-title {
+  font-size: 28px; font-weight: 700; letter-spacing: -0.03em;
+  margin: 0; color: var(--text);
+}
+.detail-desc {
+  font-size: 16px; line-height: 1.6; margin: 0 0 28px;
+  color: var(--text-secondary);
+}
+.detail-tags {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+}
+.detail-tag {
+  font-size: 12px; font-weight: 500;
+  padding: 5px 14px; border-radius: 99px;
+  background: var(--hover); color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.detail-box {
+  padding: 24px; border-radius: 14px;
+  background: var(--hover); border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.detail-box-label {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 12px;
+}
+.detail-box p {
+  font-size: 14px; line-height: 1.8; margin: 0; color: var(--text-secondary);
+}
+.detail-sources-label {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 12px;
+}
+.detail-sources {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.detail-source-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 10px;
+  font-size: 13px; font-weight: 500;
+  background: var(--hover); border: 1px solid var(--border);
+  text-decoration: none; transition: all 0.2s;
+}
+.detail-source-link:hover { opacity: 0.85; }
+.detail-footer {
+  margin-top: 32px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--text-dim);
+}
+
 /* ═══ Responsive ═══ */
 @media (max-width: 768px) {
   #sidebar {
@@ -795,7 +867,75 @@ function renderNewspaper() {
 
 function renderDetail() {
   const panel = document.getElementById('right-panel');
-  panel.innerHTML = '<div style="padding:40px;color:var(--text-muted);font-size:14px;">Detail view — Task 4</div>';
+  const card = selected.card;
+  const section = selected.section;
+  const color = getHex(section.color);
+
+  const arrowLeftSvg = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const chevronRightSvg = '<svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const externalLinkSvg = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3H3V13H13V10M9 3H13V7M13 3L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  let html = `<div class="detail-panel">`;
+
+  // Back button
+  html += `<button class="detail-back" id="detail-back-btn">${arrowLeftSvg} Quay lại ${escapeHtml(section.title)}</button>`;
+
+  // Breadcrumb
+  html += `<div class="detail-breadcrumb">`;
+  html += `<span>${escapeHtml(section.badge || '')}</span>`;
+  html += `<span>${escapeHtml(section.title)}</span>`;
+  html += chevronRightSvg;
+  html += `<span style="color:var(--text-secondary)">${escapeHtml(card.name)}</span>`;
+  html += `</div>`;
+
+  // Title + badges
+  html += `<div class="detail-title-row">`;
+  html += `<h1 class="detail-title">${escapeHtml(card.name)}</h1>`;
+  if (card.hot) html += `<span class="badge-hot" style="font-size:11px;padding:3px 10px;background:#ef4444;color:#fff;">HOT</span>`;
+  if (isNew(card.added_date)) html += `<span class="badge-new" style="font-size:11px;padding:3px 10px;background:#10b981;color:#fff;">NEW</span>`;
+  html += `</div>`;
+
+  // Description (allows HTML)
+  if (card.desc) html += `<p class="detail-desc">${card.desc}</p>`;
+
+  // Tags
+  if (card.tags && card.tags.length > 0) {
+    html += `<div class="detail-tags">`;
+    card.tags.forEach(tag => { html += `<span class="detail-tag">${escapeHtml(tag)}</span>`; });
+    html += `</div>`;
+  }
+
+  // Detail box (allows HTML)
+  if (card.detail) {
+    html += `<div class="detail-box">`;
+    html += `<div class="detail-box-label">Chi tiết</div>`;
+    html += `<p>${card.detail}</p>`;
+    html += `</div>`;
+  }
+
+  // Sources
+  if (card.sources && card.sources.length > 0) {
+    html += `<div class="detail-sources-label">Sources</div>`;
+    html += `<div class="detail-sources">`;
+    card.sources.forEach(s => {
+      const safeUrl = /^https?:\/\//i.test(s.url) ? s.url : '#';
+      html += `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer" class="detail-source-link" style="color:${color}">${externalLinkSvg} ${escapeHtml(s.title || 'Link')}</a>`;
+    });
+    html += `</div>`;
+  }
+
+  // Footer
+  html += `<div class="detail-footer"><span>Added: ${escapeHtml(card.added_date || 'N/A')}</span></div>`;
+
+  html += `</div>`;
+  panel.innerHTML = html;
+
+  // Back button listener
+  document.getElementById('detail-back-btn').addEventListener('click', () => {
+    selected = null;
+    renderRightPanel();
+    updateTreeActiveStates();
+  });
 }
 
 // ═══ Event Handlers ═══
