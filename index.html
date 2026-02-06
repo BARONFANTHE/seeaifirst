@@ -208,6 +208,7 @@ html, body {
   flex: 1;
   overflow-y: auto;
   overflow-x: hidden;
+  padding: 8px;
 }
 .sidebar-footer {
   display: flex;
@@ -293,6 +294,63 @@ html, body {
 #search-results {
   max-height: 400px;
   overflow-y: auto;
+}
+
+/* ═══ Tree Sidebar ═══ */
+.tree-section { margin-bottom: 2px; }
+.tree-folder {
+  display: flex; align-items: center; gap: 6px;
+  width: 100%; padding: 7px 8px;
+  border: none; cursor: pointer; border-radius: 6px;
+  font-size: 13px; font-weight: 600; text-align: left;
+  font-family: inherit;
+  background: transparent; color: var(--text);
+  transition: background 0.15s;
+}
+.tree-folder:hover { background: var(--hover); }
+.tree-folder.active { background: var(--active); }
+.tree-chevron {
+  font-size: 10px; width: 14px; text-align: center;
+  color: var(--text-muted); flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.tree-folder-icon { flex-shrink: 0; }
+.tree-folder-title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tree-folder-count {
+  font-size: 10px; font-weight: 600;
+  padding: 1px 7px; border-radius: 99px; flex-shrink: 0;
+}
+.tree-children {
+  overflow: hidden; transition: max-height 0.25s ease;
+}
+.tree-children.collapsed { max-height: 0 !important; }
+.tree-file {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 6px 8px 6px 34px;
+  border: none; cursor: pointer; border-radius: 6px;
+  font-size: 13px; font-weight: 400; text-align: left;
+  font-family: inherit;
+  background: transparent; color: var(--text-secondary);
+  transition: all 0.15s;
+}
+.tree-file:hover { background: var(--hover); }
+.tree-file.active {
+  background: var(--active);
+  color: var(--text); font-weight: 500;
+}
+.tree-file-name {
+  overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap; flex: 1;
+}
+.badge-hot {
+  font-size: 8px; font-weight: 700;
+  padding: 1px 5px; border-radius: 99px;
+  background: #ef444420; color: #ef4444; flex-shrink: 0;
+}
+.badge-new {
+  font-size: 8px; font-weight: 700;
+  padding: 1px 5px; border-radius: 99px;
+  background: #10b98120; color: #10b981; flex-shrink: 0;
 }
 
 /* ═══ Responsive ═══ */
@@ -394,16 +452,141 @@ const iconGradients = {
   'trends': 'linear-gradient(135deg, #ca8a04 0%, #facc15 100%)',
 };
 
+// ═══ Color Map (name → hex) ═══
+const colorHex = {
+  indigo: '#6366f1', purple: '#8b5cf6', cyan: '#06b6d4',
+  sky: '#0ea5e9', green: '#10b981', rose: '#f43f5e',
+  blue: '#3b82f6', teal: '#14b8a6', orange: '#f59e0b',
+};
+function getHex(c) { return colorHex[c] || '#94a3b8'; }
+
 // ═══ Helpers ═══
 function isNew(dateStr) {
   if (!dateStr) return false;
   return (Date.now() - new Date(dateStr).getTime()) / 864e5 <= 14;
 }
 
-// ═══ Render Functions (stubs — Tasks 2-4 sẽ implement) ═══
+// ═══ SVG Icon Builders ═══
+function folderIcon(color, open) {
+  const fill = open ? color + '30' : 'none';
+  return `<svg class="tree-folder-icon" width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M1 4V12C1 13.1 1.9 14 3 14H13C14.1 14 15 13.1 15 12V6C15 4.9 14.1 4 13 4H8L6.5 2H3C1.9 2 1 2.9 1 4Z" stroke="${color}" stroke-width="1.2" fill="${fill}"/></svg>`;
+}
+function fileIcon(color) {
+  return `<svg class="tree-file-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="3" y="1" width="10" height="14" rx="2" stroke="${color}" stroke-width="1.3"/><path d="M6 5H10M6 8H10M6 11H8" stroke="${color}" stroke-width="1.3" stroke-linecap="round"/></svg>`;
+}
+
+// ═══ Tree Sidebar ═══
+function buildTreeSection(section) {
+  const color = getHex(section.color);
+  let h = '';
+  h += `<button class="tree-folder" data-section-id="${escapeHtml(section.id)}">`;
+  h += `<span class="tree-chevron">▶</span>`;
+  h += folderIcon(color, false);
+  h += `<span class="tree-folder-title">${escapeHtml(section.title)}</span>`;
+  h += `<span class="tree-folder-count" style="background:${color}15;color:${color}">${section.cards.length}</span>`;
+  h += `</button>`;
+  h += `<div class="tree-children collapsed">`;
+  section.cards.forEach(card => {
+    h += `<button class="tree-file" data-card-name="${escapeHtml(card.name)}" data-section-id="${escapeHtml(section.id)}">`;
+    h += fileIcon('var(--text-muted)');
+    h += `<span class="tree-file-name">${escapeHtml(card.name)}</span>`;
+    if (card.hot) h += `<span class="badge-hot">HOT</span>`;
+    if (isNew(card.added_date)) h += `<span class="badge-new">NEW</span>`;
+    h += `</button>`;
+  });
+  h += `</div>`;
+  return h;
+}
+
 function renderTree() {
   const container = document.getElementById('tree-container');
-  container.innerHTML = '<div style="padding:20px;color:var(--text-muted);font-size:13px;">Tree sidebar — Task 2</div>';
+  container.innerHTML = '';
+  data.sections.forEach(section => {
+    const div = document.createElement('div');
+    div.className = 'tree-section';
+    div.innerHTML = buildTreeSection(section);
+    container.appendChild(div);
+  });
+  attachTreeListeners();
+}
+
+function attachTreeListeners() {
+  // Folder click
+  document.querySelectorAll('.tree-folder').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sectionId = btn.dataset.sectionId;
+      const section = data.sections.find(s => s.id === sectionId);
+      if (!section) return;
+      const children = btn.nextElementSibling;
+      const isCollapsed = children.classList.contains('collapsed');
+
+      if (isCollapsed) {
+        // Expand
+        children.classList.remove('collapsed');
+        children.style.maxHeight = (section.cards.length * 36) + 'px';
+        btn.querySelector('.tree-chevron').textContent = '▼';
+        btn.querySelector('.tree-folder-icon').outerHTML = folderIcon(getHex(section.color), true);
+      } else {
+        // Collapse
+        children.classList.add('collapsed');
+        children.style.maxHeight = '0';
+        btn.querySelector('.tree-chevron').textContent = '▶';
+        btn.querySelector('.tree-folder-icon').outerHTML = folderIcon(getHex(section.color), false);
+      }
+
+      // Set active section
+      activeSection = section;
+      selected = null;
+      renderRightPanel();
+      updateTreeActiveStates();
+    });
+  });
+
+  // File click
+  document.querySelectorAll('.tree-file').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cardName = btn.dataset.cardName;
+      const sectionId = btn.dataset.sectionId;
+      const section = data.sections.find(s => s.id === sectionId);
+      if (!section) return;
+      const card = section.cards.find(c => c.name === cardName);
+      if (!card) return;
+
+      selected = { card, section };
+      activeSection = section;
+
+      // Auto-expand parent folder if collapsed
+      const children = btn.closest('.tree-children');
+      if (children && children.classList.contains('collapsed')) {
+        const folder = children.previousElementSibling;
+        children.classList.remove('collapsed');
+        children.style.maxHeight = (section.cards.length * 36) + 'px';
+        if (folder) {
+          folder.querySelector('.tree-chevron').textContent = '▼';
+          folder.querySelector('.tree-folder-icon').outerHTML = folderIcon(getHex(section.color), true);
+        }
+      }
+
+      renderRightPanel();
+      updateTreeActiveStates();
+    });
+  });
+}
+
+function updateTreeActiveStates() {
+  // Clear all active states
+  document.querySelectorAll('.tree-folder.active').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tree-file.active').forEach(el => el.classList.remove('active'));
+
+  if (selected) {
+    // Highlight the selected file
+    const file = document.querySelector(`.tree-file[data-card-name="${CSS.escape(selected.card.name)}"][data-section-id="${CSS.escape(selected.section.id)}"]`);
+    if (file) file.classList.add('active');
+  } else if (activeSection) {
+    // Highlight the active folder
+    const folder = document.querySelector(`.tree-folder[data-section-id="${CSS.escape(activeSection.id)}"]`);
+    if (folder) folder.classList.add('active');
+  }
 }
 
 function renderRightPanel() {
