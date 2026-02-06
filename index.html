@@ -315,10 +315,10 @@ async function init(){
   h+=`<footer class="fi">
     <div class="cr">Tạo bởi <strong>Baron</strong> · Hỗ trợ bởi Claude AI · v${D.meta.version}</div>
     <div class="links">
-      <a href="https://modelcontextprotocol.io" target="_blank">MCP Docs</a>
-      <a href="https://google.github.io/A2A" target="_blank">A2A Protocol</a>
-      <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank">Agent Skills</a>
-      <a href="https://github.com/BARONFANTHE/ai-mindmap" target="_blank">GitHub</a>
+      <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">MCP Docs</a>
+      <a href="https://google.github.io/A2A" target="_blank" rel="noopener noreferrer">A2A Protocol</a>
+      <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener noreferrer">Agent Skills</a>
+      <a href="https://github.com/BARONFANTHE/ai-mindmap" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
     <a class="suggest-link" href="https://github.com/BARONFANTHE/ai-mindmap/issues/new?template=suggest-tool.yml" target="_blank" rel="noopener noreferrer">💡 Suggest a Tool</a>
   </footer>`;
@@ -392,7 +392,7 @@ function card(c,col){
       });
     }
     if(c.note) h+=`<div class="note" style="background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${c.note}</div>`;
-    if(c.sources&&c.sources.length){h+=`<div class="card-sources"><span class="card-sources-label">📎 Nguồn:</span>${c.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener" class="card-source-link">${s.title} ↗</a>`).join('')}</div>`}
+    if(c.sources&&c.sources.length){h+=`<div class="card-sources"><span class="card-sources-label">📎 Nguồn:</span>${c.sources.map(s=>{const u=/^https?:\/\//i.test(s.url)?s.url:'#';return`<a href="${u}" target="_blank" rel="noopener noreferrer" class="card-source-link">${s.title} ↗</a>`}).join('')}</div>`}
     h+=`</div></div>`;
   } else {
     if(c.note) h+=`<div class="note" style="background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${c.note}</div>`;
