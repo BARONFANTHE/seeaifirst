@@ -353,6 +353,98 @@ html, body {
   background: #10b98120; color: #10b981; flex-shrink: 0;
 }
 
+/* ═══ Newspaper View ═══ */
+.newspaper {
+  max-width: 900px; margin: 0 auto; padding: 32px 32px 60px;
+  animation: fadeSlide 0.3s ease;
+}
+.newspaper-header { margin-bottom: 28px; }
+.newspaper-header-top {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 6px;
+}
+.newspaper-header-top .section-badge { font-size: 24px; }
+.newspaper-header-top h2 {
+  font-size: 24px; font-weight: 800; margin: 0;
+  color: var(--text); letter-spacing: -0.03em;
+}
+.newspaper-header-top .tool-count {
+  font-size: 12px; font-weight: 600;
+  padding: 3px 10px; border-radius: 99px;
+}
+.newspaper-subtitle {
+  font-size: 14px; color: var(--text-muted); margin: 0;
+}
+.newspaper-accent {
+  width: 48px; height: 3px; border-radius: 99px; margin-top: 14px;
+}
+.card-featured {
+  display: flex; gap: 24px; padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer; text-align: left; width: 100%;
+  font-family: inherit;
+  transition: all 0.2s; align-items: stretch;
+}
+.card-featured:hover { transform: translateY(-1px); }
+.card-featured .card-icon-block {
+  width: 180px; min-height: 140px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+}
+.card-featured .card-content {
+  flex: 1; display: flex; flex-direction: column; gap: 10px; min-width: 0;
+}
+.card-featured .card-title {
+  font-size: 20px; font-weight: 700; margin: 0;
+  color: var(--text); letter-spacing: -0.02em;
+}
+.card-featured .card-desc {
+  font-size: 14px; color: var(--text-secondary); margin: 0; line-height: 1.5;
+}
+.card-featured .card-detail {
+  font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.7; flex: 1;
+}
+.newspaper-grid {
+  display: grid; gap: 12px; margin-top: 16px;
+}
+.newspaper-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.newspaper-grid.cols-1 { grid-template-columns: 1fr; }
+.card-regular {
+  display: flex; gap: 14px; padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer; text-align: left; width: 100%;
+  font-family: inherit;
+  transition: all 0.2s; align-items: flex-start;
+}
+.card-regular:hover { transform: translateY(-1px); }
+.card-regular .card-icon-sm {
+  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.card-regular .card-content { flex: 1; min-width: 0; }
+.card-regular .card-title {
+  font-size: 14px; font-weight: 600; margin: 0 0 4px;
+  color: var(--text);
+}
+.card-regular .card-detail-clamp {
+  font-size: 12px; color: var(--text-muted); margin: 0; line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.card-title-row {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.card-tags {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;
+}
+.card-tag {
+  font-size: 11px; padding: 3px 10px; border-radius: 99px; font-weight: 500;
+  background: var(--hover); color: var(--text-secondary);
+}
+
 /* ═══ Responsive ═══ */
 @media (max-width: 768px) {
   #sidebar {
@@ -372,6 +464,9 @@ html, body {
   #sidebar.collapsed {
     transform: translateX(-100%);
   }
+  .card-featured { flex-direction: column; }
+  .card-featured .card-icon-block { width: 100%; min-height: 80px; }
+  .newspaper-grid.cols-2 { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -620,9 +715,82 @@ function renderWelcome() {
   `;
 }
 
+function buildFeaturedCard(card, section) {
+  const gradient = iconGradients[section.id] || 'var(--hover)';
+  let h = `<button class="card-featured" data-card-name="${escapeHtml(card.name)}">`;
+  h += `<div class="card-icon-block" style="background:${gradient}">${card.icon || ''}</div>`;
+  h += `<div class="card-content">`;
+  h += `<div class="card-title-row"><h3 class="card-title">${escapeHtml(card.name)}</h3>`;
+  if (card.hot) h += `<span class="badge-hot" style="font-size:10px;padding:2px 8px;background:#ef4444;color:#fff;">HOT</span>`;
+  if (isNew(card.added_date)) h += `<span class="badge-new" style="font-size:10px;padding:2px 8px;background:#10b981;color:#fff;">NEW</span>`;
+  h += `</div>`;
+  if (card.desc) h += `<p class="card-desc">${card.desc}</p>`;
+  if (card.detail) h += `<p class="card-detail">${card.detail}</p>`;
+  if (card.tags && card.tags.length) {
+    h += `<div class="card-tags">${card.tags.map(t => `<span class="card-tag">${escapeHtml(t)}</span>`).join('')}</div>`;
+  }
+  h += `</div></button>`;
+  return h;
+}
+
+function buildRegularCard(card, section) {
+  const gradient = iconGradients[section.id] || 'var(--hover)';
+  let h = `<button class="card-regular" data-card-name="${escapeHtml(card.name)}">`;
+  h += `<div class="card-icon-sm" style="background:${gradient}">${card.icon || ''}</div>`;
+  h += `<div class="card-content">`;
+  h += `<div class="card-title-row"><h4 class="card-title">${escapeHtml(card.name)}</h4>`;
+  if (card.hot) h += `<span class="badge-hot" style="font-size:10px;padding:2px 8px;background:#ef4444;color:#fff;">HOT</span>`;
+  if (isNew(card.added_date)) h += `<span class="badge-new" style="font-size:10px;padding:2px 8px;background:#10b981;color:#fff;">NEW</span>`;
+  h += `</div>`;
+  if (card.detail) h += `<p class="card-detail-clamp">${card.detail}</p>`;
+  h += `</div></button>`;
+  return h;
+}
+
+function attachNewspaperCardListeners(section) {
+  document.querySelectorAll('#right-panel .card-featured, #right-panel .card-regular').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cardName = btn.dataset.cardName;
+      const card = section.cards.find(c => c.name === cardName);
+      if (!card) return;
+      selected = { card, section };
+      renderRightPanel();
+      updateTreeActiveStates();
+    });
+  });
+}
+
 function renderNewspaper() {
   const panel = document.getElementById('right-panel');
-  panel.innerHTML = '<div style="padding:40px;color:var(--text-muted);font-size:14px;">Newspaper view — Task 3</div>';
+  const section = activeSection;
+  const cards = section.cards;
+  const featured = cards[0];
+  const rest = cards.slice(1);
+  const color = getHex(section.color);
+
+  let html = `<div class="newspaper">`;
+  html += `<div class="newspaper-header">`;
+  html += `<div class="newspaper-header-top">`;
+  html += `<span class="section-badge">${escapeHtml(section.badge || '')}</span>`;
+  html += `<h2>${escapeHtml(section.title)}</h2>`;
+  html += `<span class="tool-count" style="background:${color}15;color:${color}">${cards.length} tools</span>`;
+  html += `</div>`;
+  html += `<p class="newspaper-subtitle">${escapeHtml(section.subtitle || '')}</p>`;
+  html += `<div class="newspaper-accent" style="background:${color}"></div>`;
+  html += `</div>`;
+
+  html += buildFeaturedCard(featured, section);
+
+  if (rest.length > 0) {
+    const colClass = rest.length === 1 ? 'cols-1' : 'cols-2';
+    html += `<div class="newspaper-grid ${colClass}">`;
+    rest.forEach(card => { html += buildRegularCard(card, section); });
+    html += `</div>`;
+  }
+
+  html += `</div>`;
+  panel.innerHTML = html;
+  attachNewspaperCardListeners(section);
 }
 
 function renderDetail() {
