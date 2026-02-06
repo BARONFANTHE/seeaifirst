@@ -225,6 +225,7 @@ const sl=c=>`rgb(${g(c).bg})`;
 const tx=c=>g(c).t;
 
 function slugify(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
 
 let allCards=[];
 
@@ -266,8 +267,8 @@ async function init(){
     tw+=`<div class="tower-row" data-lid="${l.id}" onclick="jumpTo('${l.id}')" style="width:${w}%;background:${bg(l.color,.05)};border-color:${bd(l.color,.06)}">
       <div class="tw-badge" style="background:${bg(l.color,.2)};color:${tx(l.color)}">L${l.level}</div>
       <span class="tw-icon">${l.icon}</span>
-      <span class="tw-name" style="color:${tx(l.color)}">${l.name}</span>
-      <span class="tw-en">${l.nameEn}</span>
+      <span class="tw-name" style="color:${tx(l.color)}">${escapeHtml(l.name)}</span>
+      <span class="tw-en">${escapeHtml(l.nameEn)}</span>
       <span class="tw-count">${layerCounts[l.id]} items</span>
     </div>`;
   });
@@ -276,7 +277,7 @@ async function init(){
   // ═══ NAV ═══
   document.getElementById('navBtns').innerHTML=ordered.map(l=>
     `<button class="snav-btn" data-nid="${l.id}" onclick="jumpTo('${l.id}')">
-      <span class="snav-dot" style="background:${sl(l.color)}"></span>${l.icon} ${l.name}
+      <span class="snav-dot" style="background:${sl(l.color)}"></span>${l.icon} ${escapeHtml(l.name)}
     </button>`
   ).join('');
 
@@ -289,8 +290,8 @@ async function init(){
         <div class="lb-num" style="color:${tx(col)}">${layer.level}</div>
         <div class="lb-icon">${layer.icon}</div>
         <div class="lb-text">
-          <div class="lb-en" style="color:${tx(col)}">${layer.nameEn}</div>
-          <div class="lb-name" style="color:${tx(col)}">${layer.name}</div>
+          <div class="lb-en" style="color:${tx(col)}">${escapeHtml(layer.nameEn)}</div>
+          <div class="lb-name" style="color:${tx(col)}">${escapeHtml(layer.name)}</div>
           <div class="lb-desc">${layer.desc}</div>
         </div>
         <div class="lb-right">
@@ -303,7 +304,7 @@ async function init(){
     layer.sectionIds.forEach(sid=>{
       const s=sMap[sid]; if(!s) return;
       h+=`<div class="sec">`;
-      h+=`<div class="sec-head" style="color:${tx(s.color)}">${s.title}`;
+      h+=`<div class="sec-head" style="color:${tx(s.color)}">${escapeHtml(s.title)}`;
       if(s.badge) h+=` <span class="sec-badge" style="background:rgba(244,63,94,.12);color:#fda4af">${s.badge}</span>`;
       h+=`</div>`;
       h+=`<div class="cgrid g${s.gridCols}">`;
@@ -365,7 +366,7 @@ function card(c,col){
   if(c.added_date&&(Date.now()-new Date(c.added_date)<=14*864e5)) h+=`<span class="new-badge">NEW</span>`;
   h+=`<div class="card-head">`;
   if(c.icon) h+=`<span>${c.icon}</span>`;
-  h+=`<span class="card-name ${c.mono?'mono':''}">${c.name}</span>`;
+  h+=`<span class="card-name ${c.mono?'mono':''}">${escapeHtml(c.name)}</span>`;
   if(c.hot) h+=`<span class="tag tag-hot" style="background:rgba(244,63,94,.15);border:1px solid rgba(244,63,94,.25);color:#fda4af">HOT</span>`;
   if(c.extraBadges) c.extraBadges.forEach(b=>h+=`<span class="tag" style="background:${bg('green',.12)};color:${tx('green')}">${b}</span>`);
   h+=`</div>`;
@@ -374,7 +375,7 @@ function card(c,col){
     h+=`<div class="tags">`;
     c.tags.forEach(t=>{
       const cc=(c.tagColors&&c.tagColors[t])||tc;
-      h+=`<span class="tag" style="background:${bg(cc,.1)};color:${tx(cc)}">${t}</span>`;
+      h+=`<span class="tag" style="background:${bg(cc,.1)};color:${tx(cc)}">${escapeHtml(t)}</span>`;
     });
     h+=`</div>`;
   }
@@ -383,19 +384,19 @@ function card(c,col){
     if(c.detail) h+=`<div class="card-detail">${c.detail}</div>`;
     if(c.levels){
       h+=`<div class="levels">`;
-      c.levels.forEach(l=>h+=`<span class="lv" style="background:${bg('cyan',.15)};color:#67e8f9">${l}</span>`);
+      c.levels.forEach(l=>h+=`<span class="lv" style="background:${bg('cyan',.15)};color:#67e8f9">${escapeHtml(l)}</span>`);
       h+=`</div>`;
     }
     if(c.subItems){
       c.subItems.forEach(si=>{
         h+=`<div class="sub-item" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03)">
-          <div class="sub-item-t">${si.title}</div>
-          <div class="sub-item-d">${si.desc}</div>
+          <div class="sub-item-t">${escapeHtml(si.title)}</div>
+          <div class="sub-item-d">${escapeHtml(si.desc)}</div>
         </div>`;
       });
     }
     if(c.note) h+=`<div class="note" style="background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${c.note}</div>`;
-    if(c.sources&&c.sources.length){h+=`<div class="card-sources"><span class="card-sources-label">📎 Nguồn:</span>${c.sources.map(s=>{const u=/^https?:\/\//i.test(s.url)?s.url:'#';return`<a href="${u}" target="_blank" rel="noopener noreferrer" class="card-source-link">${s.title} ↗</a>`}).join('')}</div>`}
+    if(c.sources&&c.sources.length){h+=`<div class="card-sources"><span class="card-sources-label">📎 Nguồn:</span>${c.sources.map(s=>{const u=/^https?:\/\//i.test(s.url)?s.url:'#';return`<a href="${u}" target="_blank" rel="noopener noreferrer" class="card-source-link">${escapeHtml(s.title)} ↗</a>`}).join('')}</div>`}
     h+=`</div></div>`;
   } else {
     if(c.note) h+=`<div class="note" style="background:rgba(245,158,11,.04);border:1px dashed rgba(245,158,11,.12);color:#fcd34d">${c.note}</div>`;
@@ -468,7 +469,7 @@ function doSearch(q){
   el.innerHTML=matched.map(c=>{
     const dt=c.desc.replace(/<[^>]*>/g,'');
     const sn=dt.length>80?dt.slice(0,80)+'…':dt;
-    return `<div class="search-result-item" data-slug="${c.slug}"><span>${c.icon}</span><span class="search-result-name">${c.name}</span><span class="search-result-desc">${sn}</span></div>`;
+    return `<div class="search-result-item" data-slug="${c.slug}"><span>${c.icon}</span><span class="search-result-name">${escapeHtml(c.name)}</span><span class="search-result-desc">${escapeHtml(sn)}</span></div>`;
   }).join('');
 }
 document.addEventListener('keydown',e=>{
