@@ -389,7 +389,11 @@ html, body {
   font-family: inherit;
   transition: all 0.2s; align-items: stretch;
 }
-.card-featured:hover { transform: translateY(-1px); }
+.card-featured:hover {
+  transform: translateY(-1px);
+  border-color: var(--sc, rgba(255,255,255,0.12));
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
 .card-featured .card-icon-block {
   width: 180px; min-height: 140px; border-radius: 12px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
@@ -422,7 +426,10 @@ html, body {
   font-family: inherit;
   transition: all 0.2s; align-items: flex-start;
 }
-.card-regular:hover { transform: translateY(-1px); }
+.card-regular:hover {
+  transform: translateY(-1px);
+  border-color: var(--sc, rgba(255,255,255,0.1));
+}
 .card-regular .card-icon-sm {
   width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
@@ -513,23 +520,30 @@ html, body {
   background: var(--hover); border: 1px solid var(--border);
   text-decoration: none; transition: all 0.2s;
 }
-.detail-source-link:hover { opacity: 0.85; }
+.detail-source-link:hover {
+  background: var(--active);
+  border-color: var(--sc, var(--border));
+}
 .detail-footer {
   margin-top: 32px; padding-top: 20px;
   border-top: 1px solid var(--border);
   font-size: 12px; color: var(--text-dim);
 }
 
+/* ═══ Welcome Animation ═══ */
+.welcome-panel { animation: fadeIn 0.3s ease; }
+
+/* ═══ Mobile Back Button ═══ */
+.mobile-back {
+  display: none;
+}
+
 /* ═══ Responsive ═══ */
 @media (max-width: 768px) {
   #sidebar {
-    position: fixed;
-    top: 48px;
-    left: 0;
-    bottom: 0;
-    z-index: 50;
-    width: 260px;
-    min-width: 260px;
+    position: fixed; top: 48px; left: 0; bottom: 0; z-index: 100;
+    width: 280px !important; min-width: 280px !important;
+    background: var(--sidebar-bg);
     transform: translateX(-100%);
     transition: transform 0.25s ease;
   }
@@ -542,6 +556,19 @@ html, body {
   .card-featured { flex-direction: column; }
   .card-featured .card-icon-block { width: 100%; min-height: 80px; }
   .newspaper-grid.cols-2 { grid-template-columns: 1fr; }
+  .newspaper { padding: 20px 16px 40px; }
+  .detail-panel { padding: 20px 16px 40px; }
+  .mobile-back:not(.hidden) {
+    display: flex; position: fixed;
+    top: 56px; left: 8px; z-index: 50;
+    padding: 6px 12px; border-radius: 8px;
+    border: 1px solid var(--border); cursor: pointer;
+    background: var(--topbar-bg); backdrop-filter: blur(8px);
+    color: var(--text-secondary); font-size: 12px;
+    font-family: inherit; align-items: center; gap: 4px;
+    transition: background 0.15s;
+  }
+  .mobile-back:hover { background: var(--active); }
 }
 </style>
 </head>
@@ -573,7 +600,10 @@ html, body {
       </div>
       <div class="sidebar-footer">
         <span>AI Mindmap 2026</span>
-        <a href="https://github.com/BARONFANTHE/ai-mindmap" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <div style="display:flex;gap:12px;">
+          <a href="https://github.com/BARONFANTHE/ai-mindmap/issues/new?template=suggest-tool.yml" target="_blank" rel="noopener noreferrer">Suggest</a>
+          <a href="https://github.com/BARONFANTHE/ai-mindmap" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
       </div>
     </nav>
 
@@ -582,6 +612,9 @@ html, body {
       <!-- JS sẽ render Welcome / Newspaper / Detail ở đây -->
     </main>
   </div>
+
+  <!-- Mobile Back Button -->
+  <button id="mobile-back" class="mobile-back hidden">☰ Explorer</button>
 
   <!-- Search Modal (hidden by default) -->
   <div id="search-modal" class="hidden">
@@ -717,6 +750,7 @@ function attachTreeListeners() {
       // Set active section
       activeSection = section;
       selected = null;
+      collapseSidebarMobile();
       renderRightPanel();
       updateTreeActiveStates();
     });
@@ -748,6 +782,7 @@ function attachTreeListeners() {
         }
       }
 
+      collapseSidebarMobile();
       renderRightPanel();
       updateTreeActiveStates();
     });
@@ -771,6 +806,7 @@ function updateTreeActiveStates() {
 }
 
 function renderRightPanel() {
+  document.getElementById('right-panel').scrollTop = 0;
   if (selected) {
     renderDetail();
   } else if (activeSection) {
@@ -778,13 +814,15 @@ function renderRightPanel() {
   } else {
     renderWelcome();
   }
+  updateMobileBack();
 }
 
 function renderWelcome() {
   const panel = document.getElementById('right-panel');
   const totalCards = data.sections.reduce((a, s) => a + s.cards.length, 0);
+  const sectionIcons = { protocols:'🔌', frameworks:'🤖', platforms:'🏗️', memory:'🧠', skills:'🛠️', orchestration:'⚙️', 'coding-agents':'💻', trends:'🌍' };
   panel.innerHTML = `
-    <div style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;height:100%;padding:40px;">
+    <div class="welcome-panel" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;height:100%;padding:40px;">
       <div style="font-size:52px;">🧠</div>
       <h2 style="font-size:22px;font-weight:700;margin:0;color:var(--text);letter-spacing:-0.02em;">AI Mindmap 2026</h2>
       <p style="font-size:14px;color:var(--text-muted);text-align:center;line-height:1.6;max-width:360px;">
@@ -792,7 +830,7 @@ function renderWelcome() {
         <br><span style="font-size:13px;">${totalCards} tools · ${data.sections.length} danh mục</span>
       </p>
       <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
-        ${data.sections.map(s => `<span style="font-size:11px;padding:4px 12px;border-radius:99px;background:${iconGradients[s.id] ? 'var(--hover)' : 'var(--hover)'};border:1px solid var(--border);color:var(--text-secondary);font-weight:500;">${escapeHtml(s.badge || s.title)} ${s.cards.length}</span>`).join('')}
+        ${data.sections.map(s => `<span style="font-size:11px;padding:4px 12px;border-radius:99px;background:var(--hover);border:1px solid var(--border);color:var(--text-secondary);font-weight:500;">${sectionIcons[s.id] || ''} ${s.cards.length}</span>`).join('')}
       </div>
       <p style="font-size:12px;color:var(--text-dim);margin-top:8px;">
         ← Chọn danh mục bên trái hoặc <kbd style="padding:1px 6px;border-radius:4px;background:var(--hover);font-size:11px;border:1px solid var(--border);">⌘K</kbd> để tìm kiếm
@@ -803,7 +841,8 @@ function renderWelcome() {
 
 function buildFeaturedCard(card, section) {
   const gradient = iconGradients[section.id] || 'var(--hover)';
-  let h = `<button class="card-featured" data-card-name="${escapeHtml(card.name)}">`;
+  const sc = getHex(section.color);
+  let h = `<button class="card-featured" data-card-name="${escapeHtml(card.name)}" style="--sc:${sc}40">`;
   h += `<div class="card-icon-block" style="background:${gradient}">${card.icon || ''}</div>`;
   h += `<div class="card-content">`;
   h += `<div class="card-title-row"><h3 class="card-title">${escapeHtml(card.name)}</h3>`;
@@ -821,7 +860,8 @@ function buildFeaturedCard(card, section) {
 
 function buildRegularCard(card, section) {
   const gradient = iconGradients[section.id] || 'var(--hover)';
-  let h = `<button class="card-regular" data-card-name="${escapeHtml(card.name)}">`;
+  const sc = getHex(section.color);
+  let h = `<button class="card-regular" data-card-name="${escapeHtml(card.name)}" style="--sc:${sc}30">`;
   h += `<div class="card-icon-sm" style="background:${gradient}">${card.icon || ''}</div>`;
   h += `<div class="card-content">`;
   h += `<div class="card-title-row"><h4 class="card-title">${escapeHtml(card.name)}</h4>`;
@@ -934,7 +974,7 @@ function renderDetail() {
     html += `<div class="detail-sources">`;
     card.sources.forEach(s => {
       const safeUrl = /^https?:\/\//i.test(s.url) ? s.url : '#';
-      html += `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer" class="detail-source-link" style="color:${color}">${externalLinkSvg} ${escapeHtml(s.title || 'Link')}</a>`;
+      html += `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer" class="detail-source-link" style="color:${color};--sc:${color}40">${externalLinkSvg} ${escapeHtml(s.title || 'Link')}</a>`;
     });
     html += `</div>`;
   }
@@ -952,6 +992,24 @@ function renderDetail() {
     renderRightPanel();
     updateTreeActiveStates();
   });
+}
+
+// ═══ Mobile Helpers ═══
+function collapseSidebarMobile() {
+  if (window.innerWidth < 768) {
+    sidebarCollapsed = true;
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.remove('mobile-open');
+    sidebar.classList.add('collapsed');
+  }
+}
+
+function updateMobileBack() {
+  const btn = document.getElementById('mobile-back');
+  if (!btn) return;
+  const isMobile = window.innerWidth < 768;
+  const hasContent = selected || activeSection;
+  btn.classList.toggle('hidden', !(isMobile && sidebarCollapsed && hasContent));
 }
 
 // ═══ Event Handlers ═══
@@ -1030,6 +1088,7 @@ function selectSearchResult(item) {
   activeSection = item.section;
   closeSearch();
   updateHash(item.card.name);
+  collapseSidebarMobile();
   renderRightPanel();
   updateTreeActiveStates();
 }
@@ -1063,6 +1122,14 @@ async function init() {
     const res = await fetch('data.json');
     data = await res.json();
 
+    // Restore theme
+    const savedTheme = localStorage.getItem('ai-mindmap-theme');
+    if (savedTheme === 'light') {
+      isDark = false;
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.getElementById('theme-toggle').textContent = '🌙';
+    }
+
     // Update total tools count
     const total = data.sections.reduce((a, s) => a + s.cards.length, 0);
     document.getElementById('total-tools').textContent = total + ' tools';
@@ -1078,6 +1145,16 @@ async function init() {
       isDark = !isDark;
       document.documentElement.setAttribute('data-theme', isDark ? '' : 'light');
       document.getElementById('theme-toggle').textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('ai-mindmap-theme', isDark ? 'dark' : 'light');
+    });
+
+    // Mobile back button
+    document.getElementById('mobile-back').addEventListener('click', () => {
+      sidebarCollapsed = false;
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.add('mobile-open');
+      sidebar.classList.remove('collapsed');
+      updateMobileBack();
     });
 
     // Keyboard shortcuts
