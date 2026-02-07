@@ -589,6 +589,47 @@
               "url": "https://github.com/modelcontextprotocol/experimental-ext-skills"
             }
           ]
+        },
+        {
+          "id": "superpowers",
+          "name": "Superpowers",
+          "icon": "⚡",
+          "desc": "Framework kỹ năng dạng agent cho Claude Code — tự động kích hoạt skills phù hợp khi làm việc.",
+          "detail": "Superpowers là framework skills hàng đầu cho Claude Code với 20+ skills sẵn có: brainstorming, TDD, debugging, code review, git worktrees... Skills tự động kích hoạt theo context — ví dụ khi debug thì systematic-debugging skill tự chạy. Hỗ trợ subagent-driven development: chia task thành nhiều subtask, mỗi subtask do subagent thực hiện rồi review. Claude có thể tự chạy hàng giờ không cần can thiệp. Cài đặt qua plugin marketplace của Claude Code. Cũng hỗ trợ Codex và OpenCode.",
+          "tags": ["claude-code", "skills", "TDD", "subagents", "plugin"],
+          "sources": [
+            {"title": "GitHub", "url": "https://github.com/obra/superpowers"},
+            {"title": "Blog tác giả", "url": "https://blog.fsck.com/2025/10/09/superpowers/"}
+          ],
+          "added_date": "2026-02-08",
+          "updated_date": "2026-02-08"
+        },
+        {
+          "id": "agents-wshobson",
+          "name": "Agents (wshobson)",
+          "icon": "🤖",
+          "desc": "Bộ sưu tập 112 agents + 146 skills + 73 plugins chuyên biệt cho Claude Code — lớn nhất hiện tại.",
+          "detail": "Agents là hệ thống production-ready kết hợp 112 AI agents chuyên biệt, 16 workflow orchestrators, 146 skills, và 79 development tools — tất cả tổ chức thành 73 plugins đơn mục đích cho Claude Code. Các agents chia theo domain: architecture, languages, infrastructure, security, data/AI, documentation, business operations, SEO. Cài từng plugin riêng lẻ để tối ưu token usage. Hỗ trợ Sonnet + Haiku routing tự động theo độ phức tạp task.",
+          "tags": ["claude-code", "multi-agent", "plugins", "skills", "orchestration"],
+          "sources": [
+            {"title": "GitHub", "url": "https://github.com/wshobson/agents"},
+            {"title": "Tác giả", "url": "https://sethhobson.com/"}
+          ],
+          "added_date": "2026-02-08",
+          "updated_date": "2026-02-08"
+        },
+        {
+          "id": "planning-with-files",
+          "name": "Planning with Files",
+          "icon": "📋",
+          "desc": "Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.",
+          "detail": "Planning-with-files triển khai mô hình lập kế hoạch bền vững bằng 3 file markdown: task_plan.md (mục tiêu + phases), findings.md (ghi chép phát hiện), progress.md (log tiến trình). Tuân thủ '2-Action Rule' — sau mỗi 2 thao tác view/search phải ghi lại findings. Có hooks tự động đọc lại task_plan trước mỗi thao tác write để tránh drift khỏi mục tiêu ban đầu. Lấy cảm hứng từ workflow của Manus (được Meta mua lại $2B). Hỗ trợ Claude Code, Codex, Gemini CLI, Cursor.",
+          "tags": ["claude-code", "planning", "markdown", "context-engineering", "skill"],
+          "sources": [
+            {"title": "GitHub", "url": "https://github.com/OthmanAdi/planning-with-files"}
+          ],
+          "added_date": "2026-02-08",
+          "updated_date": "2026-02-08"
         }
       ]
     },
