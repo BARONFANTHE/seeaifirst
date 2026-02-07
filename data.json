@@ -2,7 +2,7 @@
   "meta": {
     "title": "AI Ecosystem Mindmap 2026",
     "subtitle": "Phân tầng từ Nền tảng → Ứng dụng → Xu hướng",
-    "lastUpdated": "2026-02-03",
+    "lastUpdated": "2026-02-08",
     "updatedBy": "Claude AI + Baron",
     "version": "5.0"
   },
@@ -43,7 +43,8 @@
       "sectionIds": [
         "memory",
         "skills",
-        "orchestration"
+        "orchestration",
+        "observability"
       ]
     },
     {
@@ -1120,6 +1121,75 @@
               "url": "https://www.gartner.com/en/articles/strategic-predictions-for-2026"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "observability",
+      "title": "Observability & Evaluation — Giám sát và đánh giá AI",
+      "color": "#6366f1",
+      "badge": "📊",
+      "cards": [
+        {
+          "name": "Langfuse",
+          "desc": "Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management",
+          "added_date": "2026-02-08",
+          "detail": "LLM engineering platform phổ biến nhất (20K+ ⭐). Cung cấp tracing theo chuẩn OpenTelemetry, evaluation tự động, prompt management với versioning, playground thử nghiệm, và datasets cho fine-tuning. Tích hợp 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-host được, YC W23 backed. Dùng khi cần giám sát production LLM apps end-to-end.",
+          "sources": [
+            { "title": "GitHub (20K+ ⭐)", "url": "https://github.com/langfuse/langfuse" },
+            { "title": "Website", "url": "https://langfuse.com" },
+            { "title": "Docs", "url": "https://langfuse.com/docs" }
+          ],
+          "tags": ["OpenTelemetry", "Tracing", "Self-hosted", "MIT License", "YC W23"],
+          "hot": true
+        },
+        {
+          "name": "DeepEval",
+          "desc": "Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming",
+          "added_date": "2026-02-08",
+          "detail": "\"Pytest cho LLMs\" với 12.6K+ ⭐. Unit testing framework chuyên biệt cho LLM outputs: 50+ metrics dựa trên nghiên cứu (G-Eval, hallucination detection, faithfulness, relevancy, RAGAs). Tích hợp CI/CD pipelines, tự động phát hiện regression. Bao gồm synthetic data generation và red-teaming cho 40+ loại vulnerabilities. Confident AI platform (optional) cho cloud dashboard.",
+          "sources": [
+            { "title": "GitHub (12.6K+ ⭐)", "url": "https://github.com/confident-ai/deepeval" },
+            { "title": "Website", "url": "https://www.confident-ai.com" },
+            { "title": "Docs", "url": "https://docs.confident-ai.com" }
+          ],
+          "tags": ["Pytest-style", "50+ Metrics", "CI/CD", "Apache 2.0", "Red-teaming"]
+        },
+        {
+          "name": "Promptfoo",
+          "desc": "CLI tool cho prompt testing, model comparison và LLM red-teaming/security scanning",
+          "added_date": "2026-02-08",
+          "detail": "Công cụ CLI mã nguồn mở (8.3K+ ⭐) cho developer test và bảo mật LLM apps. Config bằng YAML, so sánh output side-by-side giữa nhiều models (GPT, Claude, Gemini, Llama...). Tích hợp red-teaming cho 50+ vulnerability types: prompt injection, PII exposure, jailbreak. Chạy trong CI/CD qua GitHub Actions. 51K+ developers sử dụng. Phù hợp cho teams cần security-first approach.",
+          "sources": [
+            { "title": "GitHub (8.3K+ ⭐)", "url": "https://github.com/promptfoo/promptfoo" },
+            { "title": "Website", "url": "https://www.promptfoo.dev" },
+            { "title": "Docs", "url": "https://www.promptfoo.dev/docs/intro" }
+          ],
+          "tags": ["CLI-first", "YAML Config", "Security Scan", "MIT License", "GitHub Actions"]
+        },
+        {
+          "name": "LangSmith",
+          "desc": "Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph",
+          "added_date": "2026-02-08",
+          "detail": "Platform observability & evaluation của LangChain team. Tích hợp sâu với LangChain/LangGraph ecosystem: full-stack tracing (inputs, outputs, tool calls, decision steps), evaluation framework (automated + human review), Prompt Hub với versioning. Playground cho prompt testing và cross-model comparison. Free tier available. De facto standard nếu đã dùng LangChain stack.",
+          "sources": [
+            { "title": "Website", "url": "https://www.langchain.com/langsmith" },
+            { "title": "Docs", "url": "https://docs.smith.langchain.com" },
+            { "title": "Prompt Hub", "url": "https://smith.langchain.com/hub" }
+          ],
+          "tags": ["LangChain Native", "Prompt Hub", "Playground", "Proprietary", "Free Tier"]
+        },
+        {
+          "name": "Arize Phoenix",
+          "desc": "AI observability platform mã nguồn mở — tracing, evaluation, RAG debugging, embeddings analysis",
+          "added_date": "2026-02-08",
+          "detail": "Platform observability mã nguồn mở (8.5K+ ⭐) thiết kế cho experimentation và troubleshooting. Nổi bật với RAG debugging qua embedding visualization, phát hiện semantic drift. Xây trên OpenTelemetry, vendor-agnostic, hỗ trợ LlamaIndex, LangChain, DSPy, smolagents. Self-host được qua Docker/Kubernetes. Prompt management với version control và tagging. Phù hợp cho research teams và RAG-heavy applications.",
+          "sources": [
+            { "title": "GitHub (8.5K+ ⭐)", "url": "https://github.com/Arize-ai/phoenix" },
+            { "title": "Website", "url": "https://phoenix.arize.com" },
+            { "title": "Docs", "url": "https://docs.arize.com/phoenix" }
+          ],
+          "tags": ["RAG Debugging", "Embeddings", "OpenTelemetry", "Elastic 2.0", "Self-hosted"]
         }
       ]
     }
