@@ -29,7 +29,8 @@
       "color": "purple",
       "sectionIds": [
         "frameworks",
-        "platforms"
+        "platforms",
+        "infrastructure"
       ]
     },
     {
@@ -1190,6 +1191,63 @@
             { "title": "Docs", "url": "https://docs.arize.com/phoenix" }
           ],
           "tags": ["RAG Debugging", "Embeddings", "OpenTelemetry", "Elastic 2.0", "Self-hosted"]
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "title": "AI Infrastructure — Hạ tầng chạy và triển khai model",
+      "color": "#f97316",
+      "badge": "⚙️",
+      "cards": [
+        {
+          "name": "Ollama",
+          "desc": "Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong",
+          "added_date": "2026-02-08",
+          "detail": "Tool phổ biến nhất để chạy LLM local (162K+ ⭐, top 50 GitHub toàn cầu). Hỗ trợ Llama, DeepSeek, Gemma, Qwen, Phi và 100+ models khác. Cài đặt cực đơn giản: curl install → ollama pull → ollama run. Tự động quản lý GPU/CPU, quantization, model storage. API tương thích OpenAI format. Chạy trên macOS, Linux, Windows. Phù hợp cho developer muốn thử nghiệm LLM trên máy cá nhân mà không tốn API costs.",
+          "sources": [
+            { "title": "GitHub (162K+ ⭐)", "url": "https://github.com/ollama/ollama" },
+            { "title": "Website", "url": "https://ollama.com" },
+            { "title": "Models Library", "url": "https://ollama.com/library" }
+          ],
+          "tags": ["Local LLM", "100+ Models", "OpenAI Compatible", "MIT License", "macOS/Linux/Win"],
+          "hot": true
+        },
+        {
+          "name": "vLLM",
+          "desc": "Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline",
+          "added_date": "2026-02-08",
+          "detail": "Engine serving LLM cho production (69.7K+ ⭐). Công nghệ PagedAttention giúp tối ưu GPU memory, đạt throughput gấp 2-4× so với FasterTransformer/Orca. Hỗ trợ continuous batching, tensor parallelism, speculative decoding. Tương thích OpenAI API server. Dùng bởi các công ty lớn cho high-throughput serving. Hỗ trợ hầu hết model architectures phổ biến (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
+          "sources": [
+            { "title": "GitHub (69.7K+ ⭐)", "url": "https://github.com/vllm-project/vllm" },
+            { "title": "Website", "url": "https://vllm.ai" },
+            { "title": "Docs", "url": "https://docs.vllm.ai" }
+          ],
+          "tags": ["PagedAttention", "Production Serving", "GPU Optimized", "Apache 2.0", "OpenAI API"]
+        },
+        {
+          "name": "LocalAI",
+          "desc": "Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU",
+          "added_date": "2026-02-08",
+          "detail": "Nền tảng self-hosted thay thế OpenAI API (42.6K+ ⭐). Chạy được trên consumer hardware KHÔNG cần GPU. Hỗ trợ text generation, image generation, audio transcription, embeddings — tất cả qua OpenAI-compatible API. Tương thích Anthropic API format, Responses API, MCP integration. Chạy qua Docker một lệnh. Phù hợp cho teams muốn self-host toàn bộ AI stack trên infrastructure riêng, giữ data không ra ngoài.",
+          "sources": [
+            { "title": "GitHub (42.6K+ ⭐)", "url": "https://github.com/mudler/LocalAI" },
+            { "title": "Website", "url": "https://localai.io" },
+            { "title": "Docs", "url": "https://localai.io/docs" }
+          ],
+          "tags": ["No GPU Required", "OpenAI Drop-in", "Docker", "MIT License", "Multi-modal"]
+        },
+        {
+          "name": "LiteLLM",
+          "desc": "AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API",
+          "added_date": "2026-02-08",
+          "detail": "Gateway/proxy thống nhất truy cập 100+ LLM providers (35.3K+ ⭐). Gọi OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... qua cùng một API format. Tích hợp cost tracking theo từng request, load balancing giữa providers, fallback tự động khi provider down. Quản lý API keys, rate limits, budget alerts. SDK cho Python và proxy server cho mọi ngôn ngữ. Phù hợp cho teams dùng nhiều LLM providers và cần tối ưu chi phí.",
+          "sources": [
+            { "title": "GitHub (35.3K+ ⭐)", "url": "https://github.com/BerriAI/litellm" },
+            { "title": "Website", "url": "https://www.litellm.ai" },
+            { "title": "Docs", "url": "https://docs.litellm.ai" }
+          ],
+          "tags": ["100+ Providers", "Cost Tracking", "Load Balancing", "MIT License", "Proxy Server"]
         }
       ]
     }
