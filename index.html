@@ -570,6 +570,84 @@ html, body {
   }
   .mobile-back:hover { background: var(--active); }
 }
+
+/* ═══ Compare Overlay ═══ */
+.compare-overlay {
+  position: fixed; inset: 0; z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  animation: compareFadeIn 0.2s ease;
+}
+.compare-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+[data-theme="light"] .compare-backdrop {
+  background: rgba(0,0,0,0.3);
+}
+.compare-panel {
+  position: relative; z-index: 1;
+  background: var(--search-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 90vw; max-width: 900px; max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.compare-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0;
+  background: inherit; z-index: 2;
+}
+.compare-title {
+  margin: 0; font-size: 1.2rem; font-weight: 600; color: var(--text);
+}
+.compare-close {
+  background: none; border: none;
+  color: var(--text-muted); font-size: 1.5rem;
+  cursor: pointer; padding: 4px 8px; border-radius: 6px;
+  transition: all 0.15s;
+}
+.compare-close:hover {
+  background: var(--hover); color: var(--text);
+}
+.compare-body {
+  padding: 24px; min-height: 200px;
+}
+
+/* Compare Button */
+.compare-btn {
+  background: none; border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 4px 12px; border-radius: 6px;
+  font-size: 0.8rem; font-family: inherit;
+  cursor: pointer; transition: all 0.15s;
+  white-space: nowrap; margin-left: auto;
+}
+.compare-btn:hover {
+  background: var(--hover); color: var(--text);
+  border-color: var(--text-muted);
+}
+
+/* Compare Toast */
+.compare-toast {
+  position: fixed; bottom: 24px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--search-bg); color: var(--text);
+  padding: 10px 20px; border-radius: 8px;
+  font-size: 0.85rem; z-index: 10100;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: compareToastIn 0.3s ease;
+}
+@keyframes compareFadeIn {
+  from { opacity: 0 } to { opacity: 1 }
+}
+@keyframes compareToastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
 </style>
 </head>
 <body>
@@ -677,6 +755,37 @@ function toSlug(name) {
 
 function updateHash(cardName) {
   history.replaceState(null, '', '#' + toSlug(cardName));
+}
+
+// ═══ Compare Mode ═══
+function isCompareOpen() {
+  return document.getElementById('compare-overlay').style.display !== 'none';
+}
+
+function openCompare(presetId) {
+  const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === presetId);
+  if (!preset) return;
+  window._comparePrevHash = location.hash;
+  document.querySelector('.compare-title').textContent = preset.title;
+  document.getElementById('compare-overlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  history.replaceState(null, '', '#compare=' + presetId);
+}
+
+function closeCompare() {
+  document.getElementById('compare-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+  const prevHash = window._comparePrevHash || '';
+  history.replaceState(null, '', prevHash || window.location.pathname);
+  window._comparePrevHash = null;
+}
+
+function showCompareSearchHint() {
+  const toast = document.createElement('div');
+  toast.className = 'compare-toast';
+  toast.textContent = 'Đóng Compare để tìm kiếm (Ctrl+K)';
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2500);
 }
 
 // ═══ SVG Icon Builders ═══
@@ -885,6 +994,13 @@ function attachNewspaperCardListeners(section) {
       updateTreeActiveStates();
     });
   });
+  const compareBtn = document.querySelector('#right-panel .compare-btn');
+  if (compareBtn) {
+    compareBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openCompare(compareBtn.dataset.presetId);
+    });
+  }
 }
 
 function renderNewspaper() {
@@ -901,6 +1017,10 @@ function renderNewspaper() {
   html += `<span class="section-badge">${escapeHtml(section.badge || '')}</span>`;
   html += `<h2>${escapeHtml(section.title)}</h2>`;
   html += `<span class="tool-count" style="background:${color}15;color:${color}">${cards.length} tools</span>`;
+  const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === section.id);
+  if (preset) {
+    html += `<button class="compare-btn" data-preset-id="${escapeHtml(preset.id)}" title="So sánh tools trong section này">⚖️ So sánh</button>`;
+  }
   html += `</div>`;
   html += `<p class="newspaper-subtitle">${escapeHtml(section.subtitle || '')}</p>`;
   html += `<div class="newspaper-accent" style="background:${color}"></div>`;
@@ -1161,9 +1281,13 @@ async function init() {
     document.addEventListener('keydown', (e) => {
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
+        if (isCompareOpen()) { showCompareSearchHint(); return; }
         openSearch();
       }
-      if (e.key === 'Escape') closeSearch();
+      if (e.key === 'Escape') {
+        if (isCompareOpen()) { closeCompare(); return; }
+        closeSearch();
+      }
     });
 
     // Search input events
@@ -1193,6 +1317,10 @@ async function init() {
     // Search backdrop click
     document.querySelector('.search-backdrop')?.addEventListener('click', closeSearch);
 
+    // Compare overlay listeners
+    document.querySelector('.compare-close').addEventListener('click', closeCompare);
+    document.querySelector('.compare-backdrop').addEventListener('click', closeCompare);
+
     // Deep linking
     handleInitialHash();
 
@@ -1203,5 +1331,15 @@ async function init() {
 
 document.addEventListener('DOMContentLoaded', init);
 </script>
+<div id="compare-overlay" class="compare-overlay" style="display:none;" role="dialog" aria-modal="true">
+  <div class="compare-backdrop"></div>
+  <div class="compare-panel">
+    <div class="compare-header">
+      <h2 class="compare-title"></h2>
+      <button class="compare-close" aria-label="Đóng" title="Đóng (ESC)">✕</button>
+    </div>
+    <div class="compare-body"></div>
+  </div>
+</div>
 </body>
 </html>
