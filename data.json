@@ -47,7 +47,8 @@
         "memory",
         "skills",
         "orchestration",
-        "observability"
+        "observability",
+        "security"
       ]
     },
     {
@@ -1360,6 +1361,65 @@
             { "title": "Supabase Docs", "url": "https://supabase.com/docs/guides/ai" }
           ],
           "tags": ["19.7K⭐", "PostgreSQL License"]
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "title": "Security & Guardrails – Bảo vệ ứng dụng AI",
+      "color": "#ef4444",
+      "badge": "🛡️",
+      "cards": [
+        {
+          "name": "garak",
+          "desc": "LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI",
+          "hot": true,
+          "added_date": "2026-02-08",
+          "tags": ["6.7K⭐", "NVIDIA", "Apache 2.0"],
+          "tagColor": "#76b900",
+          "detail": "garak là \"nmap cho LLM\" – công cụ quét lỗ hổng bảo mật dành riêng cho mô hình ngôn ngữ lớn, được NVIDIA phát triển. Hỗ trợ kiểm tra hallucination, data leakage, prompt injection, jailbreak, toxicity generation và nhiều attack vector khác. garak hoạt động theo kiến trúc modular với probes (tạo tương tác thử), detectors (phát hiện hành vi xấu), và evaluators (đánh giá kết quả). Hỗ trợ scan model từ Hugging Face, OpenAI, Ollama, LiteLLM và hầu hết mọi endpoint REST.\n\nKết hợp tốt với: NeMo Guardrails · Ollama · LiteLLM · Promptfoo",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/NVIDIA/garak" },
+            { "title": "Website", "url": "https://garak.ai/" },
+            { "title": "Docs", "url": "https://garak.readthedocs.io/" }
+          ]
+        },
+        {
+          "name": "NeMo Guardrails",
+          "desc": "Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn",
+          "added_date": "2026-02-08",
+          "tags": ["5.5K⭐", "NVIDIA", "Apache 2.0"],
+          "tagColor": "#76b900",
+          "detail": "NeMo Guardrails là toolkit open-source từ NVIDIA cho phép thêm guardrails lập trình được vào ứng dụng LLM. Sử dụng Colang – ngôn ngữ DSL riêng để định nghĩa luồng hội thoại, topic control, fact-checking và jailbreak prevention. Hỗ trợ cả input/output rails, dialog rails, và retrieval rails. Tích hợp sẵn với LangChain, LlamaIndex, và các NVIDIA NIM microservices cho content safety, topic control. Đặc biệt phù hợp cho enterprise AI cần kiểm soát chặt chẽ luồng tương tác.\n\nKết hợp tốt với: garak · LangGraph · LlamaIndex · Ollama",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/NVIDIA-NeMo/Guardrails" },
+            { "title": "Docs", "url": "https://docs.nvidia.com/nemo/guardrails/latest/index.html" }
+          ]
+        },
+        {
+          "name": "Presidio",
+          "desc": "PII detection & anonymization cho text và image – bảo vệ dữ liệu cá nhân",
+          "added_date": "2026-02-08",
+          "tags": ["6.7K⭐", "Microsoft", "MIT"],
+          "tagColor": "#0078d4",
+          "detail": "Presidio là framework open-source từ Microsoft giúp phát hiện, redact, mask và anonymize dữ liệu nhạy cảm (PII) trong text, images và structured data. Sử dụng kết hợp NLP (spaCy, transformers), regex patterns, rule-based logic và checksum để nhận diện credit card, tên, địa chỉ, SSN, email, số điện thoại và nhiều loại PII khác. Hỗ trợ đa ngôn ngữ, có thể mở rộng với custom recognizers. Triển khai qua Python packages hoặc Docker containers, tích hợp tốt với LLM pipelines để sanitize data trước khi gửi vào model.\n\nKết hợp tốt với: LangChain · LiteLLM · Guardrails AI · NeMo Guardrails",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/microsoft/presidio" },
+            { "title": "Website", "url": "https://microsoft.github.io/presidio/" }
+          ]
+        },
+        {
+          "name": "Guardrails AI",
+          "desc": "I/O validation framework cho LLM – structured output + 100+ validators",
+          "added_date": "2026-02-08",
+          "tags": ["6.1K⭐", "MIT"],
+          "tagColor": "#8b5cf6",
+          "detail": "Guardrails AI là Python framework giúp xây dựng ứng dụng AI đáng tin cậy bằng cách chạy Input/Output Guards phát hiện, đo lường và giảm thiểu các loại rủi ro. Guardrails Hub cung cấp 100+ validators sẵn có bao gồm: detect PII, toxic language, competitor mentions, bias, prompt injection và nhiều loại khác. Hỗ trợ validate structured data từ LLM output, tự động reask khi output không đạt tiêu chuẩn. Có thể deploy như standalone service qua REST API, tích hợp dễ dàng với OpenAI, Anthropic, và mọi LLM provider.\n\nKết hợp tốt với: LangChain · Presidio · Promptfoo · LiteLLM",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/guardrails-ai/guardrails" },
+            { "title": "Website", "url": "https://www.guardrailsai.com/" },
+            { "title": "Docs", "url": "https://guardrailsai.com/docs" }
+          ]
         }
       ]
     }
