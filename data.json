@@ -1496,5 +1496,111 @@
       "arrow": "→",
       "to": "Driven by <strong>MCP + A2A</strong> protocols + <strong>frameworks</strong> maturity"
     }
+  ],
+  "comparison_presets": [
+    {
+      "id": "vector-databases",
+      "title": "So sánh Vector Databases",
+      "criteria": ["Best for", "Scale", "Filtering", "Deploy", "Integrations", "License"],
+      "highlight": ["Scale", "Filtering"],
+      "tools": [
+        {
+          "cardId": "milvus",
+          "values": {
+            "Best for": "Billion-scale enterprise AI, multimodal search",
+            "Scale": "Billions vectors — K8s-native distributed, stateless microservices, horizontal scale",
+            "Filtering": "Advanced: metadata filtering, hybrid dense+sparse, full-text BM25, JSON Path Index (100x faster)",
+            "Deploy": "Milvus Lite (pip) · Standalone (Docker) · Distributed (K8s) · Zilliz Cloud",
+            "Integrations": ["langchain", "llamaindex", "dify", "haystack"],
+            "License": "Apache-2.0"
+          }
+        },
+        {
+          "cardId": "qdrant",
+          "values": {
+            "Best for": "Production RAG & recommendation, Rust performance",
+            "Scale": "Billions vectors — horizontal sharding + replication, zero-downtime rolling updates",
+            "Filtering": "Rich: payload filtering with boolean (AND/OR/NOT), geo, full-text, pre-filter integrated in search",
+            "Deploy": "Docker · K8s · Qdrant Cloud (AWS/GCP/Azure) · Hybrid Cloud · Edge",
+            "Integrations": ["langchain", "llamaindex", "haystack", "n8n", "crewai"],
+            "License": "Apache-2.0"
+          }
+        },
+        {
+          "cardId": "chroma",
+          "values": {
+            "Best for": "Rapid prototyping, lightweight embedded apps",
+            "Scale": "Millions self-host, billions via Chroma Cloud — object-storage tiered architecture",
+            "Filtering": "Basic: metadata filtering, full-text search, regex, BM25/SPLADE sparse vectors",
+            "Deploy": "pip install (embedded) · Docker (client/server) · Chroma Cloud (serverless)",
+            "Integrations": ["langchain", "llamaindex", "hugging-face"],
+            "License": "Apache-2.0"
+          }
+        },
+        {
+          "cardId": "pgvector",
+          "values": {
+            "Best for": "Teams already using PostgreSQL, hybrid SQL + vector",
+            "Scale": "Millions vectors single-node — scale vertically, shard with Citus for larger datasets",
+            "Filtering": "Full SQL: WHERE clauses, JOINs, aggregations — combine vector search with any PostgreSQL query",
+            "Deploy": "PostgreSQL extension — any PG host, Neon, Supabase, RDS, self-host",
+            "Integrations": ["langchain", "llamaindex", "django", "rails"],
+            "License": "PostgreSQL License"
+          }
+        }
+      ]
+    },
+    {
+      "id": "rag-systems",
+      "title": "So sánh RAG Systems",
+      "criteria": ["Best for", "No-code vs Code", "Doc Understanding", "Deploy", "Integrations", "License"],
+      "highlight": ["No-code vs Code", "Doc Understanding"],
+      "tools": [
+        {
+          "cardId": "dify",
+          "values": {
+            "Best for": "Full-platform AI apps: agents + RAG + workflow + monitoring",
+            "No-code vs Code": "Low-code: drag-and-drop visual workflow, plugin ecosystem, built-in templates",
+            "Doc Understanding": "Good: hybrid retrieval, configurable top-k, reranking, multi-format support",
+            "Deploy": "Docker Compose · Dify Cloud · K8s (enterprise)",
+            "Integrations": ["milvus", "langfuse", "openai", "anthropic"],
+            "License": "Source-available"
+          }
+        },
+        {
+          "cardId": "ragflow",
+          "values": {
+            "Best for": "Deep document understanding, complex PDF/scanned doc parsing",
+            "No-code vs Code": "Low-code: web UI with deep configuration, suited for technical users",
+            "Doc Understanding": "Excellent: OCR, table extraction, layout-aware parsing, scanned documents, hybrid search",
+            "Deploy": "Docker (slim 2GB / full 9GB) · self-host only",
+            "Integrations": ["elasticsearch", "ollama", "openai"],
+            "License": "Apache-2.0"
+          }
+        },
+        {
+          "cardId": "flowise",
+          "values": {
+            "Best for": "Fast visual chatbot prototyping, LangChain canvas",
+            "No-code vs Code": "No-code: visual drag-and-drop canvas, prebuilt templates, fastest setup",
+            "Doc Understanding": "Basic: relies on LangChain document loaders, standard chunking",
+            "Deploy": "Docker · npm install · Flowise Cloud",
+            "Integrations": ["langchain", "openai", "anthropic", "qdrant", "chroma"],
+            "License": "Apache-2.0"
+          }
+        },
+        {
+          "cardId": "lightrag",
+          "values": {
+            "Best for": "Graph-enhanced RAG, entity relationships, multi-hop reasoning",
+            "No-code vs Code": "Code-first: Python API (pip install), Web UI available, developer-oriented",
+            "Doc Understanding": "Graph-based: extracts entities & relationships, dual-level retrieval (local + global)",
+            "Deploy": "pip install · Docker · Railway · self-host",
+            "Integrations": ["neo4j", "faiss", "chroma", "milvus", "ollama"],
+            "License": "MIT"
+          }
+        }
+      ]
+    }
   ]
 }
