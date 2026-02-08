@@ -3,7 +3,7 @@
     "title": "AI Ecosystem Mindmap 2026",
     "subtitle": "Phân tầng từ Nền tảng → Ứng dụng → Xu hướng",
     "lastUpdated": "2026-02-08",
-    "updatedBy": "Claude AI + Baron",
+    "updatedBy": "Claude Code",
     "version": "5.0"
   },
   "layers": [
@@ -16,7 +16,8 @@
       "desc": "Protocols chuẩn hóa giao tiếp — mọi thứ khác xây trên lớp này",
       "color": "indigo",
       "sectionIds": [
-        "protocols"
+        "protocols",
+        "vector-databases"
       ]
     },
     {
@@ -30,7 +31,8 @@
       "sectionIds": [
         "frameworks",
         "platforms",
-        "infrastructure"
+        "infrastructure",
+        "rag-systems"
       ]
     },
     {
@@ -1248,6 +1250,116 @@
             { "title": "Docs", "url": "https://docs.litellm.ai" }
           ],
           "tags": ["100+ Providers", "Cost Tracking", "Load Balancing", "MIT License", "Proxy Server"]
+        }
+      ]
+    },
+    {
+      "id": "rag-systems",
+      "title": "RAG Systems — Retrieval-Augmented Generation",
+      "color": "#06b6d4",
+      "badge": "🔍",
+      "cards": [
+        {
+          "name": "Dify",
+          "hot": true,
+          "added_date": "2026-02-08",
+          "desc": "Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn — 129K⭐",
+          "detail": "Dify là nền tảng all-in-one cho phép tạo ứng dụng AI từ chatbot đến agent phức tạp mà không cần viết nhiều code. Điểm mạnh cốt lõi là visual workflow builder dạng drag-drop — người dùng kéo thả các node (LLM, retrieval, tool, logic) để thiết kế luồng xử lý hoàn chỉnh. RAG pipeline tích hợp sẵn: upload tài liệu, tự động chunking, embedding, và truy xuất — không cần setup vector DB riêng. Hỗ trợ kết nối 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click deploy lên production, và monitoring dashboard theo dõi usage/cost. Ứng dụng thực tế: xây dựng internal knowledge base chatbot cho doanh nghiệp, customer support tự động, AI assistant xử lý tài liệu nội bộ, hoặc prototype nhanh ý tưởng AI app trước khi đầu tư phát triển custom. Lưu ý: Dify là platform scope rộng (RAG + agent + workflow), license có Additional Terms ngoài Apache 2.0 — cần kiểm tra khi dùng thương mại.\n\nKết hợp tốt với: Ollama (chạy LLM local) · Langfuse (observability nâng cao) · Milvus/Qdrant (thay thế vector DB mặc định) · MCP (mở rộng tool access)",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/langgenius/dify" },
+            { "title": "Website", "url": "https://dify.ai" },
+            { "title": "Docs", "url": "https://docs.dify.ai" }
+          ],
+          "tags": ["129K⭐", "Apache 2.0+"]
+        },
+        {
+          "name": "RAGFlow",
+          "hot": true,
+          "added_date": "2026-02-08",
+          "desc": "RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn — 73K⭐",
+          "detail": "RAGFlow là engine RAG tập trung vào chất lượng xử lý tài liệu — bước thường bị bỏ qua nhưng quyết định 80% độ chính xác của câu trả lời. Hệ thống tự động phân tích cấu trúc document phức tạp: bảng biểu, hình ảnh, PDF scan, slides — và chunking theo template với khả năng preview trực quan để người dùng can thiệp khi cần. Mỗi câu trả lời đi kèm trích dẫn nguồn cụ thể (grounded citations), giảm đáng kể tình trạng hallucination. Tích hợp agent toolkit cho phép không chỉ truy xuất text mà còn gọi API, tool bên ngoài. Ứng dụng thực tế: hệ thống Q&A nội bộ doanh nghiệp xử lý hợp đồng, báo cáo kỹ thuật, tài liệu pháp lý — những loại document mà chunking đơn giản cho kết quả kém.\n\nKết hợp tốt với: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Bất kỳ LLM provider nào (OpenAI, Claude, Gemini)",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/infiniflow/ragflow" },
+            { "title": "Website", "url": "https://ragflow.io" },
+            { "title": "Demo", "url": "https://demo.ragflow.io" }
+          ],
+          "tags": ["73K⭐", "Apache 2.0"]
+        },
+        {
+          "name": "Flowise",
+          "added_date": "2026-02-08",
+          "desc": "Công cụ no-code xây dựng RAG pipeline và LLM apps bằng giao diện kéo thả — nền tảng LangChain — 49K⭐",
+          "detail": "Flowise biến LangChain thành giao diện visual drag-drop — người dùng kéo thả các node (LLM, retriever, memory, tools) để tạo pipeline hoàn chỉnh mà không cần viết code Python. Mỗi flow có thể export thành API endpoint, deploy bằng Docker một lệnh. Hỗ trợ hơn 100 node tích hợp sẵn: từ document loaders, text splitters, embedding models đến vector stores và output parsers. Marketplace cộng đồng cung cấp template có sẵn cho các use case phổ biến. Ứng dụng thực tế: prototype nhanh chatbot RAG, tạo internal tool cho team non-technical, hoặc dùng như visual debugging tool để hiểu luồng dữ liệu trong RAG pipeline trước khi viết code production.\n\nKết hợp tốt với: LangChain ecosystem · OpenAI/Claude APIs · Chroma/Milvus/Qdrant (vector stores) · Bất kỳ LLM nào LangChain hỗ trợ",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/FlowiseAI/Flowise" },
+            { "title": "Website", "url": "https://flowiseai.com" }
+          ],
+          "tags": ["49K⭐", "Apache 2.0"]
+        },
+        {
+          "name": "LightRAG",
+          "added_date": "2026-02-08",
+          "desc": "Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025) — 28K⭐",
+          "detail": "LightRAG mang cách tiếp cận khác biệt so với RAG truyền thống: thay vì chỉ vector search đơn thuần, hệ thống tự động xây dựng knowledge graph từ tài liệu — nhận diện entities và mối quan hệ giữa chúng — rồi kết hợp graph traversal với vector retrieval để trả lời chính xác hơn. Xuất phát từ nghiên cứu tại ĐH Hong Kong, paper đạt EMNLP 2025, và benchmark cho thấy vượt trội so với nhiều phương pháp RAG khác trên nhiều chiều đánh giá. Thiết kế nhẹ, chạy được trên CPU/laptop thông thường mà không cần GPU. Ứng dụng thực tế: knowledge management systems, research Q&A cần hiểu quan hệ giữa concepts, hoặc bất kỳ bài toán nào mà \"ai liên quan đến ai/cái gì\" quan trọng hơn \"đoạn text nào giống nhau\".\n\nKết hợp tốt với: Ollama (chạy LLM local) · Neo4j (graph storage nâng cao) · LlamaIndex (xem thêm ở Agent Frameworks) · OpenAI/Claude APIs",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/HKUDS/LightRAG" },
+            { "title": "Paper (EMNLP 2025)", "url": "https://aclanthology.org/2025.findings-emnlp.568/" }
+          ],
+          "tags": ["28K⭐", "MIT"]
+        }
+      ]
+    },
+    {
+      "id": "vector-databases",
+      "title": "Vector Databases — Lưu trữ & Tìm kiếm Vector",
+      "color": "#d97706",
+      "badge": "🗄️",
+      "cards": [
+        {
+          "name": "Milvus",
+          "added_date": "2026-02-08",
+          "desc": "Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation — 42.7K⭐",
+          "detail": "Milvus là vector database được thiết kế cho quy mô lớn từ đầu: kiến trúc distributed trên Kubernetes, hỗ trợ lưu trữ và tìm kiếm hàng tỷ vectors với latency dưới mili-giây. Cung cấp nhiều loại index nhất trong các vector DB (IVF, HNSW, DiskANN, PQ...), cho phép cân bằng giữa tốc độ, accuracy và chi phí tùy use case. Là dự án tốt nghiệp của LF AI & Data Foundation (Linux Foundation), đảm bảo governance và phát triển bền vững. Cloud version Zilliz cung cấp managed service. Ứng dụng thực tế: recommendation systems quy mô lớn, image/video similarity search, semantic search cho enterprise với hàng triệu documents, hoặc bất kỳ bài toán nào cần tìm kiếm tương tự trên dữ liệu lớn.\n\nKết hợp tốt với: LangChain · LlamaIndex · Dify · RAGFlow · Towhee (ETL pipeline) · Bất kỳ embedding model nào (OpenAI, Cohere, HuggingFace)",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/milvus-io/milvus" },
+            { "title": "Website", "url": "https://milvus.io" },
+            { "title": "Zilliz Cloud", "url": "https://zilliz.com" }
+          ],
+          "tags": ["42.7K⭐", "Apache 2.0"]
+        },
+        {
+          "name": "Qdrant",
+          "added_date": "2026-02-08",
+          "desc": "Vector database viết bằng Rust — nhanh, tiết kiệm bộ nhớ, filtering payload mạnh nhất — 28.6K⭐",
+          "detail": "Qdrant (đọc: \"quadrant\") là vector database tập trung vào performance và production-readiness, viết hoàn toàn bằng Rust để tối ưu tốc độ và memory. Điểm nổi bật nhất là khả năng filtering: kết hợp vector similarity search với điều kiện lọc phức tạp trên metadata (boolean, range, geo, nested objects) — và filtering được tích hợp trực tiếp vào quá trình search thay vì post-filter, nên không mất accuracy. Cung cấp cả REST và gRPC APIs, hỗ trợ SDKs cho nhiều ngôn ngữ. Ứng dụng thực tế: personalized recommendations cần lọc theo user preferences, e-commerce search kết hợp semantic + price/category filters, hoặc multi-tenant RAG systems cần isolation giữa các tenants.\n\nKết hợp tốt với: LangChain · LlamaIndex · Dify · Flowise · FastAPI/Express (backend) · Docker/Kubernetes (deploy)",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/qdrant/qdrant" },
+            { "title": "Website", "url": "https://qdrant.tech" },
+            { "title": "Cloud", "url": "https://cloud.qdrant.io" }
+          ],
+          "tags": ["28.6K⭐", "Apache 2.0"]
+        },
+        {
+          "name": "Chroma",
+          "added_date": "2026-02-08",
+          "desc": "Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG — 26K⭐",
+          "detail": "Chroma là vector database thiết kế theo triết lý \"developer-first\" — cài đặt bằng một dòng pip install, chạy embedded ngay trong Python process mà không cần server riêng. Lưu trữ và tìm kiếm vector embeddings thông qua API đơn giản: add documents → query bằng ngôn ngữ tự nhiên → nhận kết quả tương tự nhất. Tự động xử lý embedding nếu dùng built-in models, hoặc mang embedding riêng từ OpenAI/Cohere/HuggingFace. Xuất hiện trong hầu hết tutorials và courses về RAG, là \"vector DB đầu tiên\" của nhiều developers. Phù hợp nhất cho prototyping, side projects, ứng dụng quy mô nhỏ-trung bình. Khi cần scale lên production với hàng triệu vectors, nên cân nhắc chuyển sang Milvus hoặc Qdrant.\n\nKết hợp tốt với: LangChain · LlamaIndex · Flowise · Dify · OpenAI Embeddings · HuggingFace models",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/chroma-core/chroma" },
+            { "title": "Website", "url": "https://trychroma.com" }
+          ],
+          "tags": ["26K⭐", "Apache 2.0"]
+        },
+        {
+          "name": "pgvector",
+          "added_date": "2026-02-08",
+          "desc": "Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc — 19.7K⭐",
+          "detail": "pgvector là extension cho PostgreSQL thêm khả năng lưu trữ và tìm kiếm vector trực tiếp trong database quan hệ có sẵn. Ý tưởng đơn giản nhưng cực kỳ thực tế: thay vì triển khai thêm một vector database riêng biệt (Milvus, Qdrant...), developers có thể thêm cột vector vào bảng PostgreSQL hiện tại và query bằng SQL quen thuộc. Hỗ trợ HNSW và IVFFlat indexing cho approximate nearest neighbor search, nhiều distance metrics (L2, cosine, inner product). Đặc biệt phù hợp với hệ sinh thái Supabase (tích hợp sẵn pgvector), Neon, và các managed Postgres services. Ứng dụng thực tế: thêm semantic search vào web app đang dùng Postgres, RAG pipeline đơn giản không muốn thêm infrastructure, hoặc khi dữ liệu vector cần JOIN với dữ liệu quan hệ (users, orders, products) trong cùng một query.\n\nKết hợp tốt với: PostgreSQL/Supabase · LangChain · LlamaIndex · Django/Rails/Express (web frameworks) · pgvectorscale (Timescale — performance addon)",
+          "sources": [
+            { "title": "GitHub", "url": "https://github.com/pgvector/pgvector" },
+            { "title": "Supabase Docs", "url": "https://supabase.com/docs/guides/ai" }
+          ],
+          "tags": ["19.7K⭐", "PostgreSQL License"]
         }
       ]
     }
