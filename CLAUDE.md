@@ -17,7 +17,7 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 ```
 /ai-mindmap
 ├── index.html              # Main page (UI + CSS + JS inline)
-├── data.json               # Content data (39 cards, 8 sections)
+├── data.json               # Content data (54 cards, 10 sections)
 ├── CLAUDE.md               # Instructions cho Claude Code (file này)
 ├── README.md               # Project README
 ├── CHANGELOG.md            # Version history
@@ -52,10 +52,9 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 
 | Item | Value |
 |------|-------|
-| **Version** | v3.5 (deployed) |
-| **Cards** | 39 cards, 8 sections |
-| **Last Deploy** | 2026-02-04 |
-| **Next Version** | v4.0 (Phase 2) |
+| **Version** | v5.1 (deployed) |
+| **Cards** | 54 cards, 10 sections |
+| **Last Deploy** | 2026-02-08 |
 
 ## Data Structure — data.json
 
@@ -84,20 +83,22 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 }
 ```
 
-> **Lưu ý:** Tất cả 39 cards hiện tại đặt `added_date: "2026-02-03"` (ngày deploy v3.3). Cards mới thêm sau dùng ngày thực tế.
+> **Lưu ý:** Cards gốc đặt `added_date: "2026-02-03"` (ngày deploy v3.3). Cards mới thêm sau dùng ngày thực tế.
 
-### 8 Sections hiện tại
+### 10 Sections hiện tại
 
-| # | Section | Emoji | Cards |
-|:-:|---------|:-----:|:-----:|
-| 1 | Giao Thức & Tiêu Chuẩn | 🔌 | 5 |
-| 2 | Agent Frameworks | 🤖 | 8 |
-| 3 | Công Cụ Coding AI | 💻 | 5 |
-| 4 | Hệ Thống Memory | 🧠 | 4 |
-| 5 | Agent Skills & Plugins | 🛠️ | 4 |
-| 6 | Low-Code / No-Code | ⚡ | 4 |
-| 7 | Observability & Testing | 🔍 | 4 |
-| 8 | Xu Hướng 2026 | 🔮 | 5 |
+| # | Section ID | Badge | Cards |
+|:-:|------------|:-----:|:-----:|
+| 1 | protocols | 🔌 | 2 |
+| 2 | frameworks | 🤖 | 10 |
+| 3 | platforms | 💬 | 2 |
+| 4 | memory | 🧩 | 3 |
+| 5 | skills | 📚 | 5 |
+| 6 | orchestration | 🌊 | 3 |
+| 7 | coding-agents | 🟣 | 11 |
+| 8 | trends | 🐝 | 9 |
+| 9 | observability | 📊 | 5 |
+| 10 | infrastructure | ⚙️ | 4 |
 
 ### Research Keywords (per section)
 
@@ -105,14 +106,16 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 
 | Section | Research Keywords |
 |---------|-------------------|
-| Giao Thức & Tiêu Chuẩn | "MCP protocol update", "A2A protocol news", "agent protocol standard" |
-| Agent Frameworks | "AI agent framework 2026", "LangGraph update", "CrewAI update", "multi-agent framework" |
-| Công Cụ Coding AI | "AI coding tools 2026", "Cursor update", "Claude Code update", "AI IDE" |
-| Hệ Thống Memory | "AI agent memory", "MemGPT update", "Mem0 update", "LLM memory system" |
-| Agent Skills & Plugins | "awesome-agent-skills", "MCP servers", "AI agent tools plugins" |
-| Low-Code / No-Code | "AI low-code platform", "Dify update", "n8n AI", "AI workflow builder" |
-| Observability & Testing | "LLM observability", "AI agent testing", "LangSmith update", "AI tracing" |
-| Xu Hướng 2026 | "AI trends 2026", "AI agent trends", "AI breakthroughs 2026" |
+| protocols | "MCP protocol update", "A2A protocol news", "agent protocol standard" |
+| frameworks | "AI agent framework 2026", "LangGraph update", "CrewAI update", "multi-agent framework" |
+| platforms | "Claude.ai update", "ChatGPT update", "AI platform features" |
+| memory | "AI agent memory", "MemGPT update", "Mem0 update", "LLM memory system" |
+| skills | "awesome-agent-skills", "MCP servers", "AI agent tools plugins", "Claude Code skills" |
+| orchestration | "multi-agent orchestration", "Claude-Flow", "agent swarm" |
+| coding-agents | "AI coding tools 2026", "Cursor update", "Claude Code update", "AI IDE" |
+| trends | "AI trends 2026", "AI agent trends", "AI breakthroughs 2026" |
+| observability | "LLM observability", "AI evaluation", "LangSmith update", "Langfuse", "AI tracing" |
+| infrastructure | "LLM inference", "Ollama update", "vLLM", "local LLM", "AI gateway" |
 
 ## UI/UX Conventions
 
@@ -235,7 +238,7 @@ git push origin main
 
 ---
 
-*Version: 1.2*
+*Version: 1.3*
 *Created: 2026-02-04*
-*Updated: 2026-02-04 — Phase 1 (v3.5) completed*
+*Updated: 2026-02-08 — v5.1 (54 cards, 10 sections)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
