@@ -1601,20 +1601,24 @@ async function init() {
     document.querySelector('.compare-backdrop').addEventListener('click', closeCompare);
     document.querySelector('.compare-copy-link').addEventListener('click', () => {
       const btn = document.querySelector('.compare-copy-link');
-      const url = window.location.href;
+      const url = location.origin + location.pathname + location.hash;
       (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => {
         btn.textContent = '✓';
         btn.title = 'Đã copy!';
-        setTimeout(() => { btn.textContent = '🔗'; btn.title = 'Copy link'; }, 1500);
+        setTimeout(() => { btn.textContent = '🔗'; btn.title = 'Copy link so sánh'; }, 1500);
       }).catch(() => {
-        const ta = document.createElement('textarea');
-        ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
-        document.body.appendChild(ta); ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        btn.textContent = '✓';
-        btn.title = 'Đã copy!';
-        setTimeout(() => { btn.textContent = '🔗'; btn.title = 'Copy link'; }, 1500);
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select();
+          if (!document.execCommand('copy')) throw new Error();
+          document.body.removeChild(ta);
+          btn.textContent = '✓';
+          btn.title = 'Đã copy!';
+          setTimeout(() => { btn.textContent = '🔗'; btn.title = 'Copy link so sánh'; }, 1500);
+        } catch {
+          alert('Copy không thành công — hãy copy thủ công từ thanh địa chỉ');
+        }
       });
     });
 
@@ -1644,7 +1648,7 @@ document.addEventListener('DOMContentLoaded', init);
     <div class="compare-header">
       <h2 class="compare-title"></h2>
       <div class="compare-header-actions">
-        <button class="compare-copy-link" aria-label="Copy link" title="Copy link">🔗</button>
+        <button class="compare-copy-link" aria-label="Copy compare link" title="Copy link so sánh">🔗</button>
         <button class="compare-close" aria-label="Đóng" title="Đóng (ESC)">✕</button>
       </div>
     </div>
