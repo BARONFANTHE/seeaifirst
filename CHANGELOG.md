@@ -1,5 +1,16 @@
 # AI Mindmap Changelog
 
+## [6.1] - 2026-02-09
+### Added
+- Coding Agents comparison preset (11 tools × 7 criteria)
+- Flip orientation layout for large presets (tools=rows, criteria=columns)
+- Scale indicators (Agentic/Strong, Semi-agent/Good, Assist/Basic)
+- Mobile stacked cards for flip layout
+### Fixed
+- Clipboard fallback alert on copy failure
+- Copy URL strips query params for canonical links
+- Compare button accessibility (aria-label + title)
+
 ## v6.0 — Phase 4: Compare Mode (2026-02-09)
 
 ### Added
