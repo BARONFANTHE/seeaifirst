@@ -533,6 +533,35 @@ html, body {
 /* ═══ Welcome Animation ═══ */
 .welcome-panel { animation: fadeIn 0.3s ease; }
 
+/* ═══ Welcome Compare Buttons ═══ */
+.welcome-compare {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 4px;
+}
+.welcome-compare-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 18px; border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card-bg); color: var(--text-secondary);
+  font-family: inherit; font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+}
+.welcome-compare-btn:hover {
+  background: var(--hover); color: var(--text);
+  border-color: var(--text-muted);
+  transform: translateY(-1px);
+}
+
+/* ═══ Sidebar Compare Icon ═══ */
+.tree-compare-icon {
+  flex-shrink: 0; font-size: 11px; opacity: 0.5;
+  cursor: pointer; padding: 2px 4px; border-radius: 4px;
+  transition: opacity 0.15s, background 0.15s;
+  line-height: 1;
+}
+.tree-compare-icon:hover {
+  opacity: 1; background: var(--hover);
+}
+
 /* ═══ Mobile Back Button ═══ */
 .mobile-back {
   display: none;
@@ -590,14 +619,14 @@ html, body {
   border: 1px solid var(--border);
   border-radius: 12px;
   width: 90vw; max-width: 900px; max-height: 85vh;
-  overflow-y: auto;
+  display: flex; flex-direction: column;
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 .compare-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px 24px;
   border-bottom: 1px solid var(--border);
-  position: sticky; top: 0;
+  flex-shrink: 0;
   background: inherit; z-index: 2;
 }
 .compare-title {
@@ -613,7 +642,7 @@ html, body {
   background: var(--hover); color: var(--text);
 }
 .compare-body {
-  padding: 24px; min-height: 200px; overflow-x: auto;
+  padding: 24px; min-height: 200px; overflow: auto; flex: 1;
 }
 
 /* Compare Table (Desktop) */
@@ -628,8 +657,20 @@ html, body {
   font-size: 0.85rem; word-break: break-word;
 }
 .compare-criteria-header { width: 130px; min-width: 110px; }
+.compare-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--search-bg);
+}
 .compare-tool-header {
   font-weight: 600; font-size: 0.9rem; padding-bottom: 12px; color: var(--text);
+}
+.compare-criteria-header,
+.compare-criteria-label {
+  position: sticky; left: 0;
+  background: var(--search-bg);
+}
+.compare-table thead .compare-criteria-header {
+  z-index: 2;
 }
 .compare-criteria-label {
   font-weight: 500; color: var(--text-secondary); white-space: nowrap;
@@ -639,6 +680,9 @@ html, body {
 }
 .compare-highlight {
   background: var(--hover);
+}
+.compare-highlight .compare-criteria-label {
+  background: var(--search-bg);
 }
 .compare-chip {
   display: inline-block; padding: 2px 8px; margin: 2px 4px 2px 0;
@@ -977,6 +1021,10 @@ function fileIcon(color) {
 }
 
 // ═══ Tree Sidebar ═══
+function sectionHasPreset(sectionId) {
+  return data.comparison_presets && data.comparison_presets.some(p => p.id === sectionId);
+}
+
 function buildTreeSection(section) {
   const color = getHex(section.color);
   let h = '';
@@ -984,6 +1032,9 @@ function buildTreeSection(section) {
   h += `<span class="tree-chevron">▶</span>`;
   h += folderIcon(color, false);
   h += `<span class="tree-folder-title">${escapeHtml(section.title)}</span>`;
+  if (sectionHasPreset(section.id)) {
+    h += `<span class="tree-compare-icon" data-preset-id="${escapeHtml(section.id)}" title="So sánh" role="button" aria-label="So sánh ${escapeHtml(section.title)}">⚖️</span>`;
+  }
   h += `<span class="tree-folder-count" style="background:${color}15;color:${color}">${section.cards.length}</span>`;
   h += `</button>`;
   h += `<div class="tree-children collapsed">`;
@@ -1075,6 +1126,14 @@ function attachTreeListeners() {
       updateTreeActiveStates();
     });
   });
+
+  // Sidebar compare icon click
+  document.querySelectorAll('.tree-compare-icon').forEach(icon => {
+    icon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openCompare(icon.dataset.presetId);
+    });
+  });
 }
 
 function updateTreeActiveStates() {
@@ -1120,11 +1179,18 @@ function renderWelcome() {
       <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
         ${data.sections.map(s => `<span style="font-size:11px;padding:4px 12px;border-radius:99px;background:var(--hover);border:1px solid var(--border);color:var(--text-secondary);font-weight:500;">${sectionIcons[s.id] || ''} ${s.cards.length}</span>`).join('')}
       </div>
+      ${data.comparison_presets && data.comparison_presets.length ? `
+      <div class="welcome-compare">
+        ${data.comparison_presets.map(p => `<button class="welcome-compare-btn" data-preset-id="${escapeHtml(p.id)}">⚖️ ${escapeHtml(p.title)}</button>`).join('')}
+      </div>` : ''}
       <p style="font-size:12px;color:var(--text-dim);margin-top:8px;">
         ← Chọn danh mục bên trái hoặc <kbd style="padding:1px 6px;border-radius:4px;background:var(--hover);font-size:11px;border:1px solid var(--border);">⌘K</kbd> để tìm kiếm
       </p>
     </div>
   `;
+  panel.querySelectorAll('.welcome-compare-btn').forEach(btn => {
+    btn.addEventListener('click', () => openCompare(btn.dataset.presetId));
+  });
 }
 
 function buildFeaturedCard(card, section) {
