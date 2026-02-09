@@ -613,7 +613,61 @@ html, body {
   background: var(--hover); color: var(--text);
 }
 .compare-body {
-  padding: 24px; min-height: 200px;
+  padding: 24px; min-height: 200px; overflow-x: auto;
+}
+
+/* Compare Table (Desktop) */
+.compare-table {
+  width: 100%; border-collapse: collapse; table-layout: fixed;
+}
+.compare-table th,
+.compare-table td {
+  padding: 10px 14px; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem; word-break: break-word;
+}
+.compare-criteria-header { width: 130px; min-width: 110px; }
+.compare-tool-header {
+  font-weight: 600; font-size: 0.9rem; padding-bottom: 12px; color: var(--text);
+}
+.compare-criteria-label {
+  font-weight: 500; color: var(--text-secondary); white-space: nowrap;
+}
+.compare-highlight .compare-criteria-label {
+  font-weight: 700; color: var(--text);
+}
+.compare-highlight {
+  background: var(--hover);
+}
+.compare-chip {
+  display: inline-block; padding: 2px 8px; margin: 2px 4px 2px 0;
+  border-radius: 4px; font-size: 0.75rem;
+  background: var(--active); color: var(--text-secondary);
+}
+
+/* Compare Cards (Mobile) */
+.compare-card {
+  background: var(--active); border-radius: 10px;
+  padding: 16px; margin-bottom: 12px;
+}
+.compare-card-name {
+  margin: 0 0 10px; font-size: 1rem; font-weight: 600; color: var(--text);
+}
+.compare-card-row {
+  padding: 6px 0; font-size: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+.compare-card-row:last-child { border-bottom: none; }
+.compare-card-label { font-weight: 500; color: var(--text-secondary); }
+.compare-card-row.compare-highlight .compare-card-label {
+  font-weight: 700; color: var(--text);
+}
+.compare-card-value { color: var(--text); }
+@media (max-width: 768px) {
+  .compare-table { display: none; }
+}
+@media (min-width: 769px) {
+  .compare-card { display: none; }
 }
 
 /* Compare Button */
@@ -767,6 +821,7 @@ function openCompare(presetId) {
   if (!preset) return;
   window._comparePrevHash = location.hash;
   document.querySelector('.compare-title').textContent = preset.title;
+  renderCompare(preset);
   document.getElementById('compare-overlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
   history.replaceState(null, '', '#compare=' + presetId);
@@ -786,6 +841,100 @@ function showCompareSearchHint() {
   toast.textContent = 'Đóng Compare để tìm kiếm (Ctrl+K)';
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 2500);
+}
+
+function findCardName(cardId) {
+  for (const section of data.sections) {
+    for (const card of section.cards) {
+      if (toSlug(card.name) === cardId) return card.name;
+    }
+  }
+  return null;
+}
+
+function renderCompareTable(preset) {
+  const table = document.createElement('table');
+  table.className = 'compare-table';
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  headerRow.innerHTML = '<th class="compare-criteria-header"></th>';
+  preset.tools.forEach(tool => {
+    const th = document.createElement('th');
+    th.className = 'compare-tool-header';
+    th.textContent = findCardName(tool.cardId) || tool.cardId;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  preset.criteria.forEach(criterion => {
+    const row = document.createElement('tr');
+    if (preset.highlight.includes(criterion)) row.classList.add('compare-highlight');
+    const labelCell = document.createElement('td');
+    labelCell.className = 'compare-criteria-label';
+    labelCell.textContent = criterion;
+    row.appendChild(labelCell);
+    preset.tools.forEach(tool => {
+      const td = document.createElement('td');
+      td.className = 'compare-value';
+      const value = tool.values[criterion];
+      if (Array.isArray(value)) {
+        td.innerHTML = value.map(v => `<span class="compare-chip">${escapeHtml(v)}</span>`).join('');
+      } else {
+        td.textContent = value || '\u2014';
+      }
+      row.appendChild(td);
+    });
+    tbody.appendChild(row);
+  });
+  table.appendChild(tbody);
+  return table;
+}
+
+function renderCompareCards(preset) {
+  const frag = document.createDocumentFragment();
+  preset.tools.forEach(tool => {
+    const card = document.createElement('div');
+    card.className = 'compare-card';
+    const header = document.createElement('h3');
+    header.className = 'compare-card-name';
+    header.textContent = findCardName(tool.cardId) || tool.cardId;
+    card.appendChild(header);
+    preset.criteria.forEach(criterion => {
+      const row = document.createElement('div');
+      row.className = 'compare-card-row';
+      if (preset.highlight.includes(criterion)) row.classList.add('compare-highlight');
+      const label = document.createElement('span');
+      label.className = 'compare-card-label';
+      label.textContent = criterion + ': ';
+      row.appendChild(label);
+      const value = tool.values[criterion];
+      if (Array.isArray(value)) {
+        value.forEach(v => {
+          const chip = document.createElement('span');
+          chip.className = 'compare-chip';
+          chip.textContent = v;
+          row.appendChild(chip);
+        });
+      } else {
+        const val = document.createElement('span');
+        val.className = 'compare-card-value';
+        val.textContent = value || '\u2014';
+        row.appendChild(val);
+      }
+      card.appendChild(row);
+    });
+    frag.appendChild(card);
+  });
+  return frag;
+}
+
+function renderCompare(preset) {
+  const body = document.querySelector('.compare-body');
+  body.innerHTML = '';
+  body.appendChild(renderCompareTable(preset));
+  body.appendChild(renderCompareCards(preset));
 }
 
 // ═══ SVG Icon Builders ═══
