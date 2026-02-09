@@ -619,14 +619,14 @@ html, body {
   border: 1px solid var(--border);
   border-radius: 12px;
   width: 90vw; max-width: 900px; max-height: 85vh;
-  overflow-y: auto;
+  display: flex; flex-direction: column;
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 .compare-header {
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px 24px;
   border-bottom: 1px solid var(--border);
-  position: sticky; top: 0;
+  flex-shrink: 0;
   background: inherit; z-index: 2;
 }
 .compare-title {
@@ -642,7 +642,7 @@ html, body {
   background: var(--hover); color: var(--text);
 }
 .compare-body {
-  padding: 24px; min-height: 200px; overflow-x: auto;
+  padding: 24px; min-height: 200px; overflow: auto; flex: 1;
 }
 
 /* Compare Table (Desktop) */
@@ -657,8 +657,20 @@ html, body {
   font-size: 0.85rem; word-break: break-word;
 }
 .compare-criteria-header { width: 130px; min-width: 110px; }
+.compare-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--search-bg);
+}
 .compare-tool-header {
   font-weight: 600; font-size: 0.9rem; padding-bottom: 12px; color: var(--text);
+}
+.compare-criteria-header,
+.compare-criteria-label {
+  position: sticky; left: 0;
+  background: var(--search-bg);
+}
+.compare-table thead .compare-criteria-header {
+  z-index: 2;
 }
 .compare-criteria-label {
   font-weight: 500; color: var(--text-secondary); white-space: nowrap;
@@ -668,6 +680,9 @@ html, body {
 }
 .compare-highlight {
   background: var(--hover);
+}
+.compare-highlight .compare-criteria-label {
+  background: var(--search-bg);
 }
 .compare-chip {
   display: inline-block; padding: 2px 8px; margin: 2px 4px 2px 0;
