@@ -1,5 +1,19 @@
 # AI Mindmap Changelog
 
+## v6.0 — Phase 4: Compare Mode (2026-02-09)
+
+### Added
+- **Compare Mode**: Side-by-side tool comparison with overlay UI
+  - 2 comparison presets: Vector Databases (4 tools) + RAG Systems (4 tools)
+  - Desktop: table view (criteria rows × tool columns)
+  - Mobile ≤768px: stacked cards per tool
+  - Highlighted key criteria (Scale, Filtering / No-code vs Code, Doc Understanding)
+  - Integrations displayed as chips
+  - Deep-link support: `#compare=vector-databases`, `#compare=rag-systems`
+  - Keyboard: ESC to close, Ctrl+K disabled with toast hint when overlay open
+  - Accessibility: focus trap in overlay
+  - Dark/light theme support
+
 ## v4.0 — Phase 2: New Cards (2026-02-04)
 
 - **Agent Frameworks** (8 → 11 cards):

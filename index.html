@@ -619,6 +619,7 @@ html, body {
 /* Compare Table (Desktop) */
 .compare-table {
   width: 100%; border-collapse: collapse; table-layout: fixed;
+  min-width: 600px;
 }
 .compare-table th,
 .compare-table td {
@@ -665,6 +666,9 @@ html, body {
 .compare-card-value { color: var(--text); }
 @media (max-width: 768px) {
   .compare-table { display: none; }
+  .compare-panel { width: 95vw; max-height: 90vh; }
+  .compare-header { padding: 12px 16px; }
+  .compare-body { padding: 16px; }
 }
 @media (min-width: 769px) {
   .compare-card { display: none; }
@@ -821,11 +825,14 @@ function openCompare(presetId) {
   if (!preset) return;
   const currentHash = location.hash;
   window._comparePrevHash = currentHash.startsWith('#compare=') ? '' : currentHash;
+  window._compareReturnFocus = document.activeElement;
   document.querySelector('.compare-title').textContent = preset.title;
   renderCompare(preset);
-  document.getElementById('compare-overlay').style.display = 'flex';
+  const overlay = document.getElementById('compare-overlay');
+  overlay.style.display = 'flex';
   document.body.style.overflow = 'hidden';
   history.replaceState(null, '', '#compare=' + presetId);
+  trapCompareFocus(overlay);
 }
 
 function closeCompare() {
@@ -834,6 +841,28 @@ function closeCompare() {
   const prevHash = window._comparePrevHash || '';
   history.replaceState(null, '', prevHash || window.location.pathname);
   window._comparePrevHash = null;
+  if (window._compareReturnFocus) {
+    window._compareReturnFocus.focus();
+    window._compareReturnFocus = null;
+  }
+}
+
+function trapCompareFocus(overlay) {
+  const closeBtn = overlay.querySelector('.compare-close');
+  if (closeBtn) closeBtn.focus();
+  overlay._trapHandler = (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = overlay.querySelectorAll('button, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  };
+  overlay.addEventListener('keydown', overlay._trapHandler);
 }
 
 function showCompareSearchHint() {
