@@ -740,6 +740,43 @@ html, body {
   .compare-card { display: none; }
 }
 
+/* Compare Flip Layout (tools = rows, criteria = columns) */
+.compare-panel-flip { max-width: 1100px; }
+.compare-flip-table {
+  width: 100%; border-collapse: collapse; min-width: 900px;
+}
+.compare-flip-table th,
+.compare-flip-table td {
+  padding: 8px 12px; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem; word-break: break-word; min-width: 120px;
+}
+.compare-flip-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--search-bg);
+  font-weight: 600; font-size: 0.8rem; color: var(--text);
+}
+.compare-flip-tool-name {
+  position: sticky; left: 0; z-index: 1;
+  background: var(--search-bg);
+  font-weight: 600; color: var(--text);
+  min-width: 140px; white-space: nowrap;
+}
+.compare-flip-table thead th:first-child { z-index: 2; }
+.compare-flip-table thead .compare-flip-col-hi {
+  background: var(--hover); font-weight: 700;
+}
+.compare-flip-col-hi { background: var(--hover); }
+.compare-scale-strong { background: rgba(34,197,94,0.12); }
+.compare-scale-good { background: rgba(59,130,246,0.12); }
+.compare-scale-basic { background: rgba(156,163,175,0.1); }
+[data-theme="light"] .compare-scale-strong { background: rgba(34,197,94,0.08); }
+[data-theme="light"] .compare-scale-good { background: rgba(59,130,246,0.08); }
+[data-theme="light"] .compare-scale-basic { background: rgba(156,163,175,0.08); }
+@media (max-width: 768px) {
+  .compare-flip-table { display: none; }
+}
+
 /* Compare Button */
 .compare-btn {
   background: none; border: 1px solid var(--border);
@@ -1026,11 +1063,115 @@ function renderCompareCards(preset) {
   return frag;
 }
 
+function getScaleClass(value) {
+  if (!value || typeof value !== 'string') return '';
+  if (/^(Agentic|Strong)\b/.test(value)) return 'compare-scale-strong';
+  if (/^(Semi-agent|Good)\b/.test(value)) return 'compare-scale-good';
+  if (/^(Assist|Basic)\b/.test(value)) return 'compare-scale-basic';
+  return '';
+}
+
+function renderFlipTable(preset) {
+  const table = document.createElement('table');
+  table.className = 'compare-flip-table';
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  const cornerTh = document.createElement('th');
+  cornerTh.className = 'compare-flip-tool-name';
+  cornerTh.textContent = 'Tool';
+  headerRow.appendChild(cornerTh);
+  preset.criteria.forEach(criterion => {
+    const th = document.createElement('th');
+    if (preset.highlight.includes(criterion)) th.classList.add('compare-flip-col-hi');
+    th.textContent = criterion;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  preset.tools.forEach(tool => {
+    const row = document.createElement('tr');
+    const nameCell = document.createElement('td');
+    nameCell.className = 'compare-flip-tool-name';
+    nameCell.textContent = findCardName(tool.cardId) || tool.cardId;
+    row.appendChild(nameCell);
+    preset.criteria.forEach(criterion => {
+      const td = document.createElement('td');
+      td.className = 'compare-value';
+      const value = tool.values[criterion];
+      const isHi = preset.highlight.includes(criterion);
+      if (isHi) {
+        td.classList.add('compare-flip-col-hi');
+        const sc = getScaleClass(value);
+        if (sc) td.classList.add(sc);
+      }
+      if (Array.isArray(value)) {
+        td.innerHTML = value.map(v => `<span class="compare-chip">${escapeHtml(v)}</span>`).join('');
+      } else {
+        td.textContent = value || '\u2014';
+      }
+      row.appendChild(td);
+    });
+    tbody.appendChild(row);
+  });
+  table.appendChild(tbody);
+  return table;
+}
+
+function renderFlipCards(preset) {
+  const frag = document.createDocumentFragment();
+  preset.tools.forEach(tool => {
+    const card = document.createElement('div');
+    card.className = 'compare-card';
+    const header = document.createElement('h3');
+    header.className = 'compare-card-name';
+    header.textContent = findCardName(tool.cardId) || tool.cardId;
+    card.appendChild(header);
+    preset.criteria.forEach(criterion => {
+      const row = document.createElement('div');
+      row.className = 'compare-card-row';
+      const isHi = preset.highlight.includes(criterion);
+      if (isHi) row.classList.add('compare-highlight');
+      const label = document.createElement('span');
+      label.className = 'compare-card-label';
+      label.textContent = criterion + ': ';
+      row.appendChild(label);
+      const value = tool.values[criterion];
+      if (Array.isArray(value)) {
+        value.forEach(v => {
+          const chip = document.createElement('span');
+          chip.className = 'compare-chip';
+          chip.textContent = v;
+          row.appendChild(chip);
+        });
+      } else {
+        const val = document.createElement('span');
+        val.className = 'compare-card-value';
+        val.textContent = value || '\u2014';
+        row.appendChild(val);
+      }
+      if (isHi) { const sc = getScaleClass(value); if (sc) row.classList.add(sc); }
+      card.appendChild(row);
+    });
+    frag.appendChild(card);
+  });
+  return frag;
+}
+
 function renderCompare(preset) {
   const body = document.querySelector('.compare-body');
+  const panel = document.querySelector('.compare-panel');
   body.innerHTML = '';
-  body.appendChild(renderCompareTable(preset));
-  body.appendChild(renderCompareCards(preset));
+  const isFlip = preset.layout === 'flip';
+  panel.classList.toggle('compare-panel-flip', isFlip);
+  if (isFlip) {
+    body.appendChild(renderFlipTable(preset));
+    body.appendChild(renderFlipCards(preset));
+  } else {
+    body.appendChild(renderCompareTable(preset));
+    body.appendChild(renderCompareCards(preset));
+  }
 }
 
 // ═══ SVG Icon Builders ═══
