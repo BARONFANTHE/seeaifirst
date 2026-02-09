@@ -1601,6 +1601,150 @@
           }
         }
       ]
+    },
+    {
+      "id": "coding-agents",
+      "title": "So sánh AI Coding Agents",
+      "sectionId": "coding-agents",
+      "as_of": "2026-02-09",
+      "layout": "flip",
+      "criteria": ["Best for", "Form factor", "Autonomy", "Workflow integration", "Repo awareness", "Model support", "Pricing"],
+      "highlight": ["Autonomy", "Workflow integration"],
+      "integrations": [],
+      "tools": [
+        {
+          "cardId": "claude-code",
+          "values": {
+            "Best for": "Agentic terminal coding, full-repo tasks",
+            "Form factor": "CLI + IDE + Web + Desktop",
+            "Autonomy": "Agentic",
+            "Workflow integration": "Strong — GitHub Actions, GitLab CI, hooks, PR mode",
+            "Repo awareness": "Strong — repo indexing, CLAUDE.md, memory, sub-agents",
+            "Model support": "Anthropic-first",
+            "Pricing": "Freemium (Pro $20/Max $100–200/mo)"
+          }
+        },
+        {
+          "cardId": "cursor",
+          "values": {
+            "Best for": "IDE-integrated AI dev, multi-file refactoring",
+            "Form factor": "IDE (VS Code fork)",
+            "Autonomy": "Semi-agent",
+            "Workflow integration": "Good — agent mode, GitHub PR review, background agents",
+            "Repo awareness": "Strong — full codebase embeddings, multi-file edits",
+            "Model support": "Multi-provider",
+            "Pricing": "Freemium (Pro $20/Pro+ $60/Ultra $200/mo)"
+          }
+        },
+        {
+          "cardId": "codex-cli",
+          "values": {
+            "Best for": "Async task delegation, parallel agents",
+            "Form factor": "CLI + IDE + Web + Desktop",
+            "Autonomy": "Agentic",
+            "Workflow integration": "Strong — local CLI + cloud tasks, AGENTS.md, Skills, GitHub PR",
+            "Repo awareness": "Good — repo preloading, AGENTS.md, local + cloud environments",
+            "Model support": "OpenAI-first",
+            "Pricing": "Freemium (ChatGPT Plus $20/Pro $200/mo)"
+          }
+        },
+        {
+          "cardId": "windsurf",
+          "values": {
+            "Best for": "AI-native IDE, autonomous multi-step coding",
+            "Form factor": "IDE (standalone)",
+            "Autonomy": "Agentic",
+            "Workflow integration": "Good — Cascade agent, multi-file changes, auto-verify",
+            "Repo awareness": "Good — codebase analysis, project structure awareness",
+            "Model support": "Multi-provider",
+            "Pricing": "Freemium (Free 25 credits/Pro $15/Teams $30/mo)"
+          }
+        },
+        {
+          "cardId": "github-copilot",
+          "values": {
+            "Best for": "Inline assist, team adoption, PR review",
+            "Form factor": "IDE extension (VS Code, JetBrains, Eclipse, Xcode, Neovim)",
+            "Autonomy": "Semi-agent",
+            "Workflow integration": "Strong — coding agent on issues/PRs, AGENTS.md, plan mode, MCP",
+            "Repo awareness": "Good — repo indexing, multi-file agent mode",
+            "Model support": "Multi-model (plan-dependent)",
+            "Pricing": "Freemium (Free/Pro $10/Pro+ $39/Biz $19/Ent $39/user/mo)"
+          }
+        },
+        {
+          "cardId": "gemini-cli",
+          "values": {
+            "Best for": "Free terminal coding, Google ecosystem",
+            "Form factor": "CLI",
+            "Autonomy": "Semi-agent",
+            "Workflow integration": "Basic — shell commands, file ops, web fetch, MCP",
+            "Repo awareness": "Good — reads local files, tool-based context",
+            "Model support": "Google-first",
+            "Pricing": "Free (generous free tier; BYO key for more)"
+          }
+        },
+        {
+          "cardId": "cline-roocode",
+          "values": {
+            "Best for": "Customizable OSS agent, human-in-the-loop",
+            "Form factor": "VS Code extension",
+            "Autonomy": "Semi-agent",
+            "Workflow integration": "Good — Plan/Act modes, terminal, MCP, Orchestrator (Roo)",
+            "Repo awareness": "Good — tree-sitter parsing, full project read, multi-file",
+            "Model support": "Multi-provider",
+            "Pricing": "Free/OSS (pay API provider)"
+          }
+        },
+        {
+          "cardId": "kiro-aws",
+          "values": {
+            "Best for": "Spec-driven dev, enterprise AWS projects",
+            "Form factor": "IDE (Code OSS fork)",
+            "Autonomy": "Agentic",
+            "Workflow integration": "Strong — agent hooks (auto-test, lint, docs on save), spec→design→tasks",
+            "Repo awareness": "Good — structured specs, requirements tracking, persistent context",
+            "Model support": "AWS-first (Claude via Bedrock)",
+            "Pricing": "Freemium (per-prompt credits)"
+          }
+        },
+        {
+          "cardId": "replit-agent",
+          "values": {
+            "Best for": "No-setup cloud dev, beginners",
+            "Form factor": "Web IDE (browser)",
+            "Autonomy": "Agentic",
+            "Workflow integration": "Basic — integrated deploy, no Git/PR workflow",
+            "Repo awareness": "Basic — project context within Replit workspace",
+            "Model support": "Replit proprietary",
+            "Pricing": "Freemium (Free tier/Core $25/mo)"
+          }
+        },
+        {
+          "cardId": "opencode",
+          "values": {
+            "Best for": "OSS terminal agent, LSP integration",
+            "Form factor": "CLI",
+            "Autonomy": "Semi-agent",
+            "Workflow integration": "Basic — file editing, shell commands, LSP",
+            "Repo awareness": "Good — LSP-powered code intelligence, project scanning",
+            "Model support": "Multi-provider",
+            "Pricing": "Free/OSS"
+          }
+        },
+        {
+          "cardId": "goose",
+          "values": {
+            "Best for": "Extensible workflow automation, recipes",
+            "Form factor": "CLI + Desktop",
+            "Autonomy": "Agentic",
+            "Workflow integration": "Good — Recipes (executable workflows), MCP, auto-PR",
+            "Repo awareness": "Good — project context, global MCP servers",
+            "Model support": "Multi-provider",
+            "Pricing": "Free/OSS (by Block)"
+          }
+        }
+      ]
     }
   ]
 }
