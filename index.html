@@ -818,7 +818,7 @@ html, body {
     <div class="topbar-left">
       <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
       <span class="logo">🧠 AI Mindmap</span>
-      <span class="version-badge">v5.0</span>
+      <span class="version-badge">v6.1</span>
     </div>
     <div class="topbar-right">
       <button id="search-btn">🔍 Tìm kiếm <kbd>⌘K</kbd></button>
@@ -1668,6 +1668,11 @@ async function init() {
       isDark = false;
       document.documentElement.setAttribute('data-theme', 'light');
       document.getElementById('theme-toggle').textContent = '🌙';
+    }
+
+    // Update version badge from data
+    if (data.meta && data.meta.version) {
+      document.querySelector('.version-badge').textContent = 'v' + data.meta.version;
     }
 
     // Update total tools count
