@@ -1508,7 +1508,7 @@
           "cardId": "milvus",
           "values": {
             "Best for": "Billion-scale enterprise AI, multimodal search",
-            "Scale": "Billions vectors — K8s-native distributed, stateless microservices, horizontal scale",
+            "Scale": "Distributed (K8s), billion→tens-of-billions (workload-dependent)",
             "Filtering": "Advanced: metadata filtering, hybrid dense+sparse, full-text BM25, JSON Path Index (100x faster)",
             "Deploy": "Milvus Lite (pip) · Standalone (Docker) · Distributed (K8s) · Zilliz Cloud",
             "Integrations": ["langchain", "llamaindex", "dify", "haystack"],
@@ -1519,7 +1519,7 @@
           "cardId": "qdrant",
           "values": {
             "Best for": "Production RAG & recommendation, Rust performance",
-            "Scale": "Billions vectors — horizontal sharding + replication, zero-downtime rolling updates",
+            "Scale": "Cluster-scale (sharding/replication)",
             "Filtering": "Rich: payload filtering with boolean (AND/OR/NOT), geo, full-text, pre-filter integrated in search",
             "Deploy": "Docker · K8s · Qdrant Cloud (AWS/GCP/Azure) · Hybrid Cloud · Edge",
             "Integrations": ["langchain", "llamaindex", "haystack", "n8n", "crewai"],
@@ -1531,7 +1531,7 @@
           "values": {
             "Best for": "Rapid prototyping, lightweight embedded apps",
             "Scale": "Millions self-host, billions via Chroma Cloud — object-storage tiered architecture",
-            "Filtering": "Basic: metadata filtering, full-text search, regex, BM25/SPLADE sparse vectors",
+            "Filtering": "Document filter (contains / where_document) + basic metadata filters",
             "Deploy": "pip install (embedded) · Docker (client/server) · Chroma Cloud (serverless)",
             "Integrations": ["langchain", "llamaindex", "hugging-face"],
             "License": "Apache-2.0"
@@ -1541,7 +1541,7 @@
           "cardId": "pgvector",
           "values": {
             "Best for": "Teams already using PostgreSQL, hybrid SQL + vector",
-            "Scale": "Millions vectors single-node — scale vertically, shard with Citus for larger datasets",
+            "Scale": "Scales with Postgres (typically single-node; scale-out needs Postgres clustering/sharding)",
             "Filtering": "Full SQL: WHERE clauses, JOINs, aggregations — combine vector search with any PostgreSQL query",
             "Deploy": "PostgreSQL extension — any PG host, Neon, Supabase, RDS, self-host",
             "Integrations": ["langchain", "llamaindex", "django", "rails"],
@@ -1593,7 +1593,7 @@
           "cardId": "lightrag",
           "values": {
             "Best for": "Graph-enhanced RAG, entity relationships, multi-hop reasoning",
-            "No-code vs Code": "Code-first: Python API (pip install), Web UI available, developer-oriented",
+            "No-code vs Code": "Code-first: Python API (also offers Server Web UI)",
             "Doc Understanding": "Graph-based: extracts entities & relationships, dual-level retrieval (local + global)",
             "Deploy": "pip install · Docker · Railway · self-host",
             "Integrations": ["neo4j", "faiss", "chroma", "milvus", "ollama"],
