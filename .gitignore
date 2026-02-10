@@ -3,6 +3,7 @@ node_modules/
 *.log
 .vercel
 .env
-docs/
+docs/*
+!docs/SCHEMA_SPEC.md
 .claude/
 nul
