@@ -764,7 +764,8 @@ html, body {
 }
 .compare-flip-table thead th:first-child { z-index: 2; }
 .compare-flip-table thead .compare-flip-col-hi {
-  background: var(--hover); font-weight: 700;
+  background: linear-gradient(var(--hover), var(--hover)), var(--search-bg);
+  font-weight: 700;
 }
 .compare-flip-col-hi { background: var(--hover); }
 .compare-scale-strong { background: rgba(34,197,94,0.12); }
@@ -1163,6 +1164,12 @@ function renderCompare(preset) {
   const body = document.querySelector('.compare-body');
   const panel = document.querySelector('.compare-panel');
   body.innerHTML = '';
+  if (preset.as_of) {
+    const asOf = document.createElement('p');
+    asOf.style.cssText = 'font-size:0.85rem;color:var(--text-muted);text-align:center;margin:0 0 12px';
+    asOf.textContent = '\u{1F4C5} Data as of: ' + preset.as_of;
+    body.appendChild(asOf);
+  }
   const isFlip = preset.layout === 'flip';
   panel.classList.toggle('compare-panel-flip', isFlip);
   if (isFlip) {
