@@ -1747,6 +1747,138 @@
           }
         }
       ]
+    },
+    {
+      "id": "frameworks",
+      "title": "So sánh Agent Frameworks",
+      "sectionId": "frameworks",
+      "as_of": "2026-02-10",
+      "layout": "flip",
+      "criteria": ["Best for", "Learning curve", "Ecosystem", "Graph/Agent support", "Memory/RAG integration", "Language", "License"],
+      "highlight": ["Graph/Agent support", "Memory/RAG integration"],
+      "integrations": [],
+      "tools": [
+        {
+          "cardId": "langgraph",
+          "values": {
+            "Best for": "Complex stateful multi-agent workflows with graph orchestration",
+            "Learning curve": "Hard",
+            "Ecosystem": "Strong — LangChain + LangSmith + LangGraph Platform, 300+ integrations",
+            "Graph/Agent support": "Strong — Core: directed graph state machine, conditional routing, cycles, multi/hierarchical agents",
+            "Memory/RAG integration": "Strong — Built-in short/long-term memory, semantic search, cross-thread, LangChain retrievers",
+            "Language": "Both",
+            "License": "MIT"
+          }
+        },
+        {
+          "cardId": "crewai",
+          "values": {
+            "Best for": "Role-based multi-agent collaboration with crew metaphor",
+            "Learning curve": "Easy",
+            "Ecosystem": "Good — 24K+ stars, standalone framework, CrewAI Flows + AMP Suite",
+            "Graph/Agent support": "Good — Sequential/hierarchical/consensus processes, Flows engine with event-driven control",
+            "Memory/RAG integration": "Strong — First-class: short-term (ChromaDB), long-term (SQLite3), entity memory, RagTool",
+            "Language": "Python",
+            "License": "MIT"
+          }
+        },
+        {
+          "cardId": "autogen",
+          "values": {
+            "Best for": "Research multi-agent conversations (Active path = AG2)",
+            "Learning curve": "Medium",
+            "Ecosystem": "Good — AG2 community fork (Apache 2.0), ecosystem split with Microsoft path",
+            "Graph/Agent support": "Good — Conversation-based patterns, group chat, nested chats, AG2 adds swarm + A2A",
+            "Memory/RAG integration": "Good — Teachability module, RAG via RetrieveAssistantAgent + ChromaDB",
+            "Language": "Python",
+            "License": "Apache 2.0"
+          }
+        },
+        {
+          "cardId": "openai-agents-sdk",
+          "values": {
+            "Best for": "Lightweight production agents with minimal abstractions",
+            "Learning curve": "Easy",
+            "Ecosystem": "Good — OpenAI-backed, 16K+ stars, provider-agnostic, growing integrations",
+            "Graph/Agent support": "Good — Handoff-based delegation, guardrails, deterministic flows",
+            "Memory/RAG integration": "Basic — Session memory only, no built-in long-term or RAG",
+            "Language": "Both",
+            "License": "MIT"
+          }
+        },
+        {
+          "cardId": "google-adk",
+          "values": {
+            "Best for": "Code-first agents with Google Cloud/Gemini integration",
+            "Learning curve": "Medium",
+            "Ecosystem": "Strong — Google-backed, multi-language (also Go/Java), Vertex AI compatible",
+            "Graph/Agent support": "Strong — Workflow agents (Sequential/Parallel/Loop), dynamic routing, A2A protocol",
+            "Memory/RAG integration": "Good — Session state management, MCP tools, Google Search RAG integration",
+            "Language": "Both",
+            "License": "Apache 2.0"
+          }
+        },
+        {
+          "cardId": "llamaindex",
+          "values": {
+            "Best for": "Data-centric RAG applications and document AI",
+            "Learning curve": "Medium",
+            "Ecosystem": "Strong — 38K+ stars, 300+ integrations, LlamaCloud + LlamaParse",
+            "Graph/Agent support": "Good — Workflows 1.0 event-driven engine, AgentRunner, sequential/parallel/loop",
+            "Memory/RAG integration": "Strong — Best-in-class RAG: vector/tree/keyword/KG indexing, LlamaParse pipeline",
+            "Language": "Both",
+            "License": "MIT"
+          }
+        },
+        {
+          "cardId": "rasa",
+          "values": {
+            "Best for": "Enterprise conversational AI with strict business logic",
+            "Learning curve": "Hard",
+            "Ecosystem": "Strong (maintenance-mode) — 20K+ stars, 500+ contributors, CALM engine",
+            "Graph/Agent support": "Good — Flow-based dialogue, CALM combines LLM + deterministic business logic",
+            "Memory/RAG integration": "Basic — Dialogue state tracking (slot filling), no built-in RAG pipeline",
+            "Language": "Python",
+            "License": "Apache 2.0"
+          }
+        },
+        {
+          "cardId": "browser-use",
+          "values": {
+            "Best for": "AI-powered web browser automation",
+            "Learning curve": "Easy",
+            "Ecosystem": "Good — 60K+ stars, $17M seed (TechCrunch), MCP server support",
+            "Graph/Agent support": "Basic — Single-agent browser loop, plugs into other frameworks for orchestration",
+            "Memory/RAG integration": "Basic — Session-level browser state only, no memory or RAG",
+            "Language": "Python",
+            "License": "MIT"
+          }
+        },
+        {
+          "cardId": "pydantic-ai",
+          "values": {
+            "Best for": "Type-safe agents with FastAPI-like ergonomics",
+            "Learning curve": "Medium",
+            "Ecosystem": "Good — By Pydantic team, 15K+ stars, model-agnostic, Logfire observability",
+            "Graph/Agent support": "Good — Dependency injection, agent delegation, multi-agent handoffs",
+            "Memory/RAG integration": "Good — MCP integration, human-in-the-loop, durable execution, external providers",
+            "Language": "Python",
+            "License": "MIT"
+          }
+        },
+        {
+          "cardId": "mastra",
+          "values": {
+            "Best for": "Full-stack TypeScript AI apps (agents + workflows + RAG)",
+            "Learning curve": "Easy",
+            "Ecosystem": "Good — From Gatsby team (YC), 25K+ stars, TS-native, Vercel AI SDK",
+            "Graph/Agent support": "Good — Workflow engine with suspend/resume, agent networks with routing",
+            "Memory/RAG integration": "Good — Built-in RAG pipeline (chunking/embedding/search), agent memory support",
+            "Language": "TypeScript",
+            "License": "Apache 2.0"
+          }
+        }
+      ]
     }
   ]
 }
