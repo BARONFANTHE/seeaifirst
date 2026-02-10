@@ -1,5 +1,9 @@
 # AI Mindmap Changelog
 
+## v6.1.1 — 2026-02-10
+- feat(compare): show "Data as of" date from preset.as_of field
+- fix(compare): solid background for highlighted sticky headers in flip layout
+
 ## [6.1] - 2026-02-09
 ### Added
 - Coding Agents comparison preset (11 tools × 7 criteria)
