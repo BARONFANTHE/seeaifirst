@@ -1,5 +1,12 @@
 # AI Mindmap Changelog
 
+## v6.2 — 2026-02-10
+- **Frameworks comparison preset:** 10 tools × 7 criteria (flip layout)
+  - Tools: LangGraph, CrewAI, AutoGen, OpenAI Agents SDK, Google ADK, LlamaIndex, Rasa, Browser-Use, Pydantic AI, Mastra
+  - Criteria: Best for, Learning curve, Ecosystem, Graph/Agent support, Memory/RAG integration, Language, License
+  - Highlighted: Graph/Agent support, Memory/RAG integration
+- **Legacy presets as_of:** Added `as_of` date to vector-databases + rag-systems presets
+
 ## v6.1.1 — 2026-02-10
 - feat(compare): show "Data as of" date from preset.as_of field
 - fix(compare): solid background for highlighted sticky headers in flip layout
