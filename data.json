@@ -1501,6 +1501,7 @@
     {
       "id": "vector-databases",
       "title": "So sánh Vector Databases",
+      "as_of": "2026-02-10",
       "criteria": ["Best for", "Scale", "Filtering", "Deploy", "Integrations", "License"],
       "highlight": ["Scale", "Filtering"],
       "tools": [
@@ -1553,6 +1554,7 @@
     {
       "id": "rag-systems",
       "title": "So sánh RAG Systems",
+      "as_of": "2026-02-10",
       "criteria": ["Best for", "No-code vs Code", "Doc Understanding", "Deploy", "Integrations", "License"],
       "highlight": ["No-code vs Code", "Doc Understanding"],
       "tools": [
