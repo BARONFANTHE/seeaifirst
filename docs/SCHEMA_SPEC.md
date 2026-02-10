@@ -123,6 +123,28 @@ Slugs reference other cards by lowercase, kebab-case transformation of card name
 
 Slugs MUST match actual card names in `data.json` — validated by A3 script.
 
+### Card Identity & Slug Immutability
+
+**Card identity:**
+- Cards are identified by their `name` field (no separate `id` field exists)
+- Slugs are **derived** from `name` using the normalization rule above
+- Slugs are used in: `compatibleWith[]`, `comparison_presets[].tools[]`, URL deep-links (`#card=<slug>`), and future `relations[]`
+
+**Immutability rules (effective after A2 enrichment):**
+
+| Rule | Description |
+|------|-------------|
+| **R1: Name stability** | Card `name` SHOULD NOT change after A2 enrichment. If a tool rebrands, prefer adding a note/alias rather than renaming. |
+| **R2: Rename protocol** | If `name` MUST change (e.g., tool officially rebrands): (1) Update `name`, (2) Find-and-replace old slug in ALL `compatibleWith[]` arrays across all cards, (3) Update `comparison_presets[].tools[]` if affected, (4) Update any deep-link references in docs, (5) Log in CHANGELOG as breaking change. |
+| **R3: No orphan slugs** | Every slug in `compatibleWith[]` MUST resolve to an existing card name. A3 validation script will check this. |
+| **R4: Case sensitivity** | Slugs are always lowercase. Matching is case-insensitive during validation but storage must be lowercase. |
+| **R5: Deletion protocol** | If a card is removed: (1) Remove from its section, (2) Remove its slug from ALL `compatibleWith[]` arrays, (3) Remove from `comparison_presets` if present, (4) Log in CHANGELOG. |
+
+**Pre-A2 checklist:**
+- [ ] All 66 existing card names reviewed for consistency (no typos, no duplicate near-names)
+- [ ] Slug generation tested against all 66 names (no collisions)
+- [ ] Rules R1-R5 acknowledged by Baron before batch enrichment begins
+
 ---
 
 ## 6. Versioning Rules
