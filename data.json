@@ -121,7 +121,19 @@
               "title": "MCP GitHub",
               "url": "https://github.com/modelcontextprotocol"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": ["tool integration for LLMs", "connecting AI apps to external data sources", "building standardized AI plugins", "cross-platform tool sharing"],
+          "whenNotToUse": ["agent-to-agent communication (use A2A)", "simple REST API calls without AI context"],
+          "compatibleWith": ["a2a", "claude-code", "claude-ai", "chatgpt", "cursor", "windsurf", "openai-agents-sdk", "google-adk", "dify"],
+          "useCases": ["tool-integration", "data-access", "ai-plugin-system", "ide-extension"],
+          "languages": ["python", "js", "java", "csharp", "go", "rust", "swift", "ruby"],
+          "verified_at": "2026-02-11",
+          "verification_source": "docs",
+          "github_stars": 6400,
+          "license": "Apache-2.0"
         },
         {
           "icon": "🤝",
@@ -152,7 +164,19 @@
               "title": "A2A Protocol Documentation",
               "url": "https://google.github.io/A2A/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": ["agent-to-agent communication", "cross-framework agent collaboration", "enterprise multi-agent workflows", "multi-vendor agent interop"],
+          "whenNotToUse": ["tool integration for LLMs (use MCP)", "single-agent applications"],
+          "compatibleWith": ["mcp", "google-adk", "langgraph", "crewai", "autogen", "pydantic-ai"],
+          "useCases": ["multi-agent-systems", "enterprise-workflows", "agent-interop", "cross-platform-agents"],
+          "languages": ["python", "js", "java", "go", "rust", "csharp"],
+          "verified_at": "2026-02-11",
+          "verification_source": "docs",
+          "github_stars": 21900,
+          "license": "Apache-2.0"
         }
       ]
     },
@@ -414,7 +438,19 @@
               "title": "Claude Support",
               "url": "https://support.claude.com/"
             }
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "cloud",
+          "difficulty": "beginner",
+          "whenToUse": ["general AI assistant with projects", "research and document analysis", "artifact creation (code, docs, diagrams)", "project-based knowledge management"],
+          "whenNotToUse": ["automated CI/CD pipelines (use API)", "local or offline usage", "high-volume batch processing"],
+          "compatibleWith": ["mcp", "claude-code"],
+          "useCases": ["ai-assistant", "content-creation", "research", "prompt-engineering"],
+          "languages": ["python", "js", "typescript"],
+          "verified_at": "2026-02-11",
+          "verification_source": "tested",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "💬",
@@ -438,7 +474,19 @@
               "title": "OpenAI Platform",
               "url": "https://platform.openai.com/"
             }
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "cloud",
+          "difficulty": "beginner",
+          "whenToUse": ["general AI assistant", "code generation and debugging", "image generation with DALL-E", "web browsing and research"],
+          "whenNotToUse": ["automated pipelines (use OpenAI API)", "local or offline usage", "enterprise data isolation requirements"],
+          "compatibleWith": ["mcp", "openai-agents-sdk"],
+          "useCases": ["ai-assistant", "content-creation", "code-generation", "research"],
+          "languages": ["python", "js", "typescript"],
+          "verified_at": "2026-02-11",
+          "verification_source": "docs",
+          "github_stars": null,
+          "license": null
         }
       ]
     },
@@ -667,7 +715,19 @@
               "title": "Claude-Flow GitHub",
               "url": "https://github.com/cyanheads/claude-flow"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "local",
+          "difficulty": "advanced",
+          "whenToUse": ["multi-agent swarm orchestration", "parallel task execution with Claude Code", "complex project automation", "background worker workflows"],
+          "whenNotToUse": ["simple single-agent tasks", "non-Claude environments", "lightweight scripting"],
+          "compatibleWith": ["claude-code", "mcp", "codex-cli"],
+          "useCases": ["multi-agent-orchestration", "swarm-intelligence", "parallel-development", "workflow-automation"],
+          "languages": ["js", "typescript"],
+          "verified_at": "2026-02-11",
+          "verification_source": "docs",
+          "github_stars": 13900,
+          "license": "MIT"
         },
         {
           "icon": "🐕",
@@ -687,7 +747,19 @@
               "title": "OpenClaw GitHub",
               "url": "https://github.com/openclaw/openclaw"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": ["personal AI assistant always-on", "messaging platform automation (Telegram, Discord, Slack)", "multi-agent coordination", "self-hosted AI with local file access"],
+          "whenNotToUse": ["simple chatbot without tool use", "enterprise deployment without customization", "code-only development workflows"],
+          "compatibleWith": ["mcp", "claude-code", "ollama"],
+          "useCases": ["personal-assistant", "task-automation", "messaging-agent", "multi-agent-coordination"],
+          "languages": ["python", "js", "typescript"],
+          "verified_at": "2026-02-11",
+          "verification_source": "docs",
+          "github_stars": 182000,
+          "license": "Apache-2.0"
         },
         {
           "icon": "🐦",
@@ -706,7 +778,19 @@
               "title": "Claude Squad GitHub",
               "url": "https://github.com/smtg-ai/claude-squad"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "local",
+          "difficulty": "intermediate",
+          "whenToUse": ["managing multiple AI coding agents simultaneously", "parallel task execution across branches", "background code generation", "multi-agent development with git isolation"],
+          "whenNotToUse": ["single-task workflow", "non-terminal environments", "projects without git"],
+          "compatibleWith": ["claude-code", "codex-cli", "opencode", "gemini-cli", "goose"],
+          "useCases": ["parallel-development", "multi-agent-management", "background-tasks", "git-workflow"],
+          "languages": ["go"],
+          "verified_at": "2026-02-11",
+          "verification_source": "docs",
+          "github_stars": 5900,
+          "license": "MIT"
         }
       ]
     },
