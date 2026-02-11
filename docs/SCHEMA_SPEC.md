@@ -125,6 +125,10 @@ Slugs MUST match actual card names in `data.json` — validated by A3 script.
 
 ### Card Identity & Slug Immutability
 
+- **Canonical identifier:** `slug` (kebab-case) là ID ổn định để reference (compatibleWith, relations, presets).
+- **Display label:** `name` là label hiển thị; có thể đổi theo rename protocol.
+- **Immutability:** `slug` MUST NOT change after A2; nếu bắt buộc đổi slug thì coi như "new card" (major change) + redirect/mapping (backlog).
+
 **Card identity:**
 - Cards are identified by their `name` field (no separate `id` field exists)
 - Slugs are **derived** from `name` using the normalization rule above
