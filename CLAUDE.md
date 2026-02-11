@@ -18,15 +18,15 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 
 | Item | Value |
 |------|-------|
-| **Version** | v6.2 (deployed, SECTIONS FROZEN) |
-| **meta.version** | "6.2" |
+| **Version** | v6.3 (deployed, SECTIONS FROZEN) |
+| **meta.version** | "6.3" |
 | **meta.schema_version** | "0.1.0-draft" |
 | **Cards** | 66 cards, 13 sections, 5 layers |
 | **Compare** | 4 presets (vector-databases, rag-systems, coding-agents, frameworks) |
 | **SEO** | sitemap.xml + robots.txt + canonical + English meta — live |
 | **OG Image** | og-image.png generated via script (66 Tools, 13 Sections, v6.2) |
-| **Last Deploy** | 2026-02-10 |
-| **Latest Commit** | 25ac6d6 |
+| **Last Deploy** | 2026-02-11 |
+| **Latest Commit** | 20a6755 |
 
 ## Architecture
 
@@ -77,9 +77,9 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
     "subtitle": "...",
     "lastUpdated": "...",
     "updatedBy": "...",
-    "version": "6.2",
+    "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-10T00:00:00Z",
+    "updated_at": "2026-02-11T00:00:00Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -193,13 +193,17 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 | 13 | security | 🛡️ | #ef4444 | 4 | garak🔥, NeMo Guardrails, Presidio, Guardrails AI |
 | | | | | **66** | |
 
-### Compare Mode (v6.0 → v6.2)
+### Compare Mode (v6.0 → v6.3)
 
 - `comparison_presets[]` in data.json root — preset-contained data model
 - 4 presets: `vector-databases` (4 tools), `rag-systems` (4 tools), `coding-agents` (11 tools), `frameworks` (10 tools)
 - Criteria with `highlight[]` for key differentiators
 - Integrations array uses card slugs for cross-linking
 - Deep-link: `#compare=<presetId>`
+- **Tool Picker (v6.3):** `#compare=<presetId>&pick=slug1,slug2,...` cho focused comparison (2-6 tools)
+- Two modes: All Mode (default, backward-compat) / Focused Mode (2-6 tools selected)
+- Picker bar: toggle chips + count + Reset button above compare table
+- `pick=` chỉ xuất hiện khi selection ≤6 VÀ < total tools (>6 = All Mode, no pick)
 - Hash priority: compare hash checked before card hash
 - **Flip layout (v6.1):** `preset.layout: "flip"` → tools=rows, criteria=columns
 - **Scale indicators:** Agentic/Strong (green), Semi-agent/Good (blue), Assist/Basic (gray)
@@ -392,7 +396,7 @@ git push origin main
 | 4b | v6.0.1 | Entry points + micro-UX + sticky header | ✅ **Completed** |
 | 5 | v6.1 | Large-preset: Coding Agents flip layout | ✅ **Completed** |
 | 5b | v6.2 | Schema Spec + SEO Baseline + OG image | ✅ **Completed** |
-| 6 | v6.3 | Tool Picker UX | Planned |
+| 6 | v6.3 | Tool Picker UX | ✅ **Completed** |
 | 7 | v7.0 | Community: Auto-fetch, graph, i18n | Planned |
 
 ## Known Issues
@@ -407,7 +411,8 @@ Không có known issues hiện tại.
 **Pending actions:**
 - Bật repo public → "Suggest a Tool" link tự hoạt động (hiện 404 vì repo private)
 - CSP meta tag → cần tách inline JS ra file riêng (deferred, security hardening backlog)
-- P1 next: Week 2 Tool Picker UX (PR riêng) → then A2 batch enrichment
+- ✅ Tool Picker UX shipped (v6.3) — feature branch `feature/tool-picker`, `--no-ff` merge
+- P1 next: A2 batch enrichment 66 cards (10-15 cards/session)
 
 ## JS Functions Reference
 
@@ -422,5 +427,5 @@ Không có known issues hiện tại.
 
 *Version: 2.0*
 *Created: 2026-02-04*
-*Updated: 2026-02-10 — v6.2 (66 cards, 13 sections, Schema Spec + SEO + Compare Mode)*
+*Updated: 2026-02-11 — v6.3 (66 cards, 13 sections, Schema Spec + SEO + Compare Mode + Tool Picker)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
