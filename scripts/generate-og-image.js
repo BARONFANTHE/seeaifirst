@@ -1,3 +1,8 @@
+// OG Image Generator — optional tool, run manually
+// Usage: node scripts/generate-og-image.js
+// Requires: npm install (canvas is a devDependency)
+// Not part of build pipeline — run only when stats change
+
 const { createCanvas } = require('canvas');
 const fs = require('fs');
 const path = require('path');
