@@ -671,6 +671,45 @@ html, body {
   padding: 1px 5px; border-radius: 4px;
   background: var(--hover); border: 1px solid var(--border);
 }
+/* Picker Bar */
+.picker-bar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  padding: 10px 24px; border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.picker-chip {
+  background: none; border: 1px solid var(--border);
+  color: var(--text-muted); padding: 4px 12px; border-radius: 16px;
+  font-size: 0.78rem; font-family: inherit; cursor: pointer;
+  transition: all 0.15s; white-space: nowrap;
+}
+.picker-chip:hover:not(:disabled) {
+  border-color: var(--text-muted); color: var(--text);
+}
+.picker-chip.selected {
+  background: var(--text); color: var(--search-bg);
+  border-color: var(--text); font-weight: 600;
+}
+.picker-chip:disabled {
+  opacity: 0.35; cursor: not-allowed;
+}
+.picker-count {
+  font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;
+  white-space: nowrap;
+}
+.picker-reset {
+  background: none; border: 1px solid var(--border);
+  color: var(--text-muted); padding: 3px 10px; border-radius: 12px;
+  font-size: 0.72rem; font-family: inherit; cursor: pointer;
+  transition: all 0.15s; white-space: nowrap; margin-left: auto;
+}
+.picker-reset:hover { background: var(--hover); color: var(--text); }
+.picker-reset.hidden { display: none; }
+@media (max-width: 768px) {
+  .picker-bar { padding: 8px 16px; gap: 5px; }
+  .picker-chip { padding: 3px 10px; font-size: 0.72rem; }
+}
+
 .compare-body {
   padding: 24px; min-height: 200px; overflow: auto; flex: 1;
 }
@@ -933,18 +972,20 @@ function isCompareOpen() {
   return document.getElementById('compare-overlay').style.display !== 'none';
 }
 
-function openCompare(presetId) {
+function openCompare(presetId, pickSlugs) {
   const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === presetId);
   if (!preset) return;
   const currentHash = location.hash;
   window._comparePrevHash = currentHash.startsWith('#compare=') ? '' : currentHash;
   window._compareReturnFocus = document.activeElement;
   document.querySelector('.compare-title').textContent = preset.title;
-  renderCompare(preset);
+  initPickerSelection(preset, pickSlugs);
+  renderPickerBar(preset);
+  renderCompareBody(preset);
   const overlay = document.getElementById('compare-overlay');
   overlay.style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  history.replaceState(null, '', '#compare=' + presetId);
+  history.replaceState(null, '', getCompareHash(presetId, window._pickerSelection, preset));
   trapCompareFocus(overlay);
 }
 
@@ -954,6 +995,8 @@ function closeCompare() {
   const prevHash = window._comparePrevHash || '';
   history.replaceState(null, '', prevHash || window.location.pathname);
   window._comparePrevHash = null;
+  window._pickerSelection = null;
+  window._pickerPreset = null;
   if (window._compareReturnFocus) {
     window._compareReturnFocus.focus();
     window._compareReturnFocus = null;
@@ -984,6 +1027,141 @@ function showCompareSearchHint() {
   toast.textContent = 'Đóng Compare để tìm kiếm (Ctrl+K)';
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 2500);
+}
+
+// ═══ Tool Picker ═══
+window._pickerSelection = null;
+window._pickerPreset = null;
+
+function parseCompareHash(hash) {
+  // hash = "#compare=presetId" or "#compare=presetId&pick=slug1,slug2"
+  const body = hash.replace(/^#/, '');
+  const parts = body.split('&');
+  let presetId = null, pickSlugs = null;
+  for (const part of parts) {
+    if (part.startsWith('compare=')) presetId = part.replace('compare=', '');
+    else if (part.startsWith('pick=')) {
+      const val = part.replace('pick=', '');
+      if (val) pickSlugs = val.split(',').filter(Boolean);
+    }
+  }
+  return { presetId, pickSlugs };
+}
+
+function getCompareHash(presetId, selectedSet, preset) {
+  const total = preset.tools.length;
+  if (selectedSet.size === total || selectedSet.size > 6) {
+    return '#compare=' + presetId;
+  }
+  // Focused Mode: slugs in preset order
+  const ordered = preset.tools.filter(t => selectedSet.has(t.cardId)).map(t => t.cardId);
+  return '#compare=' + presetId + '&pick=' + ordered.join(',');
+}
+
+function initPickerSelection(preset, pickSlugs) {
+  const allSlugs = preset.tools.map(t => t.cardId);
+  if (pickSlugs && pickSlugs.length >= 2) {
+    const valid = pickSlugs.filter(s => allSlugs.includes(s));
+    if (valid.length >= 2 && valid.length <= 6) {
+      window._pickerSelection = new Set(valid);
+      return;
+    }
+  }
+  window._pickerSelection = new Set(allSlugs);
+}
+
+function renderPickerBar(preset) {
+  const bar = document.querySelector('.picker-bar');
+  bar.innerHTML = '';
+  window._pickerPreset = preset;
+  const total = preset.tools.length;
+
+  preset.tools.forEach(tool => {
+    const chip = document.createElement('button');
+    chip.className = 'picker-chip';
+    chip.dataset.slug = tool.cardId;
+    chip.textContent = findCardName(tool.cardId) || tool.cardId;
+    chip.addEventListener('click', () => {
+      const sel = window._pickerSelection;
+      if (sel.has(tool.cardId)) sel.delete(tool.cardId);
+      else sel.add(tool.cardId);
+      updatePickerState(preset);
+    });
+    bar.appendChild(chip);
+  });
+
+  const count = document.createElement('span');
+  count.className = 'picker-count';
+  bar.appendChild(count);
+
+  const reset = document.createElement('button');
+  reset.className = 'picker-reset';
+  reset.textContent = 'Reset';
+  reset.addEventListener('click', () => {
+    window._pickerSelection = new Set(preset.tools.map(t => t.cardId));
+    updatePickerState(preset);
+  });
+  bar.appendChild(reset);
+
+  updatePickerState(preset);
+}
+
+function updatePickerState(preset) {
+  const sel = window._pickerSelection;
+  const total = preset.tools.length;
+  const selectedCount = sel.size;
+  const isFocused = selectedCount < total && selectedCount <= 6;
+
+  // Update chips
+  document.querySelectorAll('.picker-bar .picker-chip').forEach(chip => {
+    const slug = chip.dataset.slug;
+    const isSelected = sel.has(slug);
+    chip.classList.toggle('selected', isSelected);
+    // Disable logic
+    let shouldDisable = false;
+    if (isSelected && selectedCount <= 2) shouldDisable = true; // min 2
+    if (!isSelected && isFocused && selectedCount >= 6) shouldDisable = true; // max 6 in focused
+    chip.disabled = shouldDisable;
+  });
+
+  // Update count
+  const countEl = document.querySelector('.picker-bar .picker-count');
+  if (countEl) countEl.textContent = selectedCount + '/' + total + ' tools';
+
+  // Update reset button
+  const resetEl = document.querySelector('.picker-bar .picker-reset');
+  if (resetEl) resetEl.classList.toggle('hidden', selectedCount === total);
+
+  // Update URL
+  const hash = getCompareHash(preset.id, sel, preset);
+  history.replaceState(null, '', hash);
+
+  // Re-render body
+  renderCompareBody(preset);
+}
+
+function renderCompareBody(preset) {
+  const body = document.querySelector('.compare-body');
+  const panel = document.querySelector('.compare-panel');
+  body.innerHTML = '';
+  const filtered = Object.assign({}, preset, {
+    tools: preset.tools.filter(t => window._pickerSelection.has(t.cardId))
+  });
+  if (filtered.as_of) {
+    const asOf = document.createElement('p');
+    asOf.style.cssText = 'font-size:0.85rem;color:var(--text-muted);text-align:center;margin:0 0 12px';
+    asOf.textContent = '\u{1F4C5} Data as of: ' + filtered.as_of;
+    body.appendChild(asOf);
+  }
+  const isFlip = filtered.layout === 'flip';
+  panel.classList.toggle('compare-panel-flip', isFlip);
+  if (isFlip) {
+    body.appendChild(renderFlipTable(filtered));
+    body.appendChild(renderFlipCards(filtered));
+  } else {
+    body.appendChild(renderCompareTable(filtered));
+    body.appendChild(renderCompareCards(filtered));
+  }
 }
 
 function findCardName(cardId) {
@@ -1650,9 +1828,9 @@ function handleInitialHash() {
 
   // Compare deep-link takes priority
   if (raw.startsWith('#compare=')) {
-    const presetId = raw.replace('#compare=', '');
+    const { presetId, pickSlugs } = parseCompareHash(raw);
     const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === presetId);
-    if (preset) { openCompare(presetId); return; }
+    if (preset) { openCompare(presetId, pickSlugs); return; }
     history.replaceState(null, '', window.location.pathname);
     return;
   }
@@ -1791,7 +1969,8 @@ async function init() {
     window.addEventListener('hashchange', () => {
       const hash = location.hash;
       if (hash.startsWith('#compare=')) {
-        if (!isCompareOpen()) openCompare(hash.replace('#compare=', ''));
+        const { presetId, pickSlugs } = parseCompareHash(hash);
+        if (!isCompareOpen()) openCompare(presetId, pickSlugs);
       } else if (isCompareOpen()) {
         closeCompare();
       }
@@ -1815,6 +1994,7 @@ document.addEventListener('DOMContentLoaded', init);
       </div>
     </div>
     <div class="compare-hint"><kbd>ESC</kbd> để đóng · <kbd>Ctrl+K</kbd> tạm khóa khi Compare mở</div>
+    <div class="picker-bar"></div>
     <div class="compare-body"></div>
   </div>
 </div>
