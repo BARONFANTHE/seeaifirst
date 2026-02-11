@@ -26,7 +26,8 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 | **SEO** | sitemap.xml + robots.txt + canonical + English meta — live |
 | **OG Image** | og-image.png generated via script (66 Tools, 13 Sections, v6.2) |
 | **Last Deploy** | 2026-02-11 |
-| **Latest Commit** | 20a6755 |
+| **Enriched** | 7/66 (Batch 01: protocols, platforms, orchestration) |
+| **Latest Commit** | 2fdbee8 |
 
 ## Architecture
 
@@ -154,7 +155,7 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 }
 ```
 
-**New enrichment fields (defined in SCHEMA_SPEC.md, will be added in A2):**
+**New enrichment fields (defined in SCHEMA_SPEC.md, đang rollout trong A2 (7/66 done)):**
 ```json
 {
   "pricing": "free|freemium|paid|open-core",
@@ -412,20 +413,22 @@ Không có known issues hiện tại.
 - Bật repo public → "Suggest a Tool" link tự hoạt động (hiện 404 vì repo private)
 - CSP meta tag → cần tách inline JS ra file riêng (deferred, security hardening backlog)
 - ✅ Tool Picker UX shipped (v6.3) — feature branch `feature/tool-picker`, `--no-ff` merge
-- P1 next: A2 batch enrichment 66 cards (10-15 cards/session)
+- P1: A2 enrichment — 7/66 done (Batch 01). Next: Batch 02 — memory (3) + infrastructure (4) + security (4) = 11 cards
 
 ## JS Functions Reference
 
 | Function | Chức năng |
 |----------|-----------|
-| `slugify(s)` | Convert name → URL slug (remove dấu tiếng Việt) |
+| `toSlug(name)` | Convert name → URL slug (remove non-alphanumeric, lowercase) |
 | `navigateToCard(hash)` | Open layer + expand card + scroll to card |
 | `openSearch()` / `closeSearch()` | Mở/đóng search overlay |
 | `doSearch(q)` | Filter allCards, render max 10 results |
 
+⚠️ DEC-029: compatibleWith dùng canonical short slugs, có thể khác toSlug() output. Xem docs/DECISIONS_LOG.md
+
 ---
 
-*Version: 2.0*
+*Version: 2.1*
 *Created: 2026-02-04*
-*Updated: 2026-02-11 — v6.3 (66 cards, 13 sections, Schema Spec + SEO + Compare Mode + Tool Picker)*
+*Updated: 2026-02-11 — post A2 Batch 01 (7/66 enriched, 66 cards, 13 sections)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
