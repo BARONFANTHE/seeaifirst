@@ -4,9 +4,9 @@
     "subtitle": "Phân tầng từ Nền tảng → Ứng dụng → Xu hướng",
     "lastUpdated": "2026-02-09",
     "updatedBy": "Claude Code",
-    "version": "6.2",
+    "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-10T00:00:00Z",
+    "updated_at": "2026-02-11T00:00:00Z",
     "tools_count": 66,
     "sections_count": 13
   },
