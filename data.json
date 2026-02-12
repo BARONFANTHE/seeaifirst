@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-12T00:00:00Z",
+    "updated_at": "2026-02-12T14:00:00Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -2099,7 +2099,28 @@
               "title": "Docs",
               "url": "https://garak.readthedocs.io/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "LLM security assessment and vulnerability scanning before deployment",
+            "red-teaming LLM applications for jailbreaks and prompt injection",
+            "automated probe-based testing across multiple failure modes",
+            "CI/CD integration for ongoing LLM security regression testing"
+          ],
+          "whenNotToUse": [
+            "runtime protection or guardrails (use NeMo Guardrails or Guardrails AI)",
+            "non-LLM application security testing",
+            "when need real-time blocking rather than assessment reports"
+          ],
+          "compatibleWith": ["ollama", "litellm", "vllm", "nemo-guardrails"],
+          "useCases": ["llm-red-teaming", "vulnerability-scanning", "jailbreak-testing", "security-audit"],
+          "languages": ["python"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 6700,
+          "license": "Apache-2.0"
         },
         {
           "name": "NeMo Guardrails",
@@ -2121,7 +2142,28 @@
               "title": "Docs",
               "url": "https://docs.nvidia.com/nemo/guardrails/latest/index.html"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "topic control and content filtering for LLM chatbots",
+            "jailbreak detection in production conversational agents",
+            "multi-rail orchestration with configurable policies",
+            "dialog flow control with Colang DSL"
+          ],
+          "whenNotToUse": [
+            "non-conversational LLM use cases (batch processing, code gen)",
+            "when minimal added latency is critical",
+            "simple output format validation only (Guardrails AI may suffice)"
+          ],
+          "compatibleWith": ["langgraph", "llamaindex", "litellm", "presidio", "langfuse"],
+          "useCases": ["chatbot-safety", "topic-control", "jailbreak-detection", "content-moderation"],
+          "languages": ["python"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 5200,
+          "license": "Apache-2.0"
         },
         {
           "name": "Presidio",
@@ -2143,7 +2185,28 @@
               "title": "Website",
               "url": "https://microsoft.github.io/presidio/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "PII detection and anonymization in LLM pipelines",
+            "text de-identification before model training or logging",
+            "privacy-aware data preprocessing for RAG systems",
+            "custom PII recognizer development with NLP/regex"
+          ],
+          "whenNotToUse": [
+            "real-time high-throughput stream processing without tuning",
+            "non-text PII detection (audio, video) beyond image redaction",
+            "when only simple regex-based masking is needed"
+          ],
+          "compatibleWith": ["nemo-guardrails", "litellm", "dify"],
+          "useCases": ["pii-detection", "data-anonymization", "privacy-preprocessing", "llm-preprocessing"],
+          "languages": ["python"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 6700,
+          "license": "MIT"
         },
         {
           "name": "Guardrails AI",
@@ -2168,7 +2231,28 @@
               "title": "Docs",
               "url": "https://guardrailsai.com/docs"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "structured output validation and type enforcement from LLMs",
+            "composable input/output guards with Hub validators",
+            "risk detection and mitigation via validator marketplace",
+            "LLM reliability improvement with auto-reask on failure"
+          ],
+          "whenNotToUse": [
+            "conversational flow control (NeMo Guardrails is more suitable)",
+            "LLM vulnerability scanning and red-teaming (use garak)",
+            "non-Python tech stacks without REST API bridge"
+          ],
+          "compatibleWith": ["litellm", "langfuse", "deepeval"],
+          "useCases": ["output-validation", "structured-data-extraction", "risk-mitigation", "llm-reliability"],
+          "languages": ["python"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 6100,
+          "license": "Apache-2.0"
         }
       ]
     }
