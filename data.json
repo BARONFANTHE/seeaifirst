@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-12T14:00:00Z",
+    "updated_at": "2026-02-12T16:00:00Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -1532,7 +1532,19 @@
             "MIT License",
             "YC W23"
           ],
-          "hot": true
+          "hot": true,
+          "pricing": "open-core",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": ["theo dõi LLM traces và chi phí", "quản lý prompt phiên bản", "đánh giá chất lượng LLM output"],
+          "whenNotToUse": ["chỉ cần eval đơn giản không cần tracing", "dự án không dùng LLM"],
+          "compatibleWith": ["litellm", "langgraph", "llamaindex", "dify"],
+          "useCases": ["llm-observability", "prompt-management", "cost-tracking", "evaluation"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 21800,
+          "license": "MIT"
         },
         {
           "name": "DeepEval",
@@ -1559,7 +1571,19 @@
             "CI/CD",
             "Apache 2.0",
             "Red-teaming"
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "hybrid",
+          "difficulty": "beginner",
+          "whenToUse": ["unit test LLM output trong CI/CD", "đánh giá RAG pipeline", "red team LLM application"],
+          "whenNotToUse": ["cần full observability platform", "không dùng Python"],
+          "compatibleWith": ["langgraph", "llamaindex"],
+          "useCases": ["llm-evaluation", "rag-testing", "red-teaming", "ci-cd-testing"],
+          "languages": ["python"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 12800,
+          "license": "Apache-2.0"
         },
         {
           "name": "Promptfoo",
@@ -1586,7 +1610,19 @@
             "Security Scan",
             "MIT License",
             "GitHub Actions"
-          ]
+          ],
+          "pricing": "open-core",
+          "deployment": "local",
+          "difficulty": "beginner",
+          "whenToUse": ["so sánh output giữa các LLM", "kiểm tra prompt regression", "red team và bảo mật LLM"],
+          "whenNotToUse": ["cần production observability real-time", "cần tracing distributed system"],
+          "compatibleWith": ["ollama", "litellm"],
+          "useCases": ["prompt-testing", "model-comparison", "red-teaming", "ci-cd-testing"],
+          "languages": ["js"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 10200,
+          "license": "MIT"
         },
         {
           "name": "LangSmith",
@@ -1613,7 +1649,19 @@
             "Playground",
             "Proprietary",
             "Free Tier"
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "cloud",
+          "difficulty": "beginner",
+          "whenToUse": ["debug LangChain và LangGraph applications", "theo dõi agent execution traces", "đánh giá chất lượng với annotation queues"],
+          "whenNotToUse": ["cần self-hosted hoàn toàn miễn phí", "không dùng LangChain ecosystem"],
+          "compatibleWith": ["langgraph", "llamaindex", "litellm"],
+          "useCases": ["llm-observability", "agent-debugging", "evaluation", "prompt-management"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": null,
+          "license": null
         },
         {
           "name": "Arize Phoenix",
@@ -1640,7 +1688,19 @@
             "OpenTelemetry",
             "Elastic 2.0",
             "Self-hosted"
-          ]
+          ],
+          "pricing": "open-core",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": ["debug RAG retrieval quality", "phân tích traces với OpenTelemetry", "chạy evaluation trong notebook workflow"],
+          "whenNotToUse": ["cần cung cấp như managed service cho bên thứ ba", "cần license permissive cho thương mại"],
+          "compatibleWith": ["langgraph", "llamaindex", "litellm"],
+          "useCases": ["llm-observability", "rag-evaluation", "experiment-tracking", "dataset-management"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 8500,
+          "license": "Elastic-2.0"
         }
       ]
     },
@@ -2000,7 +2060,19 @@
           "tags": [
             "42.7K⭐",
             "Apache 2.0"
-          ]
+          ],
+          "pricing": "open-core",
+          "deployment": "hybrid",
+          "difficulty": "advanced",
+          "whenToUse": ["vector search quy mô lớn hàng tỷ vectors", "hybrid search kết hợp keyword và semantic", "multi-tenant production với yêu cầu cao"],
+          "whenNotToUse": ["prototype nhỏ cần setup đơn giản", "đã có PostgreSQL và chỉ cần basic vector search"],
+          "compatibleWith": ["langgraph", "llamaindex", "dify"],
+          "useCases": ["vector-search", "rag-pipeline", "recommendation-system", "image-search"],
+          "languages": ["python", "go", "java"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 42700,
+          "license": "Apache-2.0"
         },
         {
           "name": "Qdrant",
@@ -2024,7 +2096,19 @@
           "tags": [
             "28.6K⭐",
             "Apache 2.0"
-          ]
+          ],
+          "pricing": "open-core",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": ["vector search hiệu năng cao với Rust backend", "kết hợp filtering phức tạp với similarity search", "ứng dụng recommendation và semantic search"],
+          "whenNotToUse": ["cần tích hợp sâu với PostgreSQL ecosystem", "dự án chỉ cần embedded vector store đơn giản"],
+          "compatibleWith": ["langgraph", "llamaindex", "dify"],
+          "useCases": ["vector-search", "rag-pipeline", "recommendation-system", "semantic-search"],
+          "languages": ["python", "js", "rust", "go"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 29000,
+          "license": "Apache-2.0"
         },
         {
           "name": "Chroma",
@@ -2044,7 +2128,19 @@
           "tags": [
             "26K⭐",
             "Apache 2.0"
-          ]
+          ],
+          "pricing": "open-core",
+          "deployment": "hybrid",
+          "difficulty": "beginner",
+          "whenToUse": ["prototype RAG nhanh với API đơn giản", "embedded vector store trong Python app", "developer cần zero-config setup"],
+          "whenNotToUse": ["production scale hàng tỷ vectors", "cần distributed high-availability cluster"],
+          "compatibleWith": ["langgraph", "llamaindex", "crewai"],
+          "useCases": ["vector-search", "rag-pipeline", "prototyping", "semantic-search"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 25900,
+          "license": "Apache-2.0"
         },
         {
           "name": "pgvector",
@@ -2064,7 +2160,19 @@
           "tags": [
             "19.7K⭐",
             "PostgreSQL License"
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": ["đã dùng PostgreSQL và cần thêm vector search", "cần ACID compliance và JOIN với relational data", "không muốn thêm database riêng cho vectors"],
+          "whenNotToUse": ["cần vector search scale hàng tỷ vectors", "không dùng PostgreSQL"],
+          "compatibleWith": ["langgraph", "llamaindex", "dify"],
+          "useCases": ["vector-search", "rag-pipeline", "hybrid-search"],
+          "languages": ["python", "js", "go", "rust"],
+          "verified_at": "2026-02-12",
+          "verification_source": "docs",
+          "github_stars": 19800,
+          "license": "PostgreSQL"
         }
       ]
     },
