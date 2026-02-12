@@ -25,9 +25,9 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 | **Compare** | 4 presets (vector-databases, rag-systems, coding-agents, frameworks) |
 | **SEO** | sitemap.xml + robots.txt + canonical + English meta — live |
 | **OG Image** | og-image.png generated via script (66 Tools, 13 Sections, v6.2) |
-| **Last Deploy** | 2026-02-11 |
-| **Enriched** | 7/66 (Batch 01: protocols, platforms, orchestration) |
-| **Latest Commit** | 2fdbee8 |
+| **Last Deploy** | 2026-02-12 |
+| **Enriched** | 14/66 (Batch 01-02A: protocols, platforms, orchestration, memory, infrastructure) |
+| **Latest Commit** | 0e2b2d0 |
 
 ## Architecture
 
@@ -155,7 +155,7 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 }
 ```
 
-**New enrichment fields (defined in SCHEMA_SPEC.md, đang rollout trong A2 (7/66 done)):**
+**New enrichment fields (defined in SCHEMA_SPEC.md, đang rollout trong A2 (14/66 done)):**
 ```json
 {
   "pricing": "free|freemium|paid|open-core",
@@ -413,7 +413,7 @@ Không có known issues hiện tại.
 - Bật repo public → "Suggest a Tool" link tự hoạt động (hiện 404 vì repo private)
 - CSP meta tag → cần tách inline JS ra file riêng (deferred, security hardening backlog)
 - ✅ Tool Picker UX shipped (v6.3) — feature branch `feature/tool-picker`, `--no-ff` merge
-- P1: A2 enrichment — 7/66 done (Batch 01). Next: Batch 02 — memory (3) + infrastructure (4) + security (4) = 11 cards
+- P1: A2 enrichment — 14/66 done (Batch 01 + 02A). Next: Batch 02B — security (4)
 
 ## JS Functions Reference
 
@@ -430,5 +430,5 @@ Không có known issues hiện tại.
 
 *Version: 2.1*
 *Created: 2026-02-04*
-*Updated: 2026-02-11 — post A2 Batch 01 (7/66 enriched, 66 cards, 13 sections)*
+*Updated: 2026-02-12 — post A2 Batch 02A (14/66 enriched, 66 cards, 13 sections)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
