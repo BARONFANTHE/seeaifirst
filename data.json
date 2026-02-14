@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-12T16:00:00Z",
+    "updated_at": "2026-02-13T16:00:00Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -1963,7 +1963,27 @@
           "tags": [
             "129K⭐",
             "Apache 2.0+"
-          ]
+          ],
+          "pricing": "open-core",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Cần visual workflow builder cho RAG và AI agents",
+            "Muốn deploy nhanh ứng dụng LLM từ prototype đến production",
+            "Team cần platform tích hợp sẵn RAG pipeline, model management, observability"
+          ],
+          "whenNotToUse": [
+            "Cần license OSS thuần cho multi-tenant SaaS (Dify-OSL có điều kiện bổ sung)",
+            "Chỉ cần RAG engine nhẹ, không cần full platform",
+            "Muốn stack tối giản, tránh phụ thuộc nhiều service (PostgreSQL, Redis, MinIO)"
+          ],
+          "compatibleWith": ["ollama", "langfuse", "milvus", "pgvector", "qdrant", "chroma", "litellm"],
+          "useCases": ["rag-pipeline", "chatbot", "ai-workflow", "document-qa"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-13",
+          "verification_source": "docs",
+          "github_stars": 129000,
+          "license": "Dify-OSL"
         },
         {
           "name": "RAGFlow",
@@ -1988,7 +2008,27 @@
           "tags": [
             "73K⭐",
             "Apache 2.0"
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Cần RAG engine chuyên sâu xử lý tài liệu phức tạp (PDF, bảng, scan)",
+            "Muốn self-host hoàn toàn với deep document understanding",
+            "Cần traceable citations và giải thích kết quả truy vấn"
+          ],
+          "whenNotToUse": [
+            "Muốn managed cloud service (RAGFlow chưa có official cloud offering)",
+            "Cần setup tối giản — RAGFlow yêu cầu Elasticsearch, MinIO, MySQL",
+            "Team nhỏ muốn low-code/no-code builder"
+          ],
+          "compatibleWith": ["ollama", "dify", "milvus", "deepeval"],
+          "useCases": ["rag-pipeline", "document-qa", "knowledge-base", "enterprise-search"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-13",
+          "verification_source": "docs",
+          "github_stars": 73000,
+          "license": "Apache-2.0"
         },
         {
           "name": "Flowise",
@@ -2008,7 +2048,27 @@
           "tags": [
             "49K⭐",
             "Apache 2.0"
-          ]
+          ],
+          "pricing": "open-core",
+          "deployment": "hybrid",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "Cần low-code/no-code builder để prototype AI workflows nhanh",
+            "Muốn drag-and-drop UI tích hợp LangChain components",
+            "Team ít kinh nghiệm code muốn xây chatbot hoặc RAG pipeline"
+          ],
+          "whenNotToUse": [
+            "Cần custom logic phức tạp vượt khả năng visual builder",
+            "Yêu cầu governance và audit trail nâng cao (cần Enterprise plan)",
+            "Muốn deep document processing chuyên sâu (Flowise thiên về orchestration)"
+          ],
+          "compatibleWith": ["ollama", "langfuse", "milvus", "pgvector", "qdrant", "chroma"],
+          "useCases": ["rag-pipeline", "chatbot", "ai-workflow", "rapid-prototyping"],
+          "languages": ["js"],
+          "verified_at": "2026-02-13",
+          "verification_source": "docs",
+          "github_stars": 49000,
+          "license": "Apache-2.0"
         },
         {
           "name": "LightRAG",
@@ -2028,7 +2088,27 @@
           "tags": [
             "28K⭐",
             "MIT"
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "local",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Cần graph-based RAG với knowledge graph tự động từ tài liệu",
+            "Muốn framework nhẹ, dễ tích hợp vào codebase Python hiện có",
+            "Research hoặc prototype cần so sánh graph RAG vs vector RAG"
+          ],
+          "whenNotToUse": [
+            "Muốn UI quản lý sẵn — LightRAG là thư viện code-first",
+            "Cần production platform với monitoring và team collaboration",
+            "Team chưa quen concepts knowledge graph và entity extraction"
+          ],
+          "compatibleWith": ["ollama", "pgvector", "milvus", "qdrant"],
+          "useCases": ["rag-pipeline", "knowledge-graph", "research", "document-qa"],
+          "languages": ["python"],
+          "verified_at": "2026-02-13",
+          "verification_source": "docs",
+          "github_stars": 28000,
+          "license": "MIT"
         }
       ]
     },
