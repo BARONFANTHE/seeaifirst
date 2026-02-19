@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-13T16:00:00Z",
+    "updated_at": "2026-02-19T16:00:00Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -269,7 +269,19 @@
               "title": "LangGraph Docs",
               "url": "https://docs.langchain.com/oss/python/langgraph/overview"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": ["stateful multi-step agent workflows", "complex control flow with branching and loops", "human-in-the-loop agent approval", "long-running durable agent execution"],
+          "whenNotToUse": ["simple single-call LLM tasks", "no need for state persistence between steps", "team unfamiliar with graph-based programming"],
+          "compatibleWith": ["langfuse", "mcp", "ollama", "litellm", "pgvector", "chroma", "qdrant", "milvus"],
+          "useCases": ["agent-orchestration", "multi-agent-systems", "rag-pipeline", "workflow-automation"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-19",
+          "verification_source": "docs",
+          "github_stars": 24800,
+          "license": "MIT"
         },
         {
           "icon": "👥",
@@ -387,7 +399,19 @@
               "title": "LlamaIndex Docs",
               "url": "https://docs.llamaindex.ai/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": ["connecting LLMs to custom data sources", "building RAG pipelines over documents", "structured data extraction from unstructured text", "agent workflows with data retrieval"],
+          "whenNotToUse": ["no custom data integration needed", "simple prompt-response without retrieval", "real-time streaming without document grounding"],
+          "compatibleWith": ["mcp", "langfuse", "ollama", "litellm", "pgvector", "chroma", "qdrant", "milvus", "dify"],
+          "useCases": ["rag-pipeline", "document-qa", "data-extraction", "agent-orchestration"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-19",
+          "verification_source": "docs",
+          "github_stars": 47000,
+          "license": "MIT"
         },
         {
           "icon": "💬",
@@ -413,7 +437,19 @@
               "title": "Rasa Docs",
               "url": "https://rasa.com/docs/"
             }
-          ]
+          ],
+          "pricing": "open-core",
+          "deployment": "self-hosted",
+          "difficulty": "advanced",
+          "whenToUse": ["enterprise conversational AI with strict business logic", "on-premise chatbot requiring full data control", "multi-channel text and voice assistants", "regulated industries with strict data governance requirements"],
+          "whenNotToUse": ["quick LLM agent prototyping", "team without ML or NLP background", "simple Q&A bot without complex dialogue flows"],
+          "compatibleWith": ["mcp", "langfuse", "ollama", "litellm"],
+          "useCases": ["conversational-ai", "customer-support", "enterprise-chatbot", "voice-assistant"],
+          "languages": ["python"],
+          "verified_at": "2026-02-19",
+          "verification_source": "docs",
+          "github_stars": 20900,
+          "license": "Apache-2.0"
         },
         {
           "name": "Browser-Use",
@@ -445,7 +481,19 @@
               "title": "Docs",
               "url": "https://ai.pydantic.dev"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": ["type-safe structured agent outputs", "projects already using Pydantic ecosystem", "model-agnostic agent development", "agents requiring strict input-output validation"],
+          "whenNotToUse": ["non-Python projects", "visual or low-code agent building", "complex multi-agent orchestration requiring graph workflows"],
+          "compatibleWith": ["mcp", "a2a", "langfuse", "ollama", "litellm", "deepeval"],
+          "useCases": ["agent-orchestration", "structured-extraction", "type-safe-agents", "api-integration"],
+          "languages": ["python"],
+          "verified_at": "2026-02-19",
+          "verification_source": "docs",
+          "github_stars": 14900,
+          "license": "MIT"
         },
         {
           "name": "Mastra",
