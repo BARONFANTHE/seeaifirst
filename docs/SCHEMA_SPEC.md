@@ -47,7 +47,7 @@ Fields currently present in `data.json` cards.
 | `verified_at` | string (YYYY-MM-DD) | Yes | ISO date | `"2026-02-10"` |
 | `verification_source` | enum string | Yes | `"docs"` \| `"tested"` \| `"inferred"` | `"docs"` |
 | `github_stars` | number \| null | No | Integer or null if not on GitHub | `162000` |
-| `license` | string \| null | No | SPDX identifier or null | `"MIT"` |
+| `license` | string \| null | No | SPDX token preferred; custom tokens allowed (see §Enum Definitions > license) | `"MIT"` |
 
 ---
 
@@ -66,10 +66,15 @@ Fields currently present in `data.json` cards.
 
 | Value | Meaning |
 |-------|---------|
-| `cloud` | SaaS / hosted service |
-| `self-hosted` | Deploy on own server |
-| `local` | Run on local machine |
-| `hybrid` | Multiple deployment options |
+| `cloud` | Official managed SaaS by vendor — must have public pricing page or product tier |
+| `self-hosted` | Deploy on own server/infrastructure; no official managed offering |
+| `local` | Run on local machine (desktop/laptop); no server needed |
+| `hybrid` | Vendor offers BOTH official managed cloud AND self-host/local option |
+
+> **Deployment Classification Principle (L-35, permanent):**
+> - `cloud` or `hybrid` requires an **official managed offering** from the vendor (with pricing/tier or official product page).
+> - Demo sites, playground instances, and 3rd-party hosting (e.g., Elestio, Railway templates) do NOT qualify as "cloud" or "hybrid".
+> - When uncertain, default to `self-hosted` or `local`.
 
 ### difficulty
 
@@ -86,6 +91,21 @@ Fields currently present in `data.json` cards.
 | `docs` | Verified from official documentation/GitHub |
 | `tested` | Baron personally installed and used |
 | `inferred` | Logical deduction from verified facts |
+
+### license
+
+**license (free-form string):**
+
+`license` is a free-form string, NOT an enum. Guidelines:
+- **Prefer SPDX identifiers** when available: `MIT`, `Apache-2.0`, `BSD-3-Clause`, `AGPL-3.0`, etc.
+- **Custom tokens allowed** when SPDX does not cover the license precisely:
+  | Custom Token | Actual License | Decision Ref |
+  |-------------|----------------|:------------:|
+  | `Dify-OSL` | Dify Open Source License (modified Apache-2.0 with usage restrictions) | DEC-031 |
+  | `Elastic-2.0` | Elastic License 2.0 (not OSI-approved, source-available) | DEC-030 |
+- **Rule:** When using a custom token, it MUST be documented in this table with a reference to the decision log entry.
+- **Validator note:** A3 validator should treat `license` as string (no enum enforcement), but may warn if token is not in SPDX list and not in the custom token table above.
+- **Null:** Use `null` if license is unknown or tool has no public license info.
 
 ---
 
