@@ -1,5 +1,14 @@
 # AI Mindmap Changelog
 
+## A2 Batch 04C — 2026-02-23
+- **Enrich 3 framework cards:** Browser-Use, OpenAI Agents SDK, Google ADK
+  - 12 structured fields each (pricing, deployment, difficulty, whenToUse, whenNotToUse, compatibleWith, useCases, languages, verified_at, verification_source, github_stars, license)
+  - Browser-Use: open-core/hybrid (DEC-034), 78.1K⭐, MIT
+  - OpenAI Agents SDK: free/self-hosted (DEC-032), 19.1K⭐, MIT
+  - Google ADK: free/self-hosted (DEC-032), 17.2K⭐, Apache-2.0
+  - Frameworks section now 10/10 enriched
+  - Total enriched: 41/66 (62%)
+
 ## v6.2 — 2026-02-10
 - **Frameworks comparison preset:** 10 tools × 7 criteria (flip layout)
   - Tools: LangGraph, CrewAI, AutoGen, OpenAI Agents SDK, Google ADK, LlamaIndex, Rasa, Browser-Use, Pydantic AI, Mastra
