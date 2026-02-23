@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-23T16:00:00Z",
+    "updated_at": "2026-02-23T06:57:45Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -375,7 +375,19 @@
               "title": "OpenAI Agents GitHub",
               "url": "https://github.com/openai/openai-agents-python"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": ["Xây dựng multi-agent workflow nhẹ", "Cần handoff giữa các agent chuyên biệt", "Tích hợp sẵn tracing và guardrails"],
+          "whenNotToUse": ["Cần workflow engine phức tạp", "Không muốn phụ thuộc OpenAI ecosystem ban đầu", "Cần no-code agent builder UI"],
+          "compatibleWith": ["mcp", "langfuse"],
+          "useCases": ["agent-framework", "multi-agent", "tool-calling", "tracing"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-23",
+          "verification_source": "docs",
+          "github_stars": 19100,
+          "license": "MIT"
         },
         {
           "icon": "🔶",
@@ -397,7 +409,19 @@
               "title": "Google ADK GitHub",
               "url": "https://github.com/google/adk-python"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": ["Xây dựng agent trong Google/Gemini ecosystem", "Cần multi-language SDK (Python, TS, Go, Java)", "Thiết kế hierarchical multi-agent system"],
+          "whenNotToUse": ["Không dùng Google Cloud hay Gemini", "Cần framework đơn giản cho single agent", "Ưu tiên community lớn và mature ecosystem"],
+          "compatibleWith": ["mcp", "a2a"],
+          "useCases": ["agent-framework", "workflow-orchestration", "evaluation"],
+          "languages": ["python", "js", "go", "java"],
+          "verified_at": "2026-02-23",
+          "verification_source": "docs",
+          "github_stars": 17200,
+          "license": "Apache-2.0"
         },
         {
           "icon": "🦙",
@@ -489,7 +513,19 @@
               "title": "Docs",
               "url": "https://docs.browser-use.com"
             }
-          ]
+          ],
+          "pricing": "open-core",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": ["Cần AI agent tương tác với website", "Scraping dữ liệu từ trang web phức tạp", "Tự động hóa quy trình web end-to-end"],
+          "whenNotToUse": ["Task không liên quan đến browser", "Cần API integration thuần túy", "Môi trường không hỗ trợ Chromium"],
+          "compatibleWith": ["mcp"],
+          "useCases": ["browser-automation", "web-agent", "data-extraction"],
+          "languages": ["python"],
+          "verified_at": "2026-02-23",
+          "verification_source": "docs",
+          "github_stars": 78100,
+          "license": "MIT"
         },
         {
           "name": "Pydantic AI",
