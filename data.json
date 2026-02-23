@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-19T16:00:00Z",
+    "updated_at": "2026-02-23T16:00:00Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -307,7 +307,19 @@
               "title": "CrewAI Docs",
               "url": "https://docs.crewai.com/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": ["multi-agent orchestration", "role-based AI teams", "autonomous agent collaboration", "complex workflow automation"],
+          "whenNotToUse": ["simple single-agent tasks", "non-Python stack", "real-time low-latency requirements"],
+          "compatibleWith": ["langfuse", "ollama", "dify"],
+          "useCases": ["multi-agent", "workflow-automation", "agent-orchestration", "enterprise-automation"],
+          "languages": ["python"],
+          "verified_at": "2026-02-23",
+          "verification_source": "docs",
+          "github_stars": 43000,
+          "license": "MIT"
         },
         {
           "icon": "🔷",
@@ -329,7 +341,19 @@
               "title": "AutoGen Docs",
               "url": "https://microsoft.github.io/autogen/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "advanced",
+          "whenToUse": ["multi-agent conversation systems", "research prototyping", "human-in-the-loop workflows", "complex agent collaboration"],
+          "whenNotToUse": ["greenfield projects (consider Microsoft Agent Framework)", "simple single-agent tasks", "TypeScript-only stack"],
+          "compatibleWith": ["mcp", "a2a", "ollama"],
+          "useCases": ["multi-agent", "research", "conversation-ai", "workflow-automation"],
+          "languages": ["python", "csharp"],
+          "verified_at": "2026-02-23",
+          "verification_source": "docs",
+          "github_stars": 54500,
+          "license": "MIT"
         },
         {
           "icon": "🟢",
@@ -509,7 +533,19 @@
               "title": "Docs",
               "url": "https://mastra.ai/docs"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "self-hosted",
+          "difficulty": "intermediate",
+          "whenToUse": ["TypeScript AI applications", "agent workflows with eval/observability", "serverless agent deployment", "rapid prototyping"],
+          "whenNotToUse": ["Python-only teams", "legacy JavaScript without TypeScript", "extremely large-scale multi-agent systems"],
+          "compatibleWith": ["mcp", "a2a", "langfuse"],
+          "useCases": ["agent-orchestration", "workflow-automation", "rag-pipeline", "typescript-ai"],
+          "languages": ["typescript"],
+          "verified_at": "2026-02-23",
+          "verification_source": "docs",
+          "github_stars": 21300,
+          "license": "Apache-2.0"
         }
       ]
     },
