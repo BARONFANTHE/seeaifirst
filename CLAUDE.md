@@ -25,9 +25,9 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 | **Compare** | 4 presets (vector-databases, rag-systems, coding-agents, frameworks) |
 | **SEO** | sitemap.xml + robots.txt + canonical + English meta — live |
 | **OG Image** | og-image.png generated via script (66 Tools, 13 Sections, v6.2) |
-| **Last Deploy** | 2026-02-23 |
-| **Enriched** | 41/66 (62%) (Batch 01-04C: protocols, platforms, orchestration, memory, infrastructure, security, observability, vector-databases, rag-systems, frameworks 10/10) |
-| **Latest Commit** | b252dec |
+| **Last Deploy** | 2026-02-25 |
+| **Enriched** | 44/66 (67%) (Batch 01-05A: protocols, platforms, orchestration, memory, infrastructure, security, observability, vector-databases, rag-systems, frameworks 10/10, coding-agents 3/11) |
+| **Latest Commit** | fb22e11 |
 
 ## Architecture
 
@@ -155,7 +155,7 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 }
 ```
 
-**New enrichment fields (defined in SCHEMA_SPEC.md, đang rollout trong A2 (41/66 done)):**
+**New enrichment fields (defined in SCHEMA_SPEC.md, đang rollout trong A2 (44/66 done)):**
 ```json
 {
   "pricing": "free|freemium|paid|open-core",
@@ -413,7 +413,7 @@ Không có known issues hiện tại.
 - Bật repo public → "Suggest a Tool" link tự hoạt động (hiện 404 vì repo private)
 - CSP meta tag → cần tách inline JS ra file riêng (deferred, security hardening backlog)
 - ✅ Tool Picker UX shipped (v6.3) — feature branch `feature/tool-picker`, `--no-ff` merge
-- P1: A2 enrichment — 41/66 done (Batch 01-04C, frameworks 10/10). Next: Batch 05 — coding-agents (11 cards)
+- P1: A2 enrichment — 44/66 done (Batch 01-05A, coding-agents 3/11). Next: Batch 05B — coding-agents (8 remaining)
 
 ## JS Functions Reference
 
@@ -430,5 +430,5 @@ Không có known issues hiện tại.
 
 *Version: 2.1*
 *Created: 2026-02-04*
-*Updated: 2026-02-23 — post A2 Batch 04C (41/66 enriched, 66 cards, 13 sections, frameworks 10/10)*
+*Updated: 2026-02-25 — post A2 Batch 05A (44/66 enriched, 66 cards, 13 sections, coding-agents 3/11)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
