@@ -1268,10 +1268,34 @@
           "detail": "Agent CLI của OpenAI — chạy task tuần tự trong cloud sandbox cô lập (an toàn). Dùng AGENTS.md cho project instructions. Tích hợp sâu với OpenAI models (GPT-4o, o3, codex-mini). Phù hợp cho automated tasks, CI/CD integration, và batch processing. Dùng credits từ ChatGPT plan.",
           "sources": [
             {
-              "title": "Codex CLI GitHub",
+              "title": "GitHub",
               "url": "https://github.com/openai/codex"
+            },
+            {
+              "title": "Docs",
+              "url": "https://developers.openai.com/codex/cli/"
             }
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "hybrid",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "Cần coding agent tích hợp sâu với OpenAI models (GPT-5.3-Codex)",
+            "Muốn setup nhanh với ChatGPT subscription có sẵn",
+            "Cần CI/CD automation với GitHub Action hoặc Codex Autofix"
+          ],
+          "whenNotToUse": [
+            "Cần dùng local models hoặc provider khác (chỉ hỗ trợ OpenAI)",
+            "Không muốn phụ thuộc vendor cloud cho coding workflow",
+            "Budget hạn chế — cần subscription ChatGPT Plus trở lên"
+          ],
+          "compatibleWith": ["mcp", "openai-agents-sdk"],
+          "useCases": ["agentic-coding", "code-review", "cli-tool"],
+          "languages": ["rust"],
+          "verified_at": "2026-02-25",
+          "verification_source": "docs",
+          "github_stars": 61800,
+          "license": "Apache-2.0"
         },
         {
           "icon": "🌊",
@@ -1423,9 +1447,29 @@
             },
             {
               "title": "Website",
-              "url": "https://opencode.ai"
+              "url": "https://opencode.ai/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "local",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Muốn coding agent OSS với cộng đồng lớn nhất (108K+ stars, 700+ contributors)",
+            "Thích terminal-first workflow với TUI chất lượng cao",
+            "Cần plan/build agent switching — phân tích trước khi code"
+          ],
+          "whenNotToUse": [
+            "Cần IDE-native experience — OpenCode thiên về terminal",
+            "Không quen cấu hình LLM provider riêng",
+            "Cần coding agent ổn định lâu dài — project phát triển rất nhanh, API có thể thay đổi"
+          ],
+          "compatibleWith": ["mcp", "ollama"],
+          "useCases": ["agentic-coding", "code-review", "cli-tool"],
+          "languages": ["typescript"],
+          "verified_at": "2026-02-25",
+          "verification_source": "docs",
+          "github_stars": 110000,
+          "license": "MIT"
         },
         {
           "name": "Goose",
@@ -1439,9 +1483,29 @@
             },
             {
               "title": "Website",
-              "url": "https://block.github.io/goose"
+              "url": "https://block.github.io/goose/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "local",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Cần coding agent LLM-agnostic, chạy với bất kỳ provider nào",
+            "Muốn tự động hóa workflow phức tạp bằng recipes (YAML)",
+            "Team yêu cầu data privacy — chạy hoàn toàn local với Ollama"
+          ],
+          "whenNotToUse": [
+            "Muốn setup đơn giản, không cần cấu hình LLM provider",
+            "Cần coding accuracy cao nhất out-of-the-box mà không tùy chỉnh model",
+            "Không quen terminal workflow — cần kinh nghiệm CLI"
+          ],
+          "compatibleWith": ["mcp", "ollama"],
+          "useCases": ["agentic-coding", "workflow-automation", "cli-tool"],
+          "languages": ["rust"],
+          "verified_at": "2026-02-25",
+          "verification_source": "docs",
+          "github_stars": 31100,
+          "license": "Apache-2.0"
         }
       ]
     },
