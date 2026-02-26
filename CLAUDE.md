@@ -26,8 +26,8 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 | **SEO** | sitemap.xml + robots.txt + canonical + English meta — live |
 | **OG Image** | og-image.png generated via script (66 Tools, 13 Sections, v6.2) |
 | **Last Deploy** | 2026-02-25 |
-| **Enriched** | 44/66 (67%) (Batch 01-05A: protocols, platforms, orchestration, memory, infrastructure, security, observability, vector-databases, rag-systems, frameworks 10/10, coding-agents 3/11) |
-| **Latest Commit** | fb22e11 |
+| **Enriched** | 48/66 (73%) (Batch 01-05B: protocols, platforms, orchestration, memory, infrastructure, security, observability, vector-databases, rag-systems, frameworks 10/10, coding-agents 7/11) |
+| **Latest Commit** | 636d9a7 |
 
 ## Architecture
 
@@ -413,7 +413,7 @@ Không có known issues hiện tại.
 - Bật repo public → "Suggest a Tool" link tự hoạt động (hiện 404 vì repo private)
 - CSP meta tag → cần tách inline JS ra file riêng (deferred, security hardening backlog)
 - ✅ Tool Picker UX shipped (v6.3) — feature branch `feature/tool-picker`, `--no-ff` merge
-- P1: A2 enrichment — 44/66 done (Batch 01-05A, coding-agents 3/11). Next: Batch 05B — coding-agents (8 remaining)
+- P1: A2 enrichment — 48/66 done (Batch 01-05B, coding-agents 7/11). Next: Batch 05C — coding-agents (4 remaining)
 
 ## JS Functions Reference
 
@@ -430,5 +430,5 @@ Không có known issues hiện tại.
 
 *Version: 2.1*
 *Created: 2026-02-04*
-*Updated: 2026-02-25 — post A2 Batch 05A (44/66 enriched, 66 cards, 13 sections, coding-agents 3/11)*
+*Updated: 2026-02-26 — post A2 Batch 05B (48/66 enriched, 66 cards, 13 sections, coding-agents 7/11)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
