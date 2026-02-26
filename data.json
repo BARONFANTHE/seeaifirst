@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-23T06:57:45Z",
+    "updated_at": "2026-02-26T00:00:00Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -1252,7 +1252,27 @@
               "title": "Cursor Docs",
               "url": "https://docs.cursor.com/"
             }
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "hybrid",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "AI-first IDE muốn context toàn bộ codebase",
+            "Multi-file editing và refactoring phức tạp",
+            "Developers muốn thay thế VS Code bằng AI-native editor"
+          ],
+          "whenNotToUse": [
+            "Ngân sách hạn hẹp — Pro $20/mo đắt hơn Copilot $10",
+            "Không muốn rời VS Code ecosystem hiện tại",
+            "Cần offline coding — phụ thuộc hoàn toàn cloud"
+          ],
+          "compatibleWith": ["mcp"],
+          "useCases": ["code-generation", "code-review", "refactoring"],
+          "languages": ["python", "js", "typescript", "java", "go", "rust"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "🔵",
@@ -1318,7 +1338,27 @@
               "title": "Windsurf Docs",
               "url": "https://docs.windsurf.com/"
             }
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "hybrid",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "Muốn agentic IDE với Cascade multi-step workflow",
+            "Free tier rộng rãi — 25 credits kèm unlimited Tab completions",
+            "Enterprise cần security compliance docs và hybrid deployment"
+          ],
+          "whenNotToUse": [
+            "Đã quen Cursor — chức năng tương tự, Windsurf community nhỏ hơn",
+            "Cần mature ecosystem — sản phẩm mới hơn Copilot và Cursor",
+            "Cascade agent vẫn đang evolving — chưa ổn định cho production critical"
+          ],
+          "compatibleWith": ["mcp"],
+          "useCases": ["code-generation", "code-review", "refactoring"],
+          "languages": ["python", "js", "typescript", "java", "go", "rust"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "🤖",
@@ -1341,7 +1381,27 @@
               "title": "Copilot Docs",
               "url": "https://docs.github.com/en/copilot"
             }
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "hybrid",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "Đã dùng VS Code hoặc JetBrains — thêm extension không đổi workflow",
+            "Ngân sách thấp — Pro $10/mo rẻ nhất trong IDE agents",
+            "Teams cần enterprise admin controls và centralized management"
+          ],
+          "whenNotToUse": [
+            "Cần agentic IDE đầy đủ — Copilot là extension, không phải standalone IDE",
+            "Muốn tự chọn AI model — Free/Pro model access hạn chế",
+            "Cần offline coding — inference 100% cloud"
+          ],
+          "compatibleWith": ["mcp"],
+          "useCases": ["code-generation", "code-review", "refactoring"],
+          "languages": ["python", "js", "typescript", "java", "go", "rust", "ruby", "csharp"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "💎",
@@ -1410,7 +1470,27 @@
               "title": "AWS — Introducing Kiro",
               "url": "https://aws.amazon.com/blogs/aws/kiro-ai-powered-ide/"
             }
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Spec-driven development — requirements rõ ràng trước khi code",
+            "AWS ecosystem — tích hợp Amazon Q Developer Pro",
+            "Cần tự động hóa docs và tests qua agent hooks"
+          ],
+          "whenNotToUse": [
+            "Quick prototyping — spec workflow overhead cho tasks nhỏ",
+            "Chi phí credit khó dự đoán — complex prompts tiêu nhiều credits",
+            "Không muốn AWS vendor dependency"
+          ],
+          "compatibleWith": ["mcp"],
+          "useCases": ["code-generation", "code-review", "refactoring"],
+          "languages": ["python", "js", "typescript", "java", "go", "rust", "csharp", "ruby"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "🎨",
