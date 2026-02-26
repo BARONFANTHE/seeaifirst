@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-27T00:00:00Z",
+    "updated_at": "2026-02-26T15:38:02Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -917,7 +917,26 @@
               "title": "Agent Skills (Anthropic)",
               "url": "https://github.com/agentskills"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "Khi cần mở rộng khả năng của AI agents với kiến thức chuyên biệt",
+            "Khi muốn tạo reusable workflows cho team",
+            "Khi cần chuẩn hóa quy trình phát triển với coding agents"
+          ],
+          "whenNotToUse": [
+            "Khi cần logic phức tạp hơn instructions — dùng MCP servers",
+            "Khi cần custom runtime hoặc API integration — dùng frameworks"
+          ],
+          "compatibleWith": ["claude-code", "mcp", "cursor", "gemini-cli", "codex-cli", "opencode", "goose"],
+          "useCases": ["ai-plugin-system", "tool-integration", "agentic-coding", "cross-task-reuse"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-26",
+          "verification_source": "inferred",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "🔗",
@@ -951,7 +970,24 @@
               "title": "MCP Skills Interest Group",
               "url": "https://github.com/modelcontextprotocol/experimental-ext-skills"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "Khi muốn hiểu tổng quan các loại skills có sẵn trong hệ sinh thái",
+            "Khi cần chọn đúng loại skill cho use case cụ thể"
+          ],
+          "whenNotToUse": [
+            "Khi đã biết chính xác skill/plugin cần dùng — xem trực tiếp card cụ thể"
+          ],
+          "compatibleWith": ["universal-agent-skills", "superpowers", "agents-wshobson", "planning-with-files", "mcp", "claude-code"],
+          "useCases": ["ai-plugin-system", "tool-integration"],
+          "languages": ["python", "js"],
+          "verified_at": "2026-02-26",
+          "verification_source": "inferred",
+          "github_stars": 39,
+          "license": "Apache-2.0"
         },
         {
           "id": "superpowers",
@@ -977,7 +1013,26 @@
             }
           ],
           "added_date": "2026-02-08",
-          "updated_date": "2026-02-08"
+          "updated_date": "2026-02-08",
+          "pricing": "free",
+          "deployment": "local",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Khi muốn structured software development workflow cho coding agents",
+            "Khi cần TDD enforcement và code review tự động",
+            "Khi muốn subagent-driven development với review gates"
+          ],
+          "whenNotToUse": [
+            "Khi chỉ cần quick code generation đơn giản",
+            "Khi dự án quá nhỏ cho full TDD workflow"
+          ],
+          "compatibleWith": ["claude-code", "codex-cli", "opencode", "gemini-cli"],
+          "useCases": ["agentic-coding", "code-review", "full-stack", "refactoring"],
+          "languages": ["js", "python", "typescript"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": 62917,
+          "license": "MIT"
         },
         {
           "id": "agents-wshobson",
@@ -1003,7 +1058,26 @@
             }
           ],
           "added_date": "2026-02-08",
-          "updated_date": "2026-02-08"
+          "updated_date": "2026-02-08",
+          "pricing": "free",
+          "deployment": "local",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Khi cần multi-agent orchestration với specialized domain agents",
+            "Khi muốn plugin architecture mô-đun — chỉ load agents cần thiết",
+            "Khi cần workflow orchestrators cho full-stack, security, ML pipelines"
+          ],
+          "whenNotToUse": [
+            "Khi chỉ cần 1-2 skills đơn giản — Superpowers nhẹ hơn",
+            "Khi không dùng Claude Code"
+          ],
+          "compatibleWith": ["claude-code", "mcp"],
+          "useCases": ["multi-agent-orchestration", "agentic-coding", "full-stack", "code-review"],
+          "languages": ["python", "csharp"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": 29448,
+          "license": "MIT"
         },
         {
           "id": "planning-with-files",
@@ -1025,7 +1099,26 @@
             }
           ],
           "added_date": "2026-02-08",
-          "updated_date": "2026-02-08"
+          "updated_date": "2026-02-08",
+          "pricing": "free",
+          "deployment": "local",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "Khi cần persistent planning across sessions (survive /clear)",
+            "Khi dự án phức tạp cần structured task tracking",
+            "Khi muốn Manus-style workflow với markdown planning files"
+          ],
+          "whenNotToUse": [
+            "Khi dự án đơn giản không cần planning phase",
+            "Khi đã dùng Superpowers (có planning skills riêng)"
+          ],
+          "compatibleWith": ["claude-code", "gemini-cli", "codex-cli", "cursor"],
+          "useCases": ["project-continuity", "agentic-coding", "task-automation"],
+          "languages": ["python"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": 14639,
+          "license": "MIT"
         }
       ]
     },
