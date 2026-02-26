@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-26T00:00:00Z",
+    "updated_at": "2026-02-27T00:00:00Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -1218,7 +1218,7 @@
             "Skills",
             "Hooks"
           ],
-          "detail": "Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ. 200K token context cho phép đọc hiểu toàn bộ codebase lớn. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Chạy local, không cloud dependency. Best for: dự án phức tạp, refactoring lớn, codebase hiện có.",
+          "detail": "Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ. 200K token context cho phép đọc hiểu toàn bộ codebase lớn. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Chạy local, không cloud dependency. Best for: dự án phức tạp, refactoring lớn, codebase hiện có. Hỗ trợ async mode trên web (claude.ai/code) — delegate task dài, tạo PR trực tiếp, teleport về CLI local để tiếp tục. Hệ sinh thái mở rộng: Everything Claude Code (44K⭐) — bộ agents, skills, hooks, commands production-ready cho Claude Code.",
           "sources": [
             {
               "title": "Claude Code Docs",
@@ -1227,8 +1227,31 @@
             {
               "title": "Anthropic — Claude Code Best Practices",
               "url": "https://www.anthropic.com/engineering/claude-code-best-practices"
+            },
+            {
+              "title": "Everything Claude Code",
+              "url": "https://github.com/affaan-m/everything-claude-code"
             }
-          ]
+          ],
+          "pricing": "paid",
+          "deployment": "hybrid",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Cần agentic coding trực tiếp trong terminal",
+            "Multi-file refactoring với codebase awareness",
+            "Delegate task dài không cần giám sát (web async mode)"
+          ],
+          "whenNotToUse": [
+            "Budget hạn chế (chi phí API có thể tăng nhanh với heavy use)",
+            "Cần inline tab-completion trong IDE (dùng Copilot/Cursor)"
+          ],
+          "compatibleWith": ["mcp", "claude-ai", "a2a"],
+          "useCases": ["agentic-coding", "code-refactoring", "git-workflow", "ci-cd-automation"],
+          "languages": ["js", "typescript"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": 70200,
+          "license": null
         },
         {
           "icon": "🟢",
@@ -1424,7 +1447,26 @@
               "title": "Google — Introducing Gemini CLI",
               "url": "https://blog.google/technology/developers/gemini-cli/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "hybrid",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "Cần AI coding agent miễn phí với context window lớn (1M tokens)",
+            "Workflow terminal-first, không muốn dùng IDE-based agents",
+            "Đang dùng Google Cloud/Firebase ecosystem"
+          ],
+          "whenNotToUse": [
+            "Cần tab-completion hoặc inline suggestions trong IDE",
+            "Muốn dùng models từ providers khác (chỉ Gemini models)"
+          ],
+          "compatibleWith": ["mcp", "google-adk"],
+          "useCases": ["agentic-coding", "code-generation", "terminal-automation"],
+          "languages": ["js", "typescript"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": 95700,
+          "license": "Apache-2.0"
         },
         {
           "icon": "⚡",
@@ -1447,7 +1489,26 @@
               "title": "RooCode GitHub",
               "url": "https://github.com/RooVetGit/Roo-Code"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "local",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Muốn kiểm soát chi phí API và chọn model linh hoạt",
+            "Cần autonomous multi-step coding agent trong VS Code",
+            "Muốn giữ VS Code workflow hiện tại thay vì chuyển IDE"
+          ],
+          "whenNotToUse": [
+            "Cần inline tab-completion nhanh (Copilot/Cursor phù hợp hơn)",
+            "Không muốn quản lý API keys và chi phí riêng"
+          ],
+          "compatibleWith": ["mcp", "claude-ai"],
+          "useCases": ["agentic-coding", "code-refactoring", "browser-automation"],
+          "languages": ["js", "typescript"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": 58400,
+          "license": "Apache-2.0"
         },
         {
           "icon": "🌀",
@@ -1513,7 +1574,26 @@
               "title": "Replit Agent Docs",
               "url": "https://docs.replit.com/replitai/agent"
             }
-          ]
+          ],
+          "pricing": "freemium",
+          "deployment": "cloud",
+          "difficulty": "beginner",
+          "whenToUse": [
+            "Tạo web app nhanh từ mô tả ngôn ngữ tự nhiên",
+            "Prototype ý tưởng mà không cần setup môi trường local",
+            "Deploy trực tiếp lên cloud từ browser"
+          ],
+          "whenNotToUse": [
+            "Dự án cần kiểm soát chi phí chặt chẽ (effort-based pricing khó dự đoán)",
+            "Cần chạy offline hoặc trên máy local"
+          ],
+          "compatibleWith": ["mcp"],
+          "useCases": ["rapid-prototyping", "web-development", "full-stack"],
+          "languages": ["python", "js", "typescript"],
+          "verified_at": "2026-02-26",
+          "verification_source": "docs",
+          "github_stars": null,
+          "license": null
         },
         {
           "name": "OpenCode",
