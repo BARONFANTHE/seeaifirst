@@ -197,6 +197,45 @@ if (meta.sections_count !== totalSections) {
 }
 if (check6Pass) passLine(6, 'Meta contract', `tools: ${totalCards}, sections: ${totalSections}`);
 
+// ── Check 7: Slug unique ────────────────────────────────────────────
+let check7Pass = true;
+const slugMap = new Map(); // slug → [cardName, ...]
+for (const { card } of allCards) {
+  if (!card.slug || typeof card.slug !== 'string') {
+    fail(7, `Card "${card.name}" missing slug field`);
+    check7Pass = false;
+    continue;
+  }
+  if (!slugMap.has(card.slug)) {
+    slugMap.set(card.slug, []);
+  }
+  slugMap.get(card.slug).push(card.name);
+}
+for (const [slug, names] of slugMap) {
+  if (names.length > 1) {
+    fail(7, `Duplicate slug "${slug}" found in cards: "${names.join('", "')}"`);
+    check7Pass = false;
+  }
+}
+if (check7Pass) passLine(7, 'Slug unique', `${slugMap.size} unique slugs`);
+
+// ── Check 8: compatibleWith orphan check ────────────────────────────
+let check8Pass = true;
+const slugSet = new Set(slugMap.keys());
+let orphanCount = 0;
+for (const { card } of allCards) {
+  if (Array.isArray(card.compatibleWith)) {
+    for (const ref of card.compatibleWith) {
+      if (!slugSet.has(ref)) {
+        fail(8, `Card "${card.name}" has orphan compatibleWith: "${ref}" (not in slug_set)`);
+        check8Pass = false;
+        orphanCount++;
+      }
+    }
+  }
+}
+if (check8Pass) passLine(8, 'compatibleWith orphans', `0 orphans`);
+
 // ── Summary ─────────────────────────────────────────────────────────
 console.log('');
 if (failCount === 0 && warnCount === 0) {
