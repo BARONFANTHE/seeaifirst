@@ -4,9 +4,9 @@
     "subtitle": "Phân tầng từ Nền tảng → Ứng dụng → Xu hướng",
     "lastUpdated": "2026-02-09",
     "updatedBy": "Claude Code",
-    "version": "6.3",
-    "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-27T07:58:29Z",
+    "version": "6.4",
+    "schema_version": "1.0.0",
+    "updated_at": "2026-02-27T11:08:22.566Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -1005,7 +1005,7 @@
         },
         {
           "name": "Hệ thống Memory khác",
-          "slug": "h-thng-memory-khc",
+          "slug": "he-thong-memory-khac",
           "icon": "📦",
           "added_date": "2026-02-03",
           "subItems": [
@@ -1187,7 +1187,7 @@
         },
         {
           "name": "Skill Categories đáng chú ý",
-          "slug": "skill-categories-ng-ch-",
+          "slug": "skill-categories-dang-chu-y",
           "icon": "🔗",
           "added_date": "2026-02-03",
           "subItems": [

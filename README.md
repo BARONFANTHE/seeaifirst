@@ -70,5 +70,28 @@ CHANGELOG.md  ← Lịch sử updates
 7. **AI Coding Agents** — Claude Code, Cursor, Codex CLI, Windsurf, Copilot, Gemini CLI, Cline, Kiro, Replit
 8. **2026 Trends** — Multi-Agent Systems, Interpretability, World Models, Generative Coding, and more
 
+## Schema Documentation
+
+Card data follows a structured schema defined in [`docs/SCHEMA_SPEC.md`](docs/SCHEMA_SPEC.md).
+
+### Schema Versioning
+
+The schema follows [Semantic Versioning](https://semver.org/):
+
+| Change Type | Version Bump | Example |
+|-------------|:------------:|---------|
+| Typo fix in spec, no data change | **Patch** (1.0.x) | 1.0.0 → 1.0.1 |
+| Add new optional field | **Minor** (1.x.0) | 1.0.0 → 1.1.0 |
+| Change/remove existing field | **Major** (x.0.0) | 1.0.0 → 2.0.0 |
+
+### Backwards Compatibility Policy
+
+- **Card slugs** are immutable after assignment. Existing deep-links will always resolve.
+- **Enum values** are frozen at v1.0.0 for all enum fields defined in SCHEMA_SPEC (`pricing`, `deployment`, `difficulty`, `verification_source`). No new values without a major version bump.
+- **New optional fields** may be added via minor version bump — existing consumers are unaffected.
+- **Breaking changes** (field removal, enum changes, required field additions) require a major version bump with 1-week deprecation notice in release notes (and CHANGELOG if present).
+
+Current schema version: **1.0.0** (see `meta.schema_version` in `data.json`).
+
 ## License
 MIT

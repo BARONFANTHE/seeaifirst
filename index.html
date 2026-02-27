@@ -963,8 +963,65 @@ function toSlug(name) {
   return name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
 }
 
-function updateHash(cardName) {
-  history.replaceState(null, '', '#' + toSlug(cardName));
+function safeDecode(str) {
+  try { return decodeURIComponent(str); }
+  catch(e) { return str; }
+}
+
+function getCardSlug(card) {
+  return card.slug || toSlug(card.name);
+}
+
+const SLUG_ALIAS_MAP = {
+  'mcp-model-context-protocol': 'mcp',
+  'a2a-agent2agent-protocol': 'a2a',
+  'claudeai-web': 'claude-ai',
+  'chatgpt-web': 'chatgpt',
+  'h-thng-memory-khc': 'he-thong-memory-khac',
+  'skill-categories-ng-ch-': 'skill-categories-dang-chu-y'
+};
+
+const slugToCardMap = new Map();
+
+function buildSlugMap(data) {
+  slugToCardMap.clear();
+  for (const section of data.sections) {
+    for (const card of section.cards) {
+      const slug = getCardSlug(card);
+      if (slugToCardMap.has(slug)) console.warn('Duplicate slug:', slug);
+      slugToCardMap.set(slug, { card, section });
+    }
+  }
+}
+
+function findCardBySlug(rawSlug) {
+  if (!rawSlug) return null;
+  const cleaned = String(rawSlug).replace(/^#/, '');
+  const decoded = safeDecode(cleaned).toLowerCase().trim();
+  const canonical = SLUG_ALIAS_MAP[decoded] || decoded;
+  return slugToCardMap.get(canonical) || null;
+}
+
+function normalizeHash() {
+  const raw = location.hash.slice(1);
+  if (!raw) return '';
+  const decoded = safeDecode(raw).toLowerCase().trim();
+
+  // Compare hashes handled separately — don't normalize here
+  if (decoded.startsWith('compare=')) return decoded;
+
+  const canonical = SLUG_ALIAS_MAP[decoded] || decoded;
+
+  // If hash changed after canonicalization, update URL silently
+  if (canonical !== decoded) {
+    history.replaceState(null, '', '#' + canonical);
+  }
+
+  return canonical;
+}
+
+function updateHash(card) {
+  history.replaceState(null, '', '#' + getCardSlug(card));
 }
 
 // ═══ Compare Mode ═══
@@ -1165,12 +1222,8 @@ function renderCompareBody(preset) {
 }
 
 function findCardName(cardId) {
-  for (const section of data.sections) {
-    for (const card of section.cards) {
-      if (toSlug(card.name) === cardId) return card.name;
-    }
-  }
-  return null;
+  const entry = slugToCardMap.get(cardId);
+  return entry ? entry.card.name : null;
 }
 
 function renderCompareTable(preset) {
@@ -1464,7 +1517,7 @@ function attachTreeListeners() {
 
       selected = { card, section };
       activeSection = section;
-      updateHash(card.name);
+      updateHash(card);
 
       // Auto-expand parent folder if collapsed
       const children = btn.closest('.tree-children');
@@ -1591,7 +1644,7 @@ function attachNewspaperCardListeners(section) {
       const card = section.cards.find(c => c.name === cardName);
       if (!card) return;
       selected = { card, section };
-      updateHash(card.name);
+      updateHash(card);
       renderRightPanel();
       updateTreeActiveStates();
     });
@@ -1809,7 +1862,7 @@ function selectSearchResult(item) {
   selected = { card: item.card, section: item.section };
   activeSection = item.section;
   closeSearch();
-  updateHash(item.card.name);
+  updateHash(item.card);
   collapseSidebarMobile();
   renderRightPanel();
   updateTreeActiveStates();
@@ -1835,18 +1888,14 @@ function handleInitialHash() {
     return;
   }
 
-  // Existing card deep-link
-  const hash = raw.slice(1);
-  for (const section of data.sections) {
-    for (const card of section.cards) {
-      if (toSlug(card.name) === hash) {
-        selected = { card, section };
-        activeSection = section;
-        renderRightPanel();
-        updateTreeActiveStates();
-        return;
-      }
-    }
+  // Card deep-link
+  const slug = normalizeHash();
+  const result = findCardBySlug(slug);
+  if (result) {
+    selected = result;
+    activeSection = result.section;
+    renderRightPanel();
+    updateTreeActiveStates();
   }
 }
 
@@ -1855,6 +1904,7 @@ async function init() {
   try {
     const res = await fetch('data.json');
     data = await res.json();
+    buildSlugMap(data);
 
     // Restore theme
     const savedTheme = localStorage.getItem('ai-mindmap-theme');
@@ -1971,8 +2021,16 @@ async function init() {
       if (hash.startsWith('#compare=')) {
         const { presetId, pickSlugs } = parseCompareHash(hash);
         if (!isCompareOpen()) openCompare(presetId, pickSlugs);
-      } else if (isCompareOpen()) {
-        closeCompare();
+        return;
+      }
+      if (isCompareOpen()) closeCompare();
+      const slug = normalizeHash();
+      const result = findCardBySlug(slug);
+      if (result) {
+        selected = result;
+        activeSection = result.section;
+        renderRightPanel();
+        updateTreeActiveStates();
       }
     });
 
