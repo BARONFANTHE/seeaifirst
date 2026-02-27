@@ -421,6 +421,18 @@ Không có known issues hiện tại.
 - ✅ A2 enrichment COMPLETE — 66/66 (100%) (Batch 01-06C, all 13 sections enriched)
 - ✅ A3 schema freeze COMPLETE — v1.0.0, card.slug on all 66 cards, UI slug-first, alias map
 - ✅ Hotfix: browser back/forward — `updateHash()` uses `location.hash =` (339dfba)
+- ✅ B2 JSON-LD shipped (bdef1cf, tag b2-jsonld) — Schema.org @graph, 0 errors/warnings
+
+## B2 — JSON-LD Structured Data (Complete)
+
+- Schema.org `@graph`: WebSite + CollectionPage/ItemList + 66 SoftwareApplication
+- Runtime JS generate từ data.json, inject vào `<head>`
+- Pricing: mutual exclusive (free→offers, freemium/open-core→isAccessibleForFree, paid→omit)
+- All source URLs → sameAs (array), không dùng codeRepository
+- Anti-duplicate inject via script id
+- `SITE_URL` constant for domain portability
+- Validator: 0 errors, 0 warnings
+- Tag: `b2-jsonld`
 
 ## JS Functions Reference
 
@@ -433,13 +445,15 @@ Không có known issues hiện tại.
 | `buildSlugMap(data)` | Build `slugToCardMap` (O(1) lookup, 66 entries) on data load |
 | `openSearch()` / `closeSearch()` | Mở/đóng search overlay |
 | `renderSearchResults(q)` | Filter allCards, render max 10 results |
+| `stripHtml(str)` | Remove HTML tags + trim (used by JSON-LD) |
+| `generateJsonLd(data)` | Build Schema.org JSON-LD from loaded data, inject into `<head>` |
 
 > **DEC-039:** `card.slug` is source-of-truth. 6 override cards have `SLUG_ALIAS_MAP` entries for legacy backward compat.
 > **L-44:** `updateHash()` uses `location.hash =` (NOT `replaceState`) to create browser history entries for Back/Forward.
 
 ---
 
-*Version: 2.2*
+*Version: 2.3*
 *Created: 2026-02-04*
-*Updated: 2026-02-27 — A3 COMPLETE + hotfix (v6.4, schema 1.0.0 FROZEN, slug-first UI, alias map)*
+*Updated: 2026-02-27 — B2 JSON-LD complete (bdef1cf, tag b2-jsonld)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
