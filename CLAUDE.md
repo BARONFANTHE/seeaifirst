@@ -27,7 +27,9 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 | **OG Image** | og-image.png generated via script (66 Tools, 13 Sections, v6.2) |
 | **Last Deploy** | 2026-02-25 |
 | **Enriched** | 66/66 (100%) — A2 COMPLETE (Batch 01-06C: all 13 sections fully enriched) |
-| **Latest Commit** | 6c17a85 |
+| **Validator** | 8/8 checks PASS (`scripts/validate.js`) |
+| **A3 Progress** | A3.1 ✅ A3.2 ✅ A3.3 ⬜ |
+| **Latest Commit** | e3e650b |
 
 ## Architecture
 
@@ -45,7 +47,9 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 ├── CHANGELOG.md                  # Version history
 ├── .gitignore                    # Git ignore rules (docs/* except SCHEMA_SPEC.md)
 ├── scripts/
-│   └── generate-og-image.js      # OG image generator (node-canvas, run manually)
+│   ├── generate-og-image.js      # OG image generator (node-canvas, run manually)
+│   ├── validate.js               # Data validator (8 checks, run: node scripts/validate.js)
+│   └── slug-diff.js              # Slug derivation reference (toSlug vs card.slug)
 ├── docs/
 │   ├── SCHEMA_SPEC.md            # Card schema spec v0.1.0-draft (TRACKED)
 │   ├── CLAUDE_AI.md              # Instructions cho Claude.ai (NOT tracked)
@@ -430,5 +434,5 @@ Không có known issues hiện tại.
 
 *Version: 2.1*
 *Created: 2026-02-04*
-*Updated: 2026-02-27 — A2 COMPLETE (66/66 enriched, 66 cards, 13 sections)*
+*Updated: 2026-02-27 — A3.1+A3.2 complete (validator 8/8, card.slug 66/66, 13 sections)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
