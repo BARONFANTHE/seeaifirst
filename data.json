@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-27T06:54:58Z",
+    "updated_at": "2026-02-27T07:58:29Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -273,11 +273,37 @@
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
-          "whenToUse": ["stateful multi-step agent workflows", "complex control flow with branching and loops", "human-in-the-loop agent approval", "long-running durable agent execution"],
-          "whenNotToUse": ["simple single-call LLM tasks", "no need for state persistence between steps", "team unfamiliar with graph-based programming"],
-          "compatibleWith": ["langfuse", "mcp", "ollama", "litellm", "pgvector", "chroma", "qdrant", "milvus"],
-          "useCases": ["agent-orchestration", "multi-agent-systems", "rag-pipeline", "workflow-automation"],
-          "languages": ["python", "js"],
+          "whenToUse": [
+            "stateful multi-step agent workflows",
+            "complex control flow with branching and loops",
+            "human-in-the-loop agent approval",
+            "long-running durable agent execution"
+          ],
+          "whenNotToUse": [
+            "simple single-call LLM tasks",
+            "no need for state persistence between steps",
+            "team unfamiliar with graph-based programming"
+          ],
+          "compatibleWith": [
+            "langfuse",
+            "mcp",
+            "ollama",
+            "litellm",
+            "pgvector",
+            "chroma",
+            "qdrant",
+            "milvus"
+          ],
+          "useCases": [
+            "agent-orchestration",
+            "multi-agent-systems",
+            "rag-pipeline",
+            "workflow-automation"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-19",
           "verification_source": "docs",
           "github_stars": 24800,
@@ -311,11 +337,31 @@
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
-          "whenToUse": ["multi-agent orchestration", "role-based AI teams", "autonomous agent collaboration", "complex workflow automation"],
-          "whenNotToUse": ["simple single-agent tasks", "non-Python stack", "real-time low-latency requirements"],
-          "compatibleWith": ["langfuse", "ollama", "dify"],
-          "useCases": ["multi-agent", "workflow-automation", "agent-orchestration", "enterprise-automation"],
-          "languages": ["python"],
+          "whenToUse": [
+            "multi-agent orchestration",
+            "role-based AI teams",
+            "autonomous agent collaboration",
+            "complex workflow automation"
+          ],
+          "whenNotToUse": [
+            "simple single-agent tasks",
+            "non-Python stack",
+            "real-time low-latency requirements"
+          ],
+          "compatibleWith": [
+            "langfuse",
+            "ollama",
+            "dify"
+          ],
+          "useCases": [
+            "multi-agent",
+            "workflow-automation",
+            "agent-orchestration",
+            "enterprise-automation"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-23",
           "verification_source": "docs",
           "github_stars": 43000,
@@ -345,11 +391,32 @@
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "advanced",
-          "whenToUse": ["multi-agent conversation systems", "research prototyping", "human-in-the-loop workflows", "complex agent collaboration"],
-          "whenNotToUse": ["greenfield projects (consider Microsoft Agent Framework)", "simple single-agent tasks", "TypeScript-only stack"],
-          "compatibleWith": ["mcp", "a2a", "ollama"],
-          "useCases": ["multi-agent", "research", "conversation-ai", "workflow-automation"],
-          "languages": ["python", "csharp"],
+          "whenToUse": [
+            "multi-agent conversation systems",
+            "research prototyping",
+            "human-in-the-loop workflows",
+            "complex agent collaboration"
+          ],
+          "whenNotToUse": [
+            "greenfield projects (consider Microsoft Agent Framework)",
+            "simple single-agent tasks",
+            "TypeScript-only stack"
+          ],
+          "compatibleWith": [
+            "mcp",
+            "a2a",
+            "ollama"
+          ],
+          "useCases": [
+            "multi-agent",
+            "research",
+            "conversation-ai",
+            "workflow-automation"
+          ],
+          "languages": [
+            "python",
+            "csharp"
+          ],
           "verified_at": "2026-02-23",
           "verification_source": "docs",
           "github_stars": 54500,
@@ -379,11 +446,30 @@
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
-          "whenToUse": ["Xây dựng multi-agent workflow nhẹ", "Cần handoff giữa các agent chuyên biệt", "Tích hợp sẵn tracing và guardrails"],
-          "whenNotToUse": ["Cần workflow engine phức tạp", "Không muốn phụ thuộc OpenAI ecosystem ban đầu", "Cần no-code agent builder UI"],
-          "compatibleWith": ["mcp", "langfuse"],
-          "useCases": ["agent-framework", "multi-agent", "tool-calling", "tracing"],
-          "languages": ["python", "js"],
+          "whenToUse": [
+            "Xây dựng multi-agent workflow nhẹ",
+            "Cần handoff giữa các agent chuyên biệt",
+            "Tích hợp sẵn tracing và guardrails"
+          ],
+          "whenNotToUse": [
+            "Cần workflow engine phức tạp",
+            "Không muốn phụ thuộc OpenAI ecosystem ban đầu",
+            "Cần no-code agent builder UI"
+          ],
+          "compatibleWith": [
+            "mcp",
+            "langfuse"
+          ],
+          "useCases": [
+            "agent-framework",
+            "multi-agent",
+            "tool-calling",
+            "tracing"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-23",
           "verification_source": "docs",
           "github_stars": 19100,
@@ -413,11 +499,31 @@
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
-          "whenToUse": ["Xây dựng agent trong Google/Gemini ecosystem", "Cần multi-language SDK (Python, TS, Go, Java)", "Thiết kế hierarchical multi-agent system"],
-          "whenNotToUse": ["Không dùng Google Cloud hay Gemini", "Cần framework đơn giản cho single agent", "Ưu tiên community lớn và mature ecosystem"],
-          "compatibleWith": ["mcp", "a2a"],
-          "useCases": ["agent-framework", "workflow-orchestration", "evaluation"],
-          "languages": ["python", "js", "go", "java"],
+          "whenToUse": [
+            "Xây dựng agent trong Google/Gemini ecosystem",
+            "Cần multi-language SDK (Python, TS, Go, Java)",
+            "Thiết kế hierarchical multi-agent system"
+          ],
+          "whenNotToUse": [
+            "Không dùng Google Cloud hay Gemini",
+            "Cần framework đơn giản cho single agent",
+            "Ưu tiên community lớn và mature ecosystem"
+          ],
+          "compatibleWith": [
+            "mcp",
+            "a2a"
+          ],
+          "useCases": [
+            "agent-framework",
+            "workflow-orchestration",
+            "evaluation"
+          ],
+          "languages": [
+            "python",
+            "js",
+            "go",
+            "java"
+          ],
           "verified_at": "2026-02-23",
           "verification_source": "docs",
           "github_stars": 17200,
@@ -451,11 +557,38 @@
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
-          "whenToUse": ["connecting LLMs to custom data sources", "building RAG pipelines over documents", "structured data extraction from unstructured text", "agent workflows with data retrieval"],
-          "whenNotToUse": ["no custom data integration needed", "simple prompt-response without retrieval", "real-time streaming without document grounding"],
-          "compatibleWith": ["mcp", "langfuse", "ollama", "litellm", "pgvector", "chroma", "qdrant", "milvus", "dify"],
-          "useCases": ["rag-pipeline", "document-qa", "data-extraction", "agent-orchestration"],
-          "languages": ["python", "js"],
+          "whenToUse": [
+            "connecting LLMs to custom data sources",
+            "building RAG pipelines over documents",
+            "structured data extraction from unstructured text",
+            "agent workflows with data retrieval"
+          ],
+          "whenNotToUse": [
+            "no custom data integration needed",
+            "simple prompt-response without retrieval",
+            "real-time streaming without document grounding"
+          ],
+          "compatibleWith": [
+            "mcp",
+            "langfuse",
+            "ollama",
+            "litellm",
+            "pgvector",
+            "chroma",
+            "qdrant",
+            "milvus",
+            "dify"
+          ],
+          "useCases": [
+            "rag-pipeline",
+            "document-qa",
+            "data-extraction",
+            "agent-orchestration"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-19",
           "verification_source": "docs",
           "github_stars": 47000,
@@ -489,11 +622,32 @@
           "pricing": "open-core",
           "deployment": "self-hosted",
           "difficulty": "advanced",
-          "whenToUse": ["enterprise conversational AI with strict business logic", "on-premise chatbot requiring full data control", "multi-channel text and voice assistants", "regulated industries with strict data governance requirements"],
-          "whenNotToUse": ["quick LLM agent prototyping", "team without ML or NLP background", "simple Q&A bot without complex dialogue flows"],
-          "compatibleWith": ["mcp", "langfuse", "ollama", "litellm"],
-          "useCases": ["conversational-ai", "customer-support", "enterprise-chatbot", "voice-assistant"],
-          "languages": ["python"],
+          "whenToUse": [
+            "enterprise conversational AI with strict business logic",
+            "on-premise chatbot requiring full data control",
+            "multi-channel text and voice assistants",
+            "regulated industries with strict data governance requirements"
+          ],
+          "whenNotToUse": [
+            "quick LLM agent prototyping",
+            "team without ML or NLP background",
+            "simple Q&A bot without complex dialogue flows"
+          ],
+          "compatibleWith": [
+            "mcp",
+            "langfuse",
+            "ollama",
+            "litellm"
+          ],
+          "useCases": [
+            "conversational-ai",
+            "customer-support",
+            "enterprise-chatbot",
+            "voice-assistant"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-19",
           "verification_source": "docs",
           "github_stars": 20900,
@@ -517,11 +671,27 @@
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
-          "whenToUse": ["Cần AI agent tương tác với website", "Scraping dữ liệu từ trang web phức tạp", "Tự động hóa quy trình web end-to-end"],
-          "whenNotToUse": ["Task không liên quan đến browser", "Cần API integration thuần túy", "Môi trường không hỗ trợ Chromium"],
-          "compatibleWith": ["mcp"],
-          "useCases": ["browser-automation", "web-agent", "data-extraction"],
-          "languages": ["python"],
+          "whenToUse": [
+            "Cần AI agent tương tác với website",
+            "Scraping dữ liệu từ trang web phức tạp",
+            "Tự động hóa quy trình web end-to-end"
+          ],
+          "whenNotToUse": [
+            "Task không liên quan đến browser",
+            "Cần API integration thuần túy",
+            "Môi trường không hỗ trợ Chromium"
+          ],
+          "compatibleWith": [
+            "mcp"
+          ],
+          "useCases": [
+            "browser-automation",
+            "web-agent",
+            "data-extraction"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-23",
           "verification_source": "docs",
           "github_stars": 78100,
@@ -545,11 +715,34 @@
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
-          "whenToUse": ["type-safe structured agent outputs", "projects already using Pydantic ecosystem", "model-agnostic agent development", "agents requiring strict input-output validation"],
-          "whenNotToUse": ["non-Python projects", "visual or low-code agent building", "complex multi-agent orchestration requiring graph workflows"],
-          "compatibleWith": ["mcp", "a2a", "langfuse", "ollama", "litellm", "deepeval"],
-          "useCases": ["agent-orchestration", "structured-extraction", "type-safe-agents", "api-integration"],
-          "languages": ["python"],
+          "whenToUse": [
+            "type-safe structured agent outputs",
+            "projects already using Pydantic ecosystem",
+            "model-agnostic agent development",
+            "agents requiring strict input-output validation"
+          ],
+          "whenNotToUse": [
+            "non-Python projects",
+            "visual or low-code agent building",
+            "complex multi-agent orchestration requiring graph workflows"
+          ],
+          "compatibleWith": [
+            "mcp",
+            "a2a",
+            "langfuse",
+            "ollama",
+            "litellm",
+            "deepeval"
+          ],
+          "useCases": [
+            "agent-orchestration",
+            "structured-extraction",
+            "type-safe-agents",
+            "api-integration"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-19",
           "verification_source": "docs",
           "github_stars": 14900,
@@ -573,11 +766,31 @@
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
-          "whenToUse": ["TypeScript AI applications", "agent workflows with eval/observability", "serverless agent deployment", "rapid prototyping"],
-          "whenNotToUse": ["Python-only teams", "legacy JavaScript without TypeScript", "extremely large-scale multi-agent systems"],
-          "compatibleWith": ["mcp", "a2a", "langfuse"],
-          "useCases": ["agent-orchestration", "workflow-automation", "rag-pipeline", "typescript-ai"],
-          "languages": ["typescript"],
+          "whenToUse": [
+            "TypeScript AI applications",
+            "agent workflows with eval/observability",
+            "serverless agent deployment",
+            "rapid prototyping"
+          ],
+          "whenNotToUse": [
+            "Python-only teams",
+            "legacy JavaScript without TypeScript",
+            "extremely large-scale multi-agent systems"
+          ],
+          "compatibleWith": [
+            "mcp",
+            "a2a",
+            "langfuse"
+          ],
+          "useCases": [
+            "agent-orchestration",
+            "workflow-automation",
+            "rag-pipeline",
+            "typescript-ai"
+          ],
+          "languages": [
+            "typescript"
+          ],
           "verified_at": "2026-02-23",
           "verification_source": "docs",
           "github_stars": 21300,
@@ -930,9 +1143,25 @@
             "Khi cần logic phức tạp hơn instructions — dùng MCP servers",
             "Khi cần custom runtime hoặc API integration — dùng frameworks"
           ],
-          "compatibleWith": ["claude-code", "mcp", "cursor", "gemini-cli", "codex-cli", "opencode", "goose"],
-          "useCases": ["ai-plugin-system", "tool-integration", "agentic-coding", "cross-task-reuse"],
-          "languages": ["python", "js"],
+          "compatibleWith": [
+            "claude-code",
+            "mcp",
+            "cursor",
+            "gemini-cli",
+            "codex-cli",
+            "opencode",
+            "goose"
+          ],
+          "useCases": [
+            "ai-plugin-system",
+            "tool-integration",
+            "agentic-coding",
+            "cross-task-reuse"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "inferred",
           "github_stars": null,
@@ -981,9 +1210,22 @@
           "whenNotToUse": [
             "Khi đã biết chính xác skill/plugin cần dùng — xem trực tiếp card cụ thể"
           ],
-          "compatibleWith": ["universal-agent-skills", "superpowers", "agents-wshobson", "planning-with-files", "mcp", "claude-code"],
-          "useCases": ["ai-plugin-system", "tool-integration"],
-          "languages": ["python", "js"],
+          "compatibleWith": [
+            "universal-agent-skills",
+            "superpowers",
+            "agents-wshobson",
+            "planning-with-files",
+            "mcp",
+            "claude-code"
+          ],
+          "useCases": [
+            "ai-plugin-system",
+            "tool-integration"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "inferred",
           "github_stars": 39,
@@ -1026,9 +1268,23 @@
             "Khi chỉ cần quick code generation đơn giản",
             "Khi dự án quá nhỏ cho full TDD workflow"
           ],
-          "compatibleWith": ["claude-code", "codex-cli", "opencode", "gemini-cli"],
-          "useCases": ["agentic-coding", "code-review", "full-stack", "refactoring"],
-          "languages": ["js", "python", "typescript"],
+          "compatibleWith": [
+            "claude-code",
+            "codex-cli",
+            "opencode",
+            "gemini-cli"
+          ],
+          "useCases": [
+            "agentic-coding",
+            "code-review",
+            "full-stack",
+            "refactoring"
+          ],
+          "languages": [
+            "js",
+            "python",
+            "typescript"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": 62917,
@@ -1071,9 +1327,20 @@
             "Khi chỉ cần 1-2 skills đơn giản — Superpowers nhẹ hơn",
             "Khi không dùng Claude Code"
           ],
-          "compatibleWith": ["claude-code", "mcp"],
-          "useCases": ["multi-agent-orchestration", "agentic-coding", "full-stack", "code-review"],
-          "languages": ["python", "csharp"],
+          "compatibleWith": [
+            "claude-code",
+            "mcp"
+          ],
+          "useCases": [
+            "multi-agent-orchestration",
+            "agentic-coding",
+            "full-stack",
+            "code-review"
+          ],
+          "languages": [
+            "python",
+            "csharp"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": 29448,
@@ -1112,9 +1379,20 @@
             "Khi dự án đơn giản không cần planning phase",
             "Khi đã dùng Superpowers (có planning skills riêng)"
           ],
-          "compatibleWith": ["claude-code", "gemini-cli", "codex-cli", "cursor"],
-          "useCases": ["project-continuity", "agentic-coding", "task-automation"],
-          "languages": ["python"],
+          "compatibleWith": [
+            "claude-code",
+            "gemini-cli",
+            "codex-cli",
+            "cursor"
+          ],
+          "useCases": [
+            "project-continuity",
+            "agentic-coding",
+            "task-automation"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": 14639,
@@ -1338,9 +1616,21 @@
             "Budget hạn chế (chi phí API có thể tăng nhanh với heavy use)",
             "Cần inline tab-completion trong IDE (dùng Copilot/Cursor)"
           ],
-          "compatibleWith": ["mcp", "claude-ai", "a2a"],
-          "useCases": ["agentic-coding", "code-refactoring", "git-workflow", "ci-cd-automation"],
-          "languages": ["js", "typescript"],
+          "compatibleWith": [
+            "mcp",
+            "claude-ai",
+            "a2a"
+          ],
+          "useCases": [
+            "agentic-coding",
+            "code-refactoring",
+            "git-workflow",
+            "ci-cd-automation"
+          ],
+          "languages": [
+            "js",
+            "typescript"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": 70200,
@@ -1382,9 +1672,22 @@
             "Không muốn rời VS Code ecosystem hiện tại",
             "Cần offline coding — phụ thuộc hoàn toàn cloud"
           ],
-          "compatibleWith": ["mcp"],
-          "useCases": ["code-generation", "code-review", "refactoring"],
-          "languages": ["python", "js", "typescript", "java", "go", "rust"],
+          "compatibleWith": [
+            "mcp"
+          ],
+          "useCases": [
+            "code-generation",
+            "code-review",
+            "refactoring"
+          ],
+          "languages": [
+            "python",
+            "js",
+            "typescript",
+            "java",
+            "go",
+            "rust"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": null,
@@ -1425,9 +1728,18 @@
             "Không muốn phụ thuộc vendor cloud cho coding workflow",
             "Budget hạn chế — cần subscription ChatGPT Plus trở lên"
           ],
-          "compatibleWith": ["mcp", "openai-agents-sdk"],
-          "useCases": ["agentic-coding", "code-review", "cli-tool"],
-          "languages": ["rust"],
+          "compatibleWith": [
+            "mcp",
+            "openai-agents-sdk"
+          ],
+          "useCases": [
+            "agentic-coding",
+            "code-review",
+            "cli-tool"
+          ],
+          "languages": [
+            "rust"
+          ],
           "verified_at": "2026-02-25",
           "verification_source": "docs",
           "github_stars": 61800,
@@ -1468,9 +1780,22 @@
             "Cần mature ecosystem — sản phẩm mới hơn Copilot và Cursor",
             "Cascade agent vẫn đang evolving — chưa ổn định cho production critical"
           ],
-          "compatibleWith": ["mcp"],
-          "useCases": ["code-generation", "code-review", "refactoring"],
-          "languages": ["python", "js", "typescript", "java", "go", "rust"],
+          "compatibleWith": [
+            "mcp"
+          ],
+          "useCases": [
+            "code-generation",
+            "code-review",
+            "refactoring"
+          ],
+          "languages": [
+            "python",
+            "js",
+            "typescript",
+            "java",
+            "go",
+            "rust"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": null,
@@ -1511,9 +1836,24 @@
             "Muốn tự chọn AI model — Free/Pro model access hạn chế",
             "Cần offline coding — inference 100% cloud"
           ],
-          "compatibleWith": ["mcp"],
-          "useCases": ["code-generation", "code-review", "refactoring"],
-          "languages": ["python", "js", "typescript", "java", "go", "rust", "ruby", "csharp"],
+          "compatibleWith": [
+            "mcp"
+          ],
+          "useCases": [
+            "code-generation",
+            "code-review",
+            "refactoring"
+          ],
+          "languages": [
+            "python",
+            "js",
+            "typescript",
+            "java",
+            "go",
+            "rust",
+            "ruby",
+            "csharp"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": null,
@@ -1553,9 +1893,19 @@
             "Cần tab-completion hoặc inline suggestions trong IDE",
             "Muốn dùng models từ providers khác (chỉ Gemini models)"
           ],
-          "compatibleWith": ["mcp", "google-adk"],
-          "useCases": ["agentic-coding", "code-generation", "terminal-automation"],
-          "languages": ["js", "typescript"],
+          "compatibleWith": [
+            "mcp",
+            "google-adk"
+          ],
+          "useCases": [
+            "agentic-coding",
+            "code-generation",
+            "terminal-automation"
+          ],
+          "languages": [
+            "js",
+            "typescript"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": 95700,
@@ -1595,9 +1945,19 @@
             "Cần inline tab-completion nhanh (Copilot/Cursor phù hợp hơn)",
             "Không muốn quản lý API keys và chi phí riêng"
           ],
-          "compatibleWith": ["mcp", "claude-ai"],
-          "useCases": ["agentic-coding", "code-refactoring", "browser-automation"],
-          "languages": ["js", "typescript"],
+          "compatibleWith": [
+            "mcp",
+            "claude-ai"
+          ],
+          "useCases": [
+            "agentic-coding",
+            "code-refactoring",
+            "browser-automation"
+          ],
+          "languages": [
+            "js",
+            "typescript"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": 58400,
@@ -1638,9 +1998,24 @@
             "Chi phí credit khó dự đoán — complex prompts tiêu nhiều credits",
             "Không muốn AWS vendor dependency"
           ],
-          "compatibleWith": ["mcp"],
-          "useCases": ["code-generation", "code-review", "refactoring"],
-          "languages": ["python", "js", "typescript", "java", "go", "rust", "csharp", "ruby"],
+          "compatibleWith": [
+            "mcp"
+          ],
+          "useCases": [
+            "code-generation",
+            "code-review",
+            "refactoring"
+          ],
+          "languages": [
+            "python",
+            "js",
+            "typescript",
+            "java",
+            "go",
+            "rust",
+            "csharp",
+            "ruby"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": null,
@@ -1680,9 +2055,19 @@
             "Dự án cần kiểm soát chi phí chặt chẽ (effort-based pricing khó dự đoán)",
             "Cần chạy offline hoặc trên máy local"
           ],
-          "compatibleWith": ["mcp"],
-          "useCases": ["rapid-prototyping", "web-development", "full-stack"],
-          "languages": ["python", "js", "typescript"],
+          "compatibleWith": [
+            "mcp"
+          ],
+          "useCases": [
+            "rapid-prototyping",
+            "web-development",
+            "full-stack"
+          ],
+          "languages": [
+            "python",
+            "js",
+            "typescript"
+          ],
           "verified_at": "2026-02-26",
           "verification_source": "docs",
           "github_stars": null,
@@ -1716,9 +2101,18 @@
             "Không quen cấu hình LLM provider riêng",
             "Cần coding agent ổn định lâu dài — project phát triển rất nhanh, API có thể thay đổi"
           ],
-          "compatibleWith": ["mcp", "ollama"],
-          "useCases": ["agentic-coding", "code-review", "cli-tool"],
-          "languages": ["typescript"],
+          "compatibleWith": [
+            "mcp",
+            "ollama"
+          ],
+          "useCases": [
+            "agentic-coding",
+            "code-review",
+            "cli-tool"
+          ],
+          "languages": [
+            "typescript"
+          ],
           "verified_at": "2026-02-25",
           "verification_source": "docs",
           "github_stars": 110000,
@@ -1752,9 +2146,18 @@
             "Cần coding accuracy cao nhất out-of-the-box mà không tùy chỉnh model",
             "Không quen terminal workflow — cần kinh nghiệm CLI"
           ],
-          "compatibleWith": ["mcp", "ollama"],
-          "useCases": ["agentic-coding", "workflow-automation", "cli-tool"],
-          "languages": ["rust"],
+          "compatibleWith": [
+            "mcp",
+            "ollama"
+          ],
+          "useCases": [
+            "agentic-coding",
+            "workflow-automation",
+            "cli-tool"
+          ],
+          "languages": [
+            "rust"
+          ],
           "verified_at": "2026-02-25",
           "verification_source": "docs",
           "github_stars": 31100,
@@ -1793,7 +2196,10 @@
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "intermediate",
-          "languages": ["python", "js"],
+          "languages": [
+            "python",
+            "js"
+          ],
           "github_stars": null,
           "license": null,
           "verified_at": "2026-02-27",
@@ -1808,8 +2214,22 @@
             "Chưa có observability/governance cho hệ thống phân tán",
             "Prototype nhanh — overhead orchestration chưa cần thiết"
           ],
-          "compatibleWith": ["crewai", "autogen", "langgraph", "openai-agents-sdk", "google-adk", "mcp", "a2a", "claude-flow"],
-          "useCases": ["multi-agent-orchestration", "enterprise-automation", "workflow-orchestration", "agent-orchestration"]
+          "compatibleWith": [
+            "crewai",
+            "autogen",
+            "langgraph",
+            "openai-agents-sdk",
+            "google-adk",
+            "mcp",
+            "a2a",
+            "claude-flow"
+          ],
+          "useCases": [
+            "multi-agent-orchestration",
+            "enterprise-automation",
+            "workflow-orchestration",
+            "agent-orchestration"
+          ]
         },
         {
           "icon": "🔍",
@@ -1834,7 +2254,9 @@
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "advanced",
-          "languages": ["python"],
+          "languages": [
+            "python"
+          ],
           "github_stars": null,
           "license": null,
           "verified_at": "2026-02-27",
@@ -1849,8 +2271,19 @@
             "Không có background ML/deep learning chuyên sâu",
             "Cần giải pháp production nhanh, không phải research"
           ],
-          "compatibleWith": ["langfuse", "deepeval", "arize-phoenix", "nemo-guardrails", "garak"],
-          "useCases": ["research", "llm-evaluation", "llm-red-teaming", "security-audit"]
+          "compatibleWith": [
+            "langfuse",
+            "deepeval",
+            "arize-phoenix",
+            "nemo-guardrails",
+            "garak"
+          ],
+          "useCases": [
+            "research",
+            "llm-evaluation",
+            "llm-red-teaming",
+            "security-audit"
+          ]
         },
         {
           "icon": "🌍",
@@ -1871,7 +2304,9 @@
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "advanced",
-          "languages": ["python"],
+          "languages": [
+            "python"
+          ],
           "github_stars": null,
           "license": null,
           "verified_at": "2026-02-27",
@@ -1886,8 +2321,17 @@
             "Không có GPU infrastructure đủ mạnh",
             "Dự án không liên quan đến spatial/physical reasoning"
           ],
-          "compatibleWith": ["ollama", "vllm", "ai-infrastructure", "generative-coding"],
-          "useCases": ["research", "model-experimentation", "multi-modal-inference"]
+          "compatibleWith": [
+            "ollama",
+            "vllm",
+            "ai-infrastructure",
+            "generative-coding"
+          ],
+          "useCases": [
+            "research",
+            "model-experimentation",
+            "multi-modal-inference"
+          ]
         },
         {
           "icon": "💻",
@@ -1908,7 +2352,11 @@
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "beginner",
-          "languages": ["python", "js", "typescript"],
+          "languages": [
+            "python",
+            "js",
+            "typescript"
+          ],
           "github_stars": null,
           "license": null,
           "verified_at": "2026-02-27",
@@ -1923,8 +2371,23 @@
             "Codebase legacy phức tạp cần deep architectural understanding",
             "Cần 100% deterministic, auditable code output"
           ],
-          "compatibleWith": ["claude-code", "cursor", "github-copilot", "windsurf", "codex-cli", "gemini-cli", "cline-roocode", "replit-agent", "kiro-aws"],
-          "useCases": ["code-generation", "rapid-prototyping", "agentic-coding", "full-stack"]
+          "compatibleWith": [
+            "claude-code",
+            "cursor",
+            "github-copilot",
+            "windsurf",
+            "codex-cli",
+            "gemini-cli",
+            "cline-roocode",
+            "replit-agent",
+            "kiro-aws"
+          ],
+          "useCases": [
+            "code-generation",
+            "rapid-prototyping",
+            "agentic-coding",
+            "full-stack"
+          ]
         },
         {
           "icon": "🇨🇳",
@@ -1945,7 +2408,41 @@
               "title": "Qwen (Alibaba)",
               "url": "https://qwenlm.github.io/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Cần model mạnh chi phí thấp",
+            "Fine-tune cho use case riêng",
+            "Self-host LLM để kiểm soát dữ liệu",
+            "Xây prototype nhanh với model mở"
+          ],
+          "whenNotToUse": [
+            "Cần enterprise support chính hãng",
+            "Quy định nghiêm ngặt về nguồn gốc model",
+            "Không có hạ tầng GPU để chạy local"
+          ],
+          "compatibleWith": [
+            "ollama",
+            "vllm",
+            "litellm",
+            "dify",
+            "ragflow"
+          ],
+          "useCases": [
+            "local-inference",
+            "model-experimentation",
+            "rag-pipeline",
+            "content-creation"
+          ],
+          "languages": [
+            "python"
+          ],
+          "verified_at": "2026-02-27",
+          "verification_source": "inferred",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "🧠",
@@ -1962,7 +2459,40 @@
               "title": "OpenAI — Learning to Reason",
               "url": "https://openai.com/index/learning-to-reason-with-llms/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "advanced",
+          "whenToUse": [
+            "Align model với human preferences",
+            "Tăng reasoning qua reinforcement learning",
+            "Cải thiện model chi phí thấp hơn pre-training",
+            "Fine-tune cho domain chuyên biệt"
+          ],
+          "whenNotToUse": [
+            "Chưa có base model đủ mạnh",
+            "Không có preference data hoặc verifiable rewards",
+            "Task đơn giản dùng prompt engineering là đủ"
+          ],
+          "compatibleWith": [
+            "deepeval",
+            "langfuse",
+            "promptfoo",
+            "ollama",
+            "vllm"
+          ],
+          "useCases": [
+            "model-experimentation",
+            "research",
+            "evaluation"
+          ],
+          "languages": [
+            "python"
+          ],
+          "verified_at": "2026-02-27",
+          "verification_source": "inferred",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "🏥",
@@ -1979,7 +2509,39 @@
               "title": "AlphaFold — Google DeepMind",
               "url": "https://deepmind.google/technologies/alphafold/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "advanced",
+          "whenToUse": [
+            "Dự đoán cấu trúc protein",
+            "Thiết kế phân tử thuốc mới",
+            "Sàng lọc ứng viên thuốc quy mô lớn",
+            "Tối ưu thuộc tính dược lý bằng AI"
+          ],
+          "whenNotToUse": [
+            "Không có dữ liệu sinh học chuyên ngành",
+            "Cần kết quả lâm sàng ngay lập tức",
+            "Không có hạ tầng tính toán hiệu năng cao"
+          ],
+          "compatibleWith": [
+            "langfuse",
+            "pydantic-ai",
+            "llamaindex",
+            "pgvector"
+          ],
+          "useCases": [
+            "research",
+            "data-extraction",
+            "prototyping"
+          ],
+          "languages": [
+            "python"
+          ],
+          "verified_at": "2026-02-27",
+          "verification_source": "inferred",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "⚡",
@@ -1996,7 +2558,40 @@
               "title": "IEA — Data Centres and Energy",
               "url": "https://www.iea.org/energy-system/buildings/data-centres-and-data-transmission-networks"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Triển khai AI ở quy mô production",
+            "Tối ưu chi phí GPU và compute",
+            "Xây hạ tầng inference gần người dùng",
+            "Quản lý cluster training phân tán"
+          ],
+          "whenNotToUse": [
+            "Chỉ dùng API cloud có sẵn",
+            "Prototype nhỏ không cần scale",
+            "Không có ngân sách hạ tầng chuyên dụng"
+          ],
+          "compatibleWith": [
+            "ollama",
+            "vllm",
+            "localai",
+            "litellm"
+          ],
+          "useCases": [
+            "local-inference",
+            "prompt-testing",
+            "model-experimentation"
+          ],
+          "languages": [
+            "python",
+            "go"
+          ],
+          "verified_at": "2026-02-27",
+          "verification_source": "inferred",
+          "github_stars": null,
+          "license": null
         },
         {
           "icon": "🔐",
@@ -2013,7 +2608,41 @@
               "title": "Gartner — Strategic Predictions 2026",
               "url": "https://www.gartner.com/en/articles/strategic-predictions-for-2026"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "intermediate",
+          "whenToUse": [
+            "Tuân thủ EU AI Act hoặc quy định AI",
+            "Đánh giá rủi ro hệ thống AI",
+            "Xây dựng quy trình AI có trách nhiệm",
+            "Kiểm soát bias và fairness trong model"
+          ],
+          "whenNotToUse": [
+            "Prototype giai đoạn rất sớm",
+            "AI chỉ dùng nội bộ không ảnh hưởng end-user",
+            "Không hoạt động trong thị trường có quy định"
+          ],
+          "compatibleWith": [
+            "garak",
+            "nemo-guardrails",
+            "presidio",
+            "guardrails-ai",
+            "langfuse"
+          ],
+          "useCases": [
+            "llm-red-teaming",
+            "chatbot-safety",
+            "llm-observability",
+            "evaluation"
+          ],
+          "languages": [
+            "python"
+          ],
+          "verified_at": "2026-02-27",
+          "verification_source": "inferred",
+          "github_stars": null,
+          "license": null
         }
       ]
     },
@@ -2053,11 +2682,31 @@
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
-          "whenToUse": ["theo dõi LLM traces và chi phí", "quản lý prompt phiên bản", "đánh giá chất lượng LLM output"],
-          "whenNotToUse": ["chỉ cần eval đơn giản không cần tracing", "dự án không dùng LLM"],
-          "compatibleWith": ["litellm", "langgraph", "llamaindex", "dify"],
-          "useCases": ["llm-observability", "prompt-management", "cost-tracking", "evaluation"],
-          "languages": ["python", "js"],
+          "whenToUse": [
+            "theo dõi LLM traces và chi phí",
+            "quản lý prompt phiên bản",
+            "đánh giá chất lượng LLM output"
+          ],
+          "whenNotToUse": [
+            "chỉ cần eval đơn giản không cần tracing",
+            "dự án không dùng LLM"
+          ],
+          "compatibleWith": [
+            "litellm",
+            "langgraph",
+            "llamaindex",
+            "dify"
+          ],
+          "useCases": [
+            "llm-observability",
+            "prompt-management",
+            "cost-tracking",
+            "evaluation"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 21800,
@@ -2092,11 +2741,28 @@
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
-          "whenToUse": ["unit test LLM output trong CI/CD", "đánh giá RAG pipeline", "red team LLM application"],
-          "whenNotToUse": ["cần full observability platform", "không dùng Python"],
-          "compatibleWith": ["langgraph", "llamaindex"],
-          "useCases": ["llm-evaluation", "rag-testing", "red-teaming", "ci-cd-testing"],
-          "languages": ["python"],
+          "whenToUse": [
+            "unit test LLM output trong CI/CD",
+            "đánh giá RAG pipeline",
+            "red team LLM application"
+          ],
+          "whenNotToUse": [
+            "cần full observability platform",
+            "không dùng Python"
+          ],
+          "compatibleWith": [
+            "langgraph",
+            "llamaindex"
+          ],
+          "useCases": [
+            "llm-evaluation",
+            "rag-testing",
+            "red-teaming",
+            "ci-cd-testing"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 12800,
@@ -2131,11 +2797,28 @@
           "pricing": "open-core",
           "deployment": "local",
           "difficulty": "beginner",
-          "whenToUse": ["so sánh output giữa các LLM", "kiểm tra prompt regression", "red team và bảo mật LLM"],
-          "whenNotToUse": ["cần production observability real-time", "cần tracing distributed system"],
-          "compatibleWith": ["ollama", "litellm"],
-          "useCases": ["prompt-testing", "model-comparison", "red-teaming", "ci-cd-testing"],
-          "languages": ["js"],
+          "whenToUse": [
+            "so sánh output giữa các LLM",
+            "kiểm tra prompt regression",
+            "red team và bảo mật LLM"
+          ],
+          "whenNotToUse": [
+            "cần production observability real-time",
+            "cần tracing distributed system"
+          ],
+          "compatibleWith": [
+            "ollama",
+            "litellm"
+          ],
+          "useCases": [
+            "prompt-testing",
+            "model-comparison",
+            "red-teaming",
+            "ci-cd-testing"
+          ],
+          "languages": [
+            "js"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 10200,
@@ -2170,11 +2853,30 @@
           "pricing": "freemium",
           "deployment": "cloud",
           "difficulty": "beginner",
-          "whenToUse": ["debug LangChain và LangGraph applications", "theo dõi agent execution traces", "đánh giá chất lượng với annotation queues"],
-          "whenNotToUse": ["cần self-hosted hoàn toàn miễn phí", "không dùng LangChain ecosystem"],
-          "compatibleWith": ["langgraph", "llamaindex", "litellm"],
-          "useCases": ["llm-observability", "agent-debugging", "evaluation", "prompt-management"],
-          "languages": ["python", "js"],
+          "whenToUse": [
+            "debug LangChain và LangGraph applications",
+            "theo dõi agent execution traces",
+            "đánh giá chất lượng với annotation queues"
+          ],
+          "whenNotToUse": [
+            "cần self-hosted hoàn toàn miễn phí",
+            "không dùng LangChain ecosystem"
+          ],
+          "compatibleWith": [
+            "langgraph",
+            "llamaindex",
+            "litellm"
+          ],
+          "useCases": [
+            "llm-observability",
+            "agent-debugging",
+            "evaluation",
+            "prompt-management"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": null,
@@ -2209,11 +2911,30 @@
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
-          "whenToUse": ["debug RAG retrieval quality", "phân tích traces với OpenTelemetry", "chạy evaluation trong notebook workflow"],
-          "whenNotToUse": ["cần cung cấp như managed service cho bên thứ ba", "cần license permissive cho thương mại"],
-          "compatibleWith": ["langgraph", "llamaindex", "litellm"],
-          "useCases": ["llm-observability", "rag-evaluation", "experiment-tracking", "dataset-management"],
-          "languages": ["python", "js"],
+          "whenToUse": [
+            "debug RAG retrieval quality",
+            "phân tích traces với OpenTelemetry",
+            "chạy evaluation trong notebook workflow"
+          ],
+          "whenNotToUse": [
+            "cần cung cấp như managed service cho bên thứ ba",
+            "cần license permissive cho thương mại"
+          ],
+          "compatibleWith": [
+            "langgraph",
+            "llamaindex",
+            "litellm"
+          ],
+          "useCases": [
+            "llm-observability",
+            "rag-evaluation",
+            "experiment-tracking",
+            "dataset-management"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 8500,
@@ -2494,9 +3215,25 @@
             "Chỉ cần RAG engine nhẹ, không cần full platform",
             "Muốn stack tối giản, tránh phụ thuộc nhiều service (PostgreSQL, Redis, MinIO)"
           ],
-          "compatibleWith": ["ollama", "langfuse", "milvus", "pgvector", "qdrant", "chroma", "litellm"],
-          "useCases": ["rag-pipeline", "chatbot", "ai-workflow", "document-qa"],
-          "languages": ["python", "js"],
+          "compatibleWith": [
+            "ollama",
+            "langfuse",
+            "milvus",
+            "pgvector",
+            "qdrant",
+            "chroma",
+            "litellm"
+          ],
+          "useCases": [
+            "rag-pipeline",
+            "chatbot",
+            "ai-workflow",
+            "document-qa"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-13",
           "verification_source": "docs",
           "github_stars": 129000,
@@ -2539,9 +3276,22 @@
             "Cần setup tối giản — RAGFlow yêu cầu Elasticsearch, MinIO, MySQL",
             "Team nhỏ muốn low-code/no-code builder"
           ],
-          "compatibleWith": ["ollama", "dify", "milvus", "deepeval"],
-          "useCases": ["rag-pipeline", "document-qa", "knowledge-base", "enterprise-search"],
-          "languages": ["python", "js"],
+          "compatibleWith": [
+            "ollama",
+            "dify",
+            "milvus",
+            "deepeval"
+          ],
+          "useCases": [
+            "rag-pipeline",
+            "document-qa",
+            "knowledge-base",
+            "enterprise-search"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-13",
           "verification_source": "docs",
           "github_stars": 73000,
@@ -2579,9 +3329,23 @@
             "Yêu cầu governance và audit trail nâng cao (cần Enterprise plan)",
             "Muốn deep document processing chuyên sâu (Flowise thiên về orchestration)"
           ],
-          "compatibleWith": ["ollama", "langfuse", "milvus", "pgvector", "qdrant", "chroma"],
-          "useCases": ["rag-pipeline", "chatbot", "ai-workflow", "rapid-prototyping"],
-          "languages": ["js"],
+          "compatibleWith": [
+            "ollama",
+            "langfuse",
+            "milvus",
+            "pgvector",
+            "qdrant",
+            "chroma"
+          ],
+          "useCases": [
+            "rag-pipeline",
+            "chatbot",
+            "ai-workflow",
+            "rapid-prototyping"
+          ],
+          "languages": [
+            "js"
+          ],
           "verified_at": "2026-02-13",
           "verification_source": "docs",
           "github_stars": 49000,
@@ -2619,9 +3383,21 @@
             "Cần production platform với monitoring và team collaboration",
             "Team chưa quen concepts knowledge graph và entity extraction"
           ],
-          "compatibleWith": ["ollama", "pgvector", "milvus", "qdrant"],
-          "useCases": ["rag-pipeline", "knowledge-graph", "research", "document-qa"],
-          "languages": ["python"],
+          "compatibleWith": [
+            "ollama",
+            "pgvector",
+            "milvus",
+            "qdrant"
+          ],
+          "useCases": [
+            "rag-pipeline",
+            "knowledge-graph",
+            "research",
+            "document-qa"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-13",
           "verification_source": "docs",
           "github_stars": 28000,
@@ -2661,11 +3437,31 @@
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "advanced",
-          "whenToUse": ["vector search quy mô lớn hàng tỷ vectors", "hybrid search kết hợp keyword và semantic", "multi-tenant production với yêu cầu cao"],
-          "whenNotToUse": ["prototype nhỏ cần setup đơn giản", "đã có PostgreSQL và chỉ cần basic vector search"],
-          "compatibleWith": ["langgraph", "llamaindex", "dify"],
-          "useCases": ["vector-search", "rag-pipeline", "recommendation-system", "image-search"],
-          "languages": ["python", "go", "java"],
+          "whenToUse": [
+            "vector search quy mô lớn hàng tỷ vectors",
+            "hybrid search kết hợp keyword và semantic",
+            "multi-tenant production với yêu cầu cao"
+          ],
+          "whenNotToUse": [
+            "prototype nhỏ cần setup đơn giản",
+            "đã có PostgreSQL và chỉ cần basic vector search"
+          ],
+          "compatibleWith": [
+            "langgraph",
+            "llamaindex",
+            "dify"
+          ],
+          "useCases": [
+            "vector-search",
+            "rag-pipeline",
+            "recommendation-system",
+            "image-search"
+          ],
+          "languages": [
+            "python",
+            "go",
+            "java"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 42700,
@@ -2697,11 +3493,32 @@
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
-          "whenToUse": ["vector search hiệu năng cao với Rust backend", "kết hợp filtering phức tạp với similarity search", "ứng dụng recommendation và semantic search"],
-          "whenNotToUse": ["cần tích hợp sâu với PostgreSQL ecosystem", "dự án chỉ cần embedded vector store đơn giản"],
-          "compatibleWith": ["langgraph", "llamaindex", "dify"],
-          "useCases": ["vector-search", "rag-pipeline", "recommendation-system", "semantic-search"],
-          "languages": ["python", "js", "rust", "go"],
+          "whenToUse": [
+            "vector search hiệu năng cao với Rust backend",
+            "kết hợp filtering phức tạp với similarity search",
+            "ứng dụng recommendation và semantic search"
+          ],
+          "whenNotToUse": [
+            "cần tích hợp sâu với PostgreSQL ecosystem",
+            "dự án chỉ cần embedded vector store đơn giản"
+          ],
+          "compatibleWith": [
+            "langgraph",
+            "llamaindex",
+            "dify"
+          ],
+          "useCases": [
+            "vector-search",
+            "rag-pipeline",
+            "recommendation-system",
+            "semantic-search"
+          ],
+          "languages": [
+            "python",
+            "js",
+            "rust",
+            "go"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 29000,
@@ -2729,11 +3546,30 @@
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "beginner",
-          "whenToUse": ["prototype RAG nhanh với API đơn giản", "embedded vector store trong Python app", "developer cần zero-config setup"],
-          "whenNotToUse": ["production scale hàng tỷ vectors", "cần distributed high-availability cluster"],
-          "compatibleWith": ["langgraph", "llamaindex", "crewai"],
-          "useCases": ["vector-search", "rag-pipeline", "prototyping", "semantic-search"],
-          "languages": ["python", "js"],
+          "whenToUse": [
+            "prototype RAG nhanh với API đơn giản",
+            "embedded vector store trong Python app",
+            "developer cần zero-config setup"
+          ],
+          "whenNotToUse": [
+            "production scale hàng tỷ vectors",
+            "cần distributed high-availability cluster"
+          ],
+          "compatibleWith": [
+            "langgraph",
+            "llamaindex",
+            "crewai"
+          ],
+          "useCases": [
+            "vector-search",
+            "rag-pipeline",
+            "prototyping",
+            "semantic-search"
+          ],
+          "languages": [
+            "python",
+            "js"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 25900,
@@ -2761,11 +3597,31 @@
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
-          "whenToUse": ["đã dùng PostgreSQL và cần thêm vector search", "cần ACID compliance và JOIN với relational data", "không muốn thêm database riêng cho vectors"],
-          "whenNotToUse": ["cần vector search scale hàng tỷ vectors", "không dùng PostgreSQL"],
-          "compatibleWith": ["langgraph", "llamaindex", "dify"],
-          "useCases": ["vector-search", "rag-pipeline", "hybrid-search"],
-          "languages": ["python", "js", "go", "rust"],
+          "whenToUse": [
+            "đã dùng PostgreSQL và cần thêm vector search",
+            "cần ACID compliance và JOIN với relational data",
+            "không muốn thêm database riêng cho vectors"
+          ],
+          "whenNotToUse": [
+            "cần vector search scale hàng tỷ vectors",
+            "không dùng PostgreSQL"
+          ],
+          "compatibleWith": [
+            "langgraph",
+            "llamaindex",
+            "dify"
+          ],
+          "useCases": [
+            "vector-search",
+            "rag-pipeline",
+            "hybrid-search"
+          ],
+          "languages": [
+            "python",
+            "js",
+            "go",
+            "rust"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 19800,
@@ -2819,9 +3675,21 @@
             "non-LLM application security testing",
             "when need real-time blocking rather than assessment reports"
           ],
-          "compatibleWith": ["ollama", "litellm", "vllm", "nemo-guardrails"],
-          "useCases": ["llm-red-teaming", "vulnerability-scanning", "jailbreak-testing", "security-audit"],
-          "languages": ["python"],
+          "compatibleWith": [
+            "ollama",
+            "litellm",
+            "vllm",
+            "nemo-guardrails"
+          ],
+          "useCases": [
+            "llm-red-teaming",
+            "vulnerability-scanning",
+            "jailbreak-testing",
+            "security-audit"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 6700,
@@ -2862,9 +3730,22 @@
             "when minimal added latency is critical",
             "simple output format validation only (Guardrails AI may suffice)"
           ],
-          "compatibleWith": ["langgraph", "llamaindex", "litellm", "presidio", "langfuse"],
-          "useCases": ["chatbot-safety", "topic-control", "jailbreak-detection", "content-moderation"],
-          "languages": ["python"],
+          "compatibleWith": [
+            "langgraph",
+            "llamaindex",
+            "litellm",
+            "presidio",
+            "langfuse"
+          ],
+          "useCases": [
+            "chatbot-safety",
+            "topic-control",
+            "jailbreak-detection",
+            "content-moderation"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 5200,
@@ -2905,9 +3786,20 @@
             "non-text PII detection (audio, video) beyond image redaction",
             "when only simple regex-based masking is needed"
           ],
-          "compatibleWith": ["nemo-guardrails", "litellm", "dify"],
-          "useCases": ["pii-detection", "data-anonymization", "privacy-preprocessing", "llm-preprocessing"],
-          "languages": ["python"],
+          "compatibleWith": [
+            "nemo-guardrails",
+            "litellm",
+            "dify"
+          ],
+          "useCases": [
+            "pii-detection",
+            "data-anonymization",
+            "privacy-preprocessing",
+            "llm-preprocessing"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 6700,
@@ -2951,9 +3843,20 @@
             "LLM vulnerability scanning and red-teaming (use garak)",
             "non-Python tech stacks without REST API bridge"
           ],
-          "compatibleWith": ["litellm", "langfuse", "deepeval"],
-          "useCases": ["output-validation", "structured-data-extraction", "risk-mitigation", "llm-reliability"],
-          "languages": ["python"],
+          "compatibleWith": [
+            "litellm",
+            "langfuse",
+            "deepeval"
+          ],
+          "useCases": [
+            "output-validation",
+            "structured-data-extraction",
+            "risk-mitigation",
+            "llm-reliability"
+          ],
+          "languages": [
+            "python"
+          ],
           "verified_at": "2026-02-12",
           "verification_source": "docs",
           "github_stars": 6100,
