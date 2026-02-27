@@ -1,7 +1,7 @@
-# AI Mindmap — Card Schema Specification v1.0.0-draft
+# AI Mindmap — Card Schema Specification v1.0.0
 
-> **Status:** DRAFT — will become v1.0.0 after A3 freeze
-> **Date:** 2026-02-10
+> **Status:** FROZEN (v1.0.0) — Enum values locked. See Versioning Rules for change policy.
+> **Frozen date:** 2026-02-27 (decision date, fixed)
 > **Purpose:** Defines all card fields, types, enums, and validation rules for AI Mindmap data.json
 
 ---
@@ -13,6 +13,7 @@ Fields currently present in `data.json` cards.
 | Field | Type | Required | Description |
 |-------|------|:--------:|-------------|
 | `name` | string | Yes | Tool name |
+| `slug` | string | Yes | Unique card identifier, kebab-case. Source-of-truth for deep-links, hash routing, and `compatibleWith` references. Auto-generated from `name` via `toSlug()` unless explicitly overridden. Immutable after assignment. (DEC-039) |
 | `desc` | string (HTML OK) | Yes | Short description, 1 line |
 | `detail` | string (HTML OK) | Yes | Detailed description, 2-7 lines. New cards end with `\n\nKết hợp tốt với: [tool1] · [tool2]` |
 | `added_date` | string (YYYY-MM-DD) | Yes | Date card was added |
@@ -47,11 +48,13 @@ Fields currently present in `data.json` cards.
 | `verified_at` | string (YYYY-MM-DD) | Yes | ISO date | `"2026-02-10"` |
 | `verification_source` | enum string | Yes | `"docs"` \| `"tested"` \| `"inferred"` | `"docs"` |
 | `github_stars` | number \| null | No | Integer or null if not on GitHub | `162000` |
-| `license` | string \| null | No | SPDX token preferred; custom tokens allowed (see §Enum Definitions > license) | `"MIT"` |
+| `license` | string \| null | No | Free-form string. SPDX identifiers preferred (e.g., `MIT`, `Apache-2.0`), but custom tokens allowed for non-standard licenses (e.g., `Dify-OSL`, `Elastic-2.0`, `SSPL-1.0`). Use `null` if unknown. | `"MIT"` |
 
 ---
 
 ## 3. Enum Definitions
+
+> ⚠️ **FROZEN at v1.0.0** — No new enum values without a major version bump (x.0.0). See Versioning Rules §1.7.
 
 ### pricing
 
@@ -142,6 +145,14 @@ Slugs reference other cards by lowercase, kebab-case transformation of card name
 5. Lowercase
 
 Slugs MUST match actual card names in `data.json` — validated by A3 script.
+
+> **DEC-039:** `card.slug` is the source-of-truth. Slugs are stored explicitly on each card. 6 cards have overrides where slug differs from `toSlug(name)` output:
+> - `mcp-model-context-protocol` → `mcp`
+> - `a2a-agent2agent-protocol` → `a2a`
+> - `claudeai-web` → `claude-ai`
+> - `chatgpt-web` → `chatgpt`
+> - `h-thng-memory-khc` → `he-thong-memory-khac`
+> - `skill-categories-ng-ch-` → `skill-categories-dang-chu-y`
 
 ### Card Identity & Slug Immutability
 
