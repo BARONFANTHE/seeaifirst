@@ -925,6 +925,9 @@ function escapeHtml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
 }
 
+// ═══ Constants ═══
+const SITE_URL = 'https://ai-mindmap-ochre.vercel.app';
+
 // ═══ State ═══
 let data = null;
 let selected = null;
@@ -952,6 +955,8 @@ const colorHex = {
   blue: '#3b82f6', teal: '#14b8a6', orange: '#f59e0b',
 };
 function getHex(c) { return colorHex[c] || '#94a3b8'; }
+
+function stripHtml(str) { return str ? str.replace(/<[^>]*>/g, '').trim() : ''; }
 
 // ═══ Helpers ═══
 function isNew(dateStr) {
@@ -1899,12 +1904,94 @@ function handleInitialHash() {
   }
 }
 
+// ═══ JSON-LD Structured Data ═══
+function generateJsonLd(data) {
+  const items = [];
+  let position = 0;
+  for (const section of data.sections) {
+    for (const card of section.cards) {
+      position++;
+      const item = {
+        '@type': 'SoftwareApplication',
+        'name': card.name,
+        'description': stripHtml(card.desc),
+        'url': SITE_URL + '/#' + getCardSlug(card),
+        'applicationCategory': 'DeveloperApplication'
+      };
+
+      // Keywords: section title + languages
+      const keywords = [];
+      if (section.title) keywords.push(section.title.trim());
+      if (card.languages && card.languages.length) keywords.push(...card.languages);
+      if (keywords.length) item.keywords = keywords;
+
+      // Pricing (mutual exclusive)
+      if (card.pricing === 'free') {
+        item.offers = { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' };
+      } else if (card.pricing === 'freemium' || card.pricing === 'open-core') {
+        item.isAccessibleForFree = true;
+      }
+      // paid or undefined → omit both
+
+      // License
+      if (card.license) item.license = card.license;
+
+      // ALL source URLs → sameAs (array)
+      if (card.sources && card.sources.length) {
+        const sameAsUrls = card.sources.filter(s => s.url).map(s => s.url);
+        if (sameAsUrls.length) item.sameAs = sameAsUrls;
+      }
+
+      items.push({
+        '@type': 'ListItem',
+        'position': position,
+        'item': item
+      });
+    }
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': SITE_URL + '/#website',
+        'name': 'AI Mindmap',
+        'url': SITE_URL,
+        'description': 'Interactive directory of 66 AI tools and frameworks for developers'
+      },
+      {
+        '@type': 'CollectionPage',
+        '@id': SITE_URL + '/#directory',
+        'name': 'AI Mindmap — AI Tools Directory 2026',
+        'url': SITE_URL,
+        'isPartOf': { '@id': SITE_URL + '/#website' },
+        'mainEntity': {
+          '@type': 'ItemList',
+          'numberOfItems': items.length,
+          'itemListElement': items
+        }
+      }
+    ]
+  };
+}
+
 // ═══ Init ═══
 async function init() {
   try {
     const res = await fetch('data.json');
     data = await res.json();
     buildSlugMap(data);
+
+    // JSON-LD structured data
+    const jsonLd = generateJsonLd(data);
+    const jsonLdScript = document.createElement('script');
+    jsonLdScript.type = 'application/ld+json';
+    jsonLdScript.id = 'ai-mindmap-jsonld';
+    jsonLdScript.textContent = JSON.stringify(jsonLd);
+    const existingJsonLd = document.getElementById('ai-mindmap-jsonld');
+    if (existingJsonLd) existingJsonLd.remove();
+    document.head.appendChild(jsonLdScript);
 
     // Restore theme
     const savedTheme = localStorage.getItem('ai-mindmap-theme');
