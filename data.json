@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "6.3",
     "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-26T15:38:02Z",
+    "updated_at": "2026-02-27T06:54:58Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -1789,7 +1789,27 @@
               "title": "7 Agentic AI Trends 2026",
               "url": "https://machinelearningmastery.com/7-agentic-ai-trends-to-watch-in-2026/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "intermediate",
+          "languages": ["python", "js"],
+          "github_stars": null,
+          "license": null,
+          "verified_at": "2026-02-27",
+          "verification_source": "inferred",
+          "whenToUse": [
+            "Cần phối hợp nhiều AI agents chuyên biệt cho workflow phức tạp",
+            "Tự động hóa quy trình end-to-end thay vì từng task riêng lẻ",
+            "Khi team/org cần agents phối hợp cross-functional"
+          ],
+          "whenNotToUse": [
+            "Task đơn giản chỉ cần 1 agent hoặc 1 LLM call",
+            "Chưa có observability/governance cho hệ thống phân tán",
+            "Prototype nhanh — overhead orchestration chưa cần thiết"
+          ],
+          "compatibleWith": ["crewai", "autogen", "langgraph", "openai-agents-sdk", "google-adk", "mcp", "a2a", "claude-flow"],
+          "useCases": ["multi-agent-orchestration", "enterprise-automation", "workflow-orchestration", "agent-orchestration"]
         },
         {
           "icon": "🔍",
@@ -1810,7 +1830,27 @@
               "title": "Anthropic — Research",
               "url": "https://www.anthropic.com/research"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "advanced",
+          "languages": ["python"],
+          "github_stars": null,
+          "license": null,
+          "verified_at": "2026-02-27",
+          "verification_source": "inferred",
+          "whenToUse": [
+            "Cần hiểu internal mechanisms của LLM để debug hành vi bất thường",
+            "Nghiên cứu AI safety, alignment, phát hiện deception",
+            "Audit model trước khi deploy cho ứng dụng high-stakes"
+          ],
+          "whenNotToUse": [
+            "Chỉ cần evaluate output quality — dùng observability tools",
+            "Không có background ML/deep learning chuyên sâu",
+            "Cần giải pháp production nhanh, không phải research"
+          ],
+          "compatibleWith": ["langfuse", "deepeval", "arize-phoenix", "nemo-guardrails", "garak"],
+          "useCases": ["research", "llm-evaluation", "llm-red-teaming", "security-audit"]
         },
         {
           "icon": "🌍",
@@ -1827,7 +1867,27 @@
               "title": "Google DeepMind — Genie",
               "url": "https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "advanced",
+          "languages": ["python"],
+          "github_stars": null,
+          "license": null,
+          "verified_at": "2026-02-27",
+          "verification_source": "inferred",
+          "whenToUse": [
+            "Xây dựng AI hiểu vật lý và spatial reasoning cho robotics",
+            "Training agents trong simulated environments trước khi deploy thực tế",
+            "Tạo interactive 3D environments cho gaming hoặc VR/AR"
+          ],
+          "whenNotToUse": [
+            "Chỉ cần text processing hoặc chatbot thông thường",
+            "Không có GPU infrastructure đủ mạnh",
+            "Dự án không liên quan đến spatial/physical reasoning"
+          ],
+          "compatibleWith": ["ollama", "vllm", "ai-infrastructure", "generative-coding"],
+          "useCases": ["research", "model-experimentation", "multi-modal-inference"]
         },
         {
           "icon": "💻",
@@ -1844,7 +1904,27 @@
               "title": "GitHub — State of AI Coding",
               "url": "https://github.blog/news-insights/research/the-state-of-ai-coding/"
             }
-          ]
+          ],
+          "pricing": "free",
+          "deployment": "cloud",
+          "difficulty": "beginner",
+          "languages": ["python", "js", "typescript"],
+          "github_stars": null,
+          "license": null,
+          "verified_at": "2026-02-27",
+          "verification_source": "inferred",
+          "whenToUse": [
+            "Tăng tốc development workflow với AI-assisted coding",
+            "Non-developers cần build apps/prototypes nhanh (vibe coding)",
+            "Cần generate, test, debug code tự động trong pipeline"
+          ],
+          "whenNotToUse": [
+            "Security-critical code không có human review process",
+            "Codebase legacy phức tạp cần deep architectural understanding",
+            "Cần 100% deterministic, auditable code output"
+          ],
+          "compatibleWith": ["claude-code", "cursor", "github-copilot", "windsurf", "codex-cli", "gemini-cli", "cline-roocode", "replit-agent", "kiro-aws"],
+          "useCases": ["code-generation", "rapid-prototyping", "agentic-coding", "full-stack"]
         },
         {
           "icon": "🇨🇳",
