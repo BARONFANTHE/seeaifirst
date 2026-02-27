@@ -18,18 +18,18 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 
 | Item | Value |
 |------|-------|
-| **Version** | v6.3 (deployed, SECTIONS FROZEN) |
-| **meta.version** | "6.3" |
-| **meta.schema_version** | "0.1.0-draft" |
-| **Cards** | 66 cards, 13 sections, 5 layers |
+| **Version** | v6.4 (deployed, SECTIONS FROZEN) |
+| **meta.version** | "6.4" |
+| **meta.schema_version** | "1.0.0" (FROZEN) |
+| **Cards** | 66 cards, 13 sections, 5 layers, all with explicit `card.slug` |
 | **Compare** | 4 presets (vector-databases, rag-systems, coding-agents, frameworks) |
 | **SEO** | sitemap.xml + robots.txt + canonical + English meta — live |
 | **OG Image** | og-image.png generated via script (66 Tools, 13 Sections, v6.2) |
 | **Last Deploy** | 2026-02-25 |
 | **Enriched** | 66/66 (100%) — A2 COMPLETE (Batch 01-06C: all 13 sections fully enriched) |
 | **Validator** | 8/8 checks PASS (`scripts/validate.js`) |
-| **A3 Progress** | A3.1 ✅ A3.2 ✅ A3.3 ⬜ |
-| **Latest Commit** | e3e650b |
+| **A3 Progress** | A3.1 ✅ A3.2 ✅ A3.3 ✅ — COMPLETE |
+| **Slug System** | `slugToCardMap` O(1) lookup, `SLUG_ALIAS_MAP` for 6 legacy deep-links |
 
 ## Architecture
 
@@ -51,7 +51,7 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 │   ├── validate.js               # Data validator (8 checks, run: node scripts/validate.js)
 │   └── slug-diff.js              # Slug derivation reference (toSlug vs card.slug)
 ├── docs/
-│   ├── SCHEMA_SPEC.md            # Card schema spec v0.1.0-draft (TRACKED)
+│   ├── SCHEMA_SPEC.md            # Card schema spec v1.0.0 FROZEN (TRACKED)
 │   ├── CLAUDE_AI.md              # Instructions cho Claude.ai (NOT tracked)
 │   ├── SESSION_HANDOFF.md        # Session state handoff (NOT tracked)
 │   ├── DECISIONS_LOG.md          # Decision history (NOT tracked)
@@ -82,9 +82,9 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
     "subtitle": "...",
     "lastUpdated": "...",
     "updatedBy": "...",
-    "version": "6.3",
-    "schema_version": "0.1.0-draft",
-    "updated_at": "2026-02-11T00:00:00Z",
+    "version": "6.4",
+    "schema_version": "1.0.0",
+    "updated_at": "2026-02-27T11:08:22.566Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -402,6 +402,7 @@ git push origin main
 | 5 | v6.1 | Large-preset: Coding Agents flip layout | ✅ **Completed** |
 | 5b | v6.2 | Schema Spec + SEO Baseline + OG image | ✅ **Completed** |
 | 6 | v6.3 | Tool Picker UX | ✅ **Completed** |
+| 6b | v6.4 | Schema Freeze v1.0.0 + Slug-first UI | ✅ **Completed** |
 | 7 | v7.0 | Community: Auto-fetch, graph, i18n | Planned |
 
 ## Known Issues
@@ -418,21 +419,25 @@ Không có known issues hiện tại.
 - CSP meta tag → cần tách inline JS ra file riêng (deferred, security hardening backlog)
 - ✅ Tool Picker UX shipped (v6.3) — feature branch `feature/tool-picker`, `--no-ff` merge
 - ✅ A2 enrichment COMPLETE — 66/66 (100%) (Batch 01-06C, all 13 sections enriched)
+- ✅ A3 schema freeze COMPLETE — v1.0.0, card.slug on all 66 cards, UI slug-first, alias map
 
 ## JS Functions Reference
 
 | Function | Chức năng |
 |----------|-----------|
 | `toSlug(name)` | Convert name → URL slug (remove non-alphanumeric, lowercase) |
-| `navigateToCard(hash)` | Open layer + expand card + scroll to card |
+| `getCardSlug(card)` | Return `card.slug` or fallback to `toSlug(card.name)` |
+| `findCardBySlug(rawSlug)` | Null-safe lookup: canonicalize + alias resolve + Map lookup |
+| `normalizeHash()` | Decode + canonicalize hash + replaceState for legacy URLs |
+| `buildSlugMap(data)` | Build `slugToCardMap` (O(1) lookup, 66 entries) on data load |
 | `openSearch()` / `closeSearch()` | Mở/đóng search overlay |
-| `doSearch(q)` | Filter allCards, render max 10 results |
+| `renderSearchResults(q)` | Filter allCards, render max 10 results |
 
-⚠️ DEC-029: compatibleWith dùng canonical short slugs, có thể khác toSlug() output. Xem docs/DECISIONS_LOG.md
+> **DEC-039:** `card.slug` is source-of-truth. 6 override cards have `SLUG_ALIAS_MAP` entries for legacy backward compat.
 
 ---
 
-*Version: 2.1*
+*Version: 2.2*
 *Created: 2026-02-04*
-*Updated: 2026-02-27 — A3.1+A3.2 complete (validator 8/8, card.slug 66/66, 13 sections)*
+*Updated: 2026-02-27 — A3 COMPLETE (v6.4, schema 1.0.0 FROZEN, slug-first UI, alias map)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
