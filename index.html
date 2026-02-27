@@ -1021,7 +1021,7 @@ function normalizeHash() {
 }
 
 function updateHash(card) {
-  history.replaceState(null, '', '#' + getCardSlug(card));
+  location.hash = '#' + getCardSlug(card);
 }
 
 // ═══ Compare Mode ═══
