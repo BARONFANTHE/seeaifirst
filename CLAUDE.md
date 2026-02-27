@@ -25,7 +25,7 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 | **Compare** | 4 presets (vector-databases, rag-systems, coding-agents, frameworks) |
 | **SEO** | sitemap.xml + robots.txt + canonical + English meta — live |
 | **OG Image** | og-image.png generated via script (66 Tools, 13 Sections, v6.2) |
-| **Last Deploy** | 2026-02-25 |
+| **Last Deploy** | 2026-02-27 |
 | **Enriched** | 66/66 (100%) — A2 COMPLETE (Batch 01-06C: all 13 sections fully enriched) |
 | **Validator** | 8/8 checks PASS (`scripts/validate.js`) |
 | **A3 Progress** | A3.1 ✅ A3.2 ✅ A3.3 ✅ — COMPLETE |
@@ -420,6 +420,7 @@ Không có known issues hiện tại.
 - ✅ Tool Picker UX shipped (v6.3) — feature branch `feature/tool-picker`, `--no-ff` merge
 - ✅ A2 enrichment COMPLETE — 66/66 (100%) (Batch 01-06C, all 13 sections enriched)
 - ✅ A3 schema freeze COMPLETE — v1.0.0, card.slug on all 66 cards, UI slug-first, alias map
+- ✅ Hotfix: browser back/forward — `updateHash()` uses `location.hash =` (339dfba)
 
 ## JS Functions Reference
 
@@ -428,16 +429,17 @@ Không có known issues hiện tại.
 | `toSlug(name)` | Convert name → URL slug (remove non-alphanumeric, lowercase) |
 | `getCardSlug(card)` | Return `card.slug` or fallback to `toSlug(card.name)` |
 | `findCardBySlug(rawSlug)` | Null-safe lookup: canonicalize + alias resolve + Map lookup |
-| `normalizeHash()` | Decode + canonicalize hash + replaceState for legacy URLs |
+| `normalizeHash()` | Decode + canonicalize hash + replaceState for legacy URLs only |
 | `buildSlugMap(data)` | Build `slugToCardMap` (O(1) lookup, 66 entries) on data load |
 | `openSearch()` / `closeSearch()` | Mở/đóng search overlay |
 | `renderSearchResults(q)` | Filter allCards, render max 10 results |
 
 > **DEC-039:** `card.slug` is source-of-truth. 6 override cards have `SLUG_ALIAS_MAP` entries for legacy backward compat.
+> **L-44:** `updateHash()` uses `location.hash =` (NOT `replaceState`) to create browser history entries for Back/Forward.
 
 ---
 
 *Version: 2.2*
 *Created: 2026-02-04*
-*Updated: 2026-02-27 — A3 COMPLETE (v6.4, schema 1.0.0 FROZEN, slug-first UI, alias map)*
+*Updated: 2026-02-27 — A3 COMPLETE + hotfix (v6.4, schema 1.0.0 FROZEN, slug-first UI, alias map)*
 *File này được Claude Code tự động đọc khi bắt đầu session.*
