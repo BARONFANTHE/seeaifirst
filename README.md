@@ -1,97 +1,112 @@
-# 🧠 AI Ecosystem Mindmap 2026
+# 🧠 See AI First
 
-> Interactive mindmap tổng hợp AI ecosystem: Protocols, Frameworks, Agents, Memory, Skills, Coding Tools & Trends.
+**The Opinionated AI Stack Guide — with receipts.**
 
-**Live site:** https://seeaifirst.com
+Curated directory of 66 AI developer tools across 13 categories, with evidence-first sourcing.
+
+🌐 **Live:** [seeaifirst.com](https://seeaifirst.com)
+
+---
+
+## Why This Exists
+
+There are hundreds of "awesome AI" lists. Most are link dumps with no opinion.
+
+See AI First is different:
+
+- **Curated, not scraped.** Every tool is manually evaluated against 5 criteria before inclusion. 100+ tools evaluated, 66 selected.
+- **Evidence-first.** Each card includes sources, verified dates, and verification methods.
+- **Opinionated trade-offs.** Every tool has `whenToUse` and `whenNotToUse` — we tell you when a tool is *not* the right choice.
+- **Structured for machines.** Schema-frozen data with stable IDs, JSON-LD structured data — built to be referenced by AI agents, not just humans.
+
+## Features
+
+- 🗂️ **13 categories** across 5 layers: Foundation → Coordination → Capability → Application → Trends
+- 🔍 **Search** across names, descriptions, and details (Ctrl+K)
+- 🔗 **Deep linking** — every tool has a permanent URL via hash routing
+- ⚖️ **Compare Mode** — side-by-side tool comparisons with preset and custom selections
+- 🎯 **Tool Picker** — interactive selection for building your AI stack
+- 📊 **Enriched metadata** — pricing, deployment, difficulty, compatibility, use cases
+- 🌗 **Dark/Light theme**
+- 📱 **Mobile responsive**
+- ⚡ **Zero backend** — static HTML + JSON on CDN, loads instantly
 
 ## Quick Start
 
-### Xem local
 ```bash
-npx serve .
-# Mở http://localhost:3000
-```
-
-### Update mindmap bằng Claude Code
-```bash
+git clone https://github.com/BARONFANTHE/seeaifirst.git
 cd seeaifirst
-claude
-
-# Nói 1 trong các lệnh:
-> update mindmap                           # Update tất cả
-> update section trends                    # Update 1 section  
-> thêm tool X vào coding-agents            # Thêm item cụ thể
-> có gì mới trong AI tuần này?             # Research + update
+python -m http.server 8000
+# Open http://localhost:8000
 ```
 
-Claude Code sẽ tự động: research → update `data.json` → tóm tắt changes → chờ Baron confirm → commit.
+> The site uses `fetch()` to load data, so a local server is required (opening `index.html` directly will fail due to CORS).
 
-### Deploy
-```bash
-# Lần đầu
-npx vercel
+Alternative: `npx serve .`
 
-# Sau đó mỗi lần push = auto-deploy
-git push
+## Project Structure
+
+```
+seeaifirst/
+├── index.html          # UI + CSS + JS (single file)
+├── data.json           # 66 tools, 13 sections, 5 layers
+├── og-image.png        # Social preview image
+├── sitemap.xml         # SEO sitemap
+├── robots.txt          # SEO robots
+├── package.json        # npm config (for validator)
+├── scripts/
+│   └── validate.js     # Data validation (8 checks)
+└── .github/
+    └── ISSUE_TEMPLATE/
+        └── suggest-tool.yml  # Community tool suggestions
 ```
 
-## Architecture
-```
-index.html    ← Renderer (đọc data.json, render UI)
-data.json     ← Content (8 sections, 39 cards)
-CLAUDE.md     ← Context cho Claude Code
-skills/       ← Skills cho Claude Code
-.github/      ← Issue templates
-CHANGELOG.md  ← Lịch sử updates
-```
+## Data
 
-**Muốn update?** Chỉ cần sửa `data.json` → website tự render lại.
+All tool data lives in `data.json`. Each tool card includes:
+
+- Basic info: name, description, sources
+- Enrichment: pricing, deployment model, difficulty level
+- Opinions: when to use, when not to use, compatible tools
+- Verification: verified date, verification method
+
+Schema is frozen at v1.0.0. See [CONTRIBUTING.md](CONTRIBUTING.md) for data format details.
+
+## Contributing
+
+We welcome contributions! The main ways to help:
+
+- **Suggest a tool** → [Open an issue](https://github.com/BARONFANTHE/seeaifirst/issues/new?template=suggest-tool.yml)
+- **Report a bug** → [Open an issue](https://github.com/BARONFANTHE/seeaifirst/issues/new)
+- **Improve data** → Submit a PR (see [CONTRIBUTING.md](CONTRIBUTING.md))
+
+## Roadmap
+
+| Phase | Status |
+|-------|--------|
+| Interactive visualization | ✅ Complete |
+| 66 tools across 13 categories | ✅ Complete |
+| Compare Mode + Tool Picker | ✅ Complete |
+| Schema enrichment (12 fields per tool) | ✅ Complete |
+| SEO + JSON-LD structured data | ✅ Complete |
+| Custom domain (seeaifirst.com) | ✅ Complete |
+| Community: public repo + contributing guide | 🔄 In Progress |
+| Path-based routing for SEO | 📋 Planned |
+| Internationalization | 📋 Planned |
 
 ## Tech Stack
-- Pure HTML/CSS/JS — zero dependencies
-- Data-driven: JSON → DOM rendering
-- Dark theme, glassmorphic design
-- Responsive, scroll animations
-- SEO: Open Graph, Twitter Card meta tags
 
-## v3.5 Features
-- Search overlay (Ctrl+K / Cmd+K) — fuzzy search toàn bộ cards
-- Hash-based deep linking — chia sẻ link trực tiếp đến từng card
-- NEW badge tự động cho cards mới (≤14 ngày)
-- "Suggest a Tool" GitHub Issue template
-
-## Sections
-1. **Protocols** — MCP, A2A
-2. **Agent Frameworks** — LangGraph, CrewAI, AutoGen, OpenAI Agents SDK, Google ADK, LlamaIndex, Pydantic AI, Rasa
-3. **Platforms** — Claude.ai, Claude Code, ChatGPT, Codex CLI
-4. **Memory** — Claude-Mem, MemGPT/Letta, Mem0, Zep
-5. **Skills** — Universal agent skills (626+)
-6. **Orchestration** — Claude-Flow, OpenClaw, Claude Squad
-7. **AI Coding Agents** — Claude Code, Cursor, Codex CLI, Windsurf, Copilot, Gemini CLI, Cline, Kiro, Replit
-8. **2026 Trends** — Multi-Agent Systems, Interpretability, World Models, Generative Coding, and more
-
-## Schema Documentation
-
-Card data follows a structured schema defined in [`docs/SCHEMA_SPEC.md`](docs/SCHEMA_SPEC.md).
-
-### Schema Versioning
-
-The schema follows [Semantic Versioning](https://semver.org/):
-
-| Change Type | Version Bump | Example |
-|-------------|:------------:|---------|
-| Typo fix in spec, no data change | **Patch** (1.0.x) | 1.0.0 → 1.0.1 |
-| Add new optional field | **Minor** (1.x.0) | 1.0.0 → 1.1.0 |
-| Change/remove existing field | **Major** (x.0.0) | 1.0.0 → 2.0.0 |
-
-### Backwards Compatibility Policy
-
-- **Card slugs** are immutable after assignment. Existing deep-links will always resolve.
-- **Enum values** are frozen at v1.0.0 for all enum fields defined in SCHEMA_SPEC (`pricing`, `deployment`, `difficulty`, `verification_source`). No new values without a major version bump.
-- **New optional fields** may be added via minor version bump — existing consumers are unaffected.
-- **Breaking changes** (field removal, enum changes, required field additions) require a major version bump with 1-week deprecation notice in release notes (and CHANGELOG if present).
-
-Current schema version: **1.0.0** (see `meta.schema_version` in `data.json`).
+- **Frontend:** Vanilla HTML + CSS + JS (single file, no framework)
+- **Data:** JSON (schema v1.0.0 frozen)
+- **Hosting:** Vercel (auto-deploy from `main`)
+- **SEO:** JSON-LD structured data, canonical domain, sitemap + robots.txt
 
 ## License
-MIT
+
+[MIT](LICENSE)
+
+---
+
+*Vietnamese descriptions available on the live site.*
+
+*Data verified as of February 2026. Found something outdated? [Open an issue](https://github.com/BARONFANTHE/seeaifirst/issues/new).*
