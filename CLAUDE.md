@@ -10,7 +10,7 @@ Website tương tác mapping hệ sinh thái AI 2026 — protocols, frameworks, 
 |------|-------|
 | Tech | Static HTML + CSS + Vanilla JS + data.json |
 | PROD | https://seeaifirst.com |
-| Repo | https://github.com/BARONFANTHE/ai-mindmap |
+| Repo | https://github.com/BARONFANTHE/seeaifirst |
 | Local | C:\Projects\ai-mindmap |
 | Deploy | Vercel auto-deploy from `main` branch |
 

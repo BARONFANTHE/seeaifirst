@@ -1,4 +1,5 @@
 {
+  "name": "seeaifirst",
   "devDependencies": {
     "canvas": "^3.2.1"
   }

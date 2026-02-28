@@ -889,8 +889,8 @@ html, body {
       <div class="sidebar-footer">
         <span>AI Mindmap 2026</span>
         <div style="display:flex;gap:12px;">
-          <a href="https://github.com/BARONFANTHE/ai-mindmap/issues/new?template=suggest-tool.yml" target="_blank" rel="noopener noreferrer">Suggest</a>
-          <a href="https://github.com/BARONFANTHE/ai-mindmap" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/BARONFANTHE/seeaifirst/issues/new?template=suggest-tool.yml" target="_blank" rel="noopener noreferrer">Suggest</a>
+          <a href="https://github.com/BARONFANTHE/seeaifirst" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
     </nav>
@@ -1988,14 +1988,24 @@ async function init() {
     const jsonLd = generateJsonLd(data);
     const jsonLdScript = document.createElement('script');
     jsonLdScript.type = 'application/ld+json';
-    jsonLdScript.id = 'ai-mindmap-jsonld';
+    jsonLdScript.id = 'seeaifirst-jsonld';
     jsonLdScript.textContent = JSON.stringify(jsonLd);
-    const existingJsonLd = document.getElementById('ai-mindmap-jsonld');
+    const existingJsonLd = document.getElementById('seeaifirst-jsonld');
     if (existingJsonLd) existingJsonLd.remove();
     document.head.appendChild(jsonLdScript);
 
-    // Restore theme
-    const savedTheme = localStorage.getItem('ai-mindmap-theme');
+    // Restore theme (migrate localStorage key ai-mindmap-theme → seeaifirst-theme)
+    const NEW_KEY = 'seeaifirst-theme';
+    const OLD_KEY = 'ai-mindmap-theme';
+    let theme = localStorage.getItem(NEW_KEY);
+    if (theme == null) {
+      theme = localStorage.getItem(OLD_KEY);
+      if (theme != null) {
+        localStorage.setItem(NEW_KEY, theme);
+        localStorage.removeItem(OLD_KEY);
+      }
+    }
+    const savedTheme = theme;
     if (savedTheme === 'light') {
       isDark = false;
       document.documentElement.setAttribute('data-theme', 'light');
@@ -2022,7 +2032,7 @@ async function init() {
       isDark = !isDark;
       document.documentElement.setAttribute('data-theme', isDark ? '' : 'light');
       document.getElementById('theme-toggle').textContent = isDark ? '☀️' : '🌙';
-      localStorage.setItem('ai-mindmap-theme', isDark ? 'dark' : 'light');
+      localStorage.setItem('seeaifirst-theme', isDark ? 'dark' : 'light');
     });
 
     // Mobile back button

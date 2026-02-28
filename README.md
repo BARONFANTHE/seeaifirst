@@ -14,7 +14,7 @@ npx serve .
 
 ### Update mindmap bằng Claude Code
 ```bash
-cd ai-mindmap
+cd seeaifirst
 claude
 
 # Nói 1 trong các lệnh:
