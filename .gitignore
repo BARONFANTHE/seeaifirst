@@ -3,7 +3,12 @@ node_modules/
 *.log
 .vercel
 .env
-docs/*
-!docs/SCHEMA_SPEC.md
+docs/
+
+# Internal files (not for public)
+CLAUDE.md
+CHANGELOG.md
+skills/
+scripts/slug-diff.js
 .claude/
 nul
