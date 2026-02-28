@@ -72,7 +72,7 @@ badges.forEach((label, i) => {
 ctx.font = '16px sans-serif';
 ctx.fillStyle = '#6b6b80';
 ctx.textAlign = 'center';
-ctx.fillText('ai-mindmap-ochre.vercel.app \u2022 v6.2', WIDTH / 2, HEIGHT - 40);
+ctx.fillText('seeaifirst.com \u2022 v6.2', WIDTH / 2, HEIGHT - 40);
 
 // Save
 const outPath = path.join(__dirname, '..', 'og-image.png');

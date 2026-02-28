@@ -2,7 +2,7 @@
 
 > Interactive mindmap tổng hợp AI ecosystem: Protocols, Frameworks, Agents, Memory, Skills, Coding Tools & Trends.
 
-**Live site:** https://ai-mindmap-ochre.vercel.app
+**Live site:** https://seeaifirst.com
 
 ## Quick Start
 
