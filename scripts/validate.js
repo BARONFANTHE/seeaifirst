@@ -74,7 +74,7 @@ const totalCards = allCards.length;
 const totalSections = sections.length;
 
 // ── Header ──────────────────────────────────────────────────────────
-console.log('=== AI Mindmap Validator ===');
+console.log('=== See AI First Validator ===');
 console.log(`Data: data.json`);
 console.log(`Date: ${new Date().toISOString().slice(0, 10)}`);
 console.log('');

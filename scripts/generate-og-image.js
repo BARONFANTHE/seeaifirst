@@ -27,12 +27,12 @@ ctx.fillText('\u{1F9E0}', WIDTH / 2, 120);
 // Title
 ctx.font = 'bold 72px sans-serif';
 ctx.fillStyle = '#ffffff';
-ctx.fillText('AI Mindmap 2026', WIDTH / 2, 230);
+ctx.fillText('See AI First', WIDTH / 2, 230);
 
 // Subtitle
 ctx.font = '24px sans-serif';
 ctx.fillStyle = '#a0a0b8';
-ctx.fillText('B\u1EA3n \u0111\u1ED3 AI Ecosystem cho Developers Vi\u1EC7t Nam', WIDTH / 2, 285);
+ctx.fillText('The Opinionated AI Stack Guide', WIDTH / 2, 285);
 
 // Badges
 const badges = ['66 Tools', '13 Sections', 'Curated'];
