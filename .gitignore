@@ -10,5 +10,7 @@ CLAUDE.md
 CHANGELOG.md
 skills/
 scripts/slug-diff.js
+package-lock.json
+scripts/generate-og-image.js
 .claude/
 nul
