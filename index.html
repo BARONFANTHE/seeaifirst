@@ -1029,6 +1029,47 @@ function updateHash(card) {
   location.hash = '#' + getCardSlug(card);
 }
 
+// ═══ ROUTER CORE (v7.0 PR2) ═══
+
+const AppRouter = (() => {
+  const routes = []; // {pattern: RegExp, handler: Function, name: string}
+
+  function register(name, pattern, handler) {
+    routes.push({ name, pattern, handler });
+  }
+
+  function resolve(pathname) {
+    for (const route of routes) {
+      const match = pathname.match(route.pattern);
+      if (match) return { route, params: match.groups || {} };
+    }
+    return null;
+  }
+
+  function navigate(path, { replace = false } = {}) {
+    if (replace) {
+      history.replaceState(null, '', path);
+    } else {
+      history.pushState(null, '', path);
+    }
+    handleRoute();
+  }
+
+  function handleRoute() {
+    const result = resolve(location.pathname);
+    if (result) {
+      result.route.handler(result.params);
+    }
+  }
+
+  function init() {
+    window.addEventListener('popstate', () => handleRoute());
+    handleRoute();
+  }
+
+  return { register, resolve, navigate, handleRoute, init };
+})();
+
 // ═══ Compare Mode ═══
 function isCompareOpen() {
   return document.getElementById('compare-overlay').style.display !== 'none';
@@ -1981,7 +2022,7 @@ function generateJsonLd(data) {
 // ═══ Init ═══
 async function init() {
   try {
-    const res = await fetch('data.json');
+    const res = await fetch('/data.json');
     data = await res.json();
     buildSlugMap(data);
 
@@ -2132,6 +2173,9 @@ async function init() {
         updateTreeActiveStates();
       }
     });
+
+    // Router core init (v7.0 PR2 — scaffold, no routes registered yet)
+    AppRouter.init();
 
   } catch (err) {
     console.error('Failed to load data.json:', err);
