@@ -1067,8 +1067,47 @@ const AppRouter = (() => {
     handleRoute();
   }
 
-  return { register, resolve, navigate, handleRoute, init };
+  function hasMatchingRoute(pathname) {
+    for (const route of routes) {
+      if (pathname.match(route.pattern)) return true;
+    }
+    return false;
+  }
+
+  return { register, resolve, navigate, handleRoute, init, hasMatchingRoute };
 })();
+
+// ═══ Hash Normalize (v7.0 PR3) ═══
+function normalizeHashToPath() {
+  const rawHash = location.hash.slice(1);
+  if (!rawHash) return false;
+
+  const hash = safeDecode(rawHash);
+  let targetPath = null;
+
+  if (hash.startsWith('compare=')) {
+    const rest = hash.slice('compare='.length);
+    const presetSlug = rest.split('&')[0];
+    const pickMatch = rest.match(/[&?]pick=([^&]*)/);
+    const params = pickMatch ? '?pick=' + pickMatch[1] : '';
+    targetPath = '/compare/' + presetSlug + params;
+  } else if (hash.startsWith('section=')) {
+    const sectionSlug = hash.slice('section='.length);
+    targetPath = '/section/' + sectionSlug;
+  } else {
+    targetPath = '/tool/' + hash;
+  }
+
+  if (!targetPath) return false;
+
+  const url = new URL(targetPath, location.origin);
+  if (AppRouter.hasMatchingRoute(url.pathname)) {
+    history.replaceState(null, '', targetPath);
+    return true;
+  }
+
+  return false;
+}
 
 // ═══ Compare Mode ═══
 function isCompareOpen() {
@@ -2152,30 +2191,39 @@ async function init() {
       });
     });
 
-    // Deep linking
-    handleInitialHash();
+    // Hash normalize (v7.0 PR3 — no-op until PR4+ registers routes)
+    const didNormalize = normalizeHashToPath();
 
-    // Hash change (browser back/forward, manual URL edit)
-    window.addEventListener('hashchange', () => {
-      const hash = location.hash;
-      if (hash.startsWith('#compare=')) {
-        const { presetId, pickSlugs } = parseCompareHash(hash);
-        if (!isCompareOpen()) openCompare(presetId, pickSlugs);
-        return;
-      }
-      if (isCompareOpen()) closeCompare();
-      const slug = normalizeHash();
-      const result = findCardBySlug(slug);
-      if (result) {
-        selected = result;
-        activeSection = result.section;
-        renderRightPanel();
-        updateTreeActiveStates();
-      }
-    });
+    if (didNormalize) {
+      // Hash was normalized to path URL → router handles rendering (PR4+)
+      AppRouter.init();
+    } else {
+      // No matching route → hash routing as before
+      // Deep linking
+      handleInitialHash();
 
-    // Router core init (v7.0 PR2 — scaffold, no routes registered yet)
-    AppRouter.init();
+      // Hash change (browser back/forward, manual URL edit)
+      window.addEventListener('hashchange', () => {
+        const hash = location.hash;
+        if (hash.startsWith('#compare=')) {
+          const { presetId, pickSlugs } = parseCompareHash(hash);
+          if (!isCompareOpen()) openCompare(presetId, pickSlugs);
+          return;
+        }
+        if (isCompareOpen()) closeCompare();
+        const slug = normalizeHash();
+        const result = findCardBySlug(slug);
+        if (result) {
+          selected = result;
+          activeSection = result.section;
+          renderRightPanel();
+          updateTreeActiveStates();
+        }
+      });
+
+      // Router core init (v7.0 PR2 — scaffold, no routes registered yet)
+      AppRouter.init();
+    }
 
   } catch (err) {
     console.error('Failed to load data.json:', err);
