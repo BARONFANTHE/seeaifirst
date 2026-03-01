@@ -1077,6 +1077,62 @@ const AppRouter = (() => {
   return { register, resolve, navigate, handleRoute, init, hasMatchingRoute };
 })();
 
+// ═══ Route: Tool Card (v7.0 PR4a) ═══
+
+function handleToolRoute(params) {
+  const slug = params.slug;
+  const canonical = SLUG_ALIAS_MAP[slug] || slug;
+
+  // Alias → replaceState to canonical (idempotent, preserve state)
+  if (canonical !== slug) {
+    history.replaceState(history.state, '', '/tool/' + canonical);
+  }
+
+  const result = findCardBySlug(canonical);
+
+  if (!result) {
+    // Unknown slug → fallback home
+    history.replaceState(null, '', '/');
+    selected = null;
+    renderRightPanel();
+    updateTreeActiveStates();
+    return;
+  }
+
+  // Open card — reuse existing rendering flow
+  selected = result;
+  activeSection = result.section;
+  renderRightPanel();
+  updateTreeActiveStates();
+}
+
+function closeCardWithRouting() {
+  const isToolRoute = location.pathname.startsWith('/tool/');
+
+  if (!isToolRoute) {
+    // Not on tool route → legacy close behavior
+    selected = null;
+    history.replaceState(null, '', location.pathname);
+    renderRightPanel();
+    updateTreeActiveStates();
+    return;
+  }
+
+  // Tool route close
+  if (history.state && history.state.fromApp) {
+    // In-app navigation → go back (fromApp set by PR4b)
+    history.back();
+  } else {
+    // Direct entry → replace to home
+    selected = null;
+    history.replaceState(null, '', '/');
+    renderRightPanel();
+    updateTreeActiveStates();
+  }
+}
+
+AppRouter.register('tool', /^\/tool\/(?<slug>[^/]+)$/, handleToolRoute);
+
 // ═══ Hash Normalize (v7.0 PR3) ═══
 function normalizeHashToPath() {
   const rawHash = location.hash.slice(1);
@@ -1847,10 +1903,7 @@ function renderDetail() {
 
   // Back button listener
   document.getElementById('detail-back-btn').addEventListener('click', () => {
-    selected = null;
-    history.replaceState(null, '', location.pathname);
-    renderRightPanel();
-    updateTreeActiveStates();
+    closeCardWithRouting();
   });
 }
 
@@ -2134,6 +2187,7 @@ async function init() {
       }
       if (e.key === 'Escape') {
         if (isCompareOpen()) { closeCompare(); return; }
+        if (selected && location.pathname.startsWith('/tool/')) { closeCardWithRouting(); return; }
         closeSearch();
       }
     });
