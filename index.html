@@ -1025,8 +1025,14 @@ function normalizeHash() {
   return canonical;
 }
 
+function navigateToTool(card) {
+  const slug = getCardSlug(card);
+  AppRouter.navigate('/tool/' + slug, { state: { fromApp: true } });
+}
+
+// deprecated: use navigateToTool()
 function updateHash(card) {
-  location.hash = '#' + getCardSlug(card);
+  navigateToTool(card);
 }
 
 // ═══ ROUTER CORE (v7.0 PR2) ═══
@@ -1046,11 +1052,11 @@ const AppRouter = (() => {
     return null;
   }
 
-  function navigate(path, { replace = false } = {}) {
+  function navigate(path, { replace = false, state = null } = {}) {
     if (replace) {
-      history.replaceState(null, '', path);
+      history.replaceState(state, '', path);
     } else {
-      history.pushState(null, '', path);
+      history.pushState(state, '', path);
     }
     handleRoute();
   }
@@ -1658,7 +1664,7 @@ function attachTreeListeners() {
 
       selected = { card, section };
       activeSection = section;
-      updateHash(card);
+      navigateToTool(card);
 
       // Auto-expand parent folder if collapsed
       const children = btn.closest('.tree-children');
@@ -1785,7 +1791,7 @@ function attachNewspaperCardListeners(section) {
       const card = section.cards.find(c => c.name === cardName);
       if (!card) return;
       selected = { card, section };
-      updateHash(card);
+      navigateToTool(card);
       renderRightPanel();
       updateTreeActiveStates();
     });
@@ -2000,7 +2006,7 @@ function selectSearchResult(item) {
   selected = { card: item.card, section: item.section };
   activeSection = item.section;
   closeSearch();
-  updateHash(item.card);
+  navigateToTool(item.card);
   collapseSidebarMobile();
   renderRightPanel();
   updateTreeActiveStates();
