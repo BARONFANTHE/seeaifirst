@@ -1065,6 +1065,12 @@ const AppRouter = (() => {
     const result = resolve(location.pathname);
     if (result) {
       result.route.handler(result.params);
+    } else {
+      // route mismatch → render home (ship-safe invariant)
+      history.replaceState(null, '', '/');
+      selected = null;
+      renderRightPanel();
+      updateTreeActiveStates();
     }
   }
 
