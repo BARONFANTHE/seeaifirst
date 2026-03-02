@@ -1030,6 +1030,10 @@ function navigateToTool(card) {
   AppRouter.navigate('/tool/' + slug, { state: { fromApp: true } });
 }
 
+function navigateToCompare(presetSlug) {
+  AppRouter.navigate('/compare/' + presetSlug, { state: { fromApp: true } });
+}
+
 // deprecated: use navigateToTool()
 function updateHash(card) {
   navigateToTool(card);
@@ -1067,6 +1071,12 @@ const AppRouter = (() => {
       result.route.handler(result.params);
     } else {
       // route mismatch → render home (ship-safe invariant)
+      if (isCompareOpen()) {
+        document.getElementById('compare-overlay').style.display = 'none';
+        document.body.style.overflow = '';
+        window._pickerSelection = null;
+        window._pickerPreset = null;
+      }
       history.replaceState(null, '', '/');
       selected = null;
       renderRightPanel();
@@ -1145,6 +1155,30 @@ function closeCardWithRouting() {
 
 AppRouter.register('tool', /^\/tool\/(?<slug>[^/]+)$/, handleToolRoute);
 
+// ═══ Route: Compare (v7.0 PR5) ═══
+
+function handleCompareRoute(params) {
+  const presetSlug = params.presetSlug;
+  const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === presetSlug);
+
+  if (!preset) {
+    history.replaceState(null, '', '/');
+    selected = null;
+    renderRightPanel();
+    updateTreeActiveStates();
+    return;
+  }
+
+  // Parse pick from query params
+  const url = new URL(location.href);
+  const pickParam = url.searchParams.get('pick');
+  const pickSlugs = pickParam ? pickParam.split(',').filter(Boolean) : null;
+
+  openCompare(preset, pickSlugs);
+}
+
+AppRouter.register('compare', /^\/compare\/(?<presetSlug>[^/]+)$/, handleCompareRoute);
+
 // ═══ Hash Normalize (v7.0 PR3) ═══
 function normalizeHashToPath() {
   const rawHash = location.hash.slice(1);
@@ -1182,11 +1216,7 @@ function isCompareOpen() {
   return document.getElementById('compare-overlay').style.display !== 'none';
 }
 
-function openCompare(presetId, pickSlugs) {
-  const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === presetId);
-  if (!preset) return;
-  const currentHash = location.hash;
-  window._comparePrevHash = currentHash.startsWith('#compare=') ? '' : currentHash;
+function openCompare(preset, pickSlugs) {
   window._compareReturnFocus = document.activeElement;
   document.querySelector('.compare-title').textContent = preset.title;
   initPickerSelection(preset, pickSlugs);
@@ -1195,21 +1225,29 @@ function openCompare(presetId, pickSlugs) {
   const overlay = document.getElementById('compare-overlay');
   overlay.style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  history.replaceState(null, '', getCompareHash(presetId, window._pickerSelection, preset));
   trapCompareFocus(overlay);
 }
 
 function closeCompare() {
   document.getElementById('compare-overlay').style.display = 'none';
   document.body.style.overflow = '';
-  const prevHash = window._comparePrevHash || '';
-  history.replaceState(null, '', prevHash || window.location.pathname);
-  window._comparePrevHash = null;
   window._pickerSelection = null;
   window._pickerPreset = null;
   if (window._compareReturnFocus) {
     window._compareReturnFocus.focus();
     window._compareReturnFocus = null;
+  }
+
+  const isCompareRoute = location.pathname.startsWith('/compare/');
+  if (!isCompareRoute) return;
+
+  if (history.state && history.state.fromApp) {
+    history.back();
+  } else {
+    history.replaceState(null, '', '/');
+    selected = null;
+    renderRightPanel();
+    updateTreeActiveStates();
   }
 }
 
@@ -1258,14 +1296,14 @@ function parseCompareHash(hash) {
   return { presetId, pickSlugs };
 }
 
-function getCompareHash(presetId, selectedSet, preset) {
+function buildCompareUrl(presetSlug, selectedSet, preset) {
   const total = preset.tools.length;
   if (selectedSet.size === total || selectedSet.size > 6) {
-    return '#compare=' + presetId;
+    return '/compare/' + presetSlug;
   }
   // Focused Mode: slugs in preset order
   const ordered = preset.tools.filter(t => selectedSet.has(t.cardId)).map(t => t.cardId);
-  return '#compare=' + presetId + '&pick=' + ordered.join(',');
+  return '/compare/' + presetSlug + '?pick=' + ordered.join(',');
 }
 
 function initPickerSelection(preset, pickSlugs) {
@@ -1343,11 +1381,31 @@ function updatePickerState(preset) {
   if (resetEl) resetEl.classList.toggle('hidden', selectedCount === total);
 
   // Update URL
-  const hash = getCompareHash(preset.id, sel, preset);
-  history.replaceState(null, '', hash);
+  const url = buildCompareUrl(preset.id, sel, preset);
+  history.replaceState(history.state, '', url);
 
   // Re-render body
   renderCompareBody(preset);
+}
+
+function attachCompareToolClick(el, cardId) {
+  const entry = slugToCardMap.get(cardId);
+  if (!entry) return;
+  el.style.cursor = 'pointer';
+  el.tabIndex = 0;
+  el.setAttribute('role', 'link');
+  el.addEventListener('click', () => {
+    document.getElementById('compare-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+    navigateToTool(entry.card);
+  });
+  el.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      document.getElementById('compare-overlay').style.display = 'none';
+      document.body.style.overflow = '';
+      navigateToTool(entry.card);
+    }
+  });
 }
 
 function renderCompareBody(preset) {
@@ -1389,6 +1447,7 @@ function renderCompareTable(preset) {
     const th = document.createElement('th');
     th.className = 'compare-tool-header';
     th.textContent = findCardName(tool.cardId) || tool.cardId;
+    attachCompareToolClick(th, tool.cardId);
     headerRow.appendChild(th);
   });
   thead.appendChild(headerRow);
@@ -1427,6 +1486,7 @@ function renderCompareCards(preset) {
     const header = document.createElement('h3');
     header.className = 'compare-card-name';
     header.textContent = findCardName(tool.cardId) || tool.cardId;
+    attachCompareToolClick(header, tool.cardId);
     card.appendChild(header);
     preset.criteria.forEach(criterion => {
       const row = document.createElement('div');
@@ -1489,6 +1549,7 @@ function renderFlipTable(preset) {
     const nameCell = document.createElement('td');
     nameCell.className = 'compare-flip-tool-name';
     nameCell.textContent = findCardName(tool.cardId) || tool.cardId;
+    attachCompareToolClick(nameCell, tool.cardId);
     row.appendChild(nameCell);
     preset.criteria.forEach(criterion => {
       const td = document.createElement('td');
@@ -1521,6 +1582,7 @@ function renderFlipCards(preset) {
     const header = document.createElement('h3');
     header.className = 'compare-card-name';
     header.textContent = findCardName(tool.cardId) || tool.cardId;
+    attachCompareToolClick(header, tool.cardId);
     card.appendChild(header);
     preset.criteria.forEach(criterion => {
       const row = document.createElement('div');
@@ -1694,7 +1756,7 @@ function attachTreeListeners() {
   document.querySelectorAll('.tree-compare-icon').forEach(icon => {
     icon.addEventListener('click', (e) => {
       e.stopPropagation();
-      openCompare(icon.dataset.presetId);
+      navigateToCompare(icon.dataset.presetId);
     });
   });
 }
@@ -1752,7 +1814,7 @@ function renderWelcome() {
     </div>
   `;
   panel.querySelectorAll('.welcome-compare-btn').forEach(btn => {
-    btn.addEventListener('click', () => openCompare(btn.dataset.presetId));
+    btn.addEventListener('click', () => navigateToCompare(btn.dataset.presetId));
   });
 }
 
@@ -1806,7 +1868,7 @@ function attachNewspaperCardListeners(section) {
   if (compareBtn) {
     compareBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      openCompare(compareBtn.dataset.presetId);
+      navigateToCompare(compareBtn.dataset.presetId);
     });
   }
 }
@@ -2029,12 +2091,12 @@ function handleInitialHash() {
   const raw = location.hash;
   if (!raw || raw === '#') return;
 
-  // Compare deep-link takes priority
+  // Compare deep-link → normalize to path, let router handle
   if (raw.startsWith('#compare=')) {
     const { presetId, pickSlugs } = parseCompareHash(raw);
-    const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === presetId);
-    if (preset) { openCompare(presetId, pickSlugs); return; }
-    history.replaceState(null, '', window.location.pathname);
+    let path = '/compare/' + presetId;
+    if (pickSlugs) path += '?pick=' + pickSlugs.join(',');
+    history.replaceState(null, '', path);
     return;
   }
 
@@ -2236,7 +2298,7 @@ async function init() {
     document.querySelector('.compare-backdrop').addEventListener('click', closeCompare);
     document.querySelector('.compare-copy-link').addEventListener('click', () => {
       const btn = document.querySelector('.compare-copy-link');
-      const url = location.origin + location.pathname + location.hash;
+      const url = location.origin + location.pathname + location.search;
       (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => {
         btn.textContent = '✓';
         btn.title = 'Đã copy!';
@@ -2273,10 +2335,18 @@ async function init() {
         const hash = location.hash;
         if (hash.startsWith('#compare=')) {
           const { presetId, pickSlugs } = parseCompareHash(hash);
-          if (!isCompareOpen()) openCompare(presetId, pickSlugs);
+          let path = '/compare/' + presetId;
+          if (pickSlugs) path += '?pick=' + pickSlugs.join(',');
+          history.replaceState(null, '', path);
+          AppRouter.handleRoute();
           return;
         }
-        if (isCompareOpen()) closeCompare();
+        if (isCompareOpen()) {
+          document.getElementById('compare-overlay').style.display = 'none';
+          document.body.style.overflow = '';
+          window._pickerSelection = null;
+          window._pickerPreset = null;
+        }
         const slug = normalizeHash();
         const result = findCardBySlug(slug);
         if (result) {
