@@ -871,6 +871,7 @@ html, body {
     </div>
     <div class="topbar-right">
       <button id="search-btn">🔍 Tìm kiếm <kbd>⌘K</kbd></button>
+      <button id="lang-toggle" title="Switch language">VI</button>
       <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
     </div>
   </header>
@@ -986,6 +987,43 @@ const SLUG_ALIAS_MAP = {
   'skill-categories-ng-ch-': 'skill-categories-dang-chu-y'
 };
 
+// --- PR7: Language state ---
+
+let currentLang = 'en';
+
+// Helper: detect if pathname is VI context
+// Use this everywhere — avoids false positive on /video etc.
+const isViPath = (p) => p === '/vi' || p.startsWith('/vi/');
+
+// Helper: strip /vi prefix from path
+const stripViPrefix = (p) =>
+  p.startsWith('/vi/') ? p.slice(3)
+  : p === '/vi' ? '/'
+  : p;
+
+// Helper: add lang prefix based on currentLang
+function withLangPrefix(path) {
+  const base = stripViPrefix(path); // normalize first
+  return currentLang === 'vi' ? '/vi' + base : base;
+}
+
+// Mutator: only way to change currentLang
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('seeaifirst-lang', lang);
+}
+
+// Detect lang on init — URL wins, localStorage is display-only
+function detectInitialLang() {
+  if (isViPath(location.pathname)) return 'vi';
+  return 'en';
+}
+
+function updateLangToggleLabel() {
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = currentLang === 'vi' ? 'EN' : 'VI';
+}
+
 const slugToCardMap = new Map();
 
 function buildSlugMap(data) {
@@ -1019,7 +1057,7 @@ function normalizeHash() {
 
   // If hash changed after canonicalization, update URL silently
   if (canonical !== decoded) {
-    history.replaceState(null, '', '#' + canonical);
+    history.replaceState(history.state, '', '#' + canonical);
   }
 
   return canonical;
@@ -1027,16 +1065,18 @@ function normalizeHash() {
 
 function navigateToTool(card) {
   const slug = getCardSlug(card);
-  AppRouter.navigate('/tool/' + slug, { state: { fromApp: true } });
+  AppRouter.navigate(withLangPrefix('/tool/' + slug), { state: { fromApp: true } });
 }
 
 function navigateToCompare(presetSlug) {
-  AppRouter.navigate('/compare/' + presetSlug, { state: { fromApp: true } });
+  AppRouter.navigate(withLangPrefix('/compare/' + presetSlug), { state: { fromApp: true } });
 }
 
 function navigateToSection(sectionId) {
-  if (location.pathname === '/section/' + sectionId) return;
-  AppRouter.navigate('/section/' + sectionId, { state: { fromApp: true } });
+  const canonicalPath = '/section/' + sectionId;
+  if (location.pathname === canonicalPath
+      || location.pathname === '/vi' + canonicalPath) return;
+  AppRouter.navigate(withLangPrefix(canonicalPath), { state: { fromApp: true } });
 }
 
 // deprecated: use navigateToTool()
@@ -1071,7 +1111,11 @@ const AppRouter = (() => {
   }
 
   function handleRoute() {
-    const result = resolve(location.pathname);
+    // PR7: strip /vi prefix before resolving (Hard Rule 1)
+    const strippedPath = isViPath(location.pathname)
+      ? stripViPrefix(location.pathname)
+      : location.pathname;
+    const result = resolve(strippedPath);
     if (result) {
       result.route.handler(result.params);
     } else {
@@ -1082,7 +1126,8 @@ const AppRouter = (() => {
         window._pickerSelection = null;
         window._pickerPreset = null;
       }
-      history.replaceState(null, '', '/');
+      const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+      history.replaceState(history.state, '', homeUrl);
       selected = null;
       renderRightPanel();
       updateTreeActiveStates();
@@ -1112,14 +1157,15 @@ function handleToolRoute(params) {
 
   // Alias → replaceState to canonical (idempotent, preserve state)
   if (canonical !== slug) {
-    history.replaceState(history.state, '', '/tool/' + canonical);
+    history.replaceState(history.state, '', withLangPrefix('/tool/' + canonical));
   }
 
   const result = findCardBySlug(canonical);
 
   if (!result) {
-    // Unknown slug → fallback home
-    history.replaceState(null, '', '/');
+    // Unknown slug → fallback home (Hard Rule 3)
+    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    history.replaceState(history.state, '', homeUrl);
     selected = null;
     renderRightPanel();
     updateTreeActiveStates();
@@ -1134,12 +1180,13 @@ function handleToolRoute(params) {
 }
 
 function closeCardWithRouting() {
-  const isToolRoute = location.pathname.startsWith('/tool/');
+  const isToolRoute = location.pathname.startsWith('/tool/')
+      || location.pathname.startsWith('/vi/tool/');
 
   if (!isToolRoute) {
     // Not on tool route → legacy close behavior
     selected = null;
-    history.replaceState(null, '', location.pathname);
+    history.replaceState(history.state, '', location.pathname);
     renderRightPanel();
     updateTreeActiveStates();
     return;
@@ -1152,7 +1199,8 @@ function closeCardWithRouting() {
   } else {
     // Direct entry → replace to home
     selected = null;
-    history.replaceState(null, '', '/');
+    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    history.replaceState(history.state, '', homeUrl);
     renderRightPanel();
     updateTreeActiveStates();
   }
@@ -1167,7 +1215,8 @@ function handleCompareRoute(params) {
   const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === presetSlug);
 
   if (!preset) {
-    history.replaceState(null, '', '/');
+    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    history.replaceState(history.state, '', homeUrl);
     selected = null;
     renderRightPanel();
     updateTreeActiveStates();
@@ -1206,7 +1255,8 @@ function handleSectionRoute(params) {
   if (!section) {
     selected = null;
     activeSection = null;
-    history.replaceState(history.state, '', '/');
+    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    history.replaceState(history.state, '', homeUrl);
     renderRightPanel();
     updateTreeActiveStates();
     return;
@@ -1247,7 +1297,7 @@ function normalizeHashToPath() {
 
   const url = new URL(targetPath, location.origin);
   if (AppRouter.hasMatchingRoute(url.pathname)) {
-    history.replaceState(null, '', targetPath);
+    history.replaceState(history.state, '', targetPath);
     return true;
   }
 
@@ -1281,13 +1331,15 @@ function closeCompare() {
     window._compareReturnFocus = null;
   }
 
-  const isCompareRoute = location.pathname.startsWith('/compare/');
+  const isCompareRoute = location.pathname.startsWith('/compare/')
+      || location.pathname.startsWith('/vi/compare/');
   if (!isCompareRoute) return;
 
   if (history.state && history.state.fromApp) {
     history.back();
   } else {
-    history.replaceState(null, '', '/');
+    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    history.replaceState(history.state, '', homeUrl);
     selected = null;
     renderRightPanel();
     updateTreeActiveStates();
@@ -1342,11 +1394,11 @@ function parseCompareHash(hash) {
 function buildCompareUrl(presetSlug, selectedSet, preset) {
   const total = preset.tools.length;
   if (selectedSet.size === total || selectedSet.size > 6) {
-    return '/compare/' + presetSlug;
+    return withLangPrefix('/compare/' + presetSlug);
   }
   // Focused Mode: slugs in preset order
   const ordered = preset.tools.filter(t => selectedSet.has(t.cardId)).map(t => t.cardId);
-  return '/compare/' + presetSlug + '?pick=' + ordered.join(',');
+  return withLangPrefix('/compare/' + presetSlug + '?pick=' + ordered.join(','));
 }
 
 function initPickerSelection(preset, pickSlugs) {
@@ -2137,7 +2189,7 @@ function handleInitialHash() {
     const { presetId, pickSlugs } = parseCompareHash(raw);
     let path = '/compare/' + presetId;
     if (pickSlugs) path += '?pick=' + pickSlugs.join(',');
-    history.replaceState(null, '', path);
+    history.replaceState(history.state, '', path);
     return;
   }
 
@@ -2229,8 +2281,29 @@ function generateJsonLd(data) {
 // ═══ Init ═══
 async function init() {
   try {
-    const res = await fetch('/data.json');
-    data = await res.json();
+    // PR7: detect lang before fetch (URL wins — Hard Rule 6)
+    setLang(detectInitialLang());
+    updateLangToggleLabel();
+
+    const dataUrl = currentLang === 'vi' ? '/data.vi.json' : '/data.json';
+    let fetchedData;
+    try {
+      const res = await fetch(dataUrl);
+      if (!res.ok) throw new Error('fetch-fail');
+      fetchedData = await res.json();
+    } catch {
+      // DEC-059: vi fetch fail → fallback EN + clean URL
+      if (currentLang === 'vi') {
+        setLang('en');
+        updateLangToggleLabel();
+        const enPath = stripViPrefix(location.pathname) || '/';
+        const enUrl = enPath + (location.search || '');
+        history.replaceState(history.state, '', enUrl);
+      }
+      const fallback = await fetch('/data.json');
+      fetchedData = await fallback.json();
+    }
+    data = fetchedData;
     buildSlugMap(data);
 
     // JSON-LD structured data
@@ -2284,6 +2357,20 @@ async function init() {
       localStorage.setItem('seeaifirst-theme', isDark ? 'dark' : 'light');
     });
 
+    // Language toggle (PR7 — Hard Rule 5: replaceState, no history step)
+    const langToggleBtn = document.getElementById('lang-toggle');
+    if (langToggleBtn) {
+      langToggleBtn.addEventListener('click', () => {
+        const newLang = currentLang === 'vi' ? 'en' : 'vi';
+        const basePath = stripViPrefix(location.pathname) || '/';
+        const search = location.search || '';
+        setLang(newLang);
+        updateLangToggleLabel();
+        const targetPath = withLangPrefix(basePath) + search;
+        AppRouter.navigate(targetPath, { replace: true, state: history.state });
+      });
+    }
+
     // Mobile back button
     document.getElementById('mobile-back').addEventListener('click', () => {
       sidebarCollapsed = false;
@@ -2302,7 +2389,7 @@ async function init() {
       }
       if (e.key === 'Escape') {
         if (isCompareOpen()) { closeCompare(); return; }
-        if (selected && location.pathname.startsWith('/tool/')) { closeCardWithRouting(); return; }
+        if (selected && (location.pathname.startsWith('/tool/') || location.pathname.startsWith('/vi/tool/'))) { closeCardWithRouting(); return; }
         closeSearch();
       }
     });
@@ -2378,7 +2465,7 @@ async function init() {
           const { presetId, pickSlugs } = parseCompareHash(hash);
           let path = '/compare/' + presetId;
           if (pickSlugs) path += '?pick=' + pickSlugs.join(',');
-          history.replaceState(null, '', path);
+          history.replaceState(history.state, '', path);
           AppRouter.handleRoute();
           return;
         }
