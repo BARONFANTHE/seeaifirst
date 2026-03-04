@@ -6,7 +6,8 @@ const path = require('path');
 const { URL } = require('url');
 
 // ── Config ──────────────────────────────────────────────────────────
-const DATA_PATH = path.join(__dirname, '..', 'data.json');
+const dataFile = process.argv[2] || 'data.json';
+const DATA_PATH = path.join(__dirname, '..', dataFile);
 
 const REQUIRED_NON_NULL = [
   'pricing', 'deployment', 'difficulty',
@@ -75,7 +76,7 @@ const totalSections = sections.length;
 
 // ── Header ──────────────────────────────────────────────────────────
 console.log('=== See AI First Validator ===');
-console.log(`Data: data.json`);
+console.log(`Data: ${dataFile}`);
 console.log(`Date: ${new Date().toISOString().slice(0, 10)}`);
 console.log('');
 console.log('--- Sanity ---');
