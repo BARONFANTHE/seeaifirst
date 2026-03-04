@@ -1034,6 +1034,11 @@ function navigateToCompare(presetSlug) {
   AppRouter.navigate('/compare/' + presetSlug, { state: { fromApp: true } });
 }
 
+function navigateToSection(sectionId) {
+  if (location.pathname === '/section/' + sectionId) return;
+  AppRouter.navigate('/section/' + sectionId, { state: { fromApp: true } });
+}
+
 // deprecated: use navigateToTool()
 function updateHash(card) {
   navigateToTool(card);
@@ -1178,6 +1183,44 @@ function handleCompareRoute(params) {
 }
 
 AppRouter.register('compare', /^\/compare\/(?<presetSlug>[^/]+)$/, handleCompareRoute);
+
+// ═══ Route: Section (v7.0 PR6) ═══
+
+function handleSectionRoute(params) {
+  const sectionSlug = params.sectionSlug;
+  const section = data.sections.find(s => s.id === sectionSlug);
+
+  // Close overlays (UI-only compare close, lines 1232-1238 pattern)
+  if (isCompareOpen()) {
+    document.getElementById('compare-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+    window._pickerSelection = null;
+    window._pickerPreset = null;
+    if (window._compareReturnFocus) {
+      window._compareReturnFocus.focus();
+      window._compareReturnFocus = null;
+    }
+  }
+  closeSearch();
+
+  if (!section) {
+    selected = null;
+    activeSection = null;
+    history.replaceState(history.state, '', '/');
+    renderRightPanel();
+    updateTreeActiveStates();
+    return;
+  }
+
+  selected = null;
+  activeSection = section;
+  renderRightPanel();
+  updateTreeActiveStates();
+  const rp = document.getElementById('right-panel');
+  if (rp) rp.scrollTop = 0; else window.scrollTo(0, 0);
+}
+
+AppRouter.register('section', /^\/section\/(?<sectionSlug>[^\/]+)\/?$/, handleSectionRoute);
 
 // ═══ Hash Normalize (v7.0 PR3) ═══
 function normalizeHashToPath() {
@@ -1711,11 +1754,9 @@ function attachTreeListeners() {
         btn.querySelector('.tree-folder-icon').outerHTML = folderIcon(getHex(section.color), false);
       }
 
-      // Set active section
-      activeSection = section;
-      selected = null;
+      // Navigate to section route (v7.0 PR6)
+      navigateToSection(sectionId);
       collapseSidebarMobile();
-      renderRightPanel();
       updateTreeActiveStates();
     });
   });
@@ -1923,7 +1964,7 @@ function renderDetail() {
   let html = `<div class="detail-panel">`;
 
   // Back button
-  html += `<button class="detail-back" id="detail-back-btn">${arrowLeftSvg} Quay lại ${escapeHtml(section.title)}</button>`;
+  html += `<button class="detail-back" id="detail-back-btn">${arrowLeftSvg} Quay lại</button>`;
 
   // Breadcrumb
   html += `<div class="detail-breadcrumb">`;
