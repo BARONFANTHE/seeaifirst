@@ -1607,7 +1607,7 @@
           "icon": "🟣",
           "mono": true,
           "hot": true,
-          "desc": "Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.",
+          "desc": "Anthropic's CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.",
           "added_date": "2026-02-03",
           "tags": [
             "Terminal",
@@ -1615,7 +1615,7 @@
             "Skills",
             "Hooks"
           ],
-          "detail": "Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ. 200K token context cho phép đọc hiểu toàn bộ codebase lớn. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Chạy local, không cloud dependency. Best for: dự án phức tạp, refactoring lớn, codebase hiện có. Hỗ trợ async mode trên web (claude.ai/code) — delegate task dài, tạo PR trực tiếp, teleport về CLI local để tiếp tục. Hệ sinh thái mở rộng: Everything Claude Code (44K⭐) — bộ agents, skills, hooks, commands production-ready cho Claude Code.",
+          "detail": "The leading CLI agent — #1 on SWE-bench, outperforming all rivals. 200K token context enables full comprehension of large codebases. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Runs locally, no cloud dependency. Best for: complex projects, large refactoring, existing codebases. Supports async mode on web (claude.ai/code) — delegate long tasks, create PRs directly, teleport back to local CLI to continue. Extended ecosystem: Everything Claude Code (44K⭐) — production-ready agents, skills, hooks, and commands for Claude Code.",
           "sources": [
             {
               "title": "Claude Code Docs",
@@ -1668,14 +1668,14 @@
           "icon": "🟢",
           "mono": true,
           "hot": true,
-          "desc": "IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.",
+          "desc": "Smart IDE based on VS Code — features Composer and Agent mode, best for daily coding.",
           "added_date": "2026-02-03",
           "tags": [
             "VS Code fork",
             "Semantic search",
             "$20/mo"
           ],
-          "detail": "IDE thông minh dựa trên VS Code — tích hợp AI trực tiếp vào editor. Composer mode tạo/sửa nhiều file, Agent mode tự chạy terminal commands, Tab predictions gợi ý code realtime. Semantic search tìm code theo ý nghĩa. Dùng Claude + GPT + custom models. Best for: code hàng ngày, rapid prototyping. $20/tháng.",
+          "detail": "Smart IDE based on VS Code — AI integrated directly into the editor. Composer mode creates/edits multiple files, Agent mode runs terminal commands autonomously, Tab predictions suggest code in realtime. Semantic search finds code by meaning. Uses Claude + GPT + custom models. Best for: daily coding, rapid prototyping. $20/month.",
           "sources": [
             {
               "title": "Cursor Official",
@@ -1725,14 +1725,14 @@
           "slug": "codex-cli",
           "icon": "🔵",
           "mono": true,
-          "desc": "Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.",
+          "desc": "OpenAI's CLI agent — runs in terminal or cloud, handles tasks sequentially and precisely.",
           "added_date": "2026-02-03",
           "tags": [
             "AGENTS.md",
             "Cloud sandbox",
             "ChatGPT plan"
           ],
-          "detail": "Agent CLI của OpenAI — chạy task tuần tự trong cloud sandbox cô lập (an toàn). Dùng AGENTS.md cho project instructions. Tích hợp sâu với OpenAI models (GPT-4o, o3, codex-mini). Phù hợp cho automated tasks, CI/CD integration, và batch processing. Dùng credits từ ChatGPT plan.",
+          "detail": "OpenAI's CLI agent — runs tasks sequentially in an isolated cloud sandbox (safe). Uses AGENTS.md for project instructions. Deep integration with OpenAI models (GPT-4o, o3, codex-mini). Suitable for automated tasks, CI/CD integration, and batch processing. Uses credits from ChatGPT plan.",
           "sources": [
             {
               "title": "GitHub",
@@ -1778,14 +1778,14 @@
           "slug": "windsurf",
           "icon": "🌊",
           "mono": true,
-          "desc": "IDE AI giá $15/tháng — kiến trúc Cascade Flow, hỗ trợ nhiều model và plugin JetBrains.",
+          "desc": "AI IDE at $15/month — Cascade Flow architecture, supports multiple models and JetBrains plugin.",
           "added_date": "2026-02-03",
           "tags": [
             "IDE",
             "Budget-friendly",
             "MCP support"
           ],
-          "detail": "AI IDE với Cascade — agent chạy đa bước tự động: đọc code → phân tích → sửa → test → commit. Có Flows để tạo workflow tự động. Hỗ trợ JetBrains plugin (IntelliJ, WebStorm...). Free tier hào phóng. Best for: developers dùng JetBrains ecosystem hoặc cần budget-friendly option.",
+          "detail": "AI IDE with Cascade — a multi-step autonomous agent: reads code → analyzes → edits → tests → commits. Has Flows for automated workflows. Supports JetBrains plugin (IntelliJ, WebStorm...). Generous free tier. Best for: developers using the JetBrains ecosystem or needing a budget-friendly option.",
           "sources": [
             {
               "title": "Windsurf Official",
@@ -1835,14 +1835,14 @@
           "slug": "github-copilot",
           "icon": "🤖",
           "mono": true,
-          "desc": "Trợ lý code của Microsoft tích hợp sẵn trong VS Code — có Agent mode, mạnh cho doanh nghiệp.",
+          "desc": "Microsoft's code assistant built into VS Code — features Agent mode, strong for enterprise.",
           "added_date": "2026-02-03",
           "tags": [
             "VS Code",
             "Enterprise",
             "Multi-model"
           ],
-          "detail": "AI pair programmer của GitHub/Microsoft — tích hợp trong VS Code, JetBrains, Neovim. Copilot Chat hỏi đáp về code, Copilot Agent mode (preview) tự thực hiện task phức tạp. Lợi thế lớn nhất: access toàn bộ GitHub ecosystem (repos, issues, PRs, Actions). $10/tháng (Individual), $19 (Business).",
+          "detail": "GitHub/Microsoft's AI pair programmer — integrated in VS Code, JetBrains, Neovim. Copilot Chat for code Q&A, Copilot Agent mode (preview) autonomously handles complex tasks. Biggest advantage: access to the entire GitHub ecosystem (repos, issues, PRs, Actions). $10/month (Individual), $19 (Business).",
           "sources": [
             {
               "title": "GitHub Copilot",
@@ -1894,14 +1894,14 @@
           "slug": "gemini-cli",
           "icon": "💎",
           "mono": true,
-          "desc": "Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.",
+          "desc": "Google's CLI agent — up to 1M token context, supports Skills and ADK integration.",
           "added_date": "2026-02-03",
           "tags": [
             "Free tier",
             "Skills",
             "Extensions"
           ],
-          "detail": "Agent CLI của Google — miễn phí cho cá nhân, 1M token context (lớn nhất). Tích hợp Google ADK, hỗ trợ MCP servers, Gemini 2.5 Pro/Flash. Đọc được files/folders cực lớn nhờ context khủng. Có extensions cho Google Workspace (Docs, Sheets, Drive). Best for: dự án cần đọc nhiều code/docs, Google ecosystem.",
+          "detail": "Google's CLI agent — free for individuals, 1M token context (the largest). Integrates Google ADK, supports MCP servers, Gemini 2.5 Pro/Flash. Reads extremely large files/folders thanks to massive context. Has extensions for Google Workspace (Docs, Sheets, Drive). Best for: projects requiring reading large amounts of code/docs, Google ecosystem.",
           "sources": [
             {
               "title": "Gemini CLI GitHub",
@@ -1947,14 +1947,14 @@
           "slug": "cline-roocode",
           "icon": "⚡",
           "mono": true,
-          "desc": "Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.",
+          "desc": "Open-source VS Code extension — supports multiple AI models and MCP, community-driven.",
           "added_date": "2026-02-03",
           "tags": [
             "Open source",
             "Extension",
             "Flexible"
           ],
-          "detail": "Extension VS Code mã nguồn mở — agent AI chạy trực tiếp trong editor. Hỗ trợ MCP servers, multi-model (Claude, GPT, Gemini, local models). Cline = bản gốc (open-source), RooCode = fork với thêm features (custom modes, model routing). Best for: developers muốn tùy chỉnh hoàn toàn, dùng local/self-hosted models.",
+          "detail": "Open-source VS Code extension — AI agent running directly in the editor. Supports MCP servers, multi-model (Claude, GPT, Gemini, local models). Cline = original (open-source), RooCode = fork with extra features (custom modes, model routing). Best for: developers wanting full customization, using local/self-hosted models.",
           "sources": [
             {
               "title": "Cline GitHub",
@@ -2000,14 +2000,14 @@
           "slug": "kiro-aws",
           "icon": "🌀",
           "mono": true,
-          "desc": "IDE AI của AWS theo hướng spec-first — từ yêu cầu → thiết kế → kế hoạch → code tự động.",
+          "desc": "AWS's spec-first AI IDE — from requirements → design → plan → automated code generation.",
           "added_date": "2026-02-03",
           "tags": [
             "Spec-first",
             "AWS",
             "IDE + CLI"
           ],
-          "detail": "AI IDE của Amazon Web Services (preview 2025) — spec-driven development: viết requirements → Kiro tự generate code + tests. Tích hợp sâu AWS services (Lambda, DynamoDB, S3...). Steering files hướng dẫn AI theo project conventions. Có hooks tự động chạy actions khi file thay đổi. Best for: dự án AWS-centric.",
+          "detail": "Amazon Web Services' AI IDE (preview 2025) — spec-driven development: write requirements → Kiro auto-generates code + tests. Deep integration with AWS services (Lambda, DynamoDB, S3...). Steering files guide AI to follow project conventions. Has hooks that auto-run actions on file changes. Best for: AWS-centric projects.",
           "sources": [
             {
               "title": "Kiro Official",
@@ -2059,14 +2059,14 @@
           "slug": "replit-agent",
           "icon": "🎨",
           "mono": true,
-          "desc": "Agent trên cloud — tạo app full-stack nhanh, không cần cài đặt. Tốt nhất cho người mới bắt đầu.",
+          "desc": "Cloud-based agent — builds full-stack apps fast, no setup needed. Best for beginners.",
           "added_date": "2026-02-03",
           "tags": [
             "Cloud",
             "Deploy",
             "No setup"
           ],
-          "detail": "AI agent tích hợp trong Replit IDE cloud — tạo app từ mô tả bằng tiếng Anh, tự setup environment, deploy tự động. Không cần cài đặt gì — chạy hoàn toàn trên browser. Phù hợp cho prototyping nhanh, học lập trình, hoặc khi không muốn setup local dev environment.",
+          "detail": "AI agent integrated in Replit's cloud IDE — creates apps from English descriptions, auto-sets up environment, auto-deploys. No installation needed — runs entirely in the browser. Suitable for rapid prototyping, learning to code, or when you don't want to set up a local dev environment.",
           "sources": [
             {
               "title": "Replit Official",
@@ -2110,9 +2110,9 @@
         {
           "name": "OpenCode",
           "slug": "opencode",
-          "desc": "Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 96K+ stars, MIT license",
+          "desc": "Open-source coding agent running in terminal — supports all LLM providers, 96K+ stars, MIT license",
           "added_date": "2026-02-04",
-          "detail": "OpenCode do SST team phát triển, là open-source alternative cho Claude Code với 96K+ GitHub stars (Top 100 repos). Hỗ trợ OpenAI, Anthropic, Google, Groq, local models — không bị lock vào 1 provider. TUI đẹp (Bubble Tea), có LSP integration, session management, và multi-file editing. Viết bằng Go, cài qua npm/brew/curl. Tích hợp GitHub Actions để review PR tự động.",
+          "detail": "OpenCode, developed by the SST team, is an open-source alternative to Claude Code with 96K+ GitHub stars (Top 100 repos). Supports OpenAI, Anthropic, Google, Groq, local models — no vendor lock-in. Beautiful TUI (Bubble Tea), with LSP integration, session management, and multi-file editing. Written in Go, install via npm/brew/curl. Integrates GitHub Actions for automated PR reviews.",
           "sources": [
             {
               "title": "GitHub",
@@ -2156,9 +2156,9 @@
         {
           "name": "Goose",
           "slug": "goose",
-          "desc": "Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM",
+          "desc": "Open-source coding agent from Block (Square) — doesn't just suggest but also installs, runs, and debugs with any LLM",
           "added_date": "2026-02-04",
-          "detail": "Goose là open-source coding agent từ Block (formerly Square), viết bằng Rust cho performance cao. Khác Claude Code/Cursor ở chỗ: Goose tự chạy commands, install dependencies, debug errors — không chỉ suggest code. Mở rộng qua MCP extensions, có desktop app + CLI. 29.7K stars, Apache-2.0 license, hỗ trợ mọi LLM provider.",
+          "detail": "Goose is an open-source coding agent from Block (formerly Square), written in Rust for high performance. Unlike Claude Code/Cursor: Goose autonomously runs commands, installs dependencies, debugs errors — not just suggesting code. Extensible via MCP extensions, has desktop app + CLI. 29.7K stars, Apache-2.0 license, supports all LLM providers.",
           "sources": [
             {
               "title": "GitHub",
