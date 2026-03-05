@@ -94,9 +94,9 @@
           "icon": "🔌",
           "mono": true,
           "hot": true,
-          "desc": "Chuẩn kết nối của <strong>Anthropic</strong> — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như 'USB-C cho AI'.",
+          "desc": "<strong>Anthropic</strong>'s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called 'USB-C for AI'.",
           "added_date": "2026-02-03",
-          "detail": "<strong>Agent ↔ Tool</strong> communication · Giống \"USB-C cho AI\" · Được OpenAI, Google DeepMind, Cursor, Replit, Sourcegraph adopt<br><strong>MCP Apps</strong> (Jan 2026): Extension mới — tools trả về interactive UI (dashboards, forms) trực tiếp trong conversation<br><strong>Skills over MCP</strong>: Experimental — skill discovery & distribution qua MCP primitives",
+          "detail": "<strong>Agent ↔ Tool</strong> communication · The \"USB-C for AI\" · Adopted by OpenAI, Google DeepMind, Cursor, Replit, Sourcegraph<br><strong>MCP Apps</strong> (Jan 2026): New extension — tools return interactive UI (dashboards, forms) directly in conversation<br><strong>Skills over MCP</strong>: Experimental — skill discovery & distribution via MCP primitives",
           "tags": [
             "Python SDK 21k⭐",
             "TS SDK 11k⭐",
@@ -174,9 +174,9 @@
           "icon": "🤝",
           "mono": true,
           "hot": true,
-          "desc": "Giao thức của <strong>Google</strong> — giúp các AI agent nói chuyện và hợp tác với nhau, dù được xây từ bất kỳ nền tảng nào.",
+          "desc": "<strong>Google</strong>'s protocol — lets AI agents communicate and collaborate with each other, regardless of their underlying framework.",
           "added_date": "2026-02-03",
-          "detail": "<strong>Agent ↔ Agent</strong> communication · Bổ sung MCP (MCP = tools, A2A = agents)<br><strong>Agent Cards</strong>: JSON mô tả capabilities, cho phép agent discover nhau<br><strong>v0.3</strong> (Jul 2025): gRPC support, security cards, Python SDK mở rộng<br>150+ organizations support · Linux Foundation hosted",
+          "detail": "<strong>Agent ↔ Agent</strong> communication · Complements MCP (MCP = tools, A2A = agents)<br><strong>Agent Cards</strong>: JSON-based capability descriptors for agent discovery<br><strong>v0.3</strong> (Jul 2025): gRPC support, security cards, expanded Python SDK<br>150+ organizations support · Linux Foundation hosted",
           "tags": [
             "Google ADK native",
             "HTTP/SSE/JSON-RPC",
@@ -252,13 +252,13 @@
           "slug": "langgraph",
           "icon": "🦜",
           "mono": true,
-          "desc": "Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.",
+          "desc": "Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.",
           "added_date": "2026-02-03",
           "tags": [
             "14k⭐",
             "4.2M downloads/mo"
           ],
-          "detail": "Framework mã nguồn mở của LangChain cho phép xây dựng agent dạng đồ thị trạng thái (stateful graph). Hỗ trợ durable execution — agent tự phục hồi sau lỗi, human-in-the-loop — con người can thiệp bất kỳ lúc nào, và long-term memory xuyên phiên. Được Klarna, Replit, Uber, LinkedIn, Elastic tin dùng trong production. Có LangGraph Studio để debug visual và LangGraph Platform để deploy.",
+          "detail": "Open-source framework by LangChain for building agents as stateful graphs. Supports durable execution — agents auto-recover from failures, human-in-the-loop — humans can intervene at any point, and cross-session long-term memory. Used in production by Klarna, Replit, Uber, LinkedIn, Elastic. Includes LangGraph Studio for visual debugging and LangGraph Platform for deployment.",
           "sources": [
             {
               "title": "LangGraph Official",
@@ -317,13 +317,13 @@
           "slug": "crewai",
           "icon": "👥",
           "mono": true,
-          "desc": "Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.",
+          "desc": "Build role-based AI agent teams with minimal code. Each agent has a role, they coordinate automatically.",
           "added_date": "2026-02-03",
           "tags": [
             "Multi-agent crews",
             "Free core"
           ],
-          "detail": "Framework xây dựng đội agent theo mô hình role-based — mỗi agent đóng 1 vai trò cụ thể (researcher, writer, reviewer...) và phối hợp như một team thật. Hỗ trợ sequential, hierarchical và consensual process. Tích hợp sẵn 700+ tools, LangChain compatible. CrewAI Enterprise cung cấp deployment, monitoring, và agent marketplace.",
+          "detail": "Framework for building agent teams using a role-based model — each agent plays a specific role (researcher, writer, reviewer...) and collaborates like a real team. Supports sequential, hierarchical, and consensual processes. Ships with 700+ built-in tools, LangChain compatible. CrewAI Enterprise provides deployment, monitoring, and an agent marketplace.",
           "sources": [
             {
               "title": "CrewAI Official",
@@ -376,13 +376,13 @@
           "slug": "autogen",
           "icon": "🔷",
           "mono": true,
-          "desc": "Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.",
+          "desc": "Microsoft's framework for multi-agent conversations. Flexible architecture, easy to extend.",
           "added_date": "2026-02-03",
           "tags": [
             "Microsoft",
             "Flexible arch"
           ],
-          "detail": "Framework multi-agent của Microsoft Research cho phép nhiều agent LLM trò chuyện với nhau để giải quyết task phức tạp. Hỗ trợ human-in-the-loop, code execution tự động, và group chat patterns. AutoGen 0.4 (2025) được viết lại hoàn toàn với kiến trúc event-driven, hỗ trợ distributed agents và pluggable components.",
+          "detail": "Multi-agent framework by Microsoft Research that lets multiple LLM agents converse to solve complex tasks. Supports human-in-the-loop, automatic code execution, and group chat patterns. AutoGen 0.4 (2025) is a complete rewrite with event-driven architecture, supporting distributed agents and pluggable components.",
           "sources": [
             {
               "title": "AutoGen GitHub",
@@ -432,13 +432,13 @@
           "slug": "openai-agents-sdk",
           "icon": "🟢",
           "mono": true,
-          "desc": "SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.",
+          "desc": "OpenAI's lightweight Python SDK — build agents fast with built-in safety guardrails.",
           "added_date": "2026-02-03",
           "tags": [
             "11k⭐",
             "100+ LLMs"
           ],
-          "detail": "SDK chính thức của OpenAI để xây dựng agent — nhẹ, production-ready. Có Guardrails tích hợp (input/output validation), Handoffs (chuyển task giữa agents), và Tracing (debug + monitor). Hỗ trợ MCP natively từ v0.0.7. Thiết kế tối giản: ít abstraction, dễ customize, dễ debug.",
+          "detail": "OpenAI's official SDK for building agents — lightweight, production-ready. Features built-in Guardrails (input/output validation), Handoffs (task transfer between agents), and Tracing (debug + monitor). Native MCP support since v0.0.7. Minimalist design: few abstractions, easy to customize, easy to debug.",
           "sources": [
             {
               "title": "OpenAI Agents SDK",
@@ -486,13 +486,13 @@
           "slug": "google-adk",
           "icon": "🔶",
           "mono": true,
-          "desc": "Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.",
+          "desc": "Google's agent building toolkit — with built-in Gemini, Vertex AI, and A2A protocol integration.",
           "added_date": "2026-02-03",
           "tags": [
             "A2A support",
             "Interactions API"
           ],
-          "detail": "Agent Development Kit của Google — framework xây agent tích hợp sâu với hệ sinh thái Google (Vertex AI, Gemini, Firebase). Hỗ trợ A2A protocol natively, multi-agent orchestration, và deployment trên Google Cloud. Có ADK Web UI để test agent trong browser. Gemini models miễn phí khi dùng với ADK.",
+          "detail": "Google's Agent Development Kit — a framework deeply integrated with the Google ecosystem (Vertex AI, Gemini, Firebase). Native A2A protocol support, multi-agent orchestration, and deployment on Google Cloud. Includes ADK Web UI for browser-based agent testing. Gemini models are free when used with ADK.",
           "sources": [
             {
               "title": "Google ADK Docs",
@@ -541,13 +541,13 @@
           "slug": "llamaindex",
           "icon": "🦙",
           "mono": true,
-          "desc": "Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.",
+          "desc": "The RAG specialist — connects AI to your private data for accurate answers from internal documents.",
           "added_date": "2026-02-03",
           "tags": [
             "RAG",
             "Data agents"
           ],
-          "detail": "Framework chuyên về RAG (Retrieval-Augmented Generation) và data agents. Mạnh nhất ở khả năng kết nối, index và query dữ liệu từ 160+ nguồn (PDF, database, API, Notion, Slack...). LlamaIndex Workflows cho phép xây agent phức tạp dạng event-driven. Tích hợp tốt với LangChain và các LLM providers.",
+          "detail": "Framework specializing in RAG (Retrieval-Augmented Generation) and data agents. Strongest at connecting, indexing, and querying data from 160+ sources (PDF, database, API, Notion, Slack...). LlamaIndex Workflows enables building complex event-driven agents. Integrates well with LangChain and various LLM providers.",
           "sources": [
             {
               "title": "LlamaIndex Official",
@@ -607,13 +607,13 @@
           "slug": "rasa",
           "icon": "💬",
           "mono": true,
-          "desc": "Nền tảng chatbot và voice AI — chạy trên server riêng, kiểm soát hoàn toàn dữ liệu.",
+          "desc": "Chatbot and voice AI platform — runs on your own server with full data control.",
           "added_date": "2026-02-03",
           "tags": [
             "On-prem",
             "Voice"
           ],
-          "detail": "Platform xây conversational AI (chatbot, voice assistant) lâu đời nhất — hoạt động từ 2016. Tập trung vào NLU (hiểu ngôn ngữ tự nhiên) và dialogue management. Rasa Pro tích hợp LLM nhưng vẫn cho phép kiểm soát chặt flow conversation. Phù hợp cho enterprise cần chatbot có thể dự đoán, kiểm soát được.",
+          "detail": "The longest-running conversational AI platform (chatbot, voice assistant) — active since 2016. Focused on NLU (natural language understanding) and dialogue management. Rasa Pro integrates LLMs while still allowing tight control over conversation flows. Ideal for enterprises that need predictable, controllable chatbots.",
           "sources": [
             {
               "title": "Rasa Official",
@@ -665,9 +665,9 @@
         {
           "name": "Browser-Use",
           "slug": "browser-use",
-          "desc": "Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 73K+ stars",
+          "desc": "Browser automation framework for AI agents — control the web with Python using any LLM, 73K+ stars",
           "added_date": "2026-02-04",
-          "detail": "Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP server để dùng trong Claude Code/Cursor. Có Browser-Use Cloud cho deploy production. 73K+ stars, MIT license, Python SDK đơn giản chỉ vài dòng code.",
+          "detail": "Browser-Use lets AI agents interact with the web like real users — navigate, click, fill forms, extract data. Supports parallel browser sessions, vision models, and custom actions. Integrates MCP server for use in Claude Code/Cursor. Browser-Use Cloud available for production deployment. 73K+ stars, MIT license, simple Python SDK in just a few lines of code.",
           "sources": [
             {
               "title": "GitHub",
@@ -710,9 +710,9 @@
         {
           "name": "Pydantic AI",
           "slug": "pydantic-ai",
-          "desc": "Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers",
+          "desc": "Type-safe agent framework in the style of FastAPI — built by the Pydantic team, supports 40+ model providers",
           "added_date": "2026-02-04",
-          "detail": "Pydantic AI mang triết lý type-safety của FastAPI vào thế giới AI agents. Structured output với Pydantic models, dependency injection, streaming, và built-in evaluation framework. Hỗ trợ MCP + A2A protocols, human-in-the-loop, và 40+ LLM providers. 14.6K stars, MIT license, phát triển bởi chính team tạo ra Pydantic — thư viện validation phổ biến nhất Python.",
+          "detail": "Pydantic AI brings FastAPI's type-safety philosophy to the world of AI agents. Structured output with Pydantic models, dependency injection, streaming, and built-in evaluation framework. Supports MCP + A2A protocols, human-in-the-loop, and 40+ LLM providers. 14.6K stars, MIT license, developed by the team behind Pydantic — Python's most popular validation library.",
           "sources": [
             {
               "title": "GitHub",
@@ -762,9 +762,9 @@
         {
           "name": "Mastra",
           "slug": "mastra",
-          "desc": "TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn",
+          "desc": "TypeScript-first agent framework from the Gatsby team — workflows, RAG, evals, and MCP built in",
           "added_date": "2026-02-04",
-          "detail": "Mastra là framework agent ưu tiên TypeScript, xây dựng bởi team đứng sau Gatsby.js. Cung cấp graph-based workflows, built-in RAG với vector store, evaluation framework, và MCP client/server. Hỗ trợ 40+ model providers, human-in-the-loop, và memory management. 20.7K stars, active development, phù hợp cho TypeScript/Node.js developers muốn xây agent nhanh.",
+          "detail": "Mastra is a TypeScript-first agent framework, built by the team behind Gatsby.js. Offers graph-based workflows, built-in RAG with vector store, evaluation framework, and MCP client/server. Supports 40+ model providers, human-in-the-loop, and memory management. 20.7K stars, active development, ideal for TypeScript/Node.js developers who want to build agents fast.",
           "sources": [
             {
               "title": "GitHub",
@@ -821,7 +821,7 @@
           "slug": "claude-ai",
           "icon": "🌐",
           "mono": true,
-          "desc": "Giao diện chat của Anthropic — có bộ nhớ, tìm kiếm web và kết nối công cụ qua MCP.",
+          "desc": "Anthropic's chat interface — with memory, web search, and tool integration via MCP.",
           "added_date": "2026-02-03",
           "tags": [
             "Projects",
@@ -829,7 +829,7 @@
             "Memory",
             "Knowledge"
           ],
-          "detail": "Giao diện chat chính của Anthropic. Có Projects để tổ chức conversations, MCP tools cho phép kết nối external data/tools, web search tích hợp, memory xuyên phiên, và Artifacts (tạo code, documents, charts trực tiếp trong chat). Hỗ trợ Claude Opus 4.5, Sonnet 4.5, Haiku 4.5.",
+          "detail": "Anthropic's primary chat interface. Features Projects for organizing conversations, MCP tools for connecting external data/tools, built-in web search, cross-session memory, and Artifacts (create code, documents, charts directly in chat). Supports Claude Opus 4.5, Sonnet 4.5, Haiku 4.5.",
           "sources": [
             {
               "title": "Claude.ai",
@@ -883,7 +883,7 @@
           "slug": "chatgpt",
           "icon": "💬",
           "mono": true,
-          "desc": "Chat AI phổ biến nhất của OpenAI — có GPTs, search, tools và hệ thống nhớ riêng.",
+          "desc": "OpenAI's most popular AI chat — with GPTs, search, tools, and a built-in memory system.",
           "added_date": "2026-02-03",
           "tags": [
             "GPTs",
@@ -891,7 +891,7 @@
             "Memory",
             "Apps"
           ],
-          "detail": "Chat AI phổ biến nhất thế giới của OpenAI với hơn 300 triệu user/tuần. Có GPTs (custom chatbots), Custom Instructions (cá nhân hóa), web browse, DALL-E (tạo ảnh), Code Interpreter, và plugin ecosystem. Hỗ trợ GPT-4o, GPT-4o-mini, o1, o3. ChatGPT Plus $20/tháng, Team $25/user/tháng.",
+          "detail": "The world's most popular AI chat by OpenAI with over 300 million weekly users. Features GPTs (custom chatbots), Custom Instructions (personalization), web browsing, DALL-E (image generation), Code Interpreter, and plugin ecosystem. Supports GPT-4o, GPT-4o-mini, o1, o3. ChatGPT Plus $20/month, Team $25/user/month.",
           "sources": [
             {
               "title": "ChatGPT",
