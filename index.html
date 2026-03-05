@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -990,6 +990,8 @@ const SLUG_ALIAS_MAP = {
 // --- PR7: Language state ---
 
 let currentLang = 'en';
+let enDataCache = null;
+let viDataCache = null;
 
 // Helper: detect if pathname is VI context
 // Use this everywhere — avoids false positive on /video etc.
@@ -1010,6 +1012,7 @@ function withLangPrefix(path) {
 // Mutator: only way to change currentLang
 function setLang(lang) {
   currentLang = lang;
+  document.documentElement.lang = lang;
   localStorage.setItem('seeaifirst-lang', lang);
 }
 
@@ -1132,6 +1135,8 @@ const AppRouter = (() => {
       renderRightPanel();
       updateTreeActiveStates();
     }
+    // PR8: update canonical, hreflang, JSON-LD, <html lang> after route resolves
+    updateHeadTags();
   }
 
   function init() {
@@ -2278,6 +2283,92 @@ function generateJsonLd(data) {
   };
 }
 
+// ═══ Head Tags Manager (v7.0 PR8) ═══
+function updateHeadTags() {
+  try {
+    const BASE_URL = 'https://seeaifirst.com';
+    const pathname = location.pathname === '/vi' ? '/vi/' : location.pathname;
+
+    // 1. Canonical — upsert href (path-only, no search/hash)
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.href = BASE_URL + pathname;
+    } else {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      canonicalLink.href = BASE_URL + pathname;
+      document.head.appendChild(canonicalLink);
+    }
+
+    // 2. hreflang — cleanup app-created tags, then add fresh
+    document.querySelectorAll('link[data-saf-hreflang]').forEach(el => el.remove());
+
+    const enPath = stripViPrefix(pathname) || '/';
+    const viPath = enPath === '/' ? '/vi/' : '/vi' + enPath;
+
+    const hreflangEntries = [
+      { lang: 'en', href: BASE_URL + enPath },
+      { lang: 'vi', href: BASE_URL + viPath },
+      { lang: 'x-default', href: BASE_URL + enPath }
+    ];
+
+    for (const entry of hreflangEntries) {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = entry.lang;
+      link.href = entry.href;
+      link.setAttribute('data-saf-hreflang', '');
+      document.head.appendChild(link);
+    }
+
+    // 3. JSON-LD — language-aware dataset (PR8 patch)
+    updateJsonLd();
+
+    // 4. <html lang> — ensure sync
+    document.documentElement.lang = currentLang;
+  } catch (e) {
+    // Fail-soft: skip head update, do not crash or redirect
+  }
+}
+
+// JSON-LD async helper — fetches correct dataset per currentLang (PR8 patch)
+function updateJsonLd() {
+  try {
+    const lang = currentLang;
+    const cached = lang === 'vi' ? viDataCache : enDataCache;
+
+    function apply(dataset) {
+      const jsonLd = generateJsonLd(dataset);
+      jsonLd.inLanguage = lang;
+      const existing = document.getElementById('seeaifirst-jsonld');
+      if (existing) {
+        existing.textContent = JSON.stringify(jsonLd);
+      } else {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'seeaifirst-jsonld';
+        script.textContent = JSON.stringify(jsonLd);
+        document.head.appendChild(script);
+      }
+    }
+
+    if (cached) {
+      apply(cached);
+      return;
+    }
+
+    // Cache miss — async fetch, fire-and-forget (no blocking canonical/hreflang)
+    const url = lang === 'vi' ? '/data.vi.json' : '/data.json';
+    fetch(url).then(function(r) {
+      if (!r.ok) throw new Error('fetch-fail');
+      return r.json();
+    }).then(function(d) {
+      if (lang === 'vi') viDataCache = d; else enDataCache = d;
+      if (currentLang === lang) apply(d);
+    }).catch(function() { /* fail-soft: skip JSON-LD update */ });
+  } catch (e) { /* fail-soft */ }
+}
+
 // ═══ Init ═══
 async function init() {
   try {
@@ -2305,16 +2396,10 @@ async function init() {
     }
     data = fetchedData;
     buildSlugMap(data);
+    // Seed JSON-LD dataset cache for initial lang (PR8 patch)
+    if (currentLang === 'vi') viDataCache = data; else enDataCache = data;
 
-    // JSON-LD structured data
-    const jsonLd = generateJsonLd(data);
-    const jsonLdScript = document.createElement('script');
-    jsonLdScript.type = 'application/ld+json';
-    jsonLdScript.id = 'seeaifirst-jsonld';
-    jsonLdScript.textContent = JSON.stringify(jsonLd);
-    const existingJsonLd = document.getElementById('seeaifirst-jsonld');
-    if (existingJsonLd) existingJsonLd.remove();
-    document.head.appendChild(jsonLdScript);
+    // JSON-LD now managed by updateHeadTags() via handleRoute() (PR8)
 
     // Restore theme (migrate localStorage key ai-mindmap-theme → seeaifirst-theme)
     const NEW_KEY = 'seeaifirst-theme';
