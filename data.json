@@ -2213,9 +2213,9 @@
           "slug": "multi-agent-systems",
           "icon": "🐝",
           "hot": true,
-          "desc": "Hệ thống nhiều agent AI phối hợp — Gartner ghi nhận tăng <strong>1,445%</strong> quan tâm. 40% app doanh nghiệp sẽ dùng agent cuối 2026.",
+          "desc": "Multi-agent AI systems working in coordination — Gartner reports <strong>1,445%</strong> surge in interest. 40% of enterprise apps will use agents by late 2026.",
           "added_date": "2026-02-03",
-          "detail": "Gartner ghi nhận lượng truy vấn về multi-agent systems tăng 1,445% từ Q1/2024 đến Q2/2025. Dự đoán 40% enterprise apps sẽ tích hợp AI agents cuối 2026 (vs 5% năm 2025). Đến 2027, 70% MAS sẽ dùng specialized agents thay vì general-purpose. Thị trường agentic AI từ $7.8B (2025) lên $52B (2030). Xu hướng: từ monolithic agents sang orchestrated teams — giống microservices revolution.",
+          "detail": "Gartner reports queries about multi-agent systems surged 1,445% from Q1/2024 to Q2/2025. Predicted 40% of enterprise apps will integrate AI agents by late 2026 (vs 5% in 2025). By 2027, 70% of MAS will use specialized agents instead of general-purpose ones. Agentic AI market from $7.8B (2025) to $52B (2030). Trend: from monolithic agents to orchestrated teams — similar to the microservices revolution.",
           "sources": [
             {
               "title": "Gartner — 40% Enterprise Apps with AI Agents by 2026",
@@ -2272,9 +2272,9 @@
           "name": "Mechanistic Interpretability",
           "slug": "mechanistic-interpretability",
           "icon": "🔍",
-          "desc": "Nghiên cứu cách AI 'suy nghĩ' bên trong — giúp hiểu và kiểm soát hành vi AI tốt hơn. Đột phá 2026 theo MIT.",
+          "desc": "Research into how AI 'thinks' internally — enabling better understanding and control of AI behavior. 2026 breakthrough per MIT.",
           "added_date": "2026-02-03",
-          "detail": "MIT Technology Review chọn là 1 trong 10 Breakthrough Technologies 2026. Anthropic dùng 'kính hiển vi AI' phát hiện 34 triệu features trong Claude — từ 'sarcasm' đến 'DNA sequences'. OpenAI xây 'AI lie detector' dựa trên model internals. Google DeepMind phát hành Gemma Scope 2 — bộ toolkit interpretability mã nguồn mở lớn nhất. Mục tiêu: biến AI từ 'hộp đen' thành 'hộp kính' — hiểu được tại sao AI đưa ra quyết định.",
+          "detail": "MIT Technology Review selected this as one of the 10 Breakthrough Technologies of 2026. Anthropic used an 'AI microscope' to discover 34 million features in Claude — from 'sarcasm' to 'DNA sequences'. OpenAI built an 'AI lie detector' based on model internals. Google DeepMind released Gemma Scope 2 — the largest open-source interpretability toolkit. Goal: turning AI from a 'black box' into a 'glass box' — understanding why AI makes its decisions.",
           "sources": [
             {
               "title": "MIT Tech Review — Breakthrough 2026",
@@ -2327,9 +2327,9 @@
           "name": "World Models",
           "slug": "world-models",
           "icon": "🌍",
-          "desc": "AI mô phỏng thế giới thực — LeCun đầu tư $5B, Google và startup đua nhau phát triển. Thị trường gaming $276B vào 2030.",
+          "desc": "AI simulating the real world — LeCun investing $5B, Google and startups racing to develop. Gaming market $276B by 2030.",
           "added_date": "2026-02-03",
-          "detail": "AI mô phỏng thế giới thực — LeCun (Meta) đầu tư $5B+, Google và startup đua nhau phát triển. World models hiểu physics, dự đoán kết quả hành động trong môi trường 3D. Ứng dụng: tự lái xe, robotics, game development, simulation. Thị trường gaming $276B vào 2030 là động lực lớn. Gần đây: Genie 2 (Google), video generation models chuyển thành world simulators.",
+          "detail": "AI simulating the real world — LeCun (Meta) investing $5B+, Google and startups racing to develop. World models understand physics, predict outcomes of actions in 3D environments. Applications: autonomous driving, robotics, game development, simulation. Gaming market $276B by 2030 is a major driver. Recent: Genie 2 (Google), video generation models becoming world simulators.",
           "sources": [
             {
               "title": "Yann LeCun — A Path Towards Autonomous AI",
@@ -2376,9 +2376,9 @@
           "name": "Generative Coding",
           "slug": "generative-coding",
           "icon": "💻",
-          "desc": "AI viết 30% code tại Microsoft, 25%+ tại Google. 'Tiếng Anh đang trở thành ngôn ngữ lập trình mới.'",
+          "desc": "AI writes 30% of code at Microsoft, 25%+ at Google. 'English is becoming the new programming language.'",
           "added_date": "2026-02-03",
-          "detail": "AI viết 30% code tại Microsoft, 25%+ tại Google. GitHub Copilot có tỷ lệ acceptance ~30% suggestions. MIT Technology Review chọn là Breakthrough 2026. Tuy nhiên Veracode phát hiện 45% code AI tạo ra chứa lỗ hổng bảo mật. Xu hướng: 'tiếng Anh đang trở thành ngôn ngữ lập trình mới' — developers chuyển từ viết code sang hướng dẫn AI viết code.",
+          "detail": "AI writes 30% of code at Microsoft, 25%+ at Google. GitHub Copilot has ~30% suggestion acceptance rate. MIT Technology Review selected this as a 2026 Breakthrough. However, Veracode found 45% of AI-generated code contains security vulnerabilities. Trend: 'English is becoming the new programming language' — developers shifting from writing code to guiding AI to write code.",
           "sources": [
             {
               "title": "MIT Tech Review — 10 Breakthrough Technologies 2026",
@@ -2433,9 +2433,9 @@
           "name": "Chinese Open-Source AI",
           "slug": "chinese-open-source-ai",
           "icon": "🇨🇳",
-          "desc": "DeepSeek R1 gây sốc giới AI — model suy luận mã nguồn mở từ Trung Quốc. Khoảng cách công nghệ giảm từ tháng xuống tuần.",
+          "desc": "DeepSeek R1 shook the AI world — open-source reasoning model from China. Technology gap shrinking from months to weeks.",
           "added_date": "2026-02-03",
-          "detail": "DeepSeek R1 gây sốc — model reasoning mã nguồn mở từ Trung Quốc, hiệu suất gần bằng GPT-4 với chi phí thấp hơn nhiều. Qwen (Alibaba) liên tục cập nhật, cạnh tranh trực tiếp với frontier models. Khoảng cách công nghệ Mỹ-Trung giảm từ tháng xuống tuần. Xu hướng: China không chỉ 'copy' mà đang 'innovate' — đặc biệt ở efficiency và cost optimization.",
+          "detail": "DeepSeek R1 caused shockwaves — open-source reasoning model from China, performance near GPT-4 at much lower cost. Qwen (Alibaba) continuously updated, competing directly with frontier models. US-China technology gap shrinking from months to weeks. Trend: China is no longer just 'copying' but 'innovating' — especially in efficiency and cost optimization.",
           "sources": [
             {
               "title": "DeepSeek Official",
@@ -2489,9 +2489,9 @@
           "name": "Post-Training > Pre-Training",
           "slug": "post-training-pre-training",
           "icon": "🧠",
-          "desc": "Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.",
+          "desc": "Trend toward post-training refinement instead of building larger models — RL and fine-tuning become the key.",
           "added_date": "2026-02-03",
-          "detail": "Xu hướng lớn: thay vì train model lớn hơn (pre-training tốn $100M+), giờ tập trung tinh chỉnh sau huấn luyện (post-training) bằng RLHF, DPO, RLAIF. Fine-tuning trở thành chìa khóa — model nhỏ + fine-tune tốt có thể đánh bại model lớn. Reasoning models (o1, o3, DeepSeek R1) chứng minh post-training quan trọng hơn kích thước model.",
+          "detail": "Major trend: instead of training larger models (pre-training costs $100M+), focus shifts to post-training refinement using RLHF, DPO, RLAIF. Fine-tuning becomes the key — small models + good fine-tuning can beat larger models. Reasoning models (o1, o3, DeepSeek R1) prove post-training matters more than model size.",
           "sources": [
             {
               "title": "Anthropic — RLHF Research",
@@ -2540,9 +2540,9 @@
           "name": "AI Drug Discovery",
           "slug": "ai-drug-discovery",
           "icon": "🏥",
-          "desc": "Thuốc do AI khám phá bắt đầu thử nghiệm lâm sàng giai đoạn giữa/cuối. Tập trung: ung thư và bệnh hiếm.",
+          "desc": "AI-discovered drugs entering mid/late-stage clinical trials. Focus: cancer and rare diseases.",
           "added_date": "2026-02-03",
-          "detail": "AI đẩy nhanh phát hiện thuốc mới — từ 10-15 năm xuống còn 2-3 năm cho giai đoạn khám phá. AlphaFold dự đoán cấu trúc protein, Isomorphic Labs (Google) hợp tác với Eli Lilly và Novartis. Insilico Medicine đưa thuốc AI-designed vào thử nghiệm lâm sàng giai đoạn II. Tập trung: ung thư, bệnh hiếm, thuốc kháng sinh mới.",
+          "detail": "AI accelerating new drug discovery — from 10-15 years down to 2-3 years for the discovery phase. AlphaFold predicts protein structures, Isomorphic Labs (Google) partnering with Eli Lilly and Novartis. Insilico Medicine advancing AI-designed drugs to Phase II clinical trials. Focus: cancer, rare diseases, new antibiotics.",
           "sources": [
             {
               "title": "Isomorphic Labs",
@@ -2590,9 +2590,9 @@
           "name": "AI Infrastructure",
           "slug": "ai-infrastructure",
           "icon": "⚡",
-          "desc": "Data center khổng lồ 1GW+, dùng cả điện hạt nhân cho AI. Thị trường từ $7.6B lên $52B vào 2030.",
+          "desc": "Massive 1GW+ data centers, even using nuclear power for AI. Market from $7.6B to $52B by 2030.",
           "added_date": "2026-02-03",
-          "detail": "Data center khổng lồ 1GW+ đang được xây dựng — dùng cả điện hạt nhân. Microsoft, Google, Amazon đều ký hợp đồng năng lượng hạt nhân dài hạn. Thị trường AI infrastructure từ $7.6B lên $52B vào 2030. NVIDIA H100/H200 thiếu hụt nghiêm trọng. Xu hướng: hyperscale AI data centers gần nguồn năng lượng rẻ (Texas, Scandinavia).",
+          "detail": "Massive 1GW+ data centers being built — even using nuclear power. Microsoft, Google, Amazon all signing long-term nuclear energy contracts. AI infrastructure market from $7.6B to $52B by 2030. NVIDIA H100/H200 facing severe shortages. Trend: hyperscale AI data centers near cheap energy sources (Texas, Scandinavia).",
           "sources": [
             {
               "title": "Gartner — Top Tech Trends 2026",
@@ -2641,9 +2641,9 @@
           "name": "AI Governance",
           "slug": "ai-governance",
           "icon": "🔐",
-          "desc": "Agent AI giám sát các agent AI khác — đặt rào chắn an toàn và giữ con người trong vòng kiểm soát.",
+          "desc": "AI agents monitoring other AI agents — setting safety guardrails and keeping humans in the loop.",
           "added_date": "2026-02-03",
-          "detail": "Agent AI giám sát agent AI khác — 'governance agents' phát hiện policy violations. EU AI Act có hiệu lực đầy đủ 2026. Gartner dự đoán 2,000+ vụ kiện 'death by AI' cuối 2026 do thiếu guardrails. 'Bounded autonomy' — agent có giới hạn hành động rõ ràng, escalation paths khi không chắc chắn. Xu hướng: compliance-by-design thay vì compliance-as-afterthought.",
+          "detail": "AI agents monitoring other AI agents — 'governance agents' detecting policy violations. EU AI Act fully effective in 2026. Gartner predicts 2,000+ 'death by AI' lawsuits by late 2026 due to missing guardrails. 'Bounded autonomy' — agents with clear action limits, escalation paths when uncertain. Trend: compliance-by-design instead of compliance-as-afterthought.",
           "sources": [
             {
               "title": "EU AI Act",
@@ -2700,9 +2700,9 @@
         {
           "name": "Langfuse",
           "slug": "langfuse",
-          "desc": "Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management",
+          "desc": "Open-source observability platform for LLMs — tracing, evals, prompt management",
           "added_date": "2026-02-08",
-          "detail": "LLM engineering platform phổ biến nhất (20K+ ⭐). Cung cấp tracing theo chuẩn OpenTelemetry, evaluation tự động, prompt management với versioning, playground thử nghiệm, và datasets cho fine-tuning. Tích hợp 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-host được, YC W23 backed. Dùng khi cần giám sát production LLM apps end-to-end.",
+          "detail": "Most popular LLM engineering platform (20K+ ⭐). Provides OpenTelemetry-standard tracing, automated evaluation, prompt management with versioning, experimentation playground, and datasets for fine-tuning. Integrates with 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-hostable, YC W23 backed. Use when you need end-to-end monitoring of production LLM apps.",
           "sources": [
             {
               "title": "GitHub (20K+ ⭐)",
