@@ -992,6 +992,7 @@ const SLUG_ALIAS_MAP = {
 let currentLang = 'en';
 let enDataCache = null;
 let viDataCache = null;
+let langSwitchNonce = 0;
 
 // Helper: detect if pathname is VI context
 // Use this everywhere — avoids false positive on /video etc.
@@ -1046,6 +1047,43 @@ function findCardBySlug(rawSlug) {
   const decoded = safeDecode(cleaned).toLowerCase().trim();
   const canonical = SLUG_ALIAS_MAP[decoded] || decoded;
   return slugToCardMap.get(canonical) || null;
+}
+
+// ═══ Dataset Loader (fix/lang-dataset-switch) ═══
+
+async function ensureDataset(lang) {
+  const cached = lang === 'vi' ? viDataCache : enDataCache;
+  if (cached) return cached;
+  const url = lang === 'vi' ? '/data.vi.json' : '/data.json';
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('fetch-fail');
+  const dataset = await res.json();
+  if (lang === 'vi') viDataCache = dataset; else enDataCache = dataset;
+  return dataset;
+}
+
+function applyDataset(lang, dataset) {
+  data = dataset;
+  buildSlugMap(data);
+  // Re-render sidebar + stats
+  renderTree();
+  const total = data.sections.reduce((a, s) => a + s.cards.length, 0);
+  document.getElementById('total-tools').textContent = total + ' tools';
+  // Re-resolve activeSection from new dataset (stale object reference)
+  if (activeSection) {
+    activeSection = data.sections.find(s => s.id === activeSection.id) || null;
+  }
+  // Re-resolve selected from new slugToCardMap (stale object reference)
+  if (selected) {
+    const slug = getCardSlug(selected.card);
+    const fresh = slugToCardMap.get(slug);
+    if (fresh) {
+      selected = fresh;
+      activeSection = fresh.section;
+    } else {
+      selected = null;
+    }
+  }
 }
 
 function normalizeHash() {
@@ -1110,10 +1148,29 @@ const AppRouter = (() => {
     } else {
       history.pushState(state, '', path);
     }
-    handleRoute();
+    return handleRoute();
   }
 
-  function handleRoute() {
+  async function handleRoute() {
+    // fix/lang-dataset-switch: ensure correct dataset before rendering
+    try {
+      const desiredLang = isViPath(location.pathname) ? 'vi' : 'en';
+      if (desiredLang !== currentLang) {
+        setLang(desiredLang);
+        updateLangToggleLabel();
+      }
+      // Sync path: cache warm → no await. Cold path: fetch + apply.
+      const cached = desiredLang === 'vi' ? viDataCache : enDataCache;
+      if (cached && data !== cached) {
+        applyDataset(desiredLang, cached);
+      } else if (!cached) {
+        const dataset = await ensureDataset(desiredLang);
+        applyDataset(desiredLang, dataset);
+      }
+    } catch (e) {
+      // fail-soft: continue with current dataset, do not crash
+    }
+
     // PR7: strip /vi prefix before resolving (Hard Rule 1)
     const strippedPath = isViPath(location.pathname)
       ? stripViPrefix(location.pathname)
@@ -2443,16 +2500,31 @@ async function init() {
     });
 
     // Language toggle (PR7 — Hard Rule 5: replaceState, no history step)
+    // fix/lang-dataset-switch: async + nonce + disable during load
     const langToggleBtn = document.getElementById('lang-toggle');
     if (langToggleBtn) {
-      langToggleBtn.addEventListener('click', () => {
+      langToggleBtn.addEventListener('click', async () => {
+        const myNonce = ++langSwitchNonce;
         const newLang = currentLang === 'vi' ? 'en' : 'vi';
         const basePath = stripViPrefix(location.pathname) || '/';
         const search = location.search || '';
-        setLang(newLang);
-        updateLangToggleLabel();
-        const targetPath = withLangPrefix(basePath) + search;
-        AppRouter.navigate(targetPath, { replace: true, state: history.state });
+        langToggleBtn.disabled = true;
+        try {
+          const dataset = await ensureDataset(newLang);
+          if (langSwitchNonce !== myNonce) return; // stale — newer toggle wins
+          setLang(newLang);
+          updateLangToggleLabel();
+          applyDataset(newLang, dataset);
+          const targetPath = withLangPrefix(basePath) + search;
+          AppRouter.navigate(targetPath, { replace: true, state: history.state });
+        } catch (e) {
+          // fail-soft: do not change URL, keep current state
+          if (langSwitchNonce === myNonce) {
+            updateLangToggleLabel();
+          }
+        } finally {
+          if (langSwitchNonce === myNonce) langToggleBtn.disabled = false;
+        }
       });
     }
 
