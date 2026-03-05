@@ -954,9 +954,9 @@
             "plugin",
             "949⭐/24h"
           ],
-          "desc": "Plugin giúp <strong>Claude Code</strong> có trí nhớ dài hạn — tự ghi lại kinh nghiệm, nén thông minh và nhớ cho lần làm việc sau.",
+          "desc": "Plugin that gives <strong>Claude Code</strong> persistent long-term memory — automatically records experience, compresses intelligently, and remembers across sessions.",
           "added_date": "2026-02-03",
-          "detail": "<strong>Kiến trúc:</strong> 5 lifecycle hooks (SessionStart → UserPromptSubmit → PostToolUse → Summary → SessionEnd)<br><strong>RAD</strong> (Retrieval Augmented Decisions): open standard mới — RAG captures knowledge, RAD captures intelligence<br><strong>Endless Mode</strong>: ~1000 tool uses (vs 50 mặc định), O(N) scaling",
+          "detail": "<strong>Architecture:</strong> 5 lifecycle hooks (SessionStart → UserPromptSubmit → PostToolUse → Summary → SessionEnd)<br><strong>RAD</strong> (Retrieval Augmented Decisions): a new open standard — RAG captures knowledge, RAD captures intelligence<br><strong>Endless Mode</strong>: ~1000 tool uses (vs 50 default), O(N) scaling",
           "levels": [
             "Lv.1 — Tra danh mục",
             "Lv.2 — Tra kĩ hơn",
@@ -1026,7 +1026,7 @@
               "desc": "Stateful agents with persistent memory — kiến trúc tiered memory (core/archival/recall)."
             }
           ],
-          "detail": "Ngoài Claude-Mem, có nhiều hệ thống memory khác: MemGPT/Letta — tự quản lý context window như OS quản lý RAM, có paging cơ chế. Mem0 — memory layer cho LLM apps, dùng vector search. Zep — long-term memory cho chatbots với auto-summarization. ByteRover — tìm kiếm memory từ kho GitHub. Mỗi hệ thống giải quyết 1 khía cạnh khác nhau của bài toán 'AI nhớ được'.",
+          "detail": "Beyond Claude-Mem, several other memory systems exist: MemGPT/Letta — self-manages context windows like an OS manages RAM, with a paging mechanism. Mem0 — memory layer for LLM apps using vector search. Zep — long-term memory for chatbots with auto-summarization. ByteRover — searches memory from GitHub repositories. Each system tackles a different aspect of the 'AI that remembers' problem.",
           "sources": [
             {
               "title": "MemGPT/Letta",
@@ -1075,9 +1075,9 @@
         {
           "name": "MemOS",
           "slug": "memos",
-          "desc": "Hệ điều hành bộ nhớ thống nhất cho LLM — quản lý memory qua MemCube với hỗ trợ short-term và long-term",
+          "desc": "Unified memory operating system for LLMs — manages memory via MemCube with short-term and long-term support",
           "added_date": "2026-02-04",
-          "detail": "MemOS cung cấp kiến trúc memory layer chuẩn hóa cho AI agents với MemCube — đơn vị bộ nhớ cơ bản chứa cả dữ liệu và metadata. Hỗ trợ nhiều loại memory (parametric, activation, long-term) và tích hợp được với các framework phổ biến. ~4.9K stars, active development (v2.0.4, Jan 2026). Unique vì cung cấp unified memory interface mà Mem0/Zep chưa giải quyết trọn vẹn.",
+          "detail": "MemOS provides a standardized memory layer architecture for AI agents with MemCube — the basic memory unit containing both data and metadata. Supports multiple memory types (parametric, activation, long-term) and integrates with popular frameworks. ~4.9K stars, active development (v2.0.4, Jan 2026). Unique for providing a unified memory interface that Mem0/Zep haven't fully addressed.",
           "sources": [
             {
               "title": "GitHub",
@@ -1125,9 +1125,9 @@
           "name": "Universal Agent Skills",
           "slug": "universal-agent-skills",
           "icon": "📚",
-          "desc": "Skill là file .md chứa hướng dẫn cho AI agent — đơn giản nhưng hiệu quả, chạy được trên mọi AI coding tool.",
+          "desc": "Skills are .md files with instructions for AI agents — simple yet effective, runnable on any AI coding tool.",
           "added_date": "2026-02-03",
-          "detail": "Hệ sinh thái Agent Skills đang bùng nổ — Anthropic đã chuẩn hóa format SKILL.md để dạy AI agents kỹ năng chuyên biệt. Antigravity Awesome Skills (631+ skills, V4.0) là bộ sưu tập lớn nhất, hỗ trợ Claude Code, Gemini CLI, Codex CLI, Cursor, OpenCode. VoltAgent cung cấp 200+ skills từ các team chính thức (Stripe, Cloudflare, Hugging Face, Sentry). Cài đặt đơn giản: npx antigravity-awesome-skills hoặc clone vào .agent/skills/.",
+          "detail": "The Agent Skills ecosystem is booming — Anthropic has standardized the SKILL.md format to teach AI agents specialized abilities. Antigravity Awesome Skills (631+ skills, V4.0) is the largest collection, supporting Claude Code, Gemini CLI, Codex CLI, Cursor, OpenCode. VoltAgent offers 200+ skills from official teams (Stripe, Cloudflare, Hugging Face, Sentry). Simple setup: npx antigravity-awesome-skills or clone into .agent/skills/.",
           "tags": [
             "Google Labs",
             "Hugging Face",
@@ -1208,7 +1208,7 @@
               "desc": "Claude Task Master, Happy Coder (mobile), Claude Swarm, Context Engineering Kit"
             }
           ],
-          "detail": "Các category chính: Engineering & DevOps (API testing, Docker, CI/CD), Web Development (React, Tailwind, animations), AI/ML Research (77 skills cho paper reading, fine-tuning), Cross-Agent Orchestration (handoff giữa Claude Code ↔ Codex ↔ Cursor), Claude Code Ecosystem (Task Master, Claude Swarm, session management). Skills là file .md — cross-platform, dùng được trên bất kỳ AI agent nào.",
+          "detail": "Key categories: Engineering & DevOps (API testing, Docker, CI/CD), Web Development (React, Tailwind, animations), AI/ML Research (77 skills for paper reading, fine-tuning), Cross-Agent Orchestration (handoff between Claude Code ↔ Codex ↔ Cursor), Claude Code Ecosystem (Task Master, Claude Swarm, session management). Skills are .md files — cross-platform, usable on any AI agent.",
           "sources": [
             {
               "title": "Skills Documentation",
@@ -1255,8 +1255,8 @@
           "slug": "superpowers",
           "id": "superpowers",
           "icon": "⚡",
-          "desc": "Framework kỹ năng dạng agent cho Claude Code — tự động kích hoạt skills phù hợp khi làm việc.",
-          "detail": "Superpowers là framework skills hàng đầu cho Claude Code với 20+ skills sẵn có: brainstorming, TDD, debugging, code review, git worktrees... Skills tự động kích hoạt theo context — ví dụ khi debug thì systematic-debugging skill tự chạy. Hỗ trợ subagent-driven development: chia task thành nhiều subtask, mỗi subtask do subagent thực hiện rồi review. Claude có thể tự chạy hàng giờ không cần can thiệp. Cài đặt qua plugin marketplace của Claude Code. Cũng hỗ trợ Codex và OpenCode.",
+          "desc": "Agent-style skills framework for Claude Code — automatically activates the right skills based on context.",
+          "detail": "Superpowers is the leading skills framework for Claude Code with 20+ built-in skills: brainstorming, TDD, debugging, code review, git worktrees... Skills auto-activate based on context — for example, the systematic-debugging skill triggers automatically when debugging. Supports subagent-driven development: splits tasks into subtasks, each handled by a subagent then reviewed. Claude can run autonomously for hours without intervention. Install via Claude Code's plugin marketplace. Also supports Codex and OpenCode.",
           "tags": [
             "claude-code",
             "skills",
@@ -1315,8 +1315,8 @@
           "slug": "agents-wshobson",
           "id": "agents-wshobson",
           "icon": "🤖",
-          "desc": "Bộ sưu tập 112 agents + 146 skills + 73 plugins chuyên biệt cho Claude Code — lớn nhất hiện tại.",
-          "detail": "Agents là hệ thống production-ready kết hợp 112 AI agents chuyên biệt, 16 workflow orchestrators, 146 skills, và 79 development tools — tất cả tổ chức thành 73 plugins đơn mục đích cho Claude Code. Các agents chia theo domain: architecture, languages, infrastructure, security, data/AI, documentation, business operations, SEO. Cài từng plugin riêng lẻ để tối ưu token usage. Hỗ trợ Sonnet + Haiku routing tự động theo độ phức tạp task.",
+          "desc": "Collection of 112 agents + 146 skills + 73 specialized plugins for Claude Code — the largest to date.",
+          "detail": "Agents is a production-ready system combining 112 specialized AI agents, 16 workflow orchestrators, 146 skills, and 79 development tools — all organized into 73 single-purpose plugins for Claude Code. Agents are categorized by domain: architecture, languages, infrastructure, security, data/AI, documentation, business operations, SEO. Install individual plugins to optimize token usage. Supports automatic Sonnet + Haiku routing based on task complexity.",
           "tags": [
             "claude-code",
             "multi-agent",
@@ -1372,8 +1372,8 @@
           "slug": "planning-with-files",
           "id": "planning-with-files",
           "icon": "📋",
-          "desc": "Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.",
-          "detail": "Planning-with-files triển khai mô hình lập kế hoạch bền vững bằng 3 file markdown: task_plan.md (mục tiêu + phases), findings.md (ghi chép phát hiện), progress.md (log tiến trình). Tuân thủ '2-Action Rule' — sau mỗi 2 thao tác view/search phải ghi lại findings. Có hooks tự động đọc lại task_plan trước mỗi thao tác write để tránh drift khỏi mục tiêu ban đầu. Lấy cảm hứng từ workflow của Manus (được Meta mua lại $2B). Hỗ trợ Claude Code, Codex, Gemini CLI, Cursor.",
+          "desc": "Markdown-file-based planning skill inspired by Manus — maintains context across multiple work sessions.",
+          "detail": "Planning-with-files implements a persistent planning model using 3 markdown files: task_plan.md (goals + phases), findings.md (discovery notes), progress.md (progress log). Follows the '2-Action Rule' — after every 2 view/search actions, findings must be recorded. Includes hooks that auto-read task_plan before every write action to prevent drifting from original goals. Inspired by the Manus workflow (acquired by Meta for $2B). Supports Claude Code, Codex, Gemini CLI, Cursor.",
           "tags": [
             "claude-code",
             "planning",
@@ -1433,7 +1433,7 @@
           "slug": "claude-flow",
           "icon": "🌊",
           "mono": true,
-          "desc": "Nền tảng điều phối agent theo kiến trúc <strong>Queen + Workers</strong> — quản lý Claude, GPT, Gemini cùng lúc qua MCP.",
+          "desc": "Agent orchestration platform with a <strong>Queen + Workers</strong> architecture — manages Claude, GPT, and Gemini simultaneously via MCP.",
           "added_date": "2026-02-03",
           "tags": [
             "12.8k⭐",
@@ -1442,7 +1442,7 @@
             "HNSW vector",
             "60+ coding agents"
           ],
-          "detail": "Framework điều phối multi-agent dạng Queen + Workers. Queen (Claude Opus) lập kế hoạch, phân công task cho Workers (có thể là Claude Code, Codex, hay Gemini CLI). Hỗ trợ: HNSW vector memory, swarm mode (60+ agents), multi-model routing qua MCP, parallel execution. MIT license, 12.8k+ stars trên GitHub.",
+          "detail": "Multi-agent orchestration framework using a Queen + Workers model. Queen (Claude Opus) plans and assigns tasks to Workers (which can be Claude Code, Codex, or Gemini CLI). Features: HNSW vector memory, swarm mode (60+ agents), multi-model routing via MCP, parallel execution. MIT license, 12.8k+ stars on GitHub.",
           "sources": [
             {
               "title": "Claude-Flow GitHub",
@@ -1488,7 +1488,7 @@
           "slug": "openclaw",
           "icon": "🐕",
           "mono": true,
-          "desc": "Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo. <strong>135k⭐</strong> trên GitHub.",
+          "desc": "Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo. <strong>135k⭐</strong> on GitHub.",
           "added_date": "2026-02-03",
           "detail": "Evolution: Clawdbot → Moltbot → OpenClaw",
           "tags": [
@@ -1543,14 +1543,14 @@
           "slug": "claude-squad",
           "icon": "🐦",
           "mono": true,
-          "desc": "Ứng dụng terminal giúp chạy nhiều phiên Claude Code và Codex cùng lúc, mỗi phiên một workspace riêng.",
+          "desc": "Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.",
           "added_date": "2026-02-03",
           "tags": [
             "Multi-workspace",
             "Parallel agents",
             "+ Aider support"
           ],
-          "detail": "Tool quản lý nhiều phiên Claude Code song song trong cùng terminal. Mỗi phiên chạy trên workspace riêng, làm task riêng, không xung đột. Hỗ trợ Aider integration, multi-workspace management. Phù hợp khi cần chạy nhiều agent đồng thời trên các phần khác nhau của dự án.",
+          "detail": "Tool for managing multiple parallel Claude Code sessions within a single terminal. Each session runs in its own workspace, handling separate tasks without conflicts. Supports Aider integration, multi-workspace management. Ideal when running multiple agents concurrently on different parts of a project.",
           "sources": [
             {
               "title": "Claude Squad GitHub",
