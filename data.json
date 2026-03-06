@@ -3357,8 +3357,8 @@
           "name": "Flowise",
           "slug": "flowise",
           "added_date": "2026-02-08",
-          "desc": "Công cụ no-code xây dựng RAG pipeline và LLM apps bằng giao diện kéo thả — nền tảng LangChain — 49K⭐",
-          "detail": "Flowise biến LangChain thành giao diện visual drag-drop — người dùng kéo thả các node (LLM, retriever, memory, tools) để tạo pipeline hoàn chỉnh mà không cần viết code Python. Mỗi flow có thể export thành API endpoint, deploy bằng Docker một lệnh. Hỗ trợ hơn 100 node tích hợp sẵn: từ document loaders, text splitters, embedding models đến vector stores và output parsers. Marketplace cộng đồng cung cấp template có sẵn cho các use case phổ biến. Ứng dụng thực tế: prototype nhanh chatbot RAG, tạo internal tool cho team non-technical, hoặc dùng như visual debugging tool để hiểu luồng dữ liệu trong RAG pipeline trước khi viết code production.\n\nKết hợp tốt với: LangChain ecosystem · OpenAI/Claude APIs · Chroma/Milvus/Qdrant (vector stores) · Bất kỳ LLM nào LangChain hỗ trợ",
+          "desc": "No-code tool for building RAG pipelines and LLM apps with drag-and-drop UI — built on LangChain — 49K⭐",
+          "detail": "Flowise turns LangChain into a visual drag-drop interface — users drag and connect nodes (LLM, retriever, memory, tools) to create complete pipelines without writing Python code. Each flow can be exported as an API endpoint and deployed with a single Docker command. Supports over 100 built-in integration nodes: from document loaders, text splitters, embedding models to vector stores and output parsers. A community marketplace provides ready-made templates for common use cases. Practical applications: rapid prototyping of RAG chatbots, building internal tools for non-technical teams, or using as a visual debugging tool to understand data flow in RAG pipelines before writing production code.\n\nWorks well with: LangChain ecosystem · OpenAI/Claude APIs · Chroma/Milvus/Qdrant (vector stores) · Any LLM supported by LangChain",
           "sources": [
             {
               "title": "GitHub",
@@ -3412,8 +3412,8 @@
           "name": "LightRAG",
           "slug": "lightrag",
           "added_date": "2026-02-08",
-          "desc": "Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025) — 28K⭐",
-          "detail": "LightRAG mang cách tiếp cận khác biệt so với RAG truyền thống: thay vì chỉ vector search đơn thuần, hệ thống tự động xây dựng knowledge graph từ tài liệu — nhận diện entities và mối quan hệ giữa chúng — rồi kết hợp graph traversal với vector retrieval để trả lời chính xác hơn. Xuất phát từ nghiên cứu tại ĐH Hong Kong, paper đạt EMNLP 2025, và benchmark cho thấy vượt trội so với nhiều phương pháp RAG khác trên nhiều chiều đánh giá. Thiết kế nhẹ, chạy được trên CPU/laptop thông thường mà không cần GPU. Ứng dụng thực tế: knowledge management systems, research Q&A cần hiểu quan hệ giữa concepts, hoặc bất kỳ bài toán nào mà \"ai liên quan đến ai/cái gì\" quan trọng hơn \"đoạn text nào giống nhau\".\n\nKết hợp tốt với: Ollama (chạy LLM local) · Neo4j (graph storage nâng cao) · LlamaIndex (xem thêm ở Agent Frameworks) · OpenAI/Claude APIs",
+          "desc": "Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025) — 28K⭐",
+          "detail": "LightRAG takes a fundamentally different approach from traditional RAG: instead of relying solely on vector search, the system automatically builds a knowledge graph from documents — identifying entities and relationships between them — then combines graph traversal with vector retrieval for more accurate answers. Originating from research at the University of Hong Kong, the paper was accepted at EMNLP 2025, with benchmarks showing it outperforms many other RAG methods across multiple evaluation dimensions. Lightweight by design, it runs on regular CPU/laptop without requiring a GPU. Practical applications: knowledge management systems, research Q&A requiring understanding of relationships between concepts, or any problem where \"who is related to whom/what\" matters more than \"which text chunks are similar\".\n\nWorks well with: Ollama (local LLM) · Neo4j (advanced graph storage) · LlamaIndex (see Agent Frameworks) · OpenAI/Claude APIs",
           "sources": [
             {
               "title": "GitHub",
@@ -3473,8 +3473,8 @@
           "name": "Milvus",
           "slug": "milvus",
           "added_date": "2026-02-08",
-          "desc": "Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation — 42.7K⭐",
-          "detail": "Milvus là vector database được thiết kế cho quy mô lớn từ đầu: kiến trúc distributed trên Kubernetes, hỗ trợ lưu trữ và tìm kiếm hàng tỷ vectors với latency dưới mili-giây. Cung cấp nhiều loại index nhất trong các vector DB (IVF, HNSW, DiskANN, PQ...), cho phép cân bằng giữa tốc độ, accuracy và chi phí tùy use case. Là dự án tốt nghiệp của LF AI & Data Foundation (Linux Foundation), đảm bảo governance và phát triển bền vững. Cloud version Zilliz cung cấp managed service. Ứng dụng thực tế: recommendation systems quy mô lớn, image/video similarity search, semantic search cho enterprise với hàng triệu documents, hoặc bất kỳ bài toán nào cần tìm kiếm tương tự trên dữ liệu lớn.\n\nKết hợp tốt với: LangChain · LlamaIndex · Dify · RAGFlow · Towhee (ETL pipeline) · Bất kỳ embedding model nào (OpenAI, Cohere, HuggingFace)",
+          "desc": "Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation — 42.7K⭐",
+          "detail": "Milvus is a vector database designed for large scale from the ground up: distributed architecture on Kubernetes, supporting storage and search of billions of vectors with sub-millisecond latency. Offers the widest range of index types among vector DBs (IVF, HNSW, DiskANN, PQ...), allowing trade-offs between speed, accuracy and cost per use case. A graduated project of the LF AI & Data Foundation (Linux Foundation), ensuring strong governance and sustainable development. Cloud version Zilliz provides a managed service. Practical applications: large-scale recommendation systems, image/video similarity search, semantic search for enterprises with millions of documents, or any problem requiring similarity search over large datasets.\n\nWorks well with: LangChain · LlamaIndex · Dify · RAGFlow · Towhee (ETL pipeline) · Any embedding model (OpenAI, Cohere, HuggingFace)",
           "sources": [
             {
               "title": "GitHub",
@@ -3530,8 +3530,8 @@
           "name": "Qdrant",
           "slug": "qdrant",
           "added_date": "2026-02-08",
-          "desc": "Vector database viết bằng Rust — nhanh, tiết kiệm bộ nhớ, filtering payload mạnh nhất — 28.6K⭐",
-          "detail": "Qdrant (đọc: \"quadrant\") là vector database tập trung vào performance và production-readiness, viết hoàn toàn bằng Rust để tối ưu tốc độ và memory. Điểm nổi bật nhất là khả năng filtering: kết hợp vector similarity search với điều kiện lọc phức tạp trên metadata (boolean, range, geo, nested objects) — và filtering được tích hợp trực tiếp vào quá trình search thay vì post-filter, nên không mất accuracy. Cung cấp cả REST và gRPC APIs, hỗ trợ SDKs cho nhiều ngôn ngữ. Ứng dụng thực tế: personalized recommendations cần lọc theo user preferences, e-commerce search kết hợp semantic + price/category filters, hoặc multi-tenant RAG systems cần isolation giữa các tenants.\n\nKết hợp tốt với: LangChain · LlamaIndex · Dify · Flowise · FastAPI/Express (backend) · Docker/Kubernetes (deploy)",
+          "desc": "Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering — 28.6K⭐",
+          "detail": "Qdrant (pronounced \"quadrant\") is a vector database focused on performance and production-readiness, written entirely in Rust for optimal speed and memory usage. Its standout feature is filtering: combining vector similarity search with complex conditions on metadata (boolean, range, geo, nested objects) — and filtering is integrated directly into the search process rather than post-filtering, so accuracy is preserved. Provides both REST and gRPC APIs with SDKs for multiple languages. Practical applications: personalized recommendations with user preference filtering, e-commerce search combining semantic + price/category filters, or multi-tenant RAG systems requiring isolation between tenants.\n\nWorks well with: LangChain · LlamaIndex · Dify · Flowise · FastAPI/Express (backend) · Docker/Kubernetes (deploy)",
           "sources": [
             {
               "title": "GitHub",
@@ -3588,8 +3588,8 @@
           "name": "Chroma",
           "slug": "chroma",
           "added_date": "2026-02-08",
-          "desc": "Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG — 26K⭐",
-          "detail": "Chroma là vector database thiết kế theo triết lý \"developer-first\" — cài đặt bằng một dòng pip install, chạy embedded ngay trong Python process mà không cần server riêng. Lưu trữ và tìm kiếm vector embeddings thông qua API đơn giản: add documents → query bằng ngôn ngữ tự nhiên → nhận kết quả tương tự nhất. Tự động xử lý embedding nếu dùng built-in models, hoặc mang embedding riêng từ OpenAI/Cohere/HuggingFace. Xuất hiện trong hầu hết tutorials và courses về RAG, là \"vector DB đầu tiên\" của nhiều developers. Phù hợp nhất cho prototyping, side projects, ứng dụng quy mô nhỏ-trung bình. Khi cần scale lên production với hàng triệu vectors, nên cân nhắc chuyển sang Milvus hoặc Qdrant.\n\nKết hợp tốt với: LangChain · LlamaIndex · Flowise · Dify · OpenAI Embeddings · HuggingFace models",
+          "desc": "Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG — 26K⭐",
+          "detail": "Chroma is a vector database built with a \"developer-first\" philosophy — install with a single pip install, runs embedded directly in the Python process with no separate server needed. Stores and searches vector embeddings through a simple API: add documents → query in natural language → get the most similar results. Automatically handles embedding with built-in models, or bring your own embeddings from OpenAI/Cohere/HuggingFace. Featured in most RAG tutorials and courses, it is the \"first vector DB\" for many developers. Best suited for prototyping, side projects, and small-to-medium scale applications. When scaling to production with millions of vectors, consider switching to Milvus or Qdrant.\n\nWorks well with: LangChain · LlamaIndex · Flowise · Dify · OpenAI Embeddings · HuggingFace models",
           "sources": [
             {
               "title": "GitHub",
@@ -3640,8 +3640,8 @@
           "name": "pgvector",
           "slug": "pgvector",
           "added_date": "2026-02-08",
-          "desc": "Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc — 19.7K⭐",
-          "detail": "pgvector là extension cho PostgreSQL thêm khả năng lưu trữ và tìm kiếm vector trực tiếp trong database quan hệ có sẵn. Ý tưởng đơn giản nhưng cực kỳ thực tế: thay vì triển khai thêm một vector database riêng biệt (Milvus, Qdrant...), developers có thể thêm cột vector vào bảng PostgreSQL hiện tại và query bằng SQL quen thuộc. Hỗ trợ HNSW và IVFFlat indexing cho approximate nearest neighbor search, nhiều distance metrics (L2, cosine, inner product). Đặc biệt phù hợp với hệ sinh thái Supabase (tích hợp sẵn pgvector), Neon, và các managed Postgres services. Ứng dụng thực tế: thêm semantic search vào web app đang dùng Postgres, RAG pipeline đơn giản không muốn thêm infrastructure, hoặc khi dữ liệu vector cần JOIN với dữ liệu quan hệ (users, orders, products) trong cùng một query.\n\nKết hợp tốt với: PostgreSQL/Supabase · LangChain · LlamaIndex · Django/Rails/Express (web frameworks) · pgvectorscale (Timescale — performance addon)",
+          "desc": "Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL — 19.7K⭐",
+          "detail": "pgvector is a PostgreSQL extension that adds vector storage and search capabilities directly into an existing relational database. The idea is simple yet highly practical: instead of deploying a separate vector database (Milvus, Qdrant...), developers can add a vector column to existing PostgreSQL tables and query with familiar SQL. Supports HNSW and IVFFlat indexing for approximate nearest neighbor search, with multiple distance metrics (L2, cosine, inner product). Especially well-suited for the Supabase ecosystem (pgvector built-in), Neon, and managed Postgres services. Practical applications: adding semantic search to a web app already using Postgres, simple RAG pipelines without extra infrastructure, or when vector data needs to JOIN with relational data (users, orders, products) in a single query.\n\nWorks well with: PostgreSQL/Supabase · LangChain · LlamaIndex · Django/Rails/Express (web frameworks) · pgvectorscale (Timescale — performance addon)",
           "sources": [
             {
               "title": "GitHub",
@@ -3700,7 +3700,7 @@
         {
           "name": "garak",
           "slug": "garak",
-          "desc": "LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI",
+          "desc": "LLM vulnerability scanner – probes security flaws in AI models",
           "hot": true,
           "added_date": "2026-02-08",
           "tags": [
@@ -3709,7 +3709,7 @@
             "Apache 2.0"
           ],
           "tagColor": "#76b900",
-          "detail": "garak là \"nmap cho LLM\" – công cụ quét lỗ hổng bảo mật dành riêng cho mô hình ngôn ngữ lớn, được NVIDIA phát triển. Hỗ trợ kiểm tra hallucination, data leakage, prompt injection, jailbreak, toxicity generation và nhiều attack vector khác. garak hoạt động theo kiến trúc modular với probes (tạo tương tác thử), detectors (phát hiện hành vi xấu), và evaluators (đánh giá kết quả). Hỗ trợ scan model từ Hugging Face, OpenAI, Ollama, LiteLLM và hầu hết mọi endpoint REST.\n\nKết hợp tốt với: NeMo Guardrails · Ollama · LiteLLM · Promptfoo",
+          "detail": "garak is the \"nmap for LLMs\" – a vulnerability scanner built specifically for large language models, developed by NVIDIA. Tests for hallucination, data leakage, prompt injection, jailbreak, toxicity generation and many other attack vectors. garak operates on a modular architecture with probes (generate test interactions), detectors (identify bad behavior), and evaluators (assess results). Supports scanning models from Hugging Face, OpenAI, Ollama, LiteLLM and virtually any REST endpoint.\n\nWorks well with: NeMo Guardrails · Ollama · LiteLLM · Promptfoo",
           "sources": [
             {
               "title": "GitHub",
@@ -3761,7 +3761,7 @@
         {
           "name": "NeMo Guardrails",
           "slug": "nemo-guardrails",
-          "desc": "Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn",
+          "desc": "Programmable guardrails for LLMs with Colang DSL – dialog control and safety",
           "added_date": "2026-02-08",
           "tags": [
             "5.5K⭐",
@@ -3769,7 +3769,7 @@
             "Apache 2.0"
           ],
           "tagColor": "#76b900",
-          "detail": "NeMo Guardrails là toolkit open-source từ NVIDIA cho phép thêm guardrails lập trình được vào ứng dụng LLM. Sử dụng Colang – ngôn ngữ DSL riêng để định nghĩa luồng hội thoại, topic control, fact-checking và jailbreak prevention. Hỗ trợ cả input/output rails, dialog rails, và retrieval rails. Tích hợp sẵn với LangChain, LlamaIndex, và các NVIDIA NIM microservices cho content safety, topic control. Đặc biệt phù hợp cho enterprise AI cần kiểm soát chặt chẽ luồng tương tác.\n\nKết hợp tốt với: garak · LangGraph · LlamaIndex · Ollama",
+          "detail": "NeMo Guardrails is an open-source toolkit from NVIDIA for adding programmable guardrails to LLM applications. Uses Colang – a custom DSL for defining conversation flows, topic control, fact-checking and jailbreak prevention. Supports input/output rails, dialog rails, and retrieval rails. Integrates natively with LangChain, LlamaIndex, and NVIDIA NIM microservices for content safety and topic control. Especially suited for enterprise AI requiring strict control over interaction flows.\n\nWorks well with: garak · LangGraph · LlamaIndex · Ollama",
           "sources": [
             {
               "title": "GitHub",
@@ -3818,7 +3818,7 @@
         {
           "name": "Presidio",
           "slug": "presidio",
-          "desc": "PII detection & anonymization cho text và image – bảo vệ dữ liệu cá nhân",
+          "desc": "PII detection & anonymization for text and images – protecting personal data",
           "added_date": "2026-02-08",
           "tags": [
             "6.7K⭐",
@@ -3826,7 +3826,7 @@
             "MIT"
           ],
           "tagColor": "#0078d4",
-          "detail": "Presidio là framework open-source từ Microsoft giúp phát hiện, redact, mask và anonymize dữ liệu nhạy cảm (PII) trong text, images và structured data. Sử dụng kết hợp NLP (spaCy, transformers), regex patterns, rule-based logic và checksum để nhận diện credit card, tên, địa chỉ, SSN, email, số điện thoại và nhiều loại PII khác. Hỗ trợ đa ngôn ngữ, có thể mở rộng với custom recognizers. Triển khai qua Python packages hoặc Docker containers, tích hợp tốt với LLM pipelines để sanitize data trước khi gửi vào model.\n\nKết hợp tốt với: LangChain · LiteLLM · Guardrails AI · NeMo Guardrails",
+          "detail": "Presidio is an open-source framework from Microsoft for detecting, redacting, masking and anonymizing sensitive data (PII) in text, images and structured data. Combines NLP (spaCy, transformers), regex patterns, rule-based logic and checksums to identify credit cards, names, addresses, SSNs, emails, phone numbers and many other PII types. Supports multiple languages and can be extended with custom recognizers. Deployable via Python packages or Docker containers, integrates well with LLM pipelines to sanitize data before sending to models.\n\nWorks well with: LangChain · LiteLLM · Guardrails AI · NeMo Guardrails",
           "sources": [
             {
               "title": "GitHub",
@@ -3873,14 +3873,14 @@
         {
           "name": "Guardrails AI",
           "slug": "guardrails-ai",
-          "desc": "I/O validation framework cho LLM – structured output + 100+ validators",
+          "desc": "I/O validation framework for LLMs – structured output + 100+ validators",
           "added_date": "2026-02-08",
           "tags": [
             "6.1K⭐",
             "MIT"
           ],
           "tagColor": "#8b5cf6",
-          "detail": "Guardrails AI là Python framework giúp xây dựng ứng dụng AI đáng tin cậy bằng cách chạy Input/Output Guards phát hiện, đo lường và giảm thiểu các loại rủi ro. Guardrails Hub cung cấp 100+ validators sẵn có bao gồm: detect PII, toxic language, competitor mentions, bias, prompt injection và nhiều loại khác. Hỗ trợ validate structured data từ LLM output, tự động reask khi output không đạt tiêu chuẩn. Có thể deploy như standalone service qua REST API, tích hợp dễ dàng với OpenAI, Anthropic, và mọi LLM provider.\n\nKết hợp tốt với: LangChain · Presidio · Promptfoo · LiteLLM",
+          "detail": "Guardrails AI is a Python framework for building reliable AI applications by running Input/Output Guards that detect, measure and mitigate various risk types. Guardrails Hub provides 100+ ready-made validators including: PII detection, toxic language, competitor mentions, bias, prompt injection and many more. Supports validating structured data from LLM output with automatic reask when output fails to meet standards. Can be deployed as a standalone service via REST API, integrates easily with OpenAI, Anthropic, and any LLM provider.\n\nWorks well with: LangChain · Presidio · Promptfoo · LiteLLM",
           "sources": [
             {
               "title": "GitHub",
