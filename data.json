@@ -2761,9 +2761,9 @@
         {
           "name": "DeepEval",
           "slug": "deepeval",
-          "desc": "Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming",
+          "desc": "LLM evaluation framework like Pytest — 50+ metrics, CI/CD integration, red-teaming",
           "added_date": "2026-02-08",
-          "detail": "\"Pytest cho LLMs\" với 12.6K+ ⭐. Unit testing framework chuyên biệt cho LLM outputs: 50+ metrics dựa trên nghiên cứu (G-Eval, hallucination detection, faithfulness, relevancy, RAGAs). Tích hợp CI/CD pipelines, tự động phát hiện regression. Bao gồm synthetic data generation và red-teaming cho 40+ loại vulnerabilities. Confident AI platform (optional) cho cloud dashboard.",
+          "detail": "\"Pytest for LLMs\" with 12.6K+ ⭐. Specialized unit testing framework for LLM outputs: 50+ research-based metrics (G-Eval, hallucination detection, faithfulness, relevancy, RAGAs). Integrates with CI/CD pipelines, automatically detects regression. Includes synthetic data generation and red-teaming for 40+ vulnerability types. Confident AI platform (optional) for cloud dashboard.",
           "sources": [
             {
               "title": "GitHub (12.6K+ ⭐)",
@@ -2818,9 +2818,9 @@
         {
           "name": "Promptfoo",
           "slug": "promptfoo",
-          "desc": "CLI tool cho prompt testing, model comparison và LLM red-teaming/security scanning",
+          "desc": "CLI tool for prompt testing, model comparison, and LLM red-teaming/security scanning",
           "added_date": "2026-02-08",
-          "detail": "Công cụ CLI mã nguồn mở (8.3K+ ⭐) cho developer test và bảo mật LLM apps. Config bằng YAML, so sánh output side-by-side giữa nhiều models (GPT, Claude, Gemini, Llama...). Tích hợp red-teaming cho 50+ vulnerability types: prompt injection, PII exposure, jailbreak. Chạy trong CI/CD qua GitHub Actions. 51K+ developers sử dụng. Phù hợp cho teams cần security-first approach.",
+          "detail": "Open-source CLI tool (8.3K+ ⭐) for developers to test and secure LLM apps. Configure via YAML, compare outputs side-by-side across multiple models (GPT, Claude, Gemini, Llama...). Built-in red-teaming for 50+ vulnerability types: prompt injection, PII exposure, jailbreak. Runs in CI/CD via GitHub Actions. Used by 51K+ developers. Ideal for teams needing a security-first approach.",
           "sources": [
             {
               "title": "GitHub (8.3K+ ⭐)",
@@ -2875,9 +2875,9 @@
         {
           "name": "LangSmith",
           "slug": "langsmith",
-          "desc": "Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph",
+          "desc": "LangChain's observability platform — tracing, evaluation, prompt hub for LangChain/LangGraph",
           "added_date": "2026-02-08",
-          "detail": "Platform observability & evaluation của LangChain team. Tích hợp sâu với LangChain/LangGraph ecosystem: full-stack tracing (inputs, outputs, tool calls, decision steps), evaluation framework (automated + human review), Prompt Hub với versioning. Playground cho prompt testing và cross-model comparison. Free tier available. De facto standard nếu đã dùng LangChain stack.",
+          "detail": "Observability & evaluation platform by the LangChain team. Deep integration with the LangChain/LangGraph ecosystem: full-stack tracing (inputs, outputs, tool calls, decision steps), evaluation framework (automated + human review), Prompt Hub with versioning. Playground for prompt testing and cross-model comparison. Free tier available. De facto standard if you're already using the LangChain stack.",
           "sources": [
             {
               "title": "Website",
@@ -2934,9 +2934,9 @@
         {
           "name": "Arize Phoenix",
           "slug": "arize-phoenix",
-          "desc": "AI observability platform mã nguồn mở — tracing, evaluation, RAG debugging, embeddings analysis",
+          "desc": "Open-source AI observability platform — tracing, evaluation, RAG debugging, embeddings analysis",
           "added_date": "2026-02-08",
-          "detail": "Platform observability mã nguồn mở (8.5K+ ⭐) thiết kế cho experimentation và troubleshooting. Nổi bật với RAG debugging qua embedding visualization, phát hiện semantic drift. Xây trên OpenTelemetry, vendor-agnostic, hỗ trợ LlamaIndex, LangChain, DSPy, smolagents. Self-host được qua Docker/Kubernetes. Prompt management với version control và tagging. Phù hợp cho research teams và RAG-heavy applications.",
+          "detail": "Open-source observability platform (8.5K+ ⭐) designed for experimentation and troubleshooting. Excels at RAG debugging via embedding visualization and semantic drift detection. Built on OpenTelemetry, vendor-agnostic, supports LlamaIndex, LangChain, DSPy, smolagents. Self-hostable via Docker/Kubernetes. Prompt management with version control and tagging. Ideal for research teams and RAG-heavy applications.",
           "sources": [
             {
               "title": "GitHub (8.5K+ ⭐)",
@@ -3001,9 +3001,9 @@
         {
           "name": "Ollama",
           "slug": "ollama",
-          "desc": "Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong",
+          "desc": "The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started",
           "added_date": "2026-02-08",
-          "detail": "Tool phổ biến nhất để chạy LLM local (162K+ ⭐, top 50 GitHub toàn cầu). Hỗ trợ Llama, DeepSeek, Gemma, Qwen, Phi và 100+ models khác. Cài đặt cực đơn giản: curl install → ollama pull → ollama run. Tự động quản lý GPU/CPU, quantization, model storage. API tương thích OpenAI format. Chạy trên macOS, Linux, Windows. Phù hợp cho developer muốn thử nghiệm LLM trên máy cá nhân mà không tốn API costs.",
+          "detail": "The most popular tool for running LLMs locally (162K+ ⭐, top 50 on GitHub globally). Supports Llama, DeepSeek, Gemma, Qwen, Phi, and 100+ other models. Dead-simple setup: curl install → ollama pull → ollama run. Automatically manages GPU/CPU, quantization, model storage. API compatible with OpenAI format. Runs on macOS, Linux, Windows. Perfect for developers who want to experiment with LLMs on their own machine without API costs.",
           "sources": [
             {
               "title": "GitHub (162K+ ⭐)",
@@ -3059,9 +3059,9 @@
         {
           "name": "vLLM",
           "slug": "vllm",
-          "desc": "Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline",
+          "desc": "High-performance production inference engine — PagedAttention, 2-4× throughput over baseline",
           "added_date": "2026-02-08",
-          "detail": "Engine serving LLM cho production (69.7K+ ⭐). Công nghệ PagedAttention giúp tối ưu GPU memory, đạt throughput gấp 2-4× so với FasterTransformer/Orca. Hỗ trợ continuous batching, tensor parallelism, speculative decoding. Tương thích OpenAI API server. Dùng bởi các công ty lớn cho high-throughput serving. Hỗ trợ hầu hết model architectures phổ biến (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
+          "detail": "LLM serving engine built for production (69.7K+ ⭐). PagedAttention technology optimizes GPU memory, achieving 2-4× throughput over FasterTransformer/Orca. Supports continuous batching, tensor parallelism, speculative decoding. Compatible with OpenAI API server. Used by major companies for high-throughput serving. Supports most popular model architectures (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
           "sources": [
             {
               "title": "GitHub (69.7K+ ⭐)",
@@ -3114,9 +3114,9 @@
         {
           "name": "LocalAI",
           "slug": "localai",
-          "desc": "Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU",
+          "desc": "Self-hosted OpenAI alternative — run LLMs, image gen, audio on consumer hardware, no GPU required",
           "added_date": "2026-02-08",
-          "detail": "Nền tảng self-hosted thay thế OpenAI API (42.6K+ ⭐). Chạy được trên consumer hardware KHÔNG cần GPU. Hỗ trợ text generation, image generation, audio transcription, embeddings — tất cả qua OpenAI-compatible API. Tương thích Anthropic API format, Responses API, MCP integration. Chạy qua Docker một lệnh. Phù hợp cho teams muốn self-host toàn bộ AI stack trên infrastructure riêng, giữ data không ra ngoài.",
+          "detail": "Self-hosted OpenAI API replacement (42.6K+ ⭐). Runs on consumer hardware with NO GPU required. Supports text generation, image generation, audio transcription, embeddings — all via OpenAI-compatible API. Compatible with Anthropic API format, Responses API, MCP integration. One-command Docker deployment. Ideal for teams wanting to self-host their entire AI stack on their own infrastructure, keeping data in-house.",
           "sources": [
             {
               "title": "GitHub (42.6K+ ⭐)",
@@ -3170,9 +3170,9 @@
         {
           "name": "LiteLLM",
           "slug": "litellm",
-          "desc": "AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API",
+          "desc": "Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API",
           "added_date": "2026-02-08",
-          "detail": "Gateway/proxy thống nhất truy cập 100+ LLM providers (35.3K+ ⭐). Gọi OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... qua cùng một API format. Tích hợp cost tracking theo từng request, load balancing giữa providers, fallback tự động khi provider down. Quản lý API keys, rate limits, budget alerts. SDK cho Python và proxy server cho mọi ngôn ngữ. Phù hợp cho teams dùng nhiều LLM providers và cần tối ưu chi phí.",
+          "detail": "Unified gateway/proxy for accessing 100+ LLM providers (35.3K+ ⭐). Call OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... through a single API format. Built-in cost tracking per request, load balancing across providers, automatic fallback when a provider goes down. Manages API keys, rate limits, budget alerts. Python SDK and proxy server for any language. Ideal for teams using multiple LLM providers who need to optimize costs.",
           "sources": [
             {
               "title": "GitHub (35.3K+ ⭐)",
@@ -3237,8 +3237,8 @@
           "slug": "dify",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn — 129K⭐",
-          "detail": "Dify là nền tảng all-in-one cho phép tạo ứng dụng AI từ chatbot đến agent phức tạp mà không cần viết nhiều code. Điểm mạnh cốt lõi là visual workflow builder dạng drag-drop — người dùng kéo thả các node (LLM, retrieval, tool, logic) để thiết kế luồng xử lý hoàn chỉnh. RAG pipeline tích hợp sẵn: upload tài liệu, tự động chunking, embedding, và truy xuất — không cần setup vector DB riêng. Hỗ trợ kết nối 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click deploy lên production, và monitoring dashboard theo dõi usage/cost. Ứng dụng thực tế: xây dựng internal knowledge base chatbot cho doanh nghiệp, customer support tự động, AI assistant xử lý tài liệu nội bộ, hoặc prototype nhanh ý tưởng AI app trước khi đầu tư phát triển custom. Lưu ý: Dify là platform scope rộng (RAG + agent + workflow), license có Additional Terms ngoài Apache 2.0 — cần kiểm tra khi dùng thương mại.\n\nKết hợp tốt với: Ollama (chạy LLM local) · Langfuse (observability nâng cao) · Milvus/Qdrant (thay thế vector DB mặc định) · MCP (mở rộng tool access)",
+          "desc": "Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline — 129K⭐",
+          "detail": "Dify is an all-in-one platform for creating AI applications from chatbots to complex agents without writing much code. Its core strength is a drag-and-drop visual workflow builder — users drag nodes (LLM, retrieval, tool, logic) to design complete processing flows. Built-in RAG pipeline: upload documents, automatic chunking, embedding, and retrieval — no separate vector DB setup needed. Supports 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click production deployment, and a monitoring dashboard for tracking usage/cost. Real-world use cases: building internal knowledge base chatbots for enterprises, automated customer support, AI assistants for processing internal documents, or rapidly prototyping AI app ideas before investing in custom development. Note: Dify is a broad-scope platform (RAG + agent + workflow), its license has Additional Terms beyond Apache 2.0 — check before commercial use.\n\nWorks well with: Ollama (local LLM) · Langfuse (advanced observability) · Milvus/Qdrant (replace default vector DB) · MCP (extend tool access)",
           "sources": [
             {
               "title": "GitHub",
@@ -3299,8 +3299,8 @@
           "slug": "ragflow",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn — 73K⭐",
-          "detail": "RAGFlow là engine RAG tập trung vào chất lượng xử lý tài liệu — bước thường bị bỏ qua nhưng quyết định 80% độ chính xác của câu trả lời. Hệ thống tự động phân tích cấu trúc document phức tạp: bảng biểu, hình ảnh, PDF scan, slides — và chunking theo template với khả năng preview trực quan để người dùng can thiệp khi cần. Mỗi câu trả lời đi kèm trích dẫn nguồn cụ thể (grounded citations), giảm đáng kể tình trạng hallucination. Tích hợp agent toolkit cho phép không chỉ truy xuất text mà còn gọi API, tool bên ngoài. Ứng dụng thực tế: hệ thống Q&A nội bộ doanh nghiệp xử lý hợp đồng, báo cáo kỹ thuật, tài liệu pháp lý — những loại document mà chunking đơn giản cho kết quả kém.\n\nKết hợp tốt với: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Bất kỳ LLM provider nào (OpenAI, Claude, Gemini)",
+          "desc": "Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations — 73K⭐",
+          "detail": "RAGFlow is a RAG engine focused on document processing quality — the step often overlooked but responsible for 80% of answer accuracy. The system automatically analyzes complex document structures: tables, images, scanned PDFs, slides — and chunks by template with visual preview so users can intervene when needed. Every answer comes with specific source citations (grounded citations), significantly reducing hallucination. Integrated agent toolkit enables not just text retrieval but also external API and tool calls. Real-world use cases: enterprise internal Q&A systems handling contracts, technical reports, legal documents — the kinds of documents where simple chunking yields poor results.\n\nWorks well with: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Any LLM provider (OpenAI, Claude, Gemini)",
           "sources": [
             {
               "title": "GitHub",
