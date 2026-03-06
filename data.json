@@ -83,7 +83,7 @@
   "sections": [
     {
       "id": "protocols",
-      "title": "Protocols — Nền tảng giao tiếp chuẩn",
+      "title": "Protocols — Standardized Communication Layer",
       "color": "indigo",
       "badge": "🔥 Foundation",
       "gridCols": 2,
@@ -243,7 +243,7 @@
     },
     {
       "id": "frameworks",
-      "title": "Agent Frameworks — Xây dựng AI agents",
+      "title": "Agent Frameworks — Building AI Agents",
       "color": "rose",
       "gridCols": 4,
       "cards": [
@@ -812,7 +812,7 @@
     },
     {
       "id": "platforms",
-      "title": "Platforms & Config — Nền tảng AI & files hệ thống",
+      "title": "Platforms & Config — AI Platforms & System Files",
       "color": "purple",
       "gridCols": 4,
       "cards": [
@@ -940,7 +940,7 @@
     },
     {
       "id": "memory",
-      "title": "Memory Systems — Bộ nhớ xuyên phiên",
+      "title": "Memory Systems — Cross-Session Memory",
       "color": "cyan",
       "gridCols": 2,
       "cards": [
@@ -1424,7 +1424,7 @@
     },
     {
       "id": "orchestration",
-      "title": "Orchestration — Điều phối multi-agent",
+      "title": "Orchestration — Multi-Agent Coordination",
       "color": "blue",
       "gridCols": 3,
       "cards": [
@@ -1596,7 +1596,7 @@
     },
     {
       "id": "coding-agents",
-      "title": "AI Coding Agents — Công cụ code bằng AI",
+      "title": "AI Coding Agents — AI-Powered Coding Tools",
       "color": "sky",
       "badge": "🔥 2026 Landscape",
       "gridCols": 3,
@@ -2203,7 +2203,7 @@
     },
     {
       "id": "trends",
-      "title": "AI Trends 2026 — Xu hướng đang định hình tương lai",
+      "title": "AI Trends 2026 — Trends Shaping the Future",
       "color": "green",
       "badge": "🌍 Global",
       "gridCols": 3,
@@ -2693,7 +2693,7 @@
     },
     {
       "id": "observability",
-      "title": "Observability & Evaluation — Giám sát và đánh giá AI",
+      "title": "Observability & Evaluation — AI Monitoring & Assessment",
       "color": "#6366f1",
       "badge": "📊",
       "cards": [
@@ -2994,7 +2994,7 @@
     },
     {
       "id": "infrastructure",
-      "title": "AI Infrastructure — Hạ tầng chạy và triển khai model",
+      "title": "AI Infrastructure — Model Serving & Deployment",
       "color": "#f97316",
       "badge": "⚙️",
       "cards": [
@@ -3465,7 +3465,7 @@
     },
     {
       "id": "vector-databases",
-      "title": "Vector Databases — Lưu trữ & Tìm kiếm Vector",
+      "title": "Vector Databases — Vector Storage & Search",
       "color": "#d97706",
       "badge": "🗄️",
       "cards": [
@@ -3693,7 +3693,7 @@
     },
     {
       "id": "security",
-      "title": "Security & Guardrails – Bảo vệ ứng dụng AI",
+      "title": "Security & Guardrails – Protecting AI Applications",
       "color": "#ef4444",
       "badge": "🛡️",
       "cards": [
