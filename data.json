@@ -4007,7 +4007,7 @@
   "comparison_presets": [
     {
       "id": "vector-databases",
-      "title": "So sánh Vector Databases",
+      "title": "Compare Vector Databases",
       "as_of": "2026-02-10",
       "criteria": [
         "Best for",
@@ -4090,7 +4090,7 @@
     },
     {
       "id": "rag-systems",
-      "title": "So sánh RAG Systems",
+      "title": "Compare RAG Systems",
       "as_of": "2026-02-10",
       "criteria": [
         "Best for",
@@ -4174,7 +4174,7 @@
     },
     {
       "id": "coding-agents",
-      "title": "So sánh AI Coding Agents",
+      "title": "Compare AI Coding Agents",
       "sectionId": "coding-agents",
       "as_of": "2026-02-09",
       "layout": "flip",
@@ -4329,7 +4329,7 @@
     },
     {
       "id": "frameworks",
-      "title": "So sánh Agent Frameworks",
+      "title": "Compare Agent Frameworks",
       "sectionId": "frameworks",
       "as_of": "2026-02-10",
       "layout": "flip",
