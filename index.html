@@ -973,8 +973,7 @@ const UI_STRINGS = {
 };
 
 function t(key, vars) {
-  var lang = location.pathname.startsWith('/vi/') ? 'vi' : 'en';
-  var s = UI_STRINGS[lang][key];
+  var s = UI_STRINGS[currentLang][key];
   if (vars) {
     for (var k in vars) {
       if (vars.hasOwnProperty(k)) {
