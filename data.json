@@ -1004,7 +1004,7 @@
           "license": "AGPL-3.0"
         },
         {
-          "name": "Hệ thống Memory khác",
+          "name": "Other Memory Systems",
           "slug": "he-thong-memory-khac",
           "icon": "📦",
           "added_date": "2026-02-03",
@@ -1186,7 +1186,7 @@
           "license": null
         },
         {
-          "name": "Skill Categories đáng chú ý",
+          "name": "Notable Skill Categories",
           "slug": "skill-categories-dang-chu-y",
           "icon": "🔗",
           "added_date": "2026-02-03",
