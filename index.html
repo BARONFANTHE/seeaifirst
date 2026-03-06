@@ -870,7 +870,7 @@ html, body {
       <span class="version-badge">v6.1</span>
     </div>
     <div class="topbar-right">
-      <button id="search-btn">🔍 Tìm kiếm <kbd>⌘K</kbd></button>
+      <button id="search-btn">🔍 Search <kbd>⌘K</kbd></button>
       <button id="lang-toggle" title="Switch language">VI</button>
       <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
     </div>
@@ -911,7 +911,7 @@ html, body {
     <div class="search-dialog">
       <div class="search-input-wrapper">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M16 16L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <input id="search-input" placeholder="Tìm kiếm tools..." />
+        <input id="search-input" placeholder="Search tools..." />
         <kbd>ESC</kbd>
       </div>
       <div id="search-results"></div>
@@ -924,6 +924,82 @@ html, body {
 function escapeHtml(str) {
   if (typeof str !== 'string') return '';
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+}
+
+// ═══ i18n ═══
+const UI_STRINGS = {
+  en: {
+    searchBtn: '🔍 Search',
+    searchPlaceholder: 'Search tools...',
+    compare: 'Compare',
+    compareSectionTitle: 'Compare tools in this section',
+    compareBtn: '⚖️ Compare',
+    details: 'Details',
+    copyCompareLink: 'Copy comparison link',
+    close: 'Close',
+    closeEsc: 'Close (ESC)',
+    toClose: 'to close ·',
+    compareLocked: 'disabled while Compare is open',
+    compareSection: 'Compare {{sectionTitle}}',
+    statsFooter: '{{totalCards}} tools · {{totalSections}} categories',
+    backBtn: '{{arrowLeftSvg}} Back',
+    searchInputHint: 'Search among {{allCardsLength}} tools',
+    noResults: 'No results for "{{query}}"',
+    compareSearchHint: 'Close Compare to search (Ctrl+K)',
+    welcomeHint: '← Choose a category on the left or <kbd style="padding:1px 6px;border-radius:4px;background:var(--hover);font-size:11px;border:1px solid var(--border);">⌘K</kbd> to search',
+    welcomeSubtitle: 'The Opinionated AI Stack Guide'
+  },
+  vi: {
+    searchBtn: '🔍 Tìm kiếm',
+    searchPlaceholder: 'Tìm kiếm tools...',
+    compare: 'So sánh',
+    compareSectionTitle: 'So sánh tools trong section này',
+    compareBtn: '⚖️ So sánh',
+    details: 'Chi tiết',
+    copyCompareLink: 'Copy link so sánh',
+    close: 'Đóng',
+    closeEsc: 'Đóng (ESC)',
+    toClose: 'để đóng ·',
+    compareLocked: 'tạm khóa khi Compare mở',
+    compareSection: 'So sánh {{sectionTitle}}',
+    statsFooter: '{{totalCards}} tools · {{totalSections}} danh mục',
+    backBtn: '{{arrowLeftSvg}} Quay lại',
+    searchInputHint: 'Nhập để tìm trong {{allCardsLength}} tools',
+    noResults: 'Không tìm thấy "{{query}}"',
+    compareSearchHint: 'Đóng Compare để tìm kiếm (Ctrl+K)',
+    welcomeHint: '← Chọn danh mục bên trái hoặc <kbd style="padding:1px 6px;border-radius:4px;background:var(--hover);font-size:11px;border:1px solid var(--border);">⌘K</kbd> để tìm kiếm',
+    welcomeSubtitle: 'Bản đồ AI Ecosystem cho Developers Việt Nam'
+  }
+};
+
+function t(key, vars) {
+  var lang = location.pathname.startsWith('/vi/') ? 'vi' : 'en';
+  var s = UI_STRINGS[lang][key];
+  if (vars) {
+    for (var k in vars) {
+      if (vars.hasOwnProperty(k)) {
+        s = s.split('{{' + k + '}}').join(String(vars[k]));
+      }
+    }
+  }
+  return s;
+}
+
+function applyUiStrings() {
+  var searchBtn = document.getElementById('search-btn');
+  if (searchBtn) searchBtn.innerHTML = t('searchBtn') + ' <kbd>⌘K</kbd>';
+
+  var searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.placeholder = t('searchPlaceholder');
+
+  var compareHint = document.querySelector('.compare-hint');
+  if (compareHint) compareHint.innerHTML = '<kbd>ESC</kbd> ' + t('toClose') + ' <kbd>Ctrl+K</kbd> ' + t('compareLocked');
+
+  var copyLink = document.querySelector('.compare-copy-link');
+  if (copyLink) { copyLink.setAttribute('aria-label', t('copyCompareLink')); copyLink.title = t('copyCompareLink'); }
+
+  var closeBtn = document.querySelector('.compare-close');
+  if (closeBtn) { closeBtn.setAttribute('aria-label', t('close')); closeBtn.title = t('closeEsc'); }
 }
 
 // ═══ Constants ═══
@@ -1429,7 +1505,7 @@ function trapCompareFocus(overlay) {
 function showCompareSearchHint() {
   const toast = document.createElement('div');
   toast.className = 'compare-toast';
-  toast.textContent = 'Đóng Compare để tìm kiếm (Ctrl+K)';
+  toast.textContent = t('compareSearchHint');
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 2500);
 }
@@ -1815,7 +1891,7 @@ function buildTreeSection(section) {
   h += folderIcon(color, false);
   h += `<span class="tree-folder-title">${escapeHtml(section.title)}</span>`;
   if (sectionHasPreset(section.id)) {
-    h += `<span class="tree-compare-icon" data-preset-id="${escapeHtml(section.id)}" title="So sánh" role="button" aria-label="So sánh ${escapeHtml(section.title)}">⚖️</span>`;
+    h += `<span class="tree-compare-icon" data-preset-id="${escapeHtml(section.id)}" title="${t('compare')}" role="button" aria-label="${t('compareSection', { sectionTitle: escapeHtml(section.title) })}">⚖️</span>`;
   }
   h += `<span class="tree-folder-count" style="background:${color}15;color:${color}">${section.cards.length}</span>`;
   h += `</button>`;
@@ -1953,8 +2029,8 @@ function renderWelcome() {
       <div style="font-size:52px;">🧠</div>
       <h2 style="font-size:22px;font-weight:700;margin:0;color:var(--text);letter-spacing:-0.02em;">See AI First</h2>
       <p style="font-size:14px;color:var(--text-muted);text-align:center;line-height:1.6;max-width:360px;">
-        Bản đồ AI Ecosystem cho Developers Việt Nam
-        <br><span style="font-size:13px;">${totalCards} tools · ${data.sections.length} danh mục</span>
+        ${t('welcomeSubtitle')}
+        <br><span style="font-size:13px;">${t('statsFooter', { totalCards: totalCards, totalSections: data.sections.length })}</span>
       </p>
       <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
         ${data.sections.map(s => `<span style="font-size:11px;padding:4px 12px;border-radius:99px;background:var(--hover);border:1px solid var(--border);color:var(--text-secondary);font-weight:500;">${sectionIcons[s.id] || ''} ${s.cards.length}</span>`).join('')}
@@ -1964,7 +2040,7 @@ function renderWelcome() {
         ${data.comparison_presets.map(p => `<button class="welcome-compare-btn" data-preset-id="${escapeHtml(p.id)}">⚖️ ${escapeHtml(p.title)}</button>`).join('')}
       </div>` : ''}
       <p style="font-size:12px;color:var(--text-dim);margin-top:8px;">
-        ← Chọn danh mục bên trái hoặc <kbd style="padding:1px 6px;border-radius:4px;background:var(--hover);font-size:11px;border:1px solid var(--border);">⌘K</kbd> để tìm kiếm
+        ${t('welcomeHint')}
       </p>
     </div>
   `;
@@ -2044,7 +2120,7 @@ function renderNewspaper() {
   html += `<span class="tool-count" style="background:${color}15;color:${color}">${cards.length} tools</span>`;
   const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === section.id);
   if (preset) {
-    html += `<button class="compare-btn" data-preset-id="${escapeHtml(preset.id)}" title="So sánh tools trong section này">⚖️ So sánh</button>`;
+    html += `<button class="compare-btn" data-preset-id="${escapeHtml(preset.id)}" title="${t('compareSectionTitle')}">${t('compareBtn')}</button>`;
   }
   html += `</div>`;
   html += `<p class="newspaper-subtitle">${escapeHtml(section.subtitle || '')}</p>`;
@@ -2078,7 +2154,7 @@ function renderDetail() {
   let html = `<div class="detail-panel">`;
 
   // Back button
-  html += `<button class="detail-back" id="detail-back-btn">${arrowLeftSvg} Quay lại</button>`;
+  html += `<button class="detail-back" id="detail-back-btn">${t('backBtn', { arrowLeftSvg: arrowLeftSvg })}</button>`;
 
   // Breadcrumb
   html += `<div class="detail-breadcrumb">`;
@@ -2108,7 +2184,7 @@ function renderDetail() {
   // Detail box (allows HTML)
   if (card.detail) {
     html += `<div class="detail-box">`;
-    html += `<div class="detail-box-label">Chi tiết</div>`;
+    html += `<div class="detail-box-label">${t('details')}</div>`;
     html += `<p>${card.detail}</p>`;
     html += `</div>`;
   }
@@ -2187,7 +2263,7 @@ function renderSearchResults(query) {
   });
 
   if (!query) {
-    container.innerHTML = `<div class="search-empty">Nhập để tìm trong ${allCards.length} tools</div>`;
+    container.innerHTML = `<div class="search-empty">${t('searchInputHint', { allCardsLength: allCards.length })}</div>`;
     return;
   }
 
@@ -2199,7 +2275,7 @@ function renderSearchResults(query) {
   ).slice(0, 10);
 
   if (filtered.length === 0) {
-    container.innerHTML = `<div class="search-empty">Không tìm thấy "${escapeHtml(query)}"</div>`;
+    container.innerHTML = `<div class="search-empty">${t('noResults', { query: escapeHtml(query) })}</div>`;
     return;
   }
 
@@ -2488,6 +2564,7 @@ async function init() {
     // Render
     renderTree();
     renderRightPanel();
+    applyUiStrings();
 
     // Event listeners
     document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
@@ -2515,6 +2592,7 @@ async function init() {
           setLang(newLang);
           updateLangToggleLabel();
           applyDataset(newLang, dataset);
+          applyUiStrings();
           const targetPath = withLangPrefix(basePath) + search;
           AppRouter.navigate(targetPath, { replace: true, state: history.state });
         } catch (e) {
@@ -2659,11 +2737,11 @@ document.addEventListener('DOMContentLoaded', init);
     <div class="compare-header">
       <h2 class="compare-title"></h2>
       <div class="compare-header-actions">
-        <button class="compare-copy-link" aria-label="Copy compare link" title="Copy link so sánh">🔗</button>
-        <button class="compare-close" aria-label="Đóng" title="Đóng (ESC)">✕</button>
+        <button class="compare-copy-link" aria-label="Copy compare link" title="Copy compare link">🔗</button>
+        <button class="compare-close" aria-label="Close" title="Close (ESC)">✕</button>
       </div>
     </div>
-    <div class="compare-hint"><kbd>ESC</kbd> để đóng · <kbd>Ctrl+K</kbd> tạm khóa khi Compare mở</div>
+    <div class="compare-hint"><kbd>ESC</kbd> to close · <kbd>Ctrl+K</kbd> disabled while Compare is open</div>
     <div class="picker-bar"></div>
     <div class="compare-body"></div>
   </div>
