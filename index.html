@@ -119,10 +119,24 @@ html, body {
   align-items: center;
   gap: 10px;
 }
-.topbar-left .logo {
+#topbar .logo {
   font-size: 14px;
   font-weight: 800;
   letter-spacing: -0.02em;
+  /* Button reset — override #topbar button */
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+  line-height: inherit;
+}
+#topbar .logo:hover { opacity: 0.8; }
+#topbar .logo:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 .version-badge {
   font-size: 10px;
@@ -866,7 +880,7 @@ html, body {
   <header id="topbar">
     <div class="topbar-left">
       <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
-      <span class="logo">🧠 See AI First</span>
+      <button type="button" class="logo" id="home-link">🧠 See AI First</button>
       <span class="version-badge">v6.1</span>
     </div>
     <div class="topbar-right">
@@ -947,7 +961,8 @@ const UI_STRINGS = {
     noResults: 'No results for "{{query}}"',
     compareSearchHint: 'Close Compare to search (Ctrl+K)',
     welcomeHint: '← Choose a category on the left or <kbd style="padding:1px 6px;border-radius:4px;background:var(--hover);font-size:11px;border:1px solid var(--border);">⌘K</kbd> to search',
-    welcomeSubtitle: 'The Opinionated AI Stack Guide'
+    welcomeSubtitle: 'The Opinionated AI Stack Guide',
+    homeLinkLabel: 'Go to homepage'
   },
   vi: {
     searchBtn: '🔍 Tìm kiếm',
@@ -968,7 +983,8 @@ const UI_STRINGS = {
     noResults: 'Không tìm thấy "{{query}}"',
     compareSearchHint: 'Đóng Compare để tìm kiếm (Ctrl+K)',
     welcomeHint: '← Chọn danh mục bên trái hoặc <kbd style="padding:1px 6px;border-radius:4px;background:var(--hover);font-size:11px;border:1px solid var(--border);">⌘K</kbd> để tìm kiếm',
-    welcomeSubtitle: 'Bản đồ AI Ecosystem cho Developers Việt Nam'
+    welcomeSubtitle: 'Bản đồ AI Ecosystem cho Developers Việt Nam',
+    homeLinkLabel: 'Về trang chủ'
   }
 };
 
@@ -999,6 +1015,9 @@ function applyUiStrings() {
 
   var closeBtn = document.querySelector('.compare-close');
   if (closeBtn) { closeBtn.setAttribute('aria-label', t('close')); closeBtn.title = t('closeEsc'); }
+
+  var homeLink = document.getElementById('home-link');
+  if (homeLink) { homeLink.setAttribute('aria-label', t('homeLinkLabel')); homeLink.title = t('homeLinkLabel'); }
 }
 
 // ═══ Constants ═══
@@ -1195,6 +1214,16 @@ function navigateToSection(sectionId) {
   AppRouter.navigate(withLangPrefix(canonicalPath), { state: { fromApp: true } });
 }
 
+function getHomeUrl() {
+  return currentLang === 'vi' ? '/vi/' : '/';
+}
+
+function navigateToHome() {
+  const homeUrl = getHomeUrl();
+  if (location.pathname === homeUrl) return;
+  AppRouter.navigate(homeUrl, { state: { fromApp: true } });
+}
+
 // deprecated: use navigateToTool()
 function updateHash(card) {
   navigateToTool(card);
@@ -1261,9 +1290,10 @@ const AppRouter = (() => {
         window._pickerSelection = null;
         window._pickerPreset = null;
       }
-      const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+      const homeUrl = getHomeUrl();
       history.replaceState(history.state, '', homeUrl);
       selected = null;
+      activeSection = null;
       renderRightPanel();
       updateTreeActiveStates();
     }
@@ -1301,7 +1331,7 @@ function handleToolRoute(params) {
 
   if (!result) {
     // Unknown slug → fallback home (Hard Rule 3)
-    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    const homeUrl = getHomeUrl();
     history.replaceState(history.state, '', homeUrl);
     selected = null;
     renderRightPanel();
@@ -1336,7 +1366,7 @@ function closeCardWithRouting() {
   } else {
     // Direct entry → replace to home
     selected = null;
-    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    const homeUrl = getHomeUrl();
     history.replaceState(history.state, '', homeUrl);
     renderRightPanel();
     updateTreeActiveStates();
@@ -1352,7 +1382,7 @@ function handleCompareRoute(params) {
   const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === presetSlug);
 
   if (!preset) {
-    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    const homeUrl = getHomeUrl();
     history.replaceState(history.state, '', homeUrl);
     selected = null;
     renderRightPanel();
@@ -1392,7 +1422,7 @@ function handleSectionRoute(params) {
   if (!section) {
     selected = null;
     activeSection = null;
-    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    const homeUrl = getHomeUrl();
     history.replaceState(history.state, '', homeUrl);
     renderRightPanel();
     updateTreeActiveStates();
@@ -1475,7 +1505,7 @@ function closeCompare() {
   if (history.state && history.state.fromApp) {
     history.back();
   } else {
-    const homeUrl = currentLang === 'vi' ? '/vi/' : '/';
+    const homeUrl = getHomeUrl();
     history.replaceState(history.state, '', homeUrl);
     selected = null;
     renderRightPanel();
@@ -2566,6 +2596,7 @@ async function init() {
     applyUiStrings();
 
     // Event listeners
+    document.getElementById('home-link').addEventListener('click', navigateToHome);
     document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
     document.getElementById('search-btn').addEventListener('click', openSearch);
     document.getElementById('theme-toggle').addEventListener('click', () => {
