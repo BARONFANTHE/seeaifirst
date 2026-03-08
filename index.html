@@ -608,19 +608,22 @@ html, body {
   .card-featured { flex-direction: column; }
   .card-featured .card-icon-block { width: 100%; min-height: 80px; }
   .newspaper-grid.cols-2 { grid-template-columns: 1fr; }
-  .newspaper { padding: 20px 16px 40px; }
-  .detail-panel { padding: 20px 16px 40px; }
+  .newspaper { padding: 48px 16px 40px; }
+  .detail-panel { padding: 48px 16px 40px; }
   .mobile-back:not(.hidden) {
-    display: flex; position: fixed;
+    display: block; position: fixed;
     top: 56px; left: 8px; z-index: 50;
     padding: 6px 12px; border-radius: 8px;
     border: 1px solid var(--border); cursor: pointer;
     background: var(--topbar-bg); backdrop-filter: blur(8px);
     color: var(--text-secondary); font-size: 12px;
-    font-family: inherit; align-items: center; gap: 4px;
+    font-family: inherit;
     transition: background 0.15s;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    max-width: calc(100vw - 16px);
   }
   .mobile-back:hover { background: var(--active); }
+  .detail-back, .detail-breadcrumb { display: none; }
 }
 
 /* ═══ Compare Overlay ═══ */
@@ -2257,6 +2260,16 @@ function updateMobileBack() {
   const isMobile = window.innerWidth < 768;
   const hasContent = selected || activeSection;
   btn.classList.toggle('hidden', !(isMobile && sidebarCollapsed && hasContent));
+  // Dynamic breadcrumb content
+  if (selected) {
+    const section = selected.section || activeSection;
+    const sectionTitle = section ? section.title : '';
+    btn.textContent = '\u2630 ' + sectionTitle + ' \u203A ' + selected.card.name;
+  } else if (activeSection) {
+    btn.textContent = '\u2630 ' + activeSection.title;
+  } else {
+    btn.textContent = '\u2630 Explorer';
+  }
 }
 
 // ═══ Event Handlers ═══
