@@ -1,0 +1,47 @@
+{
+  "updated": "2026-03-09",
+  "items": [
+    {
+      "slug": "multi-agent-systems",
+      "reason": {
+        "en": "The hottest architecture pattern — agents collaborating, delegating, and solving complex tasks together",
+        "vi": "Kiến trúc nóng nhất hiện tại — các agent phối hợp, phân công và giải quyết task phức tạp cùng nhau"
+      }
+    },
+    {
+      "slug": "generative-coding",
+      "reason": {
+        "en": "AI-generated code is reshaping how developers build — from autocomplete to full app generation",
+        "vi": "Code do AI tạo ra đang thay đổi cách developer làm việc — từ autocomplete đến sinh toàn bộ ứng dụng"
+      }
+    },
+    {
+      "slug": "ai-governance",
+      "reason": {
+        "en": "As AI scales, governance frameworks become critical — safety, compliance, and responsible deployment",
+        "vi": "Khi AI mở rộng, quản trị trở nên thiết yếu — an toàn, tuân thủ và triển khai có trách nhiệm"
+      }
+    },
+    {
+      "slug": "universal-agent-skills",
+      "reason": {
+        "en": "Core capabilities every AI agent needs — browsing, coding, file handling, and tool use",
+        "vi": "Năng lực cốt lõi mọi AI agent cần có — duyệt web, code, xử lý file và sử dụng công cụ"
+      }
+    },
+    {
+      "slug": "claude-mem",
+      "reason": {
+        "en": "Persistent memory for Claude — enabling context-aware, long-running agent workflows",
+        "vi": "Bộ nhớ bền vững cho Claude — hỗ trợ workflow agent dài hạn, nhận biết ngữ cảnh"
+      }
+    },
+    {
+      "slug": "a2a",
+      "reason": {
+        "en": "Google's Agent2Agent protocol — the emerging standard for agents to communicate across platforms",
+        "vi": "Giao thức Agent2Agent của Google — tiêu chuẩn mới để các agent giao tiếp xuyên nền tảng"
+      }
+    }
+  ]
+}
