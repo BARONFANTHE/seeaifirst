@@ -8,7 +8,7 @@ docs/
 # Internal files (not for public)
 CLAUDE.md
 CHANGELOG.md
-skills/
+/skills/
 scripts/slug-diff.js
 package-lock.json
 scripts/generate-og-image.js
