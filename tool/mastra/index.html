@@ -1,0 +1,2966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+
+<title>Mastra — See AI First</title>
+<meta name="description" content="TypeScript-first agent framework from the Gatsby team — workflows, RAG, evals, and MCP built in">
+<meta property="og:title" content="Mastra — See AI First">
+<meta property="og:description" content="TypeScript-first agent framework from the Gatsby team — workflows, RAG, evals, and MCP built in">
+<meta property="og:url" content="https://seeaifirst.com/tool/mastra">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta name="twitter:title" content="Mastra — See AI First">
+<meta name="twitter:description" content="TypeScript-first agent framework from the Gatsby team — workflows, RAG, evals, and MCP built in">
+<link rel="canonical" href="https://seeaifirst.com/tool/mastra">
+
+<!-- Static OG (shared across all routes) -->
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://seeaifirst.com/og-image.png?v=70a">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://seeaifirst.com/og-image.png?v=70a">
+
+<!-- English description for AI agent discoverability -->
+<meta name="description" lang="en" content="Curated directory of 66 AI developer tools across 13 categories, with evidence-first sourcing.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* ═══ CSS Variables ═══ */
+:root {
+  --bg: #0b1120;
+  --sidebar-bg: #0f172a;
+  --text: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-dim: #475569;
+  --border: rgba(255,255,255,0.06);
+  --hover: rgba(255,255,255,0.04);
+  --active: rgba(255,255,255,0.08);
+  --card-bg: rgba(255,255,255,0.02);
+  --topbar-bg: rgba(15,23,42,0.95);
+  --search-bg: #1e293b;
+  --scrollbar: #1e293b;
+  --selection: #3b82f640;
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --sidebar-bg: #ffffff;
+  --text: #0f172a;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --text-dim: #cbd5e1;
+  --border: rgba(0,0,0,0.07);
+  --hover: rgba(0,0,0,0.03);
+  --active: rgba(0,0,0,0.04);
+  --card-bg: #ffffff;
+  --topbar-bg: rgba(255,255,255,0.95);
+  --search-bg: #ffffff;
+  --scrollbar: #e2e8f0;
+  --selection: #3b82f640;
+}
+
+/* ═══ Reset & Base ═══ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  height: 100%;
+  font-family: 'Be Vietnam Pro', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+::selection { background: var(--selection); }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar); border-radius: 99px; }
+
+/* ═══ Animations ═══ */
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes fadeSlide { from { opacity: 0; transform: translateX(6px) } to { opacity: 1; transform: translateX(0) } }
+
+/* ═══ App Layout ═══ */
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ═══ Top Bar ═══ */
+#topbar {
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--topbar-bg);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+.topbar-left, .topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#topbar .logo {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  /* Button reset — override #topbar button */
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+  line-height: inherit;
+}
+#topbar .logo:hover { opacity: 0.8; }
+#topbar .logo:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.version-badge {
+  font-size: 10px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: var(--hover);
+  color: var(--text-muted);
+}
+#topbar button {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+#topbar button:hover {
+  background: var(--hover);
+  border-color: rgba(255,255,255,0.1);
+  color: var(--text);
+}
+#topbar button kbd {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--hover);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+#sidebar-toggle {
+  font-size: 16px;
+  padding: 5px 8px !important;
+  border: none !important;
+}
+#theme-toggle {
+  font-size: 16px;
+  padding: 5px 8px !important;
+  border: none !important;
+}
+
+/* ═══ Body Container ═══ */
+#body-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ═══ Sidebar ═══ */
+#sidebar {
+  width: 260px;
+  min-width: 260px;
+  border-right: 1px solid var(--border);
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width 0.25s ease, min-width 0.25s ease;
+}
+#sidebar.collapsed {
+  width: 0;
+  min-width: 0;
+  border-right: none;
+}
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+#total-tools {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-dim);
+}
+#tree-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px;
+}
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.sidebar-footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 11px;
+  transition: color 0.2s;
+}
+.sidebar-footer a:hover {
+  color: var(--text);
+}
+
+/* ═══ Right Panel ═══ */
+#right-panel {
+  flex: 1;
+  overflow: auto;
+  background: var(--bg);
+}
+
+/* ═══ Search Modal ═══ */
+.hidden { display: none; }
+#search-modal {
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding-top: min(18vh, 140px);
+  animation: fadeIn 0.15s ease;
+}
+#search-modal.hidden { display: none; }
+.search-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(6px);
+}
+.search-dialog {
+  position: relative; z-index: 1;
+  width: min(520px, 88vw); border-radius: 16px; overflow: hidden;
+  background: var(--search-bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  animation: slideUp 0.2s cubic-bezier(0.16,1,0.3,1);
+}
+.search-input-wrapper {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.search-input-wrapper svg { flex-shrink: 0; color: var(--text-muted); }
+.search-input-wrapper input {
+  flex: 1; border: none; outline: none;
+  font-size: 14px; background: transparent;
+  color: var(--text); font-family: inherit;
+}
+.search-input-wrapper input::placeholder { color: var(--text-dim); }
+.search-input-wrapper kbd {
+  font-size: 10px; padding: 2px 7px; border-radius: 5px;
+  background: var(--hover); color: var(--text-muted);
+  font-family: inherit; flex-shrink: 0;
+}
+#search-results {
+  max-height: 320px; overflow-y: auto; padding: 6px;
+}
+.search-result-item {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; padding: 10px 12px;
+  border: none; border-radius: 8px; cursor: pointer;
+  text-align: left; font-family: inherit;
+  background: transparent; color: var(--text);
+  font-size: 13px; transition: background 0.1s;
+}
+.search-result-item:hover,
+.search-result-item.active {
+  background: var(--active);
+}
+.search-result-name { font-weight: 600; }
+.search-result-section {
+  font-size: 11px; color: var(--text-muted);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.search-empty {
+  padding: 24px; text-align: center;
+  color: var(--text-dim); font-size: 13px;
+}
+
+/* ═══ Tree Sidebar ═══ */
+.tree-section { margin-bottom: 2px; }
+.tree-folder {
+  display: flex; align-items: center; gap: 6px;
+  width: 100%; padding: 7px 8px;
+  border: none; cursor: pointer; border-radius: 6px;
+  font-size: 13px; font-weight: 600; text-align: left;
+  font-family: inherit;
+  background: transparent; color: var(--text);
+  transition: background 0.15s;
+}
+.tree-folder:hover { background: var(--hover); }
+.tree-folder.active { background: var(--active); }
+.tree-chevron {
+  font-size: 10px; width: 14px; text-align: center;
+  color: var(--text-muted); flex-shrink: 0;
+  transition: transform 0.2s;
+}
+.tree-folder-icon { flex-shrink: 0; }
+.tree-folder-title { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tree-folder-count {
+  font-size: 10px; font-weight: 600;
+  padding: 1px 7px; border-radius: 99px; flex-shrink: 0;
+}
+.tree-children {
+  overflow: hidden; transition: max-height 0.25s ease;
+}
+.tree-children.collapsed { max-height: 0 !important; }
+.tree-file {
+  display: flex; align-items: center; gap: 8px;
+  width: 100%; padding: 6px 8px 6px 34px;
+  border: none; cursor: pointer; border-radius: 6px;
+  font-size: 13px; font-weight: 400; text-align: left;
+  font-family: inherit;
+  background: transparent; color: var(--text-secondary);
+  transition: all 0.15s;
+}
+.tree-file:hover { background: var(--hover); }
+.tree-file.active {
+  background: var(--active);
+  color: var(--text); font-weight: 500;
+}
+.tree-file-name {
+  overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap; flex: 1;
+}
+.badge-hot {
+  font-size: 8px; font-weight: 700;
+  padding: 1px 5px; border-radius: 99px;
+  background: #ef444420; color: #ef4444; flex-shrink: 0;
+}
+.badge-new {
+  font-size: 8px; font-weight: 700;
+  padding: 1px 5px; border-radius: 99px;
+  background: #10b98120; color: #10b981; flex-shrink: 0;
+}
+
+/* ═══ Newspaper View ═══ */
+.newspaper {
+  max-width: 900px; margin: 0 auto; padding: 32px 32px 60px;
+  animation: fadeSlide 0.3s ease;
+}
+.newspaper-header { margin-bottom: 28px; }
+.newspaper-header-top {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 6px;
+}
+.newspaper-header-top .section-badge { font-size: 24px; }
+.newspaper-header-top h2 {
+  font-size: 24px; font-weight: 800; margin: 0;
+  color: var(--text); letter-spacing: -0.03em;
+}
+.newspaper-header-top .tool-count {
+  font-size: 12px; font-weight: 600;
+  padding: 3px 10px; border-radius: 99px;
+}
+.newspaper-subtitle {
+  font-size: 14px; color: var(--text-muted); margin: 0;
+}
+.newspaper-accent {
+  width: 48px; height: 3px; border-radius: 99px; margin-top: 14px;
+}
+.card-featured {
+  display: flex; gap: 24px; padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer; text-align: left; width: 100%;
+  font-family: inherit;
+  transition: all 0.2s; align-items: stretch;
+}
+.card-featured:hover {
+  transform: translateY(-1px);
+  border-color: var(--sc, rgba(255,255,255,0.12));
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.card-featured .card-icon-block {
+  width: 180px; min-height: 140px; border-radius: 12px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+}
+.card-featured .card-content {
+  flex: 1; display: flex; flex-direction: column; gap: 10px; min-width: 0;
+}
+.card-featured .card-title {
+  font-size: 20px; font-weight: 700; margin: 0;
+  color: var(--text); letter-spacing: -0.02em;
+}
+.card-featured .card-desc {
+  font-size: 14px; color: var(--text-secondary); margin: 0; line-height: 1.5;
+}
+.card-featured .card-detail {
+  font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.7; flex: 1;
+}
+.newspaper-grid {
+  display: grid; gap: 12px; margin-top: 16px;
+}
+.newspaper-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+.newspaper-grid.cols-1 { grid-template-columns: 1fr; }
+.card-regular {
+  display: flex; gap: 14px; padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer; text-align: left; width: 100%;
+  font-family: inherit;
+  transition: all 0.2s; align-items: flex-start;
+}
+.card-regular:hover {
+  transform: translateY(-1px);
+  border-color: var(--sc, rgba(255,255,255,0.1));
+}
+.card-regular .card-icon-sm {
+  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.card-regular .card-content { flex: 1; min-width: 0; }
+.card-regular .card-title {
+  font-size: 14px; font-weight: 600; margin: 0 0 4px;
+  color: var(--text);
+}
+.card-regular .card-detail-clamp {
+  font-size: 12px; color: var(--text-muted); margin: 0; line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.card-title-row {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.card-tags {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px;
+}
+.card-tag {
+  font-size: 11px; padding: 3px 10px; border-radius: 99px; font-weight: 500;
+  background: var(--hover); color: var(--text-secondary);
+}
+
+/* ═══ Detail View ═══ */
+.detail-panel {
+  max-width: 640px; margin: 0 auto; padding: 32px 32px 60px;
+  animation: fadeSlide 0.25s ease;
+}
+.detail-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: 8px; border: none;
+  cursor: pointer; font-family: inherit;
+  font-size: 12px; font-weight: 500; margin-bottom: 20px;
+  background: var(--hover); color: var(--text-secondary);
+  transition: background 0.15s;
+}
+.detail-back:hover { background: var(--active); }
+.detail-breadcrumb {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--text-muted); margin-bottom: 20px;
+}
+.detail-title-row {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 8px; flex-wrap: wrap;
+}
+.detail-title {
+  font-size: 28px; font-weight: 700; letter-spacing: -0.03em;
+  margin: 0; color: var(--text);
+}
+.detail-desc {
+  font-size: 16px; line-height: 1.6; margin: 0 0 28px;
+  color: var(--text-secondary);
+}
+.detail-tags {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px;
+}
+.detail-tag {
+  font-size: 12px; font-weight: 500;
+  padding: 5px 14px; border-radius: 99px;
+  background: var(--hover); color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.detail-box {
+  padding: 24px; border-radius: 14px;
+  background: var(--hover); border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.detail-box-label {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 12px;
+}
+.detail-box p {
+  font-size: 14px; line-height: 1.8; margin: 0; color: var(--text-secondary);
+}
+.detail-sources-label {
+  font-size: 11px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 12px;
+}
+.detail-sources {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+.detail-source-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 10px;
+  font-size: 13px; font-weight: 500;
+  background: var(--hover); border: 1px solid var(--border);
+  text-decoration: none; transition: all 0.2s;
+}
+.detail-source-link:hover {
+  background: var(--active);
+  border-color: var(--sc, var(--border));
+}
+.detail-footer {
+  margin-top: 32px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 12px; color: var(--text-dim);
+}
+
+/* ═══ Welcome Animation ═══ */
+.welcome-panel { animation: fadeIn 0.3s ease; }
+
+/* ═══ Welcome Compare Buttons ═══ */
+.welcome-compare {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 4px;
+}
+.welcome-compare-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 18px; border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card-bg); color: var(--text-secondary);
+  font-family: inherit; font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+}
+.welcome-compare-btn:hover {
+  background: var(--hover); color: var(--text);
+  border-color: var(--text-muted);
+  transform: translateY(-1px);
+}
+
+/* ═══ Hot Right Now Module ═══ */
+.hot-module {
+  max-width: 900px; margin: 0 auto; padding: 0 32px 40px;
+  animation: fadeSlide 0.3s ease;
+}
+.hot-module-title {
+  font-size: 18px; font-weight: 700; margin: 0 0 16px;
+  color: var(--text); letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 8px;
+}
+.hot-module-title::before {
+  content: ''; display: inline-block; width: 3px; height: 18px;
+  border-radius: 99px; background: #ef4444; flex-shrink: 0;
+}
+.hot-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.hot-grid-more.hidden { display: none; }
+.hot-card {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 14px 16px; border-radius: 12px;
+  border: 1px solid var(--border); border-left: 3px solid var(--hot-sc, var(--border));
+  background: var(--card-bg); cursor: pointer; text-align: left;
+  font-family: inherit; transition: all 0.2s; width: 100%;
+}
+.hot-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--hot-sc, rgba(255,255,255,0.12));
+  border-left-color: var(--hot-sc, var(--border));
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.hot-card-name {
+  font-size: 14px; font-weight: 600; margin: 0;
+  color: var(--text); letter-spacing: -0.01em;
+}
+.hot-card-reason {
+  font-size: 12px; color: var(--text-muted); margin: 0; line-height: 1.5;
+}
+.hot-card-section {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 11px; color: var(--text-dim); margin-top: auto;
+}
+.hot-toggle-btn {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  margin: 16px auto 0; padding: 8px 20px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  color: var(--text-secondary); font-family: inherit;
+  font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s;
+}
+.hot-toggle-btn:hover {
+  background: var(--hover); color: var(--text);
+}
+
+/* ═══ Sidebar Compare Icon ═══ */
+.tree-compare-icon {
+  flex-shrink: 0; font-size: 11px; opacity: 0.5;
+  cursor: pointer; padding: 2px 4px; border-radius: 4px;
+  transition: opacity 0.15s, background 0.15s;
+  line-height: 1;
+}
+.tree-compare-icon:hover {
+  opacity: 1; background: var(--hover);
+}
+
+/* ═══ Mobile Back Button ═══ */
+.mobile-back {
+  display: none;
+}
+
+/* ═══ Responsive ═══ */
+@media (max-width: 768px) {
+  #sidebar {
+    position: fixed; top: 48px; left: 0; bottom: 0; z-index: 100;
+    width: 280px !important; min-width: 280px !important;
+    background: var(--sidebar-bg);
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+  #sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  #sidebar.collapsed {
+    transform: translateX(-100%);
+  }
+  .card-featured { flex-direction: column; }
+  .card-featured .card-icon-block { width: 100%; min-height: 80px; }
+  .newspaper-grid.cols-2 { grid-template-columns: 1fr; }
+  .hot-grid { grid-template-columns: 1fr; }
+  .hot-module { padding: 0 16px 32px; }
+  .newspaper { padding: 48px 16px 40px; }
+  .detail-panel { padding: 48px 16px 40px; }
+  .mobile-back:not(.hidden) {
+    display: block; position: fixed;
+    top: 56px; left: 8px; z-index: 50;
+    padding: 6px 12px; border-radius: 8px;
+    border: 1px solid var(--border); cursor: pointer;
+    background: var(--topbar-bg); backdrop-filter: blur(8px);
+    color: var(--text-secondary); font-size: 12px;
+    font-family: inherit;
+    transition: background 0.15s;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    max-width: calc(100vw - 16px);
+  }
+  .mobile-back:hover { background: var(--active); }
+  .detail-back, .detail-breadcrumb { display: none; }
+}
+
+/* ═══ Compare Overlay ═══ */
+.compare-overlay {
+  position: fixed; inset: 0; z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  animation: compareFadeIn 0.2s ease;
+}
+.compare-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+[data-theme="light"] .compare-backdrop {
+  background: rgba(0,0,0,0.3);
+}
+.compare-panel {
+  position: relative; z-index: 1;
+  background: var(--search-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 90vw; max-width: 900px; max-height: 85vh;
+  display: flex; flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.compare-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  background: inherit; z-index: 2;
+}
+.compare-title {
+  margin: 0; font-size: 1.2rem; font-weight: 600; color: var(--text);
+}
+.compare-header-actions {
+  display: flex; align-items: center; gap: 4px; flex-shrink: 0;
+}
+.compare-copy-link {
+  background: none; border: none;
+  color: var(--text-muted); font-size: 1rem;
+  cursor: pointer; padding: 4px 8px; border-radius: 6px;
+  transition: all 0.15s; min-width: 32px; text-align: center;
+}
+.compare-copy-link:hover {
+  background: var(--hover); color: var(--text);
+}
+.compare-close {
+  background: none; border: none;
+  color: var(--text-muted); font-size: 1.5rem;
+  cursor: pointer; padding: 4px 8px; border-radius: 6px;
+  transition: all 0.15s;
+}
+.compare-close:hover {
+  background: var(--hover); color: var(--text);
+}
+.compare-hint {
+  padding: 6px 24px; font-size: 0.75rem; color: var(--text-muted);
+  opacity: 0.55; flex-shrink: 0;
+}
+.compare-hint kbd {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+  padding: 1px 5px; border-radius: 4px;
+  background: var(--hover); border: 1px solid var(--border);
+}
+/* Picker Bar */
+.picker-bar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  padding: 10px 24px; border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.picker-chip {
+  background: none; border: 1px solid var(--border);
+  color: var(--text-muted); padding: 4px 12px; border-radius: 16px;
+  font-size: 0.78rem; font-family: inherit; cursor: pointer;
+  transition: all 0.15s; white-space: nowrap;
+}
+.picker-chip:hover:not(:disabled) {
+  border-color: var(--text-muted); color: var(--text);
+}
+.picker-chip.selected {
+  background: var(--text); color: var(--search-bg);
+  border-color: var(--text); font-weight: 600;
+}
+.picker-chip:disabled {
+  opacity: 0.35; cursor: not-allowed;
+}
+.picker-count {
+  font-size: 0.75rem; color: var(--text-muted); margin-left: 4px;
+  white-space: nowrap;
+}
+.picker-reset {
+  background: none; border: 1px solid var(--border);
+  color: var(--text-muted); padding: 3px 10px; border-radius: 12px;
+  font-size: 0.72rem; font-family: inherit; cursor: pointer;
+  transition: all 0.15s; white-space: nowrap; margin-left: auto;
+}
+.picker-reset:hover { background: var(--hover); color: var(--text); }
+.picker-reset.hidden { display: none; }
+@media (max-width: 768px) {
+  .picker-bar { padding: 8px 16px; gap: 5px; }
+  .picker-chip { padding: 3px 10px; font-size: 0.72rem; }
+}
+
+.compare-body {
+  padding: 24px; min-height: 200px; overflow: auto; flex: 1;
+}
+
+/* Compare Table (Desktop) */
+.compare-table {
+  width: 100%; border-collapse: collapse; table-layout: fixed;
+  min-width: 600px;
+}
+.compare-table th,
+.compare-table td {
+  padding: 10px 14px; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem; word-break: break-word;
+}
+.compare-criteria-header { width: 160px; min-width: 160px; }
+.compare-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--search-bg);
+}
+.compare-tool-header {
+  font-weight: 600; font-size: 0.9rem; padding-bottom: 12px; color: var(--text);
+}
+.compare-criteria-header,
+.compare-criteria-label {
+  position: sticky; left: 0;
+  background: var(--search-bg);
+}
+.compare-table thead .compare-criteria-header {
+  z-index: 2;
+}
+.compare-criteria-label {
+  font-weight: 500; color: var(--text-secondary); white-space: nowrap;
+}
+.compare-highlight .compare-criteria-label {
+  font-weight: 700; color: var(--text);
+}
+.compare-highlight {
+  background: var(--hover);
+}
+.compare-highlight .compare-criteria-label {
+  background: var(--search-bg);
+}
+.compare-chip {
+  display: inline-block; padding: 2px 8px; margin: 2px 4px 2px 0;
+  border-radius: 4px; font-size: 0.75rem;
+  background: var(--active); color: var(--text-secondary);
+}
+
+/* Compare Cards (Mobile) */
+.compare-card {
+  background: var(--active); border-radius: 10px;
+  padding: 16px; margin-bottom: 12px;
+}
+.compare-card-name {
+  margin: 0 0 10px; font-size: 1rem; font-weight: 600; color: var(--text);
+}
+.compare-card-row {
+  padding: 6px 0; font-size: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+.compare-card-row:last-child { border-bottom: none; }
+.compare-card-label { font-weight: 500; color: var(--text-secondary); }
+.compare-card-row.compare-highlight .compare-card-label {
+  font-weight: 700; color: var(--text);
+}
+.compare-card-value { color: var(--text); }
+@media (max-width: 768px) {
+  .compare-table { display: none; }
+  .compare-panel { width: 95vw; max-height: 90vh; }
+  .compare-header { padding: 12px 16px; }
+  .compare-hint { display: none; }
+  .compare-body { padding: 16px; }
+}
+@media (min-width: 769px) {
+  .compare-card { display: none; }
+}
+
+/* Compare Flip Layout (tools = rows, criteria = columns) */
+.compare-panel-flip { max-width: 1100px; }
+.compare-flip-table {
+  width: 100%; border-collapse: collapse; min-width: 900px;
+}
+.compare-flip-table th,
+.compare-flip-table td {
+  padding: 8px 12px; text-align: left; vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.82rem; word-break: break-word; min-width: 120px;
+}
+.compare-flip-table thead th {
+  position: sticky; top: 0; z-index: 1;
+  background: var(--search-bg);
+  font-weight: 600; font-size: 0.8rem; color: var(--text);
+}
+.compare-flip-tool-name {
+  position: sticky; left: 0; z-index: 1;
+  background: var(--search-bg);
+  font-weight: 600; color: var(--text);
+  min-width: 140px; white-space: nowrap;
+}
+.compare-flip-table thead th:first-child { z-index: 2; }
+.compare-flip-table thead .compare-flip-col-hi {
+  background: linear-gradient(var(--hover), var(--hover)), var(--search-bg);
+  font-weight: 700;
+}
+.compare-flip-col-hi { background: var(--hover); }
+.compare-scale-strong { background: rgba(34,197,94,0.12); }
+.compare-scale-good { background: rgba(59,130,246,0.12); }
+.compare-scale-basic { background: rgba(156,163,175,0.1); }
+[data-theme="light"] .compare-scale-strong { background: rgba(34,197,94,0.08); }
+[data-theme="light"] .compare-scale-good { background: rgba(59,130,246,0.08); }
+[data-theme="light"] .compare-scale-basic { background: rgba(156,163,175,0.08); }
+@media (max-width: 768px) {
+  .compare-flip-table { display: none; }
+}
+
+/* Compare Button */
+.compare-btn {
+  background: none; border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 4px 12px; border-radius: 6px;
+  font-size: 0.8rem; font-family: inherit;
+  cursor: pointer; transition: all 0.15s;
+  white-space: nowrap; margin-left: auto;
+}
+.compare-btn:hover {
+  background: var(--hover); color: var(--text);
+  border-color: var(--text-muted);
+}
+
+/* Compare Toast */
+.compare-toast {
+  position: fixed; bottom: 24px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--search-bg); color: var(--text);
+  padding: 10px 20px; border-radius: 8px;
+  font-size: 0.85rem; z-index: 10100;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: compareToastIn 0.3s ease;
+}
+@keyframes compareFadeIn {
+  from { opacity: 0 } to { opacity: 1 }
+}
+@keyframes compareToastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+</style>
+</head>
+<body>
+<div id="prerender-content">
+  <main>
+    <article>
+      <h1>Mastra</h1>
+      <p>TypeScript-first agent framework from the Gatsby team — workflows, RAG, evals, and MCP built in</p>
+      <p>Mastra is a TypeScript-first agent framework, built by the team behind Gatsby.js. Offers graph-based workflows, built-in RAG with vector store, evaluation framework, and MCP client/server. Supports...</p>
+      <footer>
+        <p>Part of <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> on See AI First.</p>
+      </footer>
+    </article>
+  </main>
+</div>
+<div id="app">
+  <!-- Top Bar -->
+  <header id="topbar">
+    <div class="topbar-left">
+      <button id="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+      <button type="button" class="logo" id="home-link">🧠 See AI First</button>
+      <span class="version-badge">v6.1</span>
+    </div>
+    <div class="topbar-right">
+      <button id="search-btn">🔍 Search <kbd>⌘K</kbd></button>
+      <button id="lang-toggle" title="Switch language">VI</button>
+      <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+    </div>
+  </header>
+
+  <!-- Body -->
+  <div id="body-container">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <span>Explorer</span>
+        <span id="total-tools">0 tools</span>
+      </div>
+      <div id="tree-container">
+        <!-- JS sẽ render tree ở đây -->
+      </div>
+      <div class="sidebar-footer">
+        <span>See AI First</span>
+        <div style="display:flex;gap:12px;">
+          <a href="https://github.com/BARONFANTHE/seeaifirst/issues/new?template=suggest-tool.yml" target="_blank" rel="noopener noreferrer">Suggest</a>
+          <a href="https://github.com/BARONFANTHE/seeaifirst" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Right Panel -->
+    <main id="right-panel">
+      <!-- JS sẽ render Welcome / Newspaper / Detail ở đây -->
+    </main>
+  </div>
+
+  <!-- Mobile Back Button -->
+  <button id="mobile-back" class="mobile-back hidden">☰ Explorer</button>
+
+  <!-- Search Modal (hidden by default) -->
+  <div id="search-modal" class="hidden">
+    <div class="search-backdrop"></div>
+    <div class="search-dialog">
+      <div class="search-input-wrapper">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M16 16L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="search-input" placeholder="Search tools..." />
+        <kbd>ESC</kbd>
+      </div>
+      <div id="search-results"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══ Security ═══
+function escapeHtml(str) {
+  if (typeof str !== 'string') return '';
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+}
+
+// ═══ i18n ═══
+const UI_STRINGS = {
+  en: {
+    searchBtn: '🔍 Search',
+    searchPlaceholder: 'Search tools...',
+    compare: 'Compare',
+    compareSectionTitle: 'Compare tools in this section',
+    compareBtn: '⚖️ Compare',
+    details: 'Details',
+    copyCompareLink: 'Copy comparison link',
+    close: 'Close',
+    closeEsc: 'Close (ESC)',
+    toClose: 'to close ·',
+    compareLocked: 'disabled while Compare is open',
+    compareSection: 'Compare {{sectionTitle}}',
+    statsFooter: '{{totalCards}} tools · {{totalSections}} categories',
+    backBtn: '{{arrowLeftSvg}} Back',
+    searchInputHint: 'Search among {{allCardsLength}} tools',
+    noResults: 'No results for "{{query}}"',
+    compareSearchHint: 'Close Compare to search (Ctrl+K)',
+    welcomeHint: '← Choose a category on the left or <kbd style="padding:1px 6px;border-radius:4px;background:var(--hover);font-size:11px;border:1px solid var(--border);">⌘K</kbd> to search',
+    welcomeSubtitle: 'The Opinionated AI Stack Guide',
+    homeLinkLabel: 'Go to homepage',
+    hotRightNowTitle: 'Hot Right Now',
+    showMore: 'Show more',
+    showLess: 'Show less'
+  },
+  vi: {
+    searchBtn: '🔍 Tìm kiếm',
+    searchPlaceholder: 'Tìm kiếm tools...',
+    compare: 'So sánh',
+    compareSectionTitle: 'So sánh tools trong section này',
+    compareBtn: '⚖️ So sánh',
+    details: 'Chi tiết',
+    copyCompareLink: 'Copy link so sánh',
+    close: 'Đóng',
+    closeEsc: 'Đóng (ESC)',
+    toClose: 'để đóng ·',
+    compareLocked: 'tạm khóa khi Compare mở',
+    compareSection: 'So sánh {{sectionTitle}}',
+    statsFooter: '{{totalCards}} tools · {{totalSections}} danh mục',
+    backBtn: '{{arrowLeftSvg}} Quay lại',
+    searchInputHint: 'Nhập để tìm trong {{allCardsLength}} tools',
+    noResults: 'Không tìm thấy "{{query}}"',
+    compareSearchHint: 'Đóng Compare để tìm kiếm (Ctrl+K)',
+    welcomeHint: '← Chọn danh mục bên trái hoặc <kbd style="padding:1px 6px;border-radius:4px;background:var(--hover);font-size:11px;border:1px solid var(--border);">⌘K</kbd> để tìm kiếm',
+    welcomeSubtitle: 'Bản đồ AI Ecosystem cho Developers Việt Nam',
+    homeLinkLabel: 'Về trang chủ',
+    hotRightNowTitle: 'Đang Hot',
+    showMore: 'Xem thêm',
+    showLess: 'Thu gọn'
+  }
+};
+
+function t(key, vars) {
+  var s = UI_STRINGS[currentLang][key];
+  if (vars) {
+    for (var k in vars) {
+      if (vars.hasOwnProperty(k)) {
+        s = s.split('{{' + k + '}}').join(String(vars[k]));
+      }
+    }
+  }
+  return s;
+}
+
+function applyUiStrings() {
+  var searchBtn = document.getElementById('search-btn');
+  if (searchBtn) searchBtn.innerHTML = t('searchBtn') + ' <kbd>⌘K</kbd>';
+
+  var searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.placeholder = t('searchPlaceholder');
+
+  var compareHint = document.querySelector('.compare-hint');
+  if (compareHint) compareHint.innerHTML = '<kbd>ESC</kbd> ' + t('toClose') + ' <kbd>Ctrl+K</kbd> ' + t('compareLocked');
+
+  var copyLink = document.querySelector('.compare-copy-link');
+  if (copyLink) { copyLink.setAttribute('aria-label', t('copyCompareLink')); copyLink.title = t('copyCompareLink'); }
+
+  var closeBtn = document.querySelector('.compare-close');
+  if (closeBtn) { closeBtn.setAttribute('aria-label', t('close')); closeBtn.title = t('closeEsc'); }
+
+  var homeLink = document.getElementById('home-link');
+  if (homeLink) { homeLink.setAttribute('aria-label', t('homeLinkLabel')); homeLink.title = t('homeLinkLabel'); }
+}
+
+// ═══ Constants ═══
+const SITE_URL = 'https://seeaifirst.com';
+
+// ═══ State ═══
+let data = null;
+let selected = null;
+let activeSection = null;
+let isDark = true;
+let sidebarCollapsed = false;
+let searchIndex = 0;
+let hotRightNowConfig = null;
+
+// ═══ Section Colors & Gradients ═══
+const iconGradients = {
+  'protocols': 'linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%)',
+  'frameworks': 'linear-gradient(135deg, #2563eb 0%, #60a5fa 100%)',
+  'platforms': 'linear-gradient(135deg, #db2777 0%, #f472b6 100%)',
+  'memory': 'linear-gradient(135deg, #0891b2 0%, #22d3ee 100%)',
+  'skills': 'linear-gradient(135deg, #ea580c 0%, #fb923c 100%)',
+  'orchestration': 'linear-gradient(135deg, #0d9488 0%, #2dd4bf 100%)',
+  'coding-agents': 'linear-gradient(135deg, #9333ea 0%, #c084fc 100%)',
+  'trends': 'linear-gradient(135deg, #ca8a04 0%, #facc15 100%)',
+};
+
+// ═══ Color Map (name → hex) ═══
+const colorHex = {
+  indigo: '#6366f1', purple: '#8b5cf6', cyan: '#06b6d4',
+  sky: '#0ea5e9', green: '#10b981', rose: '#f43f5e',
+  blue: '#3b82f6', teal: '#14b8a6', orange: '#f59e0b',
+};
+function getHex(c) { return colorHex[c] || '#94a3b8'; }
+
+function stripHtml(str) { return str ? str.replace(/<[^>]*>/g, '').trim() : ''; }
+
+// ═══ Helpers ═══
+function isNew(dateStr) {
+  if (!dateStr) return false;
+  return (Date.now() - new Date(dateStr).getTime()) / 864e5 <= 14;
+}
+
+function toSlug(name) {
+  return name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
+}
+
+function safeDecode(str) {
+  try { return decodeURIComponent(str); }
+  catch(e) { return str; }
+}
+
+function getCardSlug(card) {
+  return card.slug || toSlug(card.name);
+}
+
+const SLUG_ALIAS_MAP = {
+  'mcp-model-context-protocol': 'mcp',
+  'a2a-agent2agent-protocol': 'a2a',
+  'claudeai-web': 'claude-ai',
+  'chatgpt-web': 'chatgpt',
+  'h-thng-memory-khc': 'he-thong-memory-khac',
+  'skill-categories-ng-ch-': 'skill-categories-dang-chu-y'
+};
+
+// --- PR7: Language state ---
+
+let currentLang = 'en';
+let enDataCache = null;
+let viDataCache = null;
+let langSwitchNonce = 0;
+
+// Helper: detect if pathname is VI context
+// Use this everywhere — avoids false positive on /video etc.
+const isViPath = (p) => p === '/vi' || p.startsWith('/vi/');
+
+// Helper: strip /vi prefix from path
+const stripViPrefix = (p) =>
+  p.startsWith('/vi/') ? p.slice(3)
+  : p === '/vi' ? '/'
+  : p;
+
+// Helper: add lang prefix based on currentLang
+function withLangPrefix(path) {
+  const base = stripViPrefix(path); // normalize first
+  return currentLang === 'vi' ? '/vi' + base : base;
+}
+
+// Mutator: only way to change currentLang
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  localStorage.setItem('seeaifirst-lang', lang);
+}
+
+// Detect lang on init — URL wins, localStorage is display-only
+function detectInitialLang() {
+  if (isViPath(location.pathname)) return 'vi';
+  return 'en';
+}
+
+function updateLangToggleLabel() {
+  const btn = document.getElementById('lang-toggle');
+  if (btn) btn.textContent = currentLang === 'vi' ? 'EN' : 'VI';
+}
+
+const slugToCardMap = new Map();
+
+function buildSlugMap(data) {
+  slugToCardMap.clear();
+  for (const section of data.sections) {
+    for (const card of section.cards) {
+      const slug = getCardSlug(card);
+      if (slugToCardMap.has(slug)) console.warn('Duplicate slug:', slug);
+      slugToCardMap.set(slug, { card, section });
+    }
+  }
+}
+
+function findCardBySlug(rawSlug) {
+  if (!rawSlug) return null;
+  const cleaned = String(rawSlug).replace(/^#/, '');
+  const decoded = safeDecode(cleaned).toLowerCase().trim();
+  const canonical = SLUG_ALIAS_MAP[decoded] || decoded;
+  return slugToCardMap.get(canonical) || null;
+}
+
+// ═══ Dataset Loader (fix/lang-dataset-switch) ═══
+
+async function ensureDataset(lang) {
+  const cached = lang === 'vi' ? viDataCache : enDataCache;
+  if (cached) return cached;
+  const url = lang === 'vi' ? '/data.vi.json' : '/data.json';
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('fetch-fail');
+  const dataset = await res.json();
+  if (lang === 'vi') viDataCache = dataset; else enDataCache = dataset;
+  return dataset;
+}
+
+function applyDataset(lang, dataset) {
+  data = dataset;
+  buildSlugMap(data);
+  // Re-render sidebar + stats
+  renderTree();
+  const total = data.sections.reduce((a, s) => a + s.cards.length, 0);
+  document.getElementById('total-tools').textContent = total + ' tools';
+  // Re-resolve activeSection from new dataset (stale object reference)
+  if (activeSection) {
+    activeSection = data.sections.find(s => s.id === activeSection.id) || null;
+  }
+  // Re-resolve selected from new slugToCardMap (stale object reference)
+  if (selected) {
+    const slug = getCardSlug(selected.card);
+    const fresh = slugToCardMap.get(slug);
+    if (fresh) {
+      selected = fresh;
+      activeSection = fresh.section;
+    } else {
+      selected = null;
+    }
+  }
+}
+
+function normalizeHash() {
+  const raw = location.hash.slice(1);
+  if (!raw) return '';
+  const decoded = safeDecode(raw).toLowerCase().trim();
+
+  // Compare hashes handled separately — don't normalize here
+  if (decoded.startsWith('compare=')) return decoded;
+
+  const canonical = SLUG_ALIAS_MAP[decoded] || decoded;
+
+  // If hash changed after canonicalization, update URL silently
+  if (canonical !== decoded) {
+    history.replaceState(history.state, '', '#' + canonical);
+  }
+
+  return canonical;
+}
+
+function navigateToTool(card) {
+  const slug = getCardSlug(card);
+  AppRouter.navigate(withLangPrefix('/tool/' + slug), { state: { fromApp: true } });
+}
+
+function navigateToCompare(presetSlug) {
+  AppRouter.navigate(withLangPrefix('/compare/' + presetSlug), { state: { fromApp: true } });
+}
+
+function navigateToSection(sectionId) {
+  const canonicalPath = '/section/' + sectionId;
+  if (location.pathname === canonicalPath
+      || location.pathname === '/vi' + canonicalPath) return;
+  AppRouter.navigate(withLangPrefix(canonicalPath), { state: { fromApp: true } });
+}
+
+function getHomeUrl() {
+  return currentLang === 'vi' ? '/vi/' : '/';
+}
+
+function navigateToHome() {
+  const homeUrl = getHomeUrl();
+  if (location.pathname === homeUrl) return;
+  AppRouter.navigate(homeUrl, { state: { fromApp: true } });
+}
+
+// deprecated: use navigateToTool()
+function updateHash(card) {
+  navigateToTool(card);
+}
+
+// ═══ ROUTER CORE (v7.0 PR2) ═══
+
+const AppRouter = (() => {
+  const routes = []; // {pattern: RegExp, handler: Function, name: string}
+
+  function register(name, pattern, handler) {
+    routes.push({ name, pattern, handler });
+  }
+
+  function resolve(pathname) {
+    for (const route of routes) {
+      const match = pathname.match(route.pattern);
+      if (match) return { route, params: match.groups || {} };
+    }
+    return null;
+  }
+
+  function navigate(path, { replace = false, state = null } = {}) {
+    if (replace) {
+      history.replaceState(state, '', path);
+    } else {
+      history.pushState(state, '', path);
+    }
+    return handleRoute();
+  }
+
+  async function handleRoute() {
+    // fix/lang-dataset-switch: ensure correct dataset before rendering
+    try {
+      const desiredLang = isViPath(location.pathname) ? 'vi' : 'en';
+      if (desiredLang !== currentLang) {
+        setLang(desiredLang);
+        updateLangToggleLabel();
+      }
+      // Sync path: cache warm → no await. Cold path: fetch + apply.
+      const cached = desiredLang === 'vi' ? viDataCache : enDataCache;
+      if (cached && data !== cached) {
+        applyDataset(desiredLang, cached);
+      } else if (!cached) {
+        const dataset = await ensureDataset(desiredLang);
+        applyDataset(desiredLang, dataset);
+      }
+    } catch (e) {
+      // fail-soft: continue with current dataset, do not crash
+    }
+
+    // PR7: strip /vi prefix before resolving (Hard Rule 1)
+    const strippedPath = isViPath(location.pathname)
+      ? stripViPrefix(location.pathname)
+      : location.pathname;
+    const result = resolve(strippedPath);
+    if (result) {
+      result.route.handler(result.params);
+    } else {
+      // route mismatch → render home (ship-safe invariant)
+      if (isCompareOpen()) {
+        document.getElementById('compare-overlay').style.display = 'none';
+        document.body.style.overflow = '';
+        window._pickerSelection = null;
+        window._pickerPreset = null;
+      }
+      const homeUrl = getHomeUrl();
+      history.replaceState(history.state, '', homeUrl);
+      selected = null;
+      activeSection = null;
+      renderRightPanel();
+      updateTreeActiveStates();
+    }
+    // PR8: update canonical, hreflang, JSON-LD, <html lang> after route resolves
+    updateHeadTags();
+  }
+
+  function init() {
+    window.addEventListener('popstate', () => handleRoute());
+    handleRoute();
+  }
+
+  function hasMatchingRoute(pathname) {
+    for (const route of routes) {
+      if (pathname.match(route.pattern)) return true;
+    }
+    return false;
+  }
+
+  return { register, resolve, navigate, handleRoute, init, hasMatchingRoute };
+})();
+
+// ═══ Route: Tool Card (v7.0 PR4a) ═══
+
+function handleToolRoute(params) {
+  const slug = params.slug;
+  const canonical = SLUG_ALIAS_MAP[slug] || slug;
+
+  // Alias → replaceState to canonical (idempotent, preserve state)
+  if (canonical !== slug) {
+    history.replaceState(history.state, '', withLangPrefix('/tool/' + canonical));
+  }
+
+  const result = findCardBySlug(canonical);
+
+  if (!result) {
+    // Unknown slug → fallback home (Hard Rule 3)
+    const homeUrl = getHomeUrl();
+    history.replaceState(history.state, '', homeUrl);
+    selected = null;
+    renderRightPanel();
+    updateTreeActiveStates();
+    return;
+  }
+
+  // Open card — reuse existing rendering flow
+  selected = result;
+  activeSection = result.section;
+  renderRightPanel();
+  updateTreeActiveStates();
+}
+
+function closeCardWithRouting() {
+  const isToolRoute = location.pathname.startsWith('/tool/')
+      || location.pathname.startsWith('/vi/tool/');
+
+  if (!isToolRoute) {
+    // Not on tool route → legacy close behavior
+    selected = null;
+    history.replaceState(history.state, '', location.pathname);
+    renderRightPanel();
+    updateTreeActiveStates();
+    return;
+  }
+
+  // Tool route close
+  if (history.state && history.state.fromApp) {
+    // In-app navigation → go back (fromApp set by PR4b)
+    history.back();
+  } else {
+    // Direct entry → replace to home
+    selected = null;
+    const homeUrl = getHomeUrl();
+    history.replaceState(history.state, '', homeUrl);
+    renderRightPanel();
+    updateTreeActiveStates();
+  }
+}
+
+AppRouter.register('tool', /^\/tool\/(?<slug>[^/]+)$/, handleToolRoute);
+
+// ═══ Route: Compare (v7.0 PR5) ═══
+
+function handleCompareRoute(params) {
+  const presetSlug = params.presetSlug;
+  const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === presetSlug);
+
+  if (!preset) {
+    const homeUrl = getHomeUrl();
+    history.replaceState(history.state, '', homeUrl);
+    selected = null;
+    renderRightPanel();
+    updateTreeActiveStates();
+    return;
+  }
+
+  // Parse pick from query params
+  const url = new URL(location.href);
+  const pickParam = url.searchParams.get('pick');
+  const pickSlugs = pickParam ? pickParam.split(',').filter(Boolean) : null;
+
+  openCompare(preset, pickSlugs);
+}
+
+AppRouter.register('compare', /^\/compare\/(?<presetSlug>[^/]+)$/, handleCompareRoute);
+
+// ═══ Route: Section (v7.0 PR6) ═══
+
+function handleSectionRoute(params) {
+  const sectionSlug = params.sectionSlug;
+  const section = data.sections.find(s => s.id === sectionSlug);
+
+  // Close overlays (UI-only compare close, lines 1232-1238 pattern)
+  if (isCompareOpen()) {
+    document.getElementById('compare-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+    window._pickerSelection = null;
+    window._pickerPreset = null;
+    if (window._compareReturnFocus) {
+      window._compareReturnFocus.focus();
+      window._compareReturnFocus = null;
+    }
+  }
+  closeSearch();
+
+  if (!section) {
+    selected = null;
+    activeSection = null;
+    const homeUrl = getHomeUrl();
+    history.replaceState(history.state, '', homeUrl);
+    renderRightPanel();
+    updateTreeActiveStates();
+    return;
+  }
+
+  selected = null;
+  activeSection = section;
+  renderRightPanel();
+  updateTreeActiveStates();
+  const rp = document.getElementById('right-panel');
+  if (rp) rp.scrollTop = 0; else window.scrollTo(0, 0);
+}
+
+AppRouter.register('section', /^\/section\/(?<sectionSlug>[^\/]+)\/?$/, handleSectionRoute);
+
+// ═══ Hash Normalize (v7.0 PR3) ═══
+function normalizeHashToPath() {
+  const rawHash = location.hash.slice(1);
+  if (!rawHash) return false;
+
+  const hash = safeDecode(rawHash);
+  let targetPath = null;
+
+  if (hash.startsWith('compare=')) {
+    const rest = hash.slice('compare='.length);
+    const presetSlug = rest.split('&')[0];
+    const pickMatch = rest.match(/[&?]pick=([^&]*)/);
+    const params = pickMatch ? '?pick=' + pickMatch[1] : '';
+    targetPath = '/compare/' + presetSlug + params;
+  } else if (hash.startsWith('section=')) {
+    const sectionSlug = hash.slice('section='.length);
+    targetPath = '/section/' + sectionSlug;
+  } else {
+    targetPath = '/tool/' + hash;
+  }
+
+  if (!targetPath) return false;
+
+  const url = new URL(targetPath, location.origin);
+  if (AppRouter.hasMatchingRoute(url.pathname)) {
+    history.replaceState(history.state, '', targetPath);
+    return true;
+  }
+
+  return false;
+}
+
+// ═══ Compare Mode ═══
+function isCompareOpen() {
+  return document.getElementById('compare-overlay').style.display !== 'none';
+}
+
+function openCompare(preset, pickSlugs) {
+  window._compareReturnFocus = document.activeElement;
+  document.querySelector('.compare-title').textContent = preset.title;
+  initPickerSelection(preset, pickSlugs);
+  renderPickerBar(preset);
+  renderCompareBody(preset);
+  const overlay = document.getElementById('compare-overlay');
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  trapCompareFocus(overlay);
+}
+
+function closeCompare() {
+  document.getElementById('compare-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+  window._pickerSelection = null;
+  window._pickerPreset = null;
+  if (window._compareReturnFocus) {
+    window._compareReturnFocus.focus();
+    window._compareReturnFocus = null;
+  }
+
+  const isCompareRoute = location.pathname.startsWith('/compare/')
+      || location.pathname.startsWith('/vi/compare/');
+  if (!isCompareRoute) return;
+
+  if (history.state && history.state.fromApp) {
+    history.back();
+  } else {
+    const homeUrl = getHomeUrl();
+    history.replaceState(history.state, '', homeUrl);
+    selected = null;
+    renderRightPanel();
+    updateTreeActiveStates();
+  }
+}
+
+function trapCompareFocus(overlay) {
+  const closeBtn = overlay.querySelector('.compare-close');
+  if (closeBtn) closeBtn.focus();
+  overlay._trapHandler = (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = overlay.querySelectorAll('button, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  };
+  overlay.addEventListener('keydown', overlay._trapHandler);
+}
+
+function showCompareSearchHint() {
+  const toast = document.createElement('div');
+  toast.className = 'compare-toast';
+  toast.textContent = t('compareSearchHint');
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 2500);
+}
+
+// ═══ Tool Picker ═══
+window._pickerSelection = null;
+window._pickerPreset = null;
+
+function parseCompareHash(hash) {
+  // hash = "#compare=presetId" or "#compare=presetId&pick=slug1,slug2"
+  const body = hash.replace(/^#/, '');
+  const parts = body.split('&');
+  let presetId = null, pickSlugs = null;
+  for (const part of parts) {
+    if (part.startsWith('compare=')) presetId = part.replace('compare=', '');
+    else if (part.startsWith('pick=')) {
+      const val = part.replace('pick=', '');
+      if (val) pickSlugs = val.split(',').filter(Boolean);
+    }
+  }
+  return { presetId, pickSlugs };
+}
+
+function buildCompareUrl(presetSlug, selectedSet, preset) {
+  const total = preset.tools.length;
+  if (selectedSet.size === total || selectedSet.size > 6) {
+    return withLangPrefix('/compare/' + presetSlug);
+  }
+  // Focused Mode: slugs in preset order
+  const ordered = preset.tools.filter(t => selectedSet.has(t.cardId)).map(t => t.cardId);
+  return withLangPrefix('/compare/' + presetSlug + '?pick=' + ordered.join(','));
+}
+
+function initPickerSelection(preset, pickSlugs) {
+  const allSlugs = preset.tools.map(t => t.cardId);
+  if (pickSlugs && pickSlugs.length >= 2) {
+    const valid = pickSlugs.filter(s => allSlugs.includes(s));
+    if (valid.length >= 2 && valid.length <= 6) {
+      window._pickerSelection = new Set(valid);
+      return;
+    }
+  }
+  window._pickerSelection = new Set(allSlugs);
+}
+
+function renderPickerBar(preset) {
+  const bar = document.querySelector('.picker-bar');
+  bar.innerHTML = '';
+  window._pickerPreset = preset;
+  const total = preset.tools.length;
+
+  preset.tools.forEach(tool => {
+    const chip = document.createElement('button');
+    chip.className = 'picker-chip';
+    chip.dataset.slug = tool.cardId;
+    chip.textContent = findCardName(tool.cardId) || tool.cardId;
+    chip.addEventListener('click', () => {
+      const sel = window._pickerSelection;
+      if (sel.has(tool.cardId)) sel.delete(tool.cardId);
+      else sel.add(tool.cardId);
+      updatePickerState(preset);
+    });
+    bar.appendChild(chip);
+  });
+
+  const count = document.createElement('span');
+  count.className = 'picker-count';
+  bar.appendChild(count);
+
+  const reset = document.createElement('button');
+  reset.className = 'picker-reset';
+  reset.textContent = 'Reset';
+  reset.addEventListener('click', () => {
+    window._pickerSelection = new Set(preset.tools.map(t => t.cardId));
+    updatePickerState(preset);
+  });
+  bar.appendChild(reset);
+
+  updatePickerState(preset);
+}
+
+function updatePickerState(preset) {
+  const sel = window._pickerSelection;
+  const total = preset.tools.length;
+  const selectedCount = sel.size;
+  const isFocused = selectedCount < total && selectedCount <= 6;
+
+  // Update chips
+  document.querySelectorAll('.picker-bar .picker-chip').forEach(chip => {
+    const slug = chip.dataset.slug;
+    const isSelected = sel.has(slug);
+    chip.classList.toggle('selected', isSelected);
+    // Disable logic
+    let shouldDisable = false;
+    if (isSelected && selectedCount <= 2) shouldDisable = true; // min 2
+    if (!isSelected && isFocused && selectedCount >= 6) shouldDisable = true; // max 6 in focused
+    chip.disabled = shouldDisable;
+  });
+
+  // Update count
+  const countEl = document.querySelector('.picker-bar .picker-count');
+  if (countEl) countEl.textContent = selectedCount + '/' + total + ' tools';
+
+  // Update reset button
+  const resetEl = document.querySelector('.picker-bar .picker-reset');
+  if (resetEl) resetEl.classList.toggle('hidden', selectedCount === total);
+
+  // Update URL
+  const url = buildCompareUrl(preset.id, sel, preset);
+  history.replaceState(history.state, '', url);
+
+  // Re-render body
+  renderCompareBody(preset);
+}
+
+function attachCompareToolClick(el, cardId) {
+  const entry = slugToCardMap.get(cardId);
+  if (!entry) return;
+  el.style.cursor = 'pointer';
+  el.tabIndex = 0;
+  el.setAttribute('role', 'link');
+  el.addEventListener('click', () => {
+    document.getElementById('compare-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+    navigateToTool(entry.card);
+  });
+  el.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      document.getElementById('compare-overlay').style.display = 'none';
+      document.body.style.overflow = '';
+      navigateToTool(entry.card);
+    }
+  });
+}
+
+function renderCompareBody(preset) {
+  const body = document.querySelector('.compare-body');
+  const panel = document.querySelector('.compare-panel');
+  body.innerHTML = '';
+  const filtered = Object.assign({}, preset, {
+    tools: preset.tools.filter(t => window._pickerSelection.has(t.cardId))
+  });
+  if (filtered.as_of) {
+    const asOf = document.createElement('p');
+    asOf.style.cssText = 'font-size:0.85rem;color:var(--text-muted);text-align:center;margin:0 0 12px';
+    asOf.textContent = '\u{1F4C5} Data as of: ' + filtered.as_of;
+    body.appendChild(asOf);
+  }
+  const isFlip = filtered.layout === 'flip';
+  panel.classList.toggle('compare-panel-flip', isFlip);
+  if (isFlip) {
+    body.appendChild(renderFlipTable(filtered));
+    body.appendChild(renderFlipCards(filtered));
+  } else {
+    body.appendChild(renderCompareTable(filtered));
+    body.appendChild(renderCompareCards(filtered));
+  }
+}
+
+function findCardName(cardId) {
+  const entry = slugToCardMap.get(cardId);
+  return entry ? entry.card.name : null;
+}
+
+function renderCompareTable(preset) {
+  const table = document.createElement('table');
+  table.className = 'compare-table';
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  headerRow.innerHTML = '<th class="compare-criteria-header"></th>';
+  preset.tools.forEach(tool => {
+    const th = document.createElement('th');
+    th.className = 'compare-tool-header';
+    th.textContent = findCardName(tool.cardId) || tool.cardId;
+    attachCompareToolClick(th, tool.cardId);
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  preset.criteria.forEach(criterion => {
+    const row = document.createElement('tr');
+    if (preset.highlight.includes(criterion)) row.classList.add('compare-highlight');
+    const labelCell = document.createElement('td');
+    labelCell.className = 'compare-criteria-label';
+    labelCell.textContent = criterion;
+    row.appendChild(labelCell);
+    preset.tools.forEach(tool => {
+      const td = document.createElement('td');
+      td.className = 'compare-value';
+      const value = tool.values[criterion];
+      if (Array.isArray(value)) {
+        td.innerHTML = value.map(v => `<span class="compare-chip">${escapeHtml(v)}</span>`).join('');
+      } else {
+        td.textContent = value || '\u2014';
+      }
+      row.appendChild(td);
+    });
+    tbody.appendChild(row);
+  });
+  table.appendChild(tbody);
+  return table;
+}
+
+function renderCompareCards(preset) {
+  const frag = document.createDocumentFragment();
+  preset.tools.forEach(tool => {
+    const card = document.createElement('div');
+    card.className = 'compare-card';
+    const header = document.createElement('h3');
+    header.className = 'compare-card-name';
+    header.textContent = findCardName(tool.cardId) || tool.cardId;
+    attachCompareToolClick(header, tool.cardId);
+    card.appendChild(header);
+    preset.criteria.forEach(criterion => {
+      const row = document.createElement('div');
+      row.className = 'compare-card-row';
+      if (preset.highlight.includes(criterion)) row.classList.add('compare-highlight');
+      const label = document.createElement('span');
+      label.className = 'compare-card-label';
+      label.textContent = criterion + ': ';
+      row.appendChild(label);
+      const value = tool.values[criterion];
+      if (Array.isArray(value)) {
+        value.forEach(v => {
+          const chip = document.createElement('span');
+          chip.className = 'compare-chip';
+          chip.textContent = v;
+          row.appendChild(chip);
+        });
+      } else {
+        const val = document.createElement('span');
+        val.className = 'compare-card-value';
+        val.textContent = value || '\u2014';
+        row.appendChild(val);
+      }
+      card.appendChild(row);
+    });
+    frag.appendChild(card);
+  });
+  return frag;
+}
+
+function getScaleClass(value) {
+  if (!value || typeof value !== 'string') return '';
+  if (/^(Agentic|Strong)\b/.test(value)) return 'compare-scale-strong';
+  if (/^(Semi-agent|Good)\b/.test(value)) return 'compare-scale-good';
+  if (/^(Assist|Basic)\b/.test(value)) return 'compare-scale-basic';
+  return '';
+}
+
+function renderFlipTable(preset) {
+  const table = document.createElement('table');
+  table.className = 'compare-flip-table';
+  const thead = document.createElement('thead');
+  const headerRow = document.createElement('tr');
+  const cornerTh = document.createElement('th');
+  cornerTh.className = 'compare-flip-tool-name';
+  cornerTh.textContent = 'Tool';
+  headerRow.appendChild(cornerTh);
+  preset.criteria.forEach(criterion => {
+    const th = document.createElement('th');
+    if (preset.highlight.includes(criterion)) th.classList.add('compare-flip-col-hi');
+    th.textContent = criterion;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  preset.tools.forEach(tool => {
+    const row = document.createElement('tr');
+    const nameCell = document.createElement('td');
+    nameCell.className = 'compare-flip-tool-name';
+    nameCell.textContent = findCardName(tool.cardId) || tool.cardId;
+    attachCompareToolClick(nameCell, tool.cardId);
+    row.appendChild(nameCell);
+    preset.criteria.forEach(criterion => {
+      const td = document.createElement('td');
+      td.className = 'compare-value';
+      const value = tool.values[criterion];
+      const isHi = preset.highlight.includes(criterion);
+      if (isHi) {
+        td.classList.add('compare-flip-col-hi');
+        const sc = getScaleClass(value);
+        if (sc) td.classList.add(sc);
+      }
+      if (Array.isArray(value)) {
+        td.innerHTML = value.map(v => `<span class="compare-chip">${escapeHtml(v)}</span>`).join('');
+      } else {
+        td.textContent = value || '\u2014';
+      }
+      row.appendChild(td);
+    });
+    tbody.appendChild(row);
+  });
+  table.appendChild(tbody);
+  return table;
+}
+
+function renderFlipCards(preset) {
+  const frag = document.createDocumentFragment();
+  preset.tools.forEach(tool => {
+    const card = document.createElement('div');
+    card.className = 'compare-card';
+    const header = document.createElement('h3');
+    header.className = 'compare-card-name';
+    header.textContent = findCardName(tool.cardId) || tool.cardId;
+    attachCompareToolClick(header, tool.cardId);
+    card.appendChild(header);
+    preset.criteria.forEach(criterion => {
+      const row = document.createElement('div');
+      row.className = 'compare-card-row';
+      const isHi = preset.highlight.includes(criterion);
+      if (isHi) row.classList.add('compare-highlight');
+      const label = document.createElement('span');
+      label.className = 'compare-card-label';
+      label.textContent = criterion + ': ';
+      row.appendChild(label);
+      const value = tool.values[criterion];
+      if (Array.isArray(value)) {
+        value.forEach(v => {
+          const chip = document.createElement('span');
+          chip.className = 'compare-chip';
+          chip.textContent = v;
+          row.appendChild(chip);
+        });
+      } else {
+        const val = document.createElement('span');
+        val.className = 'compare-card-value';
+        val.textContent = value || '\u2014';
+        row.appendChild(val);
+      }
+      if (isHi) { const sc = getScaleClass(value); if (sc) row.classList.add(sc); }
+      card.appendChild(row);
+    });
+    frag.appendChild(card);
+  });
+  return frag;
+}
+
+function renderCompare(preset) {
+  const body = document.querySelector('.compare-body');
+  const panel = document.querySelector('.compare-panel');
+  body.innerHTML = '';
+  if (preset.as_of) {
+    const asOf = document.createElement('p');
+    asOf.style.cssText = 'font-size:0.85rem;color:var(--text-muted);text-align:center;margin:0 0 12px';
+    asOf.textContent = '\u{1F4C5} Data as of: ' + preset.as_of;
+    body.appendChild(asOf);
+  }
+  const isFlip = preset.layout === 'flip';
+  panel.classList.toggle('compare-panel-flip', isFlip);
+  if (isFlip) {
+    body.appendChild(renderFlipTable(preset));
+    body.appendChild(renderFlipCards(preset));
+  } else {
+    body.appendChild(renderCompareTable(preset));
+    body.appendChild(renderCompareCards(preset));
+  }
+}
+
+// ═══ SVG Icon Builders ═══
+function folderIcon(color, open) {
+  const fill = open ? color + '30' : 'none';
+  return `<svg class="tree-folder-icon" width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M1 4V12C1 13.1 1.9 14 3 14H13C14.1 14 15 13.1 15 12V6C15 4.9 14.1 4 13 4H8L6.5 2H3C1.9 2 1 2.9 1 4Z" stroke="${color}" stroke-width="1.2" fill="${fill}"/></svg>`;
+}
+function fileIcon(color) {
+  return `<svg class="tree-file-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="3" y="1" width="10" height="14" rx="2" stroke="${color}" stroke-width="1.3"/><path d="M6 5H10M6 8H10M6 11H8" stroke="${color}" stroke-width="1.3" stroke-linecap="round"/></svg>`;
+}
+
+// ═══ Tree Sidebar ═══
+function sectionHasPreset(sectionId) {
+  return data.comparison_presets && data.comparison_presets.some(p => p.id === sectionId);
+}
+
+function buildTreeSection(section) {
+  const color = getHex(section.color);
+  let h = '';
+  h += `<button class="tree-folder" data-section-id="${escapeHtml(section.id)}">`;
+  h += `<span class="tree-chevron">▶</span>`;
+  h += folderIcon(color, false);
+  h += `<span class="tree-folder-title">${escapeHtml(section.title)}</span>`;
+  if (sectionHasPreset(section.id)) {
+    h += `<span class="tree-compare-icon" data-preset-id="${escapeHtml(section.id)}" title="${t('compare')}" role="button" aria-label="${t('compareSection', { sectionTitle: escapeHtml(section.title) })}">⚖️</span>`;
+  }
+  h += `<span class="tree-folder-count" style="background:${color}15;color:${color}">${section.cards.length}</span>`;
+  h += `</button>`;
+  h += `<div class="tree-children collapsed">`;
+  section.cards.forEach(card => {
+    h += `<button class="tree-file" data-card-name="${escapeHtml(card.name)}" data-section-id="${escapeHtml(section.id)}">`;
+    h += fileIcon('var(--text-muted)');
+    h += `<span class="tree-file-name">${escapeHtml(card.name)}</span>`;
+    if (card.hot) h += `<span class="badge-hot">HOT</span>`;
+    if (isNew(card.added_date)) h += `<span class="badge-new">NEW</span>`;
+    h += `</button>`;
+  });
+  h += `</div>`;
+  return h;
+}
+
+function renderTree() {
+  const container = document.getElementById('tree-container');
+  container.innerHTML = '';
+  data.sections.forEach(section => {
+    const div = document.createElement('div');
+    div.className = 'tree-section';
+    div.innerHTML = buildTreeSection(section);
+    container.appendChild(div);
+  });
+  attachTreeListeners();
+}
+
+function attachTreeListeners() {
+  // Folder click
+  document.querySelectorAll('.tree-folder').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sectionId = btn.dataset.sectionId;
+      const section = data.sections.find(s => s.id === sectionId);
+      if (!section) return;
+      const children = btn.nextElementSibling;
+      const isCollapsed = children.classList.contains('collapsed');
+
+      if (isCollapsed) {
+        // Expand
+        children.classList.remove('collapsed');
+        children.style.maxHeight = (section.cards.length * 36) + 'px';
+        btn.querySelector('.tree-chevron').textContent = '▼';
+        btn.querySelector('.tree-folder-icon').outerHTML = folderIcon(getHex(section.color), true);
+      } else {
+        // Collapse
+        children.classList.add('collapsed');
+        children.style.maxHeight = '0';
+        btn.querySelector('.tree-chevron').textContent = '▶';
+        btn.querySelector('.tree-folder-icon').outerHTML = folderIcon(getHex(section.color), false);
+      }
+
+      // Navigate to section route (v7.0 PR6)
+      navigateToSection(sectionId);
+      collapseSidebarMobile();
+      updateTreeActiveStates();
+    });
+  });
+
+  // File click
+  document.querySelectorAll('.tree-file').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cardName = btn.dataset.cardName;
+      const sectionId = btn.dataset.sectionId;
+      const section = data.sections.find(s => s.id === sectionId);
+      if (!section) return;
+      const card = section.cards.find(c => c.name === cardName);
+      if (!card) return;
+
+      selected = { card, section };
+      activeSection = section;
+      navigateToTool(card);
+
+      // Auto-expand parent folder if collapsed
+      const children = btn.closest('.tree-children');
+      if (children && children.classList.contains('collapsed')) {
+        const folder = children.previousElementSibling;
+        children.classList.remove('collapsed');
+        children.style.maxHeight = (section.cards.length * 36) + 'px';
+        if (folder) {
+          folder.querySelector('.tree-chevron').textContent = '▼';
+          folder.querySelector('.tree-folder-icon').outerHTML = folderIcon(getHex(section.color), true);
+        }
+      }
+
+      collapseSidebarMobile();
+      renderRightPanel();
+      updateTreeActiveStates();
+    });
+  });
+
+  // Sidebar compare icon click
+  document.querySelectorAll('.tree-compare-icon').forEach(icon => {
+    icon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigateToCompare(icon.dataset.presetId);
+    });
+  });
+}
+
+function updateTreeActiveStates() {
+  // Clear all active states
+  document.querySelectorAll('.tree-folder.active').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tree-file.active').forEach(el => el.classList.remove('active'));
+
+  if (selected) {
+    // Highlight the selected file
+    const file = document.querySelector(`.tree-file[data-card-name="${CSS.escape(selected.card.name)}"][data-section-id="${CSS.escape(selected.section.id)}"]`);
+    if (file) file.classList.add('active');
+  } else if (activeSection) {
+    // Highlight the active folder
+    const folder = document.querySelector(`.tree-folder[data-section-id="${CSS.escape(activeSection.id)}"]`);
+    if (folder) folder.classList.add('active');
+  }
+}
+
+function renderRightPanel() {
+  document.getElementById('right-panel').scrollTop = 0;
+  if (selected) {
+    renderDetail();
+  } else if (activeSection) {
+    renderNewspaper();
+  } else {
+    renderWelcome();
+  }
+  updateMobileBack();
+}
+
+function renderWelcome() {
+  const panel = document.getElementById('right-panel');
+  const totalCards = data.sections.reduce((a, s) => a + s.cards.length, 0);
+  const sectionIcons = { protocols:'🔌', frameworks:'🤖', platforms:'🏗️', memory:'🧠', skills:'🛠️', orchestration:'⚙️', 'coding-agents':'💻', trends:'🌍' };
+  const hotModule = renderHotRightNow();
+  panel.innerHTML = `
+    <div class="welcome-panel" style="display:flex;align-items:center;flex-direction:column;gap:20px;padding:60px 40px 40px;">
+      <div style="font-size:52px;">🧠</div>
+      <h2 style="font-size:22px;font-weight:700;margin:0;color:var(--text);letter-spacing:-0.02em;">See AI First</h2>
+      <p style="font-size:14px;color:var(--text-muted);text-align:center;line-height:1.6;max-width:360px;">
+        ${t('welcomeSubtitle')}
+        <br><span style="font-size:13px;">${t('statsFooter', { totalCards: totalCards, totalSections: data.sections.length })}</span>
+      </p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
+        ${data.sections.map(s => `<span style="font-size:11px;padding:4px 12px;border-radius:99px;background:var(--hover);border:1px solid var(--border);color:var(--text-secondary);font-weight:500;">${sectionIcons[s.id] || ''} ${s.cards.length}</span>`).join('')}
+      </div>
+      ${data.comparison_presets && data.comparison_presets.length ? `
+      <div class="welcome-compare">
+        ${data.comparison_presets.map(p => `<button class="welcome-compare-btn" data-preset-id="${escapeHtml(p.id)}">⚖️ ${escapeHtml(p.title)}</button>`).join('')}
+      </div>` : ''}
+      <p style="font-size:12px;color:var(--text-dim);margin-top:8px;">
+        ${t('welcomeHint')}
+      </p>
+    </div>
+    ${hotModule}
+  `;
+  panel.querySelectorAll('.welcome-compare-btn').forEach(btn => {
+    btn.addEventListener('click', () => navigateToCompare(btn.dataset.presetId));
+  });
+  if (hotModule) attachHotListeners();
+}
+
+function buildFeaturedCard(card, section) {
+  const gradient = iconGradients[section.id] || 'var(--hover)';
+  const sc = getHex(section.color);
+  let h = `<button class="card-featured" data-card-name="${escapeHtml(card.name)}" style="--sc:${sc}40">`;
+  h += `<div class="card-icon-block" style="background:${gradient}">${card.icon || ''}</div>`;
+  h += `<div class="card-content">`;
+  h += `<div class="card-title-row"><h3 class="card-title">${escapeHtml(card.name)}</h3>`;
+  if (card.hot) h += `<span class="badge-hot" style="font-size:10px;padding:2px 8px;background:#ef4444;color:#fff;">HOT</span>`;
+  if (isNew(card.added_date)) h += `<span class="badge-new" style="font-size:10px;padding:2px 8px;background:#10b981;color:#fff;">NEW</span>`;
+  h += `</div>`;
+  if (card.desc) h += `<p class="card-desc">${card.desc}</p>`;
+  if (card.detail) h += `<p class="card-detail">${card.detail}</p>`;
+  if (card.tags && card.tags.length) {
+    h += `<div class="card-tags">${card.tags.map(t => `<span class="card-tag">${escapeHtml(t)}</span>`).join('')}</div>`;
+  }
+  h += `</div></button>`;
+  return h;
+}
+
+function buildRegularCard(card, section) {
+  const gradient = iconGradients[section.id] || 'var(--hover)';
+  const sc = getHex(section.color);
+  let h = `<button class="card-regular" data-card-name="${escapeHtml(card.name)}" style="--sc:${sc}30">`;
+  h += `<div class="card-icon-sm" style="background:${gradient}">${card.icon || ''}</div>`;
+  h += `<div class="card-content">`;
+  h += `<div class="card-title-row"><h4 class="card-title">${escapeHtml(card.name)}</h4>`;
+  if (card.hot) h += `<span class="badge-hot" style="font-size:10px;padding:2px 8px;background:#ef4444;color:#fff;">HOT</span>`;
+  if (isNew(card.added_date)) h += `<span class="badge-new" style="font-size:10px;padding:2px 8px;background:#10b981;color:#fff;">NEW</span>`;
+  h += `</div>`;
+  if (card.detail) h += `<p class="card-detail-clamp">${card.detail}</p>`;
+  h += `</div></button>`;
+  return h;
+}
+
+function attachNewspaperCardListeners(section) {
+  document.querySelectorAll('#right-panel .card-featured, #right-panel .card-regular').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cardName = btn.dataset.cardName;
+      const card = section.cards.find(c => c.name === cardName);
+      if (!card) return;
+      selected = { card, section };
+      navigateToTool(card);
+      renderRightPanel();
+      updateTreeActiveStates();
+    });
+  });
+  const compareBtn = document.querySelector('#right-panel .compare-btn');
+  if (compareBtn) {
+    compareBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigateToCompare(compareBtn.dataset.presetId);
+    });
+  }
+}
+
+// ═══ Hot Right Now Module ═══
+
+function validateHotConfig(config) {
+  try {
+    if (!config || !Array.isArray(config.items) || config.items.length !== 6) return null;
+    const slugs = new Set();
+    const resolved = [];
+    for (const item of config.items) {
+      if (!item.slug || typeof item.slug !== 'string') return null;
+      if (slugs.has(item.slug)) return null;
+      slugs.add(item.slug);
+      if (!item.reason || typeof item.reason.en !== 'string' || typeof item.reason.vi !== 'string') return null;
+      const result = findCardBySlug(item.slug);
+      if (!result) return null;
+      resolved.push({ item, card: result.card, section: result.section });
+    }
+    return resolved;
+  } catch (e) {
+    console.warn('Hot Right Now: validation failed', e);
+    return null;
+  }
+}
+
+function buildHotCard(item, card, section) {
+  const sc = getHex(section.color);
+  let h = `<button class="hot-card" data-slug="${escapeHtml(item.slug)}" style="--hot-sc:${sc}">`;
+  h += `<h4 class="hot-card-name">${escapeHtml(card.name)}</h4>`;
+  const reason = currentLang === 'vi' ? item.reason.vi : item.reason.en;
+  h += `<p class="hot-card-reason">${escapeHtml(reason)}</p>`;
+  h += `<span class="hot-card-section">${escapeHtml(section.badge || '')} ${escapeHtml(section.title)}</span>`;
+  h += `</button>`;
+  return h;
+}
+
+function renderHotRightNow() {
+  if (!hotRightNowConfig) return '';
+  const resolved = validateHotConfig(hotRightNowConfig);
+  if (!resolved) return '';
+  const firstRow = resolved.slice(0, 3);
+  const secondRow = resolved.slice(3, 6);
+  let html = `<div class="hot-module">`;
+  html += `<h3 class="hot-module-title">${t('hotRightNowTitle')}</h3>`;
+  html += `<div class="hot-grid">`;
+  firstRow.forEach(r => { html += buildHotCard(r.item, r.card, r.section); });
+  html += `</div>`;
+  html += `<div class="hot-grid hot-grid-more hidden" style="margin-top:12px;">`;
+  secondRow.forEach(r => { html += buildHotCard(r.item, r.card, r.section); });
+  html += `</div>`;
+  html += `<button class="hot-toggle-btn" data-expanded="false">${t('showMore')}</button>`;
+  html += `</div>`;
+  return html;
+}
+
+function attachHotListeners() {
+  document.querySelectorAll('#right-panel .hot-card').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const result = findCardBySlug(btn.dataset.slug);
+      if (!result) return;
+      selected = result;
+      navigateToTool(result.card);
+      renderRightPanel();
+      updateTreeActiveStates();
+    });
+  });
+  const toggleBtn = document.querySelector('#right-panel .hot-toggle-btn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const moreGrid = document.querySelector('#right-panel .hot-grid-more');
+      if (!moreGrid) return;
+      const isExpanded = toggleBtn.dataset.expanded === 'true';
+      if (isExpanded) {
+        moreGrid.classList.add('hidden');
+        toggleBtn.dataset.expanded = 'false';
+        toggleBtn.textContent = t('showMore');
+      } else {
+        moreGrid.classList.remove('hidden');
+        toggleBtn.dataset.expanded = 'true';
+        toggleBtn.textContent = t('showLess');
+      }
+    });
+  }
+}
+
+function renderNewspaper() {
+  const panel = document.getElementById('right-panel');
+  const section = activeSection;
+  const cards = section.cards;
+  const featured = cards[0];
+  const rest = cards.slice(1);
+  const color = getHex(section.color);
+
+  let html = `<div class="newspaper">`;
+  html += `<div class="newspaper-header">`;
+  html += `<div class="newspaper-header-top">`;
+  html += `<span class="section-badge">${escapeHtml(section.badge || '')}</span>`;
+  html += `<h2>${escapeHtml(section.title)}</h2>`;
+  html += `<span class="tool-count" style="background:${color}15;color:${color}">${cards.length} tools</span>`;
+  const preset = data.comparison_presets && data.comparison_presets.find(p => p.id === section.id);
+  if (preset) {
+    html += `<button class="compare-btn" data-preset-id="${escapeHtml(preset.id)}" title="${t('compareSectionTitle')}">${t('compareBtn')}</button>`;
+  }
+  html += `</div>`;
+  html += `<p class="newspaper-subtitle">${escapeHtml(section.subtitle || '')}</p>`;
+  html += `<div class="newspaper-accent" style="background:${color}"></div>`;
+  html += `</div>`;
+
+  html += buildFeaturedCard(featured, section);
+
+  if (rest.length > 0) {
+    const colClass = rest.length === 1 ? 'cols-1' : 'cols-2';
+    html += `<div class="newspaper-grid ${colClass}">`;
+    rest.forEach(card => { html += buildRegularCard(card, section); });
+    html += `</div>`;
+  }
+
+  html += `</div>`;
+  panel.innerHTML = html;
+  attachNewspaperCardListeners(section);
+}
+
+function renderDetail() {
+  const panel = document.getElementById('right-panel');
+  const card = selected.card;
+  const section = selected.section;
+  const color = getHex(section.color);
+
+  const arrowLeftSvg = '<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const chevronRightSvg = '<svg width="10" height="10" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const externalLinkSvg = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M6 3H3V13H13V10M9 3H13V7M13 3L7 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  let html = `<div class="detail-panel">`;
+
+  // Back button
+  html += `<button class="detail-back" id="detail-back-btn">${t('backBtn', { arrowLeftSvg: arrowLeftSvg })}</button>`;
+
+  // Breadcrumb
+  html += `<div class="detail-breadcrumb">`;
+  html += `<span>${escapeHtml(section.badge || '')}</span>`;
+  html += `<span>${escapeHtml(section.title)}</span>`;
+  html += chevronRightSvg;
+  html += `<span style="color:var(--text-secondary)">${escapeHtml(card.name)}</span>`;
+  html += `</div>`;
+
+  // Title + badges
+  html += `<div class="detail-title-row">`;
+  html += `<h1 class="detail-title">${escapeHtml(card.name)}</h1>`;
+  if (card.hot) html += `<span class="badge-hot" style="font-size:11px;padding:3px 10px;background:#ef4444;color:#fff;">HOT</span>`;
+  if (isNew(card.added_date)) html += `<span class="badge-new" style="font-size:11px;padding:3px 10px;background:#10b981;color:#fff;">NEW</span>`;
+  html += `</div>`;
+
+  // Description (allows HTML)
+  if (card.desc) html += `<p class="detail-desc">${card.desc}</p>`;
+
+  // Tags
+  if (card.tags && card.tags.length > 0) {
+    html += `<div class="detail-tags">`;
+    card.tags.forEach(tag => { html += `<span class="detail-tag">${escapeHtml(tag)}</span>`; });
+    html += `</div>`;
+  }
+
+  // Detail box (allows HTML)
+  if (card.detail) {
+    html += `<div class="detail-box">`;
+    html += `<div class="detail-box-label">${t('details')}</div>`;
+    html += `<p>${card.detail}</p>`;
+    html += `</div>`;
+  }
+
+  // Sources
+  if (card.sources && card.sources.length > 0) {
+    html += `<div class="detail-sources-label">Sources</div>`;
+    html += `<div class="detail-sources">`;
+    card.sources.forEach(s => {
+      const safeUrl = /^https?:\/\//i.test(s.url) ? s.url : '#';
+      html += `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer" class="detail-source-link" style="color:${color};--sc:${color}40">${externalLinkSvg} ${escapeHtml(s.title || 'Link')}</a>`;
+    });
+    html += `</div>`;
+  }
+
+  // Footer
+  html += `<div class="detail-footer"><span>Added: ${escapeHtml(card.added_date || 'N/A')}</span></div>`;
+
+  html += `</div>`;
+  panel.innerHTML = html;
+
+  // Back button listener
+  document.getElementById('detail-back-btn').addEventListener('click', () => {
+    closeCardWithRouting();
+  });
+}
+
+// ═══ Mobile Helpers ═══
+function collapseSidebarMobile() {
+  if (window.innerWidth < 768) {
+    sidebarCollapsed = true;
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.remove('mobile-open');
+    sidebar.classList.add('collapsed');
+  }
+}
+
+function updateMobileBack() {
+  const btn = document.getElementById('mobile-back');
+  if (!btn) return;
+  const isMobile = window.innerWidth < 768;
+  const hasContent = selected || activeSection;
+  btn.classList.toggle('hidden', !(isMobile && sidebarCollapsed && hasContent));
+  // Dynamic breadcrumb content
+  if (selected) {
+    const section = selected.section || activeSection;
+    const sectionTitle = section ? section.title : '';
+    btn.textContent = '\u2630 ' + sectionTitle + ' \u203A ' + selected.card.name;
+  } else if (activeSection) {
+    btn.textContent = '\u2630 ' + activeSection.title;
+  } else {
+    btn.textContent = '\u2630 Explorer';
+  }
+}
+
+// ═══ Event Handlers ═══
+function toggleSidebar() {
+  sidebarCollapsed = !sidebarCollapsed;
+  const sidebar = document.getElementById('sidebar');
+  if (window.innerWidth <= 768) {
+    sidebar.classList.toggle('mobile-open', !sidebarCollapsed);
+    sidebar.classList.toggle('collapsed', sidebarCollapsed);
+  } else {
+    sidebar.classList.toggle('collapsed', sidebarCollapsed);
+  }
+}
+
+function openSearch() {
+  document.getElementById('search-modal').classList.remove('hidden');
+  const input = document.getElementById('search-input');
+  input.value = '';
+  searchIndex = 0;
+  renderSearchResults('');
+  setTimeout(() => input.focus(), 50);
+}
+
+function closeSearch() {
+  document.getElementById('search-modal').classList.add('hidden');
+}
+
+function renderSearchResults(query) {
+  const container = document.getElementById('search-results');
+  const allCards = [];
+  data.sections.forEach(s => {
+    s.cards.forEach(c => allCards.push({ card: c, section: s }));
+  });
+
+  if (!query) {
+    container.innerHTML = `<div class="search-empty">${t('searchInputHint', { allCardsLength: allCards.length })}</div>`;
+    return;
+  }
+
+  const q = query.toLowerCase();
+  const filtered = allCards.filter(item =>
+    item.card.name.toLowerCase().includes(q) ||
+    (item.card.desc || '').toLowerCase().includes(q) ||
+    (item.card.detail || '').toLowerCase().includes(q)
+  ).slice(0, 10);
+
+  if (filtered.length === 0) {
+    container.innerHTML = `<div class="search-empty">${t('noResults', { query: escapeHtml(query) })}</div>`;
+    return;
+  }
+
+  searchIndex = Math.min(searchIndex, filtered.length - 1);
+
+  container.innerHTML = filtered.map((item, i) => `
+    <button class="search-result-item ${i === searchIndex ? 'active' : ''}" data-index="${i}">
+      <span style="font-size:14px;">${escapeHtml(item.section.badge || '')}</span>
+      <div style="flex:1;min-width:0;">
+        <div class="search-result-name">${escapeHtml(item.card.name)}</div>
+        <div class="search-result-section">${escapeHtml(item.section.title)}</div>
+      </div>
+    </button>
+  `).join('');
+
+  container.querySelectorAll('.search-result-item').forEach(btn => {
+    const idx = parseInt(btn.dataset.index);
+    btn.addEventListener('click', () => selectSearchResult(filtered[idx]));
+    btn.addEventListener('mouseenter', () => { searchIndex = idx; updateSearchActive(); });
+  });
+
+  // Store filtered for keyboard nav
+  container._filtered = filtered;
+}
+
+function selectSearchResult(item) {
+  selected = { card: item.card, section: item.section };
+  activeSection = item.section;
+  closeSearch();
+  navigateToTool(item.card);
+  collapseSidebarMobile();
+  renderRightPanel();
+  updateTreeActiveStates();
+}
+
+function updateSearchActive() {
+  const items = document.querySelectorAll('.search-result-item');
+  items.forEach((el, i) => el.classList.toggle('active', i === searchIndex));
+  const active = items[searchIndex];
+  if (active) active.scrollIntoView({ block: 'nearest' });
+}
+
+function handleInitialHash() {
+  const raw = location.hash;
+  if (!raw || raw === '#') return;
+
+  // Compare deep-link → normalize to path, let router handle
+  if (raw.startsWith('#compare=')) {
+    const { presetId, pickSlugs } = parseCompareHash(raw);
+    let path = '/compare/' + presetId;
+    if (pickSlugs) path += '?pick=' + pickSlugs.join(',');
+    history.replaceState(history.state, '', path);
+    return;
+  }
+
+  // Card deep-link
+  const slug = normalizeHash();
+  const result = findCardBySlug(slug);
+  if (result) {
+    selected = result;
+    activeSection = result.section;
+    renderRightPanel();
+    updateTreeActiveStates();
+  }
+}
+
+// ═══ JSON-LD Structured Data ═══
+function generateJsonLd(data) {
+  const items = [];
+  let position = 0;
+  for (const section of data.sections) {
+    for (const card of section.cards) {
+      position++;
+      const item = {
+        '@type': 'SoftwareApplication',
+        'name': card.name,
+        'description': stripHtml(card.desc),
+        'url': SITE_URL + '/#' + getCardSlug(card),
+        'applicationCategory': 'DeveloperApplication',
+        'operatingSystem': 'Cross-platform'
+      };
+
+      // Keywords: section title + languages
+      const keywords = [];
+      if (section.title) keywords.push(section.title.trim());
+      if (card.languages && card.languages.length) keywords.push(...card.languages);
+      if (keywords.length) item.keywords = keywords;
+
+      // Pricing (mutual exclusive)
+      if (card.pricing === 'free') {
+        item.offers = { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' };
+      } else if (card.pricing === 'freemium' || card.pricing === 'open-core') {
+        item.isAccessibleForFree = true;
+      }
+      // paid or undefined → omit both
+
+      // License
+      if (card.license) item.license = card.license;
+
+      // ALL source URLs → sameAs (array)
+      if (card.sources && card.sources.length) {
+        const sameAsUrls = card.sources.filter(s => s.url).map(s => s.url);
+        if (sameAsUrls.length) item.sameAs = sameAsUrls;
+      }
+
+      items.push({
+        '@type': 'ListItem',
+        'position': position,
+        'item': item
+      });
+    }
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': SITE_URL + '/#website',
+        'name': 'See AI First',
+        'alternateName': 'AI Mindmap',
+        'url': SITE_URL,
+        'description': 'Curated directory of 66 AI developer tools across 13 categories, with evidence-first sourcing.'
+      },
+      {
+        '@type': 'CollectionPage',
+        '@id': SITE_URL + '/#directory',
+        'name': 'See AI First — AI Tools Directory 2026',
+        'url': SITE_URL,
+        'isPartOf': { '@id': SITE_URL + '/#website' },
+        'mainEntity': {
+          '@type': 'ItemList',
+          'numberOfItems': items.length,
+          'itemListElement': items
+        }
+      }
+    ]
+  };
+}
+
+// ═══ Head Tags Manager (v7.0 PR8) ═══
+function updateHeadTags() {
+  try {
+    const BASE_URL = 'https://seeaifirst.com';
+    const pathname = location.pathname === '/vi' ? '/vi/' : location.pathname;
+
+    // 1. Canonical — upsert href (path-only, no search/hash)
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.href = BASE_URL + pathname;
+    } else {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      canonicalLink.href = BASE_URL + pathname;
+      document.head.appendChild(canonicalLink);
+    }
+
+    // 2. hreflang — cleanup app-created tags, then add fresh
+    document.querySelectorAll('link[data-saf-hreflang]').forEach(el => el.remove());
+
+    const enPath = stripViPrefix(pathname) || '/';
+    const viPath = enPath === '/' ? '/vi/' : '/vi' + enPath;
+
+    const hreflangEntries = [
+      { lang: 'en', href: BASE_URL + enPath },
+      { lang: 'vi', href: BASE_URL + viPath },
+      { lang: 'x-default', href: BASE_URL + enPath }
+    ];
+
+    for (const entry of hreflangEntries) {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = entry.lang;
+      link.href = entry.href;
+      link.setAttribute('data-saf-hreflang', '');
+      document.head.appendChild(link);
+    }
+
+    // 3. JSON-LD — language-aware dataset (PR8 patch)
+    updateJsonLd();
+
+    // 4. <html lang> — ensure sync
+    document.documentElement.lang = currentLang;
+  } catch (e) {
+    // Fail-soft: skip head update, do not crash or redirect
+  }
+}
+
+// JSON-LD async helper — fetches correct dataset per currentLang (PR8 patch)
+function updateJsonLd() {
+  try {
+    const lang = currentLang;
+    const cached = lang === 'vi' ? viDataCache : enDataCache;
+
+    function apply(dataset) {
+      const jsonLd = generateJsonLd(dataset);
+      jsonLd.inLanguage = lang;
+      const existing = document.getElementById('seeaifirst-jsonld');
+      if (existing) {
+        existing.textContent = JSON.stringify(jsonLd);
+      } else {
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'seeaifirst-jsonld';
+        script.textContent = JSON.stringify(jsonLd);
+        document.head.appendChild(script);
+      }
+    }
+
+    if (cached) {
+      apply(cached);
+      return;
+    }
+
+    // Cache miss — async fetch, fire-and-forget (no blocking canonical/hreflang)
+    const url = lang === 'vi' ? '/data.vi.json' : '/data.json';
+    fetch(url).then(function(r) {
+      if (!r.ok) throw new Error('fetch-fail');
+      return r.json();
+    }).then(function(d) {
+      if (lang === 'vi') viDataCache = d; else enDataCache = d;
+      if (currentLang === lang) apply(d);
+    }).catch(function() { /* fail-soft: skip JSON-LD update */ });
+  } catch (e) { /* fail-soft */ }
+}
+
+// ═══ Init ═══
+async function init() {
+  try {
+    // PR16: remove prerender shell content on SPA boot
+    const prerenderEl = document.getElementById('prerender-content');
+    if (prerenderEl) prerenderEl.remove();
+
+    // PR7: detect lang before fetch (URL wins — Hard Rule 6)
+    setLang(detectInitialLang());
+    updateLangToggleLabel();
+
+    const dataUrl = currentLang === 'vi' ? '/data.vi.json' : '/data.json';
+
+    // PR29: fire hot-right-now.json fetch in parallel (bounded timeout)
+    const hotFetchPromise = Promise.race([
+      fetch('/hot-right-now.json').then(r => r.ok ? r.json() : null),
+      new Promise(resolve => setTimeout(() => resolve(null), 3000))
+    ]).catch(() => null);
+
+    let fetchedData;
+    try {
+      const res = await fetch(dataUrl);
+      if (!res.ok) throw new Error('fetch-fail');
+      fetchedData = await res.json();
+    } catch {
+      // DEC-059: vi fetch fail → fallback EN + clean URL
+      if (currentLang === 'vi') {
+        setLang('en');
+        updateLangToggleLabel();
+        const enPath = stripViPrefix(location.pathname) || '/';
+        const enUrl = enPath + (location.search || '');
+        history.replaceState(history.state, '', enUrl);
+      }
+      const fallback = await fetch('/data.json');
+      fetchedData = await fallback.json();
+    }
+    data = fetchedData;
+    buildSlugMap(data);
+    // Seed JSON-LD dataset cache for initial lang (PR8 patch)
+    if (currentLang === 'vi') viDataCache = data; else enDataCache = data;
+
+    // PR29: await hot config after dataset + slugMap are ready, then validate
+    const hotRaw = await hotFetchPromise;
+    if (hotRaw && validateHotConfig(hotRaw)) {
+      hotRightNowConfig = hotRaw;
+    } else {
+      hotRightNowConfig = null;
+      if (hotRaw) console.warn('Hot Right Now: config validation failed, module hidden');
+    }
+
+    // JSON-LD now managed by updateHeadTags() via handleRoute() (PR8)
+
+    // Restore theme (migrate localStorage key ai-mindmap-theme → seeaifirst-theme)
+    const NEW_KEY = 'seeaifirst-theme';
+    const OLD_KEY = 'ai-mindmap-theme';
+    let theme = localStorage.getItem(NEW_KEY);
+    if (theme == null) {
+      theme = localStorage.getItem(OLD_KEY);
+      if (theme != null) {
+        localStorage.setItem(NEW_KEY, theme);
+        localStorage.removeItem(OLD_KEY);
+      }
+    }
+    const savedTheme = theme;
+    if (savedTheme === 'light') {
+      isDark = false;
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.getElementById('theme-toggle').textContent = '🌙';
+    }
+
+    // Update version badge from data
+    if (data.meta && data.meta.version) {
+      document.querySelector('.version-badge').textContent = 'v' + data.meta.version;
+    }
+
+    // Update total tools count
+    const total = data.sections.reduce((a, s) => a + s.cards.length, 0);
+    document.getElementById('total-tools').textContent = total + ' tools';
+
+    // Render
+    renderTree();
+    renderRightPanel();
+    applyUiStrings();
+
+    // Event listeners
+    document.getElementById('home-link').addEventListener('click', navigateToHome);
+    document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
+    document.getElementById('search-btn').addEventListener('click', openSearch);
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      isDark = !isDark;
+      document.documentElement.setAttribute('data-theme', isDark ? '' : 'light');
+      document.getElementById('theme-toggle').textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('seeaifirst-theme', isDark ? 'dark' : 'light');
+    });
+
+    // Language toggle (PR7 — Hard Rule 5: replaceState, no history step)
+    // fix/lang-dataset-switch: async + nonce + disable during load
+    const langToggleBtn = document.getElementById('lang-toggle');
+    if (langToggleBtn) {
+      langToggleBtn.addEventListener('click', async () => {
+        const myNonce = ++langSwitchNonce;
+        const newLang = currentLang === 'vi' ? 'en' : 'vi';
+        const basePath = stripViPrefix(location.pathname) || '/';
+        const search = location.search || '';
+        langToggleBtn.disabled = true;
+        try {
+          const dataset = await ensureDataset(newLang);
+          if (langSwitchNonce !== myNonce) return; // stale — newer toggle wins
+          setLang(newLang);
+          updateLangToggleLabel();
+          applyDataset(newLang, dataset);
+          applyUiStrings();
+          const targetPath = withLangPrefix(basePath) + search;
+          AppRouter.navigate(targetPath, { replace: true, state: history.state });
+        } catch (e) {
+          // fail-soft: do not change URL, keep current state
+          if (langSwitchNonce === myNonce) {
+            updateLangToggleLabel();
+          }
+        } finally {
+          if (langSwitchNonce === myNonce) langToggleBtn.disabled = false;
+        }
+      });
+    }
+
+    // Mobile back button
+    document.getElementById('mobile-back').addEventListener('click', () => {
+      sidebarCollapsed = false;
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.add('mobile-open');
+      sidebar.classList.remove('collapsed');
+      updateMobileBack();
+    });
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        if (isCompareOpen()) { showCompareSearchHint(); return; }
+        openSearch();
+      }
+      if (e.key === 'Escape') {
+        if (isCompareOpen()) { closeCompare(); return; }
+        if (selected && (location.pathname.startsWith('/tool/') || location.pathname.startsWith('/vi/tool/'))) { closeCardWithRouting(); return; }
+        closeSearch();
+      }
+    });
+
+    // Search input events
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', () => {
+      searchIndex = 0;
+      renderSearchResults(searchInput.value);
+    });
+    searchInput.addEventListener('keydown', (e) => {
+      const container = document.getElementById('search-results');
+      const filtered = container._filtered;
+      if (!filtered || !filtered.length) return;
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        searchIndex = Math.min(searchIndex + 1, filtered.length - 1);
+        updateSearchActive();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        searchIndex = Math.max(searchIndex - 1, 0);
+        updateSearchActive();
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        selectSearchResult(filtered[searchIndex]);
+      }
+    });
+
+    // Search backdrop click
+    document.querySelector('.search-backdrop')?.addEventListener('click', closeSearch);
+
+    // Compare overlay listeners
+    document.querySelector('.compare-close').addEventListener('click', closeCompare);
+    document.querySelector('.compare-backdrop').addEventListener('click', closeCompare);
+    document.querySelector('.compare-copy-link').addEventListener('click', () => {
+      const btn = document.querySelector('.compare-copy-link');
+      const url = location.origin + location.pathname + location.search;
+      (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(() => {
+        btn.textContent = '✓';
+        btn.title = 'Đã copy!';
+        setTimeout(() => { btn.textContent = '🔗'; btn.title = 'Copy link so sánh'; }, 1500);
+      }).catch(() => {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = url; ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select();
+          if (!document.execCommand('copy')) throw new Error();
+          document.body.removeChild(ta);
+          btn.textContent = '✓';
+          btn.title = 'Đã copy!';
+          setTimeout(() => { btn.textContent = '🔗'; btn.title = 'Copy link so sánh'; }, 1500);
+        } catch {
+          alert('Copy không thành công — hãy copy thủ công từ thanh địa chỉ');
+        }
+      });
+    });
+
+    // Hash normalize (v7.0 PR3 — no-op until PR4+ registers routes)
+    const didNormalize = normalizeHashToPath();
+
+    if (didNormalize) {
+      // Hash was normalized to path URL → router handles rendering (PR4+)
+      AppRouter.init();
+    } else {
+      // No matching route → hash routing as before
+      // Deep linking
+      handleInitialHash();
+
+      // Hash change (browser back/forward, manual URL edit)
+      window.addEventListener('hashchange', () => {
+        const hash = location.hash;
+        if (hash.startsWith('#compare=')) {
+          const { presetId, pickSlugs } = parseCompareHash(hash);
+          let path = '/compare/' + presetId;
+          if (pickSlugs) path += '?pick=' + pickSlugs.join(',');
+          history.replaceState(history.state, '', path);
+          AppRouter.handleRoute();
+          return;
+        }
+        if (isCompareOpen()) {
+          document.getElementById('compare-overlay').style.display = 'none';
+          document.body.style.overflow = '';
+          window._pickerSelection = null;
+          window._pickerPreset = null;
+        }
+        const slug = normalizeHash();
+        const result = findCardBySlug(slug);
+        if (result) {
+          selected = result;
+          activeSection = result.section;
+          renderRightPanel();
+          updateTreeActiveStates();
+        }
+      });
+
+      // Router core init (v7.0 PR2 — scaffold, no routes registered yet)
+      AppRouter.init();
+    }
+
+  } catch (err) {
+    console.error('Failed to load data.json:', err);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+<div id="compare-overlay" class="compare-overlay" style="display:none;" role="dialog" aria-modal="true">
+  <div class="compare-backdrop"></div>
+  <div class="compare-panel">
+    <div class="compare-header">
+      <h2 class="compare-title"></h2>
+      <div class="compare-header-actions">
+        <button class="compare-copy-link" aria-label="Copy compare link" title="Copy compare link">🔗</button>
+        <button class="compare-close" aria-label="Close" title="Close (ESC)">✕</button>
+      </div>
+    </div>
+    <div class="compare-hint"><kbd>ESC</kbd> to close · <kbd>Ctrl+K</kbd> disabled while Compare is open</div>
+    <div class="picker-bar"></div>
+    <div class="compare-body"></div>
+  </div>
+</div>
+</body>
+</html>
