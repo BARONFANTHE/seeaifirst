@@ -4010,80 +4010,80 @@
       "title": "So sánh Vector Databases",
       "as_of": "2026-02-10",
       "criteria": [
-        "Best for",
-        "Scale",
-        "Filtering",
-        "Deploy",
-        "Integrations",
-        "License"
+        "Phù hợp cho",
+        "Quy mô",
+        "Bộ lọc",
+        "Triển khai",
+        "Tích hợp",
+        "Giấy phép"
       ],
       "highlight": [
-        "Scale",
-        "Filtering"
+        "Quy mô",
+        "Bộ lọc"
       ],
       "tools": [
         {
           "cardId": "milvus",
           "values": {
-            "Best for": "Billion-scale enterprise AI, multimodal search",
-            "Scale": "Distributed (K8s), billion→tens-of-billions (workload-dependent)",
-            "Filtering": "Advanced: metadata filtering, hybrid dense+sparse, full-text BM25, JSON Path Index (100x faster)",
-            "Deploy": "Milvus Lite (pip) · Standalone (Docker) · Distributed (K8s) · Zilliz Cloud",
-            "Integrations": [
+            "Phù hợp cho": "AI doanh nghiệp quy mô tỷ vector, tìm kiếm đa phương thức",
+            "Quy mô": "Phân tán (K8s), tỷ→hàng chục tỷ (tùy workload)",
+            "Bộ lọc": "Nâng cao: lọc metadata, hybrid dense+sparse, full-text BM25, JSON Path Index (nhanh hơn 100x)",
+            "Triển khai": "Milvus Lite (pip) · Standalone (Docker) · Phân tán (K8s) · Zilliz Cloud",
+            "Tích hợp": [
               "langchain",
               "llamaindex",
               "dify",
               "haystack"
             ],
-            "License": "Apache-2.0"
+            "Giấy phép": "Apache-2.0"
           }
         },
         {
           "cardId": "qdrant",
           "values": {
-            "Best for": "Production RAG & recommendation, Rust performance",
-            "Scale": "Cluster-scale (sharding/replication)",
-            "Filtering": "Rich: payload filtering with boolean (AND/OR/NOT), geo, full-text, pre-filter integrated in search",
-            "Deploy": "Docker · K8s · Qdrant Cloud (AWS/GCP/Azure) · Hybrid Cloud · Edge",
-            "Integrations": [
+            "Phù hợp cho": "RAG & gợi ý ở production, hiệu năng Rust",
+            "Quy mô": "Quy mô cluster (sharding/replication)",
+            "Bộ lọc": "Phong phú: lọc payload với boolean (AND/OR/NOT), geo, full-text, pre-filter tích hợp trong tìm kiếm",
+            "Triển khai": "Docker · K8s · Qdrant Cloud (AWS/GCP/Azure) · Hybrid Cloud · Edge",
+            "Tích hợp": [
               "langchain",
               "llamaindex",
               "haystack",
               "n8n",
               "crewai"
             ],
-            "License": "Apache-2.0"
+            "Giấy phép": "Apache-2.0"
           }
         },
         {
           "cardId": "chroma",
           "values": {
-            "Best for": "Rapid prototyping, lightweight embedded apps",
-            "Scale": "Millions self-host, billions via Chroma Cloud — object-storage tiered architecture",
-            "Filtering": "Document filter (contains / where_document) + basic metadata filters",
-            "Deploy": "pip install (embedded) · Docker (client/server) · Chroma Cloud (serverless)",
-            "Integrations": [
+            "Phù hợp cho": "Prototype nhanh, ứng dụng nhúng nhẹ",
+            "Quy mô": "Hàng triệu (self-host), hàng tỷ qua Chroma Cloud — kiến trúc object-storage phân tầng",
+            "Bộ lọc": "Lọc tài liệu (contains / where_document) + lọc metadata cơ bản",
+            "Triển khai": "pip install (nhúng) · Docker (client/server) · Chroma Cloud (serverless)",
+            "Tích hợp": [
               "langchain",
               "llamaindex",
               "hugging-face"
             ],
-            "License": "Apache-2.0"
+            "Giấy phép": "Apache-2.0"
           }
         },
         {
           "cardId": "pgvector",
           "values": {
-            "Best for": "Teams already using PostgreSQL, hybrid SQL + vector",
-            "Scale": "Scales with Postgres (typically single-node; scale-out needs Postgres clustering/sharding)",
-            "Filtering": "Full SQL: WHERE clauses, JOINs, aggregations — combine vector search with any PostgreSQL query",
-            "Deploy": "PostgreSQL extension — any PG host, Neon, Supabase, RDS, self-host",
-            "Integrations": [
+            "Phù hợp cho": "Team đã dùng PostgreSQL, kết hợp SQL + vector",
+            "Quy mô": "Mở rộng theo Postgres (thường single-node; scale-out cần clustering/sharding)",
+            "Bộ lọc": "Full SQL: WHERE, JOIN, aggregation — kết hợp tìm kiếm vector với mọi truy vấn PostgreSQL",
+            "Triển khai": "PostgreSQL extension — mọi PG host, Neon, Supabase, RDS, self-host",
+            "Tích hợp": [
               "langchain",
               "llamaindex",
               "django",
               "rails"
             ],
-            "License": "PostgreSQL License"
+            "Giấy phép": "PostgreSQL License"
           }
         }
       ]
@@ -4093,81 +4093,81 @@
       "title": "So sánh RAG Systems",
       "as_of": "2026-02-10",
       "criteria": [
-        "Best for",
+        "Phù hợp cho",
         "No-code vs Code",
-        "Doc Understanding",
-        "Deploy",
-        "Integrations",
-        "License"
+        "Hiểu tài liệu",
+        "Triển khai",
+        "Tích hợp",
+        "Giấy phép"
       ],
       "highlight": [
         "No-code vs Code",
-        "Doc Understanding"
+        "Hiểu tài liệu"
       ],
       "tools": [
         {
           "cardId": "dify",
           "values": {
-            "Best for": "Full-platform AI apps: agents + RAG + workflow + monitoring",
-            "No-code vs Code": "Low-code: drag-and-drop visual workflow, plugin ecosystem, built-in templates",
-            "Doc Understanding": "Good: hybrid retrieval, configurable top-k, reranking, multi-format support",
-            "Deploy": "Docker Compose · Dify Cloud · K8s (enterprise)",
-            "Integrations": [
+            "Phù hợp cho": "Nền tảng AI toàn diện: agents + RAG + workflow + monitoring",
+            "No-code vs Code": "Low-code: workflow kéo-thả trực quan, hệ sinh thái plugin, template có sẵn",
+            "Hiểu tài liệu": "Tốt: truy xuất hybrid, cấu hình top-k, reranking, hỗ trợ đa định dạng",
+            "Triển khai": "Docker Compose · Dify Cloud · K8s (enterprise)",
+            "Tích hợp": [
               "milvus",
               "langfuse",
               "openai",
               "anthropic"
             ],
-            "License": "Source-available"
+            "Giấy phép": "Source-available"
           }
         },
         {
           "cardId": "ragflow",
           "values": {
-            "Best for": "Deep document understanding, complex PDF/scanned doc parsing",
-            "No-code vs Code": "Low-code: web UI with deep configuration, suited for technical users",
-            "Doc Understanding": "Excellent: OCR, table extraction, layout-aware parsing, scanned documents, hybrid search",
-            "Deploy": "Docker (slim 2GB / full 9GB) · self-host only",
-            "Integrations": [
+            "Phù hợp cho": "Hiểu tài liệu chuyên sâu, phân tích PDF/tài liệu scan phức tạp",
+            "No-code vs Code": "Low-code: giao diện web với cấu hình chuyên sâu, phù hợp người dùng kỹ thuật",
+            "Hiểu tài liệu": "Xuất sắc: OCR, trích xuất bảng, phân tích layout, tài liệu scan, tìm kiếm hybrid",
+            "Triển khai": "Docker (slim 2GB / full 9GB) · chỉ self-host",
+            "Tích hợp": [
               "elasticsearch",
               "ollama",
               "openai"
             ],
-            "License": "Apache-2.0"
+            "Giấy phép": "Apache-2.0"
           }
         },
         {
           "cardId": "flowise",
           "values": {
-            "Best for": "Fast visual chatbot prototyping, LangChain canvas",
-            "No-code vs Code": "No-code: visual drag-and-drop canvas, prebuilt templates, fastest setup",
-            "Doc Understanding": "Basic: relies on LangChain document loaders, standard chunking",
-            "Deploy": "Docker · npm install · Flowise Cloud",
-            "Integrations": [
+            "Phù hợp cho": "Prototype chatbot nhanh bằng giao diện trực quan, LangChain canvas",
+            "No-code vs Code": "No-code: canvas kéo-thả trực quan, template có sẵn, setup nhanh nhất",
+            "Hiểu tài liệu": "Cơ bản: dựa trên LangChain document loaders, chunking tiêu chuẩn",
+            "Triển khai": "Docker · npm install · Flowise Cloud",
+            "Tích hợp": [
               "langchain",
               "openai",
               "anthropic",
               "qdrant",
               "chroma"
             ],
-            "License": "Apache-2.0"
+            "Giấy phép": "Apache-2.0"
           }
         },
         {
           "cardId": "lightrag",
           "values": {
-            "Best for": "Graph-enhanced RAG, entity relationships, multi-hop reasoning",
-            "No-code vs Code": "Code-first: Python API (also offers Server Web UI)",
-            "Doc Understanding": "Graph-based: extracts entities & relationships, dual-level retrieval (local + global)",
-            "Deploy": "pip install · Docker · Railway · self-host",
-            "Integrations": [
+            "Phù hợp cho": "RAG tăng cường đồ thị, quan hệ thực thể, suy luận đa bước",
+            "No-code vs Code": "Code-first: Python API (cũng có Server Web UI)",
+            "Hiểu tài liệu": "Dựa trên đồ thị: trích xuất thực thể & quan hệ, truy xuất hai cấp (local + global)",
+            "Triển khai": "pip install · Docker · Railway · self-host",
+            "Tích hợp": [
               "neo4j",
               "faiss",
               "chroma",
               "milvus",
               "ollama"
             ],
-            "License": "MIT"
+            "Giấy phép": "MIT"
           }
         }
       ]
@@ -4179,150 +4179,150 @@
       "as_of": "2026-02-09",
       "layout": "flip",
       "criteria": [
-        "Best for",
-        "Form factor",
-        "Autonomy",
-        "Workflow integration",
-        "Repo awareness",
-        "Model support",
-        "Pricing"
+        "Phù hợp cho",
+        "Dạng sử dụng",
+        "Mức tự chủ",
+        "Tích hợp workflow",
+        "Hiểu repo",
+        "Hỗ trợ model",
+        "Giá"
       ],
       "highlight": [
-        "Autonomy",
-        "Workflow integration"
+        "Mức tự chủ",
+        "Tích hợp workflow"
       ],
       "integrations": [],
       "tools": [
         {
           "cardId": "claude-code",
           "values": {
-            "Best for": "Agentic terminal coding, full-repo tasks",
-            "Form factor": "CLI + IDE + Web + Desktop",
-            "Autonomy": "Agentic",
-            "Workflow integration": "Strong — GitHub Actions, GitLab CI, hooks, PR mode",
-            "Repo awareness": "Strong — repo indexing, CLAUDE.md, memory, sub-agents",
-            "Model support": "Anthropic-first",
-            "Pricing": "Freemium (Pro $20/Max $100–200/mo)"
+            "Phù hợp cho": "Lập trình terminal tự chủ, tác vụ toàn repo",
+            "Dạng sử dụng": "CLI + IDE + Web + Desktop",
+            "Mức tự chủ": "Tự chủ cao",
+            "Tích hợp workflow": "Mạnh — GitHub Actions, GitLab CI, hooks, chế độ PR",
+            "Hiểu repo": "Mạnh — lập chỉ mục repo, CLAUDE.md, bộ nhớ, sub-agents",
+            "Hỗ trợ model": "Anthropic là chính",
+            "Giá": "Freemium (Pro $20/Max $100–200/tháng)"
           }
         },
         {
           "cardId": "cursor",
           "values": {
-            "Best for": "IDE-integrated AI dev, multi-file refactoring",
-            "Form factor": "IDE (VS Code fork)",
-            "Autonomy": "Semi-agent",
-            "Workflow integration": "Good — agent mode, GitHub PR review, background agents",
-            "Repo awareness": "Strong — full codebase embeddings, multi-file edits",
-            "Model support": "Multi-provider",
-            "Pricing": "Freemium (Pro $20/Pro+ $60/Ultra $200/mo)"
+            "Phù hợp cho": "Phát triển AI tích hợp IDE, refactor đa file",
+            "Dạng sử dụng": "IDE (fork VS Code)",
+            "Mức tự chủ": "Bán tự chủ",
+            "Tích hợp workflow": "Tốt — chế độ agent, review PR GitHub, background agents",
+            "Hiểu repo": "Mạnh — embedding toàn codebase, chỉnh sửa đa file",
+            "Hỗ trợ model": "Đa nhà cung cấp",
+            "Giá": "Freemium (Pro $20/Pro+ $60/Ultra $200/tháng)"
           }
         },
         {
           "cardId": "codex-cli",
           "values": {
-            "Best for": "Async task delegation, parallel agents",
-            "Form factor": "CLI + IDE + Web + Desktop",
-            "Autonomy": "Agentic",
-            "Workflow integration": "Strong — local CLI + cloud tasks, AGENTS.md, Skills, GitHub PR",
-            "Repo awareness": "Good — repo preloading, AGENTS.md, local + cloud environments",
-            "Model support": "OpenAI-first",
-            "Pricing": "Freemium (ChatGPT Plus $20/Pro $200/mo)"
+            "Phù hợp cho": "Giao việc bất đồng bộ, chạy agent song song",
+            "Dạng sử dụng": "CLI + IDE + Web + Desktop",
+            "Mức tự chủ": "Tự chủ cao",
+            "Tích hợp workflow": "Mạnh — CLI local + tác vụ cloud, AGENTS.md, Skills, PR GitHub",
+            "Hiểu repo": "Tốt — preload repo, AGENTS.md, môi trường local + cloud",
+            "Hỗ trợ model": "OpenAI là chính",
+            "Giá": "Freemium (ChatGPT Plus $20/Pro $200/tháng)"
           }
         },
         {
           "cardId": "windsurf",
           "values": {
-            "Best for": "AI-native IDE, autonomous multi-step coding",
-            "Form factor": "IDE (standalone)",
-            "Autonomy": "Agentic",
-            "Workflow integration": "Good — Cascade agent, multi-file changes, auto-verify",
-            "Repo awareness": "Good — codebase analysis, project structure awareness",
-            "Model support": "Multi-provider",
-            "Pricing": "Freemium (Free 25 credits/Pro $15/Teams $30/mo)"
+            "Phù hợp cho": "IDE AI-native, lập trình tự chủ đa bước",
+            "Dạng sử dụng": "IDE (độc lập)",
+            "Mức tự chủ": "Tự chủ cao",
+            "Tích hợp workflow": "Tốt — agent Cascade, thay đổi đa file, tự xác minh",
+            "Hiểu repo": "Tốt — phân tích codebase, nhận biết cấu trúc dự án",
+            "Hỗ trợ model": "Đa nhà cung cấp",
+            "Giá": "Freemium (Free 25 credits/Pro $15/Teams $30/tháng)"
           }
         },
         {
           "cardId": "github-copilot",
           "values": {
-            "Best for": "Inline assist, team adoption, PR review",
-            "Form factor": "IDE extension (VS Code, JetBrains, Eclipse, Xcode, Neovim)",
-            "Autonomy": "Semi-agent",
-            "Workflow integration": "Strong — coding agent on issues/PRs, AGENTS.md, plan mode, MCP",
-            "Repo awareness": "Good — repo indexing, multi-file agent mode",
-            "Model support": "Multi-model (plan-dependent)",
-            "Pricing": "Freemium (Free/Pro $10/Pro+ $39/Biz $19/Ent $39/user/mo)"
+            "Phù hợp cho": "Gợi ý inline, triển khai team, review PR",
+            "Dạng sử dụng": "Extension IDE (VS Code, JetBrains, Eclipse, Xcode, Neovim)",
+            "Mức tự chủ": "Bán tự chủ",
+            "Tích hợp workflow": "Mạnh — coding agent trên issues/PRs, AGENTS.md, chế độ plan, MCP",
+            "Hiểu repo": "Tốt — lập chỉ mục repo, chế độ agent đa file",
+            "Hỗ trợ model": "Đa model (tùy gói)",
+            "Giá": "Freemium (Free/Pro $10/Pro+ $39/Biz $19/Ent $39/người/tháng)"
           }
         },
         {
           "cardId": "gemini-cli",
           "values": {
-            "Best for": "Free terminal coding, Google ecosystem",
-            "Form factor": "CLI",
-            "Autonomy": "Semi-agent",
-            "Workflow integration": "Basic — shell commands, file ops, web fetch, MCP",
-            "Repo awareness": "Good — reads local files, tool-based context",
-            "Model support": "Google-first",
-            "Pricing": "Free (generous free tier; BYO key for more)"
+            "Phù hợp cho": "Lập trình terminal miễn phí, hệ sinh thái Google",
+            "Dạng sử dụng": "CLI",
+            "Mức tự chủ": "Bán tự chủ",
+            "Tích hợp workflow": "Cơ bản — lệnh shell, thao tác file, web fetch, MCP",
+            "Hiểu repo": "Tốt — đọc file local, ngữ cảnh dựa trên tool",
+            "Hỗ trợ model": "Google là chính",
+            "Giá": "Miễn phí (free tier rộng rãi; BYO key để dùng thêm)"
           }
         },
         {
           "cardId": "cline-roocode",
           "values": {
-            "Best for": "Customizable OSS agent, human-in-the-loop",
-            "Form factor": "VS Code extension",
-            "Autonomy": "Semi-agent",
-            "Workflow integration": "Good — Plan/Act modes, terminal, MCP, Orchestrator (Roo)",
-            "Repo awareness": "Good — tree-sitter parsing, full project read, multi-file",
-            "Model support": "Multi-provider",
-            "Pricing": "Free/OSS (pay API provider)"
+            "Phù hợp cho": "Agent OSS tùy chỉnh, con người kiểm soát",
+            "Dạng sử dụng": "Extension VS Code",
+            "Mức tự chủ": "Bán tự chủ",
+            "Tích hợp workflow": "Tốt — chế độ Plan/Act, terminal, MCP, Orchestrator (Roo)",
+            "Hiểu repo": "Tốt — phân tích tree-sitter, đọc toàn dự án, đa file",
+            "Hỗ trợ model": "Đa nhà cung cấp",
+            "Giá": "Miễn phí/OSS (trả phí nhà cung cấp API)"
           }
         },
         {
           "cardId": "kiro-aws",
           "values": {
-            "Best for": "Spec-driven dev, enterprise AWS projects",
-            "Form factor": "IDE (Code OSS fork)",
-            "Autonomy": "Agentic",
-            "Workflow integration": "Strong — agent hooks (auto-test, lint, docs on save), spec→design→tasks",
-            "Repo awareness": "Good — structured specs, requirements tracking, persistent context",
-            "Model support": "AWS-first (Claude via Bedrock)",
-            "Pricing": "Freemium (per-prompt credits)"
+            "Phù hợp cho": "Phát triển theo spec, dự án AWS doanh nghiệp",
+            "Dạng sử dụng": "IDE (fork Code OSS)",
+            "Mức tự chủ": "Tự chủ cao",
+            "Tích hợp workflow": "Mạnh — agent hooks (tự test, lint, docs khi lưu), spec→design→tasks",
+            "Hiểu repo": "Tốt — specs có cấu trúc, theo dõi requirements, ngữ cảnh bền vững",
+            "Hỗ trợ model": "AWS là chính (Claude qua Bedrock)",
+            "Giá": "Freemium (credits theo prompt)"
           }
         },
         {
           "cardId": "replit-agent",
           "values": {
-            "Best for": "No-setup cloud dev, beginners",
-            "Form factor": "Web IDE (browser)",
-            "Autonomy": "Agentic",
-            "Workflow integration": "Basic — integrated deploy, no Git/PR workflow",
-            "Repo awareness": "Basic — project context within Replit workspace",
-            "Model support": "Replit proprietary",
-            "Pricing": "Freemium (Free tier/Core $25/mo)"
+            "Phù hợp cho": "Phát triển cloud không cần setup, người mới",
+            "Dạng sử dụng": "Web IDE (trình duyệt)",
+            "Mức tự chủ": "Tự chủ cao",
+            "Tích hợp workflow": "Cơ bản — deploy tích hợp, không có Git/PR workflow",
+            "Hiểu repo": "Cơ bản — ngữ cảnh dự án trong Replit workspace",
+            "Hỗ trợ model": "Replit proprietary",
+            "Giá": "Freemium (Free tier/Core $25/tháng)"
           }
         },
         {
           "cardId": "opencode",
           "values": {
-            "Best for": "OSS terminal agent, LSP integration",
-            "Form factor": "CLI",
-            "Autonomy": "Semi-agent",
-            "Workflow integration": "Basic — file editing, shell commands, LSP",
-            "Repo awareness": "Good — LSP-powered code intelligence, project scanning",
-            "Model support": "Multi-provider",
-            "Pricing": "Free/OSS"
+            "Phù hợp cho": "Agent terminal OSS, tích hợp LSP",
+            "Dạng sử dụng": "CLI",
+            "Mức tự chủ": "Bán tự chủ",
+            "Tích hợp workflow": "Cơ bản — chỉnh sửa file, lệnh shell, LSP",
+            "Hiểu repo": "Tốt — code intelligence qua LSP, quét dự án",
+            "Hỗ trợ model": "Đa nhà cung cấp",
+            "Giá": "Miễn phí/OSS"
           }
         },
         {
           "cardId": "goose",
           "values": {
-            "Best for": "Extensible workflow automation, recipes",
-            "Form factor": "CLI + Desktop",
-            "Autonomy": "Agentic",
-            "Workflow integration": "Good — Recipes (executable workflows), MCP, auto-PR",
-            "Repo awareness": "Good — project context, global MCP servers",
-            "Model support": "Multi-provider",
-            "Pricing": "Free/OSS (by Block)"
+            "Phù hợp cho": "Tự động hóa workflow có thể mở rộng, recipes",
+            "Dạng sử dụng": "CLI + Desktop",
+            "Mức tự chủ": "Tự chủ cao",
+            "Tích hợp workflow": "Tốt — Recipes (workflow thực thi), MCP, tự tạo PR",
+            "Hiểu repo": "Tốt — ngữ cảnh dự án, MCP servers toàn cục",
+            "Hỗ trợ model": "Đa nhà cung cấp",
+            "Giá": "Miễn phí/OSS (bởi Block)"
           }
         }
       ]
@@ -4334,138 +4334,138 @@
       "as_of": "2026-02-10",
       "layout": "flip",
       "criteria": [
-        "Best for",
-        "Learning curve",
-        "Ecosystem",
-        "Graph/Agent support",
-        "Memory/RAG integration",
-        "Language",
-        "License"
+        "Phù hợp cho",
+        "Độ khó",
+        "Hệ sinh thái",
+        "Hỗ trợ Graph/Agent",
+        "Tích hợp Memory/RAG",
+        "Ngôn ngữ",
+        "Giấy phép"
       ],
       "highlight": [
-        "Graph/Agent support",
-        "Memory/RAG integration"
+        "Hỗ trợ Graph/Agent",
+        "Tích hợp Memory/RAG"
       ],
       "integrations": [],
       "tools": [
         {
           "cardId": "langgraph",
           "values": {
-            "Best for": "Complex stateful multi-agent workflows with graph orchestration",
-            "Learning curve": "Hard",
-            "Ecosystem": "Strong — LangChain + LangSmith + LangGraph Platform, 300+ integrations",
-            "Graph/Agent support": "Strong — Core: directed graph state machine, conditional routing, cycles, multi/hierarchical agents",
-            "Memory/RAG integration": "Strong — Built-in short/long-term memory, semantic search, cross-thread, LangChain retrievers",
-            "Language": "Both",
-            "License": "MIT"
+            "Phù hợp cho": "Workflow multi-agent phức tạp có trạng thái với điều phối đồ thị",
+            "Độ khó": "Khó",
+            "Hệ sinh thái": "Mạnh — LangChain + LangSmith + LangGraph Platform, 300+ tích hợp",
+            "Hỗ trợ Graph/Agent": "Mạnh — Lõi: máy trạng thái đồ thị có hướng, routing có điều kiện, vòng lặp, multi/hierarchical agents",
+            "Tích hợp Memory/RAG": "Mạnh — Bộ nhớ ngắn/dài hạn tích hợp, tìm kiếm ngữ nghĩa, xuyên thread, LangChain retrievers",
+            "Ngôn ngữ": "Cả hai",
+            "Giấy phép": "MIT"
           }
         },
         {
           "cardId": "crewai",
           "values": {
-            "Best for": "Role-based multi-agent collaboration with crew metaphor",
-            "Learning curve": "Easy",
-            "Ecosystem": "Good — 24K+ stars, standalone framework, CrewAI Flows + AMP Suite",
-            "Graph/Agent support": "Good — Sequential/hierarchical/consensus processes, Flows engine with event-driven control",
-            "Memory/RAG integration": "Strong — First-class: short-term (ChromaDB), long-term (SQLite3), entity memory, RagTool",
-            "Language": "Python",
-            "License": "MIT"
+            "Phù hợp cho": "Cộng tác multi-agent theo vai trò với mô hình crew",
+            "Độ khó": "Dễ",
+            "Hệ sinh thái": "Tốt — 24K+ stars, framework độc lập, CrewAI Flows + AMP Suite",
+            "Hỗ trợ Graph/Agent": "Tốt — Quy trình tuần tự/phân cấp/đồng thuận, Flows engine điều khiển sự kiện",
+            "Tích hợp Memory/RAG": "Mạnh — Hạng nhất: ngắn hạn (ChromaDB), dài hạn (SQLite3), entity memory, RagTool",
+            "Ngôn ngữ": "Python",
+            "Giấy phép": "MIT"
           }
         },
         {
           "cardId": "autogen",
           "values": {
-            "Best for": "Research multi-agent conversations (Active path = AG2)",
-            "Learning curve": "Medium",
-            "Ecosystem": "Good — AG2 community fork (Apache 2.0), ecosystem split with Microsoft path",
-            "Graph/Agent support": "Good — Conversation-based patterns, group chat, nested chats, AG2 adds swarm + A2A",
-            "Memory/RAG integration": "Good — Teachability module, RAG via RetrieveAssistantAgent + ChromaDB",
-            "Language": "Python",
-            "License": "Apache 2.0"
+            "Phù hợp cho": "Nghiên cứu hội thoại multi-agent (Nhánh hoạt động = AG2)",
+            "Độ khó": "Trung bình",
+            "Hệ sinh thái": "Tốt — AG2 community fork (Apache 2.0), hệ sinh thái chia tách với nhánh Microsoft",
+            "Hỗ trợ Graph/Agent": "Tốt — Pattern dựa trên hội thoại, group chat, nested chats, AG2 thêm swarm + A2A",
+            "Tích hợp Memory/RAG": "Tốt — Module Teachability, RAG qua RetrieveAssistantAgent + ChromaDB",
+            "Ngôn ngữ": "Python",
+            "Giấy phép": "Apache 2.0"
           }
         },
         {
           "cardId": "openai-agents-sdk",
           "values": {
-            "Best for": "Lightweight production agents with minimal abstractions",
-            "Learning curve": "Easy",
-            "Ecosystem": "Good — OpenAI-backed, 16K+ stars, provider-agnostic, growing integrations",
-            "Graph/Agent support": "Good — Handoff-based delegation, guardrails, deterministic flows",
-            "Memory/RAG integration": "Basic — Session memory only, no built-in long-term or RAG",
-            "Language": "Both",
-            "License": "MIT"
+            "Phù hợp cho": "Agent production nhẹ với ít abstraction",
+            "Độ khó": "Dễ",
+            "Hệ sinh thái": "Tốt — OpenAI hậu thuẫn, 16K+ stars, không phụ thuộc nhà cung cấp, tích hợp đang phát triển",
+            "Hỗ trợ Graph/Agent": "Tốt — Ủy quyền dựa trên Handoff, guardrails, luồng xác định",
+            "Tích hợp Memory/RAG": "Cơ bản — Chỉ bộ nhớ phiên, không có dài hạn hay RAG tích hợp",
+            "Ngôn ngữ": "Cả hai",
+            "Giấy phép": "MIT"
           }
         },
         {
           "cardId": "google-adk",
           "values": {
-            "Best for": "Code-first agents with Google Cloud/Gemini integration",
-            "Learning curve": "Medium",
-            "Ecosystem": "Strong — Google-backed, multi-language (also Go/Java), Vertex AI compatible",
-            "Graph/Agent support": "Strong — Workflow agents (Sequential/Parallel/Loop), dynamic routing, A2A protocol",
-            "Memory/RAG integration": "Good — Session state management, MCP tools, Google Search RAG integration",
-            "Language": "Both",
-            "License": "Apache 2.0"
+            "Phù hợp cho": "Agent code-first với tích hợp Google Cloud/Gemini",
+            "Độ khó": "Trung bình",
+            "Hệ sinh thái": "Mạnh — Google hậu thuẫn, đa ngôn ngữ (cả Go/Java), tương thích Vertex AI",
+            "Hỗ trợ Graph/Agent": "Mạnh — Workflow agents (Tuần tự/Song song/Vòng lặp), routing động, giao thức A2A",
+            "Tích hợp Memory/RAG": "Tốt — Quản lý trạng thái phiên, MCP tools, tích hợp Google Search RAG",
+            "Ngôn ngữ": "Cả hai",
+            "Giấy phép": "Apache 2.0"
           }
         },
         {
           "cardId": "llamaindex",
           "values": {
-            "Best for": "Data-centric RAG applications and document AI",
-            "Learning curve": "Medium",
-            "Ecosystem": "Strong — 38K+ stars, 300+ integrations, LlamaCloud + LlamaParse",
-            "Graph/Agent support": "Good — Workflows 1.0 event-driven engine, AgentRunner, sequential/parallel/loop",
-            "Memory/RAG integration": "Strong — Best-in-class RAG: vector/tree/keyword/KG indexing, LlamaParse pipeline",
-            "Language": "Both",
-            "License": "MIT"
+            "Phù hợp cho": "Ứng dụng RAG lấy dữ liệu làm trung tâm và AI tài liệu",
+            "Độ khó": "Trung bình",
+            "Hệ sinh thái": "Mạnh — 38K+ stars, 300+ tích hợp, LlamaCloud + LlamaParse",
+            "Hỗ trợ Graph/Agent": "Tốt — Workflows 1.0 engine sự kiện, AgentRunner, tuần tự/song song/vòng lặp",
+            "Tích hợp Memory/RAG": "Mạnh — RAG hàng đầu: indexing vector/tree/keyword/KG, LlamaParse pipeline",
+            "Ngôn ngữ": "Cả hai",
+            "Giấy phép": "MIT"
           }
         },
         {
           "cardId": "rasa",
           "values": {
-            "Best for": "Enterprise conversational AI with strict business logic",
-            "Learning curve": "Hard",
-            "Ecosystem": "Strong (maintenance-mode) — 20K+ stars, 500+ contributors, CALM engine",
-            "Graph/Agent support": "Good — Flow-based dialogue, CALM combines LLM + deterministic business logic",
-            "Memory/RAG integration": "Basic — Dialogue state tracking (slot filling), no built-in RAG pipeline",
-            "Language": "Python",
-            "License": "Apache 2.0"
+            "Phù hợp cho": "AI hội thoại doanh nghiệp với logic nghiệp vụ nghiêm ngặt",
+            "Độ khó": "Khó",
+            "Hệ sinh thái": "Mạnh (chế độ bảo trì) — 20K+ stars, 500+ contributors, CALM engine",
+            "Hỗ trợ Graph/Agent": "Tốt — Hội thoại dựa trên flow, CALM kết hợp LLM + logic nghiệp vụ xác định",
+            "Tích hợp Memory/RAG": "Cơ bản — Theo dõi trạng thái hội thoại (slot filling), không có RAG pipeline tích hợp",
+            "Ngôn ngữ": "Python",
+            "Giấy phép": "Apache 2.0"
           }
         },
         {
           "cardId": "browser-use",
           "values": {
-            "Best for": "AI-powered web browser automation",
-            "Learning curve": "Easy",
-            "Ecosystem": "Good — 60K+ stars, $17M seed (TechCrunch), MCP server support",
-            "Graph/Agent support": "Basic — Single-agent browser loop, plugs into other frameworks for orchestration",
-            "Memory/RAG integration": "Basic — Session-level browser state only, no memory or RAG",
-            "Language": "Python",
-            "License": "MIT"
+            "Phù hợp cho": "Tự động hóa trình duyệt web bằng AI",
+            "Độ khó": "Dễ",
+            "Hệ sinh thái": "Tốt — 60K+ stars, $17M seed (TechCrunch), hỗ trợ MCP server",
+            "Hỗ trợ Graph/Agent": "Cơ bản — Vòng lặp agent đơn trên trình duyệt, tích hợp vào framework khác để điều phối",
+            "Tích hợp Memory/RAG": "Cơ bản — Chỉ trạng thái trình duyệt theo phiên, không có memory hay RAG",
+            "Ngôn ngữ": "Python",
+            "Giấy phép": "MIT"
           }
         },
         {
           "cardId": "pydantic-ai",
           "values": {
-            "Best for": "Type-safe agents with FastAPI-like ergonomics",
-            "Learning curve": "Medium",
-            "Ecosystem": "Good — By Pydantic team, 15K+ stars, model-agnostic, Logfire observability",
-            "Graph/Agent support": "Good — Dependency injection, agent delegation, multi-agent handoffs",
-            "Memory/RAG integration": "Good — MCP integration, human-in-the-loop, durable execution, external providers",
-            "Language": "Python",
-            "License": "MIT"
+            "Phù hợp cho": "Agent type-safe với trải nghiệm giống FastAPI",
+            "Độ khó": "Trung bình",
+            "Hệ sinh thái": "Tốt — Từ đội Pydantic, 15K+ stars, không phụ thuộc model, Logfire observability",
+            "Hỗ trợ Graph/Agent": "Tốt — Dependency injection, ủy quyền agent, handoff multi-agent",
+            "Tích hợp Memory/RAG": "Tốt — Tích hợp MCP, human-in-the-loop, thực thi bền vững, nhà cung cấp bên ngoài",
+            "Ngôn ngữ": "Python",
+            "Giấy phép": "MIT"
           }
         },
         {
           "cardId": "mastra",
           "values": {
-            "Best for": "Full-stack TypeScript AI apps (agents + workflows + RAG)",
-            "Learning curve": "Easy",
-            "Ecosystem": "Good — From Gatsby team (YC), 25K+ stars, TS-native, Vercel AI SDK",
-            "Graph/Agent support": "Good — Workflow engine with suspend/resume, agent networks with routing",
-            "Memory/RAG integration": "Good — Built-in RAG pipeline (chunking/embedding/search), agent memory support",
-            "Language": "TypeScript",
-            "License": "Apache 2.0"
+            "Phù hợp cho": "Ứng dụng AI full-stack TypeScript (agents + workflows + RAG)",
+            "Độ khó": "Dễ",
+            "Hệ sinh thái": "Tốt — Từ đội Gatsby (YC), 25K+ stars, TS-native, Vercel AI SDK",
+            "Hỗ trợ Graph/Agent": "Tốt — Workflow engine với suspend/resume, mạng agent với routing",
+            "Tích hợp Memory/RAG": "Tốt — RAG pipeline tích hợp (chunking/embedding/search), hỗ trợ bộ nhớ agent",
+            "Ngôn ngữ": "TypeScript",
+            "Giấy phép": "Apache 2.0"
           }
         }
       ]

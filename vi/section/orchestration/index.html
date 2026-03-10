@@ -1029,7 +1029,9 @@ const UI_STRINGS = {
     homeLinkLabel: 'Go to homepage',
     hotRightNowTitle: 'Hot Right Now',
     showMore: 'Show more',
-    showLess: 'Show less'
+    showLess: 'Show less',
+    compareToolHeader: 'Tool',
+    compareAsOfPrefix: '📅 Data as of: '
   },
   vi: {
     searchBtn: '🔍 Tìm kiếm',
@@ -1054,7 +1056,9 @@ const UI_STRINGS = {
     homeLinkLabel: 'Về trang chủ',
     hotRightNowTitle: 'Đang Hot',
     showMore: 'Xem thêm',
-    showLess: 'Thu gọn'
+    showLess: 'Thu gọn',
+    compareToolHeader: 'Công cụ',
+    compareAsOfPrefix: '📅 Dữ liệu tính đến: '
   }
 };
 
@@ -1751,7 +1755,7 @@ function renderCompareBody(preset) {
   if (filtered.as_of) {
     const asOf = document.createElement('p');
     asOf.style.cssText = 'font-size:0.85rem;color:var(--text-muted);text-align:center;margin:0 0 12px';
-    asOf.textContent = '\u{1F4C5} Data as of: ' + filtered.as_of;
+    asOf.textContent = t('compareAsOfPrefix') + filtered.as_of;
     body.appendChild(asOf);
   }
   const isFlip = filtered.layout === 'flip';
@@ -1865,7 +1869,7 @@ function renderFlipTable(preset) {
   const headerRow = document.createElement('tr');
   const cornerTh = document.createElement('th');
   cornerTh.className = 'compare-flip-tool-name';
-  cornerTh.textContent = 'Tool';
+  cornerTh.textContent = t('compareToolHeader');
   headerRow.appendChild(cornerTh);
   preset.criteria.forEach(criterion => {
     const th = document.createElement('th');
@@ -1955,7 +1959,7 @@ function renderCompare(preset) {
   if (preset.as_of) {
     const asOf = document.createElement('p');
     asOf.style.cssText = 'font-size:0.85rem;color:var(--text-muted);text-align:center;margin:0 0 12px';
-    asOf.textContent = '\u{1F4C5} Data as of: ' + preset.as_of;
+    asOf.textContent = t('compareAsOfPrefix') + preset.as_of;
     body.appendChild(asOf);
   }
   const isFlip = preset.layout === 'flip';
