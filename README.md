@@ -23,13 +23,40 @@ See AI First is different:
 
 - 🗂️ **13 categories** across 5 layers: Foundation → Coordination → Capability → Application → Trends
 - 🔍 **Search** across names, descriptions, and details (Ctrl+K)
-- 🔗 **Deep linking** — every tool has a permanent URL via hash routing
+- 🔗 **Deep linking** — every tool has a permanent URL via path-based routing
 - ⚖️ **Compare Mode** — side-by-side tool comparisons with preset and custom selections
 - 🎯 **Tool Picker** — interactive selection for building your AI stack
 - 📊 **Enriched metadata** — pricing, deployment, difficulty, compatibility, use cases
 - 🌗 **Dark/Light theme**
 - 📱 **Mobile responsive**
 - ⚡ **Zero backend** — static HTML + JSON on CDN, loads instantly
+
+## Usage
+
+One effective way to use See AI First is to **ask your AI agent to look things up for you.**
+
+Instead of browsing manually, you can ask your AI assistant (Claude, ChatGPT, Gemini, Grok, or any agent with web access) something like:
+
+**Locate a tool in the AI ecosystem:**
+- *"Where does MCP fit in the AI stack? Check seeaifirst.com"*
+- *"I found github.com/langchain-ai/langchain — where does this sit in the AI ecosystem? Look it up on seeaifirst.com"*
+- *"Someone recommended Qdrant. What category is it in and what are the alternatives? Check seeaifirst.com"*
+
+**Build your stack:**
+- *"I'm building a RAG pipeline. What tools does seeaifirst.com recommend?"*
+- *"Compare LangGraph vs CrewAI on seeaifirst.com"*
+
+**Evaluate before adopting:**
+- *"I'm considering pgvector for vector search. What does seeaifirst.com say about when to use it and when not to?"*
+- *"What's the trade-off between LangSmith and Langfuse for observability? Check seeaifirst.com"*
+
+**Validate social media recommendations:**
+- *"I saw a post claiming FastCode is cheaper than Claude Code and Cursor. Is it on seeaifirst.com? Where does it fit in the coding agents category?"*
+- *"Someone shared a new AI framework on Twitter. Check if seeaifirst.com covers it and what the trade-offs are"*
+
+The site is structured so web-enabled AI agents can read and summarize it more effectively — 66 tools mapped across 13 categories with opinionated trade-offs, so your agent gets context, not just links.
+
+You can also browse directly at [seeaifirst.com](https://seeaifirst.com) — use Search (Ctrl+K), Compare Mode, or Tool Picker to explore.
 
 ## Quick Start
 
@@ -63,7 +90,7 @@ seeaifirst/
 
 ## Data
 
-All tool data lives in `data.json`. Each tool card includes:
+All tool data lives in `data.json` (English) and `data.vi.json` (Vietnamese). Each tool card includes:
 
 - Basic info: name, description, sources
 - Enrichment: pricing, deployment model, difficulty level
@@ -72,6 +99,20 @@ All tool data lives in `data.json`. Each tool card includes:
 
 Schema is frozen at v1.0.0. See [CONTRIBUTING.md](CONTRIBUTING.md) for data format details.
 
+## Selection Criteria
+
+Not every tool belongs here. Each suggestion is evaluated against 5 criteria:
+
+| Criteria | Minimum Threshold |
+|----------|-------------------|
+| **GitHub Stars** | Usually >5K ⭐ — exceptions allowed for innovative tools with strong rationale + evidence |
+| **Relevance** | Must be part of the AI developer ecosystem |
+| **Maturity** | Has documentation, active development, community |
+| **Uniqueness** | Does not duplicate an existing card's functionality |
+| **Category Fit** | Fits within existing 13 sections (new sections require strong justification) |
+
+100+ tools evaluated. 66 selected. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to suggest a tool.
+
 ## Contributing
 
 We welcome contributions! The main ways to help:
@@ -79,20 +120,6 @@ We welcome contributions! The main ways to help:
 - **Suggest a tool** → [Open an issue](https://github.com/BARONFANTHE/seeaifirst/issues/new?template=suggest-tool.yml)
 - **Report a bug** → [Open an issue](https://github.com/BARONFANTHE/seeaifirst/issues/new)
 - **Improve data** → Submit a PR (see [CONTRIBUTING.md](CONTRIBUTING.md))
-
-## Roadmap
-
-| Phase | Status |
-|-------|--------|
-| Interactive visualization | ✅ Complete |
-| 66 tools across 13 categories | ✅ Complete |
-| Compare Mode + Tool Picker | ✅ Complete |
-| Schema enrichment (12 fields per tool) | ✅ Complete |
-| SEO + JSON-LD structured data | ✅ Complete |
-| Custom domain (seeaifirst.com) | ✅ Complete |
-| Community: public repo + contributing guide | 🔄 In Progress |
-| Path-based routing for SEO | 📋 Planned |
-| Internationalization | 📋 Planned |
 
 ## Tech Stack
 
