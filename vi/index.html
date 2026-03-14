@@ -926,32 +926,154 @@ html, body {
 </style>
 </head>
 <body>
-<div id="prerender-content">
-  <main>
-    <article>
-      <h1>See AI First — Bản Đồ Công Cụ AI Có Chọn Lọc</h1>
-      <p>Khám phá 66 công cụ AI được tuyển chọn trong 13 danh mục.</p>
-      <nav>
-        <h2>Danh mục</h2>
-        <ul>
-          <li><a href="/vi/section/protocols">🔥 Foundation Protocols — Nền tảng giao tiếp chuẩn (2)</a></li>
-          <li><a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents (10)</a></li>
-          <li><a href="/vi/section/platforms">Platforms &amp; Config — Nền tảng AI &amp; files hệ thống (2)</a></li>
-          <li><a href="/vi/section/memory">Memory Systems — Bộ nhớ xuyên phiên (3)</a></li>
-          <li><a href="/vi/section/skills">🔥 Cambrian Explosion Skills Ecosystem — &quot;Bigger than MCP&quot; (5)</a></li>
-          <li><a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent (3)</a></li>
-          <li><a href="/vi/section/coding-agents">🔥 2026 Landscape AI Coding Agents — Công cụ code bằng AI (11)</a></li>
-          <li><a href="/vi/section/trends">🌍 Global AI Trends 2026 — Xu hướng đang định hình tương lai (9)</a></li>
-          <li><a href="/vi/section/observability">📊 Observability &amp; Evaluation — Giám sát và đánh giá AI (5)</a></li>
-          <li><a href="/vi/section/infrastructure">⚙️ AI Infrastructure — Hạ tầng chạy và triển khai model (4)</a></li>
-          <li><a href="/vi/section/rag-systems">🔍 RAG Systems — Retrieval-Augmented Generation (4)</a></li>
-          <li><a href="/vi/section/vector-databases">🗄️ Vector Databases — Lưu trữ &amp; Tìm kiếm Vector (4)</a></li>
-          <li><a href="/vi/section/security">🛡️ Security &amp; Guardrails – Bảo vệ ứng dụng AI (4)</a></li>
-        </ul>
-      </nav>
-    </article>
-  </main>
-</div>
+<main id="prerender-content">
+  <h1>See AI First — Bản Đồ Công Cụ AI Có Chọn Lọc</h1>
+  <p>Thư mục tuyển chọn 66 công cụ AI dành cho developer trong 13 danh mục.</p>
+
+  <section>
+    <h2>Protocols — Nền tảng giao tiếp chuẩn</h2>
+    <ul>
+      <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+      <li><a href="/vi/tool/a2a">A2A — Agent2Agent Protocol</a> — Giao thức của Google — giúp các AI agent nói chuyện và hợp tác với nhau, dù được xây từ bất kỳ nền tảng nào.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Agent Frameworks — Xây dựng AI agents</h2>
+    <ul>
+      <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+      <li><a href="/vi/tool/crewai">CrewAI</a> — Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.</li>
+      <li><a href="/vi/tool/autogen">AutoGen</a> — Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.</li>
+      <li><a href="/vi/tool/openai-agents-sdk">OpenAI Agents SDK</a> — SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.</li>
+      <li><a href="/vi/tool/google-adk">Google ADK</a> — Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.</li>
+      <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+      <li><a href="/vi/tool/rasa">Rasa</a> — Nền tảng chatbot và voice AI — chạy trên server riêng, kiểm soát hoàn toàn dữ liệu.</li>
+      <li><a href="/vi/tool/browser-use">Browser-Use</a> — Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ</li>
+      <li><a href="/vi/tool/pydantic-ai">Pydantic AI</a> — Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers</li>
+      <li><a href="/vi/tool/mastra">Mastra</a> — TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Platforms &amp; Config — Nền tảng AI &amp; files hệ thống</h2>
+    <ul>
+      <li><a href="/vi/tool/claude-ai">Claude.ai (Web)</a> — Giao diện chat của Anthropic — có bộ nhớ, tìm kiếm web và kết nối công cụ qua MCP.</li>
+      <li><a href="/vi/tool/chatgpt">ChatGPT (Web)</a> — Chat AI phổ biến nhất của OpenAI — có GPTs, search, tools và hệ thống nhớ riêng.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Memory Systems — Bộ nhớ xuyên phiên</h2>
+    <ul>
+      <li><a href="/vi/tool/claude-mem">Claude-Mem</a> — Plugin giúp Claude Code có trí nhớ dài hạn — tự ghi lại kinh nghiệm, nén thông minh và nhớ cho lần làm việc sau.</li>
+      <li><a href="/vi/tool/he-thong-memory-khac">Hệ thống Memory khác</a> — Ngoài Claude-Mem, có nhiều hệ thống memory khác: MemGPT/Letta — tự quản lý context window như OS quản lý RAM, có paging cơ chế.</li>
+      <li><a href="/vi/tool/memos">MemOS</a> — Hệ điều hành bộ nhớ thống nhất cho LLM — quản lý memory qua MemCube với hỗ trợ short-term và long-term</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills Ecosystem — &quot;Bigger than MCP&quot;</h2>
+    <ul>
+      <li><a href="/vi/tool/universal-agent-skills">Universal Agent Skills</a> — Skill là file .md chứa hướng dẫn cho AI agent — đơn giản nhưng hiệu quả, chạy được trên mọi AI coding tool.</li>
+      <li><a href="/vi/tool/skill-categories-dang-chu-y">Skill Categories đáng chú ý</a> — Các category chính: Engineering &amp; DevOps (API testing, Docker, CI/CD), Web Development (React, Tailwind, animations), AI/ML Research (77 skills cho paper reading, fine-tuning), Cross-Agent Orchestration (handoff giữa Claude Code ↔ Codex ↔ Cursor), Claude Code Ecosystem (Task Master, Claude Swarm, session management).</li>
+      <li><a href="/vi/tool/superpowers">Superpowers</a> — Framework kỹ năng dạng agent cho Claude Code — tự động kích hoạt skills phù hợp khi làm việc.</li>
+      <li><a href="/vi/tool/agents-wshobson">Agents (wshobson)</a> — Bộ sưu tập 112 agents + 146 skills + 73 plugins chuyên biệt cho Claude Code — lớn nhất hiện tại.</li>
+      <li><a href="/vi/tool/planning-with-files">Planning with Files</a> — Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Orchestration — Điều phối multi-agent</h2>
+    <ul>
+      <li><a href="/vi/tool/claude-flow">Claude-Flow</a> — Nền tảng điều phối agent theo kiến trúc Queen + Workers — quản lý Claude, GPT, Gemini cùng lúc qua MCP.</li>
+      <li><a href="/vi/tool/openclaw">OpenClaw</a> — Evolution: Clawdbot → Moltbot → OpenClaw</li>
+      <li><a href="/vi/tool/claude-squad">Claude Squad</a> — Ứng dụng terminal giúp chạy nhiều phiên Claude Code và Codex cùng lúc, mỗi phiên một workspace riêng.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>AI Coding Agents — Công cụ code bằng AI</h2>
+    <ul>
+      <li><a href="/vi/tool/claude-code">Claude Code</a> — Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ.</li>
+      <li><a href="/vi/tool/cursor">Cursor</a> — IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.</li>
+      <li><a href="/vi/tool/codex-cli">Codex CLI</a> — Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.</li>
+      <li><a href="/vi/tool/windsurf">Windsurf</a> — AI IDE với Cascade — agent chạy đa bước tự động: đọc code → phân tích → sửa → test → commit.</li>
+      <li><a href="/vi/tool/github-copilot">GitHub Copilot</a> — Trợ lý code của Microsoft tích hợp sẵn trong VS Code — có Agent mode, mạnh cho doanh nghiệp.</li>
+      <li><a href="/vi/tool/gemini-cli">Gemini CLI</a> — Agent CLI của Google — miễn phí cho cá nhân, context (lớn nhất).</li>
+      <li><a href="/vi/tool/cline-roocode">Cline / RooCode</a> — Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.</li>
+      <li><a href="/vi/tool/kiro-aws">Kiro (AWS)</a> — IDE AI của AWS theo hướng spec-first — từ yêu cầu → thiết kế → kế hoạch → code tự động.</li>
+      <li><a href="/vi/tool/replit-agent">Replit Agent</a> — Agent trên cloud — tạo app full-stack nhanh, không cần cài đặt. Tốt nhất cho người mới bắt đầu.</li>
+      <li><a href="/vi/tool/opencode">OpenCode</a> — Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, MIT license</li>
+      <li><a href="/vi/tool/goose">Goose</a> — Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>AI Trends 2026 — Xu hướng đang định hình tương lai</h2>
+    <ul>
+      <li><a href="/vi/tool/multi-agent-systems">Multi-Agent Systems</a> — Gartner ghi nhận lượng truy vấn về multi-agent systems tăng từ Q1/2024 đến Q2/2025.</li>
+      <li><a href="/vi/tool/mechanistic-interpretability">Mechanistic Interpretability</a> — Nghiên cứu cách AI &#039;suy nghĩ&#039; bên trong — giúp hiểu và kiểm soát hành vi AI tốt hơn. Đột phá 2026 theo MIT.</li>
+      <li><a href="/vi/tool/world-models">World Models</a></li>
+      <li><a href="/vi/tool/generative-coding">Generative Coding</a> — AI viết code tại Microsoft, tại Google. &#039;Tiếng Anh đang trở thành ngôn ngữ lập trình mới.&#039;</li>
+      <li><a href="/vi/tool/chinese-open-source-ai">Chinese Open-Source AI</a> — DeepSeek R1 gây sốc giới AI — model suy luận mã nguồn mở từ Trung Quốc. Khoảng cách công nghệ giảm từ tháng xuống tuần.</li>
+      <li><a href="/vi/tool/post-training-pre-training">Post-Training &gt; Pre-Training</a> — Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.</li>
+      <li><a href="/vi/tool/ai-drug-discovery">AI Drug Discovery</a> — Thuốc do AI khám phá bắt đầu thử nghiệm lâm sàng giai đoạn giữa/cuối. Tập trung: ung thư và bệnh hiếm.</li>
+      <li><a href="/vi/tool/ai-infrastructure">AI Infrastructure</a> — Data center khổng lồ đang được xây dựng — dùng cả điện hạt nhân.</li>
+      <li><a href="/vi/tool/ai-governance">AI Governance</a> — Agent AI giám sát các agent AI khác — đặt rào chắn an toàn và giữ con người trong vòng kiểm soát.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Observability &amp; Evaluation — Giám sát và đánh giá AI</h2>
+    <ul>
+      <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+      <li><a href="/vi/tool/deepeval">DeepEval</a> — Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+      <li><a href="/vi/tool/promptfoo">Promptfoo</a> — CLI tool cho prompt testing, model comparison và LLM red-teaming/security scanning</li>
+      <li><a href="/vi/tool/langsmith">LangSmith</a> — Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph</li>
+      <li><a href="/vi/tool/arize-phoenix">Arize Phoenix</a> — AI observability platform mã nguồn mở — tracing, evaluation, RAG debugging, embeddings analysis</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>AI Infrastructure — Hạ tầng chạy và triển khai model</h2>
+    <ul>
+      <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+      <li><a href="/vi/tool/vllm">vLLM</a> — Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline</li>
+      <li><a href="/vi/tool/localai">LocalAI</a> — Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU</li>
+      <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>RAG Systems — Retrieval-Augmented Generation</h2>
+    <ul>
+      <li><a href="/vi/tool/dify">Dify</a> — Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</li>
+      <li><a href="/vi/tool/ragflow">RAGFlow</a> — RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn</li>
+      <li><a href="/vi/tool/flowise">Flowise</a> — Công cụ no-code xây dựng RAG pipeline và LLM apps bằng giao diện kéo thả — nền tảng LangChain</li>
+      <li><a href="/vi/tool/lightrag">LightRAG</a> — Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</h2>
+    <ul>
+      <li><a href="/vi/tool/milvus">Milvus</a> — Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation</li>
+      <li><a href="/vi/tool/qdrant">Qdrant</a> — Vector database viết bằng Rust — nhanh, tiết kiệm bộ nhớ, filtering payload mạnh nhất</li>
+      <li><a href="/vi/tool/chroma">Chroma</a> — Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG</li>
+      <li><a href="/vi/tool/pgvector">pgvector</a> — Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Security &amp; Guardrails – Bảo vệ ứng dụng AI</h2>
+    <ul>
+      <li><a href="/vi/tool/garak">garak</a> — LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI</li>
+      <li><a href="/vi/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn</li>
+      <li><a href="/vi/tool/presidio">Presidio</a> — PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân</li>
+      <li><a href="/vi/tool/guardrails-ai">Guardrails AI</a> — I/O validation framework cho LLM – structured output + 100+ validators</li>
+    </ul>
+  </section>
+</main>
 <div id="app">
   <!-- Top Bar -->
   <header id="topbar">

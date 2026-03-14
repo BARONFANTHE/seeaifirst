@@ -929,32 +929,154 @@ html, body {
 </head>
 <body>
 <!-- PRERENDER:BODY:START -->
-<div id="prerender-content">
-  <main>
-    <article>
-      <h1>See AI First — The Opinionated AI Stack Guide</h1>
-      <p>Explore 66 curated AI tools across 13 categories.</p>
-      <nav>
-        <h2>Categories</h2>
-        <ul>
-          <li><a href="/section/protocols">🔥 Foundation Protocols — Standardized Communication Layer (2)</a></li>
-          <li><a href="/section/frameworks">Agent Frameworks — Building AI Agents (10)</a></li>
-          <li><a href="/section/platforms">Platforms &amp; Config — AI Platforms &amp; System Files (2)</a></li>
-          <li><a href="/section/memory">Memory Systems — Cross-Session Memory (3)</a></li>
-          <li><a href="/section/skills">🔥 Cambrian Explosion Skills Ecosystem — &quot;Bigger than MCP&quot; (5)</a></li>
-          <li><a href="/section/orchestration">Orchestration — Multi-Agent Coordination (3)</a></li>
-          <li><a href="/section/coding-agents">🔥 2026 Landscape AI Coding Agents — AI-Powered Coding Tools (11)</a></li>
-          <li><a href="/section/trends">🌍 Global AI Trends 2026 — Trends Shaping the Future (9)</a></li>
-          <li><a href="/section/observability">📊 Observability &amp; Evaluation — AI Monitoring &amp; Assessment (5)</a></li>
-          <li><a href="/section/infrastructure">⚙️ AI Infrastructure — Model Serving &amp; Deployment (4)</a></li>
-          <li><a href="/section/rag-systems">🔍 RAG Systems — Retrieval-Augmented Generation (4)</a></li>
-          <li><a href="/section/vector-databases">🗄️ Vector Databases — Vector Storage &amp; Search (4)</a></li>
-          <li><a href="/section/security">🛡️ Security &amp; Guardrails – Protecting AI Applications (4)</a></li>
-        </ul>
-      </nav>
-    </article>
-  </main>
-</div>
+<main id="prerender-content">
+  <h1>See AI First — The Opinionated AI Stack Guide</h1>
+  <p>Curated directory of 66 AI developer tools across 13 categories.</p>
+
+  <section>
+    <h2>Protocols — Standardized Communication Layer</h2>
+    <ul>
+      <li><a href="/tool/mcp">MCP — Model Context Protocol</a> — Anthropic&#039;s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called &#039;USB-C for AI&#039;.</li>
+      <li><a href="/tool/a2a">A2A — Agent2Agent Protocol</a> — Google&#039;s protocol — lets AI agents communicate and collaborate with each other, regardless of their underlying framework.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Agent Frameworks — Building AI Agents</h2>
+    <ul>
+      <li><a href="/tool/langgraph">LangGraph</a> — Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.</li>
+      <li><a href="/tool/crewai">CrewAI</a> — Build role-based AI agent teams with minimal code. Each agent has a role, they coordinate automatically.</li>
+      <li><a href="/tool/autogen">AutoGen</a> — Microsoft&#039;s framework for multi-agent conversations. Flexible architecture, easy to extend.</li>
+      <li><a href="/tool/openai-agents-sdk">OpenAI Agents SDK</a> — OpenAI&#039;s lightweight Python SDK — build agents fast with built-in safety guardrails.</li>
+      <li><a href="/tool/google-adk">Google ADK</a> — Google&#039;s agent building toolkit — with built-in Gemini, Vertex AI, and A2A protocol integration.</li>
+      <li><a href="/tool/llamaindex">LlamaIndex</a> — The RAG specialist — connects AI to your private data for accurate answers from internal documents.</li>
+      <li><a href="/tool/rasa">Rasa</a> — Chatbot and voice AI platform — runs on your own server with full data control.</li>
+      <li><a href="/tool/browser-use">Browser-Use</a> — Browser automation framework for AI agents — control the web with Python using any LLM</li>
+      <li><a href="/tool/pydantic-ai">Pydantic AI</a> — Type-safe agent framework in the style of FastAPI — built by the Pydantic team, supports 40+ model providers</li>
+      <li><a href="/tool/mastra">Mastra</a> — TypeScript-first agent framework from the Gatsby team — workflows, RAG, evals, and MCP built in</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Platforms &amp; Config — AI Platforms &amp; System Files</h2>
+    <ul>
+      <li><a href="/tool/claude-ai">Claude.ai (Web)</a> — Anthropic&#039;s chat interface — with memory, web search, and tool integration via MCP.</li>
+      <li><a href="/tool/chatgpt">ChatGPT (Web)</a> — OpenAI&#039;s most popular AI chat — with GPTs, search, tools, and a built-in memory system.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Memory Systems — Cross-Session Memory</h2>
+    <ul>
+      <li><a href="/tool/claude-mem">Claude-Mem</a> — Plugin that gives Claude Code persistent long-term memory — automatically records experience, compresses intelligently, and remembers across sessions.</li>
+      <li><a href="/tool/he-thong-memory-khac">Other Memory Systems</a> — Beyond Claude-Mem, several other memory systems exist: MemGPT/Letta — self-manages context windows like an OS manages RAM, with a paging mechanism.</li>
+      <li><a href="/tool/memos">MemOS</a> — Unified memory operating system for LLMs — manages memory via MemCube with short-term and long-term support</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills Ecosystem — &quot;Bigger than MCP&quot;</h2>
+    <ul>
+      <li><a href="/tool/universal-agent-skills">Universal Agent Skills</a> — Skills are .md files with instructions for AI agents — simple yet effective, runnable on any AI coding tool.</li>
+      <li><a href="/tool/skill-categories-dang-chu-y">Notable Skill Categories</a> — Key categories: Engineering &amp; DevOps (API testing, Docker, CI/CD), Web Development (React, Tailwind, animations), AI/ML Research (77 skills for paper reading, fine-tuning), Cross-Agent Orchestration (handoff between Claude Code ↔ Codex ↔ Cursor), Claude Code Ecosystem (Task Master, Claude Swarm, session management).</li>
+      <li><a href="/tool/superpowers">Superpowers</a> — Agent-style skills framework for Claude Code — automatically activates the right skills based on context.</li>
+      <li><a href="/tool/agents-wshobson">Agents (wshobson)</a> — Collection of 112 agents + 146 skills + 73 specialized plugins for Claude Code — the largest to date.</li>
+      <li><a href="/tool/planning-with-files">Planning with Files</a> — Markdown-file-based planning skill inspired by Manus — maintains context across multiple work sessions.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Orchestration — Multi-Agent Coordination</h2>
+    <ul>
+      <li><a href="/tool/claude-flow">Claude-Flow</a> — Agent orchestration platform with a Queen + Workers architecture — manages Claude, GPT, and Gemini simultaneously via MCP.</li>
+      <li><a href="/tool/openclaw">OpenClaw</a> — Evolution: Clawdbot → Moltbot → OpenClaw</li>
+      <li><a href="/tool/claude-squad">Claude Squad</a> — Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>AI Coding Agents — AI-Powered Coding Tools</h2>
+    <ul>
+      <li><a href="/tool/claude-code">Claude Code</a> — The leading CLI agent — SWE-bench, outperforming all rivals.</li>
+      <li><a href="/tool/cursor">Cursor</a> — Smart IDE based on VS Code — features Composer and Agent mode, best for daily coding.</li>
+      <li><a href="/tool/codex-cli">Codex CLI</a> — OpenAI&#039;s CLI agent — runs in terminal or cloud, handles tasks sequentially and precisely.</li>
+      <li><a href="/tool/windsurf">Windsurf</a> — AI IDE with Cascade — a multi-step autonomous agent: reads code → analyzes → edits → tests → commits.</li>
+      <li><a href="/tool/github-copilot">GitHub Copilot</a> — Microsoft&#039;s code assistant built into VS Code — features Agent mode, strong for enterprise.</li>
+      <li><a href="/tool/gemini-cli">Gemini CLI</a> — Google&#039;s CLI agent — free for individuals, context (the largest).</li>
+      <li><a href="/tool/cline-roocode">Cline / RooCode</a> — Open-source VS Code extension — supports multiple AI models and MCP, community-driven.</li>
+      <li><a href="/tool/kiro-aws">Kiro (AWS)</a> — AWS&#039;s spec-first AI IDE — from requirements → design → plan → automated code generation.</li>
+      <li><a href="/tool/replit-agent">Replit Agent</a> — Cloud-based agent — builds full-stack apps fast, no setup needed. Best for beginners.</li>
+      <li><a href="/tool/opencode">OpenCode</a> — Open-source coding agent running in terminal — supports all LLM providers, MIT license</li>
+      <li><a href="/tool/goose">Goose</a> — Open-source coding agent from Block (Square) — doesn&#039;t just suggest but also installs, runs, and debugs with any LLM</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>AI Trends 2026 — Trends Shaping the Future</h2>
+    <ul>
+      <li><a href="/tool/multi-agent-systems">Multi-Agent Systems</a> — Gartner reports queries about multi-agent systems surged from Q1/2024 to Q2/2025.</li>
+      <li><a href="/tool/mechanistic-interpretability">Mechanistic Interpretability</a> — Research into how AI &#039;thinks&#039; internally — enabling better understanding and control of AI behavior. 2026 breakthrough per MIT.</li>
+      <li><a href="/tool/world-models">World Models</a></li>
+      <li><a href="/tool/generative-coding">Generative Coding</a></li>
+      <li><a href="/tool/chinese-open-source-ai">Chinese Open-Source AI</a> — DeepSeek R1 shook the AI world — open-source reasoning model from China. Technology gap shrinking from months to weeks.</li>
+      <li><a href="/tool/post-training-pre-training">Post-Training &gt; Pre-Training</a> — Trend toward post-training refinement instead of building larger models — RL and fine-tuning become the key.</li>
+      <li><a href="/tool/ai-drug-discovery">AI Drug Discovery</a> — AI-discovered drugs entering mid/late-stage clinical trials. Focus: cancer and rare diseases.</li>
+      <li><a href="/tool/ai-infrastructure">AI Infrastructure</a> — Massive data centers being built — even using nuclear power.</li>
+      <li><a href="/tool/ai-governance">AI Governance</a> — AI agents monitoring other AI agents — setting safety guardrails and keeping humans in the loop.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Observability &amp; Evaluation — AI Monitoring &amp; Assessment</h2>
+    <ul>
+      <li><a href="/tool/langfuse">Langfuse</a> — Open-source observability platform for LLMs — tracing, evals, prompt management</li>
+      <li><a href="/tool/deepeval">DeepEval</a> — LLM evaluation framework like Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+      <li><a href="/tool/promptfoo">Promptfoo</a> — CLI tool for prompt testing, model comparison, and LLM red-teaming/security scanning</li>
+      <li><a href="/tool/langsmith">LangSmith</a> — LangChain&#039;s observability platform — tracing, evaluation, prompt hub for LangChain/LangGraph</li>
+      <li><a href="/tool/arize-phoenix">Arize Phoenix</a> — Open-source AI observability platform — tracing, evaluation, RAG debugging, embeddings analysis</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>AI Infrastructure — Model Serving &amp; Deployment</h2>
+    <ul>
+      <li><a href="/tool/ollama">Ollama</a> — The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started</li>
+      <li><a href="/tool/vllm">vLLM</a> — High-performance production inference engine — PagedAttention, 2-4× throughput over baseline</li>
+      <li><a href="/tool/localai">LocalAI</a> — Self-hosted OpenAI alternative — run LLMs, image gen, audio on consumer hardware, no GPU required</li>
+      <li><a href="/tool/litellm">LiteLLM</a> — Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>RAG Systems — Retrieval-Augmented Generation</h2>
+    <ul>
+      <li><a href="/tool/dify">Dify</a> — Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline</li>
+      <li><a href="/tool/ragflow">RAGFlow</a> — Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations</li>
+      <li><a href="/tool/flowise">Flowise</a> — No-code tool for building RAG pipelines and LLM apps with drag-and-drop UI — built on LangChain</li>
+      <li><a href="/tool/lightrag">LightRAG</a> — Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Vector Databases — Vector Storage &amp; Search</h2>
+    <ul>
+      <li><a href="/tool/milvus">Milvus</a> — Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation</li>
+      <li><a href="/tool/qdrant">Qdrant</a> — Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering</li>
+      <li><a href="/tool/chroma">Chroma</a> — Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG</li>
+      <li><a href="/tool/pgvector">pgvector</a> — Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Security &amp; Guardrails – Protecting AI Applications</h2>
+    <ul>
+      <li><a href="/tool/garak">garak</a> — LLM vulnerability scanner – probes security flaws in AI models</li>
+      <li><a href="/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails for LLMs with Colang DSL – dialog control and safety</li>
+      <li><a href="/tool/presidio">Presidio</a> — PII detection &amp; anonymization for text and images – protecting personal data</li>
+      <li><a href="/tool/guardrails-ai">Guardrails AI</a> — I/O validation framework for LLMs – structured output + 100+ validators</li>
+    </ul>
+  </section>
+</main>
 <!-- PRERENDER:BODY:END -->
 <div id="app">
   <!-- Top Bar -->

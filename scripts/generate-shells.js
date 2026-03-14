@@ -46,6 +46,93 @@ function nullSafe(value, fallback) {
   return value;
 }
 
+/**
+ * sanitizeForShell(text) — strip HTML, volatile metrics, and escape for home prerender only.
+ * Pipeline: null-guard → stripHtml → normalize whitespace → remove volatile metrics → clean artifacts → escapeHtml
+ */
+function sanitizeForShell(text) {
+  if (!text) return '';
+
+  // 1. Strip HTML tags
+  let s = stripHtml(text);
+
+  // 2. Normalize whitespace
+  s = s.replace(/\s+/g, ' ').trim();
+
+  // 3. Remove volatile external metrics (narrow patterns only)
+  // GitHub star counts: 135k⭐, 42.7K⭐, 73K+ stars, 96K+ stars, 129K⭐
+  s = s.replace(/\d+[\.,]?\d*[kKmM]?\s*⭐/g, '');
+  s = s.replace(/\d+[\.,]?\d*[kK]\+?\s*stars?\b/gi, '');
+  // Token/context limits: 200K tokens, 1M token, 100K context
+  s = s.replace(/\d+[\.,]?\d*[kKmM]\s*tokens?\b/gi, '');
+  s = s.replace(/\d+[\.,]?\d*[kKmM]\s*context\b/gi, '');
+  // Dollar amounts: $5B, $276B, $7.6B to $52B
+  s = s.replace(/\$\d+[\.,]?\d*[kKmMbBtT]?\b(\s*to\s*\$\d+[\.,]?\d*[kKmMbBtT]?\b)?/gi, '');
+  // Power metrics: 1GW+
+  s = s.replace(/\d+[\.,]?\d*\s*[GTKM]W\+?/g, '');
+  // Percentage claims: 1,445% surge, 40% apps, 30% code, 25%+
+  s = s.replace(/\d+[\.,]?\d*%\+?/g, '');
+  // Ranking claims: #1 on ...
+  s = s.replace(/#\d+\s+on\b/gi, '');
+
+  // 4. Clean boundary artifacts left by metric removal
+  // Collapse multiple spaces
+  s = s.replace(/\s+/g, ' ');
+  // Remove orphan separators at start/end
+  s = s.replace(/^\s*[·—,\-]\s*/, '');
+  s = s.replace(/\s*[·—,\-]\s*$/, '');
+  // Collapse repeated separators (e.g., "— —" or ", ,")
+  s = s.replace(/([·—,])\s*\1/g, '$1');
+  // Remove empty parentheses
+  s = s.replace(/\(\s*\)/g, '');
+  // Clean "— " at start after removal or trailing " —"
+  s = s.replace(/^\s*[·—,\-]\s*/, '');
+  s = s.replace(/\s*[·—,\-]\s*$/, '');
+  // Final whitespace cleanup
+  s = s.trim();
+
+  // 5. Return empty if result is too short
+  if (s.length < 10) return '';
+
+  // 6. Escape HTML entities as final step
+  return escapeHtml(s);
+}
+
+/**
+ * hasBadArtifacts(sanitizedText, originalStrippedText) — detect obvious sanitizer damage.
+ * Returns true if summary has broken artifacts that harm readability.
+ * Detector only — does not modify text.
+ */
+function hasBadArtifacts(sanitizedText, originalStrippedText) {
+  if (!sanitizedText) return true;
+  const s = sanitizedText;
+  // 1. Orphan separator: " , " in text
+  if (/\s,\s/.test(s)) return true;
+  // 2. Broken sentence join: ". of", ". on", ". at", etc.
+  if (/\.\s(?:of|on|at|for|with|to)\b/.test(s)) return true;
+  // 3. Orphan price/unit fragment: "at /month", "for /year"
+  if (/\b(?:at|for|up to)\s+\/(?:month|year)\b/.test(s)) return true;
+  // 4. Text empty or mostly punctuation
+  if (/^\W*$/.test(s.trim())) return true;
+  // 5. Severe length drop (only when original is substantial)
+  if (originalStrippedText && originalStrippedText.length >= 60 && s.length < 0.4 * originalStrippedText.length) return true;
+  // 6. Orphan quantifier fragment: "up to context", "up to tokens"
+  if (/\bup to\s+(?:context|tokens?)\b/.test(s)) return true;
+  // 7. Broken metric-removal fragment
+  if (/\bwrites of code\b/.test(s)) return true;
+  // 8. Broken sentence join Vietnamese: ". trên", ". về", etc.
+  if (/\.\s(?:trên|về|của|cho|với|từ)\b/.test(s)) return true;
+  // 9. Orphan price/unit Vietnamese: "giá /tháng"
+  if (/\bgiá\s+\/(?:tháng|năm)\b/.test(s)) return true;
+  // 10. Broken app fragment: ". app"
+  if (/\.\s*app\b/.test(s)) return true;
+  // 11. Orphan plus-comma: "+,"
+  if (/\+\s*,/.test(s)) return true;
+  // 12. Broken "from by" fragment
+  if (/\bfrom by\b/.test(s)) return true;
+  return false;
+}
+
 // ── Read inputs ─────────────────────────────────────────────────────
 
 console.log('Reading template and data files...');
@@ -259,29 +346,40 @@ function generateBodyContent(route) {
         ? 'See AI First \u2014 The Opinionated AI Stack Guide'
         : 'See AI First \u2014 B\u1EA3n \u0110\u1ED3 C\u00F4ng C\u1EE5 AI C\u00F3 Ch\u1ECDn L\u1ECDc';
       const intro = lang === 'en'
-        ? `Explore ${totalTools} curated AI tools across ${sections.length} categories.`
-        : `Kh\u00E1m ph\u00E1 ${totalTools} c\u00F4ng c\u1EE5 AI \u0111\u01B0\u1EE3c tuy\u1EC3n ch\u1ECDn trong ${sections.length} danh m\u1EE5c.`;
-      const catHeading = lang === 'en' ? 'Categories' : 'Danh m\u1EE5c';
-      const sectionItems = sections.map(s => {
-        const badge = nullSafe(s.badge, '');
-        const label = badge ? `${badge} ${s.title}` : s.title;
-        return `          <li><a href="${linkPrefix}/section/${s.id}">${escapeHtml(label)} (${s.cards.length})</a></li>`;
-      }).join('\n');
+        ? `Curated directory of ${totalTools} AI developer tools across ${sections.length} categories.`
+        : `Th\u01B0 m\u1EE5c tuy\u1EC3n ch\u1ECDn ${totalTools} c\u00F4ng c\u1EE5 AI d\u00E0nh cho developer trong ${sections.length} danh m\u1EE5c.`;
 
-      return `<div id="prerender-content">
-  <main>
-    <article>
-      <h1>${escapeHtml(heading)}</h1>
-      <p>${escapeHtml(intro)}</p>
-      <nav>
-        <h2>${escapeHtml(catHeading)}</h2>
-        <ul>
-${sectionItems}
-        </ul>
-      </nav>
-    </article>
-  </main>
-</div>`;
+      const sectionBlocks = sections.map(s => {
+        const cardItems = s.cards.map(c => {
+          const name = escapeHtml(c.name);
+          const normalizedDesc = stripHtml(nullSafe(c.desc, '')).replace(/\s+/g, ' ').trim();
+          let summary = sanitizeForShell(c.desc);
+
+          // Fallback to first sentence of detail if desc sanitizes to empty or has bad artifacts
+          if (!summary || hasBadArtifacts(summary, normalizedDesc)) {
+            summary = '';
+            const rawDetail = stripHtml(nullSafe(c.detail, '')).replace(/\s+/g, ' ').trim();
+            if (rawDetail) {
+              const dotIndex = rawDetail.indexOf('.');
+              const firstSentence = dotIndex !== -1 ? rawDetail.substring(0, dotIndex + 1) : rawDetail;
+              const normalizedFallback = firstSentence.replace(/\s+/g, ' ').trim();
+              summary = sanitizeForShell(firstSentence);
+              if (summary && hasBadArtifacts(summary, normalizedFallback)) {
+                summary = '';
+              }
+            }
+          }
+
+          if (summary) {
+            return `      <li><a href="${linkPrefix}/tool/${c.slug}">${name}</a> \u2014 ${summary}</li>`;
+          }
+          return `      <li><a href="${linkPrefix}/tool/${c.slug}">${name}</a></li>`;
+        }).join('\n');
+
+        return `  <section>\n    <h2>${escapeHtml(s.title)}</h2>\n    <ul>\n${cardItems}\n    </ul>\n  </section>`;
+      }).join('\n\n');
+
+      return `<main id="prerender-content">\n  <h1>${escapeHtml(heading)}</h1>\n  <p>${escapeHtml(intro)}</p>\n\n${sectionBlocks}\n</main>`;
     }
     case 'tool': {
       const { card, section } = data;
