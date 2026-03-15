@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="AI Trends 2026 — Xu hướng đang định hình tương lai — See AI First">
 <meta name="twitter:description" content="Khám phá 9 công cụ AI được tuyển chọn trong AI Trends 2026 — Xu hướng đang định hình tương lai.">
 <link rel="canonical" href="https://seeaifirst.com/vi/section/trends">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@context":"https://schema.org","@type":"CollectionPage","name":"AI Trends 2026 — Xu hướng đang định hình tương lai","url":"https://seeaifirst.com/vi/section/trends","isPartOf":{"@id":"https://seeaifirst.com/#website"},"inLanguage":"vi","mainEntity":{"@type":"ItemList","numberOfItems":9,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"Multi-Agent Systems","url":"https://seeaifirst.com/vi/tool/multi-agent-systems"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"Mechanistic Interpretability","url":"https://seeaifirst.com/vi/tool/mechanistic-interpretability"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"World Models","url":"https://seeaifirst.com/vi/tool/world-models"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"Generative Coding","url":"https://seeaifirst.com/vi/tool/generative-coding"}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"Chinese Open-Source AI","url":"https://seeaifirst.com/vi/tool/chinese-open-source-ai"}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"Post-Training > Pre-Training","url":"https://seeaifirst.com/vi/tool/post-training-pre-training"}},{"@type":"ListItem","position":7,"item":{"@type":"SoftwareApplication","name":"AI Drug Discovery","url":"https://seeaifirst.com/vi/tool/ai-drug-discovery"}},{"@type":"ListItem","position":8,"item":{"@type":"SoftwareApplication","name":"AI Infrastructure","url":"https://seeaifirst.com/vi/tool/ai-infrastructure"}},{"@type":"ListItem","position":9,"item":{"@type":"SoftwareApplication","name":"AI Governance","url":"https://seeaifirst.com/vi/tool/ai-governance"}}]}}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1111,6 +1112,7 @@ let isDark = true;
 let sidebarCollapsed = false;
 let searchIndex = 0;
 let hotRightNowConfig = null;
+let _jsonLdBootDone = false;
 
 // ═══ Section Colors & Gradients ═══
 const iconGradients = {
@@ -2559,7 +2561,7 @@ function generateJsonLd(data) {
         '@type': 'SoftwareApplication',
         'name': card.name,
         'description': stripHtml(card.desc),
-        'url': SITE_URL + '/#' + getCardSlug(card),
+        'url': SITE_URL + withLangPrefix('/tool/' + getCardSlug(card)),
         'applicationCategory': 'DeveloperApplication',
         'operatingSystem': 'Cross-platform'
       };
@@ -2673,6 +2675,13 @@ function updateHeadTags() {
 // JSON-LD async helper — fetches correct dataset per currentLang (PR8 patch)
 function updateJsonLd() {
   try {
+    // PR-AEO1: skip first call if shell JSON-LD already exists
+    if (!_jsonLdBootDone) {
+      _jsonLdBootDone = true;
+      const existing = document.getElementById('seeaifirst-jsonld');
+      if (existing && existing.textContent.length > 2) return;
+    }
+
     const lang = currentLang;
     const cached = lang === 'vi' ? viDataCache : enDataCache;
 

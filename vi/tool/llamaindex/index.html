@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="LlamaIndex — See AI First">
 <meta name="twitter:description" content="Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/llamaindex">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LlamaIndex","url":"https://seeaifirst.com/vi/tool/llamaindex","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.","keywords":["Agent Frameworks — Xây dựng AI agents","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://www.llamaindex.ai/","https://github.com/run-llama/llama_index","https://docs.llamaindex.ai/"],"datePublished":"2026-02-03","dateModified":"2026-02-19","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1104,6 +1105,7 @@ let isDark = true;
 let sidebarCollapsed = false;
 let searchIndex = 0;
 let hotRightNowConfig = null;
+let _jsonLdBootDone = false;
 
 // ═══ Section Colors & Gradients ═══
 const iconGradients = {
@@ -2552,7 +2554,7 @@ function generateJsonLd(data) {
         '@type': 'SoftwareApplication',
         'name': card.name,
         'description': stripHtml(card.desc),
-        'url': SITE_URL + '/#' + getCardSlug(card),
+        'url': SITE_URL + withLangPrefix('/tool/' + getCardSlug(card)),
         'applicationCategory': 'DeveloperApplication',
         'operatingSystem': 'Cross-platform'
       };
@@ -2666,6 +2668,13 @@ function updateHeadTags() {
 // JSON-LD async helper — fetches correct dataset per currentLang (PR8 patch)
 function updateJsonLd() {
   try {
+    // PR-AEO1: skip first call if shell JSON-LD already exists
+    if (!_jsonLdBootDone) {
+      _jsonLdBootDone = true;
+      const existing = document.getElementById('seeaifirst-jsonld');
+      if (existing && existing.textContent.length > 2) return;
+    }
+
     const lang = currentLang;
     const cached = lang === 'vi' ? viDataCache : enDataCache;
 

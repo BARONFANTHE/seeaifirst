@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="AI Infrastructure — See AI First">
 <meta name="twitter:description" content="Massive 1GW+ data centers, even using nuclear power for AI. Market from $7.6B to $52B by 2030.">
 <link rel="canonical" href="https://seeaifirst.com/tool/ai-infrastructure">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AI Infrastructure","url":"https://seeaifirst.com/tool/ai-infrastructure","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Massive 1GW+ data centers, even using nuclear power for AI. Market from $7.6B to $52B by 2030.","keywords":["AI Trends 2026 — Trends Shaping the Future","python","go"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.gartner.com/en/newsroom/press-releases/2025-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2026","https://www.iea.org/energy-system/buildings/data-centres-and-data-transmission-networks"],"datePublished":"2026-02-03","dateModified":"2026-02-27","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1104,6 +1105,7 @@ let isDark = true;
 let sidebarCollapsed = false;
 let searchIndex = 0;
 let hotRightNowConfig = null;
+let _jsonLdBootDone = false;
 
 // ═══ Section Colors & Gradients ═══
 const iconGradients = {
@@ -2552,7 +2554,7 @@ function generateJsonLd(data) {
         '@type': 'SoftwareApplication',
         'name': card.name,
         'description': stripHtml(card.desc),
-        'url': SITE_URL + '/#' + getCardSlug(card),
+        'url': SITE_URL + withLangPrefix('/tool/' + getCardSlug(card)),
         'applicationCategory': 'DeveloperApplication',
         'operatingSystem': 'Cross-platform'
       };
@@ -2666,6 +2668,13 @@ function updateHeadTags() {
 // JSON-LD async helper — fetches correct dataset per currentLang (PR8 patch)
 function updateJsonLd() {
   try {
+    // PR-AEO1: skip first call if shell JSON-LD already exists
+    if (!_jsonLdBootDone) {
+      _jsonLdBootDone = true;
+      const existing = document.getElementById('seeaifirst-jsonld');
+      if (existing && existing.textContent.length > 2) return;
+    }
+
     const lang = currentLang;
     const cached = lang === 'vi' ? viDataCache : enDataCache;
 
