@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "7.0",
     "schema_version": "1.0.0",
-    "updated_at": "2026-02-27T11:08:22.566Z",
+    "updated_at": "2026-03-15T15:46:44.855Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -665,9 +665,9 @@
         {
           "name": "Browser-Use",
           "slug": "browser-use",
-          "desc": "Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 73K+ stars",
+          "desc": "Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars",
           "added_date": "2026-02-04",
-          "detail": "Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP server để dùng trong Claude Code/Cursor. Có Browser-Use Cloud cho deploy production. 73K+ stars, MIT license, Python SDK đơn giản chỉ vài dòng code.",
+          "detail": "Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP server để dùng trong Claude Code/Cursor. Có Browser-Use Cloud cho deploy production. 80K+ stars, MIT license, Python SDK đơn giản chỉ vài dòng code.",
           "sources": [
             {
               "title": "GitHub",
@@ -712,7 +712,7 @@
           "slug": "pydantic-ai",
           "desc": "Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers",
           "added_date": "2026-02-04",
-          "detail": "Pydantic AI mang triết lý type-safety của FastAPI vào thế giới AI agents. Structured output với Pydantic models, dependency injection, streaming, và built-in evaluation framework. Hỗ trợ MCP + A2A protocols, human-in-the-loop, và 40+ LLM providers. 14.6K stars, MIT license, phát triển bởi chính team tạo ra Pydantic — thư viện validation phổ biến nhất Python.",
+          "detail": "Pydantic AI mang triết lý type-safety của FastAPI vào thế giới AI agents. Structured output với Pydantic models, dependency injection, streaming, và built-in evaluation framework. Hỗ trợ MCP + A2A protocols, human-in-the-loop, và 40+ LLM providers. 15.5K stars, MIT license, phát triển bởi chính team tạo ra Pydantic — thư viện validation phổ biến nhất Python.",
           "sources": [
             {
               "title": "GitHub",
@@ -764,7 +764,7 @@
           "slug": "mastra",
           "desc": "TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn",
           "added_date": "2026-02-04",
-          "detail": "Mastra là framework agent ưu tiên TypeScript, xây dựng bởi team đứng sau Gatsby.js. Cung cấp graph-based workflows, built-in RAG với vector store, evaluation framework, và MCP client/server. Hỗ trợ 40+ model providers, human-in-the-loop, và memory management. 20.7K stars, active development, phù hợp cho TypeScript/Node.js developers muốn xây agent nhanh.",
+          "detail": "Mastra là framework agent ưu tiên TypeScript, xây dựng bởi team đứng sau Gatsby.js. Cung cấp graph-based workflows, built-in RAG với vector store, evaluation framework, và MCP client/server. Hỗ trợ 40+ model providers, human-in-the-loop, và memory management. 22K stars, active development, phù hợp cho TypeScript/Node.js developers muốn xây agent nhanh.",
           "sources": [
             {
               "title": "GitHub",
@@ -891,7 +891,7 @@
             "Memory",
             "Apps"
           ],
-          "detail": "Chat AI phổ biến nhất thế giới của OpenAI với hơn 300 triệu user/tuần. Có GPTs (custom chatbots), Custom Instructions (cá nhân hóa), web browse, DALL-E (tạo ảnh), Code Interpreter, và plugin ecosystem. Hỗ trợ GPT-4o, GPT-4o-mini, o1, o3. ChatGPT Plus $20/tháng, Team $25/user/tháng.",
+          "detail": "Chat AI phổ biến nhất thế giới của OpenAI với hàng trăm triệu user/tuần. Có GPTs (custom chatbots), Custom Instructions (cá nhân hóa), web browse, DALL-E (tạo ảnh), Code Interpreter, và plugin ecosystem. Hỗ trợ GPT-4o, GPT-4o-mini, o1, o3. ChatGPT Plus $20/tháng, Team $25/user/tháng.",
           "sources": [
             {
               "title": "ChatGPT",
@@ -1077,7 +1077,7 @@
           "slug": "memos",
           "desc": "Hệ điều hành bộ nhớ thống nhất cho LLM — quản lý memory qua MemCube với hỗ trợ short-term và long-term",
           "added_date": "2026-02-04",
-          "detail": "MemOS cung cấp kiến trúc memory layer chuẩn hóa cho AI agents với MemCube — đơn vị bộ nhớ cơ bản chứa cả dữ liệu và metadata. Hỗ trợ nhiều loại memory (parametric, activation, long-term) và tích hợp được với các framework phổ biến. ~4.9K stars, active development (v2.0.4, Jan 2026). Unique vì cung cấp unified memory interface mà Mem0/Zep chưa giải quyết trọn vẹn.",
+          "detail": "MemOS cung cấp kiến trúc memory layer chuẩn hóa cho AI agents với MemCube — đơn vị bộ nhớ cơ bản chứa cả dữ liệu và metadata. Hỗ trợ nhiều loại memory (parametric, activation, long-term) và tích hợp được với các framework phổ biến. ~6.9K stars, active development (v2.0.4, Jan 2026). Unique vì cung cấp unified memory interface mà Mem0/Zep chưa giải quyết trọn vẹn.",
           "sources": [
             {
               "title": "GitHub",
@@ -1436,13 +1436,12 @@
           "desc": "Nền tảng điều phối agent theo kiến trúc <strong>Queen + Workers</strong> — quản lý Claude, GPT, Gemini cùng lúc qua MCP.",
           "added_date": "2026-02-03",
           "tags": [
-            "12.8k⭐",
             "MIT",
             "Multi-agent swarm",
             "HNSW vector",
             "60+ coding agents"
           ],
-          "detail": "Framework điều phối multi-agent dạng Queen + Workers. Queen (Claude Opus) lập kế hoạch, phân công task cho Workers (có thể là Claude Code, Codex, hay Gemini CLI). Hỗ trợ: HNSW vector memory, swarm mode (60+ agents), multi-model routing qua MCP, parallel execution. MIT license, 12.8k+ stars trên GitHub.",
+          "detail": "Framework điều phối multi-agent dạng Queen + Workers. Queen (Claude Opus) lập kế hoạch, phân công task cho Workers (có thể là Claude Code, Codex, hay Gemini CLI). Hỗ trợ: HNSW vector memory, swarm mode (60+ agents), multi-model routing qua MCP, parallel execution. MIT license.",
           "sources": [
             {
               "title": "Claude-Flow GitHub",
@@ -1488,7 +1487,7 @@
           "slug": "openclaw",
           "icon": "🐕",
           "mono": true,
-          "desc": "Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo. <strong>135k⭐</strong> trên GitHub.",
+          "desc": "Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo. <strong>314K⭐</strong> trên GitHub.",
           "added_date": "2026-02-03",
           "detail": "Evolution: Clawdbot → Moltbot → OpenClaw",
           "tags": [
@@ -1615,7 +1614,7 @@
             "Skills",
             "Hooks"
           ],
-          "detail": "Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ. 200K token context cho phép đọc hiểu toàn bộ codebase lớn. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Chạy local, không cloud dependency. Best for: dự án phức tạp, refactoring lớn, codebase hiện có. Hỗ trợ async mode trên web (claude.ai/code) — delegate task dài, tạo PR trực tiếp, teleport về CLI local để tiếp tục. Hệ sinh thái mở rộng: Everything Claude Code (44K⭐) — bộ agents, skills, hooks, commands production-ready cho Claude Code.",
+          "detail": "Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ. 200K token context cho phép đọc hiểu toàn bộ codebase lớn. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Chạy local, không cloud dependency. Best for: dự án phức tạp, refactoring lớn, codebase hiện có. Hỗ trợ async mode trên web (claude.ai/code) — delegate task dài, tạo PR trực tiếp, teleport về CLI local để tiếp tục. Hệ sinh thái mở rộng: Everything Claude Code (76K⭐) — bộ agents, skills, hooks, commands production-ready cho Claude Code.",
           "sources": [
             {
               "title": "Claude Code Docs",
@@ -2110,9 +2109,9 @@
         {
           "name": "OpenCode",
           "slug": "opencode",
-          "desc": "Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 96K+ stars, MIT license",
+          "desc": "Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 122K+ stars, MIT license",
           "added_date": "2026-02-04",
-          "detail": "OpenCode do SST team phát triển, là open-source alternative cho Claude Code với 96K+ GitHub stars (Top 100 repos). Hỗ trợ OpenAI, Anthropic, Google, Groq, local models — không bị lock vào 1 provider. TUI đẹp (Bubble Tea), có LSP integration, session management, và multi-file editing. Viết bằng Go, cài qua npm/brew/curl. Tích hợp GitHub Actions để review PR tự động.",
+          "detail": "OpenCode do SST team phát triển, là open-source alternative cho Claude Code với 122K+ GitHub stars (Top 100 repos). Hỗ trợ OpenAI, Anthropic, Google, Groq, local models — không bị lock vào 1 provider. TUI đẹp (Bubble Tea), có LSP integration, session management, và multi-file editing. Viết bằng Go, cài qua npm/brew/curl. Tích hợp GitHub Actions để review PR tự động.",
           "sources": [
             {
               "title": "GitHub",
@@ -2127,7 +2126,7 @@
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Muốn coding agent OSS với cộng đồng lớn nhất (108K+ stars, 700+ contributors)",
+            "Muốn coding agent OSS với cộng đồng lớn nhất (122K+ stars, 700+ contributors)",
             "Thích terminal-first workflow với TUI chất lượng cao",
             "Cần plan/build agent switching — phân tích trước khi code"
           ],
@@ -2158,7 +2157,7 @@
           "slug": "goose",
           "desc": "Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM",
           "added_date": "2026-02-04",
-          "detail": "Goose là open-source coding agent từ Block (formerly Square), viết bằng Rust cho performance cao. Khác Claude Code/Cursor ở chỗ: Goose tự chạy commands, install dependencies, debug errors — không chỉ suggest code. Mở rộng qua MCP extensions, có desktop app + CLI. 29.7K stars, Apache-2.0 license, hỗ trợ mọi LLM provider.",
+          "detail": "Goose là open-source coding agent từ Block (formerly Square), viết bằng Rust cho performance cao. Khác Claude Code/Cursor ở chỗ: Goose tự chạy commands, install dependencies, debug errors — không chỉ suggest code. Mở rộng qua MCP extensions, có desktop app + CLI. 33K stars, Apache-2.0 license, hỗ trợ mọi LLM provider.",
           "sources": [
             {
               "title": "GitHub",
@@ -2327,9 +2326,9 @@
           "name": "World Models",
           "slug": "world-models",
           "icon": "🌍",
-          "desc": "AI mô phỏng thế giới thực — LeCun đầu tư $5B, Google và startup đua nhau phát triển. Thị trường gaming $276B vào 2030.",
+          "desc": "AI mô phỏng thế giới thực — AMI Labs, Google và các startup đang đua nhau phát triển. Ngành gaming là một động lực lớn.",
           "added_date": "2026-02-03",
-          "detail": "AI mô phỏng thế giới thực — LeCun (Meta) đầu tư $5B+, Google và startup đua nhau phát triển. World models hiểu physics, dự đoán kết quả hành động trong môi trường 3D. Ứng dụng: tự lái xe, robotics, game development, simulation. Thị trường gaming $276B vào 2030 là động lực lớn. Gần đây: Genie 2 (Google), video generation models chuyển thành world simulators.",
+          "detail": "AI mô phỏng thế giới thực — LeCun đã rời Meta để đồng sáng lập AMI Labs, trong khi Google và các startup đang đua nhau phát triển. World models hiểu physics, dự đoán kết quả hành động trong môi trường 3D. Ứng dụng: tự lái xe, robotics, game development, simulation. Ngành gaming là một động lực lớn. Gần đây: Genie 2 (Google), video generation models chuyển thành world simulators.",
           "sources": [
             {
               "title": "Yann LeCun — A Path Towards Autonomous AI",
@@ -2590,9 +2589,9 @@
           "name": "AI Infrastructure",
           "slug": "ai-infrastructure",
           "icon": "⚡",
-          "desc": "Data center khổng lồ 1GW+, dùng cả điện hạt nhân cho AI. Thị trường từ $7.6B lên $52B vào 2030.",
+          "desc": "Data center khổng lồ 1GW+, dùng cả điện hạt nhân cho AI. Một mặt trận trọng yếu trong cuộc đua AI.",
           "added_date": "2026-02-03",
-          "detail": "Data center khổng lồ 1GW+ đang được xây dựng — dùng cả điện hạt nhân. Microsoft, Google, Amazon đều ký hợp đồng năng lượng hạt nhân dài hạn. Thị trường AI infrastructure từ $7.6B lên $52B vào 2030. NVIDIA H100/H200 thiếu hụt nghiêm trọng. Xu hướng: hyperscale AI data centers gần nguồn năng lượng rẻ (Texas, Scandinavia).",
+          "detail": "Data center khổng lồ 1GW+ đang được xây dựng — dùng cả điện hạt nhân. Microsoft, Google và Amazon đều đang theo đuổi các thỏa thuận năng lượng hạt nhân dài hạn. Đầu tư cho AI infrastructure đang tăng tốc nhanh. Nguồn cung NVIDIA H100/H200 vẫn là một điểm nghẽn quan trọng.",
           "sources": [
             {
               "title": "Gartner — Top Tech Trends 2026",
@@ -3003,10 +3002,10 @@
           "slug": "ollama",
           "desc": "Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong",
           "added_date": "2026-02-08",
-          "detail": "Tool phổ biến nhất để chạy LLM local (162K+ ⭐, top 50 GitHub toàn cầu). Hỗ trợ Llama, DeepSeek, Gemma, Qwen, Phi và 100+ models khác. Cài đặt cực đơn giản: curl install → ollama pull → ollama run. Tự động quản lý GPU/CPU, quantization, model storage. API tương thích OpenAI format. Chạy trên macOS, Linux, Windows. Phù hợp cho developer muốn thử nghiệm LLM trên máy cá nhân mà không tốn API costs.",
+          "detail": "Tool phổ biến nhất để chạy LLM local (165K+ ⭐, top 50 GitHub toàn cầu). Hỗ trợ Llama, DeepSeek, Gemma, Qwen, Phi và 100+ models khác. Cài đặt cực đơn giản: curl install → ollama pull → ollama run. Tự động quản lý GPU/CPU, quantization, model storage. API tương thích OpenAI format. Chạy trên macOS, Linux, Windows. Phù hợp cho developer muốn thử nghiệm LLM trên máy cá nhân mà không tốn API costs.",
           "sources": [
             {
-              "title": "GitHub (162K+ ⭐)",
+              "title": "GitHub (165K+ ⭐)",
               "url": "https://github.com/ollama/ollama"
             },
             {
@@ -3061,10 +3060,10 @@
           "slug": "vllm",
           "desc": "Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline",
           "added_date": "2026-02-08",
-          "detail": "Engine serving LLM cho production (69.7K+ ⭐). Công nghệ PagedAttention giúp tối ưu GPU memory, đạt throughput gấp 2-4× so với FasterTransformer/Orca. Hỗ trợ continuous batching, tensor parallelism, speculative decoding. Tương thích OpenAI API server. Dùng bởi các công ty lớn cho high-throughput serving. Hỗ trợ hầu hết model architectures phổ biến (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
+          "detail": "Engine serving LLM cho production (73K+ ⭐). Công nghệ PagedAttention giúp tối ưu GPU memory, đạt throughput gấp 2-4× so với FasterTransformer/Orca. Hỗ trợ continuous batching, tensor parallelism, speculative decoding. Tương thích OpenAI API server. Dùng bởi các công ty lớn cho high-throughput serving. Hỗ trợ hầu hết model architectures phổ biến (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
           "sources": [
             {
-              "title": "GitHub (69.7K+ ⭐)",
+              "title": "GitHub (73K+ ⭐)",
               "url": "https://github.com/vllm-project/vllm"
             },
             {
@@ -3116,10 +3115,10 @@
           "slug": "localai",
           "desc": "Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU",
           "added_date": "2026-02-08",
-          "detail": "Nền tảng self-hosted thay thế OpenAI API (42.6K+ ⭐). Chạy được trên consumer hardware KHÔNG cần GPU. Hỗ trợ text generation, image generation, audio transcription, embeddings — tất cả qua OpenAI-compatible API. Tương thích Anthropic API format, Responses API, MCP integration. Chạy qua Docker một lệnh. Phù hợp cho teams muốn self-host toàn bộ AI stack trên infrastructure riêng, giữ data không ra ngoài.",
+          "detail": "Nền tảng self-hosted thay thế OpenAI API (43.6K+ ⭐). Chạy được trên consumer hardware KHÔNG cần GPU. Hỗ trợ text generation, image generation, audio transcription, embeddings — tất cả qua OpenAI-compatible API. Tương thích Anthropic API format, Responses API, MCP integration. Chạy qua Docker một lệnh. Phù hợp cho teams muốn self-host toàn bộ AI stack trên infrastructure riêng, giữ data không ra ngoài.",
           "sources": [
             {
-              "title": "GitHub (42.6K+ ⭐)",
+              "title": "GitHub (43.6K+ ⭐)",
               "url": "https://github.com/mudler/LocalAI"
             },
             {
@@ -3172,10 +3171,10 @@
           "slug": "litellm",
           "desc": "AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API",
           "added_date": "2026-02-08",
-          "detail": "Gateway/proxy thống nhất truy cập 100+ LLM providers (35.3K+ ⭐). Gọi OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... qua cùng một API format. Tích hợp cost tracking theo từng request, load balancing giữa providers, fallback tự động khi provider down. Quản lý API keys, rate limits, budget alerts. SDK cho Python và proxy server cho mọi ngôn ngữ. Phù hợp cho teams dùng nhiều LLM providers và cần tối ưu chi phí.",
+          "detail": "Gateway/proxy thống nhất truy cập 100+ LLM providers (39K+ ⭐). Gọi OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... qua cùng một API format. Tích hợp cost tracking theo từng request, load balancing giữa providers, fallback tự động khi provider down. Quản lý API keys, rate limits, budget alerts. SDK cho Python và proxy server cho mọi ngôn ngữ. Phù hợp cho teams dùng nhiều LLM providers và cần tối ưu chi phí.",
           "sources": [
             {
-              "title": "GitHub (35.3K+ ⭐)",
+              "title": "GitHub (39K+ ⭐)",
               "url": "https://github.com/BerriAI/litellm"
             },
             {
@@ -3237,7 +3236,7 @@
           "slug": "dify",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn — 129K⭐",
+          "desc": "Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn — 133K⭐",
           "detail": "Dify là nền tảng all-in-one cho phép tạo ứng dụng AI từ chatbot đến agent phức tạp mà không cần viết nhiều code. Điểm mạnh cốt lõi là visual workflow builder dạng drag-drop — người dùng kéo thả các node (LLM, retrieval, tool, logic) để thiết kế luồng xử lý hoàn chỉnh. RAG pipeline tích hợp sẵn: upload tài liệu, tự động chunking, embedding, và truy xuất — không cần setup vector DB riêng. Hỗ trợ kết nối 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click deploy lên production, và monitoring dashboard theo dõi usage/cost. Ứng dụng thực tế: xây dựng internal knowledge base chatbot cho doanh nghiệp, customer support tự động, AI assistant xử lý tài liệu nội bộ, hoặc prototype nhanh ý tưởng AI app trước khi đầu tư phát triển custom. Lưu ý: Dify là platform scope rộng (RAG + agent + workflow), license có Additional Terms ngoài Apache 2.0 — cần kiểm tra khi dùng thương mại.\n\nKết hợp tốt với: Ollama (chạy LLM local) · Langfuse (observability nâng cao) · Milvus/Qdrant (thay thế vector DB mặc định) · MCP (mở rộng tool access)",
           "sources": [
             {
@@ -3254,7 +3253,7 @@
             }
           ],
           "tags": [
-            "129K⭐",
+            "133K⭐",
             "Apache 2.0+"
           ],
           "pricing": "open-core",
@@ -3299,7 +3298,7 @@
           "slug": "ragflow",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn — 73K⭐",
+          "desc": "RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn — 75K⭐",
           "detail": "RAGFlow là engine RAG tập trung vào chất lượng xử lý tài liệu — bước thường bị bỏ qua nhưng quyết định 80% độ chính xác của câu trả lời. Hệ thống tự động phân tích cấu trúc document phức tạp: bảng biểu, hình ảnh, PDF scan, slides — và chunking theo template với khả năng preview trực quan để người dùng can thiệp khi cần. Mỗi câu trả lời đi kèm trích dẫn nguồn cụ thể (grounded citations), giảm đáng kể tình trạng hallucination. Tích hợp agent toolkit cho phép không chỉ truy xuất text mà còn gọi API, tool bên ngoài. Ứng dụng thực tế: hệ thống Q&A nội bộ doanh nghiệp xử lý hợp đồng, báo cáo kỹ thuật, tài liệu pháp lý — những loại document mà chunking đơn giản cho kết quả kém.\n\nKết hợp tốt với: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Bất kỳ LLM provider nào (OpenAI, Claude, Gemini)",
           "sources": [
             {
@@ -3316,7 +3315,7 @@
             }
           ],
           "tags": [
-            "73K⭐",
+            "75K⭐",
             "Apache 2.0"
           ],
           "pricing": "free",
@@ -3357,7 +3356,7 @@
           "name": "Flowise",
           "slug": "flowise",
           "added_date": "2026-02-08",
-          "desc": "Công cụ no-code xây dựng RAG pipeline và LLM apps bằng giao diện kéo thả — nền tảng LangChain — 49K⭐",
+          "desc": "Công cụ no-code xây dựng RAG pipeline và LLM apps bằng giao diện kéo thả — nền tảng LangChain — 50K⭐",
           "detail": "Flowise biến LangChain thành giao diện visual drag-drop — người dùng kéo thả các node (LLM, retriever, memory, tools) để tạo pipeline hoàn chỉnh mà không cần viết code Python. Mỗi flow có thể export thành API endpoint, deploy bằng Docker một lệnh. Hỗ trợ hơn 100 node tích hợp sẵn: từ document loaders, text splitters, embedding models đến vector stores và output parsers. Marketplace cộng đồng cung cấp template có sẵn cho các use case phổ biến. Ứng dụng thực tế: prototype nhanh chatbot RAG, tạo internal tool cho team non-technical, hoặc dùng như visual debugging tool để hiểu luồng dữ liệu trong RAG pipeline trước khi viết code production.\n\nKết hợp tốt với: LangChain ecosystem · OpenAI/Claude APIs · Chroma/Milvus/Qdrant (vector stores) · Bất kỳ LLM nào LangChain hỗ trợ",
           "sources": [
             {
@@ -3370,7 +3369,7 @@
             }
           ],
           "tags": [
-            "49K⭐",
+            "50K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3412,7 +3411,7 @@
           "name": "LightRAG",
           "slug": "lightrag",
           "added_date": "2026-02-08",
-          "desc": "Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025) — 28K⭐",
+          "desc": "Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025) — 29K⭐",
           "detail": "LightRAG mang cách tiếp cận khác biệt so với RAG truyền thống: thay vì chỉ vector search đơn thuần, hệ thống tự động xây dựng knowledge graph từ tài liệu — nhận diện entities và mối quan hệ giữa chúng — rồi kết hợp graph traversal với vector retrieval để trả lời chính xác hơn. Xuất phát từ nghiên cứu tại ĐH Hong Kong, paper đạt EMNLP 2025, và benchmark cho thấy vượt trội so với nhiều phương pháp RAG khác trên nhiều chiều đánh giá. Thiết kế nhẹ, chạy được trên CPU/laptop thông thường mà không cần GPU. Ứng dụng thực tế: knowledge management systems, research Q&A cần hiểu quan hệ giữa concepts, hoặc bất kỳ bài toán nào mà \"ai liên quan đến ai/cái gì\" quan trọng hơn \"đoạn text nào giống nhau\".\n\nKết hợp tốt với: Ollama (chạy LLM local) · Neo4j (graph storage nâng cao) · LlamaIndex (xem thêm ở Agent Frameworks) · OpenAI/Claude APIs",
           "sources": [
             {
@@ -3425,7 +3424,7 @@
             }
           ],
           "tags": [
-            "28K⭐",
+            "29K⭐",
             "MIT"
           ],
           "pricing": "free",
