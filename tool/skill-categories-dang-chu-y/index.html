@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="Notable Skill Categories — See AI First">
 <meta name="twitter:description" content="">
 <link rel="canonical" href="https://seeaifirst.com/tool/skill-categories-dang-chu-y">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Notable Skill Categories","url":"https://seeaifirst.com/tool/skill-categories-dang-chu-y","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","keywords":["Skills Ecosystem — \"Bigger than MCP\"","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://docs.claude.com/en/docs/claude-code/skills","https://github.com/modelcontextprotocol/experimental-ext-skills"],"datePublished":"2026-02-03","dateModified":"2026-02-26","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1104,6 +1105,7 @@ let isDark = true;
 let sidebarCollapsed = false;
 let searchIndex = 0;
 let hotRightNowConfig = null;
+let _jsonLdBootDone = false;
 
 // ═══ Section Colors & Gradients ═══
 const iconGradients = {
@@ -2552,7 +2554,7 @@ function generateJsonLd(data) {
         '@type': 'SoftwareApplication',
         'name': card.name,
         'description': stripHtml(card.desc),
-        'url': SITE_URL + '/#' + getCardSlug(card),
+        'url': SITE_URL + withLangPrefix('/tool/' + getCardSlug(card)),
         'applicationCategory': 'DeveloperApplication',
         'operatingSystem': 'Cross-platform'
       };
@@ -2666,6 +2668,13 @@ function updateHeadTags() {
 // JSON-LD async helper — fetches correct dataset per currentLang (PR8 patch)
 function updateJsonLd() {
   try {
+    // PR-AEO1: skip first call if shell JSON-LD already exists
+    if (!_jsonLdBootDone) {
+      _jsonLdBootDone = true;
+      const existing = document.getElementById('seeaifirst-jsonld');
+      if (existing && existing.textContent.length > 2) return;
+    }
+
     const lang = currentLang;
     const cached = lang === 'vi' ? viDataCache : enDataCache;
 

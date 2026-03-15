@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="Agent Frameworks — Xây dựng AI agents — See AI First">
 <meta name="twitter:description" content="Khám phá 10 công cụ AI được tuyển chọn trong Agent Frameworks — Xây dựng AI agents.">
 <link rel="canonical" href="https://seeaifirst.com/vi/section/frameworks">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@context":"https://schema.org","@type":"CollectionPage","name":"Agent Frameworks — Xây dựng AI agents","url":"https://seeaifirst.com/vi/section/frameworks","isPartOf":{"@id":"https://seeaifirst.com/#website"},"inLanguage":"vi","mainEntity":{"@type":"ItemList","numberOfItems":10,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"LangGraph","url":"https://seeaifirst.com/vi/tool/langgraph"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"CrewAI","url":"https://seeaifirst.com/vi/tool/crewai"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"AutoGen","url":"https://seeaifirst.com/vi/tool/autogen"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"OpenAI Agents SDK","url":"https://seeaifirst.com/vi/tool/openai-agents-sdk"}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"Google ADK","url":"https://seeaifirst.com/vi/tool/google-adk"}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"LlamaIndex","url":"https://seeaifirst.com/vi/tool/llamaindex"}},{"@type":"ListItem","position":7,"item":{"@type":"SoftwareApplication","name":"Rasa","url":"https://seeaifirst.com/vi/tool/rasa"}},{"@type":"ListItem","position":8,"item":{"@type":"SoftwareApplication","name":"Browser-Use","url":"https://seeaifirst.com/vi/tool/browser-use"}},{"@type":"ListItem","position":9,"item":{"@type":"SoftwareApplication","name":"Pydantic AI","url":"https://seeaifirst.com/vi/tool/pydantic-ai"}},{"@type":"ListItem","position":10,"item":{"@type":"SoftwareApplication","name":"Mastra","url":"https://seeaifirst.com/vi/tool/mastra"}}]}}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1112,6 +1113,7 @@ let isDark = true;
 let sidebarCollapsed = false;
 let searchIndex = 0;
 let hotRightNowConfig = null;
+let _jsonLdBootDone = false;
 
 // ═══ Section Colors & Gradients ═══
 const iconGradients = {
@@ -2560,7 +2562,7 @@ function generateJsonLd(data) {
         '@type': 'SoftwareApplication',
         'name': card.name,
         'description': stripHtml(card.desc),
-        'url': SITE_URL + '/#' + getCardSlug(card),
+        'url': SITE_URL + withLangPrefix('/tool/' + getCardSlug(card)),
         'applicationCategory': 'DeveloperApplication',
         'operatingSystem': 'Cross-platform'
       };
@@ -2674,6 +2676,13 @@ function updateHeadTags() {
 // JSON-LD async helper — fetches correct dataset per currentLang (PR8 patch)
 function updateJsonLd() {
   try {
+    // PR-AEO1: skip first call if shell JSON-LD already exists
+    if (!_jsonLdBootDone) {
+      _jsonLdBootDone = true;
+      const existing = document.getElementById('seeaifirst-jsonld');
+      if (existing && existing.textContent.length > 2) return;
+    }
+
     const lang = currentLang;
     const cached = lang === 'vi' ? viDataCache : enDataCache;
 

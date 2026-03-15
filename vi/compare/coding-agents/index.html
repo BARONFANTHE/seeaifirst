@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="So sánh AI Coding Agents — So sánh — See AI First">
 <meta name="twitter:description" content="So sánh 11 công cụ AI: Claude Code, Cursor, Codex CLI, Windsurf, GitHub Copilot, Gemini CLI, Cline / RooCode, Kiro (AWS), Replit Agent, OpenCode, Goose.">
 <link rel="canonical" href="https://seeaifirst.com/vi/compare/coding-agents">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@context":"https://schema.org","@type":"ItemList","name":"So sánh AI Coding Agents","url":"https://seeaifirst.com/vi/compare/coding-agents","inLanguage":"vi","numberOfItems":11,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"Claude Code","url":"https://seeaifirst.com/vi/tool/claude-code"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"Cursor","url":"https://seeaifirst.com/vi/tool/cursor"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"Codex CLI","url":"https://seeaifirst.com/vi/tool/codex-cli"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"Windsurf","url":"https://seeaifirst.com/vi/tool/windsurf"}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"GitHub Copilot","url":"https://seeaifirst.com/vi/tool/github-copilot"}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"Gemini CLI","url":"https://seeaifirst.com/vi/tool/gemini-cli"}},{"@type":"ListItem","position":7,"item":{"@type":"SoftwareApplication","name":"Cline / RooCode","url":"https://seeaifirst.com/vi/tool/cline-roocode"}},{"@type":"ListItem","position":8,"item":{"@type":"SoftwareApplication","name":"Kiro (AWS)","url":"https://seeaifirst.com/vi/tool/kiro-aws"}},{"@type":"ListItem","position":9,"item":{"@type":"SoftwareApplication","name":"Replit Agent","url":"https://seeaifirst.com/vi/tool/replit-agent"}},{"@type":"ListItem","position":10,"item":{"@type":"SoftwareApplication","name":"OpenCode","url":"https://seeaifirst.com/vi/tool/opencode"}},{"@type":"ListItem","position":11,"item":{"@type":"SoftwareApplication","name":"Goose","url":"https://seeaifirst.com/vi/tool/goose"}}]}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1113,6 +1114,7 @@ let isDark = true;
 let sidebarCollapsed = false;
 let searchIndex = 0;
 let hotRightNowConfig = null;
+let _jsonLdBootDone = false;
 
 // ═══ Section Colors & Gradients ═══
 const iconGradients = {
@@ -2561,7 +2563,7 @@ function generateJsonLd(data) {
         '@type': 'SoftwareApplication',
         'name': card.name,
         'description': stripHtml(card.desc),
-        'url': SITE_URL + '/#' + getCardSlug(card),
+        'url': SITE_URL + withLangPrefix('/tool/' + getCardSlug(card)),
         'applicationCategory': 'DeveloperApplication',
         'operatingSystem': 'Cross-platform'
       };
@@ -2675,6 +2677,13 @@ function updateHeadTags() {
 // JSON-LD async helper — fetches correct dataset per currentLang (PR8 patch)
 function updateJsonLd() {
   try {
+    // PR-AEO1: skip first call if shell JSON-LD already exists
+    if (!_jsonLdBootDone) {
+      _jsonLdBootDone = true;
+      const existing = document.getElementById('seeaifirst-jsonld');
+      if (existing && existing.textContent.length > 2) return;
+    }
+
     const lang = currentLang;
     const cached = lang === 'vi' ? viDataCache : enDataCache;
 

@@ -317,7 +317,7 @@ function generateHeadContent(route) {
     }
   }
 
-  return [
+  const metaTags = [
     `<title>${escapeHtml(title)}</title>`,
     `<meta name="description" content="${escapeHtml(description)}">`,
     `<meta property="og:title" content="${escapeHtml(title)}">`,
@@ -329,6 +329,158 @@ function generateHeadContent(route) {
     `<meta name="twitter:description" content="${escapeHtml(description)}">`,
     `<link rel="canonical" href="${escapeHtml(fullUrl)}">`
   ].join('\n');
+
+  return metaTags + '\n' + generateRouteJsonLd(route);
+}
+
+// ── JSON-LD generator (PR-AEO1) ─────────────────────────────────────
+
+function buildSoftwareApp(card, toolUrl) {
+  const item = {
+    '@type': 'SoftwareApplication',
+    name: card.name,
+    url: toolUrl,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Cross-platform'
+  };
+  const desc = stripHtml(nullSafe(card.desc, ''));
+  if (desc) item.description = desc;
+  if (card.languages && card.languages.length) item.keywords = [...card.languages];
+  if (card.pricing === 'free') {
+    item.offers = { '@type': 'Offer', price: '0', priceCurrency: 'USD' };
+  } else if (card.pricing === 'freemium' || card.pricing === 'open-core') {
+    item.isAccessibleForFree = true;
+  }
+  if (card.license) item.license = card.license;
+  if (card.sources && card.sources.length) {
+    const urls = card.sources.filter(s => s.url).map(s => s.url);
+    if (urls.length) item.sameAs = urls;
+  }
+  if (card.added_date) item.datePublished = card.added_date;
+  if (card.verified_at) item.dateModified = card.verified_at;
+  return item;
+}
+
+function generateRouteJsonLd(route) {
+  const { type, lang, url, data } = route;
+  const fullUrl = BASE_URL + url;
+  const linkPrefix = lang === 'vi' ? '/vi' : '';
+
+  let jsonLdObj;
+
+  switch (type) {
+    case 'home': {
+      const { sections } = data;
+      const items = [];
+      let position = 0;
+      for (const section of sections) {
+        for (const card of section.cards) {
+          position++;
+          const toolUrl = BASE_URL + linkPrefix + '/tool/' + card.slug;
+          const app = buildSoftwareApp(card, toolUrl);
+          if (section.title) {
+            app.keywords = app.keywords || [];
+            app.keywords.unshift(section.title.trim());
+          }
+          items.push({ '@type': 'ListItem', position: position, item: app });
+        }
+      }
+      jsonLdObj = {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'WebSite',
+            '@id': BASE_URL + '/#website',
+            name: 'See AI First',
+            alternateName: 'AI Mindmap',
+            url: BASE_URL,
+            description: 'Curated directory of 66 AI developer tools across 13 categories, with evidence-first sourcing.',
+            inLanguage: lang
+          },
+          {
+            '@type': 'CollectionPage',
+            '@id': fullUrl + '#directory',
+            name: lang === 'en'
+              ? 'See AI First \u2014 AI Tools Directory 2026'
+              : 'See AI First \u2014 B\u1EA3n \u0110\u1ED3 C\u00F4ng C\u1EE5 AI 2026',
+            url: fullUrl,
+            isPartOf: { '@id': BASE_URL + '/#website' },
+            inLanguage: lang,
+            mainEntity: {
+              '@type': 'ItemList',
+              numberOfItems: items.length,
+              itemListElement: items
+            }
+          }
+        ]
+      };
+      break;
+    }
+    case 'tool': {
+      const { card, section } = data;
+      const app = buildSoftwareApp(card, fullUrl);
+      if (section.title) {
+        app.keywords = app.keywords || [];
+        app.keywords.unshift(section.title.trim());
+      }
+      app['@context'] = 'https://schema.org';
+      app.inLanguage = lang;
+      jsonLdObj = app;
+      break;
+    }
+    case 'section': {
+      const { section } = data;
+      const items = section.cards.map((card, idx) => {
+        const toolUrl = BASE_URL + linkPrefix + '/tool/' + card.slug;
+        return {
+          '@type': 'ListItem',
+          position: idx + 1,
+          item: { '@type': 'SoftwareApplication', name: card.name, url: toolUrl }
+        };
+      });
+      jsonLdObj = {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: section.title,
+        url: fullUrl,
+        isPartOf: { '@id': BASE_URL + '/#website' },
+        inLanguage: lang,
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: items.length,
+          itemListElement: items
+        }
+      };
+      break;
+    }
+    case 'compare': {
+      const { preset } = data;
+      const slugMap = lang === 'vi' ? viSlugMap : enSlugMap;
+      const items = preset.tools.map((tool, idx) => {
+        const entry = slugMap.get(tool.cardId);
+        const name = entry ? entry.card.name : tool.cardId;
+        const toolUrl = BASE_URL + linkPrefix + '/tool/' + tool.cardId;
+        return {
+          '@type': 'ListItem',
+          position: idx + 1,
+          item: { '@type': 'SoftwareApplication', name: name, url: toolUrl }
+        };
+      });
+      jsonLdObj = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: preset.title,
+        url: fullUrl,
+        inLanguage: lang,
+        numberOfItems: items.length,
+        itemListElement: items
+      };
+      break;
+    }
+  }
+
+  const jsonStr = JSON.stringify(jsonLdObj).replace(/<\//g, '<\\/');
+  return `<script type="application/ld+json" id="seeaifirst-jsonld">${jsonStr}</script>`;
 }
 
 // ── Body content generator ──────────────────────────────────────────

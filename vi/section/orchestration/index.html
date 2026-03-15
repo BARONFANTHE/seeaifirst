@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="Orchestration — Điều phối multi-agent — See AI First">
 <meta name="twitter:description" content="Khám phá 3 công cụ AI được tuyển chọn trong Orchestration — Điều phối multi-agent.">
 <link rel="canonical" href="https://seeaifirst.com/vi/section/orchestration">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@context":"https://schema.org","@type":"CollectionPage","name":"Orchestration — Điều phối multi-agent","url":"https://seeaifirst.com/vi/section/orchestration","isPartOf":{"@id":"https://seeaifirst.com/#website"},"inLanguage":"vi","mainEntity":{"@type":"ItemList","numberOfItems":3,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"Claude-Flow","url":"https://seeaifirst.com/vi/tool/claude-flow"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"OpenClaw","url":"https://seeaifirst.com/vi/tool/openclaw"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"Claude Squad","url":"https://seeaifirst.com/vi/tool/claude-squad"}}]}}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1105,6 +1106,7 @@ let isDark = true;
 let sidebarCollapsed = false;
 let searchIndex = 0;
 let hotRightNowConfig = null;
+let _jsonLdBootDone = false;
 
 // ═══ Section Colors & Gradients ═══
 const iconGradients = {
@@ -2553,7 +2555,7 @@ function generateJsonLd(data) {
         '@type': 'SoftwareApplication',
         'name': card.name,
         'description': stripHtml(card.desc),
-        'url': SITE_URL + '/#' + getCardSlug(card),
+        'url': SITE_URL + withLangPrefix('/tool/' + getCardSlug(card)),
         'applicationCategory': 'DeveloperApplication',
         'operatingSystem': 'Cross-platform'
       };
@@ -2667,6 +2669,13 @@ function updateHeadTags() {
 // JSON-LD async helper — fetches correct dataset per currentLang (PR8 patch)
 function updateJsonLd() {
   try {
+    // PR-AEO1: skip first call if shell JSON-LD already exists
+    if (!_jsonLdBootDone) {
+      _jsonLdBootDone = true;
+      const existing = document.getElementById('seeaifirst-jsonld');
+      if (existing && existing.textContent.length > 2) return;
+    }
+
     const lang = currentLang;
     const cached = lang === 'vi' ? viDataCache : enDataCache;
 
