@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "7.0",
     "schema_version": "1.0.0",
-    "updated_at": "2026-02-27T11:08:22.566Z",
+    "updated_at": "2026-03-15T15:46:44.855Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -665,9 +665,9 @@
         {
           "name": "Browser-Use",
           "slug": "browser-use",
-          "desc": "Browser automation framework for AI agents — control the web with Python using any LLM, 73K+ stars",
+          "desc": "Browser automation framework for AI agents — control the web with Python using any LLM, 80K+ stars",
           "added_date": "2026-02-04",
-          "detail": "Browser-Use lets AI agents interact with the web like real users — navigate, click, fill forms, extract data. Supports parallel browser sessions, vision models, and custom actions. Integrates MCP server for use in Claude Code/Cursor. Browser-Use Cloud available for production deployment. 73K+ stars, MIT license, simple Python SDK in just a few lines of code.",
+          "detail": "Browser-Use lets AI agents interact with the web like real users — navigate, click, fill forms, extract data. Supports parallel browser sessions, vision models, and custom actions. Integrates MCP server for use in Claude Code/Cursor. Browser-Use Cloud available for production deployment. 80K+ stars, MIT license, simple Python SDK in just a few lines of code.",
           "sources": [
             {
               "title": "GitHub",
@@ -712,7 +712,7 @@
           "slug": "pydantic-ai",
           "desc": "Type-safe agent framework in the style of FastAPI — built by the Pydantic team, supports 40+ model providers",
           "added_date": "2026-02-04",
-          "detail": "Pydantic AI brings FastAPI's type-safety philosophy to the world of AI agents. Structured output with Pydantic models, dependency injection, streaming, and built-in evaluation framework. Supports MCP + A2A protocols, human-in-the-loop, and 40+ LLM providers. 14.6K stars, MIT license, developed by the team behind Pydantic — Python's most popular validation library.",
+          "detail": "Pydantic AI brings FastAPI's type-safety philosophy to the world of AI agents. Structured output with Pydantic models, dependency injection, streaming, and built-in evaluation framework. Supports MCP + A2A protocols, human-in-the-loop, and 40+ LLM providers. 15.5K stars, MIT license, developed by the team behind Pydantic — Python's most popular validation library.",
           "sources": [
             {
               "title": "GitHub",
@@ -764,7 +764,7 @@
           "slug": "mastra",
           "desc": "TypeScript-first agent framework from the Gatsby team — workflows, RAG, evals, and MCP built in",
           "added_date": "2026-02-04",
-          "detail": "Mastra is a TypeScript-first agent framework, built by the team behind Gatsby.js. Offers graph-based workflows, built-in RAG with vector store, evaluation framework, and MCP client/server. Supports 40+ model providers, human-in-the-loop, and memory management. 20.7K stars, active development, ideal for TypeScript/Node.js developers who want to build agents fast.",
+          "detail": "Mastra is a TypeScript-first agent framework, built by the team behind Gatsby.js. Offers graph-based workflows, built-in RAG with vector store, evaluation framework, and MCP client/server. Supports 40+ model providers, human-in-the-loop, and memory management. 22K stars, active development, ideal for TypeScript/Node.js developers who want to build agents fast.",
           "sources": [
             {
               "title": "GitHub",
@@ -891,7 +891,7 @@
             "Memory",
             "Apps"
           ],
-          "detail": "The world's most popular AI chat by OpenAI with over 300 million weekly users. Features GPTs (custom chatbots), Custom Instructions (personalization), web browsing, DALL-E (image generation), Code Interpreter, and plugin ecosystem. Supports GPT-4o, GPT-4o-mini, o1, o3. ChatGPT Plus $20/month, Team $25/user/month.",
+          "detail": "The world's most popular AI chat by OpenAI with hundreds of millions of weekly users. Features GPTs (custom chatbots), Custom Instructions (personalization), web browsing, DALL-E (image generation), Code Interpreter, and plugin ecosystem. Supports GPT-4o, GPT-4o-mini, o1, o3. ChatGPT Plus $20/month, Team $25/user/month.",
           "sources": [
             {
               "title": "ChatGPT",
@@ -1077,7 +1077,7 @@
           "slug": "memos",
           "desc": "Unified memory operating system for LLMs — manages memory via MemCube with short-term and long-term support",
           "added_date": "2026-02-04",
-          "detail": "MemOS provides a standardized memory layer architecture for AI agents with MemCube — the basic memory unit containing both data and metadata. Supports multiple memory types (parametric, activation, long-term) and integrates with popular frameworks. ~4.9K stars, active development (v2.0.4, Jan 2026). Unique for providing a unified memory interface that Mem0/Zep haven't fully addressed.",
+          "detail": "MemOS provides a standardized memory layer architecture for AI agents with MemCube — the basic memory unit containing both data and metadata. Supports multiple memory types (parametric, activation, long-term) and integrates with popular frameworks. ~6.9K stars, active development (v2.0.4, Jan 2026). Unique for providing a unified memory interface that Mem0/Zep haven't fully addressed.",
           "sources": [
             {
               "title": "GitHub",
@@ -1436,13 +1436,12 @@
           "desc": "Agent orchestration platform with a <strong>Queen + Workers</strong> architecture — manages Claude, GPT, and Gemini simultaneously via MCP.",
           "added_date": "2026-02-03",
           "tags": [
-            "12.8k⭐",
             "MIT",
             "Multi-agent swarm",
             "HNSW vector",
             "60+ coding agents"
           ],
-          "detail": "Multi-agent orchestration framework using a Queen + Workers model. Queen (Claude Opus) plans and assigns tasks to Workers (which can be Claude Code, Codex, or Gemini CLI). Features: HNSW vector memory, swarm mode (60+ agents), multi-model routing via MCP, parallel execution. MIT license, 12.8k+ stars on GitHub.",
+          "detail": "Multi-agent orchestration framework using a Queen + Workers model. Queen (Claude Opus) plans and assigns tasks to Workers (which can be Claude Code, Codex, or Gemini CLI). Features: HNSW vector memory, swarm mode (60+ agents), multi-model routing via MCP, parallel execution. MIT license.",
           "sources": [
             {
               "title": "Claude-Flow GitHub",
@@ -1488,7 +1487,7 @@
           "slug": "openclaw",
           "icon": "🐕",
           "mono": true,
-          "desc": "Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo. <strong>135k⭐</strong> on GitHub.",
+          "desc": "Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo. <strong>314K⭐</strong> on GitHub.",
           "added_date": "2026-02-03",
           "detail": "Evolution: Clawdbot → Moltbot → OpenClaw",
           "tags": [
@@ -1615,7 +1614,7 @@
             "Skills",
             "Hooks"
           ],
-          "detail": "The leading CLI agent — #1 on SWE-bench, outperforming all rivals. 200K token context enables full comprehension of large codebases. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Runs locally, no cloud dependency. Best for: complex projects, large refactoring, existing codebases. Supports async mode on web (claude.ai/code) — delegate long tasks, create PRs directly, teleport back to local CLI to continue. Extended ecosystem: Everything Claude Code (44K⭐) — production-ready agents, skills, hooks, and commands for Claude Code.",
+          "detail": "The leading CLI agent — #1 on SWE-bench, outperforming all rivals. 200K token context enables full comprehension of large codebases. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Runs locally, no cloud dependency. Best for: complex projects, large refactoring, existing codebases. Supports async mode on web (claude.ai/code) — delegate long tasks, create PRs directly, teleport back to local CLI to continue. Extended ecosystem: Everything Claude Code (76K⭐) — production-ready agents, skills, hooks, and commands for Claude Code.",
           "sources": [
             {
               "title": "Claude Code Docs",
@@ -2110,9 +2109,9 @@
         {
           "name": "OpenCode",
           "slug": "opencode",
-          "desc": "Open-source coding agent running in terminal — supports all LLM providers, 96K+ stars, MIT license",
+          "desc": "Open-source coding agent running in terminal — supports all LLM providers, 122K+ stars, MIT license",
           "added_date": "2026-02-04",
-          "detail": "OpenCode, developed by the SST team, is an open-source alternative to Claude Code with 96K+ GitHub stars (Top 100 repos). Supports OpenAI, Anthropic, Google, Groq, local models — no vendor lock-in. Beautiful TUI (Bubble Tea), with LSP integration, session management, and multi-file editing. Written in Go, install via npm/brew/curl. Integrates GitHub Actions for automated PR reviews.",
+          "detail": "OpenCode, developed by the SST team, is an open-source alternative to Claude Code with 122K+ GitHub stars (Top 100 repos). Supports OpenAI, Anthropic, Google, Groq, local models — no vendor lock-in. Beautiful TUI (Bubble Tea), with LSP integration, session management, and multi-file editing. Written in Go, install via npm/brew/curl. Integrates GitHub Actions for automated PR reviews.",
           "sources": [
             {
               "title": "GitHub",
@@ -2127,7 +2126,7 @@
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Muốn coding agent OSS với cộng đồng lớn nhất (108K+ stars, 700+ contributors)",
+            "Muốn coding agent OSS với cộng đồng lớn nhất (122K+ stars, 700+ contributors)",
             "Thích terminal-first workflow với TUI chất lượng cao",
             "Cần plan/build agent switching — phân tích trước khi code"
           ],
@@ -2158,7 +2157,7 @@
           "slug": "goose",
           "desc": "Open-source coding agent from Block (Square) — doesn't just suggest but also installs, runs, and debugs with any LLM",
           "added_date": "2026-02-04",
-          "detail": "Goose is an open-source coding agent from Block (formerly Square), written in Rust for high performance. Unlike Claude Code/Cursor: Goose autonomously runs commands, installs dependencies, debugs errors — not just suggesting code. Extensible via MCP extensions, has desktop app + CLI. 29.7K stars, Apache-2.0 license, supports all LLM providers.",
+          "detail": "Goose is an open-source coding agent from Block (formerly Square), written in Rust for high performance. Unlike Claude Code/Cursor: Goose autonomously runs commands, installs dependencies, debugs errors — not just suggesting code. Extensible via MCP extensions, has desktop app + CLI. 33K stars, Apache-2.0 license, supports all LLM providers.",
           "sources": [
             {
               "title": "GitHub",
@@ -2327,9 +2326,9 @@
           "name": "World Models",
           "slug": "world-models",
           "icon": "🌍",
-          "desc": "AI simulating the real world — LeCun investing $5B, Google and startups racing to develop. Gaming market $276B by 2030.",
+          "desc": "AI simulating the real world — AMI Labs, Google, and startups are racing to develop it. Gaming is a major driver.",
           "added_date": "2026-02-03",
-          "detail": "AI simulating the real world — LeCun (Meta) investing $5B+, Google and startups racing to develop. World models understand physics, predict outcomes of actions in 3D environments. Applications: autonomous driving, robotics, game development, simulation. Gaming market $276B by 2030 is a major driver. Recent: Genie 2 (Google), video generation models becoming world simulators.",
+          "detail": "AI simulating the real world — LeCun left Meta to cofound AMI Labs, while Google and startups are racing to develop it. World models understand physics, predict outcomes of actions in 3D environments. Applications: autonomous driving, robotics, game development, simulation. Gaming is a major driver. Recent: Genie 2 (Google), video generation models becoming world simulators.",
           "sources": [
             {
               "title": "Yann LeCun — A Path Towards Autonomous AI",
@@ -2590,9 +2589,9 @@
           "name": "AI Infrastructure",
           "slug": "ai-infrastructure",
           "icon": "⚡",
-          "desc": "Massive 1GW+ data centers, even using nuclear power for AI. Market from $7.6B to $52B by 2030.",
+          "desc": "Massive 1GW+ data centers, even using nuclear power for AI. A core battleground in the AI race.",
           "added_date": "2026-02-03",
-          "detail": "Massive 1GW+ data centers being built — even using nuclear power. Microsoft, Google, Amazon all signing long-term nuclear energy contracts. AI infrastructure market from $7.6B to $52B by 2030. NVIDIA H100/H200 facing severe shortages. Trend: hyperscale AI data centers near cheap energy sources (Texas, Scandinavia).",
+          "detail": "Massive 1GW+ data centers being built — even using nuclear power. Microsoft, Google, and Amazon are pursuing long-term nuclear energy deals. AI infrastructure investment is accelerating rapidly. NVIDIA H100/H200 supply remains a key bottleneck.",
           "sources": [
             {
               "title": "Gartner — Top Tech Trends 2026",
@@ -3003,10 +3002,10 @@
           "slug": "ollama",
           "desc": "The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started",
           "added_date": "2026-02-08",
-          "detail": "The most popular tool for running LLMs locally (162K+ ⭐, top 50 on GitHub globally). Supports Llama, DeepSeek, Gemma, Qwen, Phi, and 100+ other models. Dead-simple setup: curl install → ollama pull → ollama run. Automatically manages GPU/CPU, quantization, model storage. API compatible with OpenAI format. Runs on macOS, Linux, Windows. Perfect for developers who want to experiment with LLMs on their own machine without API costs.",
+          "detail": "The most popular tool for running LLMs locally (165K+ ⭐, top 50 on GitHub globally). Supports Llama, DeepSeek, Gemma, Qwen, Phi, and 100+ other models. Dead-simple setup: curl install → ollama pull → ollama run. Automatically manages GPU/CPU, quantization, model storage. API compatible with OpenAI format. Runs on macOS, Linux, Windows. Perfect for developers who want to experiment with LLMs on their own machine without API costs.",
           "sources": [
             {
-              "title": "GitHub (162K+ ⭐)",
+              "title": "GitHub (165K+ ⭐)",
               "url": "https://github.com/ollama/ollama"
             },
             {
@@ -3061,10 +3060,10 @@
           "slug": "vllm",
           "desc": "High-performance production inference engine — PagedAttention, 2-4× throughput over baseline",
           "added_date": "2026-02-08",
-          "detail": "LLM serving engine built for production (69.7K+ ⭐). PagedAttention technology optimizes GPU memory, achieving 2-4× throughput over FasterTransformer/Orca. Supports continuous batching, tensor parallelism, speculative decoding. Compatible with OpenAI API server. Used by major companies for high-throughput serving. Supports most popular model architectures (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
+          "detail": "LLM serving engine built for production (73K+ ⭐). PagedAttention technology optimizes GPU memory, achieving 2-4× throughput over FasterTransformer/Orca. Supports continuous batching, tensor parallelism, speculative decoding. Compatible with OpenAI API server. Used by major companies for high-throughput serving. Supports most popular model architectures (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
           "sources": [
             {
-              "title": "GitHub (69.7K+ ⭐)",
+              "title": "GitHub (73K+ ⭐)",
               "url": "https://github.com/vllm-project/vllm"
             },
             {
@@ -3116,10 +3115,10 @@
           "slug": "localai",
           "desc": "Self-hosted OpenAI alternative — run LLMs, image gen, audio on consumer hardware, no GPU required",
           "added_date": "2026-02-08",
-          "detail": "Self-hosted OpenAI API replacement (42.6K+ ⭐). Runs on consumer hardware with NO GPU required. Supports text generation, image generation, audio transcription, embeddings — all via OpenAI-compatible API. Compatible with Anthropic API format, Responses API, MCP integration. One-command Docker deployment. Ideal for teams wanting to self-host their entire AI stack on their own infrastructure, keeping data in-house.",
+          "detail": "Self-hosted OpenAI API replacement (43.6K+ ⭐). Runs on consumer hardware with NO GPU required. Supports text generation, image generation, audio transcription, embeddings — all via OpenAI-compatible API. Compatible with Anthropic API format, Responses API, MCP integration. One-command Docker deployment. Ideal for teams wanting to self-host their entire AI stack on their own infrastructure, keeping data in-house.",
           "sources": [
             {
-              "title": "GitHub (42.6K+ ⭐)",
+              "title": "GitHub (43.6K+ ⭐)",
               "url": "https://github.com/mudler/LocalAI"
             },
             {
@@ -3172,10 +3171,10 @@
           "slug": "litellm",
           "desc": "Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API",
           "added_date": "2026-02-08",
-          "detail": "Unified gateway/proxy for accessing 100+ LLM providers (35.3K+ ⭐). Call OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... through a single API format. Built-in cost tracking per request, load balancing across providers, automatic fallback when a provider goes down. Manages API keys, rate limits, budget alerts. Python SDK and proxy server for any language. Ideal for teams using multiple LLM providers who need to optimize costs.",
+          "detail": "Unified gateway/proxy for accessing 100+ LLM providers (39K+ ⭐). Call OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... through a single API format. Built-in cost tracking per request, load balancing across providers, automatic fallback when a provider goes down. Manages API keys, rate limits, budget alerts. Python SDK and proxy server for any language. Ideal for teams using multiple LLM providers who need to optimize costs.",
           "sources": [
             {
-              "title": "GitHub (35.3K+ ⭐)",
+              "title": "GitHub (39K+ ⭐)",
               "url": "https://github.com/BerriAI/litellm"
             },
             {
@@ -3237,7 +3236,7 @@
           "slug": "dify",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline — 129K⭐",
+          "desc": "Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline — 133K⭐",
           "detail": "Dify is an all-in-one platform for creating AI applications from chatbots to complex agents without writing much code. Its core strength is a drag-and-drop visual workflow builder — users drag nodes (LLM, retrieval, tool, logic) to design complete processing flows. Built-in RAG pipeline: upload documents, automatic chunking, embedding, and retrieval — no separate vector DB setup needed. Supports 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click production deployment, and a monitoring dashboard for tracking usage/cost. Real-world use cases: building internal knowledge base chatbots for enterprises, automated customer support, AI assistants for processing internal documents, or rapidly prototyping AI app ideas before investing in custom development. Note: Dify is a broad-scope platform (RAG + agent + workflow), its license has Additional Terms beyond Apache 2.0 — check before commercial use.\n\nWorks well with: Ollama (local LLM) · Langfuse (advanced observability) · Milvus/Qdrant (replace default vector DB) · MCP (extend tool access)",
           "sources": [
             {
@@ -3254,7 +3253,7 @@
             }
           ],
           "tags": [
-            "129K⭐",
+            "133K⭐",
             "Apache 2.0+"
           ],
           "pricing": "open-core",
@@ -3299,7 +3298,7 @@
           "slug": "ragflow",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations — 73K⭐",
+          "desc": "Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations — 75K⭐",
           "detail": "RAGFlow is a RAG engine focused on document processing quality — the step often overlooked but responsible for 80% of answer accuracy. The system automatically analyzes complex document structures: tables, images, scanned PDFs, slides — and chunks by template with visual preview so users can intervene when needed. Every answer comes with specific source citations (grounded citations), significantly reducing hallucination. Integrated agent toolkit enables not just text retrieval but also external API and tool calls. Real-world use cases: enterprise internal Q&A systems handling contracts, technical reports, legal documents — the kinds of documents where simple chunking yields poor results.\n\nWorks well with: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Any LLM provider (OpenAI, Claude, Gemini)",
           "sources": [
             {
@@ -3316,7 +3315,7 @@
             }
           ],
           "tags": [
-            "73K⭐",
+            "75K⭐",
             "Apache 2.0"
           ],
           "pricing": "free",
@@ -3357,7 +3356,7 @@
           "name": "Flowise",
           "slug": "flowise",
           "added_date": "2026-02-08",
-          "desc": "No-code tool for building RAG pipelines and LLM apps with drag-and-drop UI — built on LangChain — 49K⭐",
+          "desc": "No-code tool for building RAG pipelines and LLM apps with drag-and-drop UI — built on LangChain — 50K⭐",
           "detail": "Flowise turns LangChain into a visual drag-drop interface — users drag and connect nodes (LLM, retriever, memory, tools) to create complete pipelines without writing Python code. Each flow can be exported as an API endpoint and deployed with a single Docker command. Supports over 100 built-in integration nodes: from document loaders, text splitters, embedding models to vector stores and output parsers. A community marketplace provides ready-made templates for common use cases. Practical applications: rapid prototyping of RAG chatbots, building internal tools for non-technical teams, or using as a visual debugging tool to understand data flow in RAG pipelines before writing production code.\n\nWorks well with: LangChain ecosystem · OpenAI/Claude APIs · Chroma/Milvus/Qdrant (vector stores) · Any LLM supported by LangChain",
           "sources": [
             {
@@ -3370,7 +3369,7 @@
             }
           ],
           "tags": [
-            "49K⭐",
+            "50K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3412,7 +3411,7 @@
           "name": "LightRAG",
           "slug": "lightrag",
           "added_date": "2026-02-08",
-          "desc": "Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025) — 28K⭐",
+          "desc": "Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025) — 29K⭐",
           "detail": "LightRAG takes a fundamentally different approach from traditional RAG: instead of relying solely on vector search, the system automatically builds a knowledge graph from documents — identifying entities and relationships between them — then combines graph traversal with vector retrieval for more accurate answers. Originating from research at the University of Hong Kong, the paper was accepted at EMNLP 2025, with benchmarks showing it outperforms many other RAG methods across multiple evaluation dimensions. Lightweight by design, it runs on regular CPU/laptop without requiring a GPU. Practical applications: knowledge management systems, research Q&A requiring understanding of relationships between concepts, or any problem where \"who is related to whom/what\" matters more than \"which text chunks are similar\".\n\nWorks well with: Ollama (local LLM) · Neo4j (advanced graph storage) · LlamaIndex (see Agent Frameworks) · OpenAI/Claude APIs",
           "sources": [
             {
@@ -3425,7 +3424,7 @@
             }
           ],
           "tags": [
-            "28K⭐",
+            "29K⭐",
             "MIT"
           ],
           "pricing": "free",
