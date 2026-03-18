@@ -8,11 +8,14 @@ const BASE_URL = 'https://seeaifirst.com';
 const DATA_PATH = path.join(__dirname, '..', 'data.json');
 const OUTPUT_PATH = path.join(__dirname, '..', 'sitemap.xml');
 
+// Static pages outside the SPA route system (EN-only)
+const STATIC_PAGES = ['/ai-cost-calculator/'];
+
 // Expected counts
 const EXPECTED_CARDS = 66;
 const EXPECTED_SECTIONS = 13;
 const EXPECTED_PRESETS = 4;
-const EXPECTED_TOTAL = 168; // (1 + 66 + 4 + 13) * 2 langs
+const EXPECTED_TOTAL = 169; // (1 + 66 + 4 + 13) * 2 langs + static pages
 
 // Read data.json
 const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
@@ -80,6 +83,11 @@ for (const slug of sectionSlugs) {
   urls.push(`${BASE_URL}/vi/section/${slug}`);
 }
 
+// 5. Static pages (EN-only)
+for (const page of STATIC_PAGES) {
+  urls.push(`${BASE_URL}${page}`);
+}
+
 // Final count validation
 if (urls.length !== EXPECTED_TOTAL) {
   console.error(`ERROR: expected ${EXPECTED_TOTAL} URLs, got ${urls.length}`);
@@ -102,10 +110,12 @@ const homeCount = 2;
 const toolsCount = cardSlugs.length * 2;
 const compareCount = presetSlugs.length * 2;
 const sectionsCount = sectionSlugs.length * 2;
+const staticCount = STATIC_PAGES.length;
 
 console.log('Sitemap generated:');
 console.log(`  home     = ${homeCount}`);
 console.log(`  tools    = ${toolsCount}`);
 console.log(`  compare  = ${compareCount}`);
 console.log(`  sections = ${sectionsCount}`);
+console.log(`  static   = ${staticCount}`);
 console.log(`  total    = ${urls.length}`);

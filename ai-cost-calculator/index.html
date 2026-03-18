@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI API Cost Calculator 2026 — Compare Claude, GPT, Gemini Pricing | See AI First</title>
+<meta name="description" content="Free calculator to compare AI API costs across Claude, GPT-5, Gemini, DeepSeek, and Grok. Estimate monthly costs by usage. Updated March 2026.">
+<link rel="canonical" href="https://seeaifirst.com/ai-cost-calculator/">
+<meta property="og:title" content="AI API Cost Calculator 2026 — Compare Claude, GPT, Gemini Pricing | See AI First">
+<meta property="og:description" content="Free calculator to compare AI API costs across Claude, GPT-5, Gemini, DeepSeek, and Grok. Estimate monthly costs by usage. Updated March 2026.">
+<meta property="og:url" content="https://seeaifirst.com/ai-cost-calculator/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#09090b;--surface:#111114;--card:#18181d;--card-hover:#1e1e24;
+  --border:#27272a;--text:#fafafa;--text-sec:#a1a1aa;--text-muted:#71717a;
+  --anthropic:#D4A574;--openai:#74AA9C;--google:#4285F4;--deepseek:#6366F1;--xai:#EF4444;
+  --cheapest:#22c55e;--warning:#d97706;--r:8px
+}
+html{font-size:16px}
+body{font-family:'Be Vietnam Pro',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+
+/* Header */
+.hdr{border-bottom:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.hdr-brand{font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none}
+.hdr-back{color:var(--text-sec);text-decoration:none;font-size:.85rem;transition:color .2s}
+.hdr-back:hover{color:var(--text)}
+
+/* Main */
+main{max-width:1200px;margin:0 auto;padding:32px 24px 64px}
+.pg-title{font-size:2rem;font-weight:700;margin-bottom:6px;letter-spacing:-.025em}
+.pg-sub{color:var(--text-sec);font-size:.95rem;margin-bottom:32px}
+
+/* Disclaimer */
+.disc{background:rgba(217,119,6,.07);border:1px solid rgba(217,119,6,.18);border-left:3px solid var(--warning);border-radius:var(--r);padding:14px 18px;margin-bottom:40px;font-size:.8rem;color:var(--text-sec);line-height:1.65}
+.disc strong{color:var(--warning)}
+
+/* Sections */
+.tool-sec{margin-bottom:56px}
+.sec-title{font-size:1.3rem;font-weight:600;margin-bottom:24px;display:flex;align-items:center;gap:10px;letter-spacing:-.01em}
+
+/* Controls grid */
+.ctrls{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:18px}
+.sl-grp{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px}
+.sl-lbl{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.sl-val{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:600;margin-bottom:10px}
+
+/* Range slider */
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:5px;background:var(--border);border-radius:3px}
+input[type=range]::-moz-range-track{height:5px;background:var(--border);border-radius:3px;border:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--text);border:2px solid var(--bg);box-shadow:0 1px 4px rgba(0,0,0,.5);margin-top:-7.5px;transition:transform .15s}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--text);border:2px solid var(--bg);box-shadow:0 1px 4px rgba(0,0,0,.5)}
+input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
+@media(pointer:coarse){
+  input[type=range]::-webkit-slider-thumb{width:26px;height:26px;margin-top:-10.5px}
+  input[type=range]::-moz-range-thumb{width:26px;height:26px}
+}
+
+/* Summary */
+.sum{display:flex;gap:20px;margin-bottom:14px;padding:10px 0;font-size:.85rem;color:var(--text-muted)}
+.sum b{font-family:'JetBrains Mono',monospace;color:var(--text-sec);font-weight:400}
+
+/* Results header */
+.res-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.res-cnt{font-size:.85rem;color:var(--text-muted)}
+.sort-btn{font-family:'Be Vietnam Pro',sans-serif;font-size:.8rem;color:var(--text-sec);background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:5px 14px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.sort-btn:hover{background:var(--card);color:var(--text)}
+
+/* Model cards */
+.m-list{display:flex;flex-direction:column;gap:6px}
+.m-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 18px;transition:background .2s;position:relative;overflow:hidden}
+.m-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--pc)}
+.m-card:hover{background:var(--card-hover)}
+.m-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+.m-info{display:flex;flex-direction:column;gap:1px}
+.m-name{font-weight:600;font-size:.925rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cheap-b{background:rgba(34,197,94,.13);color:var(--cheapest);font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:4px;text-transform:uppercase;letter-spacing:.04em}
+.m-prov{font-size:.725rem;color:var(--text-muted)}
+.m-cost{font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:600;text-align:right;white-space:nowrap}
+.m-cost-lbl{font-size:.65rem;color:var(--text-muted);font-family:'Be Vietnam Pro',sans-serif;font-weight:400}
+.m-bar-track{height:4px;background:rgba(255,255,255,.04);border-radius:2px;margin-bottom:7px;overflow:hidden}
+.m-bar{height:100%;border-radius:2px;transition:width .4s cubic-bezier(.4,0,.2,1);min-width:2px}
+.m-foot{display:flex;align-items:center;justify-content:space-between;font-size:.675rem;color:var(--text-muted)}
+.scope-t{background:rgba(255,255,255,.05);padding:1px 6px;border-radius:3px}
+.src-lnk{color:var(--text-muted);text-decoration:none;transition:color .2s}
+.src-lnk:hover{color:var(--text-sec)}
+.fn-mk{font-size:.6rem;vertical-align:super;color:var(--text-muted);margin-left:2px}
+
+/* Tool 2 */
+.t-area{margin-bottom:18px}
+.t-input{width:100%;min-height:120px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;color:var(--text);font-family:'Be Vietnam Pro',sans-serif;font-size:.875rem;resize:vertical;outline:none;transition:border-color .2s;line-height:1.6}
+.t-input:focus{border-color:var(--text-muted)}
+.t-input::placeholder{color:var(--text-muted)}
+
+.out-sel{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+.out-lbl{font-size:.8rem;color:var(--text-muted);margin-right:2px}
+.out-btn{font-family:'Be Vietnam Pro',sans-serif;font-size:.8rem;color:var(--text-sec);background:var(--surface);border:1px solid var(--border);padding:5px 12px;border-radius:var(--r);cursor:pointer;transition:all .2s}
+.out-btn:hover{background:var(--card);color:var(--text)}
+.out-btn.act{background:rgba(255,255,255,.08);border-color:var(--text-muted);color:var(--text)}
+.cust-in{font-family:'JetBrains Mono',monospace;width:76px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:5px 8px;color:var(--text);font-size:.8rem;outline:none}
+.cust-in:focus{border-color:var(--text-muted)}
+
+/* Stats */
+.stats{display:flex;gap:20px;padding:12px 0;margin-bottom:6px;font-size:.85rem;color:var(--text-muted);border-bottom:1px solid var(--border)}
+.stats b{font-family:'JetBrains Mono',monospace;color:var(--text-sec);font-weight:400}
+.approx{font-size:.75rem;color:var(--text-muted);margin-bottom:18px;line-height:1.6;font-style:italic}
+
+/* Cost table */
+.c-tbl{width:100%;border-collapse:collapse;margin-bottom:14px}
+.c-tbl th{text-align:left;font-size:.675rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;padding:7px 10px;border-bottom:1px solid var(--border);font-weight:500}
+.c-tbl td{padding:9px 10px;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.03)}
+.c-tbl tr:last-child td{border-bottom:none}
+.p-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}
+.cost-c{font-family:'JetBrains Mono',monospace;text-align:right;font-weight:400}
+.c-tbl .cheap-r .cost-c{color:var(--cheapest)}
+.c-tbl .src-c{text-align:right}
+
+.scale-p{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;font-size:.85rem;color:var(--text-sec)}
+.scale-p b{font-family:'JetBrains Mono',monospace;color:var(--text);font-weight:600}
+
+/* Footnotes */
+.fn-sec{margin-top:36px;padding-top:18px;border-top:1px solid var(--border)}
+.fn-title{font-size:.8rem;font-weight:600;color:var(--text-sec);margin-bottom:10px}
+.fn-item{font-size:.75rem;color:var(--text-muted);margin-bottom:7px;line-height:1.6;padding-left:16px;position:relative}
+.fn-item::before{content:attr(data-mk);position:absolute;left:0;color:var(--text-sec);font-weight:600}
+
+/* Footer */
+.calc-ft{max-width:1200px;margin:0 auto;padding:20px 24px;border-top:1px solid var(--border);font-size:.75rem;color:var(--text-muted);text-align:center}
+.calc-ft a{color:var(--text-muted);transition:color .2s}
+.calc-ft a:hover{color:var(--text-sec)}
+
+/* States */
+.loading{text-align:center;padding:48px 20px;color:var(--text-muted)}
+.err{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.18);border-radius:var(--r);padding:14px 18px;color:#fca5a5;font-size:.85rem}
+
+/* Responsive */
+@media(max-width:768px){
+  .ctrls{grid-template-columns:1fr;gap:10px}
+  .pg-title{font-size:1.5rem}
+  .sum,.stats{flex-wrap:wrap;gap:10px}
+  .m-top{flex-direction:column;gap:6px}
+  .m-cost{text-align:left;font-size:1.1rem}
+}
+@media(max-width:480px){
+  main{padding:20px 16px 48px}
+  .hdr{padding:12px 16px}
+  .sl-val{font-size:1.2rem}
+  .c-tbl th,.c-tbl td{padding:7px 6px;font-size:.8rem}
+  .out-sel{gap:6px}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <a href="/" class="hdr-brand">See AI First</a>
+  <a href="/" class="hdr-back">&larr; Back to See AI First</a>
+</header>
+
+<main>
+  <h1 class="pg-title">AI API Cost Calculator</h1>
+  <p class="pg-sub">Compare costs across 13 AI models from 5 providers. All prices verified from official sources.</p>
+
+  <div class="disc">
+    <strong>Disclaimer:</strong> Prices shown are estimates for reference purposes only, based on official provider documentation as of March 18, 2026. Pricing may change without notice. For the most accurate and up-to-date pricing, please visit each provider's official pricing page. See AI First assumes no liability for pricing discrepancies.
+  </div>
+
+  <!-- Tool 1: Monthly Cost Calculator -->
+  <section class="tool-sec" id="monthly-calc">
+    <h2 class="sec-title">&#x1F4CA; Monthly Cost Calculator</h2>
+
+    <div class="ctrls">
+      <div class="sl-grp">
+        <div class="sl-lbl">Requests / day</div>
+        <div class="sl-val" id="rv">1,000</div>
+        <input type="range" id="rs" min="0" max="1000" value="500" aria-label="Requests per day">
+      </div>
+      <div class="sl-grp">
+        <div class="sl-lbl">Avg input tokens / request</div>
+        <div class="sl-val" id="iv">500</div>
+        <input type="range" id="is" min="50" max="10000" value="500" step="50" aria-label="Average input tokens per request">
+      </div>
+      <div class="sl-grp">
+        <div class="sl-lbl">Avg output tokens / request</div>
+        <div class="sl-val" id="ov">250</div>
+        <input type="range" id="os" min="50" max="5000" value="250" step="50" aria-label="Average output tokens per request">
+      </div>
+    </div>
+
+    <div class="sum" id="msum"></div>
+
+    <div class="res-hdr">
+      <div class="res-cnt">13 models</div>
+      <button class="sort-btn" id="msort">Sort: Cheapest first &uarr;</button>
+    </div>
+
+    <div class="m-list" id="mres">
+      <div class="loading">Loading pricing data&hellip;</div>
+    </div>
+  </section>
+
+  <!-- Tool 2: Token Cost Estimator -->
+  <section class="tool-sec" id="token-est">
+    <h2 class="sec-title">&#x1F524; Token &harr; Cost Estimator</h2>
+
+    <div class="t-area">
+      <textarea class="t-input" id="tinput" placeholder="Paste your text here to estimate token count and cost per API call&hellip;" aria-label="Text input for token estimation"></textarea>
+
+      <div class="out-sel">
+        <span class="out-lbl">Expected output length:</span>
+        <button class="out-btn act" data-tok="200">Short (~200)</button>
+        <button class="out-btn" data-tok="500">Medium (~500)</button>
+        <button class="out-btn" data-tok="1500">Long (~1500)</button>
+        <button class="out-btn" data-tok="custom">Custom</button>
+        <input type="number" class="cust-in" id="custout" value="500" min="1" max="100000" style="display:none" aria-label="Custom output token count">
+      </div>
+    </div>
+
+    <div class="stats" id="tstats">
+      Characters: <b>0</b> &nbsp; Words: <b>0</b> &nbsp; Estimated tokens: <b>0</b>
+    </div>
+
+    <p class="approx">Token count is an approximation (~4 chars/token for English, ~2 chars/token for non-Latin scripts). Actual tokenization varies by model.</p>
+
+    <div id="tres">
+      <p style="padding:20px 0;color:var(--text-muted)">Enter text above to see cost estimates.</p>
+    </div>
+  </section>
+
+  <!-- Footnotes -->
+  <section class="fn-sec" id="fnsec" style="display:none">
+    <div class="fn-title">Footnotes</div>
+    <div id="fncont"></div>
+  </section>
+</main>
+
+<footer class="calc-ft">
+  Prices last verified: March 18, 2026 &middot; Data source: <a href="/data/ai-pricing.json" target="_blank" rel="noopener noreferrer">ai-pricing.json</a>
+</footer>
+
+<script>
+(function(){
+'use strict';
+
+var PC = {
+  Anthropic:'#D4A574', OpenAI:'#74AA9C', Google:'#4285F4',
+  DeepSeek:'#6366F1', xAI:'#EF4444'
+};
+var FN_MAP = {'gemini-2.5-pro':'gemini_long_context','gpt-5.4':'openai_gpt54_long_context'};
+var FN_MK = {'gemini-2.5-pro':'\u00b9','gpt-5.4':'\u00b2'};
+
+var data = null;
+var mSort = 'asc';
+var outTok = 200;
+
+var rs = document.getElementById('rs');
+var is_ = document.getElementById('is');
+var os = document.getElementById('os');
+var rv = document.getElementById('rv');
+var iv = document.getElementById('iv');
+var ov = document.getElementById('ov');
+var msum = document.getElementById('msum');
+var mres = document.getElementById('mres');
+var msort = document.getElementById('msort');
+var tinput = document.getElementById('tinput');
+var tstats = document.getElementById('tstats');
+var tres = document.getElementById('tres');
+var fnsec = document.getElementById('fnsec');
+var fncont = document.getElementById('fncont');
+
+function logVal(pos){return Math.round(100*Math.pow(1000,pos/1000))}
+function fmt(n){return n.toLocaleString('en-US')}
+function esc(s){return s?String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'):''}
+
+function fmtUSD(a){
+  if(a<0.01&&a>0)return '<$0.01';
+  return '$'+a.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})
+}
+
+function fmtSmall(a){
+  if(a===0)return '$0.000000';
+  if(a<0.000001)return '<$0.000001';
+  if(a<0.01)return '$'+a.toFixed(6);
+  if(a<1)return '$'+a.toFixed(4);
+  return '$'+a.toFixed(2)
+}
+
+function fmtScope(s){
+  if(s==='all_contexts')return 'All contexts';
+  if(s==='cache_miss')return 'Cache miss';
+  if(s==='<=200k')return '\u2264200K tokens';
+  if(s==='<=272k')return '\u2264272K tokens';
+  return s
+}
+
+function estTokens(text){
+  if(!text)return 0;
+  var a=0,n=0;
+  for(var i=0;i<text.length;i++){
+    if(text.charCodeAt(i)<=127)a++;else n++;
+  }
+  return Math.ceil(a/4)+Math.ceil(n/2)
+}
+
+function monthlyCost(m,req,it,ot){
+  return(req*it*30/1e6*m.input_per_1m)+(req*ot*30/1e6*m.output_per_1m)
+}
+
+function callCost(m,it,ot){
+  return(it/1e6*m.input_per_1m)+(ot/1e6*m.output_per_1m)
+}
+
+function renderMonthly(){
+  if(!data)return;
+  var req=logVal(parseInt(rs.value));
+  var it=parseInt(is_.value);
+  var ot=parseInt(os.value);
+
+  rv.textContent=fmt(req);
+  iv.textContent=fmt(it);
+  ov.textContent=fmt(ot);
+
+  var trm=req*30;
+  var ttm=trm*(it+ot);
+  msum.innerHTML='Requests/month: <b>'+fmt(trm)+'</b> &middot; Tokens/month: <b>'+fmt(ttm)+'</b>';
+
+  var res=data.models.map(function(m){return{m:m,cost:monthlyCost(m,req,it,ot)}});
+  res.sort(function(a,b){return mSort==='asc'?a.cost-b.cost:b.cost-a.cost});
+
+  var max=0;
+  for(var i=0;i<res.length;i++){if(res[i].cost>max)max=res[i].cost}
+  var min=res[0].cost;
+  if(mSort==='desc')min=res[res.length-1].cost;
+
+  var html='';
+  for(var i=0;i<res.length;i++){
+    var r=res[i],m=r.m;
+    var c=PC[m.provider]||'#888';
+    var bw=max>0?(r.cost/max*100):0;
+    var cheap=r.cost===min;
+    var mk=FN_MK[m.model_id]||'';
+    html+='<div class="m-card" style="--pc:'+c+'">'
+      +'<div class="m-top"><div class="m-info">'
+      +'<div class="m-name">'+esc(m.label)
+      +(mk?'<span class="fn-mk">'+mk+'</span>':'')
+      +(cheap?'<span class="cheap-b">CHEAPEST</span>':'')
+      +'</div>'
+      +'<div class="m-prov">'+esc(m.provider)+'</div>'
+      +'</div>'
+      +'<div class="m-cost">'+fmtUSD(r.cost)+'<div class="m-cost-lbl">/month</div></div></div>'
+      +'<div class="m-bar-track"><div class="m-bar" style="width:'+bw.toFixed(1)+'%;background:'+c+'"></div></div>'
+      +'<div class="m-foot"><span class="scope-t">'+fmtScope(m.pricing_scope)+'</span>'
+      +'<a href="'+esc(m.source_url)+'" class="src-lnk" target="_blank" rel="noopener noreferrer">Pricing source \u2197</a>'
+      +'</div></div>';
+  }
+  mres.innerHTML=html;
+  renderFN();
+}
+
+function renderToken(){
+  if(!data)return;
+  var text=tinput.value;
+  var chars=text.length;
+  var words=text.trim()?text.trim().split(/\s+/).length:0;
+  var tokens=estTokens(text);
+
+  tstats.innerHTML='Characters: <b>'+fmt(chars)+'</b> &nbsp; Words: <b>'+fmt(words)+'</b> &nbsp; Estimated tokens: <b>'+fmt(tokens)+'</b>';
+
+  if(tokens===0){
+    tres.innerHTML='<p style="padding:20px 0;color:var(--text-muted)">Enter text above to see cost estimates.</p>';
+    return;
+  }
+
+  var res=data.models.map(function(m){
+    var cc=callCost(m,tokens,outTok);
+    return{m:m,cc:cc,mo:cc*1000*30}
+  });
+  res.sort(function(a,b){return a.cc-b.cc});
+
+  var cheapest=res[0];
+
+  var rows='';
+  for(var i=0;i<res.length;i++){
+    var r=res[i],m=r.m;
+    var c=PC[m.provider]||'#888';
+    var cheap=i===0;
+    var mk=FN_MK[m.model_id]||'';
+    rows+='<tr'+(cheap?' class="cheap-r"':'')+'>'
+      +'<td><span class="p-dot" style="background:'+c+'"></span>'+esc(m.label)
+      +(mk?'<span class="fn-mk">'+mk+'</span>':'')
+      +(cheap?' <span class="cheap-b">CHEAPEST</span>':'')
+      +'</td>'
+      +'<td style="color:var(--text-muted)">'+esc(m.provider)+'</td>'
+      +'<td class="cost-c">'+fmtSmall(r.cc)+'</td>'
+      +'<td class="src-c"><a href="'+esc(m.source_url)+'" class="src-lnk" target="_blank" rel="noopener noreferrer">\u2197</a></td>'
+      +'</tr>';
+  }
+
+  tres.innerHTML='<table class="c-tbl"><thead><tr>'
+    +'<th>Model</th><th>Provider</th><th style="text-align:right">Cost / call</th><th style="text-align:right">Source</th>'
+    +'</tr></thead><tbody>'+rows+'</tbody></table>'
+    +'<div class="scale-p">At 1,000 requests/day, this would cost ~<b>'+fmtUSD(cheapest.mo)+'/month</b> with '+esc(cheapest.m.label)+'</div>';
+
+  renderFN();
+}
+
+function renderFN(){
+  if(!data||!data.footnotes)return;
+  var fn=data.footnotes;
+  var html='';
+  if(fn.gemini_long_context)html+='<div class="fn-item" data-mk="\u00b9">'+esc(fn.gemini_long_context)+'</div>';
+  if(fn.openai_gpt54_long_context)html+='<div class="fn-item" data-mk="\u00b2">'+esc(fn.openai_gpt54_long_context)+'</div>';
+  if(html){fnsec.style.display='block';fncont.innerHTML=html}
+}
+
+/* Events */
+rs.addEventListener('input',renderMonthly);
+is_.addEventListener('input',renderMonthly);
+os.addEventListener('input',renderMonthly);
+tinput.addEventListener('input',renderToken);
+
+msort.addEventListener('click',function(){
+  mSort=mSort==='asc'?'desc':'asc';
+  this.textContent=mSort==='asc'?'Sort: Cheapest first \u2191':'Sort: Most expensive first \u2193';
+  renderMonthly();
+});
+
+var outBtns=document.querySelectorAll('.out-btn');
+var custIn=document.getElementById('custout');
+for(var i=0;i<outBtns.length;i++){
+  outBtns[i].addEventListener('click',function(){
+    for(var j=0;j<outBtns.length;j++)outBtns[j].classList.remove('act');
+    this.classList.add('act');
+    if(this.getAttribute('data-tok')==='custom'){
+      custIn.style.display='inline-block';
+      outTok=Math.max(1,parseInt(custIn.value)||500);
+    }else{
+      custIn.style.display='none';
+      outTok=parseInt(this.getAttribute('data-tok'));
+    }
+    renderToken();
+  });
+}
+
+custIn.addEventListener('input',function(){
+  outTok=Math.max(1,parseInt(this.value)||1);
+  renderToken();
+});
+
+/* Load data */
+fetch('/data/ai-pricing.json')
+  .then(function(r){
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    return r.json()
+  })
+  .then(function(d){
+    data=d;
+    renderMonthly();
+    renderToken();
+  })
+  .catch(function(e){
+    mres.innerHTML='<div class="err">Failed to load pricing data: '+esc(e.message)+'. Make sure the page is served from a web server.</div>';
+  });
+
+})();
+</script>
+</body>
+</html>
