@@ -6,7 +6,7 @@
     "updatedBy": "Claude Code",
     "version": "7.0",
     "schema_version": "1.0.0",
-    "updated_at": "2026-03-17T09:29:44Z",
+    "updated_at": "2026-03-18T09:50:33.448Z",
     "tools_count": 66,
     "sections_count": 13
   },
@@ -821,7 +821,7 @@
           "slug": "claude-ai",
           "icon": "🌐",
           "mono": true,
-          "desc": "Anthropic's chat interface — with memory, web search, and tool integration via MCP.",
+          "desc": "Anthropic's chat workspace — with memory, web search, Claude Cowork, and team plugins/connectors for enterprise workflows.",
           "added_date": "2026-02-03",
           "tags": [
             "Projects",
@@ -829,7 +829,7 @@
             "Memory",
             "Knowledge"
           ],
-          "detail": "Anthropic's primary chat interface. Features Projects for organizing conversations, MCP tools for connecting external data/tools, built-in web search, cross-session memory, and Artifacts (create code, documents, charts directly in chat). Supports Claude Opus 4.5, Sonnet 4.5, Haiku 4.5.",
+          "detail": "Anthropic's primary chat workspace. Features Projects for organizing conversations, built-in web search, cross-session memory, and Artifacts (create code, documents, charts directly in chat). Supports Claude Opus 4.6, Sonnet 4.6, and Haiku 4.5. Extended ecosystem: Claude Cowork is a research-preview desktop agent for knowledge work that brings Claude Code's agentic capabilities beyond coding. Teams can customize Claude with plugins and connectors for specialized workflows, distribute them through private plugin marketplaces, and orchestrate work across Excel and PowerPoint.",
           "sources": [
             {
               "title": "Claude.ai",
@@ -842,6 +842,14 @@
             {
               "title": "Claude Support",
               "url": "https://support.claude.com/"
+            },
+            {
+              "title": "Customize Cowork with plugins",
+              "url": "https://claude.com/blog/cowork-plugins"
+            },
+            {
+              "title": "Cowork and plugins across the enterprise",
+              "url": "https://claude.com/blog/cowork-plugins-across-enterprise"
             }
           ],
           "pricing": "freemium",
@@ -851,7 +859,8 @@
             "general AI assistant with projects",
             "research and document analysis",
             "artifact creation (code, docs, diagrams)",
-            "project-based knowledge management"
+            "project-based knowledge management",
+            "Build plugins/MCP connectors for enterprise Cowork deployments"
           ],
           "whenNotToUse": [
             "automated CI/CD pipelines (use API)",
@@ -873,8 +882,8 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-02-11",
-          "verification_source": "tested",
+          "verified_at": "2026-03-18",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
