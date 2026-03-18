@@ -1171,7 +1171,8 @@ const UI_STRINGS = {
     showMore: 'Show more',
     showLess: 'Show less',
     compareToolHeader: 'Tool',
-    compareAsOfPrefix: '📅 Data as of: '
+    compareAsOfPrefix: '📅 Data as of: ',
+    lastVerified: 'Last verified'
   },
   vi: {
     searchBtn: '🔍 Tìm kiếm',
@@ -1198,7 +1199,8 @@ const UI_STRINGS = {
     showMore: 'Xem thêm',
     showLess: 'Thu gọn',
     compareToolHeader: 'Công cụ',
-    compareAsOfPrefix: '📅 Dữ liệu tính đến: '
+    compareAsOfPrefix: '📅 Dữ liệu tính đến: ',
+    lastVerified: 'Xác minh lần cuối'
   }
 };
 
@@ -2532,7 +2534,7 @@ function renderDetail() {
   }
 
   // Footer
-  html += `<div class="detail-footer"><span>Added: ${escapeHtml(card.added_date || 'N/A')}</span></div>`;
+  html += `<div class="detail-footer"><span>${t('lastVerified')}: ${escapeHtml(card.verified_at || card.added_date || 'N/A')}</span></div>`;
 
   html += `</div>`;
   panel.innerHTML = html;
