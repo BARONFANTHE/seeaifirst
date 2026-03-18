@@ -621,6 +621,51 @@ html, body {
   background: var(--hover); color: var(--text);
 }
 
+/* ═══ Calculator CTA Strip ═══ */
+.calc-cta-strip {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; margin: 0 24px 24px;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  border-radius: 10px; gap: 16px;
+}
+.calc-cta-content {
+  display: flex; align-items: center; gap: 12px; min-width: 0;
+}
+.calc-cta-icon {
+  font-size: 20px; flex-shrink: 0;
+}
+.calc-cta-text {
+  display: flex; flex-direction: column; gap: 1px; min-width: 0;
+}
+.calc-cta-text strong {
+  font-size: 13px; font-weight: 600; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.calc-cta-text span {
+  font-size: 12px; color: var(--text-muted); line-height: 1.4;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.calc-cta-link {
+  flex-shrink: 0; font-size: 12px; font-weight: 500;
+  color: var(--text-secondary); text-decoration: none;
+  padding: 7px 14px; border-radius: 6px;
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  transition: background 0.15s, color 0.15s; white-space: nowrap;
+  min-height: 44px; display: inline-flex; align-items: center;
+}
+.calc-cta-link:hover {
+  background: rgba(255,255,255,0.1); color: var(--text);
+}
+@media (max-width: 768px) {
+  .calc-cta-strip {
+    flex-direction: column; align-items: stretch;
+    margin: 0 16px 20px; padding: 12px 16px; gap: 10px;
+  }
+  .calc-cta-link {
+    text-align: center; justify-content: center;
+  }
+}
+
 /* ═══ Sidebar Compare Icon ═══ */
 .tree-compare-icon {
   flex-shrink: 0; font-size: 11px; opacity: 0.5;
@@ -1033,7 +1078,11 @@ const UI_STRINGS = {
     showMore: 'Show more',
     showLess: 'Show less',
     compareToolHeader: 'Tool',
-    compareAsOfPrefix: '📅 Data as of: '
+    compareAsOfPrefix: '📅 Data as of: ',
+    lastVerified: 'Last verified',
+    calc_cta_title: 'AI Cost Calculator',
+    calc_cta_desc: 'Estimate monthly AI model costs in seconds.',
+    calc_cta_button: 'Open calculator \u2192'
   },
   vi: {
     searchBtn: '🔍 Tìm kiếm',
@@ -1060,7 +1109,11 @@ const UI_STRINGS = {
     showMore: 'Xem thêm',
     showLess: 'Thu gọn',
     compareToolHeader: 'Công cụ',
-    compareAsOfPrefix: '📅 Dữ liệu tính đến: '
+    compareAsOfPrefix: '📅 Dữ liệu tính đến: ',
+    lastVerified: 'Xác minh lần cuối',
+    calc_cta_title: 'Công cụ tính chi phí AI',
+    calc_cta_desc: 'Ước tính chi phí các mô hình AI theo tháng chỉ trong vài giây.',
+    calc_cta_button: 'Mở công cụ \u2192'
   }
 };
 
@@ -2132,6 +2185,18 @@ function renderWelcome() {
   const totalCards = data.sections.reduce((a, s) => a + s.cards.length, 0);
   const sectionIcons = { protocols:'🔌', frameworks:'🤖', platforms:'🏗️', memory:'🧠', skills:'🛠️', orchestration:'⚙️', 'coding-agents':'💻', trends:'🌍' };
   const hotModule = renderHotRightNow();
+  const ctaStrip = `
+    <div class="calc-cta-strip">
+      <div class="calc-cta-content">
+        <span class="calc-cta-icon">🧮</span>
+        <div class="calc-cta-text">
+          <strong>${t('calc_cta_title')}</strong>
+          <span>${t('calc_cta_desc')}</span>
+        </div>
+      </div>
+      <a href="/ai-cost-calculator/" class="calc-cta-link">${t('calc_cta_button')}</a>
+    </div>
+  `;
   panel.innerHTML = `
     <div class="welcome-panel" style="display:flex;align-items:center;flex-direction:column;gap:20px;padding:60px 40px 40px;">
       <div style="font-size:52px;">🧠</div>
@@ -2152,6 +2217,7 @@ function renderWelcome() {
       </p>
     </div>
     ${hotModule}
+    ${ctaStrip}
   `;
   panel.querySelectorAll('.welcome-compare-btn').forEach(btn => {
     btn.addEventListener('click', () => navigateToCompare(btn.dataset.presetId));
@@ -2394,7 +2460,7 @@ function renderDetail() {
   }
 
   // Footer
-  html += `<div class="detail-footer"><span>Added: ${escapeHtml(card.added_date || 'N/A')}</span></div>`;
+  html += `<div class="detail-footer"><span>${t('lastVerified')}: ${escapeHtml(card.verified_at || card.added_date || 'N/A')}</span></div>`;
 
   html += `</div>`;
   panel.innerHTML = html;
