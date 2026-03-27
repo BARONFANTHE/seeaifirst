@@ -234,9 +234,9 @@
             "rust",
             "csharp"
           ],
-          "verified_at": "2026-02-11",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 21900,
+          "github_stars": 22864,
           "license": "Apache-2.0"
         }
       ]
@@ -307,9 +307,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-19",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 24800,
+          "github_stars": 27670,
           "license": "MIT"
         },
         {
@@ -366,9 +366,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-23",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 43000,
+          "github_stars": 47347,
           "license": "MIT"
         },
         {
@@ -422,9 +422,9 @@
             "python",
             "csharp"
           ],
-          "verified_at": "2026-02-23",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 54500,
+          "github_stars": 56296,
           "license": "MIT"
         },
         {
@@ -435,7 +435,7 @@
           "desc": "SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.",
           "added_date": "2026-02-03",
           "tags": [
-            "11k⭐",
+            "20K⭐",
             "100+ LLMs"
           ],
           "detail": "SDK chính thức của OpenAI để xây dựng agent — nhẹ, production-ready. Có Guardrails tích hợp (input/output validation), Handoffs (chuyển task giữa agents), và Tracing (debug + monitor). Hỗ trợ MCP natively từ v0.0.7. Thiết kế tối giản: ít abstraction, dễ customize, dễ debug.",
@@ -476,9 +476,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-23",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 19100,
+          "github_stars": 20353,
           "license": "MIT"
         },
         {
@@ -531,9 +531,9 @@
             "go",
             "java"
           ],
-          "verified_at": "2026-02-23",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 17200,
+          "github_stars": 18626,
           "license": "Apache-2.0"
         },
         {
@@ -597,9 +597,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-19",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 47000,
+          "github_stars": 48057,
           "license": "MIT"
         },
         {
@@ -657,9 +657,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-19",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 20900,
+          "github_stars": 21105,
           "license": "Apache-2.0"
         },
         {
@@ -702,9 +702,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 78100,
+          "github_stars": 84715,
           "license": "MIT"
         },
         {
@@ -754,9 +754,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 14900,
+          "github_stars": 15858,
           "license": "MIT"
         },
         {
@@ -803,9 +803,9 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 21300,
+          "github_stars": 22385,
           "license": "Apache-2.0"
         }
       ]
@@ -1314,9 +1314,9 @@
             "python",
             "typescript"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 62917,
+          "github_stars": 117604,
           "license": "MIT"
         },
         {
@@ -1371,9 +1371,9 @@
             "python",
             "csharp"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 29448,
+          "github_stars": 31400,
           "license": "MIT"
         },
         {
@@ -1424,9 +1424,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 14639,
+          "github_stars": 17038,
           "license": "MIT"
         }
       ]
@@ -1541,9 +1541,9 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 182000,
+          "github_stars": 338187,
           "license": "Apache-2.0"
         },
         {
@@ -1595,9 +1595,9 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-02-11",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 5900,
+          "github_stars": 6574,
           "license": "MIT"
         }
       ]
@@ -1665,9 +1665,9 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 70200,
+          "github_stars": 83481,
           "license": null
         },
         {
@@ -1776,9 +1776,9 @@
           "languages": [
             "rust"
           ],
-          "verified_at": "2026-02-25",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 61800,
+          "github_stars": 67954,
           "license": "Apache-2.0"
         },
         {
@@ -1945,9 +1945,9 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 95700,
+          "github_stars": 99269,
           "license": "Apache-2.0"
         },
         {
@@ -1998,9 +1998,9 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 58400,
+          "github_stars": 59307,
           "license": "Apache-2.0"
         },
         {
@@ -2156,9 +2156,9 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 110000,
+          "github_stars": 131307,
           "license": "MIT"
         },
         {
@@ -2202,9 +2202,9 @@
           "languages": [
             "rust"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 31100,
+          "github_stars": 33522,
           "license": "Apache-2.0"
         }
       ]
@@ -2761,9 +2761,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 21800,
+          "github_stars": 23659,
           "license": "MIT"
         },
         {
@@ -2818,9 +2818,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 12800,
+          "github_stars": 14256,
           "license": "Apache-2.0"
         },
         {
@@ -2875,9 +2875,9 @@
           "languages": [
             "js"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 10200,
+          "github_stars": 18619,
           "license": "MIT"
         },
         {
@@ -2993,9 +2993,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 8500,
+          "github_stars": 9011,
           "license": "Elastic-2.0"
         }
       ]
@@ -3059,9 +3059,9 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 162000,
+          "github_stars": 166008,
           "license": "MIT"
         },
         {
@@ -3114,9 +3114,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 70000,
+          "github_stars": 74513,
           "license": "Apache-2.0"
         },
         {
@@ -3170,9 +3170,9 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 43000,
+          "github_stars": 44173,
           "license": "MIT"
         },
         {
@@ -3227,9 +3227,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 35000,
+          "github_stars": 40170,
           "license": "MIT"
         }
       ]
@@ -3262,7 +3262,7 @@
             }
           ],
           "tags": [
-            "133K⭐",
+            "134.5K⭐",
             "Apache 2.0+"
           ],
           "pricing": "open-core",
@@ -3297,9 +3297,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 129000,
+          "github_stars": 134720,
           "license": "Dify-OSL"
         },
         {
@@ -3324,7 +3324,7 @@
             }
           ],
           "tags": [
-            "75K⭐",
+            "76K⭐",
             "Apache 2.0"
           ],
           "pricing": "free",
@@ -3356,9 +3356,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 73000,
+          "github_stars": 76386,
           "license": "Apache-2.0"
         },
         {
@@ -3378,7 +3378,7 @@
             }
           ],
           "tags": [
-            "50K⭐",
+            "51K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3411,9 +3411,9 @@
           "languages": [
             "js"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 49000,
+          "github_stars": 51040,
           "license": "Apache-2.0"
         },
         {
@@ -3433,7 +3433,7 @@
             }
           ],
           "tags": [
-            "29K⭐",
+            "30K⭐",
             "MIT"
           ],
           "pricing": "free",
@@ -3464,9 +3464,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 28000,
+          "github_stars": 30429,
           "license": "MIT"
         }
       ]
@@ -3498,7 +3498,7 @@
             }
           ],
           "tags": [
-            "42.7K⭐",
+            "43.5K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3529,9 +3529,9 @@
             "go",
             "java"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 42700,
+          "github_stars": 43500,
           "license": "Apache-2.0"
         },
         {
@@ -3555,7 +3555,7 @@
             }
           ],
           "tags": [
-            "28.6K⭐",
+            "29.5K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3587,9 +3587,9 @@
             "rust",
             "go"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 29000,
+          "github_stars": 29794,
           "license": "Apache-2.0"
         },
         {
@@ -3609,7 +3609,7 @@
             }
           ],
           "tags": [
-            "26K⭐",
+            "26.5K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3639,9 +3639,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 25900,
+          "github_stars": 26800,
           "license": "Apache-2.0"
         },
         {
@@ -3661,7 +3661,7 @@
             }
           ],
           "tags": [
-            "19.7K⭐",
+            "20K⭐",
             "PostgreSQL License"
           ],
           "pricing": "free",
@@ -3692,9 +3692,9 @@
             "go",
             "rust"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 19800,
+          "github_stars": 20420,
           "license": "PostgreSQL"
         }
       ]
@@ -3712,7 +3712,7 @@
           "hot": true,
           "added_date": "2026-02-08",
           "tags": [
-            "6.7K⭐",
+            "7K⭐",
             "NVIDIA",
             "Apache 2.0"
           ],
@@ -3761,9 +3761,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 6700,
+          "github_stars": 7353,
           "license": "Apache-2.0"
         },
         {
@@ -3818,9 +3818,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 5200,
+          "github_stars": 5847,
           "license": "Apache-2.0"
         },
         {
@@ -3829,7 +3829,7 @@
           "desc": "PII detection & anonymization cho text và image – bảo vệ dữ liệu cá nhân",
           "added_date": "2026-02-08",
           "tags": [
-            "6.7K⭐",
+            "7K⭐",
             "Microsoft",
             "MIT"
           ],
@@ -3873,9 +3873,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 6700,
+          "github_stars": 7368,
           "license": "MIT"
         },
         {
@@ -3884,7 +3884,7 @@
           "desc": "I/O validation framework cho LLM – structured output + 100+ validators",
           "added_date": "2026-02-08",
           "tags": [
-            "6.1K⭐",
+            "6.5K⭐",
             "MIT"
           ],
           "tagColor": "#8b5cf6",
@@ -3931,9 +3931,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-03-24",
           "verification_source": "docs",
-          "github_stars": 6100,
+          "github_stars": 6582,
           "license": "Apache-2.0"
         }
       ]
