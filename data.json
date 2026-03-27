@@ -1496,7 +1496,7 @@
           "slug": "openclaw",
           "icon": "🐕",
           "mono": true,
-          "desc": "Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo. <strong>314K⭐</strong> on GitHub.",
+          "desc": "Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo.",
           "added_date": "2026-02-03",
           "detail": "Evolution: Clawdbot → Moltbot → OpenClaw",
           "tags": [
@@ -1623,7 +1623,7 @@
             "Skills",
             "Hooks"
           ],
-          "detail": "The leading CLI agent — #1 on SWE-bench, outperforming all rivals. 200K token context enables full comprehension of large codebases. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Runs locally, no cloud dependency. Best for: complex projects, large refactoring, existing codebases. Supports async mode on web (claude.ai/code) — delegate long tasks, create PRs directly, teleport back to local CLI to continue. Extended ecosystem: Everything Claude Code (76K⭐) — production-ready agents, skills, hooks, and commands for Claude Code.",
+          "detail": "The leading CLI agent — #1 on SWE-bench, outperforming all rivals. 200K token context enables full comprehension of large codebases. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Runs locally, no cloud dependency. Best for: complex projects, large refactoring, existing codebases. Supports async mode on web (claude.ai/code) — delegate long tasks, create PRs directly, teleport back to local CLI to continue. Extended ecosystem: Everything Claude Code — production-ready agents, skills, hooks, and commands for Claude Code.",
           "sources": [
             {
               "title": "Claude Code Docs",
@@ -2710,7 +2710,7 @@
           "slug": "langfuse",
           "desc": "Open-source observability platform for LLMs — tracing, evals, prompt management",
           "added_date": "2026-02-08",
-          "detail": "Most popular LLM engineering platform (20K+ ⭐). Provides OpenTelemetry-standard tracing, automated evaluation, prompt management with versioning, experimentation playground, and datasets for fine-tuning. Integrates with 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-hostable, YC W23 backed. Use when you need end-to-end monitoring of production LLM apps.",
+          "detail": "Most popular LLM engineering platform. Provides OpenTelemetry-standard tracing, automated evaluation, prompt management with versioning, experimentation playground, and datasets for fine-tuning. Integrates with 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-hostable, YC W23 backed. Use when you need end-to-end monitoring of production LLM apps.",
           "sources": [
             {
               "title": "GitHub (20K+ ⭐)",
@@ -2771,7 +2771,7 @@
           "slug": "deepeval",
           "desc": "LLM evaluation framework like Pytest — 50+ metrics, CI/CD integration, red-teaming",
           "added_date": "2026-02-08",
-          "detail": "\"Pytest for LLMs\" with 12.6K+ ⭐. Specialized unit testing framework for LLM outputs: 50+ research-based metrics (G-Eval, hallucination detection, faithfulness, relevancy, RAGAs). Integrates with CI/CD pipelines, automatically detects regression. Includes synthetic data generation and red-teaming for 40+ vulnerability types. Confident AI platform (optional) for cloud dashboard.",
+          "detail": "\"Pytest for LLMs\". Specialized unit testing framework for LLM outputs: 50+ research-based metrics (G-Eval, hallucination detection, faithfulness, relevancy, RAGAs). Integrates with CI/CD pipelines, automatically detects regression. Includes synthetic data generation and red-teaming for 40+ vulnerability types. Confident AI platform (optional) for cloud dashboard.",
           "sources": [
             {
               "title": "GitHub (12.6K+ ⭐)",
@@ -2828,7 +2828,7 @@
           "slug": "promptfoo",
           "desc": "CLI tool for prompt testing, model comparison, and LLM red-teaming/security scanning",
           "added_date": "2026-02-08",
-          "detail": "Open-source CLI tool (8.3K+ ⭐) for developers to test and secure LLM apps. Configure via YAML, compare outputs side-by-side across multiple models (GPT, Claude, Gemini, Llama...). Built-in red-teaming for 50+ vulnerability types: prompt injection, PII exposure, jailbreak. Runs in CI/CD via GitHub Actions. Used by 51K+ developers. Ideal for teams needing a security-first approach.",
+          "detail": "Open-source CLI tool for developers to test and secure LLM apps. Configure via YAML, compare outputs side-by-side across multiple models (GPT, Claude, Gemini, Llama...). Built-in red-teaming for 50+ vulnerability types: prompt injection, PII exposure, jailbreak. Runs in CI/CD via GitHub Actions. Used by 51K+ developers. Ideal for teams needing a security-first approach.",
           "sources": [
             {
               "title": "GitHub (8.3K+ ⭐)",
@@ -2944,7 +2944,7 @@
           "slug": "arize-phoenix",
           "desc": "Open-source AI observability platform — tracing, evaluation, RAG debugging, embeddings analysis",
           "added_date": "2026-02-08",
-          "detail": "Open-source observability platform (8.5K+ ⭐) designed for experimentation and troubleshooting. Excels at RAG debugging via embedding visualization and semantic drift detection. Built on OpenTelemetry, vendor-agnostic, supports LlamaIndex, LangChain, DSPy, smolagents. Self-hostable via Docker/Kubernetes. Prompt management with version control and tagging. Ideal for research teams and RAG-heavy applications.",
+          "detail": "Open-source observability platform designed for experimentation and troubleshooting. Excels at RAG debugging via embedding visualization and semantic drift detection. Built on OpenTelemetry, vendor-agnostic, supports LlamaIndex, LangChain, DSPy, smolagents. Self-hostable via Docker/Kubernetes. Prompt management with version control and tagging. Ideal for research teams and RAG-heavy applications.",
           "sources": [
             {
               "title": "GitHub (8.5K+ ⭐)",
@@ -3011,7 +3011,7 @@
           "slug": "ollama",
           "desc": "The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started",
           "added_date": "2026-02-08",
-          "detail": "The most popular tool for running LLMs locally (165K+ ⭐, top 50 on GitHub globally). Supports Llama, DeepSeek, Gemma, Qwen, Phi, and 100+ other models. Dead-simple setup: curl install → ollama pull → ollama run. Automatically manages GPU/CPU, quantization, model storage. API compatible with OpenAI format. Runs on macOS, Linux, Windows. Perfect for developers who want to experiment with LLMs on their own machine without API costs.",
+          "detail": "The most popular tool for running LLMs locally. Supports Llama, DeepSeek, Gemma, Qwen, Phi, and 100+ other models. Dead-simple setup: curl install → ollama pull → ollama run. Automatically manages GPU/CPU, quantization, model storage. API compatible with OpenAI format. Runs on macOS, Linux, Windows. Perfect for developers who want to experiment with LLMs on their own machine without API costs.",
           "sources": [
             {
               "title": "GitHub (165K+ ⭐)",
@@ -3069,7 +3069,7 @@
           "slug": "vllm",
           "desc": "High-performance production inference engine — PagedAttention, 2-4× throughput over baseline",
           "added_date": "2026-02-08",
-          "detail": "LLM serving engine built for production (73K+ ⭐). PagedAttention technology optimizes GPU memory, achieving 2-4× throughput over FasterTransformer/Orca. Supports continuous batching, tensor parallelism, speculative decoding. Compatible with OpenAI API server. Used by major companies for high-throughput serving. Supports most popular model architectures (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
+          "detail": "LLM serving engine built for production. PagedAttention technology optimizes GPU memory, achieving 2-4× throughput over FasterTransformer/Orca. Supports continuous batching, tensor parallelism, speculative decoding. Compatible with OpenAI API server. Used by major companies for high-throughput serving. Supports most popular model architectures (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
           "sources": [
             {
               "title": "GitHub (73K+ ⭐)",
@@ -3124,7 +3124,7 @@
           "slug": "localai",
           "desc": "Self-hosted OpenAI alternative — run LLMs, image gen, audio on consumer hardware, no GPU required",
           "added_date": "2026-02-08",
-          "detail": "Self-hosted OpenAI API replacement (43.6K+ ⭐). Runs on consumer hardware with NO GPU required. Supports text generation, image generation, audio transcription, embeddings — all via OpenAI-compatible API. Compatible with Anthropic API format, Responses API, MCP integration. One-command Docker deployment. Ideal for teams wanting to self-host their entire AI stack on their own infrastructure, keeping data in-house.",
+          "detail": "Self-hosted OpenAI API replacement. Runs on consumer hardware with NO GPU required. Supports text generation, image generation, audio transcription, embeddings — all via OpenAI-compatible API. Compatible with Anthropic API format, Responses API, MCP integration. One-command Docker deployment. Ideal for teams wanting to self-host their entire AI stack on their own infrastructure, keeping data in-house.",
           "sources": [
             {
               "title": "GitHub (43.6K+ ⭐)",
@@ -3180,7 +3180,7 @@
           "slug": "litellm",
           "desc": "Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API",
           "added_date": "2026-02-08",
-          "detail": "Unified gateway/proxy for accessing 100+ LLM providers (39K+ ⭐). Call OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... through a single API format. Built-in cost tracking per request, load balancing across providers, automatic fallback when a provider goes down. Manages API keys, rate limits, budget alerts. Python SDK and proxy server for any language. Ideal for teams using multiple LLM providers who need to optimize costs.",
+          "detail": "Unified gateway/proxy for accessing 100+ LLM providers. Call OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... through a single API format. Built-in cost tracking per request, load balancing across providers, automatic fallback when a provider goes down. Manages API keys, rate limits, budget alerts. Python SDK and proxy server for any language. Ideal for teams using multiple LLM providers who need to optimize costs.",
           "sources": [
             {
               "title": "GitHub (39K+ ⭐)",
@@ -3245,7 +3245,7 @@
           "slug": "dify",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline — 133K⭐",
+          "desc": "Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline",
           "detail": "Dify is an all-in-one platform for creating AI applications from chatbots to complex agents without writing much code. Its core strength is a drag-and-drop visual workflow builder — users drag nodes (LLM, retrieval, tool, logic) to design complete processing flows. Built-in RAG pipeline: upload documents, automatic chunking, embedding, and retrieval — no separate vector DB setup needed. Supports 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click production deployment, and a monitoring dashboard for tracking usage/cost. Real-world use cases: building internal knowledge base chatbots for enterprises, automated customer support, AI assistants for processing internal documents, or rapidly prototyping AI app ideas before investing in custom development. Note: Dify is a broad-scope platform (RAG + agent + workflow), its license has Additional Terms beyond Apache 2.0 — check before commercial use.\n\nWorks well with: Ollama (local LLM) · Langfuse (advanced observability) · Milvus/Qdrant (replace default vector DB) · MCP (extend tool access)",
           "sources": [
             {
@@ -3307,7 +3307,7 @@
           "slug": "ragflow",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations — 75K⭐",
+          "desc": "Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations",
           "detail": "RAGFlow is a RAG engine focused on document processing quality — the step often overlooked but responsible for 80% of answer accuracy. The system automatically analyzes complex document structures: tables, images, scanned PDFs, slides — and chunks by template with visual preview so users can intervene when needed. Every answer comes with specific source citations (grounded citations), significantly reducing hallucination. Integrated agent toolkit enables not just text retrieval but also external API and tool calls. Real-world use cases: enterprise internal Q&A systems handling contracts, technical reports, legal documents — the kinds of documents where simple chunking yields poor results.\n\nWorks well with: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Any LLM provider (OpenAI, Claude, Gemini)",
           "sources": [
             {
@@ -3365,7 +3365,7 @@
           "name": "Flowise",
           "slug": "flowise",
           "added_date": "2026-02-08",
-          "desc": "No-code tool for building RAG pipelines and LLM apps with drag-and-drop UI — built on LangChain — 50K⭐",
+          "desc": "No-code tool for building RAG pipelines and LLM apps with drag-and-drop UI — built on LangChain",
           "detail": "Flowise turns LangChain into a visual drag-drop interface — users drag and connect nodes (LLM, retriever, memory, tools) to create complete pipelines without writing Python code. Each flow can be exported as an API endpoint and deployed with a single Docker command. Supports over 100 built-in integration nodes: from document loaders, text splitters, embedding models to vector stores and output parsers. A community marketplace provides ready-made templates for common use cases. Practical applications: rapid prototyping of RAG chatbots, building internal tools for non-technical teams, or using as a visual debugging tool to understand data flow in RAG pipelines before writing production code.\n\nWorks well with: LangChain ecosystem · OpenAI/Claude APIs · Chroma/Milvus/Qdrant (vector stores) · Any LLM supported by LangChain",
           "sources": [
             {
@@ -3420,7 +3420,7 @@
           "name": "LightRAG",
           "slug": "lightrag",
           "added_date": "2026-02-08",
-          "desc": "Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025) — 29K⭐",
+          "desc": "Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025)",
           "detail": "LightRAG takes a fundamentally different approach from traditional RAG: instead of relying solely on vector search, the system automatically builds a knowledge graph from documents — identifying entities and relationships between them — then combines graph traversal with vector retrieval for more accurate answers. Originating from research at the University of Hong Kong, the paper was accepted at EMNLP 2025, with benchmarks showing it outperforms many other RAG methods across multiple evaluation dimensions. Lightweight by design, it runs on regular CPU/laptop without requiring a GPU. Practical applications: knowledge management systems, research Q&A requiring understanding of relationships between concepts, or any problem where \"who is related to whom/what\" matters more than \"which text chunks are similar\".\n\nWorks well with: Ollama (local LLM) · Neo4j (advanced graph storage) · LlamaIndex (see Agent Frameworks) · OpenAI/Claude APIs",
           "sources": [
             {
@@ -3481,7 +3481,7 @@
           "name": "Milvus",
           "slug": "milvus",
           "added_date": "2026-02-08",
-          "desc": "Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation — 42.7K⭐",
+          "desc": "Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation",
           "detail": "Milvus is a vector database designed for large scale from the ground up: distributed architecture on Kubernetes, supporting storage and search of billions of vectors with sub-millisecond latency. Offers the widest range of index types among vector DBs (IVF, HNSW, DiskANN, PQ...), allowing trade-offs between speed, accuracy and cost per use case. A graduated project of the LF AI & Data Foundation (Linux Foundation), ensuring strong governance and sustainable development. Cloud version Zilliz provides a managed service. Practical applications: large-scale recommendation systems, image/video similarity search, semantic search for enterprises with millions of documents, or any problem requiring similarity search over large datasets.\n\nWorks well with: LangChain · LlamaIndex · Dify · RAGFlow · Towhee (ETL pipeline) · Any embedding model (OpenAI, Cohere, HuggingFace)",
           "sources": [
             {
@@ -3538,7 +3538,7 @@
           "name": "Qdrant",
           "slug": "qdrant",
           "added_date": "2026-02-08",
-          "desc": "Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering — 28.6K⭐",
+          "desc": "Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering",
           "detail": "Qdrant (pronounced \"quadrant\") is a vector database focused on performance and production-readiness, written entirely in Rust for optimal speed and memory usage. Its standout feature is filtering: combining vector similarity search with complex conditions on metadata (boolean, range, geo, nested objects) — and filtering is integrated directly into the search process rather than post-filtering, so accuracy is preserved. Provides both REST and gRPC APIs with SDKs for multiple languages. Practical applications: personalized recommendations with user preference filtering, e-commerce search combining semantic + price/category filters, or multi-tenant RAG systems requiring isolation between tenants.\n\nWorks well with: LangChain · LlamaIndex · Dify · Flowise · FastAPI/Express (backend) · Docker/Kubernetes (deploy)",
           "sources": [
             {
@@ -3596,7 +3596,7 @@
           "name": "Chroma",
           "slug": "chroma",
           "added_date": "2026-02-08",
-          "desc": "Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG — 26K⭐",
+          "desc": "Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG",
           "detail": "Chroma is a vector database built with a \"developer-first\" philosophy — install with a single pip install, runs embedded directly in the Python process with no separate server needed. Stores and searches vector embeddings through a simple API: add documents → query in natural language → get the most similar results. Automatically handles embedding with built-in models, or bring your own embeddings from OpenAI/Cohere/HuggingFace. Featured in most RAG tutorials and courses, it is the \"first vector DB\" for many developers. Best suited for prototyping, side projects, and small-to-medium scale applications. When scaling to production with millions of vectors, consider switching to Milvus or Qdrant.\n\nWorks well with: LangChain · LlamaIndex · Flowise · Dify · OpenAI Embeddings · HuggingFace models",
           "sources": [
             {
@@ -3648,7 +3648,7 @@
           "name": "pgvector",
           "slug": "pgvector",
           "added_date": "2026-02-08",
-          "desc": "Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL — 19.7K⭐",
+          "desc": "Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL",
           "detail": "pgvector is a PostgreSQL extension that adds vector storage and search capabilities directly into an existing relational database. The idea is simple yet highly practical: instead of deploying a separate vector database (Milvus, Qdrant...), developers can add a vector column to existing PostgreSQL tables and query with familiar SQL. Supports HNSW and IVFFlat indexing for approximate nearest neighbor search, with multiple distance metrics (L2, cosine, inner product). Especially well-suited for the Supabase ecosystem (pgvector built-in), Neon, and managed Postgres services. Practical applications: adding semantic search to a web app already using Postgres, simple RAG pipelines without extra infrastructure, or when vector data needs to JOIN with relational data (users, orders, products) in a single query.\n\nWorks well with: PostgreSQL/Supabase · LangChain · LlamaIndex · Django/Rails/Express (web frameworks) · pgvectorscale (Timescale — performance addon)",
           "sources": [
             {
