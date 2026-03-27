@@ -255,7 +255,7 @@
           "desc": "Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.",
           "added_date": "2026-02-03",
           "tags": [
-            "14k⭐",
+            "27.5K⭐",
             "4.2M downloads/mo"
           ],
           "detail": "Open-source framework by LangChain for building agents as stateful graphs. Supports durable execution — agents auto-recover from failures, human-in-the-loop — humans can intervene at any point, and cross-session long-term memory. Used in production by Klarna, Replit, Uber, LinkedIn, Elastic. Includes LangGraph Studio for visual debugging and LangGraph Platform for deployment.",
