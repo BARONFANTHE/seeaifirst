@@ -666,6 +666,90 @@ html, body {
   }
 }
 
+/* ═══ Start Here Module ═══ */
+.start-here-module {
+  max-width: 900px; margin: 0 auto; padding: 0 32px 32px;
+  animation: fadeIn 0.3s ease;
+}
+.start-here-title {
+  font-size: 18px; font-weight: 700; margin: 0 0 16px;
+  color: var(--text); letter-spacing: -0.02em;
+  display: flex; align-items: center; gap: 8px;
+}
+.start-here-title::before {
+  content: ''; display: inline-block; width: 3px; height: 18px;
+  border-radius: 99px; background: #3b82f6; flex-shrink: 0;
+}
+.start-here-subtitle {
+  font-size: 14px; font-weight: 400; color: var(--text-muted);
+}
+.start-here-paths {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  margin-bottom: 16px;
+}
+.start-here-path {
+  display: flex; align-items: center; justify-content: center;
+  padding: 10px 14px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  color: var(--text-secondary); font-family: inherit;
+  font-size: 13px; font-weight: 500; cursor: pointer;
+  transition: all 0.2s; text-align: center; line-height: 1.4;
+}
+.start-here-path:hover {
+  background: var(--hover); color: var(--text);
+  border-color: var(--text-muted);
+}
+.start-here-path.active {
+  background: rgba(59,130,246,0.1); color: var(--text);
+  border-color: #3b82f6;
+}
+.start-here-detail {
+  padding: 16px; border-radius: 12px;
+  border: 1px solid var(--border); background: var(--card-bg);
+  animation: fadeIn 0.2s ease;
+}
+.start-here-stack-label {
+  font-size: 11px; font-weight: 600; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  margin: 0 0 10px;
+}
+.start-here-tools {
+  display: flex; flex-direction: column; gap: 6px;
+  margin-bottom: 14px;
+}
+.start-here-tool {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px; border-radius: 8px;
+  border: 1px solid var(--border); background: transparent;
+  cursor: pointer; font-family: inherit; transition: all 0.15s;
+  text-align: left; gap: 12px;
+}
+.start-here-tool:hover {
+  background: var(--hover); border-color: var(--text-muted);
+}
+.start-here-tool-name {
+  font-size: 14px; font-weight: 600; color: var(--text);
+}
+.start-here-tool-section {
+  font-size: 11px; color: var(--text-dim); white-space: nowrap;
+}
+.start-here-cta {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 13px; font-weight: 500; color: #3b82f6;
+  text-decoration: none; padding: 6px 0; cursor: pointer;
+  transition: color 0.15s;
+}
+.start-here-cta:hover {
+  color: #60a5fa;
+}
+@media (max-width: 768px) {
+  .start-here-module { padding: 0 16px 24px; }
+  .start-here-paths { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+}
+@media (max-width: 480px) {
+  .start-here-paths { grid-template-columns: 1fr; }
+}
+
 /* ═══ Sidebar Compare Icon ═══ */
 .tree-compare-icon {
   flex-shrink: 0; font-size: 11px; opacity: 0.5;
@@ -1083,7 +1167,15 @@ const UI_STRINGS = {
     lastVerified: 'Last verified',
     calc_cta_title: 'AI Cost Calculator',
     calc_cta_desc: 'Estimate monthly AI model costs in seconds.',
-    calc_cta_button: 'Open calculator \u2192'
+    calc_cta_button: 'Open calculator \u2192',
+    startHere_title: 'Start here',
+    startHere_subtitle: 'Pick your path',
+    startHere_path1: "I'm new to AI building",
+    startHere_path2: 'I want to build an agent',
+    startHere_path3: 'I want a RAG chatbot',
+    startHere_path4: 'I want local/open-source AI',
+    startHere_ctaSection: 'Go deeper',
+    startHere_starterStack: 'Starter stack'
   },
   vi: {
     searchBtn: '🔍 Tìm kiếm',
@@ -1114,7 +1206,15 @@ const UI_STRINGS = {
     lastVerified: 'Xác minh lần cuối',
     calc_cta_title: 'Công cụ tính chi phí AI',
     calc_cta_desc: 'Ước tính chi phí các mô hình AI theo tháng chỉ trong vài giây.',
-    calc_cta_button: 'Mở công cụ \u2192'
+    calc_cta_button: 'Mở công cụ \u2192',
+    startHere_title: 'Bắt đầu từ đây',
+    startHere_subtitle: 'Chọn hướng đi',
+    startHere_path1: 'Tôi mới bắt đầu với AI',
+    startHere_path2: 'Tôi muốn xây dựng agent',
+    startHere_path3: 'Tôi muốn chatbot RAG',
+    startHere_path4: 'Tôi muốn AI local/mã nguồn mở',
+    startHere_ctaSection: 'Khám phá thêm',
+    startHere_starterStack: 'Bộ công cụ khởi đầu'
   }
 };
 
@@ -1152,6 +1252,13 @@ function applyUiStrings() {
 
 // ═══ Constants ═══
 const SITE_URL = 'https://seeaifirst.com';
+
+const START_HERE_CONFIG = [
+  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'flowise'],              ctaTarget: 'coding-agents' },
+  { id: 'build-agent',     labelKey: 'startHere_path2', tools: ['langgraph', 'openai-agents-sdk', 'pydantic-ai'], ctaTarget: 'frameworks' },
+  { id: 'rag-chatbot',     labelKey: 'startHere_path3', tools: ['llamaindex', 'ragflow', 'pgvector'],            ctaTarget: 'rag-systems' },
+  { id: 'local-opensource', labelKey: 'startHere_path4', tools: ['ollama', 'vllm', 'litellm'],                    ctaTarget: 'infrastructure' }
+];
 
 // ═══ State ═══
 let data = null;
@@ -2186,6 +2293,7 @@ function renderWelcome() {
   const totalCards = data.sections.reduce((a, s) => a + s.cards.length, 0);
   const sectionIcons = { protocols:'🔌', frameworks:'🤖', platforms:'🏗️', memory:'🧠', skills:'🛠️', orchestration:'⚙️', 'coding-agents':'💻', trends:'🌍' };
   const hotModule = renderHotRightNow();
+  const startHereModule = renderStartHere();
   const ctaStrip = `
     <div class="calc-cta-strip">
       <div class="calc-cta-content">
@@ -2217,6 +2325,7 @@ function renderWelcome() {
         ${t('welcomeHint')}
       </p>
     </div>
+    ${startHereModule}
     ${hotModule}
     ${ctaStrip}
   `;
@@ -2224,6 +2333,7 @@ function renderWelcome() {
     btn.addEventListener('click', () => navigateToCompare(btn.dataset.presetId));
   });
   if (hotModule) attachHotListeners();
+  if (startHereModule) attachStartHereListeners();
 }
 
 function buildFeaturedCard(card, section) {
@@ -2362,6 +2472,111 @@ function attachHotListeners() {
       }
     });
   }
+}
+
+// ═══ Start Here Module ═══
+
+function validateStartHerePaths() {
+  var validPaths = [];
+  for (var i = 0; i < START_HERE_CONFIG.length; i++) {
+    var path = START_HERE_CONFIG[i];
+    var resolvedTools = [];
+    var allValid = true;
+    for (var j = 0; j < path.tools.length; j++) {
+      var result = findCardBySlug(path.tools[j]);
+      if (!result) { allValid = false; break; }
+      resolvedTools.push(result);
+    }
+    if (!allValid) continue;
+    var targetSection = data.sections.find(function(s) { return s.id === path.ctaTarget; });
+    if (!targetSection) {
+      console.warn('Start Here: ctaTarget "' + path.ctaTarget + '" not found, skipping path "' + path.id + '"');
+      continue;
+    }
+    validPaths.push({ id: path.id, labelKey: path.labelKey, ctaTarget: path.ctaTarget, resolvedTools: resolvedTools });
+  }
+  return validPaths;
+}
+
+function buildStartHereDetail(pathData) {
+  var html = '<p class="start-here-stack-label">' + t('startHere_starterStack') + '</p>';
+  html += '<div class="start-here-tools">';
+  for (var i = 0; i < pathData.resolvedTools.length; i++) {
+    var r = pathData.resolvedTools[i];
+    var slug = getCardSlug(r.card);
+    html += '<button class="start-here-tool" data-slug="' + escapeHtml(slug) + '">';
+    html += '<span class="start-here-tool-name">' + escapeHtml(r.card.name) + '</span>';
+    html += '<span class="start-here-tool-section">' + escapeHtml(r.section.title) + '</span>';
+    html += '</button>';
+  }
+  html += '</div>';
+  html += '<a class="start-here-cta" href="' + withLangPrefix('/section/' + pathData.ctaTarget) + '" data-cta-target="' + escapeHtml(pathData.ctaTarget) + '">' + t('startHere_ctaSection') + ' \u2192</a>';
+  return html;
+}
+
+function renderStartHere() {
+  var validPaths = validateStartHerePaths();
+  if (!validPaths.length) return '';
+  var html = '<div class="start-here-module">';
+  html += '<h3 class="start-here-title">' + t('startHere_title') + ' <span class="start-here-subtitle">' + t('startHere_subtitle') + '</span></h3>';
+  html += '<div class="start-here-paths" role="group">';
+  for (var i = 0; i < validPaths.length; i++) {
+    var p = validPaths[i];
+    var isFirst = i === 0;
+    html += '<button class="start-here-path' + (isFirst ? ' active' : '') + '" data-path-id="' + escapeHtml(p.id) + '" aria-pressed="' + (isFirst ? 'true' : 'false') + '">' + t(p.labelKey) + '</button>';
+  }
+  html += '</div>';
+  html += '<div class="start-here-detail" data-active-path-id="' + escapeHtml(validPaths[0].id) + '">';
+  html += buildStartHereDetail(validPaths[0]);
+  html += '</div>';
+  html += '</div>';
+  return html;
+}
+
+function attachStartHereListeners() {
+  var validPaths = validateStartHerePaths();
+  if (!validPaths.length) return;
+  var pathMap = {};
+  for (var i = 0; i < validPaths.length; i++) {
+    pathMap[validPaths[i].id] = validPaths[i];
+  }
+  var moduleEl = document.querySelector('#right-panel .start-here-module');
+  if (!moduleEl) return;
+  moduleEl.addEventListener('click', function(e) {
+    var pathBtn = e.target.closest('.start-here-path');
+    if (pathBtn) {
+      var pathId = pathBtn.dataset.pathId;
+      if (pathBtn.classList.contains('active')) return;
+      moduleEl.querySelectorAll('.start-here-path').forEach(function(b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      pathBtn.classList.add('active');
+      pathBtn.setAttribute('aria-pressed', 'true');
+      var detail = moduleEl.querySelector('.start-here-detail');
+      if (detail && pathMap[pathId]) {
+        detail.dataset.activePathId = pathId;
+        detail.innerHTML = buildStartHereDetail(pathMap[pathId]);
+      }
+      return;
+    }
+    var toolBtn = e.target.closest('.start-here-tool');
+    if (toolBtn) {
+      var result = findCardBySlug(toolBtn.dataset.slug);
+      if (!result) return;
+      selected = result;
+      navigateToTool(result.card);
+      renderRightPanel();
+      updateTreeActiveStates();
+      return;
+    }
+    var ctaLink = e.target.closest('.start-here-cta');
+    if (ctaLink) {
+      e.preventDefault();
+      navigateToSection(ctaLink.dataset.ctaTarget);
+      return;
+    }
+  });
 }
 
 function renderNewspaper() {
