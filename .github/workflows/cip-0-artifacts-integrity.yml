@@ -1,0 +1,58 @@
+name: CIP-0 — Generated Artifacts Integrity
+
+permissions:
+  contents: read
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/cip-0-artifacts-integrity.yml'
+      - 'data.json'
+      - 'data.vi.json'
+      - 'index.html'
+      - 'hot-right-now.json'
+      - 'scripts/validate.js'
+      - 'scripts/generate-shells.js'
+      - 'scripts/generate-sitemap.js'
+
+jobs:
+  artifacts-integrity:
+    name: Generated Artifacts Integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate EN dataset
+        run: node scripts/validate.js data.json
+
+      - name: Validate VI dataset
+        run: node scripts/validate.js data.vi.json
+
+      - name: Regenerate route shells
+        run: node scripts/generate-shells.js
+
+      - name: Regenerate sitemap
+        run: node scripts/generate-sitemap.js
+
+      - name: Check for drift
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "::error::Generated artifacts are out of sync with source files."
+            echo ""
+            echo "Files with drift:"
+            git status --short
+            echo ""
+            echo "Run these commands locally before pushing:"
+            echo "  node scripts/generate-shells.js"
+            echo "  node scripts/generate-sitemap.js"
+            echo "  git add -A && git commit --amend --no-edit"
+            exit 1
+          fi
+          echo "✅ All generated artifacts are in sync."
