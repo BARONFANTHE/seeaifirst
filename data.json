@@ -89,7 +89,7 @@
       "gridCols": 2,
       "cards": [
         {
-          "name": "MCP — Model Context Protocol",
+          "name": "MCP — Model Context Protocol TEST",
           "slug": "mcp",
           "icon": "🔌",
           "mono": true,
