@@ -96,7 +96,7 @@
           "hot": true,
           "desc": "<strong>Anthropic</strong>'s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called 'USB-C for AI'. ",
           "added_date": "2026-02-03",
-          "detail": "<strong>Agent ↔ Tool</strong> communication · The \"USB-C for AI\" · Adopted by OpenAI, Google DeepMind, Cursor, Replit, Sourcegraph<br><strong>MCP Apps</strong> (Jan 2026): New extension — tools return interactive UI (dashboards, forms) directly in conversation<br><strong>Skills over MCP</strong>: Experimental — skill discovery & distribution via MCP primitives",
+          "detail": "<strong>Agent ↔ Tool</strong> communication · The \"USB-C for AI\" · Adopted by OpenAI, Google DeepMind, Cursor, Replit, Sourcegraph<br><strong>MCP Apps</strong> (Jan 2026): New extension — tools return interactive UI (dashboards, forms) directly in conversation<br><strong>Skills over MCP</strong>: Experimental — skill discovery & distribution via MCP primitives TEST_MARKER_FOR_CIP0",
           "tags": [
             "Python SDK 21k⭐",
             "TS SDK 11k⭐",
