@@ -1,0 +1,93 @@
+name: CIP-1 Structured Facts Refresh
+
+on:
+  schedule:
+    - cron: '17 3 * * 1'    # Monday 03:17 UTC, parity gate in script
+  workflow_dispatch: {}       # Manual = always runs, bypasses parity
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  facts-refresh:
+    name: Structured Facts Refresh
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run CIP-1 facts refresh
+        id: refresh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/cip-1-facts-refresh.js
+
+      - name: Ensure CIP-1 labels
+        if: steps.refresh.outputs.result_status == 'has_findings'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create "cip-1" --description "CIP-1 automated report" --color "0E8A16" --force 2>/dev/null || true
+          gh label create "do-not-merge" --description "Report only, not a data PR" --color "E11D48" --force 2>/dev/null || true
+
+      - name: Push report to bot branch
+        if: steps.refresh.outputs.result_status == 'has_findings'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B bot/cip-1/open
+          mkdir -p .github/cip-reports
+          cp "${{ steps.refresh.outputs.json_path }}" .github/cip-reports/candidate-updates.json
+          git add .github/cip-reports/candidate-updates.json
+          if git diff --cached --quiet; then
+            echo "No report diff; skip commit/push"
+          else
+            git commit -m "report(cip-1): structured facts refresh $(date -u +%Y-%m-%d)"
+            git push --force origin bot/cip-1/open
+          fi
+
+      - name: Create or update draft PR
+        if: steps.refresh.outputs.result_status == 'has_findings'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_BODY_PATH="${{ steps.refresh.outputs.pr_body_path }}"
+          EXISTING_PR=$(gh pr list --head bot/cip-1/open --state open --json number --jq '.[0].number' 2>/dev/null)
+          if [ -n "$EXISTING_PR" ]; then
+            gh pr edit "$EXISTING_PR" \
+              --title "report(cip-1): structured facts refresh $(date -u +%Y-%m-%d)" \
+              --body-file "$PR_BODY_PATH" \
+              --add-label "cip-1" \
+              --add-label "do-not-merge"
+          else
+            gh pr create \
+              --base main \
+              --head bot/cip-1/open \
+              --title "report(cip-1): structured facts refresh $(date -u +%Y-%m-%d)" \
+              --body-file "$PR_BODY_PATH" \
+              --draft \
+              --label "cip-1" \
+              --label "do-not-merge"
+          fi
+
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cip-1-diagnostics-${{ github.run_id }}
+          path: |
+            .github/cip-reports/candidate-updates.json
+            /tmp/cip-1-*.json
+          retention-days: 90
+          if-no-files-found: ignore
+
+      - name: Fail on script error
+        if: steps.refresh.outputs.result_status == 'error'
+        run: exit 1
