@@ -1,0 +1,14 @@
+{
+  "cursor": { "mode": "skip", "reason": "issue-tracker repo, DEC-037" },
+  "kiro-aws": { "mode": "skip", "reason": "issue-tracker repo, DEC-037" },
+  "claude-ai": { "mode": "skip", "reason": "no canonical GitHub repo" },
+  "chatgpt": { "mode": "skip", "reason": "no canonical GitHub repo" },
+  "github-copilot": { "mode": "skip", "reason": "product page URL, not a repo" },
+  "claude-code": { "mode": "manual", "reason": "community repo, not official project" },
+  "he-thong-memory-khac": { "mode": "skip", "reason": "multi-repo card, github_stars absent" },
+  "mcp": { "mode": "manual", "reason": "identity ambiguity pending cleanup" },
+  "claude-mem": { "mode": "manual", "reason": "repo mapping pending, sdairs/claude-mem 404" },
+  "memos": { "mode": "manual", "reason": "repo mapping pending, HKU-MedAI/MemOS 404" },
+  "cline-roocode": { "mode": "manual", "reason": "sources[] pending confirmation" },
+  "openclaw": { "mode": "manual", "reason": "source URL pending correction" }
+}
