@@ -1,0 +1,995 @@
+{
+  "run_date": "2026-04-13",
+  "run_type": "scheduled",
+  "pipeline": "CIP-1",
+  "anchor_date": "2026-04-13",
+  "cards_scanned": 41,
+  "changes": [
+    {
+      "card_slug": "langgraph",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 27670,
+      "proposed": 29084,
+      "reason": "Delta: +1414 (5.1%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/langchain-ai/langgraph",
+        "observed_at": "2026-04-13T05:59:13Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "langgraph",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "tag_sync",
+      "field": "tags",
+      "current": "27.5K⭐",
+      "proposed": "29K⭐",
+      "reason": "Star count changed: 27670 → 29084",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/langchain-ai/langgraph",
+        "observed_at": "2026-04-13T05:59:13Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "crewai",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 47347,
+      "proposed": 48735,
+      "reason": "Delta: +1388 (2.9%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/crewAIInc/crewAI",
+        "observed_at": "2026-04-13T05:59:14Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "autogen",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 56296,
+      "proposed": 57016,
+      "reason": "Delta: +720 (1.3%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/microsoft/autogen",
+        "observed_at": "2026-04-13T05:59:14Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "browser-use",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 84715,
+      "proposed": 87493,
+      "reason": "Delta: +2778 (3.3%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/browser-use/browser-use",
+        "observed_at": "2026-04-13T05:59:19Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "mastra",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 22385,
+      "proposed": 22935,
+      "reason": "Delta: +550 (2.5%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/mastra-ai/mastra",
+        "observed_at": "2026-04-13T05:59:20Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "skill-categories-dang-chu-y",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 39,
+      "proposed": 64,
+      "reason": "Delta: +25 (64.1%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/modelcontextprotocol/experimental-ext-skills",
+        "observed_at": "2026-04-13T05:59:21Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "superpowers",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 117604,
+      "proposed": 148899,
+      "reason": "Delta: +31295 (26.6%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/obra/superpowers",
+        "observed_at": "2026-04-13T05:59:22Z"
+      },
+      "severity": "high",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "agents-wshobson",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 31400,
+      "proposed": 33491,
+      "reason": "Delta: +2091 (6.7%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/wshobson/agents",
+        "observed_at": "2026-04-13T05:59:23Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "planning-with-files",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 17038,
+      "proposed": 18613,
+      "reason": "Delta: +1575 (9.2%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/OthmanAdi/planning-with-files",
+        "observed_at": "2026-04-13T05:59:23Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "claude-squad",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 6574,
+      "proposed": 6975,
+      "reason": "Delta: +401 (6.1%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/smtg-ai/claude-squad",
+        "observed_at": "2026-04-13T05:59:24Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "codex-cli",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 67954,
+      "proposed": 74877,
+      "reason": "Delta: +6923 (10.2%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/openai/codex",
+        "observed_at": "2026-04-13T05:59:25Z"
+      },
+      "severity": "high",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "gemini-cli",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 99269,
+      "proposed": 101049,
+      "reason": "Delta: +1780 (1.8%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/google-gemini/gemini-cli",
+        "observed_at": "2026-04-13T05:59:26Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "opencode",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 131307,
+      "proposed": 142209,
+      "reason": "Delta: +10902 (8.3%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/anomalyco/opencode",
+        "observed_at": "2026-04-13T05:59:28Z"
+      },
+      "severity": "high",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "goose",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 33522,
+      "proposed": 41577,
+      "reason": "Delta: +8055 (24.0%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/block/goose",
+        "observed_at": "2026-04-13T05:59:29Z"
+      },
+      "severity": "high",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "langfuse",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 23659,
+      "proposed": 24799,
+      "reason": "Delta: +1140 (4.8%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/langfuse/langfuse",
+        "observed_at": "2026-04-13T05:59:30Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "promptfoo",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 18619,
+      "proposed": 20004,
+      "reason": "Delta: +1385 (7.4%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/promptfoo/promptfoo",
+        "observed_at": "2026-04-13T05:59:32Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "ollama",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 166008,
+      "proposed": 168757,
+      "reason": "Delta: +2749 (1.7%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/ollama/ollama",
+        "observed_at": "2026-04-13T05:59:35Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "vllm",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 74513,
+      "proposed": 76337,
+      "reason": "Delta: +1824 (2.4%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/vllm-project/vllm",
+        "observed_at": "2026-04-13T05:59:36Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "localai",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 44173,
+      "proposed": 45331,
+      "reason": "Delta: +1158 (2.6%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/mudler/LocalAI",
+        "observed_at": "2026-04-13T05:59:37Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "litellm",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 40170,
+      "proposed": 43063,
+      "reason": "Delta: +2893 (7.2%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/BerriAI/litellm",
+        "observed_at": "2026-04-13T05:59:38Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "dify",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 134720,
+      "proposed": 137480,
+      "reason": "Delta: +2760 (2.0%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/langgenius/dify",
+        "observed_at": "2026-04-13T05:59:39Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "dify",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "tag_sync",
+      "field": "tags",
+      "current": "134.5K⭐",
+      "proposed": "137K⭐",
+      "reason": "Star count changed: 134720 → 137480",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/langgenius/dify",
+        "observed_at": "2026-04-13T05:59:39Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "ragflow",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 76386,
+      "proposed": 77879,
+      "reason": "Delta: +1493 (2.0%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/infiniflow/ragflow",
+        "observed_at": "2026-04-13T05:59:40Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "ragflow",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "tag_sync",
+      "field": "tags",
+      "current": "76K⭐",
+      "proposed": "77.5K⭐",
+      "reason": "Star count changed: 76386 → 77879",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/infiniflow/ragflow",
+        "observed_at": "2026-04-13T05:59:40Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "flowise",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 51040,
+      "proposed": 51839,
+      "reason": "Delta: +799 (1.6%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/FlowiseAI/Flowise",
+        "observed_at": "2026-04-13T05:59:41Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "flowise",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "tag_sync",
+      "field": "tags",
+      "current": "51K⭐",
+      "proposed": "51.5K⭐",
+      "reason": "Star count changed: 51040 → 51839",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/FlowiseAI/Flowise",
+        "observed_at": "2026-04-13T05:59:41Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "lightrag",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 30429,
+      "proposed": 33056,
+      "reason": "Delta: +2627 (8.6%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/HKUDS/LightRAG",
+        "observed_at": "2026-04-13T05:59:41Z"
+      },
+      "severity": "medium",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "lightrag",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "tag_sync",
+      "field": "tags",
+      "current": "30K⭐",
+      "proposed": "33K⭐",
+      "reason": "Star count changed: 30429 → 33056",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/HKUDS/LightRAG",
+        "observed_at": "2026-04-13T05:59:41Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "chroma",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "stars_update",
+      "field": "github_stars",
+      "current": 26800,
+      "proposed": 27396,
+      "reason": "Delta: +596 (2.2%)",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/chroma-core/chroma",
+        "observed_at": "2026-04-13T05:59:45Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    },
+    {
+      "card_slug": "chroma",
+      "dataset_targets": [
+        "en",
+        "vi"
+      ],
+      "change_type": "tag_sync",
+      "field": "tags",
+      "current": "26.5K⭐",
+      "proposed": "27K⭐",
+      "reason": "Star count changed: 26800 → 27396",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/chroma-core/chroma",
+        "observed_at": "2026-04-13T05:59:45Z"
+      },
+      "severity": "low",
+      "confidence": "high"
+    }
+  ],
+  "health_issues": [
+    {
+      "card_slug": "a2a",
+      "source": "https://github.com/google/A2A",
+      "status": "redirect",
+      "severity": "medium",
+      "notes": "Repo moved to https://github.com/a2aproject/A2A",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/google/A2A",
+        "observed_at": "2026-04-13T05:59:12Z"
+      }
+    },
+    {
+      "card_slug": "a2a",
+      "source": "https://google.github.io/A2A/",
+      "status": 404,
+      "severity": "high",
+      "notes": "HTTP 404",
+      "evidence": {
+        "type": "http_check",
+        "source": "https://google.github.io/A2A/",
+        "observed_at": "2026-04-13T05:59:12Z"
+      }
+    },
+    {
+      "card_slug": "claude-flow",
+      "source": "github.com/cyanheads/claude-flow",
+      "status": 404,
+      "severity": "high",
+      "notes": "Repo not found after retry",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/cyanheads/claude-flow",
+        "observed_at": "2026-04-13T05:59:24Z"
+      }
+    },
+    {
+      "card_slug": "gemini-cli",
+      "source": "https://blog.google/technology/developers/gemini-cli/",
+      "status": 404,
+      "severity": "high",
+      "notes": "HTTP 404",
+      "evidence": {
+        "type": "http_check",
+        "source": "https://blog.google/technology/developers/gemini-cli/",
+        "observed_at": "2026-04-13T05:59:26Z"
+      }
+    },
+    {
+      "card_slug": "goose",
+      "source": "https://github.com/block/goose",
+      "status": "redirect",
+      "severity": "medium",
+      "notes": "Repo moved to https://github.com/aaif-goose/goose",
+      "evidence": {
+        "type": "github_api",
+        "source": "https://api.github.com/repos/block/goose",
+        "observed_at": "2026-04-13T05:59:29Z"
+      }
+    },
+    {
+      "card_slug": "localai",
+      "source": "https://localai.io/docs",
+      "status": 404,
+      "severity": "high",
+      "notes": "HTTP 404",
+      "evidence": {
+        "type": "http_check",
+        "source": "https://localai.io/docs",
+        "observed_at": "2026-04-13T05:59:37Z"
+      }
+    },
+    {
+      "card_slug": "milvus",
+      "source": "https://milvus.io",
+      "status": "5 redirects",
+      "severity": "medium",
+      "notes": "Final URL: https://milvus.io/",
+      "evidence": {
+        "type": "http_check",
+        "source": "https://milvus.io",
+        "observed_at": "2026-04-13T05:59:43Z"
+      }
+    }
+  ],
+  "stale_cards": [],
+  "release_signals": [
+    {
+      "card_slug": "a2a",
+      "has_releases": true,
+      "latest_tag": "v1.0.0",
+      "date": "2026-03-12"
+    },
+    {
+      "card_slug": "langgraph",
+      "has_releases": true,
+      "latest_tag": "1.1.7a1",
+      "date": "2026-04-10"
+    },
+    {
+      "card_slug": "crewai",
+      "has_releases": true,
+      "latest_tag": "1.14.1",
+      "date": "2026-04-08"
+    },
+    {
+      "card_slug": "autogen",
+      "has_releases": true,
+      "latest_tag": "python-v0.7.5",
+      "date": "2025-09-30"
+    },
+    {
+      "card_slug": "openai-agents-sdk",
+      "has_releases": true,
+      "latest_tag": "v0.13.6",
+      "date": "2026-04-09"
+    },
+    {
+      "card_slug": "google-adk",
+      "has_releases": true,
+      "latest_tag": "v1.29.0",
+      "date": "2026-04-09"
+    },
+    {
+      "card_slug": "llamaindex",
+      "has_releases": true,
+      "latest_tag": "v0.14.20",
+      "date": "2026-04-03"
+    },
+    {
+      "card_slug": "rasa",
+      "has_releases": true,
+      "latest_tag": "3.6.21",
+      "date": "2025-01-14"
+    },
+    {
+      "card_slug": "browser-use",
+      "has_releases": true,
+      "latest_tag": "0.12.6",
+      "date": "2026-04-02"
+    },
+    {
+      "card_slug": "pydantic-ai",
+      "has_releases": true,
+      "latest_tag": "v1.80.0",
+      "date": "2026-04-10"
+    },
+    {
+      "card_slug": "mastra",
+      "has_releases": true,
+      "latest_tag": "@mastra/core@1.24.0",
+      "date": "2026-04-08"
+    },
+    {
+      "card_slug": "skill-categories-dang-chu-y",
+      "has_releases": false,
+      "latest_tag": null,
+      "date": null
+    },
+    {
+      "card_slug": "superpowers",
+      "has_releases": true,
+      "latest_tag": "v5.0.7",
+      "date": "2026-03-31"
+    },
+    {
+      "card_slug": "agents-wshobson",
+      "has_releases": false,
+      "latest_tag": null,
+      "date": null
+    },
+    {
+      "card_slug": "planning-with-files",
+      "has_releases": true,
+      "latest_tag": "v2.33.0",
+      "date": "2026-04-08"
+    },
+    {
+      "card_slug": "claude-flow",
+      "has_releases": false,
+      "latest_tag": null,
+      "date": null
+    },
+    {
+      "card_slug": "claude-squad",
+      "has_releases": true,
+      "latest_tag": "v1.0.17",
+      "date": "2026-03-12"
+    },
+    {
+      "card_slug": "codex-cli",
+      "has_releases": true,
+      "latest_tag": "rust-v0.120.0",
+      "date": "2026-04-11"
+    },
+    {
+      "card_slug": "gemini-cli",
+      "has_releases": true,
+      "latest_tag": "v0.37.1",
+      "date": "2026-04-09"
+    },
+    {
+      "card_slug": "opencode",
+      "has_releases": true,
+      "latest_tag": "v1.4.3",
+      "date": "2026-04-10"
+    },
+    {
+      "card_slug": "goose",
+      "has_releases": true,
+      "latest_tag": "v1.30.0",
+      "date": "2026-04-08"
+    },
+    {
+      "card_slug": "langfuse",
+      "has_releases": true,
+      "latest_tag": "v3.167.4",
+      "date": "2026-04-10"
+    },
+    {
+      "card_slug": "deepeval",
+      "has_releases": true,
+      "latest_tag": "v3.9.5",
+      "date": "2025-12-01"
+    },
+    {
+      "card_slug": "promptfoo",
+      "has_releases": true,
+      "latest_tag": "0.121.4",
+      "date": "2026-04-11"
+    },
+    {
+      "card_slug": "arize-phoenix",
+      "has_releases": true,
+      "latest_tag": "arize-phoenix-v14.2.1",
+      "date": "2026-04-10"
+    },
+    {
+      "card_slug": "ollama",
+      "has_releases": true,
+      "latest_tag": "v0.20.6",
+      "date": "2026-04-12"
+    },
+    {
+      "card_slug": "vllm",
+      "has_releases": true,
+      "latest_tag": "v0.19.0",
+      "date": "2026-04-03"
+    },
+    {
+      "card_slug": "localai",
+      "has_releases": true,
+      "latest_tag": "v4.1.3",
+      "date": "2026-04-06"
+    },
+    {
+      "card_slug": "litellm",
+      "has_releases": true,
+      "latest_tag": "v1.83.7.rc.1",
+      "date": "2026-04-12"
+    },
+    {
+      "card_slug": "dify",
+      "has_releases": true,
+      "latest_tag": "1.13.3",
+      "date": "2026-03-27"
+    },
+    {
+      "card_slug": "ragflow",
+      "has_releases": true,
+      "latest_tag": "v0.24.0",
+      "date": "2026-02-10"
+    },
+    {
+      "card_slug": "flowise",
+      "has_releases": true,
+      "latest_tag": "flowise@3.1.1",
+      "date": "2026-03-23"
+    },
+    {
+      "card_slug": "lightrag",
+      "has_releases": true,
+      "latest_tag": "v1.4.14",
+      "date": "2026-04-12"
+    },
+    {
+      "card_slug": "milvus",
+      "has_releases": true,
+      "latest_tag": "v2.6.14",
+      "date": "2026-04-07"
+    },
+    {
+      "card_slug": "qdrant",
+      "has_releases": true,
+      "latest_tag": "v1.17.1",
+      "date": "2026-03-27"
+    },
+    {
+      "card_slug": "chroma",
+      "has_releases": true,
+      "latest_tag": "1.5.7",
+      "date": "2026-04-08"
+    },
+    {
+      "card_slug": "pgvector",
+      "has_releases": false,
+      "latest_tag": null,
+      "date": null
+    },
+    {
+      "card_slug": "garak",
+      "has_releases": true,
+      "latest_tag": "v0.14.1",
+      "date": "2026-04-03"
+    },
+    {
+      "card_slug": "nemo-guardrails",
+      "has_releases": true,
+      "latest_tag": "v0.21.0",
+      "date": "2026-03-12"
+    },
+    {
+      "card_slug": "presidio",
+      "has_releases": true,
+      "latest_tag": "2.2.362",
+      "date": "2026-03-18"
+    },
+    {
+      "card_slug": "guardrails-ai",
+      "has_releases": true,
+      "latest_tag": "v0.10.0",
+      "date": "2026-04-03"
+    }
+  ],
+  "blocked_cards": [
+    {
+      "card_slug": "mcp",
+      "mode": "manual",
+      "reason": "identity ambiguity pending cleanup"
+    },
+    {
+      "card_slug": "claude-ai",
+      "mode": "skip",
+      "reason": "no canonical GitHub repo"
+    },
+    {
+      "card_slug": "chatgpt",
+      "mode": "skip",
+      "reason": "no canonical GitHub repo"
+    },
+    {
+      "card_slug": "claude-mem",
+      "mode": "manual",
+      "reason": "repo mapping pending, sdairs/claude-mem 404"
+    },
+    {
+      "card_slug": "he-thong-memory-khac",
+      "mode": "skip",
+      "reason": "multi-repo card, github_stars absent"
+    },
+    {
+      "card_slug": "memos",
+      "mode": "manual",
+      "reason": "repo mapping pending, HKU-MedAI/MemOS 404"
+    },
+    {
+      "card_slug": "openclaw",
+      "mode": "manual",
+      "reason": "source URL pending correction"
+    },
+    {
+      "card_slug": "claude-code",
+      "mode": "manual",
+      "reason": "community repo, not official project"
+    },
+    {
+      "card_slug": "cursor",
+      "mode": "skip",
+      "reason": "issue-tracker repo, DEC-037"
+    },
+    {
+      "card_slug": "github-copilot",
+      "mode": "skip",
+      "reason": "product page URL, not a repo"
+    },
+    {
+      "card_slug": "cline-roocode",
+      "mode": "manual",
+      "reason": "sources[] pending confirmation"
+    },
+    {
+      "card_slug": "kiro-aws",
+      "mode": "skip",
+      "reason": "issue-tracker repo, DEC-037"
+    }
+  ]
+}
