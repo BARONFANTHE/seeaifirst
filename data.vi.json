@@ -234,9 +234,9 @@
             "rust",
             "csharp"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 22864,
+          "github_stars": 25155,
           "license": "Apache-2.0"
         }
       ]
@@ -255,7 +255,7 @@
           "desc": "Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.",
           "added_date": "2026-02-03",
           "tags": [
-            "27.5K⭐",
+            "38.5K⭐",
             "4.2M downloads/mo"
           ],
           "detail": "Framework mã nguồn mở của LangChain cho phép xây dựng agent dạng đồ thị trạng thái (stateful graph). Hỗ trợ durable execution — agent tự phục hồi sau lỗi, human-in-the-loop — con người can thiệp bất kỳ lúc nào, và long-term memory xuyên phiên. Được Klarna, Replit, Uber, LinkedIn, Elastic tin dùng trong production. Có LangGraph Studio để debug visual và LangGraph Platform để deploy.",
@@ -307,9 +307,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 27670,
+          "github_stars": 38723,
           "license": "MIT"
         },
         {
@@ -366,9 +366,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 47347,
+          "github_stars": 56538,
           "license": "MIT"
         },
         {
@@ -422,9 +422,9 @@
             "python",
             "csharp"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 56296,
+          "github_stars": 60183,
           "license": "MIT"
         },
         {
@@ -435,7 +435,7 @@
           "desc": "SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.",
           "added_date": "2026-02-03",
           "tags": [
-            "20K⭐",
+            "28K⭐",
             "100+ LLMs"
           ],
           "detail": "SDK chính thức của OpenAI để xây dựng agent — nhẹ, production-ready. Có Guardrails tích hợp (input/output validation), Handoffs (chuyển task giữa agents), và Tracing (debug + monitor). Hỗ trợ MCP natively từ v0.0.7. Thiết kế tối giản: ít abstraction, dễ customize, dễ debug.",
@@ -476,9 +476,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 20353,
+          "github_stars": 28350,
           "license": "MIT"
         },
         {
@@ -531,9 +531,9 @@
             "go",
             "java"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 18626,
+          "github_stars": 20983,
           "license": "Apache-2.0"
         },
         {
@@ -597,9 +597,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 48057,
+          "github_stars": 51326,
           "license": "MIT"
         },
         {
@@ -665,9 +665,9 @@
         {
           "name": "Browser-Use",
           "slug": "browser-use",
-          "desc": "Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars",
+          "desc": "Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ",
           "added_date": "2026-02-04",
-          "detail": "Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP server để dùng trong Claude Code/Cursor. Có Browser-Use Cloud cho deploy production. 80K+ stars, MIT license, Python SDK đơn giản chỉ vài dòng code.",
+          "detail": "Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP server để dùng trong Claude Code/Cursor. Có Browser-Use Cloud cho deploy production. MIT license, Python SDK đơn giản chỉ vài dòng code.",
           "sources": [
             {
               "title": "GitHub",
@@ -702,9 +702,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 84715,
+          "github_stars": 107657,
           "license": "MIT"
         },
         {
@@ -712,7 +712,7 @@
           "slug": "pydantic-ai",
           "desc": "Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers",
           "added_date": "2026-02-04",
-          "detail": "Pydantic AI mang triết lý type-safety của FastAPI vào thế giới AI agents. Structured output với Pydantic models, dependency injection, streaming, và built-in evaluation framework. Hỗ trợ MCP + A2A protocols, human-in-the-loop, và 40+ LLM providers. 15.5K stars, MIT license, phát triển bởi chính team tạo ra Pydantic — thư viện validation phổ biến nhất Python.",
+          "detail": "Pydantic AI mang triết lý type-safety của FastAPI vào thế giới AI agents. Structured output với Pydantic models, dependency injection, streaming, và built-in evaluation framework. Hỗ trợ MCP + A2A protocols, human-in-the-loop, và 40+ LLM providers. MIT license, phát triển bởi chính team tạo ra Pydantic — thư viện validation phổ biến nhất Python.",
           "sources": [
             {
               "title": "GitHub",
@@ -754,9 +754,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 15858,
+          "github_stars": 19018,
           "license": "MIT"
         },
         {
@@ -764,7 +764,7 @@
           "slug": "mastra",
           "desc": "TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn",
           "added_date": "2026-02-04",
-          "detail": "Mastra là framework agent ưu tiên TypeScript, xây dựng bởi team đứng sau Gatsby.js. Cung cấp graph-based workflows, built-in RAG với vector store, evaluation framework, và MCP client/server. Hỗ trợ 40+ model providers, human-in-the-loop, và memory management. 22K stars, active development, phù hợp cho TypeScript/Node.js developers muốn xây agent nhanh.",
+          "detail": "Mastra là framework agent ưu tiên TypeScript, xây dựng bởi team đứng sau Gatsby.js. Cung cấp graph-based workflows, built-in RAG với vector store, evaluation framework, và MCP client/server. Hỗ trợ 40+ model providers, human-in-the-loop, và memory management. Active development, phù hợp cho TypeScript/Node.js developers muốn xây agent nhanh.",
           "sources": [
             {
               "title": "GitHub",
@@ -803,9 +803,9 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 22385,
+          "github_stars": 26843,
           "license": "Apache-2.0"
         }
       ]
@@ -1254,9 +1254,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-08-03",
           "verification_source": "inferred",
-          "github_stars": 39,
+          "github_stars": 168,
           "license": "Apache-2.0"
         },
         {
@@ -1314,9 +1314,9 @@
             "python",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 117604,
+          "github_stars": 265289,
           "license": "MIT"
         },
         {
@@ -1371,9 +1371,9 @@
             "python",
             "csharp"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 31400,
+          "github_stars": 38439,
           "license": "MIT"
         },
         {
@@ -1424,9 +1424,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 17038,
+          "github_stars": 25941,
           "license": "MIT"
         }
       ]
@@ -1595,9 +1595,9 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 6574,
+          "github_stars": 8225,
           "license": "MIT"
         }
       ]
@@ -1776,9 +1776,9 @@
           "languages": [
             "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 67954,
+          "github_stars": 103438,
           "license": "Apache-2.0"
         },
         {
@@ -1945,9 +1945,9 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 99269,
+          "github_stars": 106318,
           "license": "Apache-2.0"
         },
         {
@@ -2118,9 +2118,9 @@
         {
           "name": "OpenCode",
           "slug": "opencode",
-          "desc": "Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 122K+ stars, MIT license",
+          "desc": "Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, MIT license",
           "added_date": "2026-02-04",
-          "detail": "OpenCode do SST team phát triển, là open-source alternative cho Claude Code với 122K+ GitHub stars (Top 100 repos). Hỗ trợ OpenAI, Anthropic, Google, Groq, local models — không bị lock vào 1 provider. TUI đẹp (Bubble Tea), có LSP integration, session management, và multi-file editing. Viết bằng Go, cài qua npm/brew/curl. Tích hợp GitHub Actions để review PR tự động.",
+          "detail": "OpenCode do SST team phát triển, là open-source alternative cho Claude Code (Top 100 GitHub repos). Hỗ trợ OpenAI, Anthropic, Google, Groq, local models — không bị lock vào 1 provider. TUI đẹp (Bubble Tea), có LSP integration, session management, và multi-file editing. Viết bằng Go, cài qua npm/brew/curl. Tích hợp GitHub Actions để review PR tự động.",
           "sources": [
             {
               "title": "GitHub",
@@ -2156,9 +2156,9 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 131307,
+          "github_stars": 192539,
           "license": "MIT"
         },
         {
@@ -2166,7 +2166,7 @@
           "slug": "goose",
           "desc": "Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM",
           "added_date": "2026-02-04",
-          "detail": "Goose là open-source coding agent từ Block (formerly Square), viết bằng Rust cho performance cao. Khác Claude Code/Cursor ở chỗ: Goose tự chạy commands, install dependencies, debug errors — không chỉ suggest code. Mở rộng qua MCP extensions, có desktop app + CLI. 33K stars, Apache-2.0 license, hỗ trợ mọi LLM provider.",
+          "detail": "Goose là open-source coding agent từ Block (formerly Square), viết bằng Rust cho performance cao. Khác Claude Code/Cursor ở chỗ: Goose tự chạy commands, install dependencies, debug errors — không chỉ suggest code. Mở rộng qua MCP extensions, có desktop app + CLI. Apache-2.0 license, hỗ trợ mọi LLM provider.",
           "sources": [
             {
               "title": "GitHub",
@@ -2202,9 +2202,9 @@
           "languages": [
             "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 33522,
+          "github_stars": 52144,
           "license": "Apache-2.0"
         }
       ]
@@ -2713,7 +2713,7 @@
           "detail": "LLM engineering platform phổ biến nhất. Cung cấp tracing theo chuẩn OpenTelemetry, evaluation tự động, prompt management với versioning, playground thử nghiệm, và datasets cho fine-tuning. Tích hợp 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-host được, YC W23 backed. Dùng khi cần giám sát production LLM apps end-to-end.",
           "sources": [
             {
-              "title": "GitHub (20K+ ⭐)",
+              "title": "GitHub (32K+ ⭐)",
               "url": "https://github.com/langfuse/langfuse"
             },
             {
@@ -2761,9 +2761,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 23659,
+          "github_stars": 32384,
           "license": "MIT"
         },
         {
@@ -2774,7 +2774,7 @@
           "detail": "\"Pytest cho LLMs\". Unit testing framework chuyên biệt cho LLM outputs: 50+ metrics dựa trên nghiên cứu (G-Eval, hallucination detection, faithfulness, relevancy, RAGAs). Tích hợp CI/CD pipelines, tự động phát hiện regression. Bao gồm synthetic data generation và red-teaming cho 40+ loại vulnerabilities. Confident AI platform (optional) cho cloud dashboard.",
           "sources": [
             {
-              "title": "GitHub (12.6K+ ⭐)",
+              "title": "GitHub (17K+ ⭐)",
               "url": "https://github.com/confident-ai/deepeval"
             },
             {
@@ -2818,9 +2818,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 14256,
+          "github_stars": 17352,
           "license": "Apache-2.0"
         },
         {
@@ -2831,7 +2831,7 @@
           "detail": "Công cụ CLI mã nguồn mở cho developer test và bảo mật LLM apps. Config bằng YAML, so sánh output side-by-side giữa nhiều models (GPT, Claude, Gemini, Llama...). Tích hợp red-teaming cho 50+ vulnerability types: prompt injection, PII exposure, jailbreak. Chạy trong CI/CD qua GitHub Actions. 51K+ developers sử dụng. Phù hợp cho teams cần security-first approach.",
           "sources": [
             {
-              "title": "GitHub (8.3K+ ⭐)",
+              "title": "GitHub (23.5K+ ⭐)",
               "url": "https://github.com/promptfoo/promptfoo"
             },
             {
@@ -2875,9 +2875,9 @@
           "languages": [
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 18619,
+          "github_stars": 23859,
           "license": "MIT"
         },
         {
@@ -2947,7 +2947,7 @@
           "detail": "Platform observability mã nguồn mở thiết kế cho experimentation và troubleshooting. Nổi bật với RAG debugging qua embedding visualization, phát hiện semantic drift. Xây trên OpenTelemetry, vendor-agnostic, hỗ trợ LlamaIndex, LangChain, DSPy, smolagents. Self-host được qua Docker/Kubernetes. Prompt management với version control và tagging. Phù hợp cho research teams và RAG-heavy applications.",
           "sources": [
             {
-              "title": "GitHub (8.5K+ ⭐)",
+              "title": "GitHub (10.5K+ ⭐)",
               "url": "https://github.com/Arize-ai/phoenix"
             },
             {
@@ -2993,9 +2993,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 9011,
+          "github_stars": 10863,
           "license": "Elastic-2.0"
         }
       ]
@@ -3014,7 +3014,7 @@
           "detail": "Tool phổ biến nhất để chạy LLM local. Hỗ trợ Llama, DeepSeek, Gemma, Qwen, Phi và 100+ models khác. Cài đặt cực đơn giản: curl install → ollama pull → ollama run. Tự động quản lý GPU/CPU, quantization, model storage. API tương thích OpenAI format. Chạy trên macOS, Linux, Windows. Phù hợp cho developer muốn thử nghiệm LLM trên máy cá nhân mà không tốn API costs.",
           "sources": [
             {
-              "title": "GitHub (165K+ ⭐)",
+              "title": "GitHub (177.5K+ ⭐)",
               "url": "https://github.com/ollama/ollama"
             },
             {
@@ -3059,9 +3059,9 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 166008,
+          "github_stars": 177642,
           "license": "MIT"
         },
         {
@@ -3072,7 +3072,7 @@
           "detail": "Engine serving LLM cho production. Công nghệ PagedAttention giúp tối ưu GPU memory, đạt throughput gấp 2-4× so với FasterTransformer/Orca. Hỗ trợ continuous batching, tensor parallelism, speculative decoding. Tương thích OpenAI API server. Dùng bởi các công ty lớn cho high-throughput serving. Hỗ trợ hầu hết model architectures phổ biến (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
           "sources": [
             {
-              "title": "GitHub (73K+ ⭐)",
+              "title": "GitHub (88K+ ⭐)",
               "url": "https://github.com/vllm-project/vllm"
             },
             {
@@ -3114,9 +3114,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 74513,
+          "github_stars": 88012,
           "license": "Apache-2.0"
         },
         {
@@ -3127,7 +3127,7 @@
           "detail": "Nền tảng self-hosted thay thế OpenAI API. Chạy được trên consumer hardware KHÔNG cần GPU. Hỗ trợ text generation, image generation, audio transcription, embeddings — tất cả qua OpenAI-compatible API. Tương thích Anthropic API format, Responses API, MCP integration. Chạy qua Docker một lệnh. Phù hợp cho teams muốn self-host toàn bộ AI stack trên infrastructure riêng, giữ data không ra ngoài.",
           "sources": [
             {
-              "title": "GitHub (43.6K+ ⭐)",
+              "title": "GitHub (48K+ ⭐)",
               "url": "https://github.com/mudler/LocalAI"
             },
             {
@@ -3170,9 +3170,9 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 44173,
+          "github_stars": 48158,
           "license": "MIT"
         },
         {
@@ -3183,7 +3183,7 @@
           "detail": "Gateway/proxy thống nhất truy cập 100+ LLM providers. Gọi OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... qua cùng một API format. Tích hợp cost tracking theo từng request, load balancing giữa providers, fallback tự động khi provider down. Quản lý API keys, rate limits, budget alerts. SDK cho Python và proxy server cho mọi ngôn ngữ. Phù hợp cho teams dùng nhiều LLM providers và cần tối ưu chi phí.",
           "sources": [
             {
-              "title": "GitHub (39K+ ⭐)",
+              "title": "GitHub (55K+ ⭐)",
               "url": "https://github.com/BerriAI/litellm"
             },
             {
@@ -3227,9 +3227,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 40170,
+          "github_stars": 55397,
           "license": "MIT"
         }
       ]
@@ -3262,7 +3262,7 @@
             }
           ],
           "tags": [
-            "134.5K⭐",
+            "151K⭐",
             "Apache 2.0+"
           ],
           "pricing": "open-core",
@@ -3297,9 +3297,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 134720,
+          "github_stars": 151148,
           "license": "Dify-OSL"
         },
         {
@@ -3324,7 +3324,7 @@
             }
           ],
           "tags": [
-            "76K⭐",
+            "86.5K⭐",
             "Apache 2.0"
           ],
           "pricing": "free",
@@ -3356,9 +3356,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 76386,
+          "github_stars": 86672,
           "license": "Apache-2.0"
         },
         {
@@ -3378,7 +3378,7 @@
             }
           ],
           "tags": [
-            "51K⭐",
+            "55K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3411,9 +3411,9 @@
           "languages": [
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 51040,
+          "github_stars": 55111,
           "license": "Apache-2.0"
         },
         {
@@ -3433,7 +3433,7 @@
             }
           ],
           "tags": [
-            "30K⭐",
+            "38K⭐",
             "MIT"
           ],
           "pricing": "free",
@@ -3464,9 +3464,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 30429,
+          "github_stars": 38441,
           "license": "MIT"
         }
       ]
@@ -3498,7 +3498,7 @@
             }
           ],
           "tags": [
-            "43.5K⭐",
+            "45K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3529,9 +3529,9 @@
             "go",
             "java"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 43500,
+          "github_stars": 45473,
           "license": "Apache-2.0"
         },
         {
@@ -3555,7 +3555,7 @@
             }
           ],
           "tags": [
-            "29.5K⭐",
+            "33.5K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3587,9 +3587,9 @@
             "rust",
             "go"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 29794,
+          "github_stars": 33740,
           "license": "Apache-2.0"
         },
         {
@@ -3609,7 +3609,7 @@
             }
           ],
           "tags": [
-            "26.5K⭐",
+            "28.5K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
@@ -3639,9 +3639,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 26800,
+          "github_stars": 28932,
           "license": "Apache-2.0"
         },
         {
@@ -3661,7 +3661,7 @@
             }
           ],
           "tags": [
-            "20K⭐",
+            "22K⭐",
             "PostgreSQL License"
           ],
           "pricing": "free",
@@ -3692,9 +3692,9 @@
             "go",
             "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 20420,
+          "github_stars": 22451,
           "license": "PostgreSQL"
         }
       ]
@@ -3712,7 +3712,7 @@
           "hot": true,
           "added_date": "2026-02-08",
           "tags": [
-            "7K⭐",
+            "8.5K⭐",
             "NVIDIA",
             "Apache 2.0"
           ],
@@ -3761,9 +3761,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 7353,
+          "github_stars": 8667,
           "license": "Apache-2.0"
         },
         {
@@ -3772,7 +3772,7 @@
           "desc": "Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn",
           "added_date": "2026-02-08",
           "tags": [
-            "5.5K⭐",
+            "6.5K⭐",
             "NVIDIA",
             "Apache 2.0"
           ],
@@ -3818,9 +3818,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 5847,
+          "github_stars": 6861,
           "license": "Apache-2.0"
         },
         {
@@ -3829,7 +3829,7 @@
           "desc": "PII detection & anonymization cho text và image – bảo vệ dữ liệu cá nhân",
           "added_date": "2026-02-08",
           "tags": [
-            "7K⭐",
+            "10K⭐",
             "Microsoft",
             "MIT"
           ],
@@ -3873,9 +3873,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 7368,
+          "github_stars": 10315,
           "license": "MIT"
         },
         {
@@ -3884,7 +3884,7 @@
           "desc": "I/O validation framework cho LLM – structured output + 100+ validators",
           "added_date": "2026-02-08",
           "tags": [
-            "6.5K⭐",
+            "7K⭐",
             "MIT"
           ],
           "tagColor": "#8b5cf6",
@@ -3931,9 +3931,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-08-03",
           "verification_source": "docs",
-          "github_stars": 6582,
+          "github_stars": 7240,
           "license": "Apache-2.0"
         }
       ]
