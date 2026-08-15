@@ -12,10 +12,10 @@ const OUTPUT_PATH = path.join(__dirname, '..', 'sitemap.xml');
 const STATIC_PAGES = ['/ai-cost-calculator/'];
 
 // Expected counts
-const EXPECTED_CARDS = 66;
+const EXPECTED_CARDS = 67;
 const EXPECTED_SECTIONS = 13;
 const EXPECTED_PRESETS = 4;
-const EXPECTED_TOTAL = 169; // (1 + 66 + 4 + 13) * 2 langs + static pages
+const EXPECTED_TOTAL = 171; // (1 + 67 + 4 + 13) * 2 langs + static pages
 
 // Read data.json
 const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));

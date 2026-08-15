@@ -10,5 +10,6 @@
   "claude-mem": { "mode": "manual", "reason": "repo mapping pending, sdairs/claude-mem 404" },
   "memos": { "mode": "manual", "reason": "repo mapping pending, HKU-MedAI/MemOS 404" },
   "cline-roocode": { "mode": "manual", "reason": "sources[] pending confirmation" },
-  "openclaw": { "mode": "manual", "reason": "source URL pending correction" }
+  "openclaw": { "mode": "manual", "reason": "source URL pending correction" },
+  "gpt-image-2": { "mode": "skip", "reason": "no canonical GitHub repo" }
 }
