@@ -158,6 +158,7 @@ const viSlugMap = buildSlugMap(viData);
 
 const dataFor = (lang) => (lang === 'vi' ? viData : enData);
 
+// Tool-page labels/enums mirror DETAIL_LABELS in index.html (SPA detail panel). Change both together.
 const LABELS = {
   en: {
     home: 'See AI First', whenToUse: 'When to use', whenNotToUse: 'When not to use',
@@ -165,6 +166,7 @@ const LABELS = {
     license: 'License', languages: 'Languages', useCases: 'Use cases', lastVerified: 'Last verified',
     worksWith: 'Works well with', alternatives: 'Alternatives in this category', sources: 'Sources',
     compareWith: 'Compare side by side', otherCategories: 'Other categories', tool: 'Tool',
+    seeAll: 'See all {{count}} tools in {{section}} →',
     verifiedVia: { docs: 'official documentation', tested: 'hands-on testing', inferred: 'inference from documented facts' },
     enums: {
       free: 'Free', freemium: 'Freemium', paid: 'Paid', 'open-core': 'Open core',
@@ -178,6 +180,7 @@ const LABELS = {
     license: 'Giấy phép', languages: 'Ngôn ngữ', useCases: 'Ứng dụng', lastVerified: 'Xác minh lần cuối',
     worksWith: 'Kết hợp tốt với', alternatives: 'Lựa chọn khác cùng danh mục', sources: 'Nguồn',
     compareWith: 'So sánh trực tiếp', otherCategories: 'Danh mục khác', tool: 'Công cụ',
+    seeAll: 'Xem tất cả {{count}} công cụ trong {{section}} →',
     verifiedVia: { docs: 'tài liệu chính thức', tested: 'dùng thử thực tế', inferred: 'suy luận từ dữ liệu đã công bố' },
     enums: {
       free: 'Miễn phí', freemium: 'Freemium', paid: 'Trả phí', 'open-core': 'Open core',
@@ -193,6 +196,17 @@ function listForLang(items, lang) {
   const list = Array.isArray(items) ? items.filter((t) => typeof t === 'string' && t.trim()) : [];
   if (lang === 'en' && list.some((t) => VI_CHARS.test(t))) return [];
   return list;
+}
+
+// Same-section cards ranked by shared useCases, ties keep section order (mirrors rankAlternatives in index.html).
+function rankAlternatives(card, section, limit) {
+  const own = new Set(card.useCases || []);
+  return section.cards
+    .map((c, i) => ({ c, i, score: (c.useCases || []).filter((u) => own.has(u)).length }))
+    .filter((x) => x.c.slug !== card.slug)
+    .sort((a, b) => b.score - a.score || a.i - b.i)
+    .slice(0, limit)
+    .map((x) => x.c);
 }
 
 function plain(text) {
@@ -639,15 +653,19 @@ function generateBodyContent(route) {
       const compat = (card.compatibleWith || [])
         .map((slug) => slugMap.get(slug))
         .filter((e) => e && e.card.slug !== card.slug)
-        .map((e) => cardLink(linkPrefix, e.card, true));
+        .map((e) => cardLink(linkPrefix, e.card, false));
       if (compat.length) parts.push(`      <h2>${L.worksWith}</h2>\n      <ul>\n${htmlList(compat, '        ')}\n      </ul>`);
 
-      const alts = section.cards.filter((c) => c.slug !== card.slug).map((c) => cardLink(linkPrefix, c, true));
-      if (alts.length) parts.push(`      <h2>${L.alternatives}</h2>\n      <ul>\n${htmlList(alts, '        ')}\n      </ul>`);
+      const alts = rankAlternatives(card, section, 5).map((c) => cardLink(linkPrefix, c, false));
+      if (alts.length) {
+        parts.push(`      <h2>${L.alternatives}</h2>\n      <ul>\n${htmlList(alts, '        ')}\n      </ul>`);
+        const seeAll = L.seeAll.replace('{{count}}', String(section.cards.length)).replace('{{section}}', escapeHtml(section.title));
+        parts.push(`      <p><a href="${linkPrefix}/section/${escapeHtml(section.id)}">${seeAll}</a></p>`);
+      }
 
       const preset = presetForSection(lang, section.id);
       if (preset && preset.tools.some((t) => t.cardId === card.slug)) {
-        parts.push(`      <p><a href="${linkPrefix}/compare/${escapeHtml(preset.id)}">${L.compareWith}: ${escapeHtml(preset.title)}</a></p>`);
+        parts.push(`      <p><a href="${linkPrefix}/compare/${escapeHtml(preset.id)}">⚖️ ${escapeHtml(preset.title)}</a></p>`);
       }
 
       const srcs = (card.sources || [])
