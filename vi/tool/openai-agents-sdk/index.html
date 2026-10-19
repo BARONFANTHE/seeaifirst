@@ -1055,10 +1055,56 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › OpenAI Agents SDK</nav>
     <article>
       <h1>OpenAI Agents SDK</h1>
       <p>SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.</p>
-      <p>SDK chính thức của OpenAI để xây dựng agent — nhẹ, production-ready. Có Guardrails tích hợp (input/output validation), Handoffs (chuyển task giữa agents), và Tracing (debug + monitor). Hỗ trợ MCP n...</p>
+      <p>SDK chính thức của OpenAI để xây dựng agent — nhẹ, production-ready. Có Guardrails tích hợp (input/output validation), Handoffs (chuyển task giữa agents), và Tracing (debug + monitor). Hỗ trợ MCP natively từ v0.0.7. Thiết kế tối giản: ít abstraction, dễ customize, dễ debug.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Xây dựng multi-agent workflow nhẹ</li>
+        <li>Cần handoff giữa các agent chuyên biệt</li>
+        <li>Tích hợp sẵn tracing và guardrails</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Cần workflow engine phức tạp</li>
+        <li>Không muốn phụ thuộc OpenAI ecosystem ban đầu</li>
+        <li>Cần no-code agent builder UI</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ứng dụng</dt><dd>agent framework, multi agent, tool calling, tracing</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/crewai">CrewAI</a> — Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.</li>
+        <li><a href="/vi/tool/autogen">AutoGen</a> — Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.</li>
+        <li><a href="/vi/tool/google-adk">Google ADK</a> — Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/rasa">Rasa</a> — Nền tảng chatbot và voice AI — chạy trên server riêng, kiểm soát hoàn toàn dữ liệu.</li>
+        <li><a href="/vi/tool/browser-use">Browser-Use</a> — Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars</li>
+        <li><a href="/vi/tool/pydantic-ai">Pydantic AI</a> — Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers</li>
+        <li><a href="/vi/tool/mastra">Mastra</a> — TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn</li>
+      </ul>
+      <p><a href="/vi/compare/frameworks">So sánh trực tiếp: So sánh Agent Frameworks</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://openai.github.io/openai-agents-python/" rel="nofollow noopener noreferrer">OpenAI Agents SDK</a></li>
+        <li><a href="https://github.com/openai/openai-agents-python" rel="nofollow noopener noreferrer">OpenAI Agents GitHub</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>
       </footer>

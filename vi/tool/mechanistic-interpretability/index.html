@@ -1055,10 +1055,57 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/trends">AI Trends 2026 — Xu hướng đang định hình tương lai</a> › Mechanistic Interpretability</nav>
     <article>
       <h1>Mechanistic Interpretability</h1>
       <p>Nghiên cứu cách AI &#039;suy nghĩ&#039; bên trong — giúp hiểu và kiểm soát hành vi AI tốt hơn. Đột phá 2026 theo MIT.</p>
-      <p>MIT Technology Review chọn là 1 trong 10 Breakthrough Technologies 2026. Anthropic dùng &#039;kính hiển vi AI&#039; phát hiện 34 triệu features trong Claude — từ &#039;sarcasm&#039; đến &#039;DNA sequences&#039;. OpenAI xây &#039;AI...</p>
+      <p>MIT Technology Review chọn là 1 trong 10 Breakthrough Technologies 2026. Anthropic dùng &#039;kính hiển vi AI&#039; phát hiện 34 triệu features trong Claude — từ &#039;sarcasm&#039; đến &#039;DNA sequences&#039;. OpenAI xây &#039;AI lie detector&#039; dựa trên model internals. Google DeepMind phát hành Gemma Scope 2 — bộ toolkit interpretability mã nguồn mở lớn nhất. Mục tiêu: biến AI từ &#039;hộp đen&#039; thành &#039;hộp kính&#039; — hiểu được tại sao AI đưa ra quyết định.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Cần hiểu internal mechanisms của LLM để debug hành vi bất thường</li>
+        <li>Nghiên cứu AI safety, alignment, phát hiện deception</li>
+        <li>Audit model trước khi deploy cho ứng dụng high-stakes</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Chỉ cần evaluate output quality — dùng observability tools</li>
+        <li>Không có background ML/deep learning chuyên sâu</li>
+        <li>Cần giải pháp production nhanh, không phải research</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Cloud</dd>
+        <dt>Độ khó</dt><dd>Nâng cao</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>research, llm evaluation, llm red teaming, security audit</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-02-27 (suy luận từ dữ liệu đã công bố)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+        <li><a href="/vi/tool/deepeval">DeepEval</a> — Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+        <li><a href="/vi/tool/arize-phoenix">Arize Phoenix</a> — AI observability platform mã nguồn mở — tracing, evaluation, RAG debugging, embeddings analysis</li>
+        <li><a href="/vi/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn</li>
+        <li><a href="/vi/tool/garak">garak</a> — LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/multi-agent-systems">Multi-Agent Systems</a> — Hệ thống nhiều agent AI phối hợp — Gartner ghi nhận tăng 1,445% quan tâm. 40% app doanh nghiệp sẽ dùng agent cuối 2026.</li>
+        <li><a href="/vi/tool/world-models">World Models</a> — AI mô phỏng thế giới thực — AMI Labs, Google và các startup đang đua nhau phát triển. Ngành gaming là một động lực lớn.</li>
+        <li><a href="/vi/tool/generative-coding">Generative Coding</a> — AI viết 30% code tại Microsoft, 25%+ tại Google. &#039;Tiếng Anh đang trở thành ngôn ngữ lập trình mới.&#039;</li>
+        <li><a href="/vi/tool/chinese-open-source-ai">Chinese Open-Source AI</a> — DeepSeek R1 gây sốc giới AI — model suy luận mã nguồn mở từ Trung Quốc. Khoảng cách công nghệ giảm từ tháng xuống tuần.</li>
+        <li><a href="/vi/tool/post-training-pre-training">Post-Training &gt; Pre-Training</a> — Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.</li>
+        <li><a href="/vi/tool/ai-drug-discovery">AI Drug Discovery</a> — Thuốc do AI khám phá bắt đầu thử nghiệm lâm sàng giai đoạn giữa/cuối. Tập trung: ung thư và bệnh hiếm.</li>
+        <li><a href="/vi/tool/ai-infrastructure">AI Infrastructure</a> — Data center khổng lồ 1GW+, dùng cả điện hạt nhân cho AI. Một mặt trận trọng yếu trong cuộc đua AI.</li>
+        <li><a href="/vi/tool/ai-governance">AI Governance</a> — Agent AI giám sát các agent AI khác — đặt rào chắn an toàn và giữ con người trong vòng kiểm soát.</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://www.technologyreview.com/2026/01/12/1130003/mechanistic-interpretability-ai-research-models-2026-breakthrough-technologies/" rel="nofollow noopener noreferrer">MIT Tech Review — Breakthrough 2026</a></li>
+        <li><a href="https://www.technologyreview.com/2026/01/12/1129782/ai-large-language-models-biology-alien-autopsy/" rel="nofollow noopener noreferrer">MIT Tech Review — LLMs like alien autopsy</a></li>
+        <li><a href="https://www.anthropic.com/research" rel="nofollow noopener noreferrer">Anthropic — Research</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/trends">AI Trends 2026 — Xu hướng đang định hình tương lai</a> trên See AI First.</p>
       </footer>

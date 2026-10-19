@@ -1055,10 +1055,45 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/memory">Memory Systems — Bộ nhớ xuyên phiên</a> › MemOS</nav>
     <article>
       <h1>MemOS</h1>
       <p>Hệ điều hành bộ nhớ thống nhất cho LLM — quản lý memory qua MemCube với hỗ trợ short-term và long-term</p>
-      <p>MemOS cung cấp kiến trúc memory layer chuẩn hóa cho AI agents với MemCube — đơn vị bộ nhớ cơ bản chứa cả dữ liệu và metadata. Hỗ trợ nhiều loại memory (parametric, activation, long-term) và tích hợ...</p>
+      <p>MemOS cung cấp kiến trúc memory layer chuẩn hóa cho AI agents với MemCube — đơn vị bộ nhớ cơ bản chứa cả dữ liệu và metadata. Hỗ trợ nhiều loại memory (parametric, activation, long-term) và tích hợp được với các framework phổ biến. ~6.9K stars, active development (v2.0.4, Jan 2026). Unique vì cung cấp unified memory interface mà Mem0/Zep chưa giải quyết trọn vẹn.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Cần persistent skill memory cho agent cross-task reuse</li>
+        <li>Xây hệ thống multi-agent cần shared memory layer</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Chỉ cần simple key-value memory</li>
+        <li>Project nhỏ không cần memory OS phức tạp</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Nâng cao</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>skill memory, agent memory os, cross task reuse</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-15 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/openclaw">OpenClaw</a> — Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo.</li>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/claude-mem">Claude-Mem</a> — Plugin giúp Claude Code có trí nhớ dài hạn — tự ghi lại kinh nghiệm, nén thông minh và nhớ cho lần làm việc sau.</li>
+        <li><a href="/vi/tool/he-thong-memory-khac">Hệ thống Memory khác</a></li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/MemTensor/MemOS" rel="nofollow noopener noreferrer">GitHub</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/memory">Memory Systems — Bộ nhớ xuyên phiên</a> trên See AI First.</p>
       </footer>

@@ -1055,10 +1055,51 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> › Presidio</nav>
     <article>
       <h1>Presidio</h1>
       <p>PII detection &amp; anonymization for text and images – protecting personal data</p>
-      <p>Presidio is an open-source framework from Microsoft for detecting, redacting, masking and anonymizing sensitive data (PII) in text, images and structured data. Combines NLP (spaCy, transformers), r...</p>
+      <p>Presidio is an open-source framework from Microsoft for detecting, redacting, masking and anonymizing sensitive data (PII) in text, images and structured data. Combines NLP (spaCy, transformers), regex patterns, rule-based logic and checksums to identify credit cards, names, addresses, SSNs, emails, phone numbers and many other PII types. Supports multiple languages and can be extended with custom recognizers. Deployable via Python packages or Docker containers, integrates well with LLM pipelines to sanitize data before sending to models. Works well with: LangChain · LiteLLM · Guardrails AI · NeMo Guardrails</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>PII detection and anonymization in LLM pipelines</li>
+        <li>text de-identification before model training or logging</li>
+        <li>privacy-aware data preprocessing for RAG systems</li>
+        <li>custom PII recognizer development with NLP/regex</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>real-time high-throughput stream processing without tuning</li>
+        <li>non-text PII detection (audio, video) beyond image redaction</li>
+        <li>when only simple regex-based masking is needed</li>
+      </ul>
+      <h2>At a glance</h2>
+      <dl>
+        <dt>Pricing</dt><dd>Free</dd>
+        <dt>Deployment</dt><dd>Hybrid</dd>
+        <dt>Difficulty</dt><dd>Intermediate</dd>
+        <dt>License</dt><dd>MIT</dd>
+        <dt>Languages</dt><dd>python</dd>
+        <dt>Use cases</dt><dd>pii detection, data anonymization, privacy preprocessing, llm preprocessing</dd>
+        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+      </dl>
+      <h2>Works well with</h2>
+      <ul>
+        <li><a href="/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails for LLMs with Colang DSL – dialog control and safety</li>
+        <li><a href="/tool/litellm">LiteLLM</a> — Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/tool/dify">Dify</a> — Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline</li>
+      </ul>
+      <h2>Alternatives in this category</h2>
+      <ul>
+        <li><a href="/tool/garak">garak</a> — LLM vulnerability scanner – probes security flaws in AI models</li>
+        <li><a href="/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails for LLMs with Colang DSL – dialog control and safety</li>
+        <li><a href="/tool/guardrails-ai">Guardrails AI</a> — I/O validation framework for LLMs – structured output + 100+ validators</li>
+      </ul>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://github.com/microsoft/presidio" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://microsoft.github.io/presidio/" rel="nofollow noopener noreferrer">Website</a></li>
+      </ul>
       <footer>
         <p>Part of <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> on See AI First.</p>
       </footer>

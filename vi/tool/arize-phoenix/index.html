@@ -1055,10 +1055,51 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> › Arize Phoenix</nav>
     <article>
       <h1>Arize Phoenix</h1>
       <p>AI observability platform mã nguồn mở — tracing, evaluation, RAG debugging, embeddings analysis</p>
-      <p>Platform observability mã nguồn mở thiết kế cho experimentation và troubleshooting. Nổi bật với RAG debugging qua embedding visualization, phát hiện semantic drift. Xây trên OpenTelemetry, vendor-a...</p>
+      <p>Platform observability mã nguồn mở thiết kế cho experimentation và troubleshooting. Nổi bật với RAG debugging qua embedding visualization, phát hiện semantic drift. Xây trên OpenTelemetry, vendor-agnostic, hỗ trợ LlamaIndex, LangChain, DSPy, smolagents. Self-host được qua Docker/Kubernetes. Prompt management với version control và tagging. Phù hợp cho research teams và RAG-heavy applications.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>debug RAG retrieval quality</li>
+        <li>phân tích traces với OpenTelemetry</li>
+        <li>chạy evaluation trong notebook workflow</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>cần cung cấp như managed service cho bên thứ ba</li>
+        <li>cần license permissive cho thương mại</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Elastic-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ứng dụng</dt><dd>llm observability, rag evaluation, experiment tracking, dataset management</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+        <li><a href="/vi/tool/deepeval">DeepEval</a> — Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+        <li><a href="/vi/tool/promptfoo">Promptfoo</a> — CLI tool cho prompt testing, model comparison và LLM red-teaming/security scanning</li>
+        <li><a href="/vi/tool/langsmith">LangSmith</a> — Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/Arize-ai/phoenix" rel="nofollow noopener noreferrer">GitHub (8.5K+ ⭐)</a></li>
+        <li><a href="https://phoenix.arize.com" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://docs.arize.com/phoenix" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> trên See AI First.</p>
       </footer>

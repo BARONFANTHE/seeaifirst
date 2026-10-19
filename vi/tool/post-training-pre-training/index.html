@@ -1055,10 +1055,57 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/trends">AI Trends 2026 — Xu hướng đang định hình tương lai</a> › Post-Training &gt; Pre-Training</nav>
     <article>
       <h1>Post-Training &gt; Pre-Training</h1>
       <p>Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.</p>
-      <p>Xu hướng lớn: thay vì train model lớn hơn (pre-training tốn $100M+), giờ tập trung tinh chỉnh sau huấn luyện (post-training) bằng RLHF, DPO, RLAIF. Fine-tuning trở thành chìa khóa — model nhỏ + fin...</p>
+      <p>Xu hướng lớn: thay vì train model lớn hơn (pre-training tốn $100M+), giờ tập trung tinh chỉnh sau huấn luyện (post-training) bằng RLHF, DPO, RLAIF. Fine-tuning trở thành chìa khóa — model nhỏ + fine-tune tốt có thể đánh bại model lớn. Reasoning models (o1, o3, DeepSeek R1) chứng minh post-training quan trọng hơn kích thước model.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Align model với human preferences</li>
+        <li>Tăng reasoning qua reinforcement learning</li>
+        <li>Cải thiện model chi phí thấp hơn pre-training</li>
+        <li>Fine-tune cho domain chuyên biệt</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Chưa có base model đủ mạnh</li>
+        <li>Không có preference data hoặc verifiable rewards</li>
+        <li>Task đơn giản dùng prompt engineering là đủ</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Cloud</dd>
+        <dt>Độ khó</dt><dd>Nâng cao</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>model experimentation, research, evaluation</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-02-27 (suy luận từ dữ liệu đã công bố)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/deepeval">DeepEval</a> — Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+        <li><a href="/vi/tool/promptfoo">Promptfoo</a> — CLI tool cho prompt testing, model comparison và LLM red-teaming/security scanning</li>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/vllm">vLLM</a> — Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/multi-agent-systems">Multi-Agent Systems</a> — Hệ thống nhiều agent AI phối hợp — Gartner ghi nhận tăng 1,445% quan tâm. 40% app doanh nghiệp sẽ dùng agent cuối 2026.</li>
+        <li><a href="/vi/tool/mechanistic-interpretability">Mechanistic Interpretability</a> — Nghiên cứu cách AI &#039;suy nghĩ&#039; bên trong — giúp hiểu và kiểm soát hành vi AI tốt hơn. Đột phá 2026 theo MIT.</li>
+        <li><a href="/vi/tool/world-models">World Models</a> — AI mô phỏng thế giới thực — AMI Labs, Google và các startup đang đua nhau phát triển. Ngành gaming là một động lực lớn.</li>
+        <li><a href="/vi/tool/generative-coding">Generative Coding</a> — AI viết 30% code tại Microsoft, 25%+ tại Google. &#039;Tiếng Anh đang trở thành ngôn ngữ lập trình mới.&#039;</li>
+        <li><a href="/vi/tool/chinese-open-source-ai">Chinese Open-Source AI</a> — DeepSeek R1 gây sốc giới AI — model suy luận mã nguồn mở từ Trung Quốc. Khoảng cách công nghệ giảm từ tháng xuống tuần.</li>
+        <li><a href="/vi/tool/ai-drug-discovery">AI Drug Discovery</a> — Thuốc do AI khám phá bắt đầu thử nghiệm lâm sàng giai đoạn giữa/cuối. Tập trung: ung thư và bệnh hiếm.</li>
+        <li><a href="/vi/tool/ai-infrastructure">AI Infrastructure</a> — Data center khổng lồ 1GW+, dùng cả điện hạt nhân cho AI. Một mặt trận trọng yếu trong cuộc đua AI.</li>
+        <li><a href="/vi/tool/ai-governance">AI Governance</a> — Agent AI giám sát các agent AI khác — đặt rào chắn an toàn và giữ con người trong vòng kiểm soát.</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://www.anthropic.com/research" rel="nofollow noopener noreferrer">Anthropic — RLHF Research</a></li>
+        <li><a href="https://openai.com/index/learning-to-reason-with-llms/" rel="nofollow noopener noreferrer">OpenAI — Learning to Reason</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/trends">AI Trends 2026 — Xu hướng đang định hình tương lai</a> trên See AI First.</p>
       </footer>

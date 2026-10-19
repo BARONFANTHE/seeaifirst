@@ -1055,10 +1055,54 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> › Universal Agent Skills</nav>
     <article>
       <h1>Universal Agent Skills</h1>
       <p>Skill là file .md chứa hướng dẫn cho AI agent — đơn giản nhưng hiệu quả, chạy được trên mọi AI coding tool.</p>
-      <p>Hệ sinh thái Agent Skills đang bùng nổ — Anthropic đã chuẩn hóa format SKILL.md để dạy AI agents kỹ năng chuyên biệt. Antigravity Awesome Skills (631+ skills, V4.0) là bộ sưu tập lớn nhất, hỗ trợ C...</p>
+      <p>Hệ sinh thái Agent Skills đang bùng nổ — Anthropic đã chuẩn hóa format SKILL.md để dạy AI agents kỹ năng chuyên biệt. Antigravity Awesome Skills (631+ skills, V4.0) là bộ sưu tập lớn nhất, hỗ trợ Claude Code, Gemini CLI, Codex CLI, Cursor, OpenCode. VoltAgent cung cấp 200+ skills từ các team chính thức (Stripe, Cloudflare, Hugging Face, Sentry). Cài đặt đơn giản: npx antigravity-awesome-skills hoặc clone vào .agent/skills/.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Khi cần mở rộng khả năng của AI agents với kiến thức chuyên biệt</li>
+        <li>Khi muốn tạo reusable workflows cho team</li>
+        <li>Khi cần chuẩn hóa quy trình phát triển với coding agents</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Khi cần logic phức tạp hơn instructions — dùng MCP servers</li>
+        <li>Khi cần custom runtime hoặc API integration — dùng frameworks</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Cloud</dd>
+        <dt>Độ khó</dt><dd>Cơ bản</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ứng dụng</dt><dd>ai plugin system, tool integration, agentic coding, cross task reuse</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-02-26 (suy luận từ dữ liệu đã công bố)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/claude-code">Claude Code</a> — Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.</li>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+        <li><a href="/vi/tool/cursor">Cursor</a> — IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.</li>
+        <li><a href="/vi/tool/gemini-cli">Gemini CLI</a> — Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.</li>
+        <li><a href="/vi/tool/codex-cli">Codex CLI</a> — Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.</li>
+        <li><a href="/vi/tool/opencode">OpenCode</a> — Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 122K+ stars, MIT license</li>
+        <li><a href="/vi/tool/goose">Goose</a> — Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/skill-categories-dang-chu-y">Skill Categories đáng chú ý</a></li>
+        <li><a href="/vi/tool/superpowers">Superpowers</a> — Framework kỹ năng dạng agent cho Claude Code — tự động kích hoạt skills phù hợp khi làm việc.</li>
+        <li><a href="/vi/tool/agents-wshobson">Agents (wshobson)</a> — Bộ sưu tập 112 agents + 146 skills + 73 plugins chuyên biệt cho Claude Code — lớn nhất hiện tại.</li>
+        <li><a href="/vi/tool/planning-with-files">Planning with Files</a> — Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/sickn33/antigravity-awesome-skills" rel="nofollow noopener noreferrer">Antigravity Skills</a></li>
+        <li><a href="https://github.com/VoltAgent/awesome-agent-skills" rel="nofollow noopener noreferrer">VoltAgent Skills</a></li>
+        <li><a href="https://github.com/agentskills" rel="nofollow noopener noreferrer">Agent Skills (Anthropic)</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> trên See AI First.</p>
       </footer>

@@ -1055,10 +1055,56 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> › Dify</nav>
     <article>
       <h1>Dify</h1>
       <p>Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</p>
-      <p>Dify là nền tảng all-in-one cho phép tạo ứng dụng AI từ chatbot đến agent phức tạp mà không cần viết nhiều code. Điểm mạnh cốt lõi là visual workflow builder dạng drag-drop — người dùng kéo thả các...</p>
+      <p>Dify là nền tảng all-in-one cho phép tạo ứng dụng AI từ chatbot đến agent phức tạp mà không cần viết nhiều code. Điểm mạnh cốt lõi là visual workflow builder dạng drag-drop — người dùng kéo thả các node (LLM, retrieval, tool, logic) để thiết kế luồng xử lý hoàn chỉnh. RAG pipeline tích hợp sẵn: upload tài liệu, tự động chunking, embedding, và truy xuất — không cần setup vector DB riêng. Hỗ trợ kết nối 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click deploy lên production, và monitoring dashboard theo dõi usage/cost. Ứng dụng thực tế: xây dựng internal knowledge base chatbot cho doanh nghiệp, customer support tự động, AI assistant xử lý tài liệu nội bộ, hoặc prototype nhanh ý tưởng AI app trước khi đầu tư phát triển custom. Lưu ý: Dify là platform scope rộng (RAG + agent + workflow), license có Additional Terms ngoài Apache 2.0 — cần kiểm tra khi dùng thương mại. Kết hợp tốt với: Ollama (chạy LLM local) · Langfuse (observability nâng cao) · Milvus/Qdrant (thay thế vector DB mặc định) · MCP (mở rộng tool access)</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Cần visual workflow builder cho RAG và AI agents</li>
+        <li>Muốn deploy nhanh ứng dụng LLM từ prototype đến production</li>
+        <li>Team cần platform tích hợp sẵn RAG pipeline, model management, observability</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Cần license OSS thuần cho multi-tenant SaaS (Dify-OSL có điều kiện bổ sung)</li>
+        <li>Chỉ cần RAG engine nhẹ, không cần full platform</li>
+        <li>Muốn stack tối giản, tránh phụ thuộc nhiều service (PostgreSQL, Redis, MinIO)</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Dify-OSL</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ứng dụng</dt><dd>rag pipeline, chatbot, ai workflow, document qa</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+        <li><a href="/vi/tool/milvus">Milvus</a> — Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation</li>
+        <li><a href="/vi/tool/pgvector">pgvector</a> — Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc</li>
+        <li><a href="/vi/tool/qdrant">Qdrant</a> — Vector database viết bằng Rust — nhanh, tiết kiệm bộ nhớ, filtering payload mạnh nhất</li>
+        <li><a href="/vi/tool/chroma">Chroma</a> — Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/ragflow">RAGFlow</a> — RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn</li>
+        <li><a href="/vi/tool/flowise">Flowise</a> — Công cụ no-code xây dựng RAG pipeline và LLM apps bằng giao diện kéo thả — nền tảng LangChain</li>
+        <li><a href="/vi/tool/lightrag">LightRAG</a> — Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025)</li>
+      </ul>
+      <p><a href="/vi/compare/rag-systems">So sánh trực tiếp: So sánh RAG Systems</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/langgenius/dify" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://dify.ai" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://docs.dify.ai" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> trên See AI First.</p>
       </footer>

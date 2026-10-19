@@ -1055,10 +1055,52 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> › Langfuse</nav>
     <article>
       <h1>Langfuse</h1>
       <p>Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</p>
-      <p>LLM engineering platform phổ biến nhất. Cung cấp tracing theo chuẩn OpenTelemetry, evaluation tự động, prompt management với versioning, playground thử nghiệm, và datasets cho fine-tuning. Tích hợp...</p>
+      <p>LLM engineering platform phổ biến nhất. Cung cấp tracing theo chuẩn OpenTelemetry, evaluation tự động, prompt management với versioning, playground thử nghiệm, và datasets cho fine-tuning. Tích hợp 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-host được, YC W23 backed. Dùng khi cần giám sát production LLM apps end-to-end.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>theo dõi LLM traces và chi phí</li>
+        <li>quản lý prompt phiên bản</li>
+        <li>đánh giá chất lượng LLM output</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>chỉ cần eval đơn giản không cần tracing</li>
+        <li>dự án không dùng LLM</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ứng dụng</dt><dd>llm observability, prompt management, cost tracking, evaluation</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/dify">Dify</a> — Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/deepeval">DeepEval</a> — Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+        <li><a href="/vi/tool/promptfoo">Promptfoo</a> — CLI tool cho prompt testing, model comparison và LLM red-teaming/security scanning</li>
+        <li><a href="/vi/tool/langsmith">LangSmith</a> — Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph</li>
+        <li><a href="/vi/tool/arize-phoenix">Arize Phoenix</a> — AI observability platform mã nguồn mở — tracing, evaluation, RAG debugging, embeddings analysis</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/langfuse/langfuse" rel="nofollow noopener noreferrer">GitHub (20K+ ⭐)</a></li>
+        <li><a href="https://langfuse.com" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://langfuse.com/docs" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> trên See AI First.</p>
       </footer>

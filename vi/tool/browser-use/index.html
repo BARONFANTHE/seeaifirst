@@ -1055,10 +1055,55 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › Browser-Use</nav>
     <article>
       <h1>Browser-Use</h1>
       <p>Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars</p>
-      <p>Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP s...</p>
+      <p>Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP server để dùng trong Claude Code/Cursor. Có Browser-Use Cloud cho deploy production. 80K+ stars, MIT license, Python SDK đơn giản chỉ vài dòng code.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Cần AI agent tương tác với website</li>
+        <li>Scraping dữ liệu từ trang web phức tạp</li>
+        <li>Tự động hóa quy trình web end-to-end</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Task không liên quan đến browser</li>
+        <li>Cần API integration thuần túy</li>
+        <li>Môi trường không hỗ trợ Chromium</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>browser automation, web agent, data extraction</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/crewai">CrewAI</a> — Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.</li>
+        <li><a href="/vi/tool/autogen">AutoGen</a> — Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.</li>
+        <li><a href="/vi/tool/openai-agents-sdk">OpenAI Agents SDK</a> — SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.</li>
+        <li><a href="/vi/tool/google-adk">Google ADK</a> — Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/rasa">Rasa</a> — Nền tảng chatbot và voice AI — chạy trên server riêng, kiểm soát hoàn toàn dữ liệu.</li>
+        <li><a href="/vi/tool/pydantic-ai">Pydantic AI</a> — Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers</li>
+        <li><a href="/vi/tool/mastra">Mastra</a> — TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn</li>
+      </ul>
+      <p><a href="/vi/compare/frameworks">So sánh trực tiếp: So sánh Agent Frameworks</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/browser-use/browser-use" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://docs.browser-use.com" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>
       </footer>

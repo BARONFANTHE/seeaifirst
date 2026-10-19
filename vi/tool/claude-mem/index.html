@@ -1055,10 +1055,46 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/memory">Memory Systems — Bộ nhớ xuyên phiên</a> › Claude-Mem</nav>
     <article>
       <h1>Claude-Mem</h1>
       <p>Plugin giúp Claude Code có trí nhớ dài hạn — tự ghi lại kinh nghiệm, nén thông minh và nhớ cho lần làm việc sau.</p>
-      <p>Kiến trúc: 5 lifecycle hooks (SessionStart → UserPromptSubmit → PostToolUse → Summary → SessionEnd)RAD (Retrieval Augmented Decisions): open standard mới — RAG captures knowledge, RAD captures inte...</p>
+      <p>Kiến trúc: 5 lifecycle hooks (SessionStart → UserPromptSubmit → PostToolUse → Summary → SessionEnd)RAD (Retrieval Augmented Decisions): open standard mới — RAG captures knowledge, RAD captures intelligenceEndless Mode: ~1000 tool uses (vs 50 mặc định), O(N) scaling</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Cần giữ context giữa các phiên Claude Code</li>
+        <li>Dự án lớn cần session continuity và compound learning</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Chỉ dùng sessions ngắn, độc lập</li>
+        <li>Cần memory cho non-Claude agents</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Độ khó</dt><dd>Cơ bản</dd>
+        <dt>Giấy phép</dt><dd>AGPL-3.0</dd>
+        <dt>Ngôn ngữ</dt><dd>typescript</dd>
+        <dt>Ứng dụng</dt><dd>session memory, coding agent memory, project continuity</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-02-12 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+        <li><a href="/vi/tool/claude-flow">Claude-Flow</a> — Nền tảng điều phối agent theo kiến trúc Queen + Workers — quản lý Claude, GPT, Gemini cùng lúc qua MCP.</li>
+        <li><a href="/vi/tool/claude-squad">Claude Squad</a> — Ứng dụng terminal giúp chạy nhiều phiên Claude Code và Codex cùng lúc, mỗi phiên một workspace riêng.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/he-thong-memory-khac">Hệ thống Memory khác</a></li>
+        <li><a href="/vi/tool/memos">MemOS</a> — Hệ điều hành bộ nhớ thống nhất cho LLM — quản lý memory qua MemCube với hỗ trợ short-term và long-term</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/sdairs/claude-mem" rel="nofollow noopener noreferrer">Claude-Mem GitHub</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/memory">Memory Systems — Bộ nhớ xuyên phiên</a> trên See AI First.</p>
       </footer>

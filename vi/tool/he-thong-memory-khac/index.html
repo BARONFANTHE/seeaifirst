@@ -1055,10 +1055,47 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/memory">Memory Systems — Bộ nhớ xuyên phiên</a> › Hệ thống Memory khác</nav>
     <article>
       <h1>Hệ thống Memory khác</h1>
-      <p></p>
-      <p>Ngoài Claude-Mem, có nhiều hệ thống memory khác: MemGPT/Letta — tự quản lý context window như OS quản lý RAM, có paging cơ chế. Mem0 — memory layer cho LLM apps, dùng vector search. Zep — long-term...</p>
+      <p>Ngoài Claude-Mem, có nhiều hệ thống memory khác: MemGPT/Letta — tự quản lý context window như OS quản lý RAM, có paging cơ chế. Mem0 — memory layer cho LLM apps, dùng vector search. Zep — long-term memory cho chatbots với auto-summarization. ByteRover — tìm kiếm memory từ kho GitHub. Mỗi hệ thống giải quyết 1 khía cạnh khác nhau của bài toán &#039;AI nhớ được&#039;.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Agent cần nhớ user preferences qua nhiều conversations</li>
+        <li>Xây dựng AI assistant có personalization dài hạn</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Chỉ cần short-term context trong 1 session</li>
+        <li>Ứng dụng stateless không cần nhớ user history</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Freemium</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Ngôn ngữ</dt><dd>python, typescript</dd>
+        <dt>Ứng dụng</dt><dd>agent memory, personalization, long term context</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-02-12 (suy luận từ dữ liệu đã công bố)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/crewai">CrewAI</a> — Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/flowise">Flowise</a> — Công cụ no-code xây dựng RAG pipeline và LLM apps bằng giao diện kéo thả — nền tảng LangChain</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/claude-mem">Claude-Mem</a> — Plugin giúp Claude Code có trí nhớ dài hạn — tự ghi lại kinh nghiệm, nén thông minh và nhớ cho lần làm việc sau.</li>
+        <li><a href="/vi/tool/memos">MemOS</a> — Hệ điều hành bộ nhớ thống nhất cho LLM — quản lý memory qua MemCube với hỗ trợ short-term và long-term</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/letta-ai/letta" rel="nofollow noopener noreferrer">MemGPT/Letta</a></li>
+        <li><a href="https://github.com/mem0ai/mem0" rel="nofollow noopener noreferrer">Mem0 GitHub</a></li>
+        <li><a href="https://www.getzep.com/" rel="nofollow noopener noreferrer">Zep</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/memory">Memory Systems — Bộ nhớ xuyên phiên</a> trên See AI First.</p>
       </footer>

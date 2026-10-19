@@ -1055,10 +1055,53 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> › NeMo Guardrails</nav>
     <article>
       <h1>NeMo Guardrails</h1>
       <p>Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn</p>
-      <p>NeMo Guardrails là toolkit open-source từ NVIDIA cho phép thêm guardrails lập trình được vào ứng dụng LLM. Sử dụng Colang – ngôn ngữ DSL riêng để định nghĩa luồng hội thoại, topic control, fact-che...</p>
+      <p>NeMo Guardrails là toolkit open-source từ NVIDIA cho phép thêm guardrails lập trình được vào ứng dụng LLM. Sử dụng Colang – ngôn ngữ DSL riêng để định nghĩa luồng hội thoại, topic control, fact-checking và jailbreak prevention. Hỗ trợ cả input/output rails, dialog rails, và retrieval rails. Tích hợp sẵn với LangChain, LlamaIndex, và các NVIDIA NIM microservices cho content safety, topic control. Đặc biệt phù hợp cho enterprise AI cần kiểm soát chặt chẽ luồng tương tác. Kết hợp tốt với: garak · LangGraph · LlamaIndex · Ollama</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>topic control and content filtering for LLM chatbots</li>
+        <li>jailbreak detection in production conversational agents</li>
+        <li>multi-rail orchestration with configurable policies</li>
+        <li>dialog flow control with Colang DSL</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>non-conversational LLM use cases (batch processing, code gen)</li>
+        <li>when minimal added latency is critical</li>
+        <li>simple output format validation only (Guardrails AI may suffice)</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>chatbot safety, topic control, jailbreak detection, content moderation</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/vi/tool/presidio">Presidio</a> — PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân</li>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/garak">garak</a> — LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI</li>
+        <li><a href="/vi/tool/presidio">Presidio</a> — PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân</li>
+        <li><a href="/vi/tool/guardrails-ai">Guardrails AI</a> — I/O validation framework cho LLM – structured output + 100+ validators</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/NVIDIA-NeMo/Guardrails" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://docs.nvidia.com/nemo/guardrails/latest/index.html" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> trên See AI First.</p>
       </footer>

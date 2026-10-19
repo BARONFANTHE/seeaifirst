@@ -154,6 +154,75 @@ function buildSlugMap(data) {
 const enSlugMap = buildSlugMap(enData);
 const viSlugMap = buildSlugMap(viData);
 
+// ── Rich prerender helpers (Phase 1.A) ──────────────────────────────
+
+const dataFor = (lang) => (lang === 'vi' ? viData : enData);
+
+const LABELS = {
+  en: {
+    home: 'See AI First', whenToUse: 'When to use', whenNotToUse: 'When not to use',
+    atAGlance: 'At a glance', pricing: 'Pricing', deployment: 'Deployment', difficulty: 'Difficulty',
+    license: 'License', languages: 'Languages', useCases: 'Use cases', lastVerified: 'Last verified',
+    worksWith: 'Works well with', alternatives: 'Alternatives in this category', sources: 'Sources',
+    compareWith: 'Compare side by side', otherCategories: 'Other categories', tool: 'Tool',
+    verifiedVia: { docs: 'official documentation', tested: 'hands-on testing', inferred: 'inference from documented facts' },
+    enums: {
+      free: 'Free', freemium: 'Freemium', paid: 'Paid', 'open-core': 'Open core',
+      cloud: 'Cloud', 'self-hosted': 'Self-hosted', local: 'Local', hybrid: 'Hybrid',
+      beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced'
+    }
+  },
+  vi: {
+    home: 'See AI First', whenToUse: 'Khi nào nên dùng', whenNotToUse: 'Khi nào không nên dùng',
+    atAGlance: 'Thông tin nhanh', pricing: 'Chi phí', deployment: 'Triển khai', difficulty: 'Độ khó',
+    license: 'Giấy phép', languages: 'Ngôn ngữ', useCases: 'Ứng dụng', lastVerified: 'Xác minh lần cuối',
+    worksWith: 'Kết hợp tốt với', alternatives: 'Lựa chọn khác cùng danh mục', sources: 'Nguồn',
+    compareWith: 'So sánh trực tiếp', otherCategories: 'Danh mục khác', tool: 'Công cụ',
+    verifiedVia: { docs: 'tài liệu chính thức', tested: 'dùng thử thực tế', inferred: 'suy luận từ dữ liệu đã công bố' },
+    enums: {
+      free: 'Miễn phí', freemium: 'Freemium', paid: 'Trả phí', 'open-core': 'Open core',
+      cloud: 'Cloud', 'self-hosted': 'Tự host', local: 'Chạy local', hybrid: 'Hybrid',
+      beginner: 'Cơ bản', intermediate: 'Trung bình', advanced: 'Nâng cao'
+    }
+  }
+};
+
+// EN pages must not show untranslated Vietnamese text (48/66 cards still have VI whenToUse in data.json).
+const VI_CHARS = /[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]/i;
+function listForLang(items, lang) {
+  const list = Array.isArray(items) ? items.filter((t) => typeof t === 'string' && t.trim()) : [];
+  if (lang === 'en' && list.some((t) => VI_CHARS.test(t))) return [];
+  return list;
+}
+
+function plain(text) {
+  return stripHtml(nullSafe(text, '')).replace(/\s+/g, ' ').trim();
+}
+
+function safeHttpUrl(url) {
+  return typeof url === 'string' && /^https?:\/\//i.test(url.trim()) ? url.trim() : null;
+}
+
+function enumLabel(lang, value) {
+  if (!value) return null;
+  return LABELS[lang].enums[value] || value;
+}
+
+function cardLink(linkPrefix, card, withDesc) {
+  const a = `<a href="${linkPrefix}/tool/${escapeHtml(card.slug)}">${escapeHtml(card.name)}</a>`;
+  if (!withDesc) return a;
+  const d = plain(card.desc);
+  return d ? `${a} — ${escapeHtml(truncate(d, 140))}` : a;
+}
+
+function htmlList(items, indent) {
+  return items.map((i) => `${indent}<li>${i}</li>`).join('\n');
+}
+
+function presetForSection(lang, sectionId) {
+  return (dataFor(lang).comparison_presets || []).find((p) => p.id === sectionId) || null;
+}
+
 // ── Build route manifest ────────────────────────────────────────────
 
 function buildManifest(data, lang) {
@@ -535,75 +604,131 @@ function generateBodyContent(route) {
     }
     case 'tool': {
       const { card, section } = data;
-      const desc = escapeHtml(stripHtml(nullSafe(card.desc, '')));
-      let detailLine = '';
-      const strippedDetail = stripHtml(nullSafe(card.detail, ''));
-      const strippedDesc = stripHtml(nullSafe(card.desc, ''));
-      if (strippedDetail && strippedDetail !== strippedDesc) {
-        detailLine = `\n      <p>${escapeHtml(truncate(strippedDetail, 200))}</p>`;
-      }
-      const footerText = lang === 'en'
-        ? `Part of <a href="${linkPrefix}/section/${section.id}">${escapeHtml(section.title)}</a> on See AI First.`
-        : `Thu\u1ED9c danh m\u1EE5c <a href="${linkPrefix}/section/${section.id}">${escapeHtml(section.title)}</a> tr\u00EAn See AI First.`;
+      const L = LABELS[lang];
+      const slugMap = lang === 'vi' ? viSlugMap : enSlugMap;
+      const name = escapeHtml(card.name);
+      const desc = plain(card.desc);
+      const detail = plain(card.detail);
+      const parts = [];
 
-      return `<div id="prerender-content">
-  <main>
-    <article>
-      <h1>${escapeHtml(card.name)}</h1>
-      <p>${desc}</p>${detailLine}
-      <footer>
-        <p>${footerText}</p>
-      </footer>
-    </article>
-  </main>
-</div>`;
+      parts.push(`    <nav aria-label="Breadcrumb"><a href="${linkPrefix}/">${L.home}</a> › <a href="${linkPrefix}/section/${escapeHtml(section.id)}">${escapeHtml(section.title)}</a> › ${name}</nav>`);
+      parts.push(`    <article>`);
+      parts.push(`      <h1>${name}</h1>`);
+      if (desc) parts.push(`      <p>${escapeHtml(desc)}</p>`);
+      if (detail && detail !== desc) parts.push(`      <p>${escapeHtml(detail)}</p>`);
+
+      const use = listForLang(card.whenToUse, lang);
+      if (use.length) parts.push(`      <h2>${L.whenToUse}</h2>\n      <ul>\n${htmlList(use.map(escapeHtml), '        ')}\n      </ul>`);
+      const avoid = listForLang(card.whenNotToUse, lang);
+      if (avoid.length) parts.push(`      <h2>${L.whenNotToUse}</h2>\n      <ul>\n${htmlList(avoid.map(escapeHtml), '        ')}\n      </ul>`);
+
+      const facts = [];
+      const add = (label, value) => { if (value) facts.push(`        <dt>${label}</dt><dd>${escapeHtml(value)}</dd>`); };
+      add(L.pricing, enumLabel(lang, card.pricing));
+      add(L.deployment, enumLabel(lang, card.deployment));
+      add(L.difficulty, enumLabel(lang, card.difficulty));
+      add(L.license, card.license);
+      if (Array.isArray(card.languages) && card.languages.length) add(L.languages, card.languages.join(', '));
+      if (Array.isArray(card.useCases) && card.useCases.length) add(L.useCases, card.useCases.map((u) => String(u).replace(/-/g, ' ')).join(', '));
+      if (card.verified_at) {
+        const via = L.verifiedVia[card.verification_source];
+        add(L.lastVerified, via ? `${card.verified_at} (${via})` : card.verified_at);
+      }
+      if (facts.length) parts.push(`      <h2>${L.atAGlance}</h2>\n      <dl>\n${facts.join('\n')}\n      </dl>`);
+
+      const compat = (card.compatibleWith || [])
+        .map((slug) => slugMap.get(slug))
+        .filter((e) => e && e.card.slug !== card.slug)
+        .map((e) => cardLink(linkPrefix, e.card, true));
+      if (compat.length) parts.push(`      <h2>${L.worksWith}</h2>\n      <ul>\n${htmlList(compat, '        ')}\n      </ul>`);
+
+      const alts = section.cards.filter((c) => c.slug !== card.slug).map((c) => cardLink(linkPrefix, c, true));
+      if (alts.length) parts.push(`      <h2>${L.alternatives}</h2>\n      <ul>\n${htmlList(alts, '        ')}\n      </ul>`);
+
+      const preset = presetForSection(lang, section.id);
+      if (preset && preset.tools.some((t) => t.cardId === card.slug)) {
+        parts.push(`      <p><a href="${linkPrefix}/compare/${escapeHtml(preset.id)}">${L.compareWith}: ${escapeHtml(preset.title)}</a></p>`);
+      }
+
+      const srcs = (card.sources || [])
+        .map((src) => ({ url: safeHttpUrl(src && src.url), title: plain(src && src.title) }))
+        .filter((src) => src.url)
+        .map((src) => `<a href="${escapeHtml(src.url)}" rel="nofollow noopener noreferrer">${escapeHtml(src.title || src.url)}</a>`);
+      if (srcs.length) parts.push(`      <h2>${L.sources}</h2>\n      <ul>\n${htmlList(srcs, '        ')}\n      </ul>`);
+
+      const footerText = lang === 'en'
+        ? `Part of <a href="${linkPrefix}/section/${escapeHtml(section.id)}">${escapeHtml(section.title)}</a> on See AI First.`
+        : `Thuộc danh mục <a href="${linkPrefix}/section/${escapeHtml(section.id)}">${escapeHtml(section.title)}</a> trên See AI First.`;
+      parts.push(`      <footer>\n        <p>${footerText}</p>\n      </footer>`);
+      parts.push(`    </article>`);
+
+      return `<div id="prerender-content">\n  <main>\n${parts.join('\n')}\n  </main>\n</div>`;
     }
     case 'section': {
       const { section } = data;
+      const L = LABELS[lang];
       const badge = nullSafe(section.badge, '');
       const heading = badge ? `${escapeHtml(badge)} ${escapeHtml(section.title)}` : escapeHtml(section.title);
       const intro = lang === 'en'
         ? `Explore ${section.cards.length} curated AI tools in this category.`
-        : `Kh\u00E1m ph\u00E1 ${section.cards.length} c\u00F4ng c\u1EE5 AI \u0111\u01B0\u1EE3c tuy\u1EC3n ch\u1ECDn trong danh m\u1EE5c n\u00E0y.`;
-      const cardItems = section.cards.map(c =>
-        `        <li><a href="${linkPrefix}/tool/${c.slug}">${escapeHtml(c.name)}</a></li>`
-      ).join('\n');
-
-      return `<div id="prerender-content">
-  <main>
-    <article>
-      <h1>${heading}</h1>
-      <p>${escapeHtml(intro)}</p>
-      <ul>
-${cardItems}
-      </ul>
-    </article>
-  </main>
-</div>`;
+        : `Khám phá ${section.cards.length} công cụ AI được tuyển chọn trong danh mục này.`;
+      const cardItems = section.cards.map((c) => {
+        const meta = [enumLabel(lang, c.pricing), enumLabel(lang, c.difficulty)].filter(Boolean).map(escapeHtml).join(' · ');
+        return `${cardLink(linkPrefix, c, true)}${meta ? ` (${meta})` : ''}`;
+      });
+      const parts = [];
+      parts.push(`    <nav aria-label="Breadcrumb"><a href="${linkPrefix}/">${L.home}</a> › ${escapeHtml(section.title)}</nav>`);
+      parts.push(`    <article>`);
+      parts.push(`      <h1>${heading}</h1>`);
+      parts.push(`      <p>${escapeHtml(intro)}</p>`);
+      parts.push(`      <ul>\n${htmlList(cardItems, '        ')}\n      </ul>`);
+      const preset = presetForSection(lang, section.id);
+      if (preset) parts.push(`      <p><a href="${linkPrefix}/compare/${escapeHtml(preset.id)}">${L.compareWith}: ${escapeHtml(preset.title)}</a></p>`);
+      const others = dataFor(lang).sections.filter((s2) => s2.id !== section.id)
+        .map((s2) => `<a href="${linkPrefix}/section/${escapeHtml(s2.id)}">${escapeHtml(s2.title)}</a>`);
+      parts.push(`      <h2>${L.otherCategories}</h2>\n      <ul>\n${htmlList(others, '        ')}\n      </ul>`);
+      parts.push(`    </article>`);
+      return `<div id="prerender-content">\n  <main>\n${parts.join('\n')}\n  </main>\n</div>`;
     }
     case 'compare': {
       const { preset } = data;
+      const L = LABELS[lang];
+      const slugMap = lang === 'vi' ? viSlugMap : enSlugMap;
       const toolCount = preset.tools.length;
       const heading = lang === 'en'
-        ? `${escapeHtml(preset.title)} \u2014 Comparison`
-        : `${escapeHtml(preset.title)} \u2014 So s\u00E1nh`;
+        ? `${escapeHtml(preset.title)} — Comparison`
+        : `${escapeHtml(preset.title)} — So sánh`;
       const intro = lang === 'en'
         ? `Side-by-side comparison of ${toolCount} AI tools.`
-        : `So s\u00E1nh ${toolCount} c\u00F4ng c\u1EE5 AI.`;
-      const toolItems = preset.tools.map(t => {
-        const entry = slugMap.get(t.cardId);
-        const name = entry ? entry.card.name : t.cardId;
-        return `        <li>${escapeHtml(name)}</li>`;
+        : `So sánh ${toolCount} công cụ AI.`;
+      const criteria = Array.isArray(preset.criteria) ? preset.criteria : [];
+      const cell = (v) => {
+        if (Array.isArray(v)) {
+          return v.map((x) => { const e = slugMap.get(x); return escapeHtml(e ? e.card.name : String(x)); }).join(', ');
+        }
+        return escapeHtml(plain(v == null ? '' : String(v)));
+      };
+      const head = `          <tr><th>${L.tool}</th>${criteria.map((c) => `<th>${escapeHtml(c)}</th>`).join('')}</tr>`;
+      const rows = preset.tools.map((t) => {
+        const e = slugMap.get(t.cardId);
+        const nameCell = e ? cardLink(linkPrefix, e.card, false) : escapeHtml(t.cardId);
+        const vals = criteria.map((c) => `<td>${cell(t.values ? t.values[c] : '')}</td>`).join('');
+        return `          <tr><td>${nameCell}</td>${vals}</tr>`;
       }).join('\n');
-
       return `<div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="${linkPrefix}/">${L.home}</a> › ${heading}</nav>
     <article>
       <h1>${heading}</h1>
       <p>${escapeHtml(intro)}</p>
-      <ul>
-${toolItems}
-      </ul>
+      <table>
+        <thead>
+${head}
+        </thead>
+        <tbody>
+${rows}
+        </tbody>
+      </table>
     </article>
   </main>
 </div>`;

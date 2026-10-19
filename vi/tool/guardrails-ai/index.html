@@ -1055,10 +1055,52 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> › Guardrails AI</nav>
     <article>
       <h1>Guardrails AI</h1>
       <p>I/O validation framework cho LLM – structured output + 100+ validators</p>
-      <p>Guardrails AI là Python framework giúp xây dựng ứng dụng AI đáng tin cậy bằng cách chạy Input/Output Guards phát hiện, đo lường và giảm thiểu các loại rủi ro. Guardrails Hub cung cấp 100+ validator...</p>
+      <p>Guardrails AI là Python framework giúp xây dựng ứng dụng AI đáng tin cậy bằng cách chạy Input/Output Guards phát hiện, đo lường và giảm thiểu các loại rủi ro. Guardrails Hub cung cấp 100+ validators sẵn có bao gồm: detect PII, toxic language, competitor mentions, bias, prompt injection và nhiều loại khác. Hỗ trợ validate structured data từ LLM output, tự động reask khi output không đạt tiêu chuẩn. Có thể deploy như standalone service qua REST API, tích hợp dễ dàng với OpenAI, Anthropic, và mọi LLM provider. Kết hợp tốt với: LangChain · Presidio · Promptfoo · LiteLLM</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>structured output validation and type enforcement from LLMs</li>
+        <li>composable input/output guards with Hub validators</li>
+        <li>risk detection and mitigation via validator marketplace</li>
+        <li>LLM reliability improvement with auto-reask on failure</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>conversational flow control (NeMo Guardrails is more suitable)</li>
+        <li>LLM vulnerability scanning and red-teaming (use garak)</li>
+        <li>non-Python tech stacks without REST API bridge</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Độ khó</dt><dd>Cơ bản</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>output validation, structured data extraction, risk mitigation, llm reliability</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+        <li><a href="/vi/tool/deepeval">DeepEval</a> — Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/garak">garak</a> — LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI</li>
+        <li><a href="/vi/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn</li>
+        <li><a href="/vi/tool/presidio">Presidio</a> — PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/guardrails-ai/guardrails" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.guardrailsai.com/" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://guardrailsai.com/docs" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> trên See AI First.</p>
       </footer>

@@ -1055,10 +1055,57 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> › Claude Code</nav>
     <article>
       <h1>Claude Code</h1>
       <p>Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.</p>
-      <p>Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ. 200K token context cho phép đọc hiểu toàn bộ codebase lớn. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (p...</p>
+      <p>Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ. 200K token context cho phép đọc hiểu toàn bộ codebase lớn. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Chạy local, không cloud dependency. Best for: dự án phức tạp, refactoring lớn, codebase hiện có. Hỗ trợ async mode trên web (claude.ai/code) — delegate task dài, tạo PR trực tiếp, teleport về CLI local để tiếp tục. Hệ sinh thái mở rộng: Everything Claude Code — bộ agents, skills, hooks, commands production-ready cho Claude Code.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Cần agentic coding trực tiếp trong terminal</li>
+        <li>Multi-file refactoring với codebase awareness</li>
+        <li>Delegate task dài không cần giám sát (web async mode)</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Budget hạn chế (chi phí API có thể tăng nhanh với heavy use)</li>
+        <li>Cần inline tab-completion trong IDE (dùng Copilot/Cursor)</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Trả phí</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Ngôn ngữ</dt><dd>js, typescript</dd>
+        <dt>Ứng dụng</dt><dd>agentic coding, code refactoring, git workflow, ci cd automation</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+        <li><a href="/vi/tool/claude-ai">Claude.ai (Web)</a> — Giao diện chat/workspace của Anthropic — có bộ nhớ, tìm kiếm web, Claude Cowork, và plugin/connectors cho workflow doanh nghiệp.</li>
+        <li><a href="/vi/tool/a2a">A2A — Agent2Agent Protocol</a> — Giao thức của Google — giúp các AI agent nói chuyện và hợp tác với nhau, dù được xây từ bất kỳ nền tảng nào.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/cursor">Cursor</a> — IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.</li>
+        <li><a href="/vi/tool/codex-cli">Codex CLI</a> — Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.</li>
+        <li><a href="/vi/tool/windsurf">Windsurf</a> — IDE AI giá $15/tháng — kiến trúc Cascade Flow, hỗ trợ nhiều model và plugin JetBrains.</li>
+        <li><a href="/vi/tool/github-copilot">GitHub Copilot</a> — Trợ lý code của Microsoft tích hợp sẵn trong VS Code — có Agent mode, mạnh cho doanh nghiệp.</li>
+        <li><a href="/vi/tool/gemini-cli">Gemini CLI</a> — Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.</li>
+        <li><a href="/vi/tool/cline-roocode">Cline / RooCode</a> — Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.</li>
+        <li><a href="/vi/tool/kiro-aws">Kiro (AWS)</a> — IDE AI của AWS theo hướng spec-first — từ yêu cầu → thiết kế → kế hoạch → code tự động.</li>
+        <li><a href="/vi/tool/replit-agent">Replit Agent</a> — Agent trên cloud — tạo app full-stack nhanh, không cần cài đặt. Tốt nhất cho người mới bắt đầu.</li>
+        <li><a href="/vi/tool/opencode">OpenCode</a> — Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 122K+ stars, MIT license</li>
+        <li><a href="/vi/tool/goose">Goose</a> — Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM</li>
+      </ul>
+      <p><a href="/vi/compare/coding-agents">So sánh trực tiếp: So sánh AI Coding Agents</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://docs.claude.com/en/docs/claude-code/overview" rel="nofollow noopener noreferrer">Claude Code Docs</a></li>
+        <li><a href="https://www.anthropic.com/engineering/claude-code-best-practices" rel="nofollow noopener noreferrer">Anthropic — Claude Code Best Practices</a></li>
+        <li><a href="https://github.com/affaan-m/everything-claude-code" rel="nofollow noopener noreferrer">Everything Claude Code</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> trên See AI First.</p>
       </footer>

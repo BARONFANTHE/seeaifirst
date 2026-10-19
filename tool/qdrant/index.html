@@ -1055,10 +1055,40 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/vector-databases">Vector Databases — Vector Storage &amp; Search</a> › Qdrant</nav>
     <article>
       <h1>Qdrant</h1>
       <p>Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering</p>
-      <p>Qdrant (pronounced &quot;quadrant&quot;) is a vector database focused on performance and production-readiness, written entirely in Rust for optimal speed and memory usage. Its standout feature is filtering:...</p>
+      <p>Qdrant (pronounced &quot;quadrant&quot;) is a vector database focused on performance and production-readiness, written entirely in Rust for optimal speed and memory usage. Its standout feature is filtering: combining vector similarity search with complex conditions on metadata (boolean, range, geo, nested objects) — and filtering is integrated directly into the search process rather than post-filtering, so accuracy is preserved. Provides both REST and gRPC APIs with SDKs for multiple languages. Practical applications: personalized recommendations with user preference filtering, e-commerce search combining semantic + price/category filters, or multi-tenant RAG systems requiring isolation between tenants. Works well with: LangChain · LlamaIndex · Dify · Flowise · FastAPI/Express (backend) · Docker/Kubernetes (deploy)</p>
+      <h2>At a glance</h2>
+      <dl>
+        <dt>Pricing</dt><dd>Open core</dd>
+        <dt>Deployment</dt><dd>Hybrid</dd>
+        <dt>Difficulty</dt><dd>Intermediate</dd>
+        <dt>License</dt><dd>Apache-2.0</dd>
+        <dt>Languages</dt><dd>python, js, rust, go</dd>
+        <dt>Use cases</dt><dd>vector search, rag pipeline, recommendation system, semantic search</dd>
+        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+      </dl>
+      <h2>Works well with</h2>
+      <ul>
+        <li><a href="/tool/langgraph">LangGraph</a> — Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.</li>
+        <li><a href="/tool/llamaindex">LlamaIndex</a> — The RAG specialist — connects AI to your private data for accurate answers from internal documents.</li>
+        <li><a href="/tool/dify">Dify</a> — Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline</li>
+      </ul>
+      <h2>Alternatives in this category</h2>
+      <ul>
+        <li><a href="/tool/milvus">Milvus</a> — Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation</li>
+        <li><a href="/tool/chroma">Chroma</a> — Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG</li>
+        <li><a href="/tool/pgvector">pgvector</a> — Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL</li>
+      </ul>
+      <p><a href="/compare/vector-databases">Compare side by side: Compare Vector Databases</a></p>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://github.com/qdrant/qdrant" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://qdrant.tech" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://cloud.qdrant.io" rel="nofollow noopener noreferrer">Cloud</a></li>
+      </ul>
       <footer>
         <p>Part of <a href="/section/vector-databases">Vector Databases — Vector Storage &amp; Search</a> on See AI First.</p>
       </footer>

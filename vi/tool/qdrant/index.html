@@ -1055,10 +1055,51 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/vector-databases">Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</a> › Qdrant</nav>
     <article>
       <h1>Qdrant</h1>
       <p>Vector database viết bằng Rust — nhanh, tiết kiệm bộ nhớ, filtering payload mạnh nhất</p>
-      <p>Qdrant (đọc: &quot;quadrant&quot;) là vector database tập trung vào performance và production-readiness, viết hoàn toàn bằng Rust để tối ưu tốc độ và memory. Điểm nổi bật nhất là khả năng filtering: kết hợp...</p>
+      <p>Qdrant (đọc: &quot;quadrant&quot;) là vector database tập trung vào performance và production-readiness, viết hoàn toàn bằng Rust để tối ưu tốc độ và memory. Điểm nổi bật nhất là khả năng filtering: kết hợp vector similarity search với điều kiện lọc phức tạp trên metadata (boolean, range, geo, nested objects) — và filtering được tích hợp trực tiếp vào quá trình search thay vì post-filter, nên không mất accuracy. Cung cấp cả REST và gRPC APIs, hỗ trợ SDKs cho nhiều ngôn ngữ. Ứng dụng thực tế: personalized recommendations cần lọc theo user preferences, e-commerce search kết hợp semantic + price/category filters, hoặc multi-tenant RAG systems cần isolation giữa các tenants. Kết hợp tốt với: LangChain · LlamaIndex · Dify · Flowise · FastAPI/Express (backend) · Docker/Kubernetes (deploy)</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>vector search hiệu năng cao với Rust backend</li>
+        <li>kết hợp filtering phức tạp với similarity search</li>
+        <li>ứng dụng recommendation và semantic search</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>cần tích hợp sâu với PostgreSQL ecosystem</li>
+        <li>dự án chỉ cần embedded vector store đơn giản</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js, rust, go</dd>
+        <dt>Ứng dụng</dt><dd>vector search, rag pipeline, recommendation system, semantic search</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/dify">Dify</a> — Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/milvus">Milvus</a> — Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation</li>
+        <li><a href="/vi/tool/chroma">Chroma</a> — Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG</li>
+        <li><a href="/vi/tool/pgvector">pgvector</a> — Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc</li>
+      </ul>
+      <p><a href="/vi/compare/vector-databases">So sánh trực tiếp: So sánh Vector Databases</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/qdrant/qdrant" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://qdrant.tech" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://cloud.qdrant.io" rel="nofollow noopener noreferrer">Cloud</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/vector-databases">Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</a> trên See AI First.</p>
       </footer>

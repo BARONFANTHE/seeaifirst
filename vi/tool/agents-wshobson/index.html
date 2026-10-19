@@ -1055,10 +1055,49 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> › Agents (wshobson)</nav>
     <article>
       <h1>Agents (wshobson)</h1>
       <p>Bộ sưu tập 112 agents + 146 skills + 73 plugins chuyên biệt cho Claude Code — lớn nhất hiện tại.</p>
-      <p>Agents là hệ thống production-ready kết hợp 112 AI agents chuyên biệt, 16 workflow orchestrators, 146 skills, và 79 development tools — tất cả tổ chức thành 73 plugins đơn mục đích cho Claude Code....</p>
+      <p>Agents là hệ thống production-ready kết hợp 112 AI agents chuyên biệt, 16 workflow orchestrators, 146 skills, và 79 development tools — tất cả tổ chức thành 73 plugins đơn mục đích cho Claude Code. Các agents chia theo domain: architecture, languages, infrastructure, security, data/AI, documentation, business operations, SEO. Cài từng plugin riêng lẻ để tối ưu token usage. Hỗ trợ Sonnet + Haiku routing tự động theo độ phức tạp task.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Khi cần multi-agent orchestration với specialized domain agents</li>
+        <li>Khi muốn plugin architecture mô-đun — chỉ load agents cần thiết</li>
+        <li>Khi cần workflow orchestrators cho full-stack, security, ML pipelines</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Khi chỉ cần 1-2 skills đơn giản — Superpowers nhẹ hơn</li>
+        <li>Khi không dùng Claude Code</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>python, csharp</dd>
+        <dt>Ứng dụng</dt><dd>multi agent orchestration, agentic coding, full stack, code review</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/claude-code">Claude Code</a> — Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.</li>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/universal-agent-skills">Universal Agent Skills</a> — Skill là file .md chứa hướng dẫn cho AI agent — đơn giản nhưng hiệu quả, chạy được trên mọi AI coding tool.</li>
+        <li><a href="/vi/tool/skill-categories-dang-chu-y">Skill Categories đáng chú ý</a></li>
+        <li><a href="/vi/tool/superpowers">Superpowers</a> — Framework kỹ năng dạng agent cho Claude Code — tự động kích hoạt skills phù hợp khi làm việc.</li>
+        <li><a href="/vi/tool/planning-with-files">Planning with Files</a> — Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/wshobson/agents" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://sethhobson.com/" rel="nofollow noopener noreferrer">Tác giả</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> trên See AI First.</p>
       </footer>

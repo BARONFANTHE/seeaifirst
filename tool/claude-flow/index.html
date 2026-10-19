@@ -1055,10 +1055,49 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> › Claude-Flow</nav>
     <article>
       <h1>Claude-Flow</h1>
       <p>Agent orchestration platform with a Queen + Workers architecture — manages Claude, GPT, and Gemini simultaneously via MCP.</p>
-      <p>Multi-agent orchestration framework using a Queen + Workers model. Queen (Claude Opus) plans and assigns tasks to Workers (which can be Claude Code, Codex, or Gemini CLI). Features: HNSW vector mem...</p>
+      <p>Multi-agent orchestration framework using a Queen + Workers model. Queen (Claude Opus) plans and assigns tasks to Workers (which can be Claude Code, Codex, or Gemini CLI). Features: HNSW vector memory, swarm mode (60+ agents), multi-model routing via MCP, parallel execution. MIT license.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>multi-agent swarm orchestration</li>
+        <li>parallel task execution with Claude Code</li>
+        <li>complex project automation</li>
+        <li>background worker workflows</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>simple single-agent tasks</li>
+        <li>non-Claude environments</li>
+        <li>lightweight scripting</li>
+      </ul>
+      <h2>At a glance</h2>
+      <dl>
+        <dt>Pricing</dt><dd>Free</dd>
+        <dt>Deployment</dt><dd>Local</dd>
+        <dt>Difficulty</dt><dd>Advanced</dd>
+        <dt>License</dt><dd>MIT</dd>
+        <dt>Languages</dt><dd>js, typescript</dd>
+        <dt>Use cases</dt><dd>multi agent orchestration, swarm intelligence, parallel development, workflow automation</dd>
+        <dt>Last verified</dt><dd>2026-02-11 (official documentation)</dd>
+      </dl>
+      <h2>Works well with</h2>
+      <ul>
+        <li><a href="/tool/claude-code">Claude Code</a> — Anthropic&#039;s CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.</li>
+        <li><a href="/tool/mcp">MCP — Model Context Protocol</a> — Anthropic&#039;s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called &#039;USB-C for AI&#039;.</li>
+        <li><a href="/tool/codex-cli">Codex CLI</a> — OpenAI&#039;s CLI agent — runs in terminal or cloud, handles tasks sequentially and precisely.</li>
+      </ul>
+      <h2>Alternatives in this category</h2>
+      <ul>
+        <li><a href="/tool/openclaw">OpenClaw</a> — Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo.</li>
+        <li><a href="/tool/claude-squad">Claude Squad</a> — Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.</li>
+      </ul>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://github.com/cyanheads/claude-flow" rel="nofollow noopener noreferrer">Claude-Flow GitHub</a></li>
+      </ul>
       <footer>
         <p>Part of <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> on See AI First.</p>
       </footer>

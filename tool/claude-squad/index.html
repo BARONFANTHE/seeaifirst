@@ -1055,10 +1055,51 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> › Claude Squad</nav>
     <article>
       <h1>Claude Squad</h1>
       <p>Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.</p>
-      <p>Tool for managing multiple parallel Claude Code sessions within a single terminal. Each session runs in its own workspace, handling separate tasks without conflicts. Supports Aider integration, mul...</p>
+      <p>Tool for managing multiple parallel Claude Code sessions within a single terminal. Each session runs in its own workspace, handling separate tasks without conflicts. Supports Aider integration, multi-workspace management. Ideal when running multiple agents concurrently on different parts of a project.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>managing multiple AI coding agents simultaneously</li>
+        <li>parallel task execution across branches</li>
+        <li>background code generation</li>
+        <li>multi-agent development with git isolation</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>single-task workflow</li>
+        <li>non-terminal environments</li>
+        <li>projects without git</li>
+      </ul>
+      <h2>At a glance</h2>
+      <dl>
+        <dt>Pricing</dt><dd>Free</dd>
+        <dt>Deployment</dt><dd>Local</dd>
+        <dt>Difficulty</dt><dd>Intermediate</dd>
+        <dt>License</dt><dd>MIT</dd>
+        <dt>Languages</dt><dd>go</dd>
+        <dt>Use cases</dt><dd>parallel development, multi agent management, background tasks, git workflow</dd>
+        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+      </dl>
+      <h2>Works well with</h2>
+      <ul>
+        <li><a href="/tool/claude-code">Claude Code</a> — Anthropic&#039;s CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.</li>
+        <li><a href="/tool/codex-cli">Codex CLI</a> — OpenAI&#039;s CLI agent — runs in terminal or cloud, handles tasks sequentially and precisely.</li>
+        <li><a href="/tool/opencode">OpenCode</a> — Open-source coding agent running in terminal — supports all LLM providers, 122K+ stars, MIT license</li>
+        <li><a href="/tool/gemini-cli">Gemini CLI</a> — Google&#039;s CLI agent — up to 1M token context, supports Skills and ADK integration.</li>
+        <li><a href="/tool/goose">Goose</a> — Open-source coding agent from Block (Square) — doesn&#039;t just suggest but also installs, runs, and debugs with any LLM</li>
+      </ul>
+      <h2>Alternatives in this category</h2>
+      <ul>
+        <li><a href="/tool/claude-flow">Claude-Flow</a> — Agent orchestration platform with a Queen + Workers architecture — manages Claude, GPT, and Gemini simultaneously via MCP.</li>
+        <li><a href="/tool/openclaw">OpenClaw</a> — Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo.</li>
+      </ul>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://github.com/smtg-ai/claude-squad" rel="nofollow noopener noreferrer">Claude Squad GitHub</a></li>
+      </ul>
       <footer>
         <p>Part of <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> on See AI First.</p>
       </footer>

@@ -1055,15 +1055,21 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › Compare Vector Databases — Comparison</nav>
     <article>
       <h1>Compare Vector Databases — Comparison</h1>
       <p>Side-by-side comparison of 4 AI tools.</p>
-      <ul>
-        <li>Milvus</li>
-        <li>Qdrant</li>
-        <li>Chroma</li>
-        <li>pgvector</li>
-      </ul>
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Best for</th><th>Scale</th><th>Filtering</th><th>Deploy</th><th>Integrations</th><th>License</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="/tool/milvus">Milvus</a></td><td>Billion-scale enterprise AI, multimodal search</td><td>Distributed (K8s), billion→tens-of-billions (workload-dependent)</td><td>Advanced: metadata filtering, hybrid dense+sparse, full-text BM25, JSON Path Index (100x faster)</td><td>Milvus Lite (pip) · Standalone (Docker) · Distributed (K8s) · Zilliz Cloud</td><td>langchain, LlamaIndex, Dify, haystack</td><td>Apache-2.0</td></tr>
+          <tr><td><a href="/tool/qdrant">Qdrant</a></td><td>Production RAG &amp; recommendation, Rust performance</td><td>Cluster-scale (sharding/replication)</td><td>Rich: payload filtering with boolean (AND/OR/NOT), geo, full-text, pre-filter integrated in search</td><td>Docker · K8s · Qdrant Cloud (AWS/GCP/Azure) · Hybrid Cloud · Edge</td><td>langchain, LlamaIndex, haystack, n8n, CrewAI</td><td>Apache-2.0</td></tr>
+          <tr><td><a href="/tool/chroma">Chroma</a></td><td>Rapid prototyping, lightweight embedded apps</td><td>Millions self-host, billions via Chroma Cloud — object-storage tiered architecture</td><td>Document filter (contains / where_document) + basic metadata filters</td><td>pip install (embedded) · Docker (client/server) · Chroma Cloud (serverless)</td><td>langchain, LlamaIndex, hugging-face</td><td>Apache-2.0</td></tr>
+          <tr><td><a href="/tool/pgvector">pgvector</a></td><td>Teams already using PostgreSQL, hybrid SQL + vector</td><td>Scales with Postgres (typically single-node; scale-out needs Postgres clustering/sharding)</td><td>Full SQL: WHERE clauses, JOINs, aggregations — combine vector search with any PostgreSQL query</td><td>PostgreSQL extension — any PG host, Neon, Supabase, RDS, self-host</td><td>langchain, LlamaIndex, django, rails</td><td>PostgreSQL License</td></tr>
+        </tbody>
+      </table>
     </article>
   </main>
 </div>

@@ -1055,10 +1055,52 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> › Guardrails AI</nav>
     <article>
       <h1>Guardrails AI</h1>
       <p>I/O validation framework for LLMs – structured output + 100+ validators</p>
-      <p>Guardrails AI is a Python framework for building reliable AI applications by running Input/Output Guards that detect, measure and mitigate various risk types. Guardrails Hub provides 100+ ready-mad...</p>
+      <p>Guardrails AI is a Python framework for building reliable AI applications by running Input/Output Guards that detect, measure and mitigate various risk types. Guardrails Hub provides 100+ ready-made validators including: PII detection, toxic language, competitor mentions, bias, prompt injection and many more. Supports validating structured data from LLM output with automatic reask when output fails to meet standards. Can be deployed as a standalone service via REST API, integrates easily with OpenAI, Anthropic, and any LLM provider. Works well with: LangChain · Presidio · Promptfoo · LiteLLM</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>structured output validation and type enforcement from LLMs</li>
+        <li>composable input/output guards with Hub validators</li>
+        <li>risk detection and mitigation via validator marketplace</li>
+        <li>LLM reliability improvement with auto-reask on failure</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>conversational flow control (NeMo Guardrails is more suitable)</li>
+        <li>LLM vulnerability scanning and red-teaming (use garak)</li>
+        <li>non-Python tech stacks without REST API bridge</li>
+      </ul>
+      <h2>At a glance</h2>
+      <dl>
+        <dt>Pricing</dt><dd>Free</dd>
+        <dt>Deployment</dt><dd>Self-hosted</dd>
+        <dt>Difficulty</dt><dd>Beginner</dd>
+        <dt>License</dt><dd>Apache-2.0</dd>
+        <dt>Languages</dt><dd>python</dd>
+        <dt>Use cases</dt><dd>output validation, structured data extraction, risk mitigation, llm reliability</dd>
+        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+      </dl>
+      <h2>Works well with</h2>
+      <ul>
+        <li><a href="/tool/litellm">LiteLLM</a> — Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/tool/langfuse">Langfuse</a> — Open-source observability platform for LLMs — tracing, evals, prompt management</li>
+        <li><a href="/tool/deepeval">DeepEval</a> — LLM evaluation framework like Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+      </ul>
+      <h2>Alternatives in this category</h2>
+      <ul>
+        <li><a href="/tool/garak">garak</a> — LLM vulnerability scanner – probes security flaws in AI models</li>
+        <li><a href="/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails for LLMs with Colang DSL – dialog control and safety</li>
+        <li><a href="/tool/presidio">Presidio</a> — PII detection &amp; anonymization for text and images – protecting personal data</li>
+      </ul>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://github.com/guardrails-ai/guardrails" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.guardrailsai.com/" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://guardrailsai.com/docs" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Part of <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> on See AI First.</p>
       </footer>

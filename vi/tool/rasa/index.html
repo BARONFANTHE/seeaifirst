@@ -1055,10 +1055,60 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › Rasa</nav>
     <article>
       <h1>Rasa</h1>
       <p>Nền tảng chatbot và voice AI — chạy trên server riêng, kiểm soát hoàn toàn dữ liệu.</p>
-      <p>Platform xây conversational AI (chatbot, voice assistant) lâu đời nhất — hoạt động từ 2016. Tập trung vào NLU (hiểu ngôn ngữ tự nhiên) và dialogue management. Rasa Pro tích hợp LLM nhưng vẫn cho ph...</p>
+      <p>Platform xây conversational AI (chatbot, voice assistant) lâu đời nhất — hoạt động từ 2016. Tập trung vào NLU (hiểu ngôn ngữ tự nhiên) và dialogue management. Rasa Pro tích hợp LLM nhưng vẫn cho phép kiểm soát chặt flow conversation. Phù hợp cho enterprise cần chatbot có thể dự đoán, kiểm soát được.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>enterprise conversational AI with strict business logic</li>
+        <li>on-premise chatbot requiring full data control</li>
+        <li>multi-channel text and voice assistants</li>
+        <li>regulated industries with strict data governance requirements</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>quick LLM agent prototyping</li>
+        <li>team without ML or NLP background</li>
+        <li>simple Q&amp;A bot without complex dialogue flows</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Độ khó</dt><dd>Nâng cao</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>conversational ai, customer support, enterprise chatbot, voice assistant</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/crewai">CrewAI</a> — Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.</li>
+        <li><a href="/vi/tool/autogen">AutoGen</a> — Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.</li>
+        <li><a href="/vi/tool/openai-agents-sdk">OpenAI Agents SDK</a> — SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.</li>
+        <li><a href="/vi/tool/google-adk">Google ADK</a> — Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/browser-use">Browser-Use</a> — Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars</li>
+        <li><a href="/vi/tool/pydantic-ai">Pydantic AI</a> — Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers</li>
+        <li><a href="/vi/tool/mastra">Mastra</a> — TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn</li>
+      </ul>
+      <p><a href="/vi/compare/frameworks">So sánh trực tiếp: So sánh Agent Frameworks</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://rasa.com/" rel="nofollow noopener noreferrer">Rasa Official</a></li>
+        <li><a href="https://github.com/RasaHQ/rasa" rel="nofollow noopener noreferrer">Rasa GitHub</a></li>
+        <li><a href="https://rasa.com/docs/" rel="nofollow noopener noreferrer">Rasa Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>
       </footer>

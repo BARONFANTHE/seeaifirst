@@ -1055,10 +1055,50 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/vector-databases">Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</a> › Chroma</nav>
     <article>
       <h1>Chroma</h1>
       <p>Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG</p>
-      <p>Chroma là vector database thiết kế theo triết lý &quot;developer-first&quot; — cài đặt bằng một dòng pip install, chạy embedded ngay trong Python process mà không cần server riêng. Lưu trữ và tìm kiếm vector...</p>
+      <p>Chroma là vector database thiết kế theo triết lý &quot;developer-first&quot; — cài đặt bằng một dòng pip install, chạy embedded ngay trong Python process mà không cần server riêng. Lưu trữ và tìm kiếm vector embeddings thông qua API đơn giản: add documents → query bằng ngôn ngữ tự nhiên → nhận kết quả tương tự nhất. Tự động xử lý embedding nếu dùng built-in models, hoặc mang embedding riêng từ OpenAI/Cohere/HuggingFace. Xuất hiện trong hầu hết tutorials và courses về RAG, là &quot;vector DB đầu tiên&quot; của nhiều developers. Phù hợp nhất cho prototyping, side projects, ứng dụng quy mô nhỏ-trung bình. Khi cần scale lên production với hàng triệu vectors, nên cân nhắc chuyển sang Milvus hoặc Qdrant. Kết hợp tốt với: LangChain · LlamaIndex · Flowise · Dify · OpenAI Embeddings · HuggingFace models</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>prototype RAG nhanh với API đơn giản</li>
+        <li>embedded vector store trong Python app</li>
+        <li>developer cần zero-config setup</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>production scale hàng tỷ vectors</li>
+        <li>cần distributed high-availability cluster</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Cơ bản</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ứng dụng</dt><dd>vector search, rag pipeline, prototyping, semantic search</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/crewai">CrewAI</a> — Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/milvus">Milvus</a> — Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation</li>
+        <li><a href="/vi/tool/qdrant">Qdrant</a> — Vector database viết bằng Rust — nhanh, tiết kiệm bộ nhớ, filtering payload mạnh nhất</li>
+        <li><a href="/vi/tool/pgvector">pgvector</a> — Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc</li>
+      </ul>
+      <p><a href="/vi/compare/vector-databases">So sánh trực tiếp: So sánh Vector Databases</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/chroma-core/chroma" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://trychroma.com" rel="nofollow noopener noreferrer">Website</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/vector-databases">Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</a> trên See AI First.</p>
       </footer>

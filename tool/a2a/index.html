@@ -1055,10 +1055,52 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/protocols">Protocols — Standardized Communication Layer</a> › A2A — Agent2Agent Protocol</nav>
     <article>
       <h1>A2A — Agent2Agent Protocol</h1>
       <p>Google&#039;s protocol — lets AI agents communicate and collaborate with each other, regardless of their underlying framework.</p>
-      <p>Agent ↔ Agent communication · Complements MCP (MCP = tools, A2A = agents)Agent Cards: JSON-based capability descriptors for agent discoveryv0.3 (Jul 2025): gRPC support, security cards, expanded Py...</p>
+      <p>Agent ↔ Agent communication · Complements MCP (MCP = tools, A2A = agents)Agent Cards: JSON-based capability descriptors for agent discoveryv0.3 (Jul 2025): gRPC support, security cards, expanded Python SDK150+ organizations support · Linux Foundation hosted</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>agent-to-agent communication</li>
+        <li>cross-framework agent collaboration</li>
+        <li>enterprise multi-agent workflows</li>
+        <li>multi-vendor agent interop</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>tool integration for LLMs (use MCP)</li>
+        <li>single-agent applications</li>
+      </ul>
+      <h2>At a glance</h2>
+      <dl>
+        <dt>Pricing</dt><dd>Free</dd>
+        <dt>Deployment</dt><dd>Hybrid</dd>
+        <dt>Difficulty</dt><dd>Intermediate</dd>
+        <dt>License</dt><dd>Apache-2.0</dd>
+        <dt>Languages</dt><dd>python, js, java, go, rust, csharp</dd>
+        <dt>Use cases</dt><dd>multi agent systems, enterprise workflows, agent interop, cross platform agents</dd>
+        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+      </dl>
+      <h2>Works well with</h2>
+      <ul>
+        <li><a href="/tool/mcp">MCP — Model Context Protocol</a> — Anthropic&#039;s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called &#039;USB-C for AI&#039;.</li>
+        <li><a href="/tool/google-adk">Google ADK</a> — Google&#039;s agent building toolkit — with built-in Gemini, Vertex AI, and A2A protocol integration.</li>
+        <li><a href="/tool/langgraph">LangGraph</a> — Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.</li>
+        <li><a href="/tool/crewai">CrewAI</a> — Build role-based AI agent teams with minimal code. Each agent has a role, they coordinate automatically.</li>
+        <li><a href="/tool/autogen">AutoGen</a> — Microsoft&#039;s framework for multi-agent conversations. Flexible architecture, easy to extend.</li>
+        <li><a href="/tool/pydantic-ai">Pydantic AI</a> — Type-safe agent framework in the style of FastAPI — built by the Pydantic team, supports 40+ model providers</li>
+      </ul>
+      <h2>Alternatives in this category</h2>
+      <ul>
+        <li><a href="/tool/mcp">MCP — Model Context Protocol</a> — Anthropic&#039;s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called &#039;USB-C for AI&#039;.</li>
+      </ul>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/" rel="nofollow noopener noreferrer">Google — Announcing A2A</a></li>
+        <li><a href="https://github.com/google/A2A" rel="nofollow noopener noreferrer">A2A GitHub</a></li>
+        <li><a href="https://google.github.io/A2A/" rel="nofollow noopener noreferrer">A2A Protocol Documentation</a></li>
+      </ul>
       <footer>
         <p>Part of <a href="/section/protocols">Protocols — Standardized Communication Layer</a> on See AI First.</p>
       </footer>

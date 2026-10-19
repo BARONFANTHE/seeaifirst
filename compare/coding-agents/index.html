@@ -1055,22 +1055,28 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › Compare AI Coding Agents — Comparison</nav>
     <article>
       <h1>Compare AI Coding Agents — Comparison</h1>
       <p>Side-by-side comparison of 11 AI tools.</p>
-      <ul>
-        <li>Claude Code</li>
-        <li>Cursor</li>
-        <li>Codex CLI</li>
-        <li>Windsurf</li>
-        <li>GitHub Copilot</li>
-        <li>Gemini CLI</li>
-        <li>Cline / RooCode</li>
-        <li>Kiro (AWS)</li>
-        <li>Replit Agent</li>
-        <li>OpenCode</li>
-        <li>Goose</li>
-      </ul>
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Best for</th><th>Form factor</th><th>Autonomy</th><th>Workflow integration</th><th>Repo awareness</th><th>Model support</th><th>Pricing</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="/tool/claude-code">Claude Code</a></td><td>Agentic terminal coding, full-repo tasks</td><td>CLI + IDE + Web + Desktop</td><td>Agentic</td><td>Strong — GitHub Actions, GitLab CI, hooks, PR mode</td><td>Strong — repo indexing, CLAUDE.md, memory, sub-agents</td><td>Anthropic-first</td><td>Freemium (Pro $20/Max $100–200/mo)</td></tr>
+          <tr><td><a href="/tool/cursor">Cursor</a></td><td>IDE-integrated AI dev, multi-file refactoring</td><td>IDE (VS Code fork)</td><td>Semi-agent</td><td>Good — agent mode, GitHub PR review, background agents</td><td>Strong — full codebase embeddings, multi-file edits</td><td>Multi-provider</td><td>Freemium (Pro $20/Pro+ $60/Ultra $200/mo)</td></tr>
+          <tr><td><a href="/tool/codex-cli">Codex CLI</a></td><td>Async task delegation, parallel agents</td><td>CLI + IDE + Web + Desktop</td><td>Agentic</td><td>Strong — local CLI + cloud tasks, AGENTS.md, Skills, GitHub PR</td><td>Good — repo preloading, AGENTS.md, local + cloud environments</td><td>OpenAI-first</td><td>Freemium (ChatGPT Plus $20/Pro $200/mo)</td></tr>
+          <tr><td><a href="/tool/windsurf">Windsurf</a></td><td>AI-native IDE, autonomous multi-step coding</td><td>IDE (standalone)</td><td>Agentic</td><td>Good — Cascade agent, multi-file changes, auto-verify</td><td>Good — codebase analysis, project structure awareness</td><td>Multi-provider</td><td>Freemium (Free 25 credits/Pro $15/Teams $30/mo)</td></tr>
+          <tr><td><a href="/tool/github-copilot">GitHub Copilot</a></td><td>Inline assist, team adoption, PR review</td><td>IDE extension (VS Code, JetBrains, Eclipse, Xcode, Neovim)</td><td>Semi-agent</td><td>Strong — coding agent on issues/PRs, AGENTS.md, plan mode, MCP</td><td>Good — repo indexing, multi-file agent mode</td><td>Multi-model (plan-dependent)</td><td>Freemium (Free/Pro $10/Pro+ $39/Biz $19/Ent $39/user/mo)</td></tr>
+          <tr><td><a href="/tool/gemini-cli">Gemini CLI</a></td><td>Free terminal coding, Google ecosystem</td><td>CLI</td><td>Semi-agent</td><td>Basic — shell commands, file ops, web fetch, MCP</td><td>Good — reads local files, tool-based context</td><td>Google-first</td><td>Free (generous free tier; BYO key for more)</td></tr>
+          <tr><td><a href="/tool/cline-roocode">Cline / RooCode</a></td><td>Customizable OSS agent, human-in-the-loop</td><td>VS Code extension</td><td>Semi-agent</td><td>Good — Plan/Act modes, terminal, MCP, Orchestrator (Roo)</td><td>Good — tree-sitter parsing, full project read, multi-file</td><td>Multi-provider</td><td>Free/OSS (pay API provider)</td></tr>
+          <tr><td><a href="/tool/kiro-aws">Kiro (AWS)</a></td><td>Spec-driven dev, enterprise AWS projects</td><td>IDE (Code OSS fork)</td><td>Agentic</td><td>Strong — agent hooks (auto-test, lint, docs on save), spec→design→tasks</td><td>Good — structured specs, requirements tracking, persistent context</td><td>AWS-first (Claude via Bedrock)</td><td>Freemium (per-prompt credits)</td></tr>
+          <tr><td><a href="/tool/replit-agent">Replit Agent</a></td><td>No-setup cloud dev, beginners</td><td>Web IDE (browser)</td><td>Agentic</td><td>Basic — integrated deploy, no Git/PR workflow</td><td>Basic — project context within Replit workspace</td><td>Replit proprietary</td><td>Freemium (Free tier/Core $25/mo)</td></tr>
+          <tr><td><a href="/tool/opencode">OpenCode</a></td><td>OSS terminal agent, LSP integration</td><td>CLI</td><td>Semi-agent</td><td>Basic — file editing, shell commands, LSP</td><td>Good — LSP-powered code intelligence, project scanning</td><td>Multi-provider</td><td>Free/OSS</td></tr>
+          <tr><td><a href="/tool/goose">Goose</a></td><td>Extensible workflow automation, recipes</td><td>CLI + Desktop</td><td>Agentic</td><td>Good — Recipes (executable workflows), MCP, auto-PR</td><td>Good — project context, global MCP servers</td><td>Multi-provider</td><td>Free/OSS (by Block)</td></tr>
+        </tbody>
+      </table>
     </article>
   </main>
 </div>

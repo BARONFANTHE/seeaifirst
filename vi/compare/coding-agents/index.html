@@ -1055,22 +1055,28 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › So sánh AI Coding Agents — So sánh</nav>
     <article>
       <h1>So sánh AI Coding Agents — So sánh</h1>
       <p>So sánh 11 công cụ AI.</p>
-      <ul>
-        <li>Claude Code</li>
-        <li>Cursor</li>
-        <li>Codex CLI</li>
-        <li>Windsurf</li>
-        <li>GitHub Copilot</li>
-        <li>Gemini CLI</li>
-        <li>Cline / RooCode</li>
-        <li>Kiro (AWS)</li>
-        <li>Replit Agent</li>
-        <li>OpenCode</li>
-        <li>Goose</li>
-      </ul>
+      <table>
+        <thead>
+          <tr><th>Công cụ</th><th>Phù hợp cho</th><th>Dạng sử dụng</th><th>Mức tự chủ</th><th>Tích hợp workflow</th><th>Hiểu repo</th><th>Hỗ trợ model</th><th>Giá</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="/vi/tool/claude-code">Claude Code</a></td><td>Lập trình terminal tự chủ, tác vụ toàn repo</td><td>CLI + IDE + Web + Desktop</td><td>Tự chủ cao</td><td>Mạnh — GitHub Actions, GitLab CI, hooks, chế độ PR</td><td>Mạnh — lập chỉ mục repo, CLAUDE.md, bộ nhớ, sub-agents</td><td>Anthropic là chính</td><td>Freemium (Pro $20/Max $100–200/tháng)</td></tr>
+          <tr><td><a href="/vi/tool/cursor">Cursor</a></td><td>Phát triển AI tích hợp IDE, refactor đa file</td><td>IDE (fork VS Code)</td><td>Bán tự chủ</td><td>Tốt — chế độ agent, review PR GitHub, background agents</td><td>Mạnh — embedding toàn codebase, chỉnh sửa đa file</td><td>Đa nhà cung cấp</td><td>Freemium (Pro $20/Pro+ $60/Ultra $200/tháng)</td></tr>
+          <tr><td><a href="/vi/tool/codex-cli">Codex CLI</a></td><td>Giao việc bất đồng bộ, chạy agent song song</td><td>CLI + IDE + Web + Desktop</td><td>Tự chủ cao</td><td>Mạnh — CLI local + tác vụ cloud, AGENTS.md, Skills, PR GitHub</td><td>Tốt — preload repo, AGENTS.md, môi trường local + cloud</td><td>OpenAI là chính</td><td>Freemium (ChatGPT Plus $20/Pro $200/tháng)</td></tr>
+          <tr><td><a href="/vi/tool/windsurf">Windsurf</a></td><td>IDE AI-native, lập trình tự chủ đa bước</td><td>IDE (độc lập)</td><td>Tự chủ cao</td><td>Tốt — agent Cascade, thay đổi đa file, tự xác minh</td><td>Tốt — phân tích codebase, nhận biết cấu trúc dự án</td><td>Đa nhà cung cấp</td><td>Freemium (Free 25 credits/Pro $15/Teams $30/tháng)</td></tr>
+          <tr><td><a href="/vi/tool/github-copilot">GitHub Copilot</a></td><td>Gợi ý inline, triển khai team, review PR</td><td>Extension IDE (VS Code, JetBrains, Eclipse, Xcode, Neovim)</td><td>Bán tự chủ</td><td>Mạnh — coding agent trên issues/PRs, AGENTS.md, chế độ plan, MCP</td><td>Tốt — lập chỉ mục repo, chế độ agent đa file</td><td>Đa model (tùy gói)</td><td>Freemium (Free/Pro $10/Pro+ $39/Biz $19/Ent $39/người/tháng)</td></tr>
+          <tr><td><a href="/vi/tool/gemini-cli">Gemini CLI</a></td><td>Lập trình terminal miễn phí, hệ sinh thái Google</td><td>CLI</td><td>Bán tự chủ</td><td>Cơ bản — lệnh shell, thao tác file, web fetch, MCP</td><td>Tốt — đọc file local, ngữ cảnh dựa trên tool</td><td>Google là chính</td><td>Miễn phí (free tier rộng rãi; BYO key để dùng thêm)</td></tr>
+          <tr><td><a href="/vi/tool/cline-roocode">Cline / RooCode</a></td><td>Agent OSS tùy chỉnh, con người kiểm soát</td><td>Extension VS Code</td><td>Bán tự chủ</td><td>Tốt — chế độ Plan/Act, terminal, MCP, Orchestrator (Roo)</td><td>Tốt — phân tích tree-sitter, đọc toàn dự án, đa file</td><td>Đa nhà cung cấp</td><td>Miễn phí/OSS (trả phí nhà cung cấp API)</td></tr>
+          <tr><td><a href="/vi/tool/kiro-aws">Kiro (AWS)</a></td><td>Phát triển theo spec, dự án AWS doanh nghiệp</td><td>IDE (fork Code OSS)</td><td>Tự chủ cao</td><td>Mạnh — agent hooks (tự test, lint, docs khi lưu), spec→design→tasks</td><td>Tốt — specs có cấu trúc, theo dõi requirements, ngữ cảnh bền vững</td><td>AWS là chính (Claude qua Bedrock)</td><td>Freemium (credits theo prompt)</td></tr>
+          <tr><td><a href="/vi/tool/replit-agent">Replit Agent</a></td><td>Phát triển cloud không cần setup, người mới</td><td>Web IDE (trình duyệt)</td><td>Tự chủ cao</td><td>Cơ bản — deploy tích hợp, không có Git/PR workflow</td><td>Cơ bản — ngữ cảnh dự án trong Replit workspace</td><td>Replit proprietary</td><td>Freemium (Free tier/Core $25/tháng)</td></tr>
+          <tr><td><a href="/vi/tool/opencode">OpenCode</a></td><td>Agent terminal OSS, tích hợp LSP</td><td>CLI</td><td>Bán tự chủ</td><td>Cơ bản — chỉnh sửa file, lệnh shell, LSP</td><td>Tốt — code intelligence qua LSP, quét dự án</td><td>Đa nhà cung cấp</td><td>Miễn phí/OSS</td></tr>
+          <tr><td><a href="/vi/tool/goose">Goose</a></td><td>Tự động hóa workflow có thể mở rộng, recipes</td><td>CLI + Desktop</td><td>Tự chủ cao</td><td>Tốt — Recipes (workflow thực thi), MCP, tự tạo PR</td><td>Tốt — ngữ cảnh dự án, MCP servers toàn cục</td><td>Đa nhà cung cấp</td><td>Miễn phí/OSS (bởi Block)</td></tr>
+        </tbody>
+      </table>
     </article>
   </main>
 </div>

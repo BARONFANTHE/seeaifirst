@@ -1055,10 +1055,50 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/infrastructure">AI Infrastructure — Hạ tầng chạy và triển khai model</a> › Ollama</nav>
     <article>
       <h1>Ollama</h1>
       <p>Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</p>
-      <p>Tool phổ biến nhất để chạy LLM local. Hỗ trợ Llama, DeepSeek, Gemma, Qwen, Phi và 100+ models khác. Cài đặt cực đơn giản: curl install → ollama pull → ollama run. Tự động quản lý GPU/CPU, quantizat...</p>
+      <p>Tool phổ biến nhất để chạy LLM local. Hỗ trợ Llama, DeepSeek, Gemma, Qwen, Phi và 100+ models khác. Cài đặt cực đơn giản: curl install → ollama pull → ollama run. Tự động quản lý GPU/CPU, quantization, model storage. API tương thích OpenAI format. Chạy trên macOS, Linux, Windows. Phù hợp cho developer muốn thử nghiệm LLM trên máy cá nhân mà không tốn API costs.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Chạy LLM trên máy local không cần GPU server</li>
+        <li>Prototype nhanh với open-source models mà không cần API key</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Cần production-scale serving với high throughput</li>
+        <li>Chạy models cần multi-GPU cluster</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Độ khó</dt><dd>Cơ bản</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>go</dd>
+        <dt>Ứng dụng</dt><dd>local inference, model experimentation, privacy first ai</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/vi/tool/localai">LocalAI</a> — Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU</li>
+        <li><a href="/vi/tool/dify">Dify</a> — Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</li>
+        <li><a href="/vi/tool/flowise">Flowise</a> — Công cụ no-code xây dựng RAG pipeline và LLM apps bằng giao diện kéo thả — nền tảng LangChain</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/vllm">vLLM</a> — Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline</li>
+        <li><a href="/vi/tool/localai">LocalAI</a> — Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/ollama/ollama" rel="nofollow noopener noreferrer">GitHub (165K+ ⭐)</a></li>
+        <li><a href="https://ollama.com" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://ollama.com/library" rel="nofollow noopener noreferrer">Models Library</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/infrastructure">AI Infrastructure — Hạ tầng chạy và triển khai model</a> trên See AI First.</p>
       </footer>

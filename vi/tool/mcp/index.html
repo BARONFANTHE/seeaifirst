@@ -1055,10 +1055,56 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/protocols">Protocols — Nền tảng giao tiếp chuẩn</a> › MCP — Model Context Protocol</nav>
     <article>
       <h1>MCP — Model Context Protocol</h1>
       <p>Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</p>
-      <p>Agent ↔ Tool communication · Giống &quot;USB-C cho AI&quot; · Được OpenAI, Google DeepMind, Cursor, Replit, Sourcegraph adoptMCP Apps (Jan 2026): Extension mới — tools trả về interactive UI (dashboards, form...</p>
+      <p>Agent ↔ Tool communication · Giống &quot;USB-C cho AI&quot; · Được OpenAI, Google DeepMind, Cursor, Replit, Sourcegraph adoptMCP Apps (Jan 2026): Extension mới — tools trả về interactive UI (dashboards, forms) trực tiếp trong conversationSkills over MCP: Experimental — skill discovery &amp; distribution qua MCP primitives</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>tool integration for LLMs</li>
+        <li>connecting AI apps to external data sources</li>
+        <li>building standardized AI plugins</li>
+        <li>cross-platform tool sharing</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>agent-to-agent communication (use A2A)</li>
+        <li>simple REST API calls without AI context</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js, java, csharp, go, rust, swift, ruby</dd>
+        <dt>Ứng dụng</dt><dd>tool integration, data access, ai plugin system, ide extension</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-02-11 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/a2a">A2A — Agent2Agent Protocol</a> — Giao thức của Google — giúp các AI agent nói chuyện và hợp tác với nhau, dù được xây từ bất kỳ nền tảng nào.</li>
+        <li><a href="/vi/tool/claude-code">Claude Code</a> — Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.</li>
+        <li><a href="/vi/tool/claude-ai">Claude.ai (Web)</a> — Giao diện chat/workspace của Anthropic — có bộ nhớ, tìm kiếm web, Claude Cowork, và plugin/connectors cho workflow doanh nghiệp.</li>
+        <li><a href="/vi/tool/chatgpt">ChatGPT (Web)</a> — Chat AI phổ biến nhất của OpenAI — có GPTs, search, tools và hệ thống nhớ riêng.</li>
+        <li><a href="/vi/tool/cursor">Cursor</a> — IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.</li>
+        <li><a href="/vi/tool/windsurf">Windsurf</a> — IDE AI giá $15/tháng — kiến trúc Cascade Flow, hỗ trợ nhiều model và plugin JetBrains.</li>
+        <li><a href="/vi/tool/openai-agents-sdk">OpenAI Agents SDK</a> — SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.</li>
+        <li><a href="/vi/tool/google-adk">Google ADK</a> — Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.</li>
+        <li><a href="/vi/tool/dify">Dify</a> — Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/a2a">A2A — Agent2Agent Protocol</a> — Giao thức của Google — giúp các AI agent nói chuyện và hợp tác với nhau, dù được xây từ bất kỳ nền tảng nào.</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://www.anthropic.com/news/model-context-protocol" rel="nofollow noopener noreferrer">Anthropic — Introducing MCP</a></li>
+        <li><a href="https://modelcontextprotocol.io/specification/2025-11-25" rel="nofollow noopener noreferrer">MCP Specification</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Model_Context_Protocol" rel="nofollow noopener noreferrer">Wikipedia — Model Context Protocol</a></li>
+        <li><a href="https://github.com/modelcontextprotocol" rel="nofollow noopener noreferrer">MCP GitHub</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/protocols">Protocols — Nền tảng giao tiếp chuẩn</a> trên See AI First.</p>
       </footer>

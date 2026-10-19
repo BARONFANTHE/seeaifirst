@@ -1055,10 +1055,53 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> › RAGFlow</nav>
     <article>
       <h1>RAGFlow</h1>
       <p>RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn</p>
-      <p>RAGFlow là engine RAG tập trung vào chất lượng xử lý tài liệu — bước thường bị bỏ qua nhưng quyết định 80% độ chính xác của câu trả lời. Hệ thống tự động phân tích cấu trúc document phức tạp: bảng...</p>
+      <p>RAGFlow là engine RAG tập trung vào chất lượng xử lý tài liệu — bước thường bị bỏ qua nhưng quyết định 80% độ chính xác của câu trả lời. Hệ thống tự động phân tích cấu trúc document phức tạp: bảng biểu, hình ảnh, PDF scan, slides — và chunking theo template với khả năng preview trực quan để người dùng can thiệp khi cần. Mỗi câu trả lời đi kèm trích dẫn nguồn cụ thể (grounded citations), giảm đáng kể tình trạng hallucination. Tích hợp agent toolkit cho phép không chỉ truy xuất text mà còn gọi API, tool bên ngoài. Ứng dụng thực tế: hệ thống Q&amp;A nội bộ doanh nghiệp xử lý hợp đồng, báo cáo kỹ thuật, tài liệu pháp lý — những loại document mà chunking đơn giản cho kết quả kém. Kết hợp tốt với: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Bất kỳ LLM provider nào (OpenAI, Claude, Gemini)</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Cần RAG engine chuyên sâu xử lý tài liệu phức tạp (PDF, bảng, scan)</li>
+        <li>Muốn self-host hoàn toàn với deep document understanding</li>
+        <li>Cần traceable citations và giải thích kết quả truy vấn</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Muốn managed cloud service (RAGFlow chưa có official cloud offering)</li>
+        <li>Cần setup tối giản — RAGFlow yêu cầu Elasticsearch, MinIO, MySQL</li>
+        <li>Team nhỏ muốn low-code/no-code builder</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ứng dụng</dt><dd>rag pipeline, document qa, knowledge base, enterprise search</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/dify">Dify</a> — Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</li>
+        <li><a href="/vi/tool/milvus">Milvus</a> — Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation</li>
+        <li><a href="/vi/tool/deepeval">DeepEval</a> — Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/dify">Dify</a> — Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</li>
+        <li><a href="/vi/tool/flowise">Flowise</a> — Công cụ no-code xây dựng RAG pipeline và LLM apps bằng giao diện kéo thả — nền tảng LangChain</li>
+        <li><a href="/vi/tool/lightrag">LightRAG</a> — Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025)</li>
+      </ul>
+      <p><a href="/vi/compare/rag-systems">So sánh trực tiếp: So sánh RAG Systems</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/infiniflow/ragflow" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://ragflow.io" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://demo.ragflow.io" rel="nofollow noopener noreferrer">Demo</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> trên See AI First.</p>
       </footer>

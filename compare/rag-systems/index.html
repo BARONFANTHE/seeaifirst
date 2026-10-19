@@ -1055,15 +1055,21 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › Compare RAG Systems — Comparison</nav>
     <article>
       <h1>Compare RAG Systems — Comparison</h1>
       <p>Side-by-side comparison of 4 AI tools.</p>
-      <ul>
-        <li>Dify</li>
-        <li>RAGFlow</li>
-        <li>Flowise</li>
-        <li>LightRAG</li>
-      </ul>
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Best for</th><th>No-code vs Code</th><th>Doc Understanding</th><th>Deploy</th><th>Integrations</th><th>License</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="/tool/dify">Dify</a></td><td>Full-platform AI apps: agents + RAG + workflow + monitoring</td><td>Low-code: drag-and-drop visual workflow, plugin ecosystem, built-in templates</td><td>Good: hybrid retrieval, configurable top-k, reranking, multi-format support</td><td>Docker Compose · Dify Cloud · K8s (enterprise)</td><td>Milvus, Langfuse, openai, anthropic</td><td>Source-available</td></tr>
+          <tr><td><a href="/tool/ragflow">RAGFlow</a></td><td>Deep document understanding, complex PDF/scanned doc parsing</td><td>Low-code: web UI with deep configuration, suited for technical users</td><td>Excellent: OCR, table extraction, layout-aware parsing, scanned documents, hybrid search</td><td>Docker (slim 2GB / full 9GB) · self-host only</td><td>elasticsearch, Ollama, openai</td><td>Apache-2.0</td></tr>
+          <tr><td><a href="/tool/flowise">Flowise</a></td><td>Fast visual chatbot prototyping, LangChain canvas</td><td>No-code: visual drag-and-drop canvas, prebuilt templates, fastest setup</td><td>Basic: relies on LangChain document loaders, standard chunking</td><td>Docker · npm install · Flowise Cloud</td><td>langchain, openai, anthropic, Qdrant, Chroma</td><td>Apache-2.0</td></tr>
+          <tr><td><a href="/tool/lightrag">LightRAG</a></td><td>Graph-enhanced RAG, entity relationships, multi-hop reasoning</td><td>Code-first: Python API (also offers Server Web UI)</td><td>Graph-based: extracts entities &amp; relationships, dual-level retrieval (local + global)</td><td>pip install · Docker · Railway · self-host</td><td>neo4j, faiss, Chroma, Milvus, Ollama</td><td>MIT</td></tr>
+        </tbody>
+      </table>
     </article>
   </main>
 </div>

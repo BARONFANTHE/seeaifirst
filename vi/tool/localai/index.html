@@ -1055,10 +1055,49 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/infrastructure">AI Infrastructure — Hạ tầng chạy và triển khai model</a> › LocalAI</nav>
     <article>
       <h1>LocalAI</h1>
       <p>Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU</p>
-      <p>Nền tảng self-hosted thay thế OpenAI API. Chạy được trên consumer hardware KHÔNG cần GPU. Hỗ trợ text generation, image generation, audio transcription, embeddings — tất cả qua OpenAI-compatible AP...</p>
+      <p>Nền tảng self-hosted thay thế OpenAI API. Chạy được trên consumer hardware KHÔNG cần GPU. Hỗ trợ text generation, image generation, audio transcription, embeddings — tất cả qua OpenAI-compatible API. Tương thích Anthropic API format, Responses API, MCP integration. Chạy qua Docker một lệnh. Phù hợp cho teams muốn self-host toàn bộ AI stack trên infrastructure riêng, giữ data không ra ngoài.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Cần drop-in replacement cho OpenAI API trên local</li>
+        <li>Chạy nhiều loại model (text, image, audio, video) trên 1 platform</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Chỉ cần chạy 1 model đơn giản — Ollama đơn giản hơn</li>
+        <li>Cần tối ưu throughput cực cao — vLLM phù hợp hơn</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>go</dd>
+        <dt>Ứng dụng</dt><dd>openai compatible local, multi modal inference, privacy first ai</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/vllm">vLLM</a> — Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/mudler/LocalAI" rel="nofollow noopener noreferrer">GitHub (43.6K+ ⭐)</a></li>
+        <li><a href="https://localai.io" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://localai.io/docs" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/infrastructure">AI Infrastructure — Hạ tầng chạy và triển khai model</a> trên See AI First.</p>
       </footer>

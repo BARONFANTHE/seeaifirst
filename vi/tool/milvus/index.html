@@ -1055,10 +1055,51 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/vector-databases">Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</a> › Milvus</nav>
     <article>
       <h1>Milvus</h1>
       <p>Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation</p>
-      <p>Milvus là vector database được thiết kế cho quy mô lớn từ đầu: kiến trúc distributed trên Kubernetes, hỗ trợ lưu trữ và tìm kiếm hàng tỷ vectors với latency dưới mili-giây. Cung cấp nhiều loại inde...</p>
+      <p>Milvus là vector database được thiết kế cho quy mô lớn từ đầu: kiến trúc distributed trên Kubernetes, hỗ trợ lưu trữ và tìm kiếm hàng tỷ vectors với latency dưới mili-giây. Cung cấp nhiều loại index nhất trong các vector DB (IVF, HNSW, DiskANN, PQ...), cho phép cân bằng giữa tốc độ, accuracy và chi phí tùy use case. Là dự án tốt nghiệp của LF AI &amp; Data Foundation (Linux Foundation), đảm bảo governance và phát triển bền vững. Cloud version Zilliz cung cấp managed service. Ứng dụng thực tế: recommendation systems quy mô lớn, image/video similarity search, semantic search cho enterprise với hàng triệu documents, hoặc bất kỳ bài toán nào cần tìm kiếm tương tự trên dữ liệu lớn. Kết hợp tốt với: LangChain · LlamaIndex · Dify · RAGFlow · Towhee (ETL pipeline) · Bất kỳ embedding model nào (OpenAI, Cohere, HuggingFace)</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>vector search quy mô lớn hàng tỷ vectors</li>
+        <li>hybrid search kết hợp keyword và semantic</li>
+        <li>multi-tenant production với yêu cầu cao</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>prototype nhỏ cần setup đơn giản</li>
+        <li>đã có PostgreSQL và chỉ cần basic vector search</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Nâng cao</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python, go, java</dd>
+        <dt>Ứng dụng</dt><dd>vector search, rag pipeline, recommendation system, image search</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/dify">Dify</a> — Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/qdrant">Qdrant</a> — Vector database viết bằng Rust — nhanh, tiết kiệm bộ nhớ, filtering payload mạnh nhất</li>
+        <li><a href="/vi/tool/chroma">Chroma</a> — Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG</li>
+        <li><a href="/vi/tool/pgvector">pgvector</a> — Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc</li>
+      </ul>
+      <p><a href="/vi/compare/vector-databases">So sánh trực tiếp: So sánh Vector Databases</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/milvus-io/milvus" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://milvus.io" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://zilliz.com" rel="nofollow noopener noreferrer">Zilliz Cloud</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/vector-databases">Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</a> trên See AI First.</p>
       </footer>

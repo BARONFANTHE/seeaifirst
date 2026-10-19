@@ -1055,10 +1055,48 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/infrastructure">AI Infrastructure — Hạ tầng chạy và triển khai model</a> › vLLM</nav>
     <article>
       <h1>vLLM</h1>
       <p>Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline</p>
-      <p>Engine serving LLM cho production. Công nghệ PagedAttention giúp tối ưu GPU memory, đạt throughput gấp 2-4× so với FasterTransformer/Orca. Hỗ trợ continuous batching, tensor parallelism, speculativ...</p>
+      <p>Engine serving LLM cho production. Công nghệ PagedAttention giúp tối ưu GPU memory, đạt throughput gấp 2-4× so với FasterTransformer/Orca. Hỗ trợ continuous batching, tensor parallelism, speculative decoding. Tương thích OpenAI API server. Dùng bởi các công ty lớn cho high-throughput serving. Hỗ trợ hầu hết model architectures phổ biến (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Cần high-throughput LLM serving cho production</li>
+        <li>Tối ưu GPU memory với PagedAttention</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Chạy trên máy không có GPU</li>
+        <li>Chỉ cần inference đơn giản trên local</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Độ khó</dt><dd>Nâng cao</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>production inference, high throughput serving, gpu optimization</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/localai">LocalAI</a> — Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/vllm-project/vllm" rel="nofollow noopener noreferrer">GitHub (73K+ ⭐)</a></li>
+        <li><a href="https://vllm.ai" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://docs.vllm.ai" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/infrastructure">AI Infrastructure — Hạ tầng chạy và triển khai model</a> trên See AI First.</p>
       </footer>

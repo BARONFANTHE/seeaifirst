@@ -1055,10 +1055,51 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> › Presidio</nav>
     <article>
       <h1>Presidio</h1>
       <p>PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân</p>
-      <p>Presidio là framework open-source từ Microsoft giúp phát hiện, redact, mask và anonymize dữ liệu nhạy cảm (PII) trong text, images và structured data. Sử dụng kết hợp NLP (spaCy, transformers), reg...</p>
+      <p>Presidio là framework open-source từ Microsoft giúp phát hiện, redact, mask và anonymize dữ liệu nhạy cảm (PII) trong text, images và structured data. Sử dụng kết hợp NLP (spaCy, transformers), regex patterns, rule-based logic và checksum để nhận diện credit card, tên, địa chỉ, SSN, email, số điện thoại và nhiều loại PII khác. Hỗ trợ đa ngôn ngữ, có thể mở rộng với custom recognizers. Triển khai qua Python packages hoặc Docker containers, tích hợp tốt với LLM pipelines để sanitize data trước khi gửi vào model. Kết hợp tốt với: LangChain · LiteLLM · Guardrails AI · NeMo Guardrails</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>PII detection and anonymization in LLM pipelines</li>
+        <li>text de-identification before model training or logging</li>
+        <li>privacy-aware data preprocessing for RAG systems</li>
+        <li>custom PII recognizer development with NLP/regex</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>real-time high-throughput stream processing without tuning</li>
+        <li>non-text PII detection (audio, video) beyond image redaction</li>
+        <li>when only simple regex-based masking is needed</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>pii detection, data anonymization, privacy preprocessing, llm preprocessing</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/vi/tool/dify">Dify</a> — Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/garak">garak</a> — LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI</li>
+        <li><a href="/vi/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn</li>
+        <li><a href="/vi/tool/guardrails-ai">Guardrails AI</a> — I/O validation framework cho LLM – structured output + 100+ validators</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/microsoft/presidio" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://microsoft.github.io/presidio/" rel="nofollow noopener noreferrer">Website</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> trên See AI First.</p>
       </footer>

@@ -1055,10 +1055,51 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> › Superpowers</nav>
     <article>
       <h1>Superpowers</h1>
       <p>Framework kỹ năng dạng agent cho Claude Code — tự động kích hoạt skills phù hợp khi làm việc.</p>
-      <p>Superpowers là framework skills hàng đầu cho Claude Code với 20+ skills sẵn có: brainstorming, TDD, debugging, code review, git worktrees... Skills tự động kích hoạt theo context — ví dụ khi debug...</p>
+      <p>Superpowers là framework skills hàng đầu cho Claude Code với 20+ skills sẵn có: brainstorming, TDD, debugging, code review, git worktrees... Skills tự động kích hoạt theo context — ví dụ khi debug thì systematic-debugging skill tự chạy. Hỗ trợ subagent-driven development: chia task thành nhiều subtask, mỗi subtask do subagent thực hiện rồi review. Claude có thể tự chạy hàng giờ không cần can thiệp. Cài đặt qua plugin marketplace của Claude Code. Cũng hỗ trợ Codex và OpenCode.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Khi muốn structured software development workflow cho coding agents</li>
+        <li>Khi cần TDD enforcement và code review tự động</li>
+        <li>Khi muốn subagent-driven development với review gates</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Khi chỉ cần quick code generation đơn giản</li>
+        <li>Khi dự án quá nhỏ cho full TDD workflow</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>js, python, typescript</dd>
+        <dt>Ứng dụng</dt><dd>agentic coding, code review, full stack, refactoring</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/claude-code">Claude Code</a> — Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.</li>
+        <li><a href="/vi/tool/codex-cli">Codex CLI</a> — Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.</li>
+        <li><a href="/vi/tool/opencode">OpenCode</a> — Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 122K+ stars, MIT license</li>
+        <li><a href="/vi/tool/gemini-cli">Gemini CLI</a> — Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/universal-agent-skills">Universal Agent Skills</a> — Skill là file .md chứa hướng dẫn cho AI agent — đơn giản nhưng hiệu quả, chạy được trên mọi AI coding tool.</li>
+        <li><a href="/vi/tool/skill-categories-dang-chu-y">Skill Categories đáng chú ý</a></li>
+        <li><a href="/vi/tool/agents-wshobson">Agents (wshobson)</a> — Bộ sưu tập 112 agents + 146 skills + 73 plugins chuyên biệt cho Claude Code — lớn nhất hiện tại.</li>
+        <li><a href="/vi/tool/planning-with-files">Planning with Files</a> — Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/obra/superpowers" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://blog.fsck.com/2025/10/09/superpowers/" rel="nofollow noopener noreferrer">Blog tác giả</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> trên See AI First.</p>
       </footer>

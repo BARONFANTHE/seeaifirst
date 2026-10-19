@@ -1055,10 +1055,56 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › Google ADK</nav>
     <article>
       <h1>Google ADK</h1>
       <p>Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.</p>
-      <p>Agent Development Kit của Google — framework xây agent tích hợp sâu với hệ sinh thái Google (Vertex AI, Gemini, Firebase). Hỗ trợ A2A protocol natively, multi-agent orchestration, và deployment trê...</p>
+      <p>Agent Development Kit của Google — framework xây agent tích hợp sâu với hệ sinh thái Google (Vertex AI, Gemini, Firebase). Hỗ trợ A2A protocol natively, multi-agent orchestration, và deployment trên Google Cloud. Có ADK Web UI để test agent trong browser. Gemini models miễn phí khi dùng với ADK.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Xây dựng agent trong Google/Gemini ecosystem</li>
+        <li>Cần multi-language SDK (Python, TS, Go, Java)</li>
+        <li>Thiết kế hierarchical multi-agent system</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Không dùng Google Cloud hay Gemini</li>
+        <li>Cần framework đơn giản cho single agent</li>
+        <li>Ưu tiên community lớn và mature ecosystem</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js, go, java</dd>
+        <dt>Ứng dụng</dt><dd>agent framework, workflow orchestration, evaluation</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+        <li><a href="/vi/tool/a2a">A2A — Agent2Agent Protocol</a> — Giao thức của Google — giúp các AI agent nói chuyện và hợp tác với nhau, dù được xây từ bất kỳ nền tảng nào.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/langgraph">LangGraph</a> — Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</li>
+        <li><a href="/vi/tool/crewai">CrewAI</a> — Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.</li>
+        <li><a href="/vi/tool/autogen">AutoGen</a> — Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.</li>
+        <li><a href="/vi/tool/openai-agents-sdk">OpenAI Agents SDK</a> — SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.</li>
+        <li><a href="/vi/tool/llamaindex">LlamaIndex</a> — Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</li>
+        <li><a href="/vi/tool/rasa">Rasa</a> — Nền tảng chatbot và voice AI — chạy trên server riêng, kiểm soát hoàn toàn dữ liệu.</li>
+        <li><a href="/vi/tool/browser-use">Browser-Use</a> — Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars</li>
+        <li><a href="/vi/tool/pydantic-ai">Pydantic AI</a> — Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers</li>
+        <li><a href="/vi/tool/mastra">Mastra</a> — TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn</li>
+      </ul>
+      <p><a href="/vi/compare/frameworks">So sánh trực tiếp: So sánh Agent Frameworks</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://google.github.io/adk-docs/" rel="nofollow noopener noreferrer">Google ADK Docs</a></li>
+        <li><a href="https://github.com/google/adk-python" rel="nofollow noopener noreferrer">Google ADK GitHub</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>
       </footer>

@@ -1055,10 +1055,56 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/protocols">Protocols — Standardized Communication Layer</a> › MCP — Model Context Protocol</nav>
     <article>
       <h1>MCP — Model Context Protocol</h1>
       <p>Anthropic&#039;s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called &#039;USB-C for AI&#039;.</p>
-      <p>Agent ↔ Tool communication · The &quot;USB-C for AI&quot; · Adopted by OpenAI, Google DeepMind, Cursor, Replit, SourcegraphMCP Apps (Jan 2026): New extension — tools return interactive UI (dashboards, forms)...</p>
+      <p>Agent ↔ Tool communication · The &quot;USB-C for AI&quot; · Adopted by OpenAI, Google DeepMind, Cursor, Replit, SourcegraphMCP Apps (Jan 2026): New extension — tools return interactive UI (dashboards, forms) directly in conversationSkills over MCP: Experimental — skill discovery &amp; distribution via MCP primitives</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>tool integration for LLMs</li>
+        <li>connecting AI apps to external data sources</li>
+        <li>building standardized AI plugins</li>
+        <li>cross-platform tool sharing</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>agent-to-agent communication (use A2A)</li>
+        <li>simple REST API calls without AI context</li>
+      </ul>
+      <h2>At a glance</h2>
+      <dl>
+        <dt>Pricing</dt><dd>Free</dd>
+        <dt>Deployment</dt><dd>Hybrid</dd>
+        <dt>Difficulty</dt><dd>Intermediate</dd>
+        <dt>License</dt><dd>Apache-2.0</dd>
+        <dt>Languages</dt><dd>python, js, java, csharp, go, rust, swift, ruby</dd>
+        <dt>Use cases</dt><dd>tool integration, data access, ai plugin system, ide extension</dd>
+        <dt>Last verified</dt><dd>2026-02-11 (official documentation)</dd>
+      </dl>
+      <h2>Works well with</h2>
+      <ul>
+        <li><a href="/tool/a2a">A2A — Agent2Agent Protocol</a> — Google&#039;s protocol — lets AI agents communicate and collaborate with each other, regardless of their underlying framework.</li>
+        <li><a href="/tool/claude-code">Claude Code</a> — Anthropic&#039;s CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.</li>
+        <li><a href="/tool/claude-ai">Claude.ai (Web)</a> — Anthropic&#039;s chat workspace — with memory, web search, Claude Cowork, and team plugins/connectors for enterprise workflows.</li>
+        <li><a href="/tool/chatgpt">ChatGPT (Web)</a> — OpenAI&#039;s most popular AI chat — with GPTs, search, tools, and a built-in memory system.</li>
+        <li><a href="/tool/cursor">Cursor</a> — Smart IDE based on VS Code — features Composer and Agent mode, best for daily coding.</li>
+        <li><a href="/tool/windsurf">Windsurf</a> — AI IDE at $15/month — Cascade Flow architecture, supports multiple models and JetBrains plugin.</li>
+        <li><a href="/tool/openai-agents-sdk">OpenAI Agents SDK</a> — OpenAI&#039;s lightweight Python SDK — build agents fast with built-in safety guardrails.</li>
+        <li><a href="/tool/google-adk">Google ADK</a> — Google&#039;s agent building toolkit — with built-in Gemini, Vertex AI, and A2A protocol integration.</li>
+        <li><a href="/tool/dify">Dify</a> — Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline</li>
+      </ul>
+      <h2>Alternatives in this category</h2>
+      <ul>
+        <li><a href="/tool/a2a">A2A — Agent2Agent Protocol</a> — Google&#039;s protocol — lets AI agents communicate and collaborate with each other, regardless of their underlying framework.</li>
+      </ul>
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="https://www.anthropic.com/news/model-context-protocol" rel="nofollow noopener noreferrer">Anthropic — Introducing MCP</a></li>
+        <li><a href="https://modelcontextprotocol.io/specification/2025-11-25" rel="nofollow noopener noreferrer">MCP Specification</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Model_Context_Protocol" rel="nofollow noopener noreferrer">Wikipedia — Model Context Protocol</a></li>
+        <li><a href="https://github.com/modelcontextprotocol" rel="nofollow noopener noreferrer">MCP GitHub</a></li>
+      </ul>
       <footer>
         <p>Part of <a href="/section/protocols">Protocols — Standardized Communication Layer</a> on See AI First.</p>
       </footer>

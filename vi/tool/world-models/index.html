@@ -1055,10 +1055,55 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/trends">AI Trends 2026 — Xu hướng đang định hình tương lai</a> › World Models</nav>
     <article>
       <h1>World Models</h1>
       <p>AI mô phỏng thế giới thực — AMI Labs, Google và các startup đang đua nhau phát triển. Ngành gaming là một động lực lớn.</p>
-      <p>AI mô phỏng thế giới thực — LeCun đã rời Meta để đồng sáng lập AMI Labs, trong khi Google và các startup đang đua nhau phát triển. World models hiểu physics, dự đoán kết quả hành động trong môi trư...</p>
+      <p>AI mô phỏng thế giới thực — LeCun đã rời Meta để đồng sáng lập AMI Labs, trong khi Google và các startup đang đua nhau phát triển. World models hiểu physics, dự đoán kết quả hành động trong môi trường 3D. Ứng dụng: tự lái xe, robotics, game development, simulation. Ngành gaming là một động lực lớn. Gần đây: Genie 2 (Google), video generation models chuyển thành world simulators.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Xây dựng AI hiểu vật lý và spatial reasoning cho robotics</li>
+        <li>Training agents trong simulated environments trước khi deploy thực tế</li>
+        <li>Tạo interactive 3D environments cho gaming hoặc VR/AR</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Chỉ cần text processing hoặc chatbot thông thường</li>
+        <li>Không có GPU infrastructure đủ mạnh</li>
+        <li>Dự án không liên quan đến spatial/physical reasoning</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Cloud</dd>
+        <dt>Độ khó</dt><dd>Nâng cao</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>research, model experimentation, multi modal inference</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-02-27 (suy luận từ dữ liệu đã công bố)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/vllm">vLLM</a> — Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline</li>
+        <li><a href="/vi/tool/ai-infrastructure">AI Infrastructure</a> — Data center khổng lồ 1GW+, dùng cả điện hạt nhân cho AI. Một mặt trận trọng yếu trong cuộc đua AI.</li>
+        <li><a href="/vi/tool/generative-coding">Generative Coding</a> — AI viết 30% code tại Microsoft, 25%+ tại Google. &#039;Tiếng Anh đang trở thành ngôn ngữ lập trình mới.&#039;</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/multi-agent-systems">Multi-Agent Systems</a> — Hệ thống nhiều agent AI phối hợp — Gartner ghi nhận tăng 1,445% quan tâm. 40% app doanh nghiệp sẽ dùng agent cuối 2026.</li>
+        <li><a href="/vi/tool/mechanistic-interpretability">Mechanistic Interpretability</a> — Nghiên cứu cách AI &#039;suy nghĩ&#039; bên trong — giúp hiểu và kiểm soát hành vi AI tốt hơn. Đột phá 2026 theo MIT.</li>
+        <li><a href="/vi/tool/generative-coding">Generative Coding</a> — AI viết 30% code tại Microsoft, 25%+ tại Google. &#039;Tiếng Anh đang trở thành ngôn ngữ lập trình mới.&#039;</li>
+        <li><a href="/vi/tool/chinese-open-source-ai">Chinese Open-Source AI</a> — DeepSeek R1 gây sốc giới AI — model suy luận mã nguồn mở từ Trung Quốc. Khoảng cách công nghệ giảm từ tháng xuống tuần.</li>
+        <li><a href="/vi/tool/post-training-pre-training">Post-Training &gt; Pre-Training</a> — Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.</li>
+        <li><a href="/vi/tool/ai-drug-discovery">AI Drug Discovery</a> — Thuốc do AI khám phá bắt đầu thử nghiệm lâm sàng giai đoạn giữa/cuối. Tập trung: ung thư và bệnh hiếm.</li>
+        <li><a href="/vi/tool/ai-infrastructure">AI Infrastructure</a> — Data center khổng lồ 1GW+, dùng cả điện hạt nhân cho AI. Một mặt trận trọng yếu trong cuộc đua AI.</li>
+        <li><a href="/vi/tool/ai-governance">AI Governance</a> — Agent AI giám sát các agent AI khác — đặt rào chắn an toàn và giữ con người trong vòng kiểm soát.</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://openreview.net/pdf?id=BZ5a1r-kVsf" rel="nofollow noopener noreferrer">Yann LeCun — A Path Towards Autonomous AI</a></li>
+        <li><a href="https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/" rel="nofollow noopener noreferrer">Google DeepMind — Genie</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/trends">AI Trends 2026 — Xu hướng đang định hình tương lai</a> trên See AI First.</p>
       </footer>

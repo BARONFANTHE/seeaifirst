@@ -1055,10 +1055,50 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> › Promptfoo</nav>
     <article>
       <h1>Promptfoo</h1>
       <p>CLI tool cho prompt testing, model comparison và LLM red-teaming/security scanning</p>
-      <p>Công cụ CLI mã nguồn mở cho developer test và bảo mật LLM apps. Config bằng YAML, so sánh output side-by-side giữa nhiều models (GPT, Claude, Gemini, Llama...). Tích hợp red-teaming cho 50+ vulnera...</p>
+      <p>Công cụ CLI mã nguồn mở cho developer test và bảo mật LLM apps. Config bằng YAML, so sánh output side-by-side giữa nhiều models (GPT, Claude, Gemini, Llama...). Tích hợp red-teaming cho 50+ vulnerability types: prompt injection, PII exposure, jailbreak. Chạy trong CI/CD qua GitHub Actions. 51K+ developers sử dụng. Phù hợp cho teams cần security-first approach.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>so sánh output giữa các LLM</li>
+        <li>kiểm tra prompt regression</li>
+        <li>red team và bảo mật LLM</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>cần production observability real-time</li>
+        <li>cần tracing distributed system</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Độ khó</dt><dd>Cơ bản</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>js</dd>
+        <dt>Ứng dụng</dt><dd>prompt testing, model comparison, red teaming, ci cd testing</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/langfuse">Langfuse</a> — Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</li>
+        <li><a href="/vi/tool/deepeval">DeepEval</a> — Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming</li>
+        <li><a href="/vi/tool/langsmith">LangSmith</a> — Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph</li>
+        <li><a href="/vi/tool/arize-phoenix">Arize Phoenix</a> — AI observability platform mã nguồn mở — tracing, evaluation, RAG debugging, embeddings analysis</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/promptfoo/promptfoo" rel="nofollow noopener noreferrer">GitHub (8.3K+ ⭐)</a></li>
+        <li><a href="https://www.promptfoo.dev" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://www.promptfoo.dev/docs/intro" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> trên See AI First.</p>
       </footer>

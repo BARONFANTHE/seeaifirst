@@ -1055,21 +1055,27 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › Compare Agent Frameworks — Comparison</nav>
     <article>
       <h1>Compare Agent Frameworks — Comparison</h1>
       <p>Side-by-side comparison of 10 AI tools.</p>
-      <ul>
-        <li>LangGraph</li>
-        <li>CrewAI</li>
-        <li>AutoGen</li>
-        <li>OpenAI Agents SDK</li>
-        <li>Google ADK</li>
-        <li>LlamaIndex</li>
-        <li>Rasa</li>
-        <li>Browser-Use</li>
-        <li>Pydantic AI</li>
-        <li>Mastra</li>
-      </ul>
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Best for</th><th>Learning curve</th><th>Ecosystem</th><th>Graph/Agent support</th><th>Memory/RAG integration</th><th>Language</th><th>License</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="/tool/langgraph">LangGraph</a></td><td>Complex stateful multi-agent workflows with graph orchestration</td><td>Hard</td><td>Strong — LangChain + LangSmith + LangGraph Platform, 300+ integrations</td><td>Strong — Core: directed graph state machine, conditional routing, cycles, multi/hierarchical agents</td><td>Strong — Built-in short/long-term memory, semantic search, cross-thread, LangChain retrievers</td><td>Both</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/crewai">CrewAI</a></td><td>Role-based multi-agent collaboration with crew metaphor</td><td>Easy</td><td>Good — 24K+ stars, standalone framework, CrewAI Flows + AMP Suite</td><td>Good — Sequential/hierarchical/consensus processes, Flows engine with event-driven control</td><td>Strong — First-class: short-term (ChromaDB), long-term (SQLite3), entity memory, RagTool</td><td>Python</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/autogen">AutoGen</a></td><td>Research multi-agent conversations (Active path = AG2)</td><td>Medium</td><td>Good — AG2 community fork (Apache 2.0), ecosystem split with Microsoft path</td><td>Good — Conversation-based patterns, group chat, nested chats, AG2 adds swarm + A2A</td><td>Good — Teachability module, RAG via RetrieveAssistantAgent + ChromaDB</td><td>Python</td><td>Apache 2.0</td></tr>
+          <tr><td><a href="/tool/openai-agents-sdk">OpenAI Agents SDK</a></td><td>Lightweight production agents with minimal abstractions</td><td>Easy</td><td>Good — OpenAI-backed, 16K+ stars, provider-agnostic, growing integrations</td><td>Good — Handoff-based delegation, guardrails, deterministic flows</td><td>Basic — Session memory only, no built-in long-term or RAG</td><td>Both</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/google-adk">Google ADK</a></td><td>Code-first agents with Google Cloud/Gemini integration</td><td>Medium</td><td>Strong — Google-backed, multi-language (also Go/Java), Vertex AI compatible</td><td>Strong — Workflow agents (Sequential/Parallel/Loop), dynamic routing, A2A protocol</td><td>Good — Session state management, MCP tools, Google Search RAG integration</td><td>Both</td><td>Apache 2.0</td></tr>
+          <tr><td><a href="/tool/llamaindex">LlamaIndex</a></td><td>Data-centric RAG applications and document AI</td><td>Medium</td><td>Strong — 38K+ stars, 300+ integrations, LlamaCloud + LlamaParse</td><td>Good — Workflows 1.0 event-driven engine, AgentRunner, sequential/parallel/loop</td><td>Strong — Best-in-class RAG: vector/tree/keyword/KG indexing, LlamaParse pipeline</td><td>Both</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/rasa">Rasa</a></td><td>Enterprise conversational AI with strict business logic</td><td>Hard</td><td>Strong (maintenance-mode) — 20K+ stars, 500+ contributors, CALM engine</td><td>Good — Flow-based dialogue, CALM combines LLM + deterministic business logic</td><td>Basic — Dialogue state tracking (slot filling), no built-in RAG pipeline</td><td>Python</td><td>Apache 2.0</td></tr>
+          <tr><td><a href="/tool/browser-use">Browser-Use</a></td><td>AI-powered web browser automation</td><td>Easy</td><td>Good — 60K+ stars, $17M seed (TechCrunch), MCP server support</td><td>Basic — Single-agent browser loop, plugs into other frameworks for orchestration</td><td>Basic — Session-level browser state only, no memory or RAG</td><td>Python</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/pydantic-ai">Pydantic AI</a></td><td>Type-safe agents with FastAPI-like ergonomics</td><td>Medium</td><td>Good — By Pydantic team, 15K+ stars, model-agnostic, Logfire observability</td><td>Good — Dependency injection, agent delegation, multi-agent handoffs</td><td>Good — MCP integration, human-in-the-loop, durable execution, external providers</td><td>Python</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/mastra">Mastra</a></td><td>Full-stack TypeScript AI apps (agents + workflows + RAG)</td><td>Easy</td><td>Good — From Gatsby team (YC), 25K+ stars, TS-native, Vercel AI SDK</td><td>Good — Workflow engine with suspend/resume, agent networks with routing</td><td>Good — Built-in RAG pipeline (chunking/embedding/search), agent memory support</td><td>TypeScript</td><td>Apache 2.0</td></tr>
+        </tbody>
+      </table>
     </article>
   </main>
 </div>

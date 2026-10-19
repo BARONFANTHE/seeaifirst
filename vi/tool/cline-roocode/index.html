@@ -1055,10 +1055,56 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> › Cline / RooCode</nav>
     <article>
       <h1>Cline / RooCode</h1>
       <p>Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.</p>
-      <p>Extension VS Code mã nguồn mở — agent AI chạy trực tiếp trong editor. Hỗ trợ MCP servers, multi-model (Claude, GPT, Gemini, local models). Cline = bản gốc (open-source), RooCode = fork với thêm fea...</p>
+      <p>Extension VS Code mã nguồn mở — agent AI chạy trực tiếp trong editor. Hỗ trợ MCP servers, multi-model (Claude, GPT, Gemini, local models). Cline = bản gốc (open-source), RooCode = fork với thêm features (custom modes, model routing). Best for: developers muốn tùy chỉnh hoàn toàn, dùng local/self-hosted models.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>Muốn kiểm soát chi phí API và chọn model linh hoạt</li>
+        <li>Cần autonomous multi-step coding agent trong VS Code</li>
+        <li>Muốn giữ VS Code workflow hiện tại thay vì chuyển IDE</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>Cần inline tab-completion nhanh (Copilot/Cursor phù hợp hơn)</li>
+        <li>Không muốn quản lý API keys và chi phí riêng</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>js, typescript</dd>
+        <dt>Ứng dụng</dt><dd>agentic coding, code refactoring, browser automation</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a> — Chuẩn kết nối của Anthropic — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như &#039;USB-C cho AI&#039;.</li>
+        <li><a href="/vi/tool/claude-ai">Claude.ai (Web)</a> — Giao diện chat/workspace của Anthropic — có bộ nhớ, tìm kiếm web, Claude Cowork, và plugin/connectors cho workflow doanh nghiệp.</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/claude-code">Claude Code</a> — Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.</li>
+        <li><a href="/vi/tool/cursor">Cursor</a> — IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.</li>
+        <li><a href="/vi/tool/codex-cli">Codex CLI</a> — Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.</li>
+        <li><a href="/vi/tool/windsurf">Windsurf</a> — IDE AI giá $15/tháng — kiến trúc Cascade Flow, hỗ trợ nhiều model và plugin JetBrains.</li>
+        <li><a href="/vi/tool/github-copilot">GitHub Copilot</a> — Trợ lý code của Microsoft tích hợp sẵn trong VS Code — có Agent mode, mạnh cho doanh nghiệp.</li>
+        <li><a href="/vi/tool/gemini-cli">Gemini CLI</a> — Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.</li>
+        <li><a href="/vi/tool/kiro-aws">Kiro (AWS)</a> — IDE AI của AWS theo hướng spec-first — từ yêu cầu → thiết kế → kế hoạch → code tự động.</li>
+        <li><a href="/vi/tool/replit-agent">Replit Agent</a> — Agent trên cloud — tạo app full-stack nhanh, không cần cài đặt. Tốt nhất cho người mới bắt đầu.</li>
+        <li><a href="/vi/tool/opencode">OpenCode</a> — Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 122K+ stars, MIT license</li>
+        <li><a href="/vi/tool/goose">Goose</a> — Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM</li>
+      </ul>
+      <p><a href="/vi/compare/coding-agents">So sánh trực tiếp: So sánh AI Coding Agents</a></p>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/cline/cline" rel="nofollow noopener noreferrer">Cline GitHub</a></li>
+        <li><a href="https://github.com/RooVetGit/Roo-Code" rel="nofollow noopener noreferrer">RooCode GitHub</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> trên See AI First.</p>
       </footer>

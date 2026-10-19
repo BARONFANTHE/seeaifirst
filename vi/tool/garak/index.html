@@ -1055,10 +1055,53 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> › garak</nav>
     <article>
       <h1>garak</h1>
       <p>LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI</p>
-      <p>garak là &quot;nmap cho LLM&quot; – công cụ quét lỗ hổng bảo mật dành riêng cho mô hình ngôn ngữ lớn, được NVIDIA phát triển. Hỗ trợ kiểm tra hallucination, data leakage, prompt injection, jailbreak, toxicit...</p>
+      <p>garak là &quot;nmap cho LLM&quot; – công cụ quét lỗ hổng bảo mật dành riêng cho mô hình ngôn ngữ lớn, được NVIDIA phát triển. Hỗ trợ kiểm tra hallucination, data leakage, prompt injection, jailbreak, toxicity generation và nhiều attack vector khác. garak hoạt động theo kiến trúc modular với probes (tạo tương tác thử), detectors (phát hiện hành vi xấu), và evaluators (đánh giá kết quả). Hỗ trợ scan model từ Hugging Face, OpenAI, Ollama, LiteLLM và hầu hết mọi endpoint REST. Kết hợp tốt với: NeMo Guardrails · Ollama · LiteLLM · Promptfoo</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>LLM security assessment and vulnerability scanning before deployment</li>
+        <li>red-teaming LLM applications for jailbreaks and prompt injection</li>
+        <li>automated probe-based testing across multiple failure modes</li>
+        <li>CI/CD integration for ongoing LLM security regression testing</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>runtime protection or guardrails (use NeMo Guardrails or Guardrails AI)</li>
+        <li>non-LLM application security testing</li>
+        <li>when need real-time blocking rather than assessment reports</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>llm red teaming, vulnerability scanning, jailbreak testing, security audit</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/ollama">Ollama</a> — Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</li>
+        <li><a href="/vi/tool/litellm">LiteLLM</a> — AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API</li>
+        <li><a href="/vi/tool/vllm">vLLM</a> — Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline</li>
+        <li><a href="/vi/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn</li>
+        <li><a href="/vi/tool/presidio">Presidio</a> — PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân</li>
+        <li><a href="/vi/tool/guardrails-ai">Guardrails AI</a> — I/O validation framework cho LLM – structured output + 100+ validators</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/NVIDIA/garak" rel="nofollow noopener noreferrer">GitHub</a></li>
+        <li><a href="https://garak.ai/" rel="nofollow noopener noreferrer">Website</a></li>
+        <li><a href="https://garak.readthedocs.io/" rel="nofollow noopener noreferrer">Docs</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> trên See AI First.</p>
       </footer>

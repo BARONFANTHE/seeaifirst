@@ -1055,10 +1055,51 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> › Claude Squad</nav>
     <article>
       <h1>Claude Squad</h1>
       <p>Ứng dụng terminal giúp chạy nhiều phiên Claude Code và Codex cùng lúc, mỗi phiên một workspace riêng.</p>
-      <p>Tool quản lý nhiều phiên Claude Code song song trong cùng terminal. Mỗi phiên chạy trên workspace riêng, làm task riêng, không xung đột. Hỗ trợ Aider integration, multi-workspace management. Phù hợ...</p>
+      <p>Tool quản lý nhiều phiên Claude Code song song trong cùng terminal. Mỗi phiên chạy trên workspace riêng, làm task riêng, không xung đột. Hỗ trợ Aider integration, multi-workspace management. Phù hợp khi cần chạy nhiều agent đồng thời trên các phần khác nhau của dự án.</p>
+      <h2>Khi nào nên dùng</h2>
+      <ul>
+        <li>managing multiple AI coding agents simultaneously</li>
+        <li>parallel task execution across branches</li>
+        <li>background code generation</li>
+        <li>multi-agent development with git isolation</li>
+      </ul>
+      <h2>Khi nào không nên dùng</h2>
+      <ul>
+        <li>single-task workflow</li>
+        <li>non-terminal environments</li>
+        <li>projects without git</li>
+      </ul>
+      <h2>Thông tin nhanh</h2>
+      <dl>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>go</dd>
+        <dt>Ứng dụng</dt><dd>parallel development, multi agent management, background tasks, git workflow</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+      </dl>
+      <h2>Kết hợp tốt với</h2>
+      <ul>
+        <li><a href="/vi/tool/claude-code">Claude Code</a> — Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.</li>
+        <li><a href="/vi/tool/codex-cli">Codex CLI</a> — Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.</li>
+        <li><a href="/vi/tool/opencode">OpenCode</a> — Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 122K+ stars, MIT license</li>
+        <li><a href="/vi/tool/gemini-cli">Gemini CLI</a> — Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.</li>
+        <li><a href="/vi/tool/goose">Goose</a> — Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM</li>
+      </ul>
+      <h2>Lựa chọn khác cùng danh mục</h2>
+      <ul>
+        <li><a href="/vi/tool/claude-flow">Claude-Flow</a> — Nền tảng điều phối agent theo kiến trúc Queen + Workers — quản lý Claude, GPT, Gemini cùng lúc qua MCP.</li>
+        <li><a href="/vi/tool/openclaw">OpenClaw</a> — Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo.</li>
+      </ul>
+      <h2>Nguồn</h2>
+      <ul>
+        <li><a href="https://github.com/smtg-ai/claude-squad" rel="nofollow noopener noreferrer">Claude Squad GitHub</a></li>
+      </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> trên See AI First.</p>
       </footer>
