@@ -2848,7 +2848,7 @@ function renderDetail() {
   const alts = rankAlternatives(card, section, 5);
   if (alts.length) {
     html += `<div class="detail-sources-label">${DL.alternatives}</div><div class="detail-chips">${alts.map(detailChip).join('')}</div>`;
-    const seeAll = DL.seeAll.replace('{{count}}', String(section.cards.length)).replace('{{section}}', escapeHtml(section.title));
+    const seeAll = DL.seeAll.replace('{{count}}', () => String(section.cards.length)).replace('{{section}}', () => escapeHtml(section.title));
     html += `<div><a class="detail-more-link" href="${escapeHtml(withLangPrefix('/section/' + section.id))}" data-nav-section="${escapeHtml(section.id)}">${seeAll}</a></div>`;
   }
 

@@ -659,7 +659,7 @@ function generateBodyContent(route) {
       const alts = rankAlternatives(card, section, 5).map((c) => cardLink(linkPrefix, c, false));
       if (alts.length) {
         parts.push(`      <h2>${L.alternatives}</h2>\n      <ul>\n${htmlList(alts, '        ')}\n      </ul>`);
-        const seeAll = L.seeAll.replace('{{count}}', String(section.cards.length)).replace('{{section}}', escapeHtml(section.title));
+        const seeAll = L.seeAll.replace('{{count}}', () => String(section.cards.length)).replace('{{section}}', () => escapeHtml(section.title));
         parts.push(`      <p><a href="${linkPrefix}/section/${escapeHtml(section.id)}">${seeAll}</a></p>`);
       }
 
