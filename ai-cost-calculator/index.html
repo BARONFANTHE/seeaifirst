@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI API Cost Calculator 2026 — Compare Claude, GPT, Gemini Pricing | See AI First</title>
-<meta name="description" content="Free calculator to compare AI API costs across Claude, GPT-5, Gemini, DeepSeek, and Grok. Estimate monthly costs by usage. Updated March 2026.">
+<meta name="description" content="Free calculator to compare AI API costs across Claude, GPT-6, Gemini, DeepSeek, and Grok. Estimate monthly costs by usage. Updated October 2026.">
 <link rel="canonical" href="https://seeaifirst.com/ai-cost-calculator/">
 <meta property="og:title" content="AI API Cost Calculator 2026 — Compare Claude, GPT, Gemini Pricing | See AI First">
-<meta property="og:description" content="Free calculator to compare AI API costs across Claude, GPT-5, Gemini, DeepSeek, and Grok. Estimate monthly costs by usage. Updated March 2026.">
+<meta property="og:description" content="Free calculator to compare AI API costs across Claude, GPT-6, Gemini, DeepSeek, and Grok. Estimate monthly costs by usage. Updated October 2026.">
 <meta property="og:url" content="https://seeaifirst.com/ai-cost-calculator/">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -167,7 +167,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
   <p class="pg-sub">Compare costs across 13 AI models from 5 providers. All prices verified from official sources.</p>
 
   <div class="disc">
-    <strong>Disclaimer:</strong> Prices shown are estimates for reference purposes only, based on official provider documentation as of March 18, 2026. Pricing may change without notice. For the most accurate and up-to-date pricing, please visit each provider's official pricing page. See AI First assumes no liability for pricing discrepancies.
+    <strong>Disclaimer:</strong> Prices shown are estimates for reference purposes only, based on official provider documentation as of <span id="asof">October 20, 2026</span>. Pricing may change without notice. For the most accurate and up-to-date pricing, please visit each provider's official pricing page. See AI First assumes no liability for pricing discrepancies.
   </div>
 
   <!-- Tool 1: Monthly Cost Calculator -->
@@ -240,7 +240,7 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.15)}
 </main>
 
 <footer class="calc-ft">
-  Prices last verified: March 18, 2026 &middot; Data source: <a href="/data/ai-pricing.json" target="_blank" rel="noopener noreferrer">ai-pricing.json</a>
+  Prices last verified: <span id="lastver">October 20, 2026</span> &middot; Data source: <a href="/data/ai-pricing.json" target="_blank" rel="noopener noreferrer">ai-pricing.json</a>
 </footer>
 
 <script>
@@ -251,8 +251,25 @@ var PC = {
   Anthropic:'#D4A574', OpenAI:'#74AA9C', Google:'#4285F4',
   DeepSeek:'#6366F1', xAI:'#EF4444'
 };
-var FN_MAP = {'gemini-2.5-pro':'gemini_long_context','gpt-5.4':'openai_gpt54_long_context'};
-var FN_MK = {'gemini-2.5-pro':'\u00b9','gpt-5.4':'\u00b2'};
+// Footnote markers are derived from data: each model may reference a key in data.footnotes via model.footnote.
+var FN_MK = {};
+var FN_ORDER = [];
+var SUP = ['\u00b9','\u00b2','\u00b3','\u2074','\u2075','\u2076','\u2077','\u2078','\u2079'];
+function buildFootnotes(d){
+  FN_MK = {}; FN_ORDER = [];
+  var keyMk = {};
+  (d.models||[]).forEach(function(m){
+    var k = m.footnote;
+    if(!k || !d.footnotes || !d.footnotes[k]) return;
+    if(!keyMk[k]){ if(FN_ORDER.length>=SUP.length) return; keyMk[k] = SUP[FN_ORDER.length]; FN_ORDER.push(k); }
+    FN_MK[m.model_id] = keyMk[k];
+  });
+}
+function fmtDate(iso){
+  var p = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso||''); if(!p) return null;
+  var M = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  return M[parseInt(p[2],10)-1]+' '+parseInt(p[3],10)+', '+p[1];
+}
 
 var data = null;
 var mSort = 'asc';
@@ -295,6 +312,9 @@ function fmtScope(s){
   if(s==='cache_miss')return 'Cache miss';
   if(s==='<=200k')return '\u2264200K tokens';
   if(s==='<=272k')return '\u2264272K tokens';
+  if(s==='<=100k')return '\u2264100K tokens';
+  if(s==='base_rate')return 'Base rate';
+  if(s==='cache_miss_offpeak')return 'Cache miss, off-peak';
   return s
 }
 
@@ -413,8 +433,10 @@ function renderFN(){
   if(!data||!data.footnotes)return;
   var fn=data.footnotes;
   var html='';
-  if(fn.gemini_long_context)html+='<div class="fn-item" data-mk="\u00b9">'+esc(fn.gemini_long_context)+'</div>';
-  if(fn.openai_gpt54_long_context)html+='<div class="fn-item" data-mk="\u00b2">'+esc(fn.openai_gpt54_long_context)+'</div>';
+  for(var i=0;i<FN_ORDER.length;i++){
+    var k=FN_ORDER[i];
+    html+='<div class="fn-item" data-mk="'+SUP[i]+'">'+esc(fn[k])+'</div>';
+  }
   if(html){fnsec.style.display='block';fncont.innerHTML=html}
 }
 
@@ -460,6 +482,9 @@ fetch('/data/ai-pricing.json')
   })
   .then(function(d){
     data=d;
+    buildFootnotes(d);
+    var lv=fmtDate(d.last_verified);
+    if(lv){document.getElementById('lastver').textContent=lv;document.getElementById('asof').textContent=lv;}
     renderMonthly();
     renderToken();
   })
