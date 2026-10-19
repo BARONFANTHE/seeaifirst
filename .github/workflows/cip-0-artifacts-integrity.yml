@@ -4,17 +4,10 @@ permissions:
   contents: read
 
 on:
+  # Runs on every PR to main (no paths filter): the job is a required status check,
+  # and a skipped required check blocks merging PRs that do not touch data files.
   pull_request:
     branches: [main]
-    paths:
-      - '.github/workflows/cip-0-artifacts-integrity.yml'
-      - 'data.json'
-      - 'data.vi.json'
-      - 'index.html'
-      - 'hot-right-now.json'
-      - 'scripts/validate.js'
-      - 'scripts/generate-shells.js'
-      - 'scripts/generate-sitemap.js'
 
 jobs:
   artifacts-integrity:
@@ -23,6 +16,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Public repo guard
+        run: |
+          # This repository is public. Internal planning/ops files must never be committed here.
+          pattern='^docs/|^CLAUDE\.md$|(^|/)\.claude/|(^|/)handoff/|(^|/)(STATUS|PLAN|ACCOUNTS|HOW-WE-WORK|ROADMAP|PLAYBOOK)[^/]*\.md$|(^|/)\.env(\.|$)'
+          leaked=$(git ls-files | grep -iE "$pattern" || true)
+          if [ -n "$leaked" ]; then
+            echo "::error::Internal files must not be committed to this public repository:"
+            echo "$leaked"
+            exit 1
+          fi
+          echo "✅ No internal files tracked."
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
