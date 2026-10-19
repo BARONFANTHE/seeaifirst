@@ -4,17 +4,10 @@ permissions:
   contents: read
 
 on:
+  # Runs on every PR to main (no paths filter): the job is a required status check,
+  # and a skipped required check blocks merging PRs that do not touch data files.
   pull_request:
     branches: [main]
-    paths:
-      - '.github/workflows/cip-0-artifacts-integrity.yml'
-      - 'data.json'
-      - 'data.vi.json'
-      - 'index.html'
-      - 'hot-right-now.json'
-      - 'scripts/validate.js'
-      - 'scripts/generate-shells.js'
-      - 'scripts/generate-sitemap.js'
 
 jobs:
   artifacts-integrity:
@@ -23,6 +16,41 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Public repo guard
+        # Blocks merging denylisted internal planning/ops paths into main. It cannot prevent a file
+        # from being visible on a pushed branch before this check fails, and it does not inspect contents.
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import re, subprocess, sys
+          # Public repo guard: fail if internal planning/ops files are tracked.
+          # Reads names NUL-separated (git ls-files -z) so quoted/unicode/newline names cannot slip through.
+          # Fails closed: any git/decoding error exits non-zero.
+          RULES = [
+              re.compile(r'(^|/)(docs|handoff|\.claude)/', re.I),
+              re.compile(r'(^|/)\.env(\.[^/]*)?\Z', re.I),
+              # generic words: exact basename only (avoids false positives like status-icons.md, planets.md)
+              re.compile(r'(^|/)(CLAUDE|CHANGELOG|STATUS|PLAN|ACCOUNTS|HOW-WE-WORK|ROADMAP|PLAYBOOK)\.md\Z', re.I),
+              # project-specific names: any suffix
+              re.compile(r'(^|/)(CLAUDE_AI|PROJECT_CONTEXT|SESSION_HANDOFF|DECISIONS_LOG|LESSONS[-_]LEARNED'
+                         r'|PENDINGITEM|CHECKLIST-PR|HUONGDANUPDATEDATA|TRANSITION_PLAN|TRIAGE-|CC_PROMPT'
+                         r'|CC-IMPLEMENTATION|WORKFLOW_|V\d+_IMPLEMENTATION|SPEC_|AI_MINDMAP_STRATEGIC)[^/]*\.md\Z', re.I),
+          ]
+          try:
+              raw = subprocess.run(['git', 'ls-files', '-z'], check=True, capture_output=True).stdout
+              names = [n.decode('utf-8', 'surrogateescape') for n in raw.split(b'\0') if n]
+          except Exception as e:
+              print(f'::error::Public repo guard could not list files: {e}')
+              sys.exit(1)
+          leaked = [n for n in names if any(r.search(n) for r in RULES)]
+          if leaked:
+              print('::error::Internal files must not be merged into this public repository:')
+              for n in leaked:
+                  print('  ' + ascii(n))
+              sys.exit(1)
+          print(f'No internal files tracked ({len(names)} files checked).')
+          PY
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
