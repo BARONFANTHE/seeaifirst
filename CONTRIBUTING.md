@@ -10,7 +10,7 @@ The easiest way to contribute — no coding required.
 
 → [Open a "Suggest a Tool" issue](https://github.com/BARONFANTHE/seeaifirst/issues/new?template=suggest-tool.yml)
 
-We'll review your suggestion against our evaluation criteria and add it if it qualifies.
+We'll review your suggestion against our evaluation criteria (see [How Suggestions Are Reviewed](#how-suggestions-are-reviewed)).
 
 ### 2. Report a Bug
 
@@ -22,7 +22,9 @@ Please include: what you expected, what happened, and browser/device info if rel
 
 ### 3. Improve Data via Pull Request
 
-For experienced contributors who want to directly update tool data.
+For experienced contributors who want to correct data on an **existing** card (broken link, outdated fact, wrong field).
+
+> New tools are not accepted via pull request. Please use the "Suggest a Tool" issue instead — PRs that add a new card will be closed and redirected there.
 
 **Before submitting a PR:**
 
@@ -44,6 +46,13 @@ Not every tool belongs here. We evaluate suggestions against 5 criteria:
 | **Maturity** | Has documentation, active development, community |
 | **Uniqueness** | Does not duplicate an existing card's functionality |
 | **Category Fit** | Fits within existing 13 sections (new sections require strong justification) |
+
+## How Suggestions Are Reviewed
+
+1. Every suggestion is checked against the 5 criteria above.
+2. Suggestions that don't meet them are closed with a short reason. You're welcome to resubmit later if things change.
+3. Suggestions that come close are labeled `candidate` and reconsidered in our periodic card-replacement review. The list stays intentionally small (66 tools), so adding a tool usually means replacing a weaker one.
+4. Submissions from a tool's own founder or team are welcome and reviewed under exactly the same criteria — please disclose the affiliation.
 
 ## Data Format
 
