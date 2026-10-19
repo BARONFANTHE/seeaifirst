@@ -24,10 +24,19 @@ const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
 const viData = JSON.parse(fs.readFileSync(VI_DATA_PATH, 'utf8'));
 const pricing = JSON.parse(fs.readFileSync(PRICING_PATH, 'utf8'));
 
-// <lastmod> is derived from data only (verified_at / last_verified), never from the build date,
+// <lastmod> is derived from data only (verified_at / as_of / last_verified), never from the build date,
 // so regenerating in CI (CIP-0 drift check) is deterministic.
+//
+// Data conventions this relies on (keep them when editing data):
+// - card.verified_at is used as the content date of a tool page. Only bump it when the card was actually
+//   re-checked AND its content was reviewed in the same change; verification date and edit date are not
+//   automatically the same thing.
+// - comparison_presets[].as_of must be bumped whenever the preset table (criteria / tools / values) changes.
+// - Home pages (/, /vi/) get no <lastmod>: their content also depends on hot-right-now.json and index.html,
+//   for which there is no reliable content date.
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-// Bump when the prerender page format in scripts/generate-shells.js changes (content of every route shell changes).
+// Bump when the prerender format of tool/section/compare pages in scripts/generate-shells.js changes.
+// Applied to those route groups only (not home).
 const SHELL_TEMPLATE_DATE = '2026-10-20';
 const maxDate = (dates) => dates.filter((d) => typeof d === 'string' && DATE_RE.test(d)).sort().pop() || null;
 function lastmodIndex(d) {
@@ -37,17 +46,15 @@ function lastmodIndex(d) {
     for (const c of s.cards) tool.set(c.slug, DATE_RE.test(c.verified_at || '') ? c.verified_at : null);
     section.set(s.id, maxDate(s.cards.map((c) => c.verified_at)));
   }
-  const preset = new Map(d.comparison_presets.map((p) => [p.id, maxDate(p.tools.map((t) => tool.get(t.cardId)))]));
-  const home = maxDate([...tool.values()]);
-  return { tool, section, preset, home };
+  const preset = new Map(d.comparison_presets.map((p) => [p.id, maxDate([p.as_of, ...p.tools.map((t) => tool.get(t.cardId))])]));
+  return { tool, section, preset };
 }
 const withTemplate = (idx) => {
   const bump = (d) => maxDate([d, SHELL_TEMPLATE_DATE]);
   return {
     tool: new Map([...idx.tool].map(([k, v]) => [k, bump(v)])),
     section: new Map([...idx.section].map(([k, v]) => [k, bump(v)])),
-    preset: new Map([...idx.preset].map(([k, v]) => [k, bump(v)])),
-    home: bump(idx.home)
+    preset: new Map([...idx.preset].map(([k, v]) => [k, bump(v)]))
   };
 };
 const lmEn = withTemplate(lastmodIndex(data));
@@ -90,8 +97,8 @@ if (fail) process.exit(1);
 const urls = [];
 
 // 1. Home
-urls.push(`${BASE_URL}/`); lastmod.set(`${BASE_URL}/`, lmEn.home);
-urls.push(`${BASE_URL}/vi/`); lastmod.set(`${BASE_URL}/vi/`, lmVi.home);
+urls.push(`${BASE_URL}/`);
+urls.push(`${BASE_URL}/vi/`);
 
 // 2. Tools (alphabetical by slug)
 for (const slug of cardSlugs) {

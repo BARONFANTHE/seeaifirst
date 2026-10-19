@@ -653,7 +653,7 @@ function generateBodyContent(route) {
       const srcs = (card.sources || [])
         .map((src) => ({ url: safeHttpUrl(src && src.url), title: plain(src && src.title) }))
         .filter((src) => src.url)
-        .map((src) => `<a href="${escapeHtml(src.url)}" rel="nofollow noopener noreferrer">${escapeHtml(src.title || src.url)}</a>`);
+        .map((src) => `<a href="${escapeHtml(src.url)}" rel="noopener noreferrer">${escapeHtml(src.title || src.url)}</a>`);
       if (srcs.length) parts.push(`      <h2>${L.sources}</h2>\n      <ul>\n${htmlList(srcs, '        ')}\n      </ul>`);
 
       const footerText = lang === 'en'
