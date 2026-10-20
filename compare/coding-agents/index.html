@@ -543,6 +543,38 @@ html, body {
   border-top: 1px solid var(--border);
   font-size: 12px; color: var(--text-dim);
 }
+.detail-fit {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;
+}
+.detail-fit ul {
+  margin: 0; padding-left: 18px;
+  font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+}
+.detail-facts {
+  display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px;
+  margin: 0 0 24px; font-size: 13px; line-height: 1.6;
+}
+.detail-facts dt { color: var(--text-muted); }
+.detail-facts dd { margin: 0; color: var(--text-secondary); }
+.detail-chips {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
+}
+.detail-link-chip {
+  font-size: 13px; font-weight: 500;
+  padding: 5px 14px; border-radius: 99px;
+  background: var(--hover); color: var(--text);
+  border: 1px solid var(--border); text-decoration: none;
+  transition: background 0.15s;
+}
+.detail-link-chip:hover { background: var(--active); }
+.detail-more-link {
+  display: inline-block; margin-bottom: 24px;
+  font-size: 13px; color: var(--text-secondary); text-decoration: none;
+}
+.detail-more-link:hover { text-decoration: underline; }
+@media (max-width: 767px) {
+  .detail-fit { grid-template-columns: 1fr; }
+}
 
 /* ═══ Welcome Animation ═══ */
 .welcome-panel { animation: fadeIn 0.3s ease; }
@@ -1055,22 +1087,28 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › Compare AI Coding Agents — Comparison</nav>
     <article>
       <h1>Compare AI Coding Agents — Comparison</h1>
       <p>Side-by-side comparison of 11 AI tools.</p>
-      <ul>
-        <li>Claude Code</li>
-        <li>Cursor</li>
-        <li>Codex CLI</li>
-        <li>Devin Desktop (formerly Windsurf)</li>
-        <li>GitHub Copilot</li>
-        <li>Gemini CLI</li>
-        <li>Cline</li>
-        <li>Kiro (AWS)</li>
-        <li>Replit Agent</li>
-        <li>OpenCode</li>
-        <li>Goose</li>
-      </ul>
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Best for</th><th>Form factor</th><th>Autonomy</th><th>Workflow integration</th><th>Repo awareness</th><th>Model support</th><th>Pricing</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="/tool/claude-code">Claude Code</a></td><td>Agentic terminal coding, full-repo tasks</td><td>CLI + IDE + Web + Desktop</td><td>Agentic</td><td>Strong — GitHub Actions, GitLab CI, hooks, PR mode</td><td>Strong — repo indexing, CLAUDE.md, memory, sub-agents</td><td>Claude models only</td><td>Paid (Claude Pro $20 / Max from $100/mo, or API)</td></tr>
+          <tr><td><a href="/tool/cursor">Cursor</a></td><td>IDE-integrated AI dev, multi-file refactoring</td><td>IDE (VS Code fork) + CLI + cloud agents</td><td>Semi-agent</td><td>Good — Agent, cloud agents, Bugbot PR review, CLI</td><td>Strong — full codebase embeddings, multi-file edits</td><td>Multi-provider</td><td>Freemium (Plus $8 / Premium $30 / Ultra $200/mo; third-party models extra)</td></tr>
+          <tr><td><a href="/tool/codex-cli">Codex CLI</a></td><td>Async task delegation, parallel agents</td><td>CLI + IDE + Web + Desktop</td><td>Agentic</td><td>Strong — local CLI + cloud tasks, AGENTS.md, Skills, GitHub PR</td><td>Good — repo preloading, AGENTS.md, local + cloud environments</td><td>OpenAI-first (open models via Ollama)</td><td>Freemium (included in ChatGPT plans; CLI from Plus $20/mo; or API key)</td></tr>
+          <tr><td><a href="/tool/windsurf">Devin Desktop (formerly Windsurf)</a></td><td>AI-native IDE, autonomous multi-step coding</td><td>IDE (standalone, now Devin Desktop)</td><td>Agentic</td><td>Good — Devin Local agent, Workflows, hand-off to Devin Cloud</td><td>Good — codebase analysis, project structure awareness</td><td>Multi-provider</td><td>Freemium (plans in transition after the rename)</td></tr>
+          <tr><td><a href="/tool/github-copilot">GitHub Copilot</a></td><td>Inline assist, team adoption, PR review</td><td>IDE extension (VS Code, JetBrains, Visual Studio, Xcode, Eclipse, Neovim) + CLI + cloud agent</td><td>Semi-agent</td><td>Strong — coding agent on issues/PRs, AGENTS.md, plan mode, MCP</td><td>Good — repo indexing, multi-file agent mode</td><td>Multi-model (plan-dependent)</td><td>Freemium (Free / Pro $10 / Pro+ $39 / Max $100; Business $19 / Enterprise $39 per user/mo; AI credits)</td></tr>
+          <tr><td><a href="/tool/gemini-cli">Gemini CLI</a></td><td>Open-source terminal agent for Gemini Code Assist / paid API users</td><td>CLI</td><td>Semi-agent</td><td>Basic — shell commands, file ops, web fetch, MCP</td><td>Good — reads local files, tool-based context</td><td>Google-first</td><td>Paid API key or Code Assist license (free individual access ended Jun 2026)</td></tr>
+          <tr><td><a href="/tool/cline-roocode">Cline</a></td><td>Customizable OSS agent, human-in-the-loop</td><td>VS Code + JetBrains extension, CLI</td><td>Semi-agent</td><td>Good — Plan/Act modes, terminal, MCP, checkpoints</td><td>Good — tree-sitter parsing, full project read, multi-file</td><td>Multi-provider</td><td>Free/OSS (pay API provider; optional paid plans)</td></tr>
+          <tr><td><a href="/tool/kiro-aws">Kiro (AWS)</a></td><td>Spec-driven dev, enterprise AWS projects</td><td>IDE (Code OSS fork) + CLI + Web</td><td>Agentic</td><td>Strong — agent hooks (auto-test, lint, docs on save), spec→design→tasks</td><td>Good — structured specs, requirements tracking, persistent context</td><td>Multi-provider (Claude, GPT, open-weight)</td><td>Freemium (Free / Pro $20 / Pro+ $40 / Pro Max $100 / Power $200; credits)</td></tr>
+          <tr><td><a href="/tool/replit-agent">Replit Agent</a></td><td>No-setup cloud dev, beginners</td><td>Web IDE (browser)</td><td>Agentic</td><td>Basic — integrated deploy, no Git/PR workflow</td><td>Basic — project context within Replit workspace</td><td>Replit proprietary</td><td>Freemium (Starter free / Core $20 / Pro $100/mo; effort-based agent usage)</td></tr>
+          <tr><td><a href="/tool/opencode">OpenCode</a></td><td>OSS terminal agent, LSP integration</td><td>CLI/TUI + desktop (beta) + IDE extension</td><td>Semi-agent</td><td>Good — build/plan agents, MCP, GitHub/GitLab</td><td>Good — LSP-powered code intelligence, project scanning</td><td>Multi-provider</td><td>Free/OSS (optional paid hosted models)</td></tr>
+          <tr><td><a href="/tool/goose">Goose</a></td><td>Extensible workflow automation, recipes</td><td>CLI + Desktop</td><td>Agentic</td><td>Good — Recipes (executable workflows), MCP, auto-PR</td><td>Good — project context, global MCP servers</td><td>Multi-provider</td><td>Free/OSS (Linux Foundation AAIF)</td></tr>
+        </tbody>
+      </table>
     </article>
   </main>
 </div>
@@ -2619,6 +2657,83 @@ function renderNewspaper() {
   attachNewspaperCardListeners(section);
 }
 
+// ═══ Detail extras (Phase 1.A) ═══
+// Mirrored in scripts/generate-shells.js (LABELS, VI_CHARS, listForLang, rankAlternatives) so the
+// prerendered tool page and this panel show the same content. Change both together.
+const DETAIL_LABELS = {
+  en: {
+    whenToUse: 'When to use', whenNotToUse: 'When not to use', atAGlance: 'At a glance',
+    pricing: 'Pricing', deployment: 'Deployment', difficulty: 'Difficulty', license: 'License',
+    languages: 'Languages', useCases: 'Use cases', worksWith: 'Works well with',
+    alternatives: 'Alternatives in this category', seeAll: 'See all {{count}} tools in {{section}} →',
+    sources: 'Sources',
+    verifiedVia: { docs: 'official documentation', tested: 'hands-on testing', inferred: 'inference from documented facts' },
+    enums: {
+      free: 'Free', freemium: 'Freemium', paid: 'Paid', 'open-core': 'Open core',
+      cloud: 'Cloud', 'self-hosted': 'Self-hosted', local: 'Local', hybrid: 'Hybrid',
+      beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced'
+    }
+  },
+  vi: {
+    whenToUse: 'Khi nào nên dùng', whenNotToUse: 'Khi nào không nên dùng', atAGlance: 'Thông tin nhanh',
+    pricing: 'Chi phí', deployment: 'Triển khai', difficulty: 'Độ khó', license: 'Giấy phép',
+    languages: 'Ngôn ngữ', useCases: 'Ứng dụng', worksWith: 'Kết hợp tốt với',
+    alternatives: 'Lựa chọn khác cùng danh mục', seeAll: 'Xem tất cả {{count}} công cụ trong {{section}} →',
+    sources: 'Nguồn',
+    verifiedVia: { docs: 'tài liệu chính thức', tested: 'dùng thử thực tế', inferred: 'suy luận từ dữ liệu đã công bố' },
+    enums: {
+      free: 'Miễn phí', freemium: 'Freemium', paid: 'Trả phí', 'open-core': 'Open core',
+      cloud: 'Cloud', 'self-hosted': 'Tự host', local: 'Chạy local', hybrid: 'Hybrid',
+      beginner: 'Cơ bản', intermediate: 'Trung bình', advanced: 'Nâng cao'
+    }
+  }
+};
+// EN must not show untranslated Vietnamese lists (some cards in data.json still carry VI whenToUse).
+const VI_CHARS = /[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]/i;
+function listForLang(items, lang) {
+  const list = Array.isArray(items) ? items.filter(s => typeof s === 'string' && s.trim()) : [];
+  if (lang === 'en' && list.some(s => VI_CHARS.test(s))) return [];
+  return list;
+}
+// Same-section cards ranked by shared useCases, ties keep section order.
+function rankAlternatives(card, section, limit) {
+  const own = new Set(card.useCases || []);
+  return section.cards
+    .map((c, i) => ({ c, i, score: (c.useCases || []).filter(u => own.has(u)).length }))
+    .filter(x => x.c.slug !== card.slug)
+    .sort((a, b) => b.score - a.score || a.i - b.i)
+    .slice(0, limit)
+    .map(x => x.c);
+}
+function detailChip(c) {
+  const slug = getCardSlug(c);
+  return `<a class="detail-link-chip" href="${escapeHtml(withLangPrefix('/tool/' + slug))}" data-nav-tool="${escapeHtml(slug)}">${escapeHtml(c.name)}</a>`;
+}
+function attachDetailNavListeners(panel) {
+  const plainClick = e => e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
+  panel.querySelectorAll('[data-nav-tool]').forEach(a => a.addEventListener('click', e => {
+    if (!plainClick(e)) return;
+    const r = findCardBySlug(a.dataset.navTool);
+    if (!r) return;
+    e.preventDefault();
+    selected = r;
+    activeSection = r.section;
+    navigateToTool(r.card);
+    renderRightPanel();
+    updateTreeActiveStates();
+  }));
+  panel.querySelectorAll('[data-nav-section]').forEach(a => a.addEventListener('click', e => {
+    if (!plainClick(e)) return;
+    e.preventDefault();
+    navigateToSection(a.dataset.navSection);
+  }));
+  panel.querySelectorAll('[data-nav-compare]').forEach(a => a.addEventListener('click', e => {
+    if (!plainClick(e)) return;
+    e.preventDefault();
+    navigateToCompare(a.dataset.navCompare);
+  }));
+}
+
 function renderDetail() {
   const panel = document.getElementById('right-panel');
   const card = selected.card;
@@ -2667,9 +2782,56 @@ function renderDetail() {
     html += `</div>`;
   }
 
+  const DL = DETAIL_LABELS[currentLang];
+  const cardSlug = getCardSlug(card);
+
+  // When to use / when not to use
+  const use = listForLang(card.whenToUse, currentLang);
+  const avoid = listForLang(card.whenNotToUse, currentLang);
+  if (use.length || avoid.length) {
+    html += `<div class="detail-fit">`;
+    [[DL.whenToUse, use], [DL.whenNotToUse, avoid]].forEach(([label, items]) => {
+      if (!items.length) return;
+      html += `<div><div class="detail-sources-label">${label}</div><ul>${items.map(i => `<li>${escapeHtml(i)}</li>`).join('')}</ul></div>`;
+    });
+    html += `</div>`;
+  }
+
+  // At a glance
+  const facts = [];
+  const addFact = (label, value) => { if (value) facts.push(`<dt>${label}</dt><dd>${escapeHtml(value)}</dd>`); };
+  const enumLabel = v => (v ? DL.enums[v] || v : null);
+  addFact(DL.pricing, enumLabel(card.pricing));
+  addFact(DL.deployment, enumLabel(card.deployment));
+  addFact(DL.difficulty, enumLabel(card.difficulty));
+  addFact(DL.license, card.license);
+  if (Array.isArray(card.languages) && card.languages.length) addFact(DL.languages, card.languages.join(', '));
+  if (Array.isArray(card.useCases) && card.useCases.length) addFact(DL.useCases, card.useCases.map(u => String(u).replace(/-/g, ' ')).join(', '));
+  if (facts.length) html += `<div class="detail-sources-label">${DL.atAGlance}</div><dl class="detail-facts">${facts.join('')}</dl>`;
+
+  // Works well with
+  const compat = (card.compatibleWith || [])
+    .map(s => findCardBySlug(s))
+    .filter(r => r && getCardSlug(r.card) !== cardSlug);
+  if (compat.length) html += `<div class="detail-sources-label">${DL.worksWith}</div><div class="detail-chips">${compat.map(r => detailChip(r.card)).join('')}</div>`;
+
+  // Alternatives (top 5) + link to the full section
+  const alts = rankAlternatives(card, section, 5);
+  if (alts.length) {
+    html += `<div class="detail-sources-label">${DL.alternatives}</div><div class="detail-chips">${alts.map(detailChip).join('')}</div>`;
+    const seeAll = DL.seeAll.replace('{{count}}', () => String(section.cards.length)).replace('{{section}}', () => escapeHtml(section.title));
+    html += `<div><a class="detail-more-link" href="${escapeHtml(withLangPrefix('/section/' + section.id))}" data-nav-section="${escapeHtml(section.id)}">${seeAll}</a></div>`;
+  }
+
+  // Compare link when the card is in this section's preset
+  const preset = (data.comparison_presets || []).find(p => p.id === section.id);
+  if (preset && preset.tools.some(tl => tl.cardId === cardSlug)) {
+    html += `<div><a class="detail-more-link" href="${escapeHtml(withLangPrefix('/compare/' + preset.id))}" data-nav-compare="${escapeHtml(preset.id)}">⚖️ ${escapeHtml(preset.title)}</a></div>`;
+  }
+
   // Sources
   if (card.sources && card.sources.length > 0) {
-    html += `<div class="detail-sources-label">Sources</div>`;
+    html += `<div class="detail-sources-label">${DL.sources}</div>`;
     html += `<div class="detail-sources">`;
     card.sources.forEach(s => {
       const safeUrl = /^https?:\/\//i.test(s.url) ? s.url : '#';
@@ -2679,10 +2841,12 @@ function renderDetail() {
   }
 
   // Footer
-  html += `<div class="detail-footer"><span>${t('lastVerified')}: ${escapeHtml(card.verified_at || card.added_date || 'N/A')}</span></div>`;
+  const via = card.verified_at && DL.verifiedVia[card.verification_source];
+  html += `<div class="detail-footer"><span>${t('lastVerified')}: ${escapeHtml(card.verified_at || card.added_date || 'N/A')}${via ? ` (${via})` : ''}</span></div>`;
 
   html += `</div>`;
   panel.innerHTML = html;
+  attachDetailNavListeners(panel);
 
   // Back button listener
   document.getElementById('detail-back-btn').addEventListener('click', () => {

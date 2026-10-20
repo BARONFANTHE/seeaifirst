@@ -543,6 +543,38 @@ html, body {
   border-top: 1px solid var(--border);
   font-size: 12px; color: var(--text-dim);
 }
+.detail-fit {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;
+}
+.detail-fit ul {
+  margin: 0; padding-left: 18px;
+  font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+}
+.detail-facts {
+  display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px;
+  margin: 0 0 24px; font-size: 13px; line-height: 1.6;
+}
+.detail-facts dt { color: var(--text-muted); }
+.detail-facts dd { margin: 0; color: var(--text-secondary); }
+.detail-chips {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
+}
+.detail-link-chip {
+  font-size: 13px; font-weight: 500;
+  padding: 5px 14px; border-radius: 99px;
+  background: var(--hover); color: var(--text);
+  border: 1px solid var(--border); text-decoration: none;
+  transition: background 0.15s;
+}
+.detail-link-chip:hover { background: var(--active); }
+.detail-more-link {
+  display: inline-block; margin-bottom: 24px;
+  font-size: 13px; color: var(--text-secondary); text-decoration: none;
+}
+.detail-more-link:hover { text-decoration: underline; }
+@media (max-width: 767px) {
+  .detail-fit { grid-template-columns: 1fr; }
+}
 
 /* ═══ Welcome Animation ═══ */
 .welcome-panel { animation: fadeIn 0.3s ease; }
@@ -1055,14 +1087,30 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › Security &amp; Guardrails – Protecting AI Applications</nav>
     <article>
       <h1>🛡️ Security &amp; Guardrails – Protecting AI Applications</h1>
       <p>Explore 4 curated AI tools in this category.</p>
       <ul>
-        <li><a href="/tool/garak">garak</a></li>
-        <li><a href="/tool/nemo-guardrails">NeMo Guardrails</a></li>
-        <li><a href="/tool/presidio">Presidio</a></li>
-        <li><a href="/tool/guardrails-ai">Guardrails AI</a></li>
+        <li><a href="/tool/garak">garak</a> — LLM vulnerability scanner – probes security flaws in AI models (Free · Intermediate)</li>
+        <li><a href="/tool/nemo-guardrails">NeMo Guardrails</a> — Programmable guardrails for LLMs with Colang DSL – dialog control and safety (Free · Intermediate)</li>
+        <li><a href="/tool/presidio">Presidio</a> — PII detection &amp; anonymization for text and images – protecting personal data (Free · Intermediate)</li>
+        <li><a href="/tool/guardrails-ai">Guardrails AI</a> — I/O validation framework for LLMs – structured output + 100+ validators (Free · Beginner)</li>
+      </ul>
+      <h2>Other categories</h2>
+      <ul>
+        <li><a href="/section/protocols">Protocols — Standardized Communication Layer</a></li>
+        <li><a href="/section/frameworks">Agent Frameworks — Building AI Agents</a></li>
+        <li><a href="/section/platforms">Platforms &amp; Config — AI Platforms &amp; System Files</a></li>
+        <li><a href="/section/memory">Memory Systems — Cross-Session Memory</a></li>
+        <li><a href="/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a></li>
+        <li><a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a></li>
+        <li><a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a></li>
+        <li><a href="/section/trends">AI Trends 2026 — Trends Shaping the Future</a></li>
+        <li><a href="/section/observability">Observability &amp; Evaluation — AI Monitoring &amp; Assessment</a></li>
+        <li><a href="/section/infrastructure">AI Infrastructure — Model Serving &amp; Deployment</a></li>
+        <li><a href="/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a></li>
+        <li><a href="/section/vector-databases">Vector Databases — Vector Storage &amp; Search</a></li>
       </ul>
     </article>
   </main>
@@ -2612,6 +2660,83 @@ function renderNewspaper() {
   attachNewspaperCardListeners(section);
 }
 
+// ═══ Detail extras (Phase 1.A) ═══
+// Mirrored in scripts/generate-shells.js (LABELS, VI_CHARS, listForLang, rankAlternatives) so the
+// prerendered tool page and this panel show the same content. Change both together.
+const DETAIL_LABELS = {
+  en: {
+    whenToUse: 'When to use', whenNotToUse: 'When not to use', atAGlance: 'At a glance',
+    pricing: 'Pricing', deployment: 'Deployment', difficulty: 'Difficulty', license: 'License',
+    languages: 'Languages', useCases: 'Use cases', worksWith: 'Works well with',
+    alternatives: 'Alternatives in this category', seeAll: 'See all {{count}} tools in {{section}} →',
+    sources: 'Sources',
+    verifiedVia: { docs: 'official documentation', tested: 'hands-on testing', inferred: 'inference from documented facts' },
+    enums: {
+      free: 'Free', freemium: 'Freemium', paid: 'Paid', 'open-core': 'Open core',
+      cloud: 'Cloud', 'self-hosted': 'Self-hosted', local: 'Local', hybrid: 'Hybrid',
+      beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced'
+    }
+  },
+  vi: {
+    whenToUse: 'Khi nào nên dùng', whenNotToUse: 'Khi nào không nên dùng', atAGlance: 'Thông tin nhanh',
+    pricing: 'Chi phí', deployment: 'Triển khai', difficulty: 'Độ khó', license: 'Giấy phép',
+    languages: 'Ngôn ngữ', useCases: 'Ứng dụng', worksWith: 'Kết hợp tốt với',
+    alternatives: 'Lựa chọn khác cùng danh mục', seeAll: 'Xem tất cả {{count}} công cụ trong {{section}} →',
+    sources: 'Nguồn',
+    verifiedVia: { docs: 'tài liệu chính thức', tested: 'dùng thử thực tế', inferred: 'suy luận từ dữ liệu đã công bố' },
+    enums: {
+      free: 'Miễn phí', freemium: 'Freemium', paid: 'Trả phí', 'open-core': 'Open core',
+      cloud: 'Cloud', 'self-hosted': 'Tự host', local: 'Chạy local', hybrid: 'Hybrid',
+      beginner: 'Cơ bản', intermediate: 'Trung bình', advanced: 'Nâng cao'
+    }
+  }
+};
+// EN must not show untranslated Vietnamese lists (some cards in data.json still carry VI whenToUse).
+const VI_CHARS = /[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]/i;
+function listForLang(items, lang) {
+  const list = Array.isArray(items) ? items.filter(s => typeof s === 'string' && s.trim()) : [];
+  if (lang === 'en' && list.some(s => VI_CHARS.test(s))) return [];
+  return list;
+}
+// Same-section cards ranked by shared useCases, ties keep section order.
+function rankAlternatives(card, section, limit) {
+  const own = new Set(card.useCases || []);
+  return section.cards
+    .map((c, i) => ({ c, i, score: (c.useCases || []).filter(u => own.has(u)).length }))
+    .filter(x => x.c.slug !== card.slug)
+    .sort((a, b) => b.score - a.score || a.i - b.i)
+    .slice(0, limit)
+    .map(x => x.c);
+}
+function detailChip(c) {
+  const slug = getCardSlug(c);
+  return `<a class="detail-link-chip" href="${escapeHtml(withLangPrefix('/tool/' + slug))}" data-nav-tool="${escapeHtml(slug)}">${escapeHtml(c.name)}</a>`;
+}
+function attachDetailNavListeners(panel) {
+  const plainClick = e => e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
+  panel.querySelectorAll('[data-nav-tool]').forEach(a => a.addEventListener('click', e => {
+    if (!plainClick(e)) return;
+    const r = findCardBySlug(a.dataset.navTool);
+    if (!r) return;
+    e.preventDefault();
+    selected = r;
+    activeSection = r.section;
+    navigateToTool(r.card);
+    renderRightPanel();
+    updateTreeActiveStates();
+  }));
+  panel.querySelectorAll('[data-nav-section]').forEach(a => a.addEventListener('click', e => {
+    if (!plainClick(e)) return;
+    e.preventDefault();
+    navigateToSection(a.dataset.navSection);
+  }));
+  panel.querySelectorAll('[data-nav-compare]').forEach(a => a.addEventListener('click', e => {
+    if (!plainClick(e)) return;
+    e.preventDefault();
+    navigateToCompare(a.dataset.navCompare);
+  }));
+}
+
 function renderDetail() {
   const panel = document.getElementById('right-panel');
   const card = selected.card;
@@ -2660,9 +2785,56 @@ function renderDetail() {
     html += `</div>`;
   }
 
+  const DL = DETAIL_LABELS[currentLang];
+  const cardSlug = getCardSlug(card);
+
+  // When to use / when not to use
+  const use = listForLang(card.whenToUse, currentLang);
+  const avoid = listForLang(card.whenNotToUse, currentLang);
+  if (use.length || avoid.length) {
+    html += `<div class="detail-fit">`;
+    [[DL.whenToUse, use], [DL.whenNotToUse, avoid]].forEach(([label, items]) => {
+      if (!items.length) return;
+      html += `<div><div class="detail-sources-label">${label}</div><ul>${items.map(i => `<li>${escapeHtml(i)}</li>`).join('')}</ul></div>`;
+    });
+    html += `</div>`;
+  }
+
+  // At a glance
+  const facts = [];
+  const addFact = (label, value) => { if (value) facts.push(`<dt>${label}</dt><dd>${escapeHtml(value)}</dd>`); };
+  const enumLabel = v => (v ? DL.enums[v] || v : null);
+  addFact(DL.pricing, enumLabel(card.pricing));
+  addFact(DL.deployment, enumLabel(card.deployment));
+  addFact(DL.difficulty, enumLabel(card.difficulty));
+  addFact(DL.license, card.license);
+  if (Array.isArray(card.languages) && card.languages.length) addFact(DL.languages, card.languages.join(', '));
+  if (Array.isArray(card.useCases) && card.useCases.length) addFact(DL.useCases, card.useCases.map(u => String(u).replace(/-/g, ' ')).join(', '));
+  if (facts.length) html += `<div class="detail-sources-label">${DL.atAGlance}</div><dl class="detail-facts">${facts.join('')}</dl>`;
+
+  // Works well with
+  const compat = (card.compatibleWith || [])
+    .map(s => findCardBySlug(s))
+    .filter(r => r && getCardSlug(r.card) !== cardSlug);
+  if (compat.length) html += `<div class="detail-sources-label">${DL.worksWith}</div><div class="detail-chips">${compat.map(r => detailChip(r.card)).join('')}</div>`;
+
+  // Alternatives (top 5) + link to the full section
+  const alts = rankAlternatives(card, section, 5);
+  if (alts.length) {
+    html += `<div class="detail-sources-label">${DL.alternatives}</div><div class="detail-chips">${alts.map(detailChip).join('')}</div>`;
+    const seeAll = DL.seeAll.replace('{{count}}', () => String(section.cards.length)).replace('{{section}}', () => escapeHtml(section.title));
+    html += `<div><a class="detail-more-link" href="${escapeHtml(withLangPrefix('/section/' + section.id))}" data-nav-section="${escapeHtml(section.id)}">${seeAll}</a></div>`;
+  }
+
+  // Compare link when the card is in this section's preset
+  const preset = (data.comparison_presets || []).find(p => p.id === section.id);
+  if (preset && preset.tools.some(tl => tl.cardId === cardSlug)) {
+    html += `<div><a class="detail-more-link" href="${escapeHtml(withLangPrefix('/compare/' + preset.id))}" data-nav-compare="${escapeHtml(preset.id)}">⚖️ ${escapeHtml(preset.title)}</a></div>`;
+  }
+
   // Sources
   if (card.sources && card.sources.length > 0) {
-    html += `<div class="detail-sources-label">Sources</div>`;
+    html += `<div class="detail-sources-label">${DL.sources}</div>`;
     html += `<div class="detail-sources">`;
     card.sources.forEach(s => {
       const safeUrl = /^https?:\/\//i.test(s.url) ? s.url : '#';
@@ -2672,10 +2844,12 @@ function renderDetail() {
   }
 
   // Footer
-  html += `<div class="detail-footer"><span>${t('lastVerified')}: ${escapeHtml(card.verified_at || card.added_date || 'N/A')}</span></div>`;
+  const via = card.verified_at && DL.verifiedVia[card.verification_source];
+  html += `<div class="detail-footer"><span>${t('lastVerified')}: ${escapeHtml(card.verified_at || card.added_date || 'N/A')}${via ? ` (${via})` : ''}</span></div>`;
 
   html += `</div>`;
   panel.innerHTML = html;
+  attachDetailNavListeners(panel);
 
   // Back button listener
   document.getElementById('detail-back-btn').addEventListener('click', () => {

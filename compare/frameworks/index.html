@@ -543,6 +543,38 @@ html, body {
   border-top: 1px solid var(--border);
   font-size: 12px; color: var(--text-dim);
 }
+.detail-fit {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;
+}
+.detail-fit ul {
+  margin: 0; padding-left: 18px;
+  font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+}
+.detail-facts {
+  display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px;
+  margin: 0 0 24px; font-size: 13px; line-height: 1.6;
+}
+.detail-facts dt { color: var(--text-muted); }
+.detail-facts dd { margin: 0; color: var(--text-secondary); }
+.detail-chips {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;
+}
+.detail-link-chip {
+  font-size: 13px; font-weight: 500;
+  padding: 5px 14px; border-radius: 99px;
+  background: var(--hover); color: var(--text);
+  border: 1px solid var(--border); text-decoration: none;
+  transition: background 0.15s;
+}
+.detail-link-chip:hover { background: var(--active); }
+.detail-more-link {
+  display: inline-block; margin-bottom: 24px;
+  font-size: 13px; color: var(--text-secondary); text-decoration: none;
+}
+.detail-more-link:hover { text-decoration: underline; }
+@media (max-width: 767px) {
+  .detail-fit { grid-template-columns: 1fr; }
+}
 
 /* ═══ Welcome Animation ═══ */
 .welcome-panel { animation: fadeIn 0.3s ease; }
@@ -1055,21 +1087,27 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › Compare Agent Frameworks — Comparison</nav>
     <article>
       <h1>Compare Agent Frameworks — Comparison</h1>
       <p>Side-by-side comparison of 10 AI tools.</p>
-      <ul>
-        <li>LangGraph</li>
-        <li>CrewAI</li>
-        <li>AutoGen</li>
-        <li>OpenAI Agents SDK</li>
-        <li>Google ADK</li>
-        <li>LlamaIndex</li>
-        <li>Rasa</li>
-        <li>Browser-Use</li>
-        <li>Pydantic AI</li>
-        <li>Mastra</li>
-      </ul>
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Best for</th><th>Learning curve</th><th>Ecosystem</th><th>Graph/Agent support</th><th>Memory/RAG integration</th><th>Language</th><th>License</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a href="/tool/langgraph">LangGraph</a></td><td>Complex stateful multi-agent workflows with graph orchestration</td><td>Hard</td><td>Strong — LangChain + LangSmith + LangGraph Platform, 300+ integrations</td><td>Strong — Core: directed graph state machine, conditional routing, cycles, multi/hierarchical agents</td><td>Strong — Built-in short/long-term memory, semantic search, cross-thread, LangChain retrievers</td><td>Both</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/crewai">CrewAI</a></td><td>Role-based multi-agent collaboration with crew metaphor</td><td>Easy</td><td>Good — 24K+ stars, standalone framework, CrewAI Flows + AMP Suite</td><td>Good — Sequential/hierarchical/consensus processes, Flows engine with event-driven control</td><td>Strong — First-class: short-term (ChromaDB), long-term (SQLite3), entity memory, RagTool</td><td>Python</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/autogen">AutoGen</a></td><td>Research multi-agent conversations (Active path = AG2)</td><td>Medium</td><td>Good — AG2 community fork (Apache 2.0), ecosystem split with Microsoft path</td><td>Good — Conversation-based patterns, group chat, nested chats, AG2 adds swarm + A2A</td><td>Good — Teachability module, RAG via RetrieveAssistantAgent + ChromaDB</td><td>Python</td><td>Apache 2.0</td></tr>
+          <tr><td><a href="/tool/openai-agents-sdk">OpenAI Agents SDK</a></td><td>Lightweight production agents with minimal abstractions</td><td>Easy</td><td>Good — OpenAI-backed, 16K+ stars, provider-agnostic, growing integrations</td><td>Good — Handoff-based delegation, guardrails, deterministic flows</td><td>Basic — Session memory only, no built-in long-term or RAG</td><td>Both</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/google-adk">Google ADK</a></td><td>Code-first agents with Google Cloud/Gemini integration</td><td>Medium</td><td>Strong — Google-backed, multi-language (also Go/Java), Vertex AI compatible</td><td>Strong — Workflow agents (Sequential/Parallel/Loop), dynamic routing, A2A protocol</td><td>Good — Session state management, MCP tools, Google Search RAG integration</td><td>Both</td><td>Apache 2.0</td></tr>
+          <tr><td><a href="/tool/llamaindex">LlamaIndex</a></td><td>Data-centric RAG applications and document AI</td><td>Medium</td><td>Strong — 38K+ stars, 300+ integrations, LlamaCloud + LlamaParse</td><td>Good — Workflows 1.0 event-driven engine, AgentRunner, sequential/parallel/loop</td><td>Strong — Best-in-class RAG: vector/tree/keyword/KG indexing, LlamaParse pipeline</td><td>Both</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/rasa">Rasa</a></td><td>Enterprise conversational AI with strict business logic</td><td>Hard</td><td>Strong (maintenance-mode) — 20K+ stars, 500+ contributors, CALM engine</td><td>Good — Flow-based dialogue, CALM combines LLM + deterministic business logic</td><td>Basic — Dialogue state tracking (slot filling), no built-in RAG pipeline</td><td>Python</td><td>Apache 2.0</td></tr>
+          <tr><td><a href="/tool/browser-use">Browser-Use</a></td><td>AI-powered web browser automation</td><td>Easy</td><td>Good — 60K+ stars, $17M seed (TechCrunch), MCP server support</td><td>Basic — Single-agent browser loop, plugs into other frameworks for orchestration</td><td>Basic — Session-level browser state only, no memory or RAG</td><td>Python</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/pydantic-ai">Pydantic AI</a></td><td>Type-safe agents with FastAPI-like ergonomics</td><td>Medium</td><td>Good — By Pydantic team, 15K+ stars, model-agnostic, Logfire observability</td><td>Good — Dependency injection, agent delegation, multi-agent handoffs</td><td>Good — MCP integration, human-in-the-loop, durable execution, external providers</td><td>Python</td><td>MIT</td></tr>
+          <tr><td><a href="/tool/mastra">Mastra</a></td><td>Full-stack TypeScript AI apps (agents + workflows + RAG)</td><td>Easy</td><td>Good — From Gatsby team (YC), 25K+ stars, TS-native, Vercel AI SDK</td><td>Good — Workflow engine with suspend/resume, agent networks with routing</td><td>Good — Built-in RAG pipeline (chunking/embedding/search), agent memory support</td><td>TypeScript</td><td>Apache 2.0</td></tr>
+        </tbody>
+      </table>
     </article>
   </main>
 </div>
@@ -2618,6 +2656,83 @@ function renderNewspaper() {
   attachNewspaperCardListeners(section);
 }
 
+// ═══ Detail extras (Phase 1.A) ═══
+// Mirrored in scripts/generate-shells.js (LABELS, VI_CHARS, listForLang, rankAlternatives) so the
+// prerendered tool page and this panel show the same content. Change both together.
+const DETAIL_LABELS = {
+  en: {
+    whenToUse: 'When to use', whenNotToUse: 'When not to use', atAGlance: 'At a glance',
+    pricing: 'Pricing', deployment: 'Deployment', difficulty: 'Difficulty', license: 'License',
+    languages: 'Languages', useCases: 'Use cases', worksWith: 'Works well with',
+    alternatives: 'Alternatives in this category', seeAll: 'See all {{count}} tools in {{section}} →',
+    sources: 'Sources',
+    verifiedVia: { docs: 'official documentation', tested: 'hands-on testing', inferred: 'inference from documented facts' },
+    enums: {
+      free: 'Free', freemium: 'Freemium', paid: 'Paid', 'open-core': 'Open core',
+      cloud: 'Cloud', 'self-hosted': 'Self-hosted', local: 'Local', hybrid: 'Hybrid',
+      beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced'
+    }
+  },
+  vi: {
+    whenToUse: 'Khi nào nên dùng', whenNotToUse: 'Khi nào không nên dùng', atAGlance: 'Thông tin nhanh',
+    pricing: 'Chi phí', deployment: 'Triển khai', difficulty: 'Độ khó', license: 'Giấy phép',
+    languages: 'Ngôn ngữ', useCases: 'Ứng dụng', worksWith: 'Kết hợp tốt với',
+    alternatives: 'Lựa chọn khác cùng danh mục', seeAll: 'Xem tất cả {{count}} công cụ trong {{section}} →',
+    sources: 'Nguồn',
+    verifiedVia: { docs: 'tài liệu chính thức', tested: 'dùng thử thực tế', inferred: 'suy luận từ dữ liệu đã công bố' },
+    enums: {
+      free: 'Miễn phí', freemium: 'Freemium', paid: 'Trả phí', 'open-core': 'Open core',
+      cloud: 'Cloud', 'self-hosted': 'Tự host', local: 'Chạy local', hybrid: 'Hybrid',
+      beginner: 'Cơ bản', intermediate: 'Trung bình', advanced: 'Nâng cao'
+    }
+  }
+};
+// EN must not show untranslated Vietnamese lists (some cards in data.json still carry VI whenToUse).
+const VI_CHARS = /[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]/i;
+function listForLang(items, lang) {
+  const list = Array.isArray(items) ? items.filter(s => typeof s === 'string' && s.trim()) : [];
+  if (lang === 'en' && list.some(s => VI_CHARS.test(s))) return [];
+  return list;
+}
+// Same-section cards ranked by shared useCases, ties keep section order.
+function rankAlternatives(card, section, limit) {
+  const own = new Set(card.useCases || []);
+  return section.cards
+    .map((c, i) => ({ c, i, score: (c.useCases || []).filter(u => own.has(u)).length }))
+    .filter(x => x.c.slug !== card.slug)
+    .sort((a, b) => b.score - a.score || a.i - b.i)
+    .slice(0, limit)
+    .map(x => x.c);
+}
+function detailChip(c) {
+  const slug = getCardSlug(c);
+  return `<a class="detail-link-chip" href="${escapeHtml(withLangPrefix('/tool/' + slug))}" data-nav-tool="${escapeHtml(slug)}">${escapeHtml(c.name)}</a>`;
+}
+function attachDetailNavListeners(panel) {
+  const plainClick = e => e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey;
+  panel.querySelectorAll('[data-nav-tool]').forEach(a => a.addEventListener('click', e => {
+    if (!plainClick(e)) return;
+    const r = findCardBySlug(a.dataset.navTool);
+    if (!r) return;
+    e.preventDefault();
+    selected = r;
+    activeSection = r.section;
+    navigateToTool(r.card);
+    renderRightPanel();
+    updateTreeActiveStates();
+  }));
+  panel.querySelectorAll('[data-nav-section]').forEach(a => a.addEventListener('click', e => {
+    if (!plainClick(e)) return;
+    e.preventDefault();
+    navigateToSection(a.dataset.navSection);
+  }));
+  panel.querySelectorAll('[data-nav-compare]').forEach(a => a.addEventListener('click', e => {
+    if (!plainClick(e)) return;
+    e.preventDefault();
+    navigateToCompare(a.dataset.navCompare);
+  }));
+}
+
 function renderDetail() {
   const panel = document.getElementById('right-panel');
   const card = selected.card;
@@ -2666,9 +2781,56 @@ function renderDetail() {
     html += `</div>`;
   }
 
+  const DL = DETAIL_LABELS[currentLang];
+  const cardSlug = getCardSlug(card);
+
+  // When to use / when not to use
+  const use = listForLang(card.whenToUse, currentLang);
+  const avoid = listForLang(card.whenNotToUse, currentLang);
+  if (use.length || avoid.length) {
+    html += `<div class="detail-fit">`;
+    [[DL.whenToUse, use], [DL.whenNotToUse, avoid]].forEach(([label, items]) => {
+      if (!items.length) return;
+      html += `<div><div class="detail-sources-label">${label}</div><ul>${items.map(i => `<li>${escapeHtml(i)}</li>`).join('')}</ul></div>`;
+    });
+    html += `</div>`;
+  }
+
+  // At a glance
+  const facts = [];
+  const addFact = (label, value) => { if (value) facts.push(`<dt>${label}</dt><dd>${escapeHtml(value)}</dd>`); };
+  const enumLabel = v => (v ? DL.enums[v] || v : null);
+  addFact(DL.pricing, enumLabel(card.pricing));
+  addFact(DL.deployment, enumLabel(card.deployment));
+  addFact(DL.difficulty, enumLabel(card.difficulty));
+  addFact(DL.license, card.license);
+  if (Array.isArray(card.languages) && card.languages.length) addFact(DL.languages, card.languages.join(', '));
+  if (Array.isArray(card.useCases) && card.useCases.length) addFact(DL.useCases, card.useCases.map(u => String(u).replace(/-/g, ' ')).join(', '));
+  if (facts.length) html += `<div class="detail-sources-label">${DL.atAGlance}</div><dl class="detail-facts">${facts.join('')}</dl>`;
+
+  // Works well with
+  const compat = (card.compatibleWith || [])
+    .map(s => findCardBySlug(s))
+    .filter(r => r && getCardSlug(r.card) !== cardSlug);
+  if (compat.length) html += `<div class="detail-sources-label">${DL.worksWith}</div><div class="detail-chips">${compat.map(r => detailChip(r.card)).join('')}</div>`;
+
+  // Alternatives (top 5) + link to the full section
+  const alts = rankAlternatives(card, section, 5);
+  if (alts.length) {
+    html += `<div class="detail-sources-label">${DL.alternatives}</div><div class="detail-chips">${alts.map(detailChip).join('')}</div>`;
+    const seeAll = DL.seeAll.replace('{{count}}', () => String(section.cards.length)).replace('{{section}}', () => escapeHtml(section.title));
+    html += `<div><a class="detail-more-link" href="${escapeHtml(withLangPrefix('/section/' + section.id))}" data-nav-section="${escapeHtml(section.id)}">${seeAll}</a></div>`;
+  }
+
+  // Compare link when the card is in this section's preset
+  const preset = (data.comparison_presets || []).find(p => p.id === section.id);
+  if (preset && preset.tools.some(tl => tl.cardId === cardSlug)) {
+    html += `<div><a class="detail-more-link" href="${escapeHtml(withLangPrefix('/compare/' + preset.id))}" data-nav-compare="${escapeHtml(preset.id)}">⚖️ ${escapeHtml(preset.title)}</a></div>`;
+  }
+
   // Sources
   if (card.sources && card.sources.length > 0) {
-    html += `<div class="detail-sources-label">Sources</div>`;
+    html += `<div class="detail-sources-label">${DL.sources}</div>`;
     html += `<div class="detail-sources">`;
     card.sources.forEach(s => {
       const safeUrl = /^https?:\/\//i.test(s.url) ? s.url : '#';
@@ -2678,10 +2840,12 @@ function renderDetail() {
   }
 
   // Footer
-  html += `<div class="detail-footer"><span>${t('lastVerified')}: ${escapeHtml(card.verified_at || card.added_date || 'N/A')}</span></div>`;
+  const via = card.verified_at && DL.verifiedVia[card.verification_source];
+  html += `<div class="detail-footer"><span>${t('lastVerified')}: ${escapeHtml(card.verified_at || card.added_date || 'N/A')}${via ? ` (${via})` : ''}</span></div>`;
 
   html += `</div>`;
   panel.innerHTML = html;
+  attachDetailNavListeners(panel);
 
   // Back button listener
   document.getElementById('detail-back-btn').addEventListener('click', () => {
