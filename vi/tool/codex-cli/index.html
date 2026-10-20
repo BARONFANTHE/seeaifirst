@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Codex CLI — See AI First</title>
-<meta name="description" content="Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.">
+<meta name="description" content="Coding agent mã nguồn mở của OpenAI cho terminal — làm việc trên repo local trong sandbox của hệ điều hành; thuộc họ Codex cùng IDE, desktop và cloud.">
 <meta property="og:title" content="Codex CLI — See AI First">
-<meta property="og:description" content="Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.">
+<meta property="og:description" content="Coding agent mã nguồn mở của OpenAI cho terminal — làm việc trên repo local trong sandbox của hệ điều hành; thuộc họ Codex cùng IDE, desktop và cloud.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/codex-cli">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Codex CLI — See AI First">
-<meta name="twitter:description" content="Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.">
+<meta name="twitter:description" content="Coding agent mã nguồn mở của OpenAI cho terminal — làm việc trên repo local trong sandbox của hệ điều hành; thuộc họ Codex cùng IDE, desktop và cloud.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/codex-cli">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Codex CLI","url":"https://seeaifirst.com/vi/tool/codex-cli","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.","keywords":["AI Coding Agents — Công cụ code bằng AI","rust"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/openai/codex","https://developers.openai.com/codex/cli/"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Codex CLI","url":"https://seeaifirst.com/vi/tool/codex-cli","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Coding agent mã nguồn mở của OpenAI cho terminal — làm việc trên repo local trong sandbox của hệ điều hành; thuộc họ Codex cùng IDE, desktop và cloud.","keywords":["AI Coding Agents — Công cụ code bằng AI","rust"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/openai/codex","https://learn.chatgpt.com/docs/codex/cli","https://learn.chatgpt.com/docs/pricing"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,19 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> › Codex CLI</nav>
     <article>
       <h1>Codex CLI</h1>
-      <p>Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.</p>
-      <p>Agent CLI của OpenAI — chạy task tuần tự trong cloud sandbox cô lập (an toàn). Dùng AGENTS.md cho project instructions. Tích hợp sâu với OpenAI models (GPT-4o, o3, codex-mini). Phù hợp cho automated tasks, CI/CD integration, và batch processing. Dùng credits từ ChatGPT plan.</p>
+      <p>Coding agent mã nguồn mở của OpenAI cho terminal — làm việc trên repo local trong sandbox của hệ điều hành; thuộc họ Codex cùng IDE, desktop và cloud.</p>
+      <p>Codex CLI là coding agent mã nguồn mở (Apache-2.0) của OpenAI, viết bằng Rust. Agent làm việc trên repo local — đọc file, sửa code, chạy lệnh trong sandbox cấp hệ điều hành, với các chế độ duyệt quyết định khi nào được sửa hay chạy lệnh mà không hỏi. Hướng dẫn dự án đặt trong AGENTS.md (tạo bằng /init); mở rộng bằng MCP servers, skills, plugins, và codex exec chạy không tương tác trong script và CI. Họ sản phẩm Codex còn có extension IDE, desktop app và cloud tasks (codex cloud). Đăng nhập bằng gói ChatGPT (đã kèm Codex) hoặc dùng API key. Mặc định dùng model OpenAI; hỗ trợ thêm model mở qua Ollama (--oss) và provider tùy chỉnh.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần coding agent tích hợp sâu với OpenAI models (GPT-5.3-Codex)</li>
-        <li>Muốn setup nhanh với ChatGPT subscription có sẵn</li>
-        <li>Cần CI/CD automation với GitHub Action hoặc Codex Autofix</li>
+        <li>Đã trả phí ChatGPT và muốn coding agent terminal có sẵn trong gói</li>
+        <li>Muốn agent mã nguồn mở có sandbox local và chế độ duyệt rõ ràng</li>
+        <li>Tự động hóa bằng script hoặc CI với codex exec</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Cần dùng local models hoặc provider khác (chỉ hỗ trợ OpenAI)</li>
-        <li>Không muốn phụ thuộc vendor cloud cho coding workflow</li>
-        <li>Budget hạn chế — cần subscription ChatGPT Plus trở lên</li>
+        <li>Muốn trải nghiệm IDE-first có completion inline (Cursor, Copilot)</li>
+        <li>Muốn model ngoài OpenAI là lựa chọn chính — model OpenAI là mặc định và được hỗ trợ tốt nhất</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1112,7 +1111,7 @@ html, body {
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
         <dt>Ngôn ngữ</dt><dd>rust</dd>
         <dt>Ứng dụng</dt><dd>agentic coding, code review, cli tool</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1125,14 +1124,15 @@ html, body {
         <li><a href="/vi/tool/goose">Goose</a></li>
         <li><a href="/vi/tool/claude-code">Claude Code</a></li>
         <li><a href="/vi/tool/cursor">Cursor</a></li>
-        <li><a href="/vi/tool/windsurf">Windsurf</a></li>
+        <li><a href="/vi/tool/windsurf">Devin Desktop (formerly Windsurf)</a></li>
       </ul>
       <p><a href="/vi/section/coding-agents">Xem tất cả 11 công cụ trong AI Coding Agents — Công cụ code bằng AI →</a></p>
       <p><a href="/vi/compare/coding-agents">⚖️ So sánh AI Coding Agents</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/openai/codex" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://developers.openai.com/codex/cli/" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://github.com/openai/codex" rel="noopener noreferrer">Codex GitHub</a></li>
+        <li><a href="https://learn.chatgpt.com/docs/codex/cli" rel="noopener noreferrer">Codex CLI Docs</a></li>
+        <li><a href="https://learn.chatgpt.com/docs/pricing" rel="noopener noreferrer">Codex Pricing</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> trên See AI First.</p>

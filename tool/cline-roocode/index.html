@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-<title>Cline / RooCode — See AI First</title>
-<meta name="description" content="Open-source VS Code extension — supports multiple AI models and MCP, community-driven.">
-<meta property="og:title" content="Cline / RooCode — See AI First">
-<meta property="og:description" content="Open-source VS Code extension — supports multiple AI models and MCP, community-driven.">
+<title>Cline — See AI First</title>
+<meta name="description" content="Open-source coding agent for VS Code, JetBrains and the terminal — Plan/Act modes, MCP, any model provider including local models.">
+<meta property="og:title" content="Cline — See AI First">
+<meta property="og:description" content="Open-source coding agent for VS Code, JetBrains and the terminal — Plan/Act modes, MCP, any model provider including local models.">
 <meta property="og:url" content="https://seeaifirst.com/tool/cline-roocode">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
-<meta name="twitter:title" content="Cline / RooCode — See AI First">
-<meta name="twitter:description" content="Open-source VS Code extension — supports multiple AI models and MCP, community-driven.">
+<meta name="twitter:title" content="Cline — See AI First">
+<meta name="twitter:description" content="Open-source coding agent for VS Code, JetBrains and the terminal — Plan/Act modes, MCP, any model provider including local models.">
 <link rel="canonical" href="https://seeaifirst.com/tool/cline-roocode">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Cline / RooCode","url":"https://seeaifirst.com/tool/cline-roocode","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source VS Code extension — supports multiple AI models and MCP, community-driven.","keywords":["AI Coding Agents — AI-Powered Coding Tools","js","typescript"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/cline/cline","https://github.com/RooVetGit/Roo-Code"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Cline","url":"https://seeaifirst.com/tool/cline-roocode","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source coding agent for VS Code, JetBrains and the terminal — Plan/Act modes, MCP, any model provider including local models.","keywords":["AI Coding Agents — AI-Powered Coding Tools","js","typescript"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/cline/cline","https://docs.cline.bot/","https://cline.bot/pricing"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1087,20 +1087,31 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
-    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> › Cline / RooCode</nav>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> › Cline</nav>
     <article>
-      <h1>Cline / RooCode</h1>
-      <p>Open-source VS Code extension — supports multiple AI models and MCP, community-driven.</p>
-      <p>Open-source VS Code extension — AI agent running directly in the editor. Supports MCP servers, multi-model (Claude, GPT, Gemini, local models). Cline = original (open-source), RooCode = fork with extra features (custom modes, model routing). Best for: developers wanting full customization, using local/self-hosted models.</p>
+      <h1>Cline</h1>
+      <p>Open-source coding agent for VS Code, JetBrains and the terminal — Plan/Act modes, MCP, any model provider including local models.</p>
+      <p>Cline is an open-source (Apache-2.0) autonomous coding agent available as a VS Code extension, a JetBrains plugin, a CLI (interactive or headless for CI) and an SDK. Plan mode proposes a strategy and Act mode carries it out with per-action approval or optional auto-approve; checkpoints let you undo the agent&#039;s edits. Supports MCP servers and providers such as Anthropic, OpenAI, Google, OpenRouter, Bedrock and any OpenAI-compatible API, plus local models via Ollama or LM Studio. Bring your own API key with no subscription, or use Cline&#039;s own usage billing; an Enterprise tier adds SSO and RBAC. Note: this card previously also covered Roo Code, a Cline fork — Roo Code was shut down and its repository archived on 15 May 2026.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You want to control API cost and pick any model, including local ones</li>
+        <li>You want an autonomous agent with step-by-step approval inside VS Code or JetBrains</li>
+        <li>You want to keep your current IDE instead of switching editors</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You mainly want fast inline tab completion (Copilot or Cursor fit better)</li>
+        <li>You don&#039;t want to manage model choice and usage costs yourself</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
-        <dt>Pricing</dt><dd>Free</dd>
+        <dt>Pricing</dt><dd>Freemium</dd>
         <dt>Deployment</dt><dd>Local</dd>
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>js, typescript</dd>
         <dt>Use cases</dt><dd>agentic coding, code refactoring, browser automation</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1120,7 +1131,8 @@ html, body {
       <h2>Sources</h2>
       <ul>
         <li><a href="https://github.com/cline/cline" rel="noopener noreferrer">Cline GitHub</a></li>
-        <li><a href="https://github.com/RooVetGit/Roo-Code" rel="noopener noreferrer">RooCode GitHub</a></li>
+        <li><a href="https://docs.cline.bot/" rel="noopener noreferrer">Cline Docs</a></li>
+        <li><a href="https://cline.bot/pricing" rel="noopener noreferrer">Cline Pricing</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> on See AI First.</p>

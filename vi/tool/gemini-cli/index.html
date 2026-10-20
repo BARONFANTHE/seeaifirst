@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Gemini CLI — See AI First</title>
-<meta name="description" content="Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.">
+<meta name="description" content="Agent terminal mã nguồn mở của Google cho model Gemini — MCP, extensions, skills. Từ 6/2026 cần API key trả phí hoặc license Code Assist.">
 <meta property="og:title" content="Gemini CLI — See AI First">
-<meta property="og:description" content="Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.">
+<meta property="og:description" content="Agent terminal mã nguồn mở của Google cho model Gemini — MCP, extensions, skills. Từ 6/2026 cần API key trả phí hoặc license Code Assist.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/gemini-cli">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Gemini CLI — See AI First">
-<meta name="twitter:description" content="Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.">
+<meta name="twitter:description" content="Agent terminal mã nguồn mở của Google cho model Gemini — MCP, extensions, skills. Từ 6/2026 cần API key trả phí hoặc license Code Assist.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/gemini-cli">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Gemini CLI","url":"https://seeaifirst.com/vi/tool/gemini-cli","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.","keywords":["AI Coding Agents — Công cụ code bằng AI","js","typescript"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/google-gemini/gemini-cli","https://blog.google/technology/developers/gemini-cli/"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Gemini CLI","url":"https://seeaifirst.com/vi/tool/gemini-cli","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Agent terminal mã nguồn mở của Google cho model Gemini — MCP, extensions, skills. Từ 6/2026 cần API key trả phí hoặc license Code Assist.","keywords":["AI Coding Agents — Công cụ code bằng AI","js","typescript"],"license":"Apache-2.0","sameAs":["https://github.com/google-gemini/gemini-cli","https://geminicli.com/docs/","https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,40 +1090,40 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> › Gemini CLI</nav>
     <article>
       <h1>Gemini CLI</h1>
-      <p>Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.</p>
-      <p>Agent CLI của Google — miễn phí cho cá nhân, 1M token context (lớn nhất). Tích hợp Google ADK, hỗ trợ MCP servers, Gemini 2.5 Pro/Flash. Đọc được files/folders cực lớn nhờ context khủng. Có extensions cho Google Workspace (Docs, Sheets, Drive). Best for: dự án cần đọc nhiều code/docs, Google ecosystem.</p>
+      <p>Agent terminal mã nguồn mở của Google cho model Gemini — MCP, extensions, skills. Từ 6/2026 cần API key trả phí hoặc license Code Assist.</p>
+      <p>Gemini CLI là AI agent mã nguồn mở (Apache-2.0) của Google cho terminal, viết bằng TypeScript. Agent đọc và sửa file local, chạy lệnh shell, lấy nội dung web; mở rộng bằng MCP servers, extensions, agent skills, hooks và file ngữ cảnh GEMINI.md; model Gemini có context window rất lớn để đọc codebase lớn. Quyền truy cập thay đổi năm 2026: từ 18/6/2026 Google ngừng phục vụ Gemini CLI cho thuê bao Google AI Pro/Ultra và Gemini Code Assist miễn phí cho cá nhân, chuyển họ sang Antigravity CLI mới. Gemini CLI vẫn dùng được với Gemini API key trả phí và license Gemini Code Assist Standard hoặc Enterprise. Best for: tổ chức đã dùng Gemini Code Assist hoặc Gemini API trả phí, muốn agent CLI mã nguồn mở.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần AI coding agent miễn phí với context window lớn (1M tokens)</li>
-        <li>Workflow terminal-first, không muốn dùng IDE-based agents</li>
-        <li>Đang dùng Google Cloud/Firebase ecosystem</li>
+        <li>Tổ chức có license Gemini Code Assist Standard/Enterprise hoặc Gemini API key trả phí</li>
+        <li>Muốn agent terminal-first mã nguồn mở, xem và mở rộng được</li>
+        <li>Muốn model Gemini với context window rất lớn cho codebase lớn</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Cần tab-completion hoặc inline suggestions trong IDE</li>
-        <li>Muốn dùng models từ providers khác (chỉ Gemini models)</li>
+        <li>Muốn coding agent cá nhân miễn phí — quyền dùng miễn phí cho cá nhân đã kết thúc từ 6/2026 (Google chuyển sang Antigravity CLI)</li>
+        <li>Cần tab completion hoặc gợi ý inline trong IDE</li>
+        <li>Muốn dùng model của provider khác (chỉ model Gemini)</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
-        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Chi phí</dt><dd>Trả phí</dd>
         <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Cơ bản</dd>
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
         <dt>Ngôn ngữ</dt><dd>js, typescript</dd>
         <dt>Ứng dụng</dt><dd>agentic coding, code generation, terminal automation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
         <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a></li>
-        <li><a href="/vi/tool/google-adk">Google ADK</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
         <li><a href="/vi/tool/claude-code">Claude Code</a></li>
         <li><a href="/vi/tool/cursor">Cursor</a></li>
         <li><a href="/vi/tool/codex-cli">Codex CLI</a></li>
-        <li><a href="/vi/tool/windsurf">Windsurf</a></li>
+        <li><a href="/vi/tool/windsurf">Devin Desktop (formerly Windsurf)</a></li>
         <li><a href="/vi/tool/github-copilot">GitHub Copilot</a></li>
       </ul>
       <p><a href="/vi/section/coding-agents">Xem tất cả 11 công cụ trong AI Coding Agents — Công cụ code bằng AI →</a></p>
@@ -1131,7 +1131,8 @@ html, body {
       <h2>Nguồn</h2>
       <ul>
         <li><a href="https://github.com/google-gemini/gemini-cli" rel="noopener noreferrer">Gemini CLI GitHub</a></li>
-        <li><a href="https://blog.google/technology/developers/gemini-cli/" rel="noopener noreferrer">Google — Introducing Gemini CLI</a></li>
+        <li><a href="https://geminicli.com/docs/" rel="noopener noreferrer">Gemini CLI Docs</a></li>
+        <li><a href="https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/" rel="noopener noreferrer">Google — Transitioning Gemini CLI to Antigravity CLI</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> trên See AI First.</p>

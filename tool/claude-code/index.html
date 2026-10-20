@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Claude Code — See AI First</title>
-<meta name="description" content="Anthropic&#039;s CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.">
+<meta name="description" content="Anthropic&#039;s agentic coding tool for terminal, IDE, desktop and web — reads your codebase, edits files, runs commands, opens PRs.">
 <meta property="og:title" content="Claude Code — See AI First">
-<meta property="og:description" content="Anthropic&#039;s CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.">
+<meta property="og:description" content="Anthropic&#039;s agentic coding tool for terminal, IDE, desktop and web — reads your codebase, edits files, runs commands, opens PRs.">
 <meta property="og:url" content="https://seeaifirst.com/tool/claude-code">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Claude Code — See AI First">
-<meta name="twitter:description" content="Anthropic&#039;s CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.">
+<meta name="twitter:description" content="Anthropic&#039;s agentic coding tool for terminal, IDE, desktop and web — reads your codebase, edits files, runs commands, opens PRs.">
 <link rel="canonical" href="https://seeaifirst.com/tool/claude-code">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Claude Code","url":"https://seeaifirst.com/tool/claude-code","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Anthropic's CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.","keywords":["AI Coding Agents — AI-Powered Coding Tools","js","typescript"],"sameAs":["https://docs.claude.com/en/docs/claude-code/overview","https://www.anthropic.com/engineering/claude-code-best-practices","https://github.com/affaan-m/everything-claude-code"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Claude Code","url":"https://seeaifirst.com/tool/claude-code","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Anthropic's agentic coding tool for terminal, IDE, desktop and web — reads your codebase, edits files, runs commands, opens PRs.","keywords":["AI Coding Agents — AI-Powered Coding Tools","js","typescript"],"sameAs":["https://code.claude.com/docs/en/overview","https://github.com/anthropics/claude-code","https://code.claude.com/docs/en/best-practices"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,20 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> › Claude Code</nav>
     <article>
       <h1>Claude Code</h1>
-      <p>Anthropic&#039;s CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.</p>
-      <p>The leading CLI agent — #1 on SWE-bench, outperforming all rivals. 200K token context enables full comprehension of large codebases. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Runs locally, no cloud dependency. Best for: complex projects, large refactoring, existing codebases. Supports async mode on web (claude.ai/code) — delegate long tasks, create PRs directly, teleport back to local CLI to continue. Extended ecosystem: Everything Claude Code — production-ready agents, skills, hooks, and commands for Claude Code.</p>
+      <p>Anthropic&#039;s agentic coding tool for terminal, IDE, desktop and web — reads your codebase, edits files, runs commands, opens PRs.</p>
+      <p>Claude Code is Anthropic&#039;s agentic coding tool. It reads your codebase, edits multiple files, runs commands and tests, and works with git — staging changes, writing commits and opening pull requests. It is available as a CLI, VS Code/Cursor and JetBrains extensions, a desktop app and on the web (claude.ai/code), where long tasks run in the cloud; sessions can move between surfaces (for example with claude --teleport). Customize it with CLAUDE.md (or an existing AGENTS.md), skills, hooks, MCP servers, subagents and plugins; the Agent SDK builds custom agents on the same engine, and GitHub Actions or GitLab CI/CD run it in pipelines. Claude models only — through a paid Claude plan, the Anthropic API, or cloud providers such as Amazon Bedrock and Google Cloud. Best for: complex multi-file work, large refactors and existing codebases.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Agentic coding from the terminal or IDE on real, existing codebases</li>
+        <li>Multi-file refactoring and changes that need whole-repo awareness</li>
+        <li>Delegating long tasks to run in the cloud while you do something else</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You want to use non-Claude models (OpenCode, Cline or goose are provider-agnostic)</li>
+        <li>You mainly need inline tab completion in the IDE (Copilot or Cursor)</li>
+        <li>No paid Claude plan or API budget — Claude Code is not included in the free plan</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Paid</dd>
@@ -1099,7 +1111,7 @@ html, body {
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>Languages</dt><dd>js, typescript</dd>
         <dt>Use cases</dt><dd>agentic coding, code refactoring, git workflow, ci cd automation</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1109,7 +1121,7 @@ html, body {
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
-        <li><a href="/tool/cline-roocode">Cline / RooCode</a></li>
+        <li><a href="/tool/cline-roocode">Cline</a></li>
         <li><a href="/tool/codex-cli">Codex CLI</a></li>
         <li><a href="/tool/gemini-cli">Gemini CLI</a></li>
         <li><a href="/tool/opencode">OpenCode</a></li>
@@ -1119,9 +1131,9 @@ html, body {
       <p><a href="/compare/coding-agents">⚖️ Compare AI Coding Agents</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://docs.claude.com/en/docs/claude-code/overview" rel="noopener noreferrer">Claude Code Docs</a></li>
-        <li><a href="https://www.anthropic.com/engineering/claude-code-best-practices" rel="noopener noreferrer">Anthropic — Claude Code Best Practices</a></li>
-        <li><a href="https://github.com/affaan-m/everything-claude-code" rel="noopener noreferrer">Everything Claude Code</a></li>
+        <li><a href="https://code.claude.com/docs/en/overview" rel="noopener noreferrer">Claude Code Docs</a></li>
+        <li><a href="https://github.com/anthropics/claude-code" rel="noopener noreferrer">Claude Code GitHub</a></li>
+        <li><a href="https://code.claude.com/docs/en/best-practices" rel="noopener noreferrer">Claude Code Best Practices</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> on See AI First.</p>

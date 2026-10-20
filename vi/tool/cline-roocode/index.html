@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-<title>Cline / RooCode — See AI First</title>
-<meta name="description" content="Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.">
-<meta property="og:title" content="Cline / RooCode — See AI First">
-<meta property="og:description" content="Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.">
+<title>Cline — See AI First</title>
+<meta name="description" content="Coding agent mã nguồn mở cho VS Code, JetBrains và terminal — chế độ Plan/Act, MCP, dùng được mọi model provider kể cả model local.">
+<meta property="og:title" content="Cline — See AI First">
+<meta property="og:description" content="Coding agent mã nguồn mở cho VS Code, JetBrains và terminal — chế độ Plan/Act, MCP, dùng được mọi model provider kể cả model local.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/cline-roocode">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
-<meta name="twitter:title" content="Cline / RooCode — See AI First">
-<meta name="twitter:description" content="Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.">
+<meta name="twitter:title" content="Cline — See AI First">
+<meta name="twitter:description" content="Coding agent mã nguồn mở cho VS Code, JetBrains và terminal — chế độ Plan/Act, MCP, dùng được mọi model provider kể cả model local.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/cline-roocode">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Cline / RooCode","url":"https://seeaifirst.com/vi/tool/cline-roocode","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.","keywords":["AI Coding Agents — Công cụ code bằng AI","js","typescript"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/cline/cline","https://github.com/RooVetGit/Roo-Code"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Cline","url":"https://seeaifirst.com/vi/tool/cline-roocode","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Coding agent mã nguồn mở cho VS Code, JetBrains và terminal — chế độ Plan/Act, MCP, dùng được mọi model provider kể cả model local.","keywords":["AI Coding Agents — Công cụ code bằng AI","js","typescript"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/cline/cline","https://docs.cline.bot/","https://cline.bot/pricing"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1087,31 +1087,31 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
-    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> › Cline / RooCode</nav>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> › Cline</nav>
     <article>
-      <h1>Cline / RooCode</h1>
-      <p>Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.</p>
-      <p>Extension VS Code mã nguồn mở — agent AI chạy trực tiếp trong editor. Hỗ trợ MCP servers, multi-model (Claude, GPT, Gemini, local models). Cline = bản gốc (open-source), RooCode = fork với thêm features (custom modes, model routing). Best for: developers muốn tùy chỉnh hoàn toàn, dùng local/self-hosted models.</p>
+      <h1>Cline</h1>
+      <p>Coding agent mã nguồn mở cho VS Code, JetBrains và terminal — chế độ Plan/Act, MCP, dùng được mọi model provider kể cả model local.</p>
+      <p>Cline là coding agent tự chủ mã nguồn mở (Apache-2.0), có dạng extension VS Code, plugin JetBrains, CLI (tương tác hoặc headless cho CI) và SDK. Plan mode đề xuất hướng làm, Act mode thực hiện với duyệt từng bước hoặc tự động duyệt tùy chọn; checkpoints cho phép hoàn tác chỉnh sửa của agent. Hỗ trợ MCP servers và các provider như Anthropic, OpenAI, Google, OpenRouter, Bedrock, mọi API tương thích OpenAI, cùng model local qua Ollama hoặc LM Studio. Dùng API key riêng không cần subscription, hoặc dùng billing của Cline; gói Enterprise thêm SSO và RBAC. Lưu ý: card này trước đây gộp cả Roo Code (fork của Cline) — Roo Code đã ngừng hoạt động và repo bị archive ngày 15/5/2026.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Muốn kiểm soát chi phí API và chọn model linh hoạt</li>
-        <li>Cần autonomous multi-step coding agent trong VS Code</li>
-        <li>Muốn giữ VS Code workflow hiện tại thay vì chuyển IDE</li>
+        <li>Muốn kiểm soát chi phí API và tự chọn model, kể cả model local</li>
+        <li>Cần agent tự chủ có duyệt từng bước ngay trong VS Code hoặc JetBrains</li>
+        <li>Muốn giữ IDE hiện tại thay vì đổi editor</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Cần inline tab-completion nhanh (Copilot/Cursor phù hợp hơn)</li>
-        <li>Không muốn quản lý API keys và chi phí riêng</li>
+        <li>Chủ yếu cần tab completion inline nhanh (Copilot hoặc Cursor phù hợp hơn)</li>
+        <li>Không muốn tự quản lý việc chọn model và chi phí sử dụng</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
-        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Chi phí</dt><dd>Freemium</dd>
         <dt>Triển khai</dt><dd>Chạy local</dd>
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
         <dt>Ngôn ngữ</dt><dd>js, typescript</dd>
         <dt>Ứng dụng</dt><dd>agentic coding, code refactoring, browser automation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1131,7 +1131,8 @@ html, body {
       <h2>Nguồn</h2>
       <ul>
         <li><a href="https://github.com/cline/cline" rel="noopener noreferrer">Cline GitHub</a></li>
-        <li><a href="https://github.com/RooVetGit/Roo-Code" rel="noopener noreferrer">RooCode GitHub</a></li>
+        <li><a href="https://docs.cline.bot/" rel="noopener noreferrer">Cline Docs</a></li>
+        <li><a href="https://cline.bot/pricing" rel="noopener noreferrer">Cline Pricing</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> trên See AI First.</p>

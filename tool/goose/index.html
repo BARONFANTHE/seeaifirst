@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Goose — See AI First</title>
-<meta name="description" content="Open-source coding agent from Block (Square) — doesn&#039;t just suggest but also installs, runs, and debugs with any LLM">
+<meta name="description" content="Open-source local AI agent with desktop app and CLI — runs commands, edits code and automates workflows with any LLM. Now under the Linux Foundation.">
 <meta property="og:title" content="Goose — See AI First">
-<meta property="og:description" content="Open-source coding agent from Block (Square) — doesn&#039;t just suggest but also installs, runs, and debugs with any LLM">
+<meta property="og:description" content="Open-source local AI agent with desktop app and CLI — runs commands, edits code and automates workflows with any LLM. Now under the Linux Foundation.">
 <meta property="og:url" content="https://seeaifirst.com/tool/goose">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Goose — See AI First">
-<meta name="twitter:description" content="Open-source coding agent from Block (Square) — doesn&#039;t just suggest but also installs, runs, and debugs with any LLM">
+<meta name="twitter:description" content="Open-source local AI agent with desktop app and CLI — runs commands, edits code and automates workflows with any LLM. Now under the Linux Foundation.">
 <link rel="canonical" href="https://seeaifirst.com/tool/goose">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Goose","url":"https://seeaifirst.com/tool/goose","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source coding agent from Block (Square) — doesn't just suggest but also installs, runs, and debugs with any LLM","keywords":["AI Coding Agents — AI-Powered Coding Tools","rust"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/block/goose","https://block.github.io/goose/"],"datePublished":"2026-02-04","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Goose","url":"https://seeaifirst.com/tool/goose","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source local AI agent with desktop app and CLI — runs commands, edits code and automates workflows with any LLM. Now under the Linux Foundation.","keywords":["AI Coding Agents — AI-Powered Coding Tools","rust"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/aaif-goose/goose","https://goose-docs.ai/","https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"],"datePublished":"2026-02-04","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> › Goose</nav>
     <article>
       <h1>Goose</h1>
-      <p>Open-source coding agent from Block (Square) — doesn&#039;t just suggest but also installs, runs, and debugs with any LLM</p>
-      <p>Goose is an open-source coding agent from Block (formerly Square), written in Rust for high performance. Unlike Claude Code/Cursor: Goose autonomously runs commands, installs dependencies, debugs errors — not just suggesting code. Extensible via MCP extensions, has desktop app + CLI. 33K stars, Apache-2.0 license, supports all LLM providers.</p>
+      <p>Open-source local AI agent with desktop app and CLI — runs commands, edits code and automates workflows with any LLM. Now under the Linux Foundation.</p>
+      <p>goose is an open-source (Apache-2.0) general-purpose AI agent created by Block and contributed in December 2025 to the Agentic AI Foundation (AAIF) at the Linux Foundation, alongside MCP and AGENTS.md; the repository is now aaif-goose/goose and the docs moved to goose-docs.ai. Written in Rust, it runs on your machine as a desktop app (macOS, Linux, Windows), a CLI or an embeddable API. It executes commands, installs dependencies and debugs rather than only suggesting code, and is also used for research, writing and data tasks. Extensible with MCP extensions; Recipes are portable YAML workflows that can be shared and run in CI. Works with many providers (Anthropic, OpenAI, Google, OpenRouter, Bedrock…), existing subscriptions via ACP, or fully local models through Ollama.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You need an LLM-agnostic agent that works with any provider</li>
+        <li>You want to automate repeatable workflows with shareable YAML recipes</li>
+        <li>Data privacy matters — run fully local with Ollama</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You want zero setup — you must configure a model provider first</li>
+        <li>You want top coding accuracy out of the box without tuning the model choice</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1100,7 +1111,7 @@ html, body {
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>rust</dd>
         <dt>Use cases</dt><dd>agentic coding, workflow automation, cli tool</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1113,14 +1124,15 @@ html, body {
         <li><a href="/tool/opencode">OpenCode</a></li>
         <li><a href="/tool/claude-code">Claude Code</a></li>
         <li><a href="/tool/gemini-cli">Gemini CLI</a></li>
-        <li><a href="/tool/cline-roocode">Cline / RooCode</a></li>
+        <li><a href="/tool/cline-roocode">Cline</a></li>
       </ul>
       <p><a href="/section/coding-agents">See all 11 tools in AI Coding Agents — AI-Powered Coding Tools →</a></p>
       <p><a href="/compare/coding-agents">⚖️ Compare AI Coding Agents</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/block/goose" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://block.github.io/goose/" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://github.com/aaif-goose/goose" rel="noopener noreferrer">goose GitHub</a></li>
+        <li><a href="https://goose-docs.ai/" rel="noopener noreferrer">goose Docs</a></li>
+        <li><a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" rel="noopener noreferrer">Linux Foundation — Agentic AI Foundation</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> on See AI First.</p>

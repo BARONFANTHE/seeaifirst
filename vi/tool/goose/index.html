@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Goose — See AI First</title>
-<meta name="description" content="Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM">
+<meta name="description" content="AI agent mã nguồn mở chạy local, có desktop app và CLI — tự chạy lệnh, sửa code, tự động hóa workflow với mọi LLM. Nay thuộc Linux Foundation.">
 <meta property="og:title" content="Goose — See AI First">
-<meta property="og:description" content="Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM">
+<meta property="og:description" content="AI agent mã nguồn mở chạy local, có desktop app và CLI — tự chạy lệnh, sửa code, tự động hóa workflow với mọi LLM. Nay thuộc Linux Foundation.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/goose">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Goose — See AI First">
-<meta name="twitter:description" content="Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM">
+<meta name="twitter:description" content="AI agent mã nguồn mở chạy local, có desktop app và CLI — tự chạy lệnh, sửa code, tự động hóa workflow với mọi LLM. Nay thuộc Linux Foundation.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/goose">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Goose","url":"https://seeaifirst.com/vi/tool/goose","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM","keywords":["AI Coding Agents — Công cụ code bằng AI","rust"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/block/goose","https://block.github.io/goose/"],"datePublished":"2026-02-04","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Goose","url":"https://seeaifirst.com/vi/tool/goose","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"AI agent mã nguồn mở chạy local, có desktop app và CLI — tự chạy lệnh, sửa code, tự động hóa workflow với mọi LLM. Nay thuộc Linux Foundation.","keywords":["AI Coding Agents — Công cụ code bằng AI","rust"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/aaif-goose/goose","https://goose-docs.ai/","https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"],"datePublished":"2026-02-04","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,19 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> › Goose</nav>
     <article>
       <h1>Goose</h1>
-      <p>Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM</p>
-      <p>Goose là open-source coding agent từ Block (formerly Square), viết bằng Rust cho performance cao. Khác Claude Code/Cursor ở chỗ: Goose tự chạy commands, install dependencies, debug errors — không chỉ suggest code. Mở rộng qua MCP extensions, có desktop app + CLI. 33K stars, Apache-2.0 license, hỗ trợ mọi LLM provider.</p>
+      <p>AI agent mã nguồn mở chạy local, có desktop app và CLI — tự chạy lệnh, sửa code, tự động hóa workflow với mọi LLM. Nay thuộc Linux Foundation.</p>
+      <p>goose là AI agent đa năng mã nguồn mở (Apache-2.0) do Block tạo ra và trao cho Agentic AI Foundation (AAIF) thuộc Linux Foundation vào tháng 12/2025, cùng với MCP và AGENTS.md; repo nay là aaif-goose/goose, docs chuyển sang goose-docs.ai. Viết bằng Rust, chạy trên máy bạn dưới dạng desktop app (macOS, Linux, Windows), CLI hoặc API nhúng. Agent tự chạy lệnh, cài dependencies và debug chứ không chỉ gợi ý code, và còn được dùng cho nghiên cứu, viết lách, xử lý dữ liệu. Mở rộng bằng MCP extensions; Recipes là workflow YAML mang đi được, chia sẻ và chạy trong CI. Dùng được nhiều provider (Anthropic, OpenAI, Google, OpenRouter, Bedrock…), subscription sẵn có qua ACP, hoặc model local hoàn toàn qua Ollama.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần coding agent LLM-agnostic, chạy với bất kỳ provider nào</li>
-        <li>Muốn tự động hóa workflow phức tạp bằng recipes (YAML)</li>
-        <li>Team yêu cầu data privacy — chạy hoàn toàn local với Ollama</li>
+        <li>Cần agent không phụ thuộc LLM, chạy với bất kỳ provider nào</li>
+        <li>Muốn tự động hóa workflow lặp lại bằng recipes YAML chia sẻ được</li>
+        <li>Coi trọng data privacy — chạy hoàn toàn local với Ollama</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Muốn setup đơn giản, không cần cấu hình LLM provider</li>
-        <li>Cần coding accuracy cao nhất out-of-the-box mà không tùy chỉnh model</li>
-        <li>Không quen terminal workflow — cần kinh nghiệm CLI</li>
+        <li>Muốn dùng ngay không cần setup — phải cấu hình model provider trước</li>
+        <li>Cần độ chính xác coding cao nhất ngay từ đầu mà không tinh chỉnh lựa chọn model</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1112,7 +1111,7 @@ html, body {
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
         <dt>Ngôn ngữ</dt><dd>rust</dd>
         <dt>Ứng dụng</dt><dd>agentic coding, workflow automation, cli tool</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1125,14 +1124,15 @@ html, body {
         <li><a href="/vi/tool/opencode">OpenCode</a></li>
         <li><a href="/vi/tool/claude-code">Claude Code</a></li>
         <li><a href="/vi/tool/gemini-cli">Gemini CLI</a></li>
-        <li><a href="/vi/tool/cline-roocode">Cline / RooCode</a></li>
+        <li><a href="/vi/tool/cline-roocode">Cline</a></li>
       </ul>
       <p><a href="/vi/section/coding-agents">Xem tất cả 11 công cụ trong AI Coding Agents — Công cụ code bằng AI →</a></p>
       <p><a href="/vi/compare/coding-agents">⚖️ So sánh AI Coding Agents</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/block/goose" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://block.github.io/goose/" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://github.com/aaif-goose/goose" rel="noopener noreferrer">goose GitHub</a></li>
+        <li><a href="https://goose-docs.ai/" rel="noopener noreferrer">goose Docs</a></li>
+        <li><a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" rel="noopener noreferrer">Linux Foundation — Agentic AI Foundation</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> trên See AI First.</p>

@@ -1615,7 +1615,7 @@
           "icon": "🟣",
           "mono": true,
           "hot": true,
-          "desc": "Anthropic's CLI agent — understands 200K tokens, excels at multi-file refactoring. Best for complex projects.",
+          "desc": "Anthropic's agentic coding tool for terminal, IDE, desktop and web — reads your codebase, edits files, runs commands, opens PRs.",
           "added_date": "2026-02-03",
           "tags": [
             "Terminal",
@@ -1623,32 +1623,33 @@
             "Skills",
             "Hooks"
           ],
-          "detail": "The leading CLI agent — #1 on SWE-bench, outperforming all rivals. 200K token context enables full comprehension of large codebases. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Runs locally, no cloud dependency. Best for: complex projects, large refactoring, existing codebases. Supports async mode on web (claude.ai/code) — delegate long tasks, create PRs directly, teleport back to local CLI to continue. Extended ecosystem: Everything Claude Code — production-ready agents, skills, hooks, and commands for Claude Code.",
+          "detail": "Claude Code is Anthropic's agentic coding tool. It reads your codebase, edits multiple files, runs commands and tests, and works with git — staging changes, writing commits and opening pull requests. It is available as a CLI, VS Code/Cursor and JetBrains extensions, a desktop app and on the web (claude.ai/code), where long tasks run in the cloud; sessions can move between surfaces (for example with claude --teleport). Customize it with CLAUDE.md (or an existing AGENTS.md), skills, hooks, MCP servers, subagents and plugins; the Agent SDK builds custom agents on the same engine, and GitHub Actions or GitLab CI/CD run it in pipelines. Claude models only — through a paid Claude plan, the Anthropic API, or cloud providers such as Amazon Bedrock and Google Cloud. Best for: complex multi-file work, large refactors and existing codebases.",
           "sources": [
             {
               "title": "Claude Code Docs",
-              "url": "https://docs.claude.com/en/docs/claude-code/overview"
+              "url": "https://code.claude.com/docs/en/overview"
             },
             {
-              "title": "Anthropic — Claude Code Best Practices",
-              "url": "https://www.anthropic.com/engineering/claude-code-best-practices"
+              "title": "Claude Code GitHub",
+              "url": "https://github.com/anthropics/claude-code"
             },
             {
-              "title": "Everything Claude Code",
-              "url": "https://github.com/affaan-m/everything-claude-code"
+              "title": "Claude Code Best Practices",
+              "url": "https://code.claude.com/docs/en/best-practices"
             }
           ],
           "pricing": "paid",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần agentic coding trực tiếp trong terminal",
-            "Multi-file refactoring với codebase awareness",
-            "Delegate task dài không cần giám sát (web async mode)"
+            "Agentic coding from the terminal or IDE on real, existing codebases",
+            "Multi-file refactoring and changes that need whole-repo awareness",
+            "Delegating long tasks to run in the cloud while you do something else"
           ],
           "whenNotToUse": [
-            "Budget hạn chế (chi phí API có thể tăng nhanh với heavy use)",
-            "Cần inline tab-completion trong IDE (dùng Copilot/Cursor)"
+            "You want to use non-Claude models (OpenCode, Cline or goose are provider-agnostic)",
+            "You mainly need inline tab completion in the IDE (Copilot or Cursor)",
+            "No paid Claude plan or API budget — Claude Code is not included in the free plan"
           ],
           "compatibleWith": [
             "mcp",
@@ -1665,7 +1666,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": 83481,
           "license": null
@@ -1676,36 +1677,39 @@
           "icon": "🟢",
           "mono": true,
           "hot": true,
-          "desc": "Smart IDE based on VS Code — features Composer and Agent mode, best for daily coding.",
+          "desc": "AI-first code editor built on VS Code — Agent, Tab predictions, a CLI and parallel cloud agents.",
           "added_date": "2026-02-03",
           "tags": [
             "VS Code fork",
-            "Semantic search",
-            "$20/mo"
+            "Agent",
+            "Cloud agents"
           ],
-          "detail": "Smart IDE based on VS Code — AI integrated directly into the editor. Composer mode creates/edits multiple files, Agent mode runs terminal commands autonomously, Tab predictions suggest code in realtime. Semantic search finds code by meaning. Uses Claude + GPT + custom models. Best for: daily coding, rapid prototyping. $20/month.",
+          "detail": "Cursor is an AI code editor forked from VS Code. Agent edits across files and runs terminal commands, Tab predicts your next edit, and Inline Edit rewrites a selection. Beyond the desktop IDE there is a CLI (also headless for CI), cloud agents that work in parallel in their own environments, Bugbot for pull-request review, and JetBrains support via ACP. Extensible with Rules, MCP servers, skills, subagents and hooks. Models from OpenAI, Anthropic, Google and xAI plus Cursor's own Composer model; on current plans, third-party model usage is billed separately at API prices. Cursor was acquired by SpaceX in August 2026. Best for: daily coding and multi-file changes inside one AI-native editor.",
           "sources": [
             {
-              "title": "Cursor Official",
-              "url": "https://www.cursor.com/"
+              "title": "Cursor",
+              "url": "https://cursor.com/"
             },
             {
               "title": "Cursor Docs",
-              "url": "https://docs.cursor.com/"
+              "url": "https://cursor.com/docs"
+            },
+            {
+              "title": "Cursor Pricing",
+              "url": "https://cursor.com/pricing"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "AI-first IDE muốn context toàn bộ codebase",
-            "Multi-file editing và refactoring phức tạp",
-            "Developers muốn thay thế VS Code bằng AI-native editor"
+            "You want agent, tab completion and codebase context in one AI-native IDE",
+            "Multi-file edits and refactoring driven from the editor",
+            "You want several agents working in parallel in the cloud, then review their PRs"
           ],
           "whenNotToUse": [
-            "Ngân sách hạn hẹp — Pro $20/mo đắt hơn Copilot $10",
-            "Không muốn rời VS Code ecosystem hiện tại",
-            "Cần offline coding — phụ thuộc hoàn toàn cloud"
+            "You want to keep your current editor — Cursor is a separate IDE (JetBrains only via ACP)",
+            "You need predictable spend — third-party model usage is billed on top of the plan"
           ],
           "compatibleWith": [
             "mcp"
@@ -1723,7 +1727,7 @@
             "go",
             "rust"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -1733,36 +1737,39 @@
           "slug": "codex-cli",
           "icon": "🔵",
           "mono": true,
-          "desc": "OpenAI's CLI agent — runs in terminal or cloud, handles tasks sequentially and precisely.",
+          "desc": "OpenAI's open-source coding agent for the terminal — works on your local repo inside an OS sandbox; part of the Codex family with IDE, desktop and cloud.",
           "added_date": "2026-02-03",
           "tags": [
             "AGENTS.md",
-            "Cloud sandbox",
-            "ChatGPT plan"
+            "Local sandbox",
+            "Open source"
           ],
-          "detail": "OpenAI's CLI agent — runs tasks sequentially in an isolated cloud sandbox (safe). Uses AGENTS.md for project instructions. Deep integration with OpenAI models (GPT-4o, o3, codex-mini). Suitable for automated tasks, CI/CD integration, and batch processing. Uses credits from ChatGPT plan.",
+          "detail": "Codex CLI is OpenAI's open-source (Apache-2.0) coding agent, written in Rust. It works on your local repository — inspecting files, editing code and running commands inside a local OS-level sandbox, with approval modes that decide when it may edit or execute without asking. Project instructions live in AGENTS.md (create one with /init); MCP servers, skills and plugins extend it, and codex exec runs it non-interactively in scripts and CI. The wider Codex product adds an IDE extension, a desktop app and cloud tasks (codex cloud). Sign in with a ChatGPT plan, where Codex is included, or use an API key. OpenAI models by default; open models via Ollama (--oss) and custom providers are also supported.",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "Codex GitHub",
               "url": "https://github.com/openai/codex"
             },
             {
-              "title": "Docs",
-              "url": "https://developers.openai.com/codex/cli/"
+              "title": "Codex CLI Docs",
+              "url": "https://learn.chatgpt.com/docs/codex/cli"
+            },
+            {
+              "title": "Codex Pricing",
+              "url": "https://learn.chatgpt.com/docs/pricing"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Cần coding agent tích hợp sâu với OpenAI models (GPT-5.3-Codex)",
-            "Muốn setup nhanh với ChatGPT subscription có sẵn",
-            "Cần CI/CD automation với GitHub Action hoặc Codex Autofix"
+            "You already pay for ChatGPT and want a terminal coding agent included in the plan",
+            "You want an open-source agent with a local sandbox and explicit approval modes",
+            "Scripted or CI automation with codex exec"
           ],
           "whenNotToUse": [
-            "Cần dùng local models hoặc provider khác (chỉ hỗ trợ OpenAI)",
-            "Không muốn phụ thuộc vendor cloud cho coding workflow",
-            "Budget hạn chế — cần subscription ChatGPT Plus trở lên"
+            "You want an IDE-first experience with inline completions (Cursor, Copilot)",
+            "You want non-OpenAI models as a first-class option — OpenAI models are the default and best supported"
           ],
           "compatibleWith": [
             "mcp",
@@ -1776,46 +1783,50 @@
           "languages": [
             "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 67954,
+          "github_stars": 128775,
           "license": "Apache-2.0"
         },
         {
-          "name": "Windsurf",
+          "name": "Devin Desktop (formerly Windsurf)",
           "slug": "windsurf",
           "icon": "🌊",
           "mono": true,
-          "desc": "AI IDE at $15/month — Cascade Flow architecture, supports multiple models and JetBrains plugin.",
+          "desc": "Cognition's AI IDE, formerly Windsurf — Devin Local agent, Tab completions, local and cloud agents in one editor.",
           "added_date": "2026-02-03",
           "tags": [
             "IDE",
-            "Budget-friendly",
+            "Devin Local",
             "MCP support"
           ],
-          "detail": "AI IDE with Cascade — a multi-step autonomous agent: reads code → analyzes → edits → tests → commits. Has Flows for automated workflows. Supports JetBrains plugin (IntelliJ, WebStorm...). Generous free tier. Best for: developers using the JetBrains ecosystem or needing a budget-friendly option.",
+          "detail": "Windsurf was renamed Devin Desktop in 2026 by Cognition, the team behind Devin; existing Windsurf users received it as an update with their plan unchanged. It is a standalone AI IDE for macOS, Windows and Linux that can import VS Code and Cursor settings. The main agent is now Devin Local, the successor to Cascade (legacy Cascade remained available until 1 July 2026), sharing its harness with Devin CLI. An Agent Command Center manages local agents and Devin Cloud agents, and ACP-compatible agents such as Codex or Claude Agent can run inside it. Also: Tab completions, Workflows, Memories, Rules, MCP, in-editor preview and app deploys. The Windsurf JetBrains plugin is in maintenance mode; JetBrains users are pointed to Devin over ACP.",
           "sources": [
             {
-              "title": "Windsurf Official",
-              "url": "https://windsurf.com/"
+              "title": "Cognition — Windsurf is now Devin Desktop",
+              "url": "https://devin.ai/blog/windsurf-is-now-devin-desktop"
             },
             {
-              "title": "Windsurf Docs",
-              "url": "https://docs.windsurf.com/"
+              "title": "Devin Desktop Docs",
+              "url": "https://docs.devin.ai/desktop/getting-started"
+            },
+            {
+              "title": "Devin Desktop FAQ",
+              "url": "https://docs.devin.ai/desktop/devin-desktop-faq"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Muốn agentic IDE với Cascade multi-step workflow",
-            "Free tier rộng rãi — 25 credits kèm unlimited Tab completions",
-            "Enterprise cần security compliance docs và hybrid deployment"
+            "You want a standalone AI IDE that runs local agents and can hand work to cloud agents (Devin)",
+            "Moving from VS Code or Cursor — settings can be imported",
+            "You want to drive several agents (Devin Local, Codex, Claude Agent via ACP) from one editor"
           ],
           "whenNotToUse": [
-            "Đã quen Cursor — chức năng tương tự, Windsurf community nhỏ hơn",
-            "Cần mature ecosystem — sản phẩm mới hơn Copilot và Cursor",
-            "Cascade agent vẫn đang evolving — chưa ổn định cho production critical"
+            "You work in JetBrains IDEs — the Windsurf plugin is in maintenance mode",
+            "You depend on specific VS Code extensions — the extension marketplace is restricted",
+            "You need settled pricing — plans are still in transition after the rename"
           ],
           "compatibleWith": [
             "mcp"
@@ -1833,7 +1844,7 @@
             "go",
             "rust"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -1843,14 +1854,14 @@
           "slug": "github-copilot",
           "icon": "🤖",
           "mono": true,
-          "desc": "Microsoft's code assistant built into VS Code — features Agent mode, strong for enterprise.",
+          "desc": "GitHub's AI coding assistant — IDE extensions with agent mode, a cloud agent that works from issues, Copilot CLI and PR review.",
           "added_date": "2026-02-03",
           "tags": [
             "VS Code",
             "Enterprise",
             "Multi-model"
           ],
-          "detail": "GitHub/Microsoft's AI pair programmer — integrated in VS Code, JetBrains, Neovim. Copilot Chat for code Q&A, Copilot Agent mode (preview) autonomously handles complex tasks. Biggest advantage: access to the entire GitHub ecosystem (repos, issues, PRs, Actions). $10/month (Individual), $19 (Business).",
+          "detail": "GitHub Copilot works inside VS Code, Visual Studio, JetBrains IDEs, Xcode, Eclipse and Neovim with code completions, chat and agent mode (generally available). The cloud agent picks up assigned issues, works in the background and opens pull requests; Copilot code review comments on PRs; Copilot CLI brings the agent to the terminal with MCP, hooks, skills and custom agents. Paid plans can choose models from Anthropic, OpenAI and others; Free uses automatic model selection. Since June 2026 usage is measured in GitHub AI credits, while code completions stay unlimited on paid plans. Biggest advantage: deep integration with GitHub repos, issues, PRs and Actions, plus enterprise admin, policy and MCP allow-list controls.",
           "sources": [
             {
               "title": "GitHub Copilot",
@@ -1859,20 +1870,24 @@
             {
               "title": "Copilot Docs",
               "url": "https://docs.github.com/en/copilot"
+            },
+            {
+              "title": "Copilot Plans",
+              "url": "https://docs.github.com/en/copilot/get-started/plans"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Đã dùng VS Code hoặc JetBrains — thêm extension không đổi workflow",
-            "Ngân sách thấp — Pro $10/mo rẻ nhất trong IDE agents",
-            "Teams cần enterprise admin controls và centralized management"
+            "You want AI help inside your existing IDE (VS Code, JetBrains, Visual Studio, Xcode…) without switching editors",
+            "Your team lives on GitHub and wants agents that start from issues and open PRs",
+            "Organizations needing central admin, policies and MCP allow-lists"
           ],
           "whenNotToUse": [
-            "Cần agentic IDE đầy đủ — Copilot là extension, không phải standalone IDE",
-            "Muốn tự chọn AI model — Free/Pro model access hạn chế",
-            "Cần offline coding — inference 100% cloud"
+            "You want a dedicated AI-native IDE experience (Cursor, Devin Desktop)",
+            "Heavy agent use with a fixed budget — chat and agent usage consume AI credits",
+            "You need offline or self-hosted inference — Copilot runs in GitHub's cloud"
           ],
           "compatibleWith": [
             "mcp"
@@ -1892,7 +1907,7 @@
             "ruby",
             "csharp"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -1902,39 +1917,43 @@
           "slug": "gemini-cli",
           "icon": "💎",
           "mono": true,
-          "desc": "Google's CLI agent — up to 1M token context, supports Skills and ADK integration.",
+          "desc": "Google's open-source terminal agent for Gemini models — MCP, extensions, skills. Since June 2026 it needs a paid API key or Code Assist license.",
           "added_date": "2026-02-03",
           "tags": [
-            "Free tier",
-            "Skills",
-            "Extensions"
+            "Open source",
+            "Extensions",
+            "Skills"
           ],
-          "detail": "Google's CLI agent — free for individuals, 1M token context (the largest). Integrates Google ADK, supports MCP servers, Gemini 2.5 Pro/Flash. Reads extremely large files/folders thanks to massive context. Has extensions for Google Workspace (Docs, Sheets, Drive). Best for: projects requiring reading large amounts of code/docs, Google ecosystem.",
+          "detail": "Gemini CLI is Google's open-source (Apache-2.0) AI agent for the terminal, written in TypeScript. It reads and edits local files, runs shell commands and fetches web content, and is extended with MCP servers, extensions, agent skills, hooks and GEMINI.md context files; Gemini models offer a very large context window for reading big codebases. Access changed in 2026: on 18 June 2026 Google stopped serving Gemini CLI for Google AI Pro/Ultra subscribers and for free Gemini Code Assist for individuals, moving them to the new Antigravity CLI. Gemini CLI remains available with paid Gemini API keys and with Gemini Code Assist Standard or Enterprise licenses. Best for: organizations already on Gemini Code Assist or the paid Gemini API that want an open-source CLI agent.",
           "sources": [
             {
               "title": "Gemini CLI GitHub",
               "url": "https://github.com/google-gemini/gemini-cli"
             },
             {
-              "title": "Google — Introducing Gemini CLI",
-              "url": "https://blog.google/technology/developers/gemini-cli/"
+              "title": "Gemini CLI Docs",
+              "url": "https://geminicli.com/docs/"
+            },
+            {
+              "title": "Google — Transitioning Gemini CLI to Antigravity CLI",
+              "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
             }
           ],
-          "pricing": "free",
+          "pricing": "paid",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Cần AI coding agent miễn phí với context window lớn (1M tokens)",
-            "Workflow terminal-first, không muốn dùng IDE-based agents",
-            "Đang dùng Google Cloud/Firebase ecosystem"
+            "Your organization has a Gemini Code Assist Standard/Enterprise license or a paid Gemini API key",
+            "You want an open-source, terminal-first agent you can inspect and extend",
+            "You want Gemini models with a very large context window for big codebases"
           ],
           "whenNotToUse": [
-            "Cần tab-completion hoặc inline suggestions trong IDE",
-            "Muốn dùng models từ providers khác (chỉ Gemini models)"
+            "You want a free personal coding agent — free individual access ended in June 2026 (Google points to Antigravity CLI)",
+            "You need tab completion or inline suggestions in an IDE",
+            "You want models from other providers (Gemini models only)"
           ],
           "compatibleWith": [
-            "mcp",
-            "google-adk"
+            "mcp"
           ],
           "useCases": [
             "agentic-coding",
@@ -1945,45 +1964,49 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 99269,
+          "github_stars": 107296,
           "license": "Apache-2.0"
         },
         {
-          "name": "Cline / RooCode",
+          "name": "Cline",
           "slug": "cline-roocode",
           "icon": "⚡",
           "mono": true,
-          "desc": "Open-source VS Code extension — supports multiple AI models and MCP, community-driven.",
+          "desc": "Open-source coding agent for VS Code, JetBrains and the terminal — Plan/Act modes, MCP, any model provider including local models.",
           "added_date": "2026-02-03",
           "tags": [
             "Open source",
-            "Extension",
-            "Flexible"
+            "Plan/Act",
+            "Any model"
           ],
-          "detail": "Open-source VS Code extension — AI agent running directly in the editor. Supports MCP servers, multi-model (Claude, GPT, Gemini, local models). Cline = original (open-source), RooCode = fork with extra features (custom modes, model routing). Best for: developers wanting full customization, using local/self-hosted models.",
+          "detail": "Cline is an open-source (Apache-2.0) autonomous coding agent available as a VS Code extension, a JetBrains plugin, a CLI (interactive or headless for CI) and an SDK. Plan mode proposes a strategy and Act mode carries it out with per-action approval or optional auto-approve; checkpoints let you undo the agent's edits. Supports MCP servers and providers such as Anthropic, OpenAI, Google, OpenRouter, Bedrock and any OpenAI-compatible API, plus local models via Ollama or LM Studio. Bring your own API key with no subscription, or use Cline's own usage billing; an Enterprise tier adds SSO and RBAC. Note: this card previously also covered Roo Code, a Cline fork — Roo Code was shut down and its repository archived on 15 May 2026.",
           "sources": [
             {
               "title": "Cline GitHub",
               "url": "https://github.com/cline/cline"
             },
             {
-              "title": "RooCode GitHub",
-              "url": "https://github.com/RooVetGit/Roo-Code"
+              "title": "Cline Docs",
+              "url": "https://docs.cline.bot/"
+            },
+            {
+              "title": "Cline Pricing",
+              "url": "https://cline.bot/pricing"
             }
           ],
-          "pricing": "free",
+          "pricing": "freemium",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Muốn kiểm soát chi phí API và chọn model linh hoạt",
-            "Cần autonomous multi-step coding agent trong VS Code",
-            "Muốn giữ VS Code workflow hiện tại thay vì chuyển IDE"
+            "You want to control API cost and pick any model, including local ones",
+            "You want an autonomous agent with step-by-step approval inside VS Code or JetBrains",
+            "You want to keep your current IDE instead of switching editors"
           ],
           "whenNotToUse": [
-            "Cần inline tab-completion nhanh (Copilot/Cursor phù hợp hơn)",
-            "Không muốn quản lý API keys và chi phí riêng"
+            "You mainly want fast inline tab completion (Copilot or Cursor fit better)",
+            "You don't want to manage model choice and usage costs yourself"
           ],
           "compatibleWith": [
             "mcp",
@@ -1998,7 +2021,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": 59307,
           "license": "Apache-2.0"
@@ -2008,36 +2031,40 @@
           "slug": "kiro-aws",
           "icon": "🌀",
           "mono": true,
-          "desc": "AWS's spec-first AI IDE — from requirements → design → plan → automated code generation.",
+          "desc": "AWS's spec-driven agentic IDE and CLI — turns requirements into design, tasks and code, guided by steering files and hooks.",
           "added_date": "2026-02-03",
           "tags": [
             "Spec-first",
             "AWS",
             "IDE + CLI"
           ],
-          "detail": "Amazon Web Services' AI IDE (preview 2025) — spec-driven development: write requirements → Kiro auto-generates code + tests. Deep integration with AWS services (Lambda, DynamoDB, S3...). Steering files guide AI to follow project conventions. Has hooks that auto-run actions on file changes. Best for: AWS-centric projects.",
+          "detail": "Kiro is an agentic development platform built and operated by AWS, generally available since November 2025. Its core idea is spec-driven development: write requirements, let Kiro produce a design and a task list, then implement and test them (including property-based tests). Steering files keep the agent on your project conventions; hooks run actions on file changes, tool use or task completion; MCP, Powers, skills and parallel subagents extend it. Available as an IDE (based on Code OSS), the Kiro CLI (successor to the Amazon Q Developer CLI) and Kiro Web with cloud sandboxes, all sharing the same .kiro/ configuration. Models from Anthropic, OpenAI and open-weight families with an Auto selector, billed in credits. No AWS account is required — sign in with AWS Builder ID or a social login. Best for: teams who want structured, spec-first work rather than ad-hoc prompting.",
           "sources": [
             {
-              "title": "Kiro Official",
+              "title": "Kiro",
               "url": "https://kiro.dev/"
             },
             {
-              "title": "AWS — Introducing Kiro",
-              "url": "https://aws.amazon.com/blogs/aws/kiro-ai-powered-ide/"
+              "title": "Kiro — Introducing Kiro",
+              "url": "https://kiro.dev/blog/introducing-kiro/"
+            },
+            {
+              "title": "Kiro Docs",
+              "url": "https://kiro.dev/docs/"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Spec-driven development — requirements rõ ràng trước khi code",
-            "AWS ecosystem — tích hợp Amazon Q Developer Pro",
-            "Cần tự động hóa docs và tests qua agent hooks"
+            "Spec-driven development — clear requirements and design before code",
+            "Teams coming from Amazon Q Developer — the Kiro CLI is its successor",
+            "Automating docs, tests and checks through agent hooks"
           ],
           "whenNotToUse": [
-            "Quick prototyping — spec workflow overhead cho tasks nhỏ",
-            "Chi phí credit khó dự đoán — complex prompts tiêu nhiều credits",
-            "Không muốn AWS vendor dependency"
+            "Quick prototypes — the spec workflow adds overhead for small tasks",
+            "You need predictable spend — complex requests consume more credits",
+            "You prefer not to depend on an AWS-operated service"
           ],
           "compatibleWith": [
             "mcp"
@@ -2057,7 +2084,7 @@
             "csharp",
             "ruby"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -2067,35 +2094,39 @@
           "slug": "replit-agent",
           "icon": "🎨",
           "mono": true,
-          "desc": "Cloud-based agent — builds full-stack apps fast, no setup needed. Best for beginners.",
+          "desc": "Browser-based agent that builds and publishes full-stack apps from a prompt — no local setup. Best for beginners and fast prototypes.",
           "added_date": "2026-02-03",
           "tags": [
             "Cloud",
             "Deploy",
             "No setup"
           ],
-          "detail": "AI agent integrated in Replit's cloud IDE — creates apps from English descriptions, auto-sets up environment, auto-deploys. No installation needed — runs entirely in the browser. Suitable for rapid prototyping, learning to code, or when you don't want to set up a local dev environment.",
+          "detail": "Replit Agent (Agent 4 since March 2026) runs inside Replit's cloud workspace: describe what you want and it plans, builds, tests and publishes web and mobile apps, dashboards and more. Plan mode and a design canvas come before code; checkpoints let you roll back; built-in auth, database, hosting and monitoring remove setup work. Connectors link services such as Slack, Notion, Linear and BigQuery. Agent usage is effort-based (billed per checkpoint against monthly credits), so cost depends on the size of each task. Best for: rapid prototyping, learning to code and internal tools when you don't want a local dev environment.",
           "sources": [
             {
-              "title": "Replit Official",
+              "title": "Replit",
               "url": "https://replit.com/"
             },
             {
               "title": "Replit Agent Docs",
               "url": "https://docs.replit.com/replitai/agent"
+            },
+            {
+              "title": "Replit AI Billing",
+              "url": "https://docs.replit.com/billing/ai-billing"
             }
           ],
           "pricing": "freemium",
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "Tạo web app nhanh từ mô tả ngôn ngữ tự nhiên",
-            "Prototype ý tưởng mà không cần setup môi trường local",
-            "Deploy trực tiếp lên cloud từ browser"
+            "Turn an idea into a working, hosted web app from a natural-language description",
+            "Prototype without setting up a local environment",
+            "You want auth, database and hosting bundled with the build"
           ],
           "whenNotToUse": [
-            "Dự án cần kiểm soát chi phí chặt chẽ (effort-based pricing khó dự đoán)",
-            "Cần chạy offline hoặc trên máy local"
+            "Projects needing tight cost control — effort-based agent pricing varies by task",
+            "You need to work offline or on your own machine or infrastructure"
           ],
           "compatibleWith": [
             "mcp"
@@ -2110,7 +2141,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -2118,31 +2149,40 @@
         {
           "name": "OpenCode",
           "slug": "opencode",
-          "desc": "Open-source coding agent running in terminal — supports all LLM providers, 122K+ stars, MIT license",
+          "desc": "Open-source coding agent with a terminal UI, desktop app and IDE extension — works with almost any model provider or local models. MIT license.",
           "added_date": "2026-02-04",
-          "detail": "OpenCode, developed by the SST team, is an open-source alternative to Claude Code with 122K+ GitHub stars (Top 100 repos). Supports OpenAI, Anthropic, Google, Groq, local models — no vendor lock-in. Beautiful TUI (Bubble Tea), with LSP integration, session management, and multi-file editing. Written in Go, install via npm/brew/curl. Integrates GitHub Actions for automated PR reviews.",
+          "tags": [
+            "Open source",
+            "Terminal",
+            "Multi-provider"
+          ],
+          "detail": "OpenCode is an open-source (MIT) coding agent built by Anomaly, the team behind SST; the repository now lives at anomalyco/opencode. It is written in TypeScript with its own OpenTUI terminal interface, and is also available as a desktop app (beta), an IDE extension, a web UI and a GitHub/GitLab integration. Two built-in agents — build (full access) and plan (read-only) — are switched with Tab, plus subagents for side tasks. It connects to many providers through Models.dev, can sign in with GitHub Copilot or ChatGPT plans, and supports local models; LSP servers load automatically for code intelligence. Extensible with MCP servers, plugins, custom agents, skills and tools. Free with your own keys; optional paid hosted models (Zen, Go).",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "OpenCode GitHub",
               "url": "https://github.com/anomalyco/opencode"
             },
             {
-              "title": "Website",
+              "title": "OpenCode",
               "url": "https://opencode.ai/"
+            },
+            {
+              "title": "OpenCode Docs",
+              "url": "https://opencode.ai/docs/"
             }
           ],
-          "pricing": "free",
+          "pricing": "freemium",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Muốn coding agent OSS với cộng đồng lớn nhất (122K+ stars, 700+ contributors)",
-            "Thích terminal-first workflow với TUI chất lượng cao",
-            "Cần plan/build agent switching — phân tích trước khi code"
+            "You want an open-source, provider-agnostic alternative to Claude Code or Codex CLI",
+            "You like a terminal-first workflow with a polished TUI",
+            "You want plan/build agent switching — analyze before editing"
           ],
           "whenNotToUse": [
-            "Cần IDE-native experience — OpenCode thiên về terminal",
-            "Không quen cấu hình LLM provider riêng",
-            "Cần coding agent ổn định lâu dài — project phát triển rất nhanh, API có thể thay đổi"
+            "You prefer a full IDE experience — the desktop app is still in beta",
+            "You don't want to set up model providers yourself",
+            "You need long-term stability of commands and config — the project changes very fast"
           ],
           "compatibleWith": [
             "mcp",
@@ -2156,39 +2196,47 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 131307,
+          "github_stars": 216102,
           "license": "MIT"
         },
         {
           "name": "Goose",
           "slug": "goose",
-          "desc": "Open-source coding agent from Block (Square) — doesn't just suggest but also installs, runs, and debugs with any LLM",
+          "desc": "Open-source local AI agent with desktop app and CLI — runs commands, edits code and automates workflows with any LLM. Now under the Linux Foundation.",
           "added_date": "2026-02-04",
-          "detail": "Goose is an open-source coding agent from Block (formerly Square), written in Rust for high performance. Unlike Claude Code/Cursor: Goose autonomously runs commands, installs dependencies, debugs errors — not just suggesting code. Extensible via MCP extensions, has desktop app + CLI. 33K stars, Apache-2.0 license, supports all LLM providers.",
+          "tags": [
+            "Open source",
+            "MCP",
+            "Recipes"
+          ],
+          "detail": "goose is an open-source (Apache-2.0) general-purpose AI agent created by Block and contributed in December 2025 to the Agentic AI Foundation (AAIF) at the Linux Foundation, alongside MCP and AGENTS.md; the repository is now aaif-goose/goose and the docs moved to goose-docs.ai. Written in Rust, it runs on your machine as a desktop app (macOS, Linux, Windows), a CLI or an embeddable API. It executes commands, installs dependencies and debugs rather than only suggesting code, and is also used for research, writing and data tasks. Extensible with MCP extensions; Recipes are portable YAML workflows that can be shared and run in CI. Works with many providers (Anthropic, OpenAI, Google, OpenRouter, Bedrock…), existing subscriptions via ACP, or fully local models through Ollama.",
           "sources": [
             {
-              "title": "GitHub",
-              "url": "https://github.com/block/goose"
+              "title": "goose GitHub",
+              "url": "https://github.com/aaif-goose/goose"
             },
             {
-              "title": "Website",
-              "url": "https://block.github.io/goose/"
+              "title": "goose Docs",
+              "url": "https://goose-docs.ai/"
+            },
+            {
+              "title": "Linux Foundation — Agentic AI Foundation",
+              "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"
             }
           ],
           "pricing": "free",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần coding agent LLM-agnostic, chạy với bất kỳ provider nào",
-            "Muốn tự động hóa workflow phức tạp bằng recipes (YAML)",
-            "Team yêu cầu data privacy — chạy hoàn toàn local với Ollama"
+            "You need an LLM-agnostic agent that works with any provider",
+            "You want to automate repeatable workflows with shareable YAML recipes",
+            "Data privacy matters — run fully local with Ollama"
           ],
           "whenNotToUse": [
-            "Muốn setup đơn giản, không cần cấu hình LLM provider",
-            "Cần coding accuracy cao nhất out-of-the-box mà không tùy chỉnh model",
-            "Không quen terminal workflow — cần kinh nghiệm CLI"
+            "You want zero setup — you must configure a model provider first",
+            "You want top coding accuracy out of the box without tuning the model choice"
           ],
           "compatibleWith": [
             "mcp",
@@ -2202,9 +2250,9 @@
           "languages": [
             "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 33522,
+          "github_stars": 55405,
           "license": "Apache-2.0"
         }
       ]
@@ -4184,7 +4232,7 @@
       "id": "coding-agents",
       "title": "Compare AI Coding Agents",
       "sectionId": "coding-agents",
-      "as_of": "2026-02-09",
+      "as_of": "2026-10-20",
       "layout": "flip",
       "criteria": [
         "Best for",
@@ -4209,20 +4257,20 @@
             "Autonomy": "Agentic",
             "Workflow integration": "Strong — GitHub Actions, GitLab CI, hooks, PR mode",
             "Repo awareness": "Strong — repo indexing, CLAUDE.md, memory, sub-agents",
-            "Model support": "Anthropic-first",
-            "Pricing": "Freemium (Pro $20/Max $100–200/mo)"
+            "Model support": "Claude models only",
+            "Pricing": "Paid (Claude Pro $20 / Max from $100/mo, or API)"
           }
         },
         {
           "cardId": "cursor",
           "values": {
             "Best for": "IDE-integrated AI dev, multi-file refactoring",
-            "Form factor": "IDE (VS Code fork)",
+            "Form factor": "IDE (VS Code fork) + CLI + cloud agents",
             "Autonomy": "Semi-agent",
-            "Workflow integration": "Good — agent mode, GitHub PR review, background agents",
+            "Workflow integration": "Good — Agent, cloud agents, Bugbot PR review, CLI",
             "Repo awareness": "Strong — full codebase embeddings, multi-file edits",
             "Model support": "Multi-provider",
-            "Pricing": "Freemium (Pro $20/Pro+ $60/Ultra $200/mo)"
+            "Pricing": "Freemium (Plus $8 / Premium $30 / Ultra $200/mo; third-party models extra)"
           }
         },
         {
@@ -4233,68 +4281,68 @@
             "Autonomy": "Agentic",
             "Workflow integration": "Strong — local CLI + cloud tasks, AGENTS.md, Skills, GitHub PR",
             "Repo awareness": "Good — repo preloading, AGENTS.md, local + cloud environments",
-            "Model support": "OpenAI-first",
-            "Pricing": "Freemium (ChatGPT Plus $20/Pro $200/mo)"
+            "Model support": "OpenAI-first (open models via Ollama)",
+            "Pricing": "Freemium (included in ChatGPT plans; CLI from Plus $20/mo; or API key)"
           }
         },
         {
           "cardId": "windsurf",
           "values": {
             "Best for": "AI-native IDE, autonomous multi-step coding",
-            "Form factor": "IDE (standalone)",
+            "Form factor": "IDE (standalone, now Devin Desktop)",
             "Autonomy": "Agentic",
-            "Workflow integration": "Good — Cascade agent, multi-file changes, auto-verify",
+            "Workflow integration": "Good — Devin Local agent, Workflows, hand-off to Devin Cloud",
             "Repo awareness": "Good — codebase analysis, project structure awareness",
             "Model support": "Multi-provider",
-            "Pricing": "Freemium (Free 25 credits/Pro $15/Teams $30/mo)"
+            "Pricing": "Freemium (plans in transition after the rename)"
           }
         },
         {
           "cardId": "github-copilot",
           "values": {
             "Best for": "Inline assist, team adoption, PR review",
-            "Form factor": "IDE extension (VS Code, JetBrains, Eclipse, Xcode, Neovim)",
+            "Form factor": "IDE extension (VS Code, JetBrains, Visual Studio, Xcode, Eclipse, Neovim) + CLI + cloud agent",
             "Autonomy": "Semi-agent",
             "Workflow integration": "Strong — coding agent on issues/PRs, AGENTS.md, plan mode, MCP",
             "Repo awareness": "Good — repo indexing, multi-file agent mode",
             "Model support": "Multi-model (plan-dependent)",
-            "Pricing": "Freemium (Free/Pro $10/Pro+ $39/Biz $19/Ent $39/user/mo)"
+            "Pricing": "Freemium (Free / Pro $10 / Pro+ $39 / Max $100; Business $19 / Enterprise $39 per user/mo; AI credits)"
           }
         },
         {
           "cardId": "gemini-cli",
           "values": {
-            "Best for": "Free terminal coding, Google ecosystem",
+            "Best for": "Open-source terminal agent for Gemini Code Assist / paid API users",
             "Form factor": "CLI",
             "Autonomy": "Semi-agent",
             "Workflow integration": "Basic — shell commands, file ops, web fetch, MCP",
             "Repo awareness": "Good — reads local files, tool-based context",
             "Model support": "Google-first",
-            "Pricing": "Free (generous free tier; BYO key for more)"
+            "Pricing": "Paid API key or Code Assist license (free individual access ended Jun 2026)"
           }
         },
         {
           "cardId": "cline-roocode",
           "values": {
             "Best for": "Customizable OSS agent, human-in-the-loop",
-            "Form factor": "VS Code extension",
+            "Form factor": "VS Code + JetBrains extension, CLI",
             "Autonomy": "Semi-agent",
-            "Workflow integration": "Good — Plan/Act modes, terminal, MCP, Orchestrator (Roo)",
+            "Workflow integration": "Good — Plan/Act modes, terminal, MCP, checkpoints",
             "Repo awareness": "Good — tree-sitter parsing, full project read, multi-file",
             "Model support": "Multi-provider",
-            "Pricing": "Free/OSS (pay API provider)"
+            "Pricing": "Free/OSS (pay API provider; optional paid plans)"
           }
         },
         {
           "cardId": "kiro-aws",
           "values": {
             "Best for": "Spec-driven dev, enterprise AWS projects",
-            "Form factor": "IDE (Code OSS fork)",
+            "Form factor": "IDE (Code OSS fork) + CLI + Web",
             "Autonomy": "Agentic",
             "Workflow integration": "Strong — agent hooks (auto-test, lint, docs on save), spec→design→tasks",
             "Repo awareness": "Good — structured specs, requirements tracking, persistent context",
-            "Model support": "AWS-first (Claude via Bedrock)",
-            "Pricing": "Freemium (per-prompt credits)"
+            "Model support": "Multi-provider (Claude, GPT, open-weight)",
+            "Pricing": "Freemium (Free / Pro $20 / Pro+ $40 / Pro Max $100 / Power $200; credits)"
           }
         },
         {
@@ -4306,19 +4354,19 @@
             "Workflow integration": "Basic — integrated deploy, no Git/PR workflow",
             "Repo awareness": "Basic — project context within Replit workspace",
             "Model support": "Replit proprietary",
-            "Pricing": "Freemium (Free tier/Core $25/mo)"
+            "Pricing": "Freemium (Starter free / Core $20 / Pro $100/mo; effort-based agent usage)"
           }
         },
         {
           "cardId": "opencode",
           "values": {
             "Best for": "OSS terminal agent, LSP integration",
-            "Form factor": "CLI",
+            "Form factor": "CLI/TUI + desktop (beta) + IDE extension",
             "Autonomy": "Semi-agent",
-            "Workflow integration": "Basic — file editing, shell commands, LSP",
+            "Workflow integration": "Good — build/plan agents, MCP, GitHub/GitLab",
             "Repo awareness": "Good — LSP-powered code intelligence, project scanning",
             "Model support": "Multi-provider",
-            "Pricing": "Free/OSS"
+            "Pricing": "Free/OSS (optional paid hosted models)"
           }
         },
         {
@@ -4330,7 +4378,7 @@
             "Workflow integration": "Good — Recipes (executable workflows), MCP, auto-PR",
             "Repo awareness": "Good — project context, global MCP servers",
             "Model support": "Multi-provider",
-            "Pricing": "Free/OSS (by Block)"
+            "Pricing": "Free/OSS (Linux Foundation AAIF)"
           }
         }
       ]

@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Cursor — See AI First</title>
-<meta name="description" content="IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.">
+<meta name="description" content="Code editor AI-first dựa trên VS Code — Agent, Tab predictions, CLI và cloud agents chạy song song.">
 <meta property="og:title" content="Cursor — See AI First">
-<meta property="og:description" content="IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.">
+<meta property="og:description" content="Code editor AI-first dựa trên VS Code — Agent, Tab predictions, CLI và cloud agents chạy song song.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/cursor">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Cursor — See AI First">
-<meta name="twitter:description" content="IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.">
+<meta name="twitter:description" content="Code editor AI-first dựa trên VS Code — Agent, Tab predictions, CLI và cloud agents chạy song song.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/cursor">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Cursor","url":"https://seeaifirst.com/vi/tool/cursor","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.","keywords":["AI Coding Agents — Công cụ code bằng AI","python","js","typescript","java","go","rust"],"isAccessibleForFree":true,"sameAs":["https://www.cursor.com/","https://docs.cursor.com/"],"datePublished":"2026-02-03","dateModified":"2026-02-26","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Cursor","url":"https://seeaifirst.com/vi/tool/cursor","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Code editor AI-first dựa trên VS Code — Agent, Tab predictions, CLI và cloud agents chạy song song.","keywords":["AI Coding Agents — Công cụ code bằng AI","python","js","typescript","java","go","rust"],"isAccessibleForFree":true,"sameAs":["https://cursor.com/","https://cursor.com/docs","https://cursor.com/pricing"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,19 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> › Cursor</nav>
     <article>
       <h1>Cursor</h1>
-      <p>IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.</p>
-      <p>IDE thông minh dựa trên VS Code — tích hợp AI trực tiếp vào editor. Composer mode tạo/sửa nhiều file, Agent mode tự chạy terminal commands, Tab predictions gợi ý code realtime. Semantic search tìm code theo ý nghĩa. Dùng Claude + GPT + custom models. Best for: code hàng ngày, rapid prototyping. $20/tháng.</p>
+      <p>Code editor AI-first dựa trên VS Code — Agent, Tab predictions, CLI và cloud agents chạy song song.</p>
+      <p>Cursor là code editor AI fork từ VS Code. Agent sửa nhiều file và chạy lệnh terminal, Tab đoán chỉnh sửa tiếp theo, Inline Edit viết lại đoạn đang chọn. Ngoài IDE desktop còn có CLI (chạy được headless trong CI), cloud agents làm việc song song trong môi trường riêng, Bugbot review pull request, và hỗ trợ JetBrains qua ACP. Mở rộng bằng Rules, MCP servers, skills, subagents và hooks. Model từ OpenAI, Anthropic, Google, xAI cùng model Composer của Cursor; ở các gói hiện tại, dùng model bên thứ ba tính phí riêng theo giá API. Cursor được SpaceX mua lại vào tháng 8/2026. Best for: code hằng ngày và thay đổi nhiều file trong một editor AI-native.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>AI-first IDE muốn context toàn bộ codebase</li>
-        <li>Multi-file editing và refactoring phức tạp</li>
-        <li>Developers muốn thay thế VS Code bằng AI-native editor</li>
+        <li>Muốn agent, tab completion và ngữ cảnh codebase trong cùng một IDE AI-native</li>
+        <li>Sửa nhiều file và refactor ngay trong editor</li>
+        <li>Muốn nhiều agent chạy song song trên cloud rồi review PR của chúng</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Ngân sách hạn hẹp — Pro $20/mo đắt hơn Copilot $10</li>
-        <li>Không muốn rời VS Code ecosystem hiện tại</li>
-        <li>Cần offline coding — phụ thuộc hoàn toàn cloud</li>
+        <li>Muốn giữ editor hiện tại — Cursor là IDE riêng (JetBrains chỉ qua ACP)</li>
+        <li>Cần chi phí dễ dự đoán — dùng model bên thứ ba tính thêm ngoài gói</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1111,7 +1110,7 @@ html, body {
         <dt>Độ khó</dt><dd>Cơ bản</dd>
         <dt>Ngôn ngữ</dt><dd>python, js, typescript, java, go, rust</dd>
         <dt>Ứng dụng</dt><dd>code generation, code review, refactoring</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-02-26 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1119,7 +1118,7 @@ html, body {
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
-        <li><a href="/vi/tool/windsurf">Windsurf</a></li>
+        <li><a href="/vi/tool/windsurf">Devin Desktop (formerly Windsurf)</a></li>
         <li><a href="/vi/tool/github-copilot">GitHub Copilot</a></li>
         <li><a href="/vi/tool/kiro-aws">Kiro (AWS)</a></li>
         <li><a href="/vi/tool/codex-cli">Codex CLI</a></li>
@@ -1129,8 +1128,9 @@ html, body {
       <p><a href="/vi/compare/coding-agents">⚖️ So sánh AI Coding Agents</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://www.cursor.com/" rel="noopener noreferrer">Cursor Official</a></li>
-        <li><a href="https://docs.cursor.com/" rel="noopener noreferrer">Cursor Docs</a></li>
+        <li><a href="https://cursor.com/" rel="noopener noreferrer">Cursor</a></li>
+        <li><a href="https://cursor.com/docs" rel="noopener noreferrer">Cursor Docs</a></li>
+        <li><a href="https://cursor.com/pricing" rel="noopener noreferrer">Cursor Pricing</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> trên See AI First.</p>

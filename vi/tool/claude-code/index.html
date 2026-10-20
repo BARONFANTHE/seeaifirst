@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Claude Code — See AI First</title>
-<meta name="description" content="Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.">
+<meta name="description" content="Công cụ coding agent của Anthropic cho terminal, IDE, desktop và web — đọc codebase, sửa file, chạy lệnh, mở PR.">
 <meta property="og:title" content="Claude Code — See AI First">
-<meta property="og:description" content="Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.">
+<meta property="og:description" content="Công cụ coding agent của Anthropic cho terminal, IDE, desktop và web — đọc codebase, sửa file, chạy lệnh, mở PR.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/claude-code">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Claude Code — See AI First">
-<meta name="twitter:description" content="Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.">
+<meta name="twitter:description" content="Công cụ coding agent của Anthropic cho terminal, IDE, desktop và web — đọc codebase, sửa file, chạy lệnh, mở PR.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/claude-code">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Claude Code","url":"https://seeaifirst.com/vi/tool/claude-code","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.","keywords":["AI Coding Agents — Công cụ code bằng AI","js","typescript"],"sameAs":["https://docs.claude.com/en/docs/claude-code/overview","https://www.anthropic.com/engineering/claude-code-best-practices","https://github.com/affaan-m/everything-claude-code"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Claude Code","url":"https://seeaifirst.com/vi/tool/claude-code","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Công cụ coding agent của Anthropic cho terminal, IDE, desktop và web — đọc codebase, sửa file, chạy lệnh, mở PR.","keywords":["AI Coding Agents — Công cụ code bằng AI","js","typescript"],"sameAs":["https://code.claude.com/docs/en/overview","https://github.com/anthropics/claude-code","https://code.claude.com/docs/en/best-practices"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,18 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> › Claude Code</nav>
     <article>
       <h1>Claude Code</h1>
-      <p>Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.</p>
-      <p>Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ. 200K token context cho phép đọc hiểu toàn bộ codebase lớn. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Chạy local, không cloud dependency. Best for: dự án phức tạp, refactoring lớn, codebase hiện có. Hỗ trợ async mode trên web (claude.ai/code) — delegate task dài, tạo PR trực tiếp, teleport về CLI local để tiếp tục. Hệ sinh thái mở rộng: Everything Claude Code — bộ agents, skills, hooks, commands production-ready cho Claude Code.</p>
+      <p>Công cụ coding agent của Anthropic cho terminal, IDE, desktop và web — đọc codebase, sửa file, chạy lệnh, mở PR.</p>
+      <p>Claude Code là công cụ coding agent của Anthropic. Agent đọc codebase, sửa nhiều file, chạy lệnh và test, làm việc với git — stage thay đổi, viết commit, mở pull request. Có dạng CLI, extension VS Code/Cursor và JetBrains, desktop app và bản web (claude.ai/code) nơi task dài chạy trên cloud; phiên làm việc chuyển được giữa các surface (ví dụ claude --teleport). Tùy biến bằng CLAUDE.md (hoặc AGENTS.md có sẵn), skills, hooks, MCP servers, subagents và plugins; Agent SDK để dựng agent riêng trên cùng engine, GitHub Actions hoặc GitLab CI/CD để chạy trong pipeline. Chỉ dùng model Claude — qua gói Claude trả phí, Anthropic API hoặc cloud provider như Amazon Bedrock, Google Cloud. Best for: việc phức tạp nhiều file, refactor lớn, codebase đang có.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần agentic coding trực tiếp trong terminal</li>
-        <li>Multi-file refactoring với codebase awareness</li>
-        <li>Delegate task dài không cần giám sát (web async mode)</li>
+        <li>Agentic coding từ terminal hoặc IDE trên codebase thật đang có</li>
+        <li>Refactor nhiều file và thay đổi cần hiểu toàn bộ repo</li>
+        <li>Giao task dài chạy trên cloud trong lúc làm việc khác</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Budget hạn chế (chi phí API có thể tăng nhanh với heavy use)</li>
-        <li>Cần inline tab-completion trong IDE (dùng Copilot/Cursor)</li>
+        <li>Muốn dùng model không phải Claude (OpenCode, Cline hoặc goose không phụ thuộc provider)</li>
+        <li>Chủ yếu cần tab completion inline trong IDE (Copilot hoặc Cursor)</li>
+        <li>Không có gói Claude trả phí hay ngân sách API — Claude Code không có trong gói miễn phí</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1110,7 +1111,7 @@ html, body {
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Ngôn ngữ</dt><dd>js, typescript</dd>
         <dt>Ứng dụng</dt><dd>agentic coding, code refactoring, git workflow, ci cd automation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1120,7 +1121,7 @@ html, body {
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
-        <li><a href="/vi/tool/cline-roocode">Cline / RooCode</a></li>
+        <li><a href="/vi/tool/cline-roocode">Cline</a></li>
         <li><a href="/vi/tool/codex-cli">Codex CLI</a></li>
         <li><a href="/vi/tool/gemini-cli">Gemini CLI</a></li>
         <li><a href="/vi/tool/opencode">OpenCode</a></li>
@@ -1130,9 +1131,9 @@ html, body {
       <p><a href="/vi/compare/coding-agents">⚖️ So sánh AI Coding Agents</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://docs.claude.com/en/docs/claude-code/overview" rel="noopener noreferrer">Claude Code Docs</a></li>
-        <li><a href="https://www.anthropic.com/engineering/claude-code-best-practices" rel="noopener noreferrer">Anthropic — Claude Code Best Practices</a></li>
-        <li><a href="https://github.com/affaan-m/everything-claude-code" rel="noopener noreferrer">Everything Claude Code</a></li>
+        <li><a href="https://code.claude.com/docs/en/overview" rel="noopener noreferrer">Claude Code Docs</a></li>
+        <li><a href="https://github.com/anthropics/claude-code" rel="noopener noreferrer">Claude Code GitHub</a></li>
+        <li><a href="https://code.claude.com/docs/en/best-practices" rel="noopener noreferrer">Claude Code Best Practices</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/coding-agents">AI Coding Agents — Công cụ code bằng AI</a> trên See AI First.</p>

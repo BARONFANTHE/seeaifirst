@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Kiro (AWS) — See AI First</title>
-<meta name="description" content="AWS&#039;s spec-first AI IDE — from requirements → design → plan → automated code generation.">
+<meta name="description" content="AWS&#039;s spec-driven agentic IDE and CLI — turns requirements into design, tasks and code, guided by steering files and hooks.">
 <meta property="og:title" content="Kiro (AWS) — See AI First">
-<meta property="og:description" content="AWS&#039;s spec-first AI IDE — from requirements → design → plan → automated code generation.">
+<meta property="og:description" content="AWS&#039;s spec-driven agentic IDE and CLI — turns requirements into design, tasks and code, guided by steering files and hooks.">
 <meta property="og:url" content="https://seeaifirst.com/tool/kiro-aws">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Kiro (AWS) — See AI First">
-<meta name="twitter:description" content="AWS&#039;s spec-first AI IDE — from requirements → design → plan → automated code generation.">
+<meta name="twitter:description" content="AWS&#039;s spec-driven agentic IDE and CLI — turns requirements into design, tasks and code, guided by steering files and hooks.">
 <link rel="canonical" href="https://seeaifirst.com/tool/kiro-aws">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Kiro (AWS)","url":"https://seeaifirst.com/tool/kiro-aws","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"AWS's spec-first AI IDE — from requirements → design → plan → automated code generation.","keywords":["AI Coding Agents — AI-Powered Coding Tools","python","js","typescript","java","go","rust","csharp","ruby"],"isAccessibleForFree":true,"sameAs":["https://kiro.dev/","https://aws.amazon.com/blogs/aws/kiro-ai-powered-ide/"],"datePublished":"2026-02-03","dateModified":"2026-02-26","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Kiro (AWS)","url":"https://seeaifirst.com/tool/kiro-aws","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"AWS's spec-driven agentic IDE and CLI — turns requirements into design, tasks and code, guided by steering files and hooks.","keywords":["AI Coding Agents — AI-Powered Coding Tools","python","js","typescript","java","go","rust","csharp","ruby"],"isAccessibleForFree":true,"sameAs":["https://kiro.dev/","https://kiro.dev/blog/introducing-kiro/","https://kiro.dev/docs/"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,20 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> › Kiro (AWS)</nav>
     <article>
       <h1>Kiro (AWS)</h1>
-      <p>AWS&#039;s spec-first AI IDE — from requirements → design → plan → automated code generation.</p>
-      <p>Amazon Web Services&#039; AI IDE (preview 2025) — spec-driven development: write requirements → Kiro auto-generates code + tests. Deep integration with AWS services (Lambda, DynamoDB, S3...). Steering files guide AI to follow project conventions. Has hooks that auto-run actions on file changes. Best for: AWS-centric projects.</p>
+      <p>AWS&#039;s spec-driven agentic IDE and CLI — turns requirements into design, tasks and code, guided by steering files and hooks.</p>
+      <p>Kiro is an agentic development platform built and operated by AWS, generally available since November 2025. Its core idea is spec-driven development: write requirements, let Kiro produce a design and a task list, then implement and test them (including property-based tests). Steering files keep the agent on your project conventions; hooks run actions on file changes, tool use or task completion; MCP, Powers, skills and parallel subagents extend it. Available as an IDE (based on Code OSS), the Kiro CLI (successor to the Amazon Q Developer CLI) and Kiro Web with cloud sandboxes, all sharing the same .kiro/ configuration. Models from Anthropic, OpenAI and open-weight families with an Auto selector, billed in credits. No AWS account is required — sign in with AWS Builder ID or a social login. Best for: teams who want structured, spec-first work rather than ad-hoc prompting.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Spec-driven development — clear requirements and design before code</li>
+        <li>Teams coming from Amazon Q Developer — the Kiro CLI is its successor</li>
+        <li>Automating docs, tests and checks through agent hooks</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>Quick prototypes — the spec workflow adds overhead for small tasks</li>
+        <li>You need predictable spend — complex requests consume more credits</li>
+        <li>You prefer not to depend on an AWS-operated service</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Freemium</dd>
@@ -1099,7 +1111,7 @@ html, body {
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>Languages</dt><dd>python, js, typescript, java, go, rust, csharp, ruby</dd>
         <dt>Use cases</dt><dd>code generation, code review, refactoring</dd>
-        <dt>Last verified</dt><dd>2026-02-26 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1108,7 +1120,7 @@ html, body {
       <h2>Alternatives in this category</h2>
       <ul>
         <li><a href="/tool/cursor">Cursor</a></li>
-        <li><a href="/tool/windsurf">Windsurf</a></li>
+        <li><a href="/tool/windsurf">Devin Desktop (formerly Windsurf)</a></li>
         <li><a href="/tool/github-copilot">GitHub Copilot</a></li>
         <li><a href="/tool/codex-cli">Codex CLI</a></li>
         <li><a href="/tool/gemini-cli">Gemini CLI</a></li>
@@ -1117,8 +1129,9 @@ html, body {
       <p><a href="/compare/coding-agents">⚖️ Compare AI Coding Agents</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://kiro.dev/" rel="noopener noreferrer">Kiro Official</a></li>
-        <li><a href="https://aws.amazon.com/blogs/aws/kiro-ai-powered-ide/" rel="noopener noreferrer">AWS — Introducing Kiro</a></li>
+        <li><a href="https://kiro.dev/" rel="noopener noreferrer">Kiro</a></li>
+        <li><a href="https://kiro.dev/blog/introducing-kiro/" rel="noopener noreferrer">Kiro — Introducing Kiro</a></li>
+        <li><a href="https://kiro.dev/docs/" rel="noopener noreferrer">Kiro Docs</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> on See AI First.</p>

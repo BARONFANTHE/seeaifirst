@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>OpenCode — See AI First</title>
-<meta name="description" content="Open-source coding agent running in terminal — supports all LLM providers, 122K+ stars, MIT license">
+<meta name="description" content="Open-source coding agent with a terminal UI, desktop app and IDE extension — works with almost any model provider or local models. MIT license.">
 <meta property="og:title" content="OpenCode — See AI First">
-<meta property="og:description" content="Open-source coding agent running in terminal — supports all LLM providers, 122K+ stars, MIT license">
+<meta property="og:description" content="Open-source coding agent with a terminal UI, desktop app and IDE extension — works with almost any model provider or local models. MIT license.">
 <meta property="og:url" content="https://seeaifirst.com/tool/opencode">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="OpenCode — See AI First">
-<meta name="twitter:description" content="Open-source coding agent running in terminal — supports all LLM providers, 122K+ stars, MIT license">
+<meta name="twitter:description" content="Open-source coding agent with a terminal UI, desktop app and IDE extension — works with almost any model provider or local models. MIT license.">
 <link rel="canonical" href="https://seeaifirst.com/tool/opencode">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"OpenCode","url":"https://seeaifirst.com/tool/opencode","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source coding agent running in terminal — supports all LLM providers, 122K+ stars, MIT license","keywords":["AI Coding Agents — AI-Powered Coding Tools","typescript"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/anomalyco/opencode","https://opencode.ai/"],"datePublished":"2026-02-04","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"OpenCode","url":"https://seeaifirst.com/tool/opencode","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source coding agent with a terminal UI, desktop app and IDE extension — works with almost any model provider or local models. MIT license.","keywords":["AI Coding Agents — AI-Powered Coding Tools","typescript"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/anomalyco/opencode","https://opencode.ai/","https://opencode.ai/docs/"],"datePublished":"2026-02-04","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,17 +1090,29 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> › OpenCode</nav>
     <article>
       <h1>OpenCode</h1>
-      <p>Open-source coding agent running in terminal — supports all LLM providers, 122K+ stars, MIT license</p>
-      <p>OpenCode, developed by the SST team, is an open-source alternative to Claude Code with 122K+ GitHub stars (Top 100 repos). Supports OpenAI, Anthropic, Google, Groq, local models — no vendor lock-in. Beautiful TUI (Bubble Tea), with LSP integration, session management, and multi-file editing. Written in Go, install via npm/brew/curl. Integrates GitHub Actions for automated PR reviews.</p>
+      <p>Open-source coding agent with a terminal UI, desktop app and IDE extension — works with almost any model provider or local models. MIT license.</p>
+      <p>OpenCode is an open-source (MIT) coding agent built by Anomaly, the team behind SST; the repository now lives at anomalyco/opencode. It is written in TypeScript with its own OpenTUI terminal interface, and is also available as a desktop app (beta), an IDE extension, a web UI and a GitHub/GitLab integration. Two built-in agents — build (full access) and plan (read-only) — are switched with Tab, plus subagents for side tasks. It connects to many providers through Models.dev, can sign in with GitHub Copilot or ChatGPT plans, and supports local models; LSP servers load automatically for code intelligence. Extensible with MCP servers, plugins, custom agents, skills and tools. Free with your own keys; optional paid hosted models (Zen, Go).</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You want an open-source, provider-agnostic alternative to Claude Code or Codex CLI</li>
+        <li>You like a terminal-first workflow with a polished TUI</li>
+        <li>You want plan/build agent switching — analyze before editing</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You prefer a full IDE experience — the desktop app is still in beta</li>
+        <li>You don&#039;t want to set up model providers yourself</li>
+        <li>You need long-term stability of commands and config — the project changes very fast</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
-        <dt>Pricing</dt><dd>Free</dd>
+        <dt>Pricing</dt><dd>Freemium</dd>
         <dt>Deployment</dt><dd>Local</dd>
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>typescript</dd>
         <dt>Use cases</dt><dd>agentic coding, code review, cli tool</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1113,14 +1125,15 @@ html, body {
         <li><a href="/tool/goose">Goose</a></li>
         <li><a href="/tool/claude-code">Claude Code</a></li>
         <li><a href="/tool/cursor">Cursor</a></li>
-        <li><a href="/tool/windsurf">Windsurf</a></li>
+        <li><a href="/tool/windsurf">Devin Desktop (formerly Windsurf)</a></li>
       </ul>
       <p><a href="/section/coding-agents">See all 11 tools in AI Coding Agents — AI-Powered Coding Tools →</a></p>
       <p><a href="/compare/coding-agents">⚖️ Compare AI Coding Agents</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/anomalyco/opencode" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://opencode.ai/" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://github.com/anomalyco/opencode" rel="noopener noreferrer">OpenCode GitHub</a></li>
+        <li><a href="https://opencode.ai/" rel="noopener noreferrer">OpenCode</a></li>
+        <li><a href="https://opencode.ai/docs/" rel="noopener noreferrer">OpenCode Docs</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/coding-agents">AI Coding Agents — AI-Powered Coding Tools</a> on See AI First.</p>
