@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Mastra — See AI First</title>
-<meta name="description" content="TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn">
+<meta name="description" content="Framework TypeScript cho AI agent và ứng dụng từ đội làm Gatsby — agents, graph workflows, memory, RAG, evals, MCP và A2A.">
 <meta property="og:title" content="Mastra — See AI First">
-<meta property="og:description" content="TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn">
+<meta property="og:description" content="Framework TypeScript cho AI agent và ứng dụng từ đội làm Gatsby — agents, graph workflows, memory, RAG, evals, MCP và A2A.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/mastra">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Mastra — See AI First">
-<meta name="twitter:description" content="TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn">
+<meta name="twitter:description" content="Framework TypeScript cho AI agent và ứng dụng từ đội làm Gatsby — agents, graph workflows, memory, RAG, evals, MCP và A2A.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/mastra">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Mastra","url":"https://seeaifirst.com/vi/tool/mastra","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn","keywords":["Agent Frameworks — Xây dựng AI agents","typescript"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/mastra-ai/mastra","https://mastra.ai/docs"],"datePublished":"2026-02-04","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Mastra","url":"https://seeaifirst.com/vi/tool/mastra","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework TypeScript cho AI agent và ứng dụng từ đội làm Gatsby — agents, graph workflows, memory, RAG, evals, MCP và A2A.","keywords":["Agent Frameworks — Xây dựng AI agents","typescript"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/mastra-ai/mastra","https://mastra.ai/docs","https://www.mastra.ai/pricing"],"datePublished":"2026-02-04","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,30 +1090,30 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › Mastra</nav>
     <article>
       <h1>Mastra</h1>
-      <p>TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn</p>
-      <p>Mastra là framework agent ưu tiên TypeScript, xây dựng bởi team đứng sau Gatsby.js. Cung cấp graph-based workflows, built-in RAG với vector store, evaluation framework, và MCP client/server. Hỗ trợ 40+ model providers, human-in-the-loop, và memory management. 22K stars, active development, phù hợp cho TypeScript/Node.js developers muốn xây agent nhanh.</p>
+      <p>Framework TypeScript cho AI agent và ứng dụng từ đội làm Gatsby — agents, graph workflows, memory, RAG, evals, MCP và A2A.</p>
+      <p>Mastra là framework TypeScript cho ứng dụng và agent AI, do các nhà sáng lập Gatsby xây dựng (được YC hậu thuẫn). Agent dùng tool và memory; workflow engine dạng đồ thị (.then(), .branch(), .parallel()) hỗ trợ tạm dừng/tiếp tục cho human-in-the-loop; model routing tới hàng chục provider. Có sẵn RAG, evals/scorers và observability, cùng MCP server/client và A2A hai chiều. Nhúng vào ứng dụng React, Next.js, Node hoặc chạy như server độc lập; Studio hỗ trợ phát triển và debug ở local. Giấy phép theo mô hình open-core: framework là Apache-2.0, còn tính năng trong ee/ thuộc Mastra Enterprise License (miễn phí khi phát triển, trả phí khi chạy production). Mastra Platform cung cấp hosting có quản lý, có gói Starter miễn phí.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>TypeScript AI applications</li>
-        <li>agent workflows with eval/observability</li>
-        <li>serverless agent deployment</li>
-        <li>rapid prototyping</li>
+        <li>Ứng dụng và agent AI viết bằng TypeScript</li>
+        <li>Agent workflow cần evals và observability có sẵn</li>
+        <li>Nhúng agent vào ứng dụng React, Next.js hoặc Node</li>
+        <li>Prototype nhanh trên stack TypeScript</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Python-only teams</li>
-        <li>legacy JavaScript without TypeScript</li>
-        <li>extremely large-scale multi-agent systems</li>
+        <li>Team chỉ dùng Python</li>
+        <li>Dự án JavaScript thuần không muốn chuyển sang TypeScript</li>
+        <li>Muốn mọi tính năng đều theo giấy phép mã nguồn mở (tính năng ee/ là thương mại)</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
-        <dt>Chi phí</dt><dd>Miễn phí</dd>
-        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
         <dt>Ngôn ngữ</dt><dd>typescript</dd>
         <dt>Ứng dụng</dt><dd>agent orchestration, workflow automation, rag pipeline, typescript ai</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1133,8 +1133,9 @@ html, body {
       <p><a href="/vi/compare/frameworks">⚖️ So sánh Agent Frameworks</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/mastra-ai/mastra" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://mastra.ai/docs" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://github.com/mastra-ai/mastra" rel="noopener noreferrer">Mastra GitHub</a></li>
+        <li><a href="https://mastra.ai/docs" rel="noopener noreferrer">Mastra Docs</a></li>
+        <li><a href="https://www.mastra.ai/pricing" rel="noopener noreferrer">Mastra Pricing</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>

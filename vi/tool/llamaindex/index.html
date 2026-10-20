@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>LlamaIndex — See AI First</title>
-<meta name="description" content="Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.">
+<meta name="description" content="Framework Python mã nguồn mở cho agent và RAG trên dữ liệu riêng — connectors, indexes, query engines và agent workflows.">
 <meta property="og:title" content="LlamaIndex — See AI First">
-<meta property="og:description" content="Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.">
+<meta property="og:description" content="Framework Python mã nguồn mở cho agent và RAG trên dữ liệu riêng — connectors, indexes, query engines và agent workflows.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/llamaindex">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="LlamaIndex — See AI First">
-<meta name="twitter:description" content="Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.">
+<meta name="twitter:description" content="Framework Python mã nguồn mở cho agent và RAG trên dữ liệu riêng — connectors, indexes, query engines và agent workflows.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/llamaindex">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LlamaIndex","url":"https://seeaifirst.com/vi/tool/llamaindex","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.","keywords":["Agent Frameworks — Xây dựng AI agents","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://www.llamaindex.ai/","https://github.com/run-llama/llama_index","https://docs.llamaindex.ai/"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LlamaIndex","url":"https://seeaifirst.com/vi/tool/llamaindex","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework Python mã nguồn mở cho agent và RAG trên dữ liệu riêng — connectors, indexes, query engines và agent workflows.","keywords":["Agent Frameworks — Xây dựng AI agents","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/run-llama/llama_index","https://developers.llamaindex.ai/python/framework/getting_started/reading/","https://www.llamaindex.ai/pricing"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,20 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › LlamaIndex</nav>
     <article>
       <h1>LlamaIndex</h1>
-      <p>Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.</p>
-      <p>Framework chuyên về RAG (Retrieval-Augmented Generation) và data agents. Mạnh nhất ở khả năng kết nối, index và query dữ liệu từ 160+ nguồn (PDF, database, API, Notion, Slack...). LlamaIndex Workflows cho phép xây agent phức tạp dạng event-driven. Tích hợp tốt với LangChain và các LLM providers.</p>
+      <p>Framework Python mã nguồn mở cho agent và RAG trên dữ liệu riêng — connectors, indexes, query engines và agent workflows.</p>
+      <p>LlamaIndex (MIT) là framework Python để xây ứng dụng LLM và agent trên dữ liệu riêng. Connectors của LlamaHub nạp tài liệu và dữ liệu; indexes (vector, property graph…) và storage phục vụ query engines, retrievers, rerankers và routers; phía trên là agent, tool và các pattern multi-agent, có human-in-the-loop, MCP (dùng MCP tools hoặc mở workflow thành MCP), instrumentation và module evaluation. Hàng trăm gói tích hợp cho LLM, embedding và vector store, tích hợp được với LangChain. Trọng tâm thương mại của công ty đã chuyển sang LlamaParse — nền tảng parse và trích xuất tài liệu trả phí, cắm vào framework; thư viện TypeScript (LlamaIndex.TS) đã bị archive từ tháng 4/2026.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>connecting LLMs to custom data sources</li>
-        <li>building RAG pipelines over documents</li>
-        <li>structured data extraction from unstructured text</li>
-        <li>agent workflows with data retrieval</li>
+        <li>Kết nối LLM với nguồn dữ liệu riêng</li>
+        <li>Xây RAG pipeline trên tài liệu</li>
+        <li>Trích xuất dữ liệu có cấu trúc từ văn bản tự do</li>
+        <li>Agent workflow cần truy xuất dữ liệu</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>no custom data integration needed</li>
-        <li>simple prompt-response without retrieval</li>
-        <li>real-time streaming without document grounding</li>
+        <li>Không cần tích hợp dữ liệu riêng</li>
+        <li>Chỉ prompt-trả lời đơn giản, không cần truy xuất</li>
+        <li>Dự án TypeScript/JavaScript — LlamaIndex.TS không còn được duy trì</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1111,9 +1111,9 @@ html, body {
         <dt>Triển khai</dt><dd>Tự host</dd>
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Giấy phép</dt><dd>MIT</dd>
-        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>rag pipeline, document qa, data extraction, agent orchestration</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1139,9 +1139,9 @@ html, body {
       <p><a href="/vi/compare/frameworks">⚖️ So sánh Agent Frameworks</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://www.llamaindex.ai/" rel="noopener noreferrer">LlamaIndex Official</a></li>
         <li><a href="https://github.com/run-llama/llama_index" rel="noopener noreferrer">LlamaIndex GitHub</a></li>
-        <li><a href="https://docs.llamaindex.ai/" rel="noopener noreferrer">LlamaIndex Docs</a></li>
+        <li><a href="https://developers.llamaindex.ai/python/framework/getting_started/reading/" rel="noopener noreferrer">LlamaIndex Docs</a></li>
+        <li><a href="https://www.llamaindex.ai/pricing" rel="noopener noreferrer">LlamaIndex Pricing (LlamaParse)</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>

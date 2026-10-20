@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>CrewAI — See AI First</title>
-<meta name="description" content="Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.">
+<meta name="description" content="Framework Python cho đội AI agent theo vai trò (Crews) cùng Flows điều khiển theo sự kiện cho production — MCP và A2A tích hợp sẵn.">
 <meta property="og:title" content="CrewAI — See AI First">
-<meta property="og:description" content="Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.">
+<meta property="og:description" content="Framework Python cho đội AI agent theo vai trò (Crews) cùng Flows điều khiển theo sự kiện cho production — MCP và A2A tích hợp sẵn.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/crewai">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="CrewAI — See AI First">
-<meta name="twitter:description" content="Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.">
+<meta name="twitter:description" content="Framework Python cho đội AI agent theo vai trò (Crews) cùng Flows điều khiển theo sự kiện cho production — MCP và A2A tích hợp sẵn.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/crewai">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"CrewAI","url":"https://seeaifirst.com/vi/tool/crewai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.","keywords":["Agent Frameworks — Xây dựng AI agents","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://www.crewai.com/","https://github.com/crewAIInc/crewAI","https://docs.crewai.com/"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"CrewAI","url":"https://seeaifirst.com/vi/tool/crewai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework Python cho đội AI agent theo vai trò (Crews) cùng Flows điều khiển theo sự kiện cho production — MCP và A2A tích hợp sẵn.","keywords":["Agent Frameworks — Xây dựng AI agents","python"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/crewAIInc/crewAI","https://docs.crewai.com/en/learn/a2a-agent-delegation","https://docs-platform.crewai.com/platform/en/introduction"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,30 +1090,30 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › CrewAI</nav>
     <article>
       <h1>CrewAI</h1>
-      <p>Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.</p>
-      <p>Framework xây dựng đội agent theo mô hình role-based — mỗi agent đóng 1 vai trò cụ thể (researcher, writer, reviewer...) và phối hợp như một team thật. Hỗ trợ sequential, hierarchical và consensual process. Tích hợp sẵn 700+ tools, LangChain compatible. CrewAI Enterprise cung cấp deployment, monitoring, và agent marketplace.</p>
+      <p>Framework Python cho đội AI agent theo vai trò (Crews) cùng Flows điều khiển theo sự kiện cho production — MCP và A2A tích hợp sẵn.</p>
+      <p>CrewAI là framework Python (MIT) để điều phối các agent tự chủ đóng vai. Crews gom các agent có vai trò, mục tiêu và task, chạy theo quy trình tuần tự hoặc phân cấp (một manager agent giao việc); Flows thêm lớp điều khiển theo sự kiện, có trạng thái — điều kiện, vòng lặp, routing — bao quanh crews cho ứng dụng production. Có sẵn memory, knowledge sources và checkpointing; agent dùng được MCP servers (stdio, SSE, Streamable HTTP), và A2A là cơ chế giao việc hạng nhất, nên agent gọi được hoặc phục vụ agent từ xa. Bản thương mại CrewAI AMP (Agent Management Platform, trước là CrewAI Enterprise) thêm deploy có quản lý từ GitHub hoặc CLI, Crew Studio không cần code, tracing, webhooks và kho tool, chạy cloud hoặc on-prem.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>multi-agent orchestration</li>
-        <li>role-based AI teams</li>
-        <li>autonomous agent collaboration</li>
-        <li>complex workflow automation</li>
+        <li>Điều phối multi-agent với vai trò rõ ràng</li>
+        <li>Đội AI theo vai trò cùng làm một task</li>
+        <li>Workflow production kết hợp Flows xác định với Crews tự chủ</li>
+        <li>Giao việc cho agent từ xa qua A2A</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>simple single-agent tasks</li>
-        <li>non-Python stack</li>
-        <li>real-time low-latency requirements</li>
+        <li>Task đơn giản chỉ cần một agent</li>
+        <li>Stack không dùng Python</li>
+        <li>Yêu cầu real-time, độ trễ rất thấp</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
-        <dt>Chi phí</dt><dd>Miễn phí</dd>
-        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>multi agent, workflow automation, agent orchestration, enterprise automation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1133,9 +1133,9 @@ html, body {
       <p><a href="/vi/compare/frameworks">⚖️ So sánh Agent Frameworks</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://www.crewai.com/" rel="noopener noreferrer">CrewAI Official</a></li>
         <li><a href="https://github.com/crewAIInc/crewAI" rel="noopener noreferrer">CrewAI GitHub</a></li>
-        <li><a href="https://docs.crewai.com/" rel="noopener noreferrer">CrewAI Docs</a></li>
+        <li><a href="https://docs.crewai.com/en/learn/a2a-agent-delegation" rel="noopener noreferrer">CrewAI — A2A Agent Delegation</a></li>
+        <li><a href="https://docs-platform.crewai.com/platform/en/introduction" rel="noopener noreferrer">CrewAI AMP Docs</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>

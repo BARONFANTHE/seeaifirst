@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Pydantic AI — See AI First</title>
-<meta name="description" content="Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers">
+<meta name="description" content="Framework agent Python type-safe của đội Pydantic — output có cấu trúc được kiểm tra, nhiều model provider, evals, durable execution và MCP.">
 <meta property="og:title" content="Pydantic AI — See AI First">
-<meta property="og:description" content="Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers">
+<meta property="og:description" content="Framework agent Python type-safe của đội Pydantic — output có cấu trúc được kiểm tra, nhiều model provider, evals, durable execution và MCP.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/pydantic-ai">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Pydantic AI — See AI First">
-<meta name="twitter:description" content="Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers">
+<meta name="twitter:description" content="Framework agent Python type-safe của đội Pydantic — output có cấu trúc được kiểm tra, nhiều model provider, evals, durable execution và MCP.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/pydantic-ai">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Pydantic AI","url":"https://seeaifirst.com/vi/tool/pydantic-ai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers","keywords":["Agent Frameworks — Xây dựng AI agents","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/pydantic/pydantic-ai","https://ai.pydantic.dev"],"datePublished":"2026-02-04","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Pydantic AI","url":"https://seeaifirst.com/vi/tool/pydantic-ai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework agent Python type-safe của đội Pydantic — output có cấu trúc được kiểm tra, nhiều model provider, evals, durable execution và MCP.","keywords":["Agent Frameworks — Xây dựng AI agents","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/pydantic/pydantic-ai","https://pydantic.dev/docs/ai/","https://pydantic.dev/pydantic-ai"],"datePublished":"2026-02-04","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › Pydantic AI</nav>
     <article>
       <h1>Pydantic AI</h1>
-      <p>Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers</p>
-      <p>Pydantic AI mang triết lý type-safety của FastAPI vào thế giới AI agents. Structured output với Pydantic models, dependency injection, streaming, và built-in evaluation framework. Hỗ trợ MCP + A2A protocols, human-in-the-loop, và 40+ LLM providers. 15.5K stars, MIT license, phát triển bởi chính team tạo ra Pydantic — thư viện validation phổ biến nhất Python.</p>
+      <p>Framework agent Python type-safe của đội Pydantic — output có cấu trúc được kiểm tra, nhiều model provider, evals, durable execution và MCP.</p>
+      <p>Pydantic AI (MIT) mang trải nghiệm type-safe kiểu FastAPI vào việc xây agent: dependency injection có kiểu, output có cấu trúc được kiểm tra, agent không phụ thuộc model với nhiều provider (OpenAI, Anthropic, Google, Bedrock, Groq, Mistral, Ollama, OpenRouter…). Có kèm Pydantic Evals và Pydantic Graph, lớp capabilities/harness cho lập kế hoạch, subagents và bộ nhớ xuyên phiên, durable execution qua Temporal, DBOS, Prefect…, duyệt tool theo human-in-the-loop, MCP client và server, và A2A qua gói fasta2a. Observability dùng OpenTelemetry, tích hợp sát nhất với Pydantic Logfire (sản phẩm trả phí riêng). Docs đã chuyển sang pydantic.dev/docs/ai.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>type-safe structured agent outputs</li>
-        <li>projects already using Pydantic ecosystem</li>
-        <li>model-agnostic agent development</li>
-        <li>agents requiring strict input-output validation</li>
+        <li>Cần output agent có cấu trúc, type-safe</li>
+        <li>Dự án đã dùng hệ sinh thái Pydantic</li>
+        <li>Phát triển agent không phụ thuộc model</li>
+        <li>Agent cần kiểm tra đầu vào/đầu ra chặt chẽ</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>non-Python projects</li>
-        <li>visual or low-code agent building</li>
-        <li>complex multi-agent orchestration requiring graph workflows</li>
+        <li>Dự án không dùng Python</li>
+        <li>Muốn dựng agent bằng giao diện trực quan hoặc low-code</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1113,7 +1112,7 @@ html, body {
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>agent orchestration, structured extraction, type safe agents, api integration</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1136,8 +1135,9 @@ html, body {
       <p><a href="/vi/compare/frameworks">⚖️ So sánh Agent Frameworks</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/pydantic/pydantic-ai" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://ai.pydantic.dev" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://github.com/pydantic/pydantic-ai" rel="noopener noreferrer">Pydantic AI GitHub</a></li>
+        <li><a href="https://pydantic.dev/docs/ai/" rel="noopener noreferrer">Pydantic AI Docs</a></li>
+        <li><a href="https://pydantic.dev/pydantic-ai" rel="noopener noreferrer">Pydantic AI</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>
