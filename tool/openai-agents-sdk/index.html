@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>OpenAI Agents SDK — See AI First</title>
-<meta name="description" content="OpenAI&#039;s lightweight Python SDK — build agents fast with built-in safety guardrails.">
+<meta name="description" content="OpenAI&#039;s lightweight, provider-agnostic agent SDK for Python and TypeScript — handoffs, guardrails, sessions and tracing built in.">
 <meta property="og:title" content="OpenAI Agents SDK — See AI First">
-<meta property="og:description" content="OpenAI&#039;s lightweight Python SDK — build agents fast with built-in safety guardrails.">
+<meta property="og:description" content="OpenAI&#039;s lightweight, provider-agnostic agent SDK for Python and TypeScript — handoffs, guardrails, sessions and tracing built in.">
 <meta property="og:url" content="https://seeaifirst.com/tool/openai-agents-sdk">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="OpenAI Agents SDK — See AI First">
-<meta name="twitter:description" content="OpenAI&#039;s lightweight Python SDK — build agents fast with built-in safety guardrails.">
+<meta name="twitter:description" content="OpenAI&#039;s lightweight, provider-agnostic agent SDK for Python and TypeScript — handoffs, guardrails, sessions and tracing built in.">
 <link rel="canonical" href="https://seeaifirst.com/tool/openai-agents-sdk">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"OpenAI Agents SDK","url":"https://seeaifirst.com/tool/openai-agents-sdk","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"OpenAI's lightweight Python SDK — build agents fast with built-in safety guardrails.","keywords":["Agent Frameworks — Building AI Agents","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://openai.github.io/openai-agents-python/","https://github.com/openai/openai-agents-python"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"OpenAI Agents SDK","url":"https://seeaifirst.com/tool/openai-agents-sdk","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"OpenAI's lightweight, provider-agnostic agent SDK for Python and TypeScript — handoffs, guardrails, sessions and tracing built in.","keywords":["Agent Frameworks — Building AI Agents","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://openai.github.io/openai-agents-python/","https://github.com/openai/openai-agents-python","https://openai.github.io/openai-agents-js/"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,20 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> › OpenAI Agents SDK</nav>
     <article>
       <h1>OpenAI Agents SDK</h1>
-      <p>OpenAI&#039;s lightweight Python SDK — build agents fast with built-in safety guardrails.</p>
-      <p>OpenAI&#039;s official SDK for building agents — lightweight, production-ready. Features built-in Guardrails (input/output validation), Handoffs (task transfer between agents), and Tracing (debug + monitor). Native MCP support since v0.0.7. Minimalist design: few abstractions, easy to customize, easy to debug.</p>
+      <p>OpenAI&#039;s lightweight, provider-agnostic agent SDK for Python and TypeScript — handoffs, guardrails, sessions and tracing built in.</p>
+      <p>The OpenAI Agents SDK (MIT) is a small set of primitives for building agentic apps in Python, with a separate TypeScript/JavaScript SDK. Agents use tools and hand off to other agents or call them as tools; guardrails validate inputs and outputs in parallel; sessions keep conversation history across runs; human-in-the-loop pauses runs for approval. Built-in tracing feeds OpenAI&#039;s evaluation and fine-tuning tools. Tools include Python functions, MCP servers (local and remote) and OpenAI hosted tools; realtime voice agents and container-based sandbox agents cover longer tasks. Works with the OpenAI Responses and Chat Completions APIs and with other model providers. The SDK evolves quickly, so APIs can change between releases.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Lightweight multi-agent workflows with few abstractions</li>
+        <li>Handoffs between specialized agents</li>
+        <li>Built-in tracing and guardrails from day one</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You need a full workflow or graph engine</li>
+        <li>You want tracing outside the OpenAI platform by default (tracing defaults to OpenAI)</li>
+        <li>You need a no-code agent builder UI</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1100,7 +1112,7 @@ html, body {
         <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>python, js</dd>
         <dt>Use cases</dt><dd>agent framework, multi agent, tool calling, tracing</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1119,8 +1131,9 @@ html, body {
       <p><a href="/compare/frameworks">⚖️ Compare Agent Frameworks</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://openai.github.io/openai-agents-python/" rel="noopener noreferrer">OpenAI Agents SDK</a></li>
-        <li><a href="https://github.com/openai/openai-agents-python" rel="noopener noreferrer">OpenAI Agents GitHub</a></li>
+        <li><a href="https://openai.github.io/openai-agents-python/" rel="noopener noreferrer">OpenAI Agents SDK Docs</a></li>
+        <li><a href="https://github.com/openai/openai-agents-python" rel="noopener noreferrer">OpenAI Agents SDK GitHub (Python)</a></li>
+        <li><a href="https://openai.github.io/openai-agents-js/" rel="noopener noreferrer">OpenAI Agents SDK (TypeScript)</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> on See AI First.</p>

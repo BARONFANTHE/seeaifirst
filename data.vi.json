@@ -252,40 +252,40 @@
           "slug": "langgraph",
           "icon": "🦜",
           "mono": true,
-          "desc": "Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.",
+          "desc": "Framework cấp thấp của đội LangChain cho agent có trạng thái, chạy dài — đồ thị node và edge, có durable execution và human-in-the-loop.",
           "added_date": "2026-02-03",
           "tags": [
-            "27.5K⭐",
-            "4.2M downloads/mo"
+            "43.5K⭐",
+            "Durable execution"
           ],
-          "detail": "Framework mã nguồn mở của LangChain cho phép xây dựng agent dạng đồ thị trạng thái (stateful graph). Hỗ trợ durable execution — agent tự phục hồi sau lỗi, human-in-the-loop — con người can thiệp bất kỳ lúc nào, và long-term memory xuyên phiên. Được Klarna, Replit, Uber, LinkedIn, Elastic tin dùng trong production. Có LangGraph Studio để debug visual và LangGraph Platform để deploy.",
+          "detail": "LangGraph là framework điều phối cấp thấp của đội LangChain cho agent có trạng thái, dùng cho Python và JavaScript (MIT). Agent được mô hình hóa thành đồ thị gồm state, node và edge, có routing theo điều kiện, vòng lặp, multi-agent hoặc phân cấp. Durable execution cho phép chạy tiếp sau khi lỗi; bộ nhớ ngắn hạn và dài hạn giữ qua các bước và phiên; human-in-the-loop cho phép xem và sửa state bất cứ lúc nào. Tracing và debug qua LangSmith, có Studio làm IDE trực quan. Dịch vụ deploy hosted — trước là LangGraph Platform — nay tên là LangSmith Deployment, có lựa chọn cloud, hybrid và tự host. Được các công ty như Klarna, Replit, Uber, LinkedIn, Elastic dùng trong production.",
           "sources": [
-            {
-              "title": "LangGraph Official",
-              "url": "https://www.langchain.com/langgraph"
-            },
             {
               "title": "LangGraph GitHub",
               "url": "https://github.com/langchain-ai/langgraph"
             },
             {
-              "title": "LangGraph Docs",
-              "url": "https://docs.langchain.com/oss/python/langgraph/overview"
+              "title": "LangChain — LangChain & LangGraph 1.0",
+              "url": "https://www.langchain.com/blog/langchain-langgraph-1dot0"
+            },
+            {
+              "title": "LangSmith Deployment",
+              "url": "https://www.langchain.com/langsmith/deployment"
             }
           ],
-          "pricing": "free",
-          "deployment": "self-hosted",
+          "pricing": "open-core",
+          "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "stateful multi-step agent workflows",
-            "complex control flow with branching and loops",
-            "human-in-the-loop agent approval",
-            "long-running durable agent execution"
+            "Workflow agent nhiều bước, có trạng thái",
+            "Luồng điều khiển phức tạp có rẽ nhánh và vòng lặp",
+            "Cần bước duyệt human-in-the-loop",
+            "Agent chạy dài phải chịu được lỗi (durable execution)"
           ],
           "whenNotToUse": [
-            "simple single-call LLM tasks",
-            "no need for state persistence between steps",
-            "team unfamiliar with graph-based programming"
+            "Task LLM đơn giản, gọi một lần",
+            "Không cần lưu trạng thái giữa các bước",
+            "Team chưa quen lập trình theo đồ thị"
           ],
           "compatibleWith": [
             "langfuse",
@@ -307,9 +307,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 27670,
+          "github_stars": 43554,
           "license": "MIT"
         },
         {
@@ -317,40 +317,40 @@
           "slug": "crewai",
           "icon": "👥",
           "mono": true,
-          "desc": "Tạo đội agent AI theo vai trò, ít code. Mỗi agent một nhiệm vụ, phối hợp tự động.",
+          "desc": "Framework Python cho đội AI agent theo vai trò (Crews) cùng Flows điều khiển theo sự kiện cho production — MCP và A2A tích hợp sẵn.",
           "added_date": "2026-02-03",
           "tags": [
             "Multi-agent crews",
             "Free core"
           ],
-          "detail": "Framework xây dựng đội agent theo mô hình role-based — mỗi agent đóng 1 vai trò cụ thể (researcher, writer, reviewer...) và phối hợp như một team thật. Hỗ trợ sequential, hierarchical và consensual process. Tích hợp sẵn 700+ tools, LangChain compatible. CrewAI Enterprise cung cấp deployment, monitoring, và agent marketplace.",
+          "detail": "CrewAI là framework Python (MIT) để điều phối các agent tự chủ đóng vai. Crews gom các agent có vai trò, mục tiêu và task, chạy theo quy trình tuần tự hoặc phân cấp (một manager agent giao việc); Flows thêm lớp điều khiển theo sự kiện, có trạng thái — điều kiện, vòng lặp, routing — bao quanh crews cho ứng dụng production. Có sẵn memory, knowledge sources và checkpointing; agent dùng được MCP servers (stdio, SSE, Streamable HTTP), và A2A là cơ chế giao việc hạng nhất, nên agent gọi được hoặc phục vụ agent từ xa. Bản thương mại CrewAI AMP (Agent Management Platform, trước là CrewAI Enterprise) thêm deploy có quản lý từ GitHub hoặc CLI, Crew Studio không cần code, tracing, webhooks và kho tool, chạy cloud hoặc on-prem.",
           "sources": [
-            {
-              "title": "CrewAI Official",
-              "url": "https://www.crewai.com/"
-            },
             {
               "title": "CrewAI GitHub",
               "url": "https://github.com/crewAIInc/crewAI"
             },
             {
-              "title": "CrewAI Docs",
-              "url": "https://docs.crewai.com/"
+              "title": "CrewAI — A2A Agent Delegation",
+              "url": "https://docs.crewai.com/en/learn/a2a-agent-delegation"
+            },
+            {
+              "title": "CrewAI AMP Docs",
+              "url": "https://docs-platform.crewai.com/platform/en/introduction"
             }
           ],
-          "pricing": "free",
-          "deployment": "self-hosted",
+          "pricing": "open-core",
+          "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "multi-agent orchestration",
-            "role-based AI teams",
-            "autonomous agent collaboration",
-            "complex workflow automation"
+            "Điều phối multi-agent với vai trò rõ ràng",
+            "Đội AI theo vai trò cùng làm một task",
+            "Workflow production kết hợp Flows xác định với Crews tự chủ",
+            "Giao việc cho agent từ xa qua A2A"
           ],
           "whenNotToUse": [
-            "simple single-agent tasks",
-            "non-Python stack",
-            "real-time low-latency requirements"
+            "Task đơn giản chỉ cần một agent",
+            "Stack không dùng Python",
+            "Yêu cầu real-time, độ trễ rất thấp"
           ],
           "compatibleWith": [
             "langfuse",
@@ -366,9 +366,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 47347,
+          "github_stars": 59597,
           "license": "MIT"
         },
         {
@@ -376,40 +376,42 @@
           "slug": "autogen",
           "icon": "🔷",
           "mono": true,
-          "desc": "Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.",
+          "desc": "Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.",
           "added_date": "2026-02-03",
           "tags": [
             "Microsoft",
-            "Flexible arch"
+            "Maintenance mode"
           ],
-          "detail": "Framework multi-agent của Microsoft Research cho phép nhiều agent LLM trò chuyện với nhau để giải quyết task phức tạp. Hỗ trợ human-in-the-loop, code execution tự động, và group chat patterns. AutoGen 0.4 (2025) được viết lại hoàn toàn với kiến trúc event-driven, hỗ trợ distributed agents và pluggable components.",
+          "detail": "AutoGen là framework mã nguồn mở của Microsoft cho ứng dụng multi-agent, dùng với Python và .NET. API chia lớp gồm Core (runtime điều khiển theo sự kiện), AgentChat (group chat, nhóm agent) và Extensions (model, tool, chạy code), có hỗ trợ human-in-the-loop. Dự án hiện ở chế độ bảo trì: không thêm tính năng mới, do cộng đồng quản lý, và README khuyên người dùng mới bắt đầu với Microsoft Agent Framework — bản kế nhiệm cho doanh nghiệp, thay cả Semantic Kernel; có hướng dẫn chuyển đổi chính thức. Code theo giấy phép MIT. Best for: duy trì hệ thống AutoGen đang có và prototype nghiên cứu — không dành cho dự án mới.",
           "sources": [
             {
               "title": "AutoGen GitHub",
               "url": "https://github.com/microsoft/autogen"
             },
             {
-              "title": "AutoGen Docs",
-              "url": "https://microsoft.github.io/autogen/"
+              "title": "Microsoft — Migrate from AutoGen to Agent Framework",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/"
+            },
+            {
+              "title": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "advanced",
           "whenToUse": [
-            "multi-agent conversation systems",
-            "research prototyping",
-            "human-in-the-loop workflows",
-            "complex agent collaboration"
+            "Duy trì hoặc mở rộng hệ thống AutoGen đang chạy",
+            "Prototype nghiên cứu về hội thoại multi-agent",
+            "Học các pattern multi-agent (group chat, teams) trên codebase đã chín"
           ],
           "whenNotToUse": [
-            "greenfield projects (consider Microsoft Agent Framework)",
-            "simple single-agent tasks",
-            "TypeScript-only stack"
+            "Dự án mới — nên bắt đầu với Microsoft Agent Framework",
+            "Cần tính năng mới hoặc lộ trình dài hạn",
+            "Stack chỉ dùng TypeScript"
           ],
           "compatibleWith": [
             "mcp",
-            "a2a",
             "ollama"
           ],
           "useCases": [
@@ -422,9 +424,9 @@
             "python",
             "csharp"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 56296,
+          "github_stars": 61495,
           "license": "MIT"
         },
         {
@@ -432,35 +434,39 @@
           "slug": "openai-agents-sdk",
           "icon": "🟢",
           "mono": true,
-          "desc": "SDK nhẹ của OpenAI bằng Python — xây agent nhanh với rào chắn an toàn tích hợp.",
+          "desc": "SDK agent gọn nhẹ của OpenAI cho Python và TypeScript, không phụ thuộc provider — handoffs, guardrails, sessions và tracing có sẵn.",
           "added_date": "2026-02-03",
           "tags": [
-            "20K⭐",
-            "100+ LLMs"
+            "30K⭐",
+            "Guardrails + Handoffs"
           ],
-          "detail": "SDK chính thức của OpenAI để xây dựng agent — nhẹ, production-ready. Có Guardrails tích hợp (input/output validation), Handoffs (chuyển task giữa agents), và Tracing (debug + monitor). Hỗ trợ MCP natively từ v0.0.7. Thiết kế tối giản: ít abstraction, dễ customize, dễ debug.",
+          "detail": "OpenAI Agents SDK (MIT) là bộ primitive nhỏ để xây ứng dụng agent bằng Python, kèm một SDK TypeScript/JavaScript riêng. Agent dùng tool và handoff sang agent khác hoặc gọi agent khác như tool; guardrails kiểm tra đầu vào, đầu ra song song; sessions giữ lịch sử hội thoại qua các lần chạy; human-in-the-loop tạm dừng để chờ duyệt. Tracing có sẵn, nối với công cụ evaluation và fine-tuning của OpenAI. Tool gồm hàm Python, MCP servers (local và remote) và hosted tools của OpenAI; có realtime voice agents và sandbox agents chạy trong container cho task dài. Dùng được với Responses API, Chat Completions API của OpenAI và các model provider khác. SDK thay đổi nhanh nên API có thể đổi giữa các bản phát hành.",
           "sources": [
             {
-              "title": "OpenAI Agents SDK",
+              "title": "OpenAI Agents SDK Docs",
               "url": "https://openai.github.io/openai-agents-python/"
             },
             {
-              "title": "OpenAI Agents GitHub",
+              "title": "OpenAI Agents SDK GitHub (Python)",
               "url": "https://github.com/openai/openai-agents-python"
+            },
+            {
+              "title": "OpenAI Agents SDK (TypeScript)",
+              "url": "https://openai.github.io/openai-agents-js/"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Xây dựng multi-agent workflow nhẹ",
-            "Cần handoff giữa các agent chuyên biệt",
-            "Tích hợp sẵn tracing và guardrails"
+            "Workflow multi-agent gọn nhẹ, ít abstraction",
+            "Handoff giữa các agent chuyên biệt",
+            "Có sẵn tracing và guardrails ngay từ đầu"
           ],
           "whenNotToUse": [
-            "Cần workflow engine phức tạp",
-            "Không muốn phụ thuộc OpenAI ecosystem ban đầu",
-            "Cần no-code agent builder UI"
+            "Cần workflow engine hoặc graph engine đầy đủ",
+            "Muốn tracing ngoài nền tảng OpenAI theo mặc định (tracing mặc định gửi về OpenAI)",
+            "Cần giao diện dựng agent không cần code"
           ],
           "compatibleWith": [
             "mcp",
@@ -476,9 +482,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 20353,
+          "github_stars": 30160,
           "license": "MIT"
         },
         {
@@ -486,35 +492,39 @@
           "slug": "google-adk",
           "icon": "🔶",
           "mono": true,
-          "desc": "Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.",
+          "desc": "Agent Development Kit mã nguồn mở, code-first của Google cho Python, TypeScript, Go, Java và Kotlin — graph workflows, A2A và MCP.",
           "added_date": "2026-02-03",
           "tags": [
             "A2A support",
-            "Interactions API"
+            "Multi-language"
           ],
-          "detail": "Agent Development Kit của Google — framework xây agent tích hợp sâu với hệ sinh thái Google (Vertex AI, Gemini, Firebase). Hỗ trợ A2A protocol natively, multi-agent orchestration, và deployment trên Google Cloud. Có ADK Web UI để test agent trong browser. Gemini models miễn phí khi dùng với ADK.",
+          "detail": "ADK (Apache-2.0) là bộ công cụ của Google để xây, đánh giá và deploy agent, nay có cho năm ngôn ngữ: Python, Go, TypeScript, Java và Kotlin. Agent dùng tool và sub-agent; workflow dạng đồ thị thêm routing, bước song song và human-in-the-loop. SDK nào cũng có MCP client, và hỗ trợ A2A giúp agent mở ra hoặc gọi agent từ xa. Lệnh adk eval kiểm agent với bộ dữ liệu mẫu chuẩn. Tối ưu cho Gemini nhưng không khóa model, có adapter cho provider khác như Anthropic, OpenAI (và LiteLLM với Python). Chạy ở đâu cũng được, hoặc deploy lên Cloud Run, GKE hay Gemini Enterprise Agent Runtime (trước là Vertex AI Agent Engine). Docs ở adk.dev.",
           "sources": [
             {
-              "title": "Google ADK Docs",
-              "url": "https://google.github.io/adk-docs/"
+              "title": "ADK Docs",
+              "url": "https://adk.dev/get-started/installation/"
             },
             {
-              "title": "Google ADK GitHub",
+              "title": "ADK GitHub (Python)",
               "url": "https://github.com/google/adk-python"
+            },
+            {
+              "title": "Google Cloud — One ADK, five languages",
+              "url": "https://cloud.google.com/blog/topics/developers-practitioners/one-agent-development-kit-five-languages"
             }
           ],
           "pricing": "free",
-          "deployment": "self-hosted",
+          "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Xây dựng agent trong Google/Gemini ecosystem",
-            "Cần multi-language SDK (Python, TS, Go, Java)",
-            "Thiết kế hierarchical multi-agent system"
+            "Xây agent trong hệ sinh thái Google Cloud / Gemini",
+            "Team muốn một framework chung cho Python, TypeScript, Go, Java hoặc Kotlin",
+            "Hệ multi-agent phân cấp giao tiếp qua A2A"
           ],
           "whenNotToUse": [
-            "Không dùng Google Cloud hay Gemini",
-            "Cần framework đơn giản cho single agent",
-            "Ưu tiên community lớn và mature ecosystem"
+            "Không dùng Google Cloud hay Gemini, muốn framework cộng đồng trung lập",
+            "Chỉ cần script một agent rất đơn giản",
+            "Muốn hệ sinh thái tích hợp bên thứ ba rộng nhất"
           ],
           "compatibleWith": [
             "mcp",
@@ -529,11 +539,12 @@
             "python",
             "js",
             "go",
-            "java"
+            "java",
+            "kotlin"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 18626,
+          "github_stars": 21899,
           "license": "Apache-2.0"
         },
         {
@@ -541,40 +552,40 @@
           "slug": "llamaindex",
           "icon": "🦙",
           "mono": true,
-          "desc": "Chuyên gia RAG — kết nối AI với dữ liệu riêng để trả lời chính xác từ tài liệu nội bộ.",
+          "desc": "Framework Python mã nguồn mở cho agent và RAG trên dữ liệu riêng — connectors, indexes, query engines và agent workflows.",
           "added_date": "2026-02-03",
           "tags": [
             "RAG",
             "Data agents"
           ],
-          "detail": "Framework chuyên về RAG (Retrieval-Augmented Generation) và data agents. Mạnh nhất ở khả năng kết nối, index và query dữ liệu từ 160+ nguồn (PDF, database, API, Notion, Slack...). LlamaIndex Workflows cho phép xây agent phức tạp dạng event-driven. Tích hợp tốt với LangChain và các LLM providers.",
+          "detail": "LlamaIndex (MIT) là framework Python để xây ứng dụng LLM và agent trên dữ liệu riêng. Connectors của LlamaHub nạp tài liệu và dữ liệu; indexes (vector, property graph…) và storage phục vụ query engines, retrievers, rerankers và routers; phía trên là agent, tool và các pattern multi-agent, có human-in-the-loop, MCP (dùng MCP tools hoặc mở workflow thành MCP), instrumentation và module evaluation. Hàng trăm gói tích hợp cho LLM, embedding và vector store, tích hợp được với LangChain. Trọng tâm thương mại của công ty đã chuyển sang LlamaParse — nền tảng parse và trích xuất tài liệu trả phí, cắm vào framework; thư viện TypeScript (LlamaIndex.TS) đã bị archive từ tháng 4/2026.",
           "sources": [
-            {
-              "title": "LlamaIndex Official",
-              "url": "https://www.llamaindex.ai/"
-            },
             {
               "title": "LlamaIndex GitHub",
               "url": "https://github.com/run-llama/llama_index"
             },
             {
               "title": "LlamaIndex Docs",
-              "url": "https://docs.llamaindex.ai/"
+              "url": "https://developers.llamaindex.ai/python/framework/getting_started/reading/"
+            },
+            {
+              "title": "LlamaIndex Pricing (LlamaParse)",
+              "url": "https://www.llamaindex.ai/pricing"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "connecting LLMs to custom data sources",
-            "building RAG pipelines over documents",
-            "structured data extraction from unstructured text",
-            "agent workflows with data retrieval"
+            "Kết nối LLM với nguồn dữ liệu riêng",
+            "Xây RAG pipeline trên tài liệu",
+            "Trích xuất dữ liệu có cấu trúc từ văn bản tự do",
+            "Agent workflow cần truy xuất dữ liệu"
           ],
           "whenNotToUse": [
-            "no custom data integration needed",
-            "simple prompt-response without retrieval",
-            "real-time streaming without document grounding"
+            "Không cần tích hợp dữ liệu riêng",
+            "Chỉ prompt-trả lời đơn giản, không cần truy xuất",
+            "Dự án TypeScript/JavaScript — LlamaIndex.TS không còn được duy trì"
           ],
           "compatibleWith": [
             "mcp",
@@ -594,12 +605,11 @@
             "agent-orchestration"
           ],
           "languages": [
-            "python",
-            "js"
+            "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 48057,
+          "github_stars": 52471,
           "license": "MIT"
         },
         {
@@ -607,43 +617,44 @@
           "slug": "rasa",
           "icon": "💬",
           "mono": true,
-          "desc": "Nền tảng chatbot và voice AI — chạy trên server riêng, kiểm soát hoàn toàn dữ liệu.",
+          "desc": "Nền tảng AI hội thoại cho chat và voice agent chạy trên hạ tầng của bạn — Rasa Pro với CALM (LLM hiểu ý + flows giữ logic nghiệp vụ).",
           "added_date": "2026-02-03",
           "tags": [
             "On-prem",
             "Voice"
           ],
-          "detail": "Platform xây conversational AI (chatbot, voice assistant) lâu đời nhất — hoạt động từ 2016. Tập trung vào NLU (hiểu ngôn ngữ tự nhiên) và dialogue management. Rasa Pro tích hợp LLM nhưng vẫn cho phép kiểm soát chặt flow conversation. Phù hợp cho enterprise cần chatbot có thể dự đoán, kiểm soát được.",
+          "detail": "Rasa là nền tảng trợ lý chat và voice cho doanh nghiệp, chạy trên hạ tầng riêng, dùng model ngôn ngữ hosted hoặc tự quản lý. Sản phẩm hiện tại là Rasa Pro, xây trên CALM: LLM hiểu ý người dùng còn flows định nghĩa logic nghiệp vụ một cách xác định, kèm pattern sửa hội thoại, component tùy chỉnh, testing, analytics và tracing; Rasa Studio thêm giao diện không cần code. Các bản gần đây cho Rasa agent làm A2A sub-agent, dùng MCP sub-agents và hỗ trợ kênh voice. Rasa Pro cần license key — Developer Edition miễn phí cho lượng hội thoại nhỏ, production quy mô lớn cần license doanh nghiệp. Rasa Open Source (Apache-2.0) đang ở chế độ bảo trì; dự án hướng người dùng mới sang CALM và playground Hello Rasa.",
           "sources": [
             {
-              "title": "Rasa Official",
-              "url": "https://rasa.com/"
+              "title": "Rasa Docs",
+              "url": "https://rasa.com/docs/pro/intro"
+            },
+            {
+              "title": "Rasa Pro Changelog",
+              "url": "https://www.rasa.com/docs/reference/changelogs/rasa-pro-changelog"
             },
             {
               "title": "Rasa GitHub",
               "url": "https://github.com/RasaHQ/rasa"
-            },
-            {
-              "title": "Rasa Docs",
-              "url": "https://rasa.com/docs/"
             }
           ],
           "pricing": "open-core",
           "deployment": "self-hosted",
           "difficulty": "advanced",
           "whenToUse": [
-            "enterprise conversational AI with strict business logic",
-            "on-premise chatbot requiring full data control",
-            "multi-channel text and voice assistants",
-            "regulated industries with strict data governance requirements"
+            "AI hội thoại doanh nghiệp với logic nghiệp vụ chặt chẽ",
+            "Trợ lý chat hoặc voice on-premise cần toàn quyền kiểm soát dữ liệu",
+            "Trợ lý đa kênh cả text và voice",
+            "Ngành có quy định chặt về quản trị dữ liệu"
           ],
           "whenNotToUse": [
-            "quick LLM agent prototyping",
-            "team without ML or NLP background",
-            "simple Q&A bot without complex dialogue flows"
+            "Prototype LLM agent nhanh",
+            "Cần stack hoàn toàn mã nguồn mở — Rasa Pro hiện tại cần license key",
+            "Bot hỏi đáp đơn giản, không có luồng hội thoại phức tạp"
           ],
           "compatibleWith": [
             "mcp",
+            "a2a",
             "langfuse",
             "ollama",
             "litellm"
@@ -657,39 +668,48 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 21105,
-          "license": "Apache-2.0"
+          "github_stars": 21354,
+          "license": null
         },
         {
           "name": "Browser-Use",
           "slug": "browser-use",
-          "desc": "Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars",
+          "desc": "Thư viện Python mã nguồn mở cho AI agent dùng trình duyệt web với mọi LLM — kèm Browser Use Cloud cho trình duyệt và agent hosted.",
           "added_date": "2026-02-04",
-          "detail": "Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP server để dùng trong Claude Code/Cursor. Có Browser-Use Cloud cho deploy production. 80K+ stars, MIT license, Python SDK đơn giản chỉ vài dòng code.",
+          "tags": [
+            "Open source",
+            "Browser agents",
+            "Cloud"
+          ],
+          "detail": "Browser Use (MIT) là thư viện Python cho AI agent điều khiển trình duyệt: agent mở trang, bấm, điền form và hoàn thành task web nhiều bước, dùng model của OpenAI, Anthropic, Google, model local qua Ollama hoặc model riêng của Browser Use. Thêm được tool và system prompt tùy chỉnh, dùng lại phiên đăng nhập qua Chrome profile hoặc cloud profile. MCP server local giúp dùng từ các công cụ như Claude Code, Cursor. Browser Use Cloud thêm agent API hosted có SDK Python và TypeScript, cùng hạ tầng trình duyệt cloud (stealth browser, xem trực tiếp, ghi hình) dùng từ Playwright, Puppeteer hoặc CDP, tính phí theo mức dùng. Best for: tự động hóa web và trích xuất dữ liệu ở nơi không có API.",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "Browser Use GitHub",
               "url": "https://github.com/browser-use/browser-use"
             },
             {
-              "title": "Docs",
-              "url": "https://docs.browser-use.com"
+              "title": "Browser Use Docs",
+              "url": "https://docs.browser-use.com/open-source"
+            },
+            {
+              "title": "Browser Use Cloud for developers",
+              "url": "https://browser-use.com/developers"
             }
           ],
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần AI agent tương tác với website",
-            "Scraping dữ liệu từ trang web phức tạp",
+            "AI agent cần thao tác với website",
+            "Lấy dữ liệu từ trang web phức tạp, động",
             "Tự động hóa quy trình web end-to-end"
           ],
           "whenNotToUse": [
-            "Task không liên quan đến browser",
-            "Cần API integration thuần túy",
-            "Môi trường không hỗ trợ Chromium"
+            "Task không liên quan đến trình duyệt",
+            "Đã có API để tích hợp trực tiếp",
+            "Không chạy được Chromium ở local và không muốn trả phí trình duyệt cloud"
           ],
           "compatibleWith": [
             "mcp"
@@ -702,40 +722,48 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 84715,
+          "github_stars": 118588,
           "license": "MIT"
         },
         {
           "name": "Pydantic AI",
           "slug": "pydantic-ai",
-          "desc": "Agent framework type-safe kiểu FastAPI — do team Pydantic xây dựng, hỗ trợ 40+ model providers",
+          "desc": "Framework agent Python type-safe của đội Pydantic — output có cấu trúc được kiểm tra, nhiều model provider, evals, durable execution và MCP.",
           "added_date": "2026-02-04",
-          "detail": "Pydantic AI mang triết lý type-safety của FastAPI vào thế giới AI agents. Structured output với Pydantic models, dependency injection, streaming, và built-in evaluation framework. Hỗ trợ MCP + A2A protocols, human-in-the-loop, và 40+ LLM providers. 15.5K stars, MIT license, phát triển bởi chính team tạo ra Pydantic — thư viện validation phổ biến nhất Python.",
+          "tags": [
+            "Type-safe",
+            "Pydantic",
+            "Evals"
+          ],
+          "detail": "Pydantic AI (MIT) mang trải nghiệm type-safe kiểu FastAPI vào việc xây agent: dependency injection có kiểu, output có cấu trúc được kiểm tra, agent không phụ thuộc model với nhiều provider (OpenAI, Anthropic, Google, Bedrock, Groq, Mistral, Ollama, OpenRouter…). Có kèm Pydantic Evals và Pydantic Graph, lớp capabilities/harness cho lập kế hoạch, subagents và bộ nhớ xuyên phiên, durable execution qua Temporal, DBOS, Prefect…, duyệt tool theo human-in-the-loop, MCP client và server, và A2A qua gói fasta2a. Observability dùng OpenTelemetry, tích hợp sát nhất với Pydantic Logfire (sản phẩm trả phí riêng). Docs đã chuyển sang pydantic.dev/docs/ai.",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "Pydantic AI GitHub",
               "url": "https://github.com/pydantic/pydantic-ai"
             },
             {
-              "title": "Docs",
-              "url": "https://ai.pydantic.dev"
+              "title": "Pydantic AI Docs",
+              "url": "https://pydantic.dev/docs/ai/"
+            },
+            {
+              "title": "Pydantic AI",
+              "url": "https://pydantic.dev/pydantic-ai"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "type-safe structured agent outputs",
-            "projects already using Pydantic ecosystem",
-            "model-agnostic agent development",
-            "agents requiring strict input-output validation"
+            "Cần output agent có cấu trúc, type-safe",
+            "Dự án đã dùng hệ sinh thái Pydantic",
+            "Phát triển agent không phụ thuộc model",
+            "Agent cần kiểm tra đầu vào/đầu ra chặt chẽ"
           ],
           "whenNotToUse": [
-            "non-Python projects",
-            "visual or low-code agent building",
-            "complex multi-agent orchestration requiring graph workflows"
+            "Dự án không dùng Python",
+            "Muốn dựng agent bằng giao diện trực quan hoặc low-code"
           ],
           "compatibleWith": [
             "mcp",
@@ -754,40 +782,49 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 15858,
+          "github_stars": 20570,
           "license": "MIT"
         },
         {
           "name": "Mastra",
           "slug": "mastra",
-          "desc": "TypeScript-first agent framework từ team Gatsby — workflows, RAG, evals và MCP tích hợp sẵn",
+          "desc": "Framework TypeScript cho AI agent và ứng dụng từ đội làm Gatsby — agents, graph workflows, memory, RAG, evals, MCP và A2A.",
           "added_date": "2026-02-04",
-          "detail": "Mastra là framework agent ưu tiên TypeScript, xây dựng bởi team đứng sau Gatsby.js. Cung cấp graph-based workflows, built-in RAG với vector store, evaluation framework, và MCP client/server. Hỗ trợ 40+ model providers, human-in-the-loop, và memory management. 22K stars, active development, phù hợp cho TypeScript/Node.js developers muốn xây agent nhanh.",
+          "tags": [
+            "TypeScript",
+            "Workflows",
+            "Open core"
+          ],
+          "detail": "Mastra là framework TypeScript cho ứng dụng và agent AI, do các nhà sáng lập Gatsby xây dựng (được YC hậu thuẫn). Agent dùng tool và memory; workflow engine dạng đồ thị (.then(), .branch(), .parallel()) hỗ trợ tạm dừng/tiếp tục cho human-in-the-loop; model routing tới hàng chục provider. Có sẵn RAG, evals/scorers và observability, cùng MCP server/client và A2A hai chiều. Nhúng vào ứng dụng React, Next.js, Node hoặc chạy như server độc lập; Studio hỗ trợ phát triển và debug ở local. Giấy phép theo mô hình open-core: framework là Apache-2.0, còn tính năng trong ee/ thuộc Mastra Enterprise License (miễn phí khi phát triển, trả phí khi chạy production). Mastra Platform cung cấp hosting có quản lý, có gói Starter miễn phí.",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "Mastra GitHub",
               "url": "https://github.com/mastra-ai/mastra"
             },
             {
-              "title": "Docs",
+              "title": "Mastra Docs",
               "url": "https://mastra.ai/docs"
+            },
+            {
+              "title": "Mastra Pricing",
+              "url": "https://www.mastra.ai/pricing"
             }
           ],
-          "pricing": "free",
-          "deployment": "self-hosted",
+          "pricing": "open-core",
+          "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "TypeScript AI applications",
-            "agent workflows with eval/observability",
-            "serverless agent deployment",
-            "rapid prototyping"
+            "Ứng dụng và agent AI viết bằng TypeScript",
+            "Agent workflow cần evals và observability có sẵn",
+            "Nhúng agent vào ứng dụng React, Next.js hoặc Node",
+            "Prototype nhanh trên stack TypeScript"
           ],
           "whenNotToUse": [
-            "Python-only teams",
-            "legacy JavaScript without TypeScript",
-            "extremely large-scale multi-agent systems"
+            "Team chỉ dùng Python",
+            "Dự án JavaScript thuần không muốn chuyển sang TypeScript",
+            "Muốn mọi tính năng đều theo giấy phép mã nguồn mở (tính năng ee/ là thương mại)"
           ],
           "compatibleWith": [
             "mcp",
@@ -803,9 +840,9 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 22385,
+          "github_stars": 28938,
           "license": "Apache-2.0"
         }
       ]
@@ -4387,7 +4424,7 @@
       "id": "frameworks",
       "title": "So sánh Agent Frameworks",
       "sectionId": "frameworks",
-      "as_of": "2026-02-10",
+      "as_of": "2026-10-20",
       "layout": "flip",
       "criteria": [
         "Phù hợp cho",
@@ -4409,7 +4446,7 @@
           "values": {
             "Phù hợp cho": "Workflow multi-agent phức tạp có trạng thái với điều phối đồ thị",
             "Độ khó": "Khó",
-            "Hệ sinh thái": "Mạnh — LangChain + LangSmith + LangGraph Platform, 300+ tích hợp",
+            "Hệ sinh thái": "Mạnh — LangChain + LangSmith (tracing, Studio, LangSmith Deployment), nhiều tích hợp",
             "Hỗ trợ Graph/Agent": "Mạnh — Lõi: máy trạng thái đồ thị có hướng, routing có điều kiện, vòng lặp, multi/hierarchical agents",
             "Tích hợp Memory/RAG": "Mạnh — Bộ nhớ ngắn/dài hạn tích hợp, tìm kiếm ngữ nghĩa, xuyên thread, LangChain retrievers",
             "Ngôn ngữ": "Cả hai",
@@ -4421,8 +4458,8 @@
           "values": {
             "Phù hợp cho": "Cộng tác multi-agent theo vai trò với mô hình crew",
             "Độ khó": "Dễ",
-            "Hệ sinh thái": "Tốt — 24K+ stars, framework độc lập, CrewAI Flows + AMP Suite",
-            "Hỗ trợ Graph/Agent": "Tốt — Quy trình tuần tự/phân cấp/đồng thuận, Flows engine điều khiển sự kiện",
+            "Hệ sinh thái": "Tốt — framework độc lập, Flows + nền tảng CrewAI AMP, MCP + A2A",
+            "Hỗ trợ Graph/Agent": "Tốt — Quy trình tuần tự/phân cấp, Flows theo sự kiện có state, routing và vòng lặp",
             "Tích hợp Memory/RAG": "Mạnh — Hạng nhất: ngắn hạn (ChromaDB), dài hạn (SQLite3), entity memory, RagTool",
             "Ngôn ngữ": "Python",
             "Giấy phép": "MIT"
@@ -4431,13 +4468,13 @@
         {
           "cardId": "autogen",
           "values": {
-            "Phù hợp cho": "Nghiên cứu hội thoại multi-agent (Nhánh hoạt động = AG2)",
+            "Phù hợp cho": "Duy trì hệ thống AutoGen đang có (kế nhiệm: Microsoft Agent Framework)",
             "Độ khó": "Trung bình",
-            "Hệ sinh thái": "Tốt — AG2 community fork (Apache 2.0), hệ sinh thái chia tách với nhánh Microsoft",
-            "Hỗ trợ Graph/Agent": "Tốt — Pattern dựa trên hội thoại, group chat, nested chats, AG2 thêm swarm + A2A",
-            "Tích hợp Memory/RAG": "Tốt — Module Teachability, RAG qua RetrieveAssistantAgent + ChromaDB",
+            "Hệ sinh thái": "Chế độ bảo trì — cộng đồng quản lý; Microsoft Agent Framework là bản kế nhiệm",
+            "Hỗ trợ Graph/Agent": "Tốt — Teams và group chat trong AgentChat, runtime Core theo sự kiện",
+            "Tích hợp Memory/RAG": "Cơ bản — memory và RAG qua extensions và công cụ bên ngoài",
             "Ngôn ngữ": "Python",
-            "Giấy phép": "Apache 2.0"
+            "Giấy phép": "MIT (code)"
           }
         },
         {
@@ -4445,9 +4482,9 @@
           "values": {
             "Phù hợp cho": "Agent production nhẹ với ít abstraction",
             "Độ khó": "Dễ",
-            "Hệ sinh thái": "Tốt — OpenAI hậu thuẫn, 16K+ stars, không phụ thuộc nhà cung cấp, tích hợp đang phát triển",
+            "Hệ sinh thái": "Tốt — OpenAI hậu thuẫn, không phụ thuộc provider, SDK Python + TypeScript",
             "Hỗ trợ Graph/Agent": "Tốt — Ủy quyền dựa trên Handoff, guardrails, luồng xác định",
-            "Tích hợp Memory/RAG": "Cơ bản — Chỉ bộ nhớ phiên, không có dài hạn hay RAG tích hợp",
+            "Tích hợp Memory/RAG": "Cơ bản — Sessions giữ lịch sử hội thoại; không có bộ nhớ dài hạn hay RAG tích hợp",
             "Ngôn ngữ": "Cả hai",
             "Giấy phép": "MIT"
           }
@@ -4457,10 +4494,10 @@
           "values": {
             "Phù hợp cho": "Agent code-first với tích hợp Google Cloud/Gemini",
             "Độ khó": "Trung bình",
-            "Hệ sinh thái": "Mạnh — Google hậu thuẫn, đa ngôn ngữ (cả Go/Java), tương thích Vertex AI",
-            "Hỗ trợ Graph/Agent": "Mạnh — Workflow agents (Tuần tự/Song song/Vòng lặp), routing động, giao thức A2A",
+            "Hệ sinh thái": "Mạnh — Google hậu thuẫn, năm ngôn ngữ (Python, TS, Go, Java, Kotlin), Cloud Run / GKE / Agent Runtime",
+            "Hỗ trợ Graph/Agent": "Mạnh — Graph workflows (tuần tự, song song, vòng lặp), sub-agents, giao thức A2A",
             "Tích hợp Memory/RAG": "Tốt — Quản lý trạng thái phiên, MCP tools, tích hợp Google Search RAG",
-            "Ngôn ngữ": "Cả hai",
+            "Ngôn ngữ": "Nhiều (Python, TS, Go, Java, Kotlin)",
             "Giấy phép": "Apache 2.0"
           }
         },
@@ -4469,10 +4506,10 @@
           "values": {
             "Phù hợp cho": "Ứng dụng RAG lấy dữ liệu làm trung tâm và AI tài liệu",
             "Độ khó": "Trung bình",
-            "Hệ sinh thái": "Mạnh — 38K+ stars, 300+ tích hợp, LlamaCloud + LlamaParse",
-            "Hỗ trợ Graph/Agent": "Tốt — Workflows 1.0 engine sự kiện, AgentRunner, tuần tự/song song/vòng lặp",
+            "Hệ sinh thái": "Mạnh — hàng trăm tích hợp, LlamaHub, LlamaParse (thương mại)",
+            "Hỗ trợ Graph/Agent": "Tốt — Workflows theo sự kiện, agents và pattern multi-agent",
             "Tích hợp Memory/RAG": "Mạnh — RAG hàng đầu: indexing vector/tree/keyword/KG, LlamaParse pipeline",
-            "Ngôn ngữ": "Cả hai",
+            "Ngôn ngữ": "Python",
             "Giấy phép": "MIT"
           }
         },
@@ -4481,11 +4518,11 @@
           "values": {
             "Phù hợp cho": "AI hội thoại doanh nghiệp với logic nghiệp vụ nghiêm ngặt",
             "Độ khó": "Khó",
-            "Hệ sinh thái": "Mạnh (chế độ bảo trì) — 20K+ stars, 500+ contributors, CALM engine",
-            "Hỗ trợ Graph/Agent": "Tốt — Hội thoại dựa trên flow, CALM kết hợp LLM + logic nghiệp vụ xác định",
+            "Hệ sinh thái": "Mạnh — Rasa Pro + CALM, Studio; Rasa Open Source ở chế độ bảo trì",
+            "Hỗ trợ Graph/Agent": "Tốt — Hội thoại theo flow; CALM kết hợp LLM hiểu ý với logic nghiệp vụ xác định; sub-agent A2A/MCP",
             "Tích hợp Memory/RAG": "Cơ bản — Theo dõi trạng thái hội thoại (slot filling), không có RAG pipeline tích hợp",
             "Ngôn ngữ": "Python",
-            "Giấy phép": "Apache 2.0"
+            "Giấy phép": "Rasa Pro: cần license key (Developer Edition miễn phí); OSS: Apache 2.0"
           }
         },
         {
@@ -4493,7 +4530,7 @@
           "values": {
             "Phù hợp cho": "Tự động hóa trình duyệt web bằng AI",
             "Độ khó": "Dễ",
-            "Hệ sinh thái": "Tốt — 60K+ stars, $17M seed (TechCrunch), hỗ trợ MCP server",
+            "Hệ sinh thái": "Tốt — Browser Use Cloud (agent + trình duyệt hosted), MCP server",
             "Hỗ trợ Graph/Agent": "Cơ bản — Vòng lặp agent đơn trên trình duyệt, tích hợp vào framework khác để điều phối",
             "Tích hợp Memory/RAG": "Cơ bản — Chỉ trạng thái trình duyệt theo phiên, không có memory hay RAG",
             "Ngôn ngữ": "Python",
@@ -4505,8 +4542,8 @@
           "values": {
             "Phù hợp cho": "Agent type-safe với trải nghiệm giống FastAPI",
             "Độ khó": "Trung bình",
-            "Hệ sinh thái": "Tốt — Từ đội Pydantic, 15K+ stars, không phụ thuộc model, Logfire observability",
-            "Hỗ trợ Graph/Agent": "Tốt — Dependency injection, ủy quyền agent, handoff multi-agent",
+            "Hệ sinh thái": "Tốt — Từ đội Pydantic, không phụ thuộc model, Pydantic Evals, Logfire observability",
+            "Hỗ trợ Graph/Agent": "Tốt — Dependency injection, giao việc giữa agent, Pydantic Graph, subagents của harness",
             "Tích hợp Memory/RAG": "Tốt — Tích hợp MCP, human-in-the-loop, thực thi bền vững, nhà cung cấp bên ngoài",
             "Ngôn ngữ": "Python",
             "Giấy phép": "MIT"
@@ -4517,11 +4554,11 @@
           "values": {
             "Phù hợp cho": "Ứng dụng AI full-stack TypeScript (agents + workflows + RAG)",
             "Độ khó": "Dễ",
-            "Hệ sinh thái": "Tốt — Từ đội Gatsby (YC), 25K+ stars, TS-native, Vercel AI SDK",
+            "Hệ sinh thái": "Tốt — Từ các nhà sáng lập Gatsby (YC), TS-native, Studio + Mastra Platform",
             "Hỗ trợ Graph/Agent": "Tốt — Workflow engine với suspend/resume, mạng agent với routing",
             "Tích hợp Memory/RAG": "Tốt — RAG pipeline tích hợp (chunking/embedding/search), hỗ trợ bộ nhớ agent",
             "Ngôn ngữ": "TypeScript",
-            "Giấy phép": "Apache 2.0"
+            "Giấy phép": "Apache 2.0 (ee/ theo Mastra Enterprise License)"
           }
         }
       ]

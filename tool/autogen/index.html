@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>AutoGen — See AI First</title>
-<meta name="description" content="Microsoft&#039;s framework for multi-agent conversations. Flexible architecture, easy to extend.">
+<meta name="description" content="Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.">
 <meta property="og:title" content="AutoGen — See AI First">
-<meta property="og:description" content="Microsoft&#039;s framework for multi-agent conversations. Flexible architecture, easy to extend.">
+<meta property="og:description" content="Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.">
 <meta property="og:url" content="https://seeaifirst.com/tool/autogen">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="AutoGen — See AI First">
-<meta name="twitter:description" content="Microsoft&#039;s framework for multi-agent conversations. Flexible architecture, easy to extend.">
+<meta name="twitter:description" content="Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.">
 <link rel="canonical" href="https://seeaifirst.com/tool/autogen">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AutoGen","url":"https://seeaifirst.com/tool/autogen","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Microsoft's framework for multi-agent conversations. Flexible architecture, easy to extend.","keywords":["Agent Frameworks — Building AI Agents","python","csharp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/autogen","https://microsoft.github.io/autogen/"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AutoGen","url":"https://seeaifirst.com/tool/autogen","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Microsoft's multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.","keywords":["Agent Frameworks — Building AI Agents","python","csharp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/autogen","https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/","https://github.com/microsoft/agent-framework"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,19 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> › AutoGen</nav>
     <article>
       <h1>AutoGen</h1>
-      <p>Microsoft&#039;s framework for multi-agent conversations. Flexible architecture, easy to extend.</p>
-      <p>Multi-agent framework by Microsoft Research that lets multiple LLM agents converse to solve complex tasks. Supports human-in-the-loop, automatic code execution, and group chat patterns. AutoGen 0.4 (2025) is a complete rewrite with event-driven architecture, supporting distributed agents and pluggable components.</p>
+      <p>Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.</p>
+      <p>AutoGen is Microsoft&#039;s open-source framework for multi-agent applications in Python and .NET. Its layered API offers Core (an event-driven runtime), AgentChat (group chats and teams of agents) and Extensions (models, tools, code execution), with human-in-the-loop support. The project is now in maintenance mode: it gets no new features, is community-managed, and its README tells new users to start with Microsoft Agent Framework, the enterprise-ready successor that also replaces Semantic Kernel; an official migration guide is available. Code is MIT-licensed. Best for: maintaining existing AutoGen systems and research prototypes — not new projects.</p>
       <h2>When to use</h2>
       <ul>
-        <li>multi-agent conversation systems</li>
-        <li>research prototyping</li>
-        <li>human-in-the-loop workflows</li>
-        <li>complex agent collaboration</li>
+        <li>Maintaining or extending an existing AutoGen system</li>
+        <li>Research prototypes of multi-agent conversations</li>
+        <li>Learning multi-agent patterns (group chat, teams) on a mature codebase</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>greenfield projects (consider Microsoft Agent Framework)</li>
-        <li>simple single-agent tasks</li>
+        <li>Greenfield projects — start with Microsoft Agent Framework</li>
+        <li>You need new features or a long-term roadmap</li>
         <li>TypeScript-only stack</li>
       </ul>
       <h2>At a glance</h2>
@@ -1113,12 +1112,11 @@ html, body {
         <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>python, csharp</dd>
         <dt>Use cases</dt><dd>multi agent, research, conversation ai, workflow automation</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/mcp">MCP — Model Context Protocol</a></li>
-        <li><a href="/tool/a2a">A2A — Agent2Agent Protocol</a></li>
         <li><a href="/tool/ollama">Ollama</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
@@ -1134,7 +1132,8 @@ html, body {
       <h2>Sources</h2>
       <ul>
         <li><a href="https://github.com/microsoft/autogen" rel="noopener noreferrer">AutoGen GitHub</a></li>
-        <li><a href="https://microsoft.github.io/autogen/" rel="noopener noreferrer">AutoGen Docs</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/" rel="noopener noreferrer">Microsoft — Migrate from AutoGen to Agent Framework</a></li>
+        <li><a href="https://github.com/microsoft/agent-framework" rel="noopener noreferrer">Microsoft Agent Framework GitHub</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> on See AI First.</p>

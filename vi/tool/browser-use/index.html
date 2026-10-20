@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Browser-Use — See AI First</title>
-<meta name="description" content="Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars">
+<meta name="description" content="Thư viện Python mã nguồn mở cho AI agent dùng trình duyệt web với mọi LLM — kèm Browser Use Cloud cho trình duyệt và agent hosted.">
 <meta property="og:title" content="Browser-Use — See AI First">
-<meta property="og:description" content="Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars">
+<meta property="og:description" content="Thư viện Python mã nguồn mở cho AI agent dùng trình duyệt web với mọi LLM — kèm Browser Use Cloud cho trình duyệt và agent hosted.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/browser-use">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Browser-Use — See AI First">
-<meta name="twitter:description" content="Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars">
+<meta name="twitter:description" content="Thư viện Python mã nguồn mở cho AI agent dùng trình duyệt web với mọi LLM — kèm Browser Use Cloud cho trình duyệt và agent hosted.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/browser-use">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Browser-Use","url":"https://seeaifirst.com/vi/tool/browser-use","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars","keywords":["Agent Frameworks — Xây dựng AI agents","python"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/browser-use/browser-use","https://docs.browser-use.com"],"datePublished":"2026-02-04","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Browser-Use","url":"https://seeaifirst.com/vi/tool/browser-use","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Thư viện Python mã nguồn mở cho AI agent dùng trình duyệt web với mọi LLM — kèm Browser Use Cloud cho trình duyệt và agent hosted.","keywords":["Agent Frameworks — Xây dựng AI agents","python"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/browser-use/browser-use","https://docs.browser-use.com/open-source","https://browser-use.com/developers"],"datePublished":"2026-02-04","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,19 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › Browser-Use</nav>
     <article>
       <h1>Browser-Use</h1>
-      <p>Framework tự động hóa trình duyệt cho AI agents — điều khiển web bằng Python với LLM bất kỳ, 80K+ stars</p>
-      <p>Browser-Use cho phép AI agents tương tác với web giống người dùng thật — navigate, click, fill form, extract data. Hỗ trợ parallel browser sessions, vision models, và custom actions. Tích hợp MCP server để dùng trong Claude Code/Cursor. Có Browser-Use Cloud cho deploy production. 80K+ stars, MIT license, Python SDK đơn giản chỉ vài dòng code.</p>
+      <p>Thư viện Python mã nguồn mở cho AI agent dùng trình duyệt web với mọi LLM — kèm Browser Use Cloud cho trình duyệt và agent hosted.</p>
+      <p>Browser Use (MIT) là thư viện Python cho AI agent điều khiển trình duyệt: agent mở trang, bấm, điền form và hoàn thành task web nhiều bước, dùng model của OpenAI, Anthropic, Google, model local qua Ollama hoặc model riêng của Browser Use. Thêm được tool và system prompt tùy chỉnh, dùng lại phiên đăng nhập qua Chrome profile hoặc cloud profile. MCP server local giúp dùng từ các công cụ như Claude Code, Cursor. Browser Use Cloud thêm agent API hosted có SDK Python và TypeScript, cùng hạ tầng trình duyệt cloud (stealth browser, xem trực tiếp, ghi hình) dùng từ Playwright, Puppeteer hoặc CDP, tính phí theo mức dùng. Best for: tự động hóa web và trích xuất dữ liệu ở nơi không có API.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần AI agent tương tác với website</li>
-        <li>Scraping dữ liệu từ trang web phức tạp</li>
+        <li>AI agent cần thao tác với website</li>
+        <li>Lấy dữ liệu từ trang web phức tạp, động</li>
         <li>Tự động hóa quy trình web end-to-end</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Task không liên quan đến browser</li>
-        <li>Cần API integration thuần túy</li>
-        <li>Môi trường không hỗ trợ Chromium</li>
+        <li>Task không liên quan đến trình duyệt</li>
+        <li>Đã có API để tích hợp trực tiếp</li>
+        <li>Không chạy được Chromium ở local và không muốn trả phí trình duyệt cloud</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1112,7 +1112,7 @@ html, body {
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>browser automation, web agent, data extraction</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1130,8 +1130,9 @@ html, body {
       <p><a href="/vi/compare/frameworks">⚖️ So sánh Agent Frameworks</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/browser-use/browser-use" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://docs.browser-use.com" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://github.com/browser-use/browser-use" rel="noopener noreferrer">Browser Use GitHub</a></li>
+        <li><a href="https://docs.browser-use.com/open-source" rel="noopener noreferrer">Browser Use Docs</a></li>
+        <li><a href="https://browser-use.com/developers" rel="noopener noreferrer">Browser Use Cloud for developers</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>

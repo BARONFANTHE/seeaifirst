@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>LangGraph — See AI First</title>
-<meta name="description" content="Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.">
+<meta name="description" content="Framework cấp thấp của đội LangChain cho agent có trạng thái, chạy dài — đồ thị node và edge, có durable execution và human-in-the-loop.">
 <meta property="og:title" content="LangGraph — See AI First">
-<meta property="og:description" content="Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.">
+<meta property="og:description" content="Framework cấp thấp của đội LangChain cho agent có trạng thái, chạy dài — đồ thị node và edge, có durable execution và human-in-the-loop.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/langgraph">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="LangGraph — See AI First">
-<meta name="twitter:description" content="Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.">
+<meta name="twitter:description" content="Framework cấp thấp của đội LangChain cho agent có trạng thái, chạy dài — đồ thị node và edge, có durable execution và human-in-the-loop.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/langgraph">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LangGraph","url":"https://seeaifirst.com/vi/tool/langgraph","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.","keywords":["Agent Frameworks — Xây dựng AI agents","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://www.langchain.com/langgraph","https://github.com/langchain-ai/langgraph","https://docs.langchain.com/oss/python/langgraph/overview"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LangGraph","url":"https://seeaifirst.com/vi/tool/langgraph","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework cấp thấp của đội LangChain cho agent có trạng thái, chạy dài — đồ thị node và edge, có durable execution và human-in-the-loop.","keywords":["Agent Frameworks — Xây dựng AI agents","python","js"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/langchain-ai/langgraph","https://www.langchain.com/blog/langchain-langgraph-1dot0","https://www.langchain.com/langsmith/deployment"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,30 +1090,30 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › LangGraph</nav>
     <article>
       <h1>LangGraph</h1>
-      <p>Framework điều phối agent có trạng thái, thuộc hệ sinh thái LangChain. Phổ biến nhất hiện nay.</p>
-      <p>Framework mã nguồn mở của LangChain cho phép xây dựng agent dạng đồ thị trạng thái (stateful graph). Hỗ trợ durable execution — agent tự phục hồi sau lỗi, human-in-the-loop — con người can thiệp bất kỳ lúc nào, và long-term memory xuyên phiên. Được Klarna, Replit, Uber, LinkedIn, Elastic tin dùng trong production. Có LangGraph Studio để debug visual và LangGraph Platform để deploy.</p>
+      <p>Framework cấp thấp của đội LangChain cho agent có trạng thái, chạy dài — đồ thị node và edge, có durable execution và human-in-the-loop.</p>
+      <p>LangGraph là framework điều phối cấp thấp của đội LangChain cho agent có trạng thái, dùng cho Python và JavaScript (MIT). Agent được mô hình hóa thành đồ thị gồm state, node và edge, có routing theo điều kiện, vòng lặp, multi-agent hoặc phân cấp. Durable execution cho phép chạy tiếp sau khi lỗi; bộ nhớ ngắn hạn và dài hạn giữ qua các bước và phiên; human-in-the-loop cho phép xem và sửa state bất cứ lúc nào. Tracing và debug qua LangSmith, có Studio làm IDE trực quan. Dịch vụ deploy hosted — trước là LangGraph Platform — nay tên là LangSmith Deployment, có lựa chọn cloud, hybrid và tự host. Được các công ty như Klarna, Replit, Uber, LinkedIn, Elastic dùng trong production.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>stateful multi-step agent workflows</li>
-        <li>complex control flow with branching and loops</li>
-        <li>human-in-the-loop agent approval</li>
-        <li>long-running durable agent execution</li>
+        <li>Workflow agent nhiều bước, có trạng thái</li>
+        <li>Luồng điều khiển phức tạp có rẽ nhánh và vòng lặp</li>
+        <li>Cần bước duyệt human-in-the-loop</li>
+        <li>Agent chạy dài phải chịu được lỗi (durable execution)</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>simple single-call LLM tasks</li>
-        <li>no need for state persistence between steps</li>
-        <li>team unfamiliar with graph-based programming</li>
+        <li>Task LLM đơn giản, gọi một lần</li>
+        <li>Không cần lưu trạng thái giữa các bước</li>
+        <li>Team chưa quen lập trình theo đồ thị</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
-        <dt>Chi phí</dt><dd>Miễn phí</dd>
-        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>python, js</dd>
         <dt>Ứng dụng</dt><dd>agent orchestration, multi agent systems, rag pipeline, workflow automation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1138,9 +1138,9 @@ html, body {
       <p><a href="/vi/compare/frameworks">⚖️ So sánh Agent Frameworks</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://www.langchain.com/langgraph" rel="noopener noreferrer">LangGraph Official</a></li>
         <li><a href="https://github.com/langchain-ai/langgraph" rel="noopener noreferrer">LangGraph GitHub</a></li>
-        <li><a href="https://docs.langchain.com/oss/python/langgraph/overview" rel="noopener noreferrer">LangGraph Docs</a></li>
+        <li><a href="https://www.langchain.com/blog/langchain-langgraph-1dot0" rel="noopener noreferrer">LangChain — LangChain &amp; LangGraph 1.0</a></li>
+        <li><a href="https://www.langchain.com/langsmith/deployment" rel="noopener noreferrer">LangSmith Deployment</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>

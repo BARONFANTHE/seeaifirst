@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>AutoGen — See AI First</title>
-<meta name="description" content="Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.">
+<meta name="description" content="Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.">
 <meta property="og:title" content="AutoGen — See AI First">
-<meta property="og:description" content="Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.">
+<meta property="og:description" content="Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/autogen">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="AutoGen — See AI First">
-<meta name="twitter:description" content="Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.">
+<meta name="twitter:description" content="Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/autogen">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AutoGen","url":"https://seeaifirst.com/vi/tool/autogen","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.","keywords":["Agent Frameworks — Xây dựng AI agents","python","csharp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/autogen","https://microsoft.github.io/autogen/"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AutoGen","url":"https://seeaifirst.com/vi/tool/autogen","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.","keywords":["Agent Frameworks — Xây dựng AI agents","python","csharp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/autogen","https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/","https://github.com/microsoft/agent-framework"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › AutoGen</nav>
     <article>
       <h1>AutoGen</h1>
-      <p>Framework của Microsoft cho nhiều agent hội thoại với nhau. Kiến trúc linh hoạt, dễ mở rộng.</p>
-      <p>Framework multi-agent của Microsoft Research cho phép nhiều agent LLM trò chuyện với nhau để giải quyết task phức tạp. Hỗ trợ human-in-the-loop, code execution tự động, và group chat patterns. AutoGen 0.4 (2025) được viết lại hoàn toàn với kiến trúc event-driven, hỗ trợ distributed agents và pluggable components.</p>
+      <p>Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.</p>
+      <p>AutoGen là framework mã nguồn mở của Microsoft cho ứng dụng multi-agent, dùng với Python và .NET. API chia lớp gồm Core (runtime điều khiển theo sự kiện), AgentChat (group chat, nhóm agent) và Extensions (model, tool, chạy code), có hỗ trợ human-in-the-loop. Dự án hiện ở chế độ bảo trì: không thêm tính năng mới, do cộng đồng quản lý, và README khuyên người dùng mới bắt đầu với Microsoft Agent Framework — bản kế nhiệm cho doanh nghiệp, thay cả Semantic Kernel; có hướng dẫn chuyển đổi chính thức. Code theo giấy phép MIT. Best for: duy trì hệ thống AutoGen đang có và prototype nghiên cứu — không dành cho dự án mới.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>multi-agent conversation systems</li>
-        <li>research prototyping</li>
-        <li>human-in-the-loop workflows</li>
-        <li>complex agent collaboration</li>
+        <li>Duy trì hoặc mở rộng hệ thống AutoGen đang chạy</li>
+        <li>Prototype nghiên cứu về hội thoại multi-agent</li>
+        <li>Học các pattern multi-agent (group chat, teams) trên codebase đã chín</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>greenfield projects (consider Microsoft Agent Framework)</li>
-        <li>simple single-agent tasks</li>
-        <li>TypeScript-only stack</li>
+        <li>Dự án mới — nên bắt đầu với Microsoft Agent Framework</li>
+        <li>Cần tính năng mới hoặc lộ trình dài hạn</li>
+        <li>Stack chỉ dùng TypeScript</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1113,12 +1112,11 @@ html, body {
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>python, csharp</dd>
         <dt>Ứng dụng</dt><dd>multi agent, research, conversation ai, workflow automation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
         <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a></li>
-        <li><a href="/vi/tool/a2a">A2A — Agent2Agent Protocol</a></li>
         <li><a href="/vi/tool/ollama">Ollama</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
@@ -1134,7 +1132,8 @@ html, body {
       <h2>Nguồn</h2>
       <ul>
         <li><a href="https://github.com/microsoft/autogen" rel="noopener noreferrer">AutoGen GitHub</a></li>
-        <li><a href="https://microsoft.github.io/autogen/" rel="noopener noreferrer">AutoGen Docs</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/" rel="noopener noreferrer">Microsoft — Migrate from AutoGen to Agent Framework</a></li>
+        <li><a href="https://github.com/microsoft/agent-framework" rel="noopener noreferrer">Microsoft Agent Framework GitHub</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>

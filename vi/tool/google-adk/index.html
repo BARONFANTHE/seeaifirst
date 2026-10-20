@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Google ADK — See AI First</title>
-<meta name="description" content="Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.">
+<meta name="description" content="Agent Development Kit mã nguồn mở, code-first của Google cho Python, TypeScript, Go, Java và Kotlin — graph workflows, A2A và MCP.">
 <meta property="og:title" content="Google ADK — See AI First">
-<meta property="og:description" content="Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.">
+<meta property="og:description" content="Agent Development Kit mã nguồn mở, code-first của Google cho Python, TypeScript, Go, Java và Kotlin — graph workflows, A2A và MCP.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/google-adk">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Google ADK — See AI First">
-<meta name="twitter:description" content="Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.">
+<meta name="twitter:description" content="Agent Development Kit mã nguồn mở, code-first của Google cho Python, TypeScript, Go, Java và Kotlin — graph workflows, A2A và MCP.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/google-adk">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Google ADK","url":"https://seeaifirst.com/vi/tool/google-adk","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.","keywords":["Agent Frameworks — Xây dựng AI agents","python","js","go","java"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://google.github.io/adk-docs/","https://github.com/google/adk-python"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Google ADK","url":"https://seeaifirst.com/vi/tool/google-adk","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Agent Development Kit mã nguồn mở, code-first của Google cho Python, TypeScript, Go, Java và Kotlin — graph workflows, A2A và MCP.","keywords":["Agent Frameworks — Xây dựng AI agents","python","js","go","java","kotlin"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://adk.dev/get-started/installation/","https://github.com/google/adk-python","https://cloud.google.com/blog/topics/developers-practitioners/one-agent-development-kit-five-languages"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,29 +1090,29 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › Google ADK</nav>
     <article>
       <h1>Google ADK</h1>
-      <p>Bộ công cụ xây agent của Google — tích hợp sẵn Gemini, Vertex AI và giao thức A2A.</p>
-      <p>Agent Development Kit của Google — framework xây agent tích hợp sâu với hệ sinh thái Google (Vertex AI, Gemini, Firebase). Hỗ trợ A2A protocol natively, multi-agent orchestration, và deployment trên Google Cloud. Có ADK Web UI để test agent trong browser. Gemini models miễn phí khi dùng với ADK.</p>
+      <p>Agent Development Kit mã nguồn mở, code-first của Google cho Python, TypeScript, Go, Java và Kotlin — graph workflows, A2A và MCP.</p>
+      <p>ADK (Apache-2.0) là bộ công cụ của Google để xây, đánh giá và deploy agent, nay có cho năm ngôn ngữ: Python, Go, TypeScript, Java và Kotlin. Agent dùng tool và sub-agent; workflow dạng đồ thị thêm routing, bước song song và human-in-the-loop. SDK nào cũng có MCP client, và hỗ trợ A2A giúp agent mở ra hoặc gọi agent từ xa. Lệnh adk eval kiểm agent với bộ dữ liệu mẫu chuẩn. Tối ưu cho Gemini nhưng không khóa model, có adapter cho provider khác như Anthropic, OpenAI (và LiteLLM với Python). Chạy ở đâu cũng được, hoặc deploy lên Cloud Run, GKE hay Gemini Enterprise Agent Runtime (trước là Vertex AI Agent Engine). Docs ở adk.dev.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Xây dựng agent trong Google/Gemini ecosystem</li>
-        <li>Cần multi-language SDK (Python, TS, Go, Java)</li>
-        <li>Thiết kế hierarchical multi-agent system</li>
+        <li>Xây agent trong hệ sinh thái Google Cloud / Gemini</li>
+        <li>Team muốn một framework chung cho Python, TypeScript, Go, Java hoặc Kotlin</li>
+        <li>Hệ multi-agent phân cấp giao tiếp qua A2A</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Không dùng Google Cloud hay Gemini</li>
-        <li>Cần framework đơn giản cho single agent</li>
-        <li>Ưu tiên community lớn và mature ecosystem</li>
+        <li>Không dùng Google Cloud hay Gemini, muốn framework cộng đồng trung lập</li>
+        <li>Chỉ cần script một agent rất đơn giản</li>
+        <li>Muốn hệ sinh thái tích hợp bên thứ ba rộng nhất</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
         <dt>Chi phí</dt><dd>Miễn phí</dd>
-        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
-        <dt>Ngôn ngữ</dt><dd>python, js, go, java</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js, go, java, kotlin</dd>
         <dt>Ứng dụng</dt><dd>agent framework, workflow orchestration, evaluation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1131,8 +1131,9 @@ html, body {
       <p><a href="/vi/compare/frameworks">⚖️ So sánh Agent Frameworks</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://google.github.io/adk-docs/" rel="noopener noreferrer">Google ADK Docs</a></li>
-        <li><a href="https://github.com/google/adk-python" rel="noopener noreferrer">Google ADK GitHub</a></li>
+        <li><a href="https://adk.dev/get-started/installation/" rel="noopener noreferrer">ADK Docs</a></li>
+        <li><a href="https://github.com/google/adk-python" rel="noopener noreferrer">ADK GitHub (Python)</a></li>
+        <li><a href="https://cloud.google.com/blog/topics/developers-practitioners/one-agent-development-kit-five-languages" rel="noopener noreferrer">Google Cloud — One ADK, five languages</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>

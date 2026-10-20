@@ -252,40 +252,40 @@
           "slug": "langgraph",
           "icon": "🦜",
           "mono": true,
-          "desc": "Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.",
+          "desc": "Low-level framework from the LangChain team for stateful, long-running agents — graphs of nodes and edges with durable execution and human-in-the-loop.",
           "added_date": "2026-02-03",
           "tags": [
-            "27.5K⭐",
-            "4.2M downloads/mo"
+            "43.5K⭐",
+            "Durable execution"
           ],
-          "detail": "Open-source framework by LangChain for building agents as stateful graphs. Supports durable execution — agents auto-recover from failures, human-in-the-loop — humans can intervene at any point, and cross-session long-term memory. Used in production by Klarna, Replit, Uber, LinkedIn, Elastic. Includes LangGraph Studio for visual debugging and LangGraph Platform for deployment.",
+          "detail": "LangGraph is the LangChain team's low-level orchestration framework for stateful agents, for Python and JavaScript (MIT). You model an agent as a graph of state, nodes and edges, with conditional routing, cycles and multi-agent or hierarchical setups. Durable execution lets runs resume after failures; short-term and long-term memory persist across steps and sessions; human-in-the-loop lets you inspect and edit state at any point. Tracing and debugging run through LangSmith, with Studio as a visual IDE. Hosted deployment — formerly LangGraph Platform — is now called LangSmith Deployment, with cloud, hybrid and self-hosted options. Used in production by companies such as Klarna, Replit, Uber, LinkedIn and Elastic.",
           "sources": [
-            {
-              "title": "LangGraph Official",
-              "url": "https://www.langchain.com/langgraph"
-            },
             {
               "title": "LangGraph GitHub",
               "url": "https://github.com/langchain-ai/langgraph"
             },
             {
-              "title": "LangGraph Docs",
-              "url": "https://docs.langchain.com/oss/python/langgraph/overview"
+              "title": "LangChain — LangChain & LangGraph 1.0",
+              "url": "https://www.langchain.com/blog/langchain-langgraph-1dot0"
+            },
+            {
+              "title": "LangSmith Deployment",
+              "url": "https://www.langchain.com/langsmith/deployment"
             }
           ],
-          "pricing": "free",
-          "deployment": "self-hosted",
+          "pricing": "open-core",
+          "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "stateful multi-step agent workflows",
-            "complex control flow with branching and loops",
-            "human-in-the-loop agent approval",
-            "long-running durable agent execution"
+            "Stateful, multi-step agent workflows",
+            "Complex control flow with branching and loops",
+            "Human-in-the-loop approval steps",
+            "Long-running agents that must survive failures (durable execution)"
           ],
           "whenNotToUse": [
-            "simple single-call LLM tasks",
-            "no need for state persistence between steps",
-            "team unfamiliar with graph-based programming"
+            "Simple single-call LLM tasks",
+            "No need to persist state between steps",
+            "Team unfamiliar with graph-based programming"
           ],
           "compatibleWith": [
             "langfuse",
@@ -307,9 +307,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 27670,
+          "github_stars": 43554,
           "license": "MIT"
         },
         {
@@ -317,40 +317,40 @@
           "slug": "crewai",
           "icon": "👥",
           "mono": true,
-          "desc": "Build role-based AI agent teams with minimal code. Each agent has a role, they coordinate automatically.",
+          "desc": "Python framework for teams of role-based AI agents (Crews) plus event-driven Flows for production control — MCP and A2A built in.",
           "added_date": "2026-02-03",
           "tags": [
             "Multi-agent crews",
             "Free core"
           ],
-          "detail": "Framework for building agent teams using a role-based model — each agent plays a specific role (researcher, writer, reviewer...) and collaborates like a real team. Supports sequential, hierarchical, and consensual processes. Ships with 700+ built-in tools, LangChain compatible. CrewAI Enterprise provides deployment, monitoring, and an agent marketplace.",
+          "detail": "CrewAI is an MIT-licensed Python framework for orchestrating role-playing, autonomous agents. Crews group agents with roles, goals and tasks that run in a sequential or hierarchical process (a manager agent delegates); Flows add event-driven, stateful control — conditions, loops and routing — around crews for production apps. Memory, knowledge sources and checkpointing are built in; agents can use MCP servers (stdio, SSE, Streamable HTTP), and A2A is a first-class delegation primitive, so agents can call or serve remote agents. The commercial CrewAI AMP (Agent Management Platform, formerly CrewAI Enterprise) adds managed deployment from GitHub or the CLI, the no-code Crew Studio, tracing, webhooks and a tool repository, in the cloud or on-prem.",
           "sources": [
-            {
-              "title": "CrewAI Official",
-              "url": "https://www.crewai.com/"
-            },
             {
               "title": "CrewAI GitHub",
               "url": "https://github.com/crewAIInc/crewAI"
             },
             {
-              "title": "CrewAI Docs",
-              "url": "https://docs.crewai.com/"
+              "title": "CrewAI — A2A Agent Delegation",
+              "url": "https://docs.crewai.com/en/learn/a2a-agent-delegation"
+            },
+            {
+              "title": "CrewAI AMP Docs",
+              "url": "https://docs-platform.crewai.com/platform/en/introduction"
             }
           ],
-          "pricing": "free",
-          "deployment": "self-hosted",
+          "pricing": "open-core",
+          "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "multi-agent orchestration",
-            "role-based AI teams",
-            "autonomous agent collaboration",
-            "complex workflow automation"
+            "Multi-agent orchestration with clear roles",
+            "Role-based AI teams collaborating on one task",
+            "Production workflows mixing deterministic Flows with autonomous Crews",
+            "Delegating work to remote agents over A2A"
           ],
           "whenNotToUse": [
-            "simple single-agent tasks",
-            "non-Python stack",
-            "real-time low-latency requirements"
+            "Simple single-agent tasks",
+            "Non-Python stack",
+            "Hard real-time, low-latency requirements"
           ],
           "compatibleWith": [
             "langfuse",
@@ -366,9 +366,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 47347,
+          "github_stars": 59597,
           "license": "MIT"
         },
         {
@@ -376,40 +376,42 @@
           "slug": "autogen",
           "icon": "🔷",
           "mono": true,
-          "desc": "Microsoft's framework for multi-agent conversations. Flexible architecture, easy to extend.",
+          "desc": "Microsoft's multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.",
           "added_date": "2026-02-03",
           "tags": [
             "Microsoft",
-            "Flexible arch"
+            "Maintenance mode"
           ],
-          "detail": "Multi-agent framework by Microsoft Research that lets multiple LLM agents converse to solve complex tasks. Supports human-in-the-loop, automatic code execution, and group chat patterns. AutoGen 0.4 (2025) is a complete rewrite with event-driven architecture, supporting distributed agents and pluggable components.",
+          "detail": "AutoGen is Microsoft's open-source framework for multi-agent applications in Python and .NET. Its layered API offers Core (an event-driven runtime), AgentChat (group chats and teams of agents) and Extensions (models, tools, code execution), with human-in-the-loop support. The project is now in maintenance mode: it gets no new features, is community-managed, and its README tells new users to start with Microsoft Agent Framework, the enterprise-ready successor that also replaces Semantic Kernel; an official migration guide is available. Code is MIT-licensed. Best for: maintaining existing AutoGen systems and research prototypes — not new projects.",
           "sources": [
             {
               "title": "AutoGen GitHub",
               "url": "https://github.com/microsoft/autogen"
             },
             {
-              "title": "AutoGen Docs",
-              "url": "https://microsoft.github.io/autogen/"
+              "title": "Microsoft — Migrate from AutoGen to Agent Framework",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/"
+            },
+            {
+              "title": "Microsoft Agent Framework GitHub",
+              "url": "https://github.com/microsoft/agent-framework"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "advanced",
           "whenToUse": [
-            "multi-agent conversation systems",
-            "research prototyping",
-            "human-in-the-loop workflows",
-            "complex agent collaboration"
+            "Maintaining or extending an existing AutoGen system",
+            "Research prototypes of multi-agent conversations",
+            "Learning multi-agent patterns (group chat, teams) on a mature codebase"
           ],
           "whenNotToUse": [
-            "greenfield projects (consider Microsoft Agent Framework)",
-            "simple single-agent tasks",
+            "Greenfield projects — start with Microsoft Agent Framework",
+            "You need new features or a long-term roadmap",
             "TypeScript-only stack"
           ],
           "compatibleWith": [
             "mcp",
-            "a2a",
             "ollama"
           ],
           "useCases": [
@@ -422,9 +424,9 @@
             "python",
             "csharp"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 56296,
+          "github_stars": 61495,
           "license": "MIT"
         },
         {
@@ -432,35 +434,39 @@
           "slug": "openai-agents-sdk",
           "icon": "🟢",
           "mono": true,
-          "desc": "OpenAI's lightweight Python SDK — build agents fast with built-in safety guardrails.",
+          "desc": "OpenAI's lightweight, provider-agnostic agent SDK for Python and TypeScript — handoffs, guardrails, sessions and tracing built in.",
           "added_date": "2026-02-03",
           "tags": [
-            "20K⭐",
-            "100+ LLMs"
+            "30K⭐",
+            "Guardrails + Handoffs"
           ],
-          "detail": "OpenAI's official SDK for building agents — lightweight, production-ready. Features built-in Guardrails (input/output validation), Handoffs (task transfer between agents), and Tracing (debug + monitor). Native MCP support since v0.0.7. Minimalist design: few abstractions, easy to customize, easy to debug.",
+          "detail": "The OpenAI Agents SDK (MIT) is a small set of primitives for building agentic apps in Python, with a separate TypeScript/JavaScript SDK. Agents use tools and hand off to other agents or call them as tools; guardrails validate inputs and outputs in parallel; sessions keep conversation history across runs; human-in-the-loop pauses runs for approval. Built-in tracing feeds OpenAI's evaluation and fine-tuning tools. Tools include Python functions, MCP servers (local and remote) and OpenAI hosted tools; realtime voice agents and container-based sandbox agents cover longer tasks. Works with the OpenAI Responses and Chat Completions APIs and with other model providers. The SDK evolves quickly, so APIs can change between releases.",
           "sources": [
             {
-              "title": "OpenAI Agents SDK",
+              "title": "OpenAI Agents SDK Docs",
               "url": "https://openai.github.io/openai-agents-python/"
             },
             {
-              "title": "OpenAI Agents GitHub",
+              "title": "OpenAI Agents SDK GitHub (Python)",
               "url": "https://github.com/openai/openai-agents-python"
+            },
+            {
+              "title": "OpenAI Agents SDK (TypeScript)",
+              "url": "https://openai.github.io/openai-agents-js/"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Xây dựng multi-agent workflow nhẹ",
-            "Cần handoff giữa các agent chuyên biệt",
-            "Tích hợp sẵn tracing và guardrails"
+            "Lightweight multi-agent workflows with few abstractions",
+            "Handoffs between specialized agents",
+            "Built-in tracing and guardrails from day one"
           ],
           "whenNotToUse": [
-            "Cần workflow engine phức tạp",
-            "Không muốn phụ thuộc OpenAI ecosystem ban đầu",
-            "Cần no-code agent builder UI"
+            "You need a full workflow or graph engine",
+            "You want tracing outside the OpenAI platform by default (tracing defaults to OpenAI)",
+            "You need a no-code agent builder UI"
           ],
           "compatibleWith": [
             "mcp",
@@ -476,9 +482,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 20353,
+          "github_stars": 30160,
           "license": "MIT"
         },
         {
@@ -486,35 +492,39 @@
           "slug": "google-adk",
           "icon": "🔶",
           "mono": true,
-          "desc": "Google's agent building toolkit — with built-in Gemini, Vertex AI, and A2A protocol integration.",
+          "desc": "Google's open-source, code-first Agent Development Kit for Python, TypeScript, Go, Java and Kotlin — graph workflows, A2A and MCP.",
           "added_date": "2026-02-03",
           "tags": [
             "A2A support",
-            "Interactions API"
+            "Multi-language"
           ],
-          "detail": "Google's Agent Development Kit — a framework deeply integrated with the Google ecosystem (Vertex AI, Gemini, Firebase). Native A2A protocol support, multi-agent orchestration, and deployment on Google Cloud. Includes ADK Web UI for browser-based agent testing. Gemini models are free when used with ADK.",
+          "detail": "ADK (Apache-2.0) is Google's toolkit for building, evaluating and deploying agents, now available in five languages: Python, Go, TypeScript, Java and Kotlin. Agents use tools and sub-agents; graph-based workflows add routing, parallel steps and human-in-the-loop. Every SDK includes an MCP client, and A2A support lets agents expose or call remote agents. adk eval tests agents against golden datasets. It is optimized for Gemini but model-agnostic, with adapters for other providers such as Anthropic and OpenAI (and LiteLLM in Python). Run it anywhere, or deploy to Cloud Run, GKE or Gemini Enterprise Agent Runtime (formerly Vertex AI Agent Engine). Docs live at adk.dev.",
           "sources": [
             {
-              "title": "Google ADK Docs",
-              "url": "https://google.github.io/adk-docs/"
+              "title": "ADK Docs",
+              "url": "https://adk.dev/get-started/installation/"
             },
             {
-              "title": "Google ADK GitHub",
+              "title": "ADK GitHub (Python)",
               "url": "https://github.com/google/adk-python"
+            },
+            {
+              "title": "Google Cloud — One ADK, five languages",
+              "url": "https://cloud.google.com/blog/topics/developers-practitioners/one-agent-development-kit-five-languages"
             }
           ],
           "pricing": "free",
-          "deployment": "self-hosted",
+          "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Xây dựng agent trong Google/Gemini ecosystem",
-            "Cần multi-language SDK (Python, TS, Go, Java)",
-            "Thiết kế hierarchical multi-agent system"
+            "Building agents in the Google Cloud / Gemini ecosystem",
+            "Teams that want one framework across Python, TypeScript, Go, Java or Kotlin",
+            "Hierarchical multi-agent systems that talk over A2A"
           ],
           "whenNotToUse": [
-            "Không dùng Google Cloud hay Gemini",
-            "Cần framework đơn giản cho single agent",
-            "Ưu tiên community lớn và mature ecosystem"
+            "You don't use Google Cloud or Gemini and prefer a provider-neutral community framework",
+            "You only need a very simple single-agent script",
+            "You want the widest third-party integration ecosystem"
           ],
           "compatibleWith": [
             "mcp",
@@ -529,11 +539,12 @@
             "python",
             "js",
             "go",
-            "java"
+            "java",
+            "kotlin"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 18626,
+          "github_stars": 21899,
           "license": "Apache-2.0"
         },
         {
@@ -541,40 +552,40 @@
           "slug": "llamaindex",
           "icon": "🦙",
           "mono": true,
-          "desc": "The RAG specialist — connects AI to your private data for accurate answers from internal documents.",
+          "desc": "Open-source Python framework for agents and RAG over your own data — connectors, indexes, query engines and agent workflows.",
           "added_date": "2026-02-03",
           "tags": [
             "RAG",
             "Data agents"
           ],
-          "detail": "Framework specializing in RAG (Retrieval-Augmented Generation) and data agents. Strongest at connecting, indexing, and querying data from 160+ sources (PDF, database, API, Notion, Slack...). LlamaIndex Workflows enables building complex event-driven agents. Integrates well with LangChain and various LLM providers.",
+          "detail": "LlamaIndex (MIT) is a Python framework for building LLM apps and agents over private data. LlamaHub connectors load documents and data; indexes (vector, property graph and more) and storage back query engines, retrievers, rerankers and routers; agents, tools and multi-agent patterns run on top, with human-in-the-loop, MCP (use MCP tools or expose workflows as MCP), instrumentation and evaluation modules. Hundreds of integration packages cover LLMs, embeddings and vector stores, and it integrates with LangChain. The company's commercial focus has shifted to LlamaParse, a paid document parsing and extraction platform that plugs into the framework; the TypeScript library (LlamaIndex.TS) was archived in April 2026.",
           "sources": [
-            {
-              "title": "LlamaIndex Official",
-              "url": "https://www.llamaindex.ai/"
-            },
             {
               "title": "LlamaIndex GitHub",
               "url": "https://github.com/run-llama/llama_index"
             },
             {
               "title": "LlamaIndex Docs",
-              "url": "https://docs.llamaindex.ai/"
+              "url": "https://developers.llamaindex.ai/python/framework/getting_started/reading/"
+            },
+            {
+              "title": "LlamaIndex Pricing (LlamaParse)",
+              "url": "https://www.llamaindex.ai/pricing"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "connecting LLMs to custom data sources",
-            "building RAG pipelines over documents",
-            "structured data extraction from unstructured text",
-            "agent workflows with data retrieval"
+            "Connecting LLMs to your own data sources",
+            "Building RAG pipelines over documents",
+            "Structured data extraction from unstructured text",
+            "Agent workflows that need data retrieval"
           ],
           "whenNotToUse": [
-            "no custom data integration needed",
-            "simple prompt-response without retrieval",
-            "real-time streaming without document grounding"
+            "No custom data integration needed",
+            "Simple prompt-response without retrieval",
+            "TypeScript/JavaScript projects — LlamaIndex.TS is no longer maintained"
           ],
           "compatibleWith": [
             "mcp",
@@ -594,12 +605,11 @@
             "agent-orchestration"
           ],
           "languages": [
-            "python",
-            "js"
+            "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 48057,
+          "github_stars": 52471,
           "license": "MIT"
         },
         {
@@ -607,43 +617,44 @@
           "slug": "rasa",
           "icon": "💬",
           "mono": true,
-          "desc": "Chatbot and voice AI platform — runs on your own server with full data control.",
+          "desc": "Conversational AI platform for chat and voice agents on your own infrastructure — Rasa Pro with CALM (LLM understanding + business-logic flows).",
           "added_date": "2026-02-03",
           "tags": [
             "On-prem",
             "Voice"
           ],
-          "detail": "The longest-running conversational AI platform (chatbot, voice assistant) — active since 2016. Focused on NLU (natural language understanding) and dialogue management. Rasa Pro integrates LLMs while still allowing tight control over conversation flows. Ideal for enterprises that need predictable, controllable chatbots.",
+          "detail": "Rasa is a platform for enterprise chat and voice assistants that runs on your own infrastructure, with hosted or self-managed language models. The current product, Rasa Pro, is built on CALM: an LLM interprets what the user wants while flows define the business logic deterministically, with conversation-repair patterns, custom components, testing, analytics and tracing; Rasa Studio adds a no-code UI. Recent releases let a Rasa agent act as an A2A sub-agent and use MCP sub-agents, and support voice channels. Rasa Pro needs a license key — a free Developer Edition covers small volumes, production at scale needs an enterprise license. Rasa Open Source (Apache-2.0) is in maintenance mode; the project points new builds to CALM and the Hello Rasa playground.",
           "sources": [
             {
-              "title": "Rasa Official",
-              "url": "https://rasa.com/"
+              "title": "Rasa Docs",
+              "url": "https://rasa.com/docs/pro/intro"
+            },
+            {
+              "title": "Rasa Pro Changelog",
+              "url": "https://www.rasa.com/docs/reference/changelogs/rasa-pro-changelog"
             },
             {
               "title": "Rasa GitHub",
               "url": "https://github.com/RasaHQ/rasa"
-            },
-            {
-              "title": "Rasa Docs",
-              "url": "https://rasa.com/docs/"
             }
           ],
           "pricing": "open-core",
           "deployment": "self-hosted",
           "difficulty": "advanced",
           "whenToUse": [
-            "enterprise conversational AI with strict business logic",
-            "on-premise chatbot requiring full data control",
-            "multi-channel text and voice assistants",
-            "regulated industries with strict data governance requirements"
+            "Enterprise conversational AI with strict business logic",
+            "On-premise chat or voice assistants that need full data control",
+            "Multi-channel text and voice assistants",
+            "Regulated industries with strict data governance"
           ],
           "whenNotToUse": [
-            "quick LLM agent prototyping",
-            "team without ML or NLP background",
-            "simple Q&A bot without complex dialogue flows"
+            "Quick LLM agent prototyping",
+            "You need a fully open-source stack — current Rasa Pro requires a license key",
+            "Simple Q&A bot without complex dialogue flows"
           ],
           "compatibleWith": [
             "mcp",
+            "a2a",
             "langfuse",
             "ollama",
             "litellm"
@@ -657,39 +668,48 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 21105,
-          "license": "Apache-2.0"
+          "github_stars": 21354,
+          "license": null
         },
         {
           "name": "Browser-Use",
           "slug": "browser-use",
-          "desc": "Browser automation framework for AI agents — control the web with Python using any LLM, 80K+ stars",
+          "desc": "Open-source Python library that lets AI agents use a web browser with any LLM — plus Browser Use Cloud for hosted browsers and agents.",
           "added_date": "2026-02-04",
-          "detail": "Browser-Use lets AI agents interact with the web like real users — navigate, click, fill forms, extract data. Supports parallel browser sessions, vision models, and custom actions. Integrates MCP server for use in Claude Code/Cursor. Browser-Use Cloud available for production deployment. 80K+ stars, MIT license, simple Python SDK in just a few lines of code.",
+          "tags": [
+            "Open source",
+            "Browser agents",
+            "Cloud"
+          ],
+          "detail": "Browser Use (MIT) is a Python library for AI browser agents: an agent navigates pages, clicks, fills forms and completes multi-step web tasks, using models from OpenAI, Anthropic, Google, local models via Ollama, or Browser Use's own model. You can add custom tools and system prompts, and reuse logins through Chrome or cloud profiles. A local MCP server exposes it to tools such as Claude Code and Cursor. Browser Use Cloud adds a hosted agent API with Python and TypeScript SDKs and cloud browser infrastructure (stealth browsers, live view, recordings) usable from Playwright, Puppeteer or CDP, billed by usage. Best for: web automation and data extraction where no API exists.",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "Browser Use GitHub",
               "url": "https://github.com/browser-use/browser-use"
             },
             {
-              "title": "Docs",
-              "url": "https://docs.browser-use.com"
+              "title": "Browser Use Docs",
+              "url": "https://docs.browser-use.com/open-source"
+            },
+            {
+              "title": "Browser Use Cloud for developers",
+              "url": "https://browser-use.com/developers"
             }
           ],
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần AI agent tương tác với website",
-            "Scraping dữ liệu từ trang web phức tạp",
-            "Tự động hóa quy trình web end-to-end"
+            "AI agents that need to interact with websites",
+            "Extracting data from complex, dynamic pages",
+            "End-to-end web workflow automation"
           ],
           "whenNotToUse": [
-            "Task không liên quan đến browser",
-            "Cần API integration thuần túy",
-            "Môi trường không hỗ trợ Chromium"
+            "Tasks that don't involve a browser",
+            "A clean API integration is available",
+            "You can't run Chromium locally and don't want paid cloud browsers"
           ],
           "compatibleWith": [
             "mcp"
@@ -702,40 +722,48 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 84715,
+          "github_stars": 118588,
           "license": "MIT"
         },
         {
           "name": "Pydantic AI",
           "slug": "pydantic-ai",
-          "desc": "Type-safe agent framework in the style of FastAPI — built by the Pydantic team, supports 40+ model providers",
+          "desc": "Type-safe Python agent framework from the Pydantic team — validated structured output, many model providers, evals, durable execution and MCP.",
           "added_date": "2026-02-04",
-          "detail": "Pydantic AI brings FastAPI's type-safety philosophy to the world of AI agents. Structured output with Pydantic models, dependency injection, streaming, and built-in evaluation framework. Supports MCP + A2A protocols, human-in-the-loop, and 40+ LLM providers. 15.5K stars, MIT license, developed by the team behind Pydantic — Python's most popular validation library.",
+          "tags": [
+            "Type-safe",
+            "Pydantic",
+            "Evals"
+          ],
+          "detail": "Pydantic AI (MIT) brings a FastAPI-like, type-safe developer experience to agents: typed dependency injection, validated structured outputs and model-agnostic agents across many providers (OpenAI, Anthropic, Google, Bedrock, Groq, Mistral, Ollama, OpenRouter and more). It includes Pydantic Evals and Pydantic Graph, a capabilities/harness layer for planning, subagents and cross-session memory, durable execution via Temporal, DBOS, Prefect and others, human-in-the-loop tool approval, an MCP client and server, and A2A through the fasta2a package. Observability uses OpenTelemetry, with Pydantic Logfire (a separate paid product) as the closest integration. Docs moved to pydantic.dev/docs/ai.",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "Pydantic AI GitHub",
               "url": "https://github.com/pydantic/pydantic-ai"
             },
             {
-              "title": "Docs",
-              "url": "https://ai.pydantic.dev"
+              "title": "Pydantic AI Docs",
+              "url": "https://pydantic.dev/docs/ai/"
+            },
+            {
+              "title": "Pydantic AI",
+              "url": "https://pydantic.dev/pydantic-ai"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "type-safe structured agent outputs",
-            "projects already using Pydantic ecosystem",
-            "model-agnostic agent development",
-            "agents requiring strict input-output validation"
+            "Type-safe, structured agent outputs",
+            "Projects already using the Pydantic ecosystem",
+            "Model-agnostic agent development",
+            "Agents that need strict input/output validation"
           ],
           "whenNotToUse": [
-            "non-Python projects",
-            "visual or low-code agent building",
-            "complex multi-agent orchestration requiring graph workflows"
+            "Non-Python projects",
+            "Visual or low-code agent building"
           ],
           "compatibleWith": [
             "mcp",
@@ -754,40 +782,49 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 15858,
+          "github_stars": 20570,
           "license": "MIT"
         },
         {
           "name": "Mastra",
           "slug": "mastra",
-          "desc": "TypeScript-first agent framework from the Gatsby team — workflows, RAG, evals, and MCP built in",
+          "desc": "TypeScript framework for AI agents and apps from the team behind Gatsby — agents, graph workflows, memory, RAG, evals, MCP and A2A.",
           "added_date": "2026-02-04",
-          "detail": "Mastra is a TypeScript-first agent framework, built by the team behind Gatsby.js. Offers graph-based workflows, built-in RAG with vector store, evaluation framework, and MCP client/server. Supports 40+ model providers, human-in-the-loop, and memory management. 22K stars, active development, ideal for TypeScript/Node.js developers who want to build agents fast.",
+          "tags": [
+            "TypeScript",
+            "Workflows",
+            "Open core"
+          ],
+          "detail": "Mastra is a TypeScript framework for AI-powered applications and agents, built by the founders of Gatsby (YC-backed). Agents use tools and memory; a graph workflow engine (.then(), .branch(), .parallel()) supports suspend and resume for human-in-the-loop; model routing reaches dozens of providers. RAG, evals/scorers and observability are built in, along with MCP servers and client, and A2A in both directions. Embed it in React, Next.js or Node apps or run it as a standalone server; Studio helps develop and debug locally. Licensing is open-core: the framework is Apache-2.0, while ee/ features fall under the Mastra Enterprise License (free for development, paid in production). The managed Mastra Platform offers hosting with a free Starter tier.",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "Mastra GitHub",
               "url": "https://github.com/mastra-ai/mastra"
             },
             {
-              "title": "Docs",
+              "title": "Mastra Docs",
               "url": "https://mastra.ai/docs"
+            },
+            {
+              "title": "Mastra Pricing",
+              "url": "https://www.mastra.ai/pricing"
             }
           ],
-          "pricing": "free",
-          "deployment": "self-hosted",
+          "pricing": "open-core",
+          "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "TypeScript AI applications",
-            "agent workflows with eval/observability",
-            "serverless agent deployment",
-            "rapid prototyping"
+            "TypeScript AI applications and agents",
+            "Agent workflows that need evals and observability built in",
+            "Embedding agents in React, Next.js or Node apps",
+            "Rapid prototyping in a TypeScript stack"
           ],
           "whenNotToUse": [
             "Python-only teams",
-            "legacy JavaScript without TypeScript",
-            "extremely large-scale multi-agent systems"
+            "Plain JavaScript projects that won't adopt TypeScript",
+            "You want every feature under an open-source license (ee/ features are commercial)"
           ],
           "compatibleWith": [
             "mcp",
@@ -803,9 +840,9 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 22385,
+          "github_stars": 28938,
           "license": "Apache-2.0"
         }
       ]
@@ -4387,7 +4424,7 @@
       "id": "frameworks",
       "title": "Compare Agent Frameworks",
       "sectionId": "frameworks",
-      "as_of": "2026-02-10",
+      "as_of": "2026-10-20",
       "layout": "flip",
       "criteria": [
         "Best for",
@@ -4409,7 +4446,7 @@
           "values": {
             "Best for": "Complex stateful multi-agent workflows with graph orchestration",
             "Learning curve": "Hard",
-            "Ecosystem": "Strong — LangChain + LangSmith + LangGraph Platform, 300+ integrations",
+            "Ecosystem": "Strong — LangChain + LangSmith (tracing, Studio, LangSmith Deployment), many integrations",
             "Graph/Agent support": "Strong — Core: directed graph state machine, conditional routing, cycles, multi/hierarchical agents",
             "Memory/RAG integration": "Strong — Built-in short/long-term memory, semantic search, cross-thread, LangChain retrievers",
             "Language": "Both",
@@ -4421,8 +4458,8 @@
           "values": {
             "Best for": "Role-based multi-agent collaboration with crew metaphor",
             "Learning curve": "Easy",
-            "Ecosystem": "Good — 24K+ stars, standalone framework, CrewAI Flows + AMP Suite",
-            "Graph/Agent support": "Good — Sequential/hierarchical/consensus processes, Flows engine with event-driven control",
+            "Ecosystem": "Good — standalone framework, Flows + CrewAI AMP platform, MCP + A2A",
+            "Graph/Agent support": "Good — Sequential/hierarchical processes, event-driven Flows with state, routing and loops",
             "Memory/RAG integration": "Strong — First-class: short-term (ChromaDB), long-term (SQLite3), entity memory, RagTool",
             "Language": "Python",
             "License": "MIT"
@@ -4431,13 +4468,13 @@
         {
           "cardId": "autogen",
           "values": {
-            "Best for": "Research multi-agent conversations (Active path = AG2)",
+            "Best for": "Maintaining existing AutoGen systems (successor: Microsoft Agent Framework)",
             "Learning curve": "Medium",
-            "Ecosystem": "Good — AG2 community fork (Apache 2.0), ecosystem split with Microsoft path",
-            "Graph/Agent support": "Good — Conversation-based patterns, group chat, nested chats, AG2 adds swarm + A2A",
-            "Memory/RAG integration": "Good — Teachability module, RAG via RetrieveAssistantAgent + ChromaDB",
+            "Ecosystem": "Maintenance mode — community managed; Microsoft Agent Framework is the successor",
+            "Graph/Agent support": "Good — AgentChat teams and group chat, event-driven Core runtime",
+            "Memory/RAG integration": "Basic — memory and RAG via extensions and external tools",
             "Language": "Python",
-            "License": "Apache 2.0"
+            "License": "MIT (code)"
           }
         },
         {
@@ -4445,9 +4482,9 @@
           "values": {
             "Best for": "Lightweight production agents with minimal abstractions",
             "Learning curve": "Easy",
-            "Ecosystem": "Good — OpenAI-backed, 16K+ stars, provider-agnostic, growing integrations",
+            "Ecosystem": "Good — OpenAI-backed, provider-agnostic, Python + TypeScript SDKs",
             "Graph/Agent support": "Good — Handoff-based delegation, guardrails, deterministic flows",
-            "Memory/RAG integration": "Basic — Session memory only, no built-in long-term or RAG",
+            "Memory/RAG integration": "Basic — Sessions keep conversation history; no built-in long-term memory or RAG",
             "Language": "Both",
             "License": "MIT"
           }
@@ -4457,10 +4494,10 @@
           "values": {
             "Best for": "Code-first agents with Google Cloud/Gemini integration",
             "Learning curve": "Medium",
-            "Ecosystem": "Strong — Google-backed, multi-language (also Go/Java), Vertex AI compatible",
-            "Graph/Agent support": "Strong — Workflow agents (Sequential/Parallel/Loop), dynamic routing, A2A protocol",
+            "Ecosystem": "Strong — Google-backed, five languages (Python, TS, Go, Java, Kotlin), Cloud Run / GKE / Agent Runtime",
+            "Graph/Agent support": "Strong — Graph workflows (sequential, parallel, loops), sub-agents, A2A protocol",
             "Memory/RAG integration": "Good — Session state management, MCP tools, Google Search RAG integration",
-            "Language": "Both",
+            "Language": "Multi (Python, TS, Go, Java, Kotlin)",
             "License": "Apache 2.0"
           }
         },
@@ -4469,10 +4506,10 @@
           "values": {
             "Best for": "Data-centric RAG applications and document AI",
             "Learning curve": "Medium",
-            "Ecosystem": "Strong — 38K+ stars, 300+ integrations, LlamaCloud + LlamaParse",
-            "Graph/Agent support": "Good — Workflows 1.0 event-driven engine, AgentRunner, sequential/parallel/loop",
+            "Ecosystem": "Strong — hundreds of integrations, LlamaHub, LlamaParse (commercial)",
+            "Graph/Agent support": "Good — Event-driven workflows, agents and multi-agent patterns",
             "Memory/RAG integration": "Strong — Best-in-class RAG: vector/tree/keyword/KG indexing, LlamaParse pipeline",
-            "Language": "Both",
+            "Language": "Python",
             "License": "MIT"
           }
         },
@@ -4481,11 +4518,11 @@
           "values": {
             "Best for": "Enterprise conversational AI with strict business logic",
             "Learning curve": "Hard",
-            "Ecosystem": "Strong (maintenance-mode) — 20K+ stars, 500+ contributors, CALM engine",
-            "Graph/Agent support": "Good — Flow-based dialogue, CALM combines LLM + deterministic business logic",
+            "Ecosystem": "Strong — Rasa Pro + CALM, Studio; Rasa Open Source in maintenance mode",
+            "Graph/Agent support": "Good — Flow-based dialogue; CALM combines LLM understanding with deterministic business logic; A2A/MCP sub-agents",
             "Memory/RAG integration": "Basic — Dialogue state tracking (slot filling), no built-in RAG pipeline",
             "Language": "Python",
-            "License": "Apache 2.0"
+            "License": "Rasa Pro: license key (free Developer Edition); OSS: Apache 2.0"
           }
         },
         {
@@ -4493,7 +4530,7 @@
           "values": {
             "Best for": "AI-powered web browser automation",
             "Learning curve": "Easy",
-            "Ecosystem": "Good — 60K+ stars, $17M seed (TechCrunch), MCP server support",
+            "Ecosystem": "Good — Browser Use Cloud (hosted agents + browsers), MCP server",
             "Graph/Agent support": "Basic — Single-agent browser loop, plugs into other frameworks for orchestration",
             "Memory/RAG integration": "Basic — Session-level browser state only, no memory or RAG",
             "Language": "Python",
@@ -4505,8 +4542,8 @@
           "values": {
             "Best for": "Type-safe agents with FastAPI-like ergonomics",
             "Learning curve": "Medium",
-            "Ecosystem": "Good — By Pydantic team, 15K+ stars, model-agnostic, Logfire observability",
-            "Graph/Agent support": "Good — Dependency injection, agent delegation, multi-agent handoffs",
+            "Ecosystem": "Good — By the Pydantic team, model-agnostic, Pydantic Evals, Logfire observability",
+            "Graph/Agent support": "Good — Dependency injection, agent delegation, Pydantic Graph, harness subagents",
             "Memory/RAG integration": "Good — MCP integration, human-in-the-loop, durable execution, external providers",
             "Language": "Python",
             "License": "MIT"
@@ -4517,11 +4554,11 @@
           "values": {
             "Best for": "Full-stack TypeScript AI apps (agents + workflows + RAG)",
             "Learning curve": "Easy",
-            "Ecosystem": "Good — From Gatsby team (YC), 25K+ stars, TS-native, Vercel AI SDK",
+            "Ecosystem": "Good — From the Gatsby founders (YC), TS-native, Studio + Mastra Platform",
             "Graph/Agent support": "Good — Workflow engine with suspend/resume, agent networks with routing",
             "Memory/RAG integration": "Good — Built-in RAG pipeline (chunking/embedding/search), agent memory support",
             "Language": "TypeScript",
-            "License": "Apache 2.0"
+            "License": "Apache 2.0 (ee/ under Mastra Enterprise License)"
           }
         }
       ]

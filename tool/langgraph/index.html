@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>LangGraph — See AI First</title>
-<meta name="description" content="Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.">
+<meta name="description" content="Low-level framework from the LangChain team for stateful, long-running agents — graphs of nodes and edges with durable execution and human-in-the-loop.">
 <meta property="og:title" content="LangGraph — See AI First">
-<meta property="og:description" content="Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.">
+<meta property="og:description" content="Low-level framework from the LangChain team for stateful, long-running agents — graphs of nodes and edges with durable execution and human-in-the-loop.">
 <meta property="og:url" content="https://seeaifirst.com/tool/langgraph">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="LangGraph — See AI First">
-<meta name="twitter:description" content="Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.">
+<meta name="twitter:description" content="Low-level framework from the LangChain team for stateful, long-running agents — graphs of nodes and edges with durable execution and human-in-the-loop.">
 <link rel="canonical" href="https://seeaifirst.com/tool/langgraph">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LangGraph","url":"https://seeaifirst.com/tool/langgraph","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.","keywords":["Agent Frameworks — Building AI Agents","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://www.langchain.com/langgraph","https://github.com/langchain-ai/langgraph","https://docs.langchain.com/oss/python/langgraph/overview"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LangGraph","url":"https://seeaifirst.com/tool/langgraph","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Low-level framework from the LangChain team for stateful, long-running agents — graphs of nodes and edges with durable execution and human-in-the-loop.","keywords":["Agent Frameworks — Building AI Agents","python","js"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/langchain-ai/langgraph","https://www.langchain.com/blog/langchain-langgraph-1dot0","https://www.langchain.com/langsmith/deployment"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,30 +1090,30 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> › LangGraph</nav>
     <article>
       <h1>LangGraph</h1>
-      <p>Stateful agent orchestration framework from the LangChain ecosystem. The most widely adopted today.</p>
-      <p>Open-source framework by LangChain for building agents as stateful graphs. Supports durable execution — agents auto-recover from failures, human-in-the-loop — humans can intervene at any point, and cross-session long-term memory. Used in production by Klarna, Replit, Uber, LinkedIn, Elastic. Includes LangGraph Studio for visual debugging and LangGraph Platform for deployment.</p>
+      <p>Low-level framework from the LangChain team for stateful, long-running agents — graphs of nodes and edges with durable execution and human-in-the-loop.</p>
+      <p>LangGraph is the LangChain team&#039;s low-level orchestration framework for stateful agents, for Python and JavaScript (MIT). You model an agent as a graph of state, nodes and edges, with conditional routing, cycles and multi-agent or hierarchical setups. Durable execution lets runs resume after failures; short-term and long-term memory persist across steps and sessions; human-in-the-loop lets you inspect and edit state at any point. Tracing and debugging run through LangSmith, with Studio as a visual IDE. Hosted deployment — formerly LangGraph Platform — is now called LangSmith Deployment, with cloud, hybrid and self-hosted options. Used in production by companies such as Klarna, Replit, Uber, LinkedIn and Elastic.</p>
       <h2>When to use</h2>
       <ul>
-        <li>stateful multi-step agent workflows</li>
-        <li>complex control flow with branching and loops</li>
-        <li>human-in-the-loop agent approval</li>
-        <li>long-running durable agent execution</li>
+        <li>Stateful, multi-step agent workflows</li>
+        <li>Complex control flow with branching and loops</li>
+        <li>Human-in-the-loop approval steps</li>
+        <li>Long-running agents that must survive failures (durable execution)</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>simple single-call LLM tasks</li>
-        <li>no need for state persistence between steps</li>
-        <li>team unfamiliar with graph-based programming</li>
+        <li>Simple single-call LLM tasks</li>
+        <li>No need to persist state between steps</li>
+        <li>Team unfamiliar with graph-based programming</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
-        <dt>Pricing</dt><dd>Free</dd>
-        <dt>Deployment</dt><dd>Self-hosted</dd>
+        <dt>Pricing</dt><dd>Open core</dd>
+        <dt>Deployment</dt><dd>Hybrid</dd>
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>python, js</dd>
         <dt>Use cases</dt><dd>agent orchestration, multi agent systems, rag pipeline, workflow automation</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1138,9 +1138,9 @@ html, body {
       <p><a href="/compare/frameworks">⚖️ Compare Agent Frameworks</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://www.langchain.com/langgraph" rel="noopener noreferrer">LangGraph Official</a></li>
         <li><a href="https://github.com/langchain-ai/langgraph" rel="noopener noreferrer">LangGraph GitHub</a></li>
-        <li><a href="https://docs.langchain.com/oss/python/langgraph/overview" rel="noopener noreferrer">LangGraph Docs</a></li>
+        <li><a href="https://www.langchain.com/blog/langchain-langgraph-1dot0" rel="noopener noreferrer">LangChain — LangChain &amp; LangGraph 1.0</a></li>
+        <li><a href="https://www.langchain.com/langsmith/deployment" rel="noopener noreferrer">LangSmith Deployment</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> on See AI First.</p>
