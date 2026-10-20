@@ -1615,7 +1615,7 @@
           "icon": "🟣",
           "mono": true,
           "hot": true,
-          "desc": "Agent CLI của Anthropic — hiểu 200K token, giỏi refactor nhiều file. Tốt nhất cho dự án phức tạp.",
+          "desc": "Công cụ coding agent của Anthropic cho terminal, IDE, desktop và web — đọc codebase, sửa file, chạy lệnh, mở PR.",
           "added_date": "2026-02-03",
           "tags": [
             "Terminal",
@@ -1623,32 +1623,33 @@
             "Skills",
             "Hooks"
           ],
-          "detail": "Agent CLI hàng đầu hiện tại — #1 trên SWE-bench, vượt tất cả đối thủ. 200K token context cho phép đọc hiểu toàn bộ codebase lớn. Multi-file editing, auto-test, auto-lint. Plugin ecosystem: hooks (pre/post tool use), MCP servers, skills. Chạy local, không cloud dependency. Best for: dự án phức tạp, refactoring lớn, codebase hiện có. Hỗ trợ async mode trên web (claude.ai/code) — delegate task dài, tạo PR trực tiếp, teleport về CLI local để tiếp tục. Hệ sinh thái mở rộng: Everything Claude Code — bộ agents, skills, hooks, commands production-ready cho Claude Code.",
+          "detail": "Claude Code là công cụ coding agent của Anthropic. Agent đọc codebase, sửa nhiều file, chạy lệnh và test, làm việc với git — stage thay đổi, viết commit, mở pull request. Có dạng CLI, extension VS Code/Cursor và JetBrains, desktop app và bản web (claude.ai/code) nơi task dài chạy trên cloud; phiên làm việc chuyển được giữa các surface (ví dụ claude --teleport). Tùy biến bằng CLAUDE.md (hoặc AGENTS.md có sẵn), skills, hooks, MCP servers, subagents và plugins; Agent SDK để dựng agent riêng trên cùng engine, GitHub Actions hoặc GitLab CI/CD để chạy trong pipeline. Chỉ dùng model Claude — qua gói Claude trả phí, Anthropic API hoặc cloud provider như Amazon Bedrock, Google Cloud. Best for: việc phức tạp nhiều file, refactor lớn, codebase đang có.",
           "sources": [
             {
               "title": "Claude Code Docs",
-              "url": "https://docs.claude.com/en/docs/claude-code/overview"
+              "url": "https://code.claude.com/docs/en/overview"
             },
             {
-              "title": "Anthropic — Claude Code Best Practices",
-              "url": "https://www.anthropic.com/engineering/claude-code-best-practices"
+              "title": "Claude Code GitHub",
+              "url": "https://github.com/anthropics/claude-code"
             },
             {
-              "title": "Everything Claude Code",
-              "url": "https://github.com/affaan-m/everything-claude-code"
+              "title": "Claude Code Best Practices",
+              "url": "https://code.claude.com/docs/en/best-practices"
             }
           ],
           "pricing": "paid",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần agentic coding trực tiếp trong terminal",
-            "Multi-file refactoring với codebase awareness",
-            "Delegate task dài không cần giám sát (web async mode)"
+            "Agentic coding từ terminal hoặc IDE trên codebase thật đang có",
+            "Refactor nhiều file và thay đổi cần hiểu toàn bộ repo",
+            "Giao task dài chạy trên cloud trong lúc làm việc khác"
           ],
           "whenNotToUse": [
-            "Budget hạn chế (chi phí API có thể tăng nhanh với heavy use)",
-            "Cần inline tab-completion trong IDE (dùng Copilot/Cursor)"
+            "Muốn dùng model không phải Claude (OpenCode, Cline hoặc goose không phụ thuộc provider)",
+            "Chủ yếu cần tab completion inline trong IDE (Copilot hoặc Cursor)",
+            "Không có gói Claude trả phí hay ngân sách API — Claude Code không có trong gói miễn phí"
           ],
           "compatibleWith": [
             "mcp",
@@ -1665,7 +1666,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": 83481,
           "license": null
@@ -1676,36 +1677,39 @@
           "icon": "🟢",
           "mono": true,
           "hot": true,
-          "desc": "IDE thông minh dựa trên VS Code — có Composer và Agent mode, tốt nhất cho code hàng ngày.",
+          "desc": "Code editor AI-first dựa trên VS Code — Agent, Tab predictions, CLI và cloud agents chạy song song.",
           "added_date": "2026-02-03",
           "tags": [
             "VS Code fork",
-            "Semantic search",
-            "$20/mo"
+            "Agent",
+            "Cloud agents"
           ],
-          "detail": "IDE thông minh dựa trên VS Code — tích hợp AI trực tiếp vào editor. Composer mode tạo/sửa nhiều file, Agent mode tự chạy terminal commands, Tab predictions gợi ý code realtime. Semantic search tìm code theo ý nghĩa. Dùng Claude + GPT + custom models. Best for: code hàng ngày, rapid prototyping. $20/tháng.",
+          "detail": "Cursor là code editor AI fork từ VS Code. Agent sửa nhiều file và chạy lệnh terminal, Tab đoán chỉnh sửa tiếp theo, Inline Edit viết lại đoạn đang chọn. Ngoài IDE desktop còn có CLI (chạy được headless trong CI), cloud agents làm việc song song trong môi trường riêng, Bugbot review pull request, và hỗ trợ JetBrains qua ACP. Mở rộng bằng Rules, MCP servers, skills, subagents và hooks. Model từ OpenAI, Anthropic, Google, xAI cùng model Composer của Cursor; ở các gói hiện tại, dùng model bên thứ ba tính phí riêng theo giá API. Cursor được SpaceX mua lại vào tháng 8/2026. Best for: code hằng ngày và thay đổi nhiều file trong một editor AI-native.",
           "sources": [
             {
-              "title": "Cursor Official",
-              "url": "https://www.cursor.com/"
+              "title": "Cursor",
+              "url": "https://cursor.com/"
             },
             {
               "title": "Cursor Docs",
-              "url": "https://docs.cursor.com/"
+              "url": "https://cursor.com/docs"
+            },
+            {
+              "title": "Cursor Pricing",
+              "url": "https://cursor.com/pricing"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "AI-first IDE muốn context toàn bộ codebase",
-            "Multi-file editing và refactoring phức tạp",
-            "Developers muốn thay thế VS Code bằng AI-native editor"
+            "Muốn agent, tab completion và ngữ cảnh codebase trong cùng một IDE AI-native",
+            "Sửa nhiều file và refactor ngay trong editor",
+            "Muốn nhiều agent chạy song song trên cloud rồi review PR của chúng"
           ],
           "whenNotToUse": [
-            "Ngân sách hạn hẹp — Pro $20/mo đắt hơn Copilot $10",
-            "Không muốn rời VS Code ecosystem hiện tại",
-            "Cần offline coding — phụ thuộc hoàn toàn cloud"
+            "Muốn giữ editor hiện tại — Cursor là IDE riêng (JetBrains chỉ qua ACP)",
+            "Cần chi phí dễ dự đoán — dùng model bên thứ ba tính thêm ngoài gói"
           ],
           "compatibleWith": [
             "mcp"
@@ -1723,7 +1727,7 @@
             "go",
             "rust"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -1733,36 +1737,39 @@
           "slug": "codex-cli",
           "icon": "🔵",
           "mono": true,
-          "desc": "Agent CLI của OpenAI — chạy trong terminal hoặc cloud, xử lý từng task tuần tự và chính xác.",
+          "desc": "Coding agent mã nguồn mở của OpenAI cho terminal — làm việc trên repo local trong sandbox của hệ điều hành; thuộc họ Codex cùng IDE, desktop và cloud.",
           "added_date": "2026-02-03",
           "tags": [
             "AGENTS.md",
-            "Cloud sandbox",
-            "ChatGPT plan"
+            "Local sandbox",
+            "Open source"
           ],
-          "detail": "Agent CLI của OpenAI — chạy task tuần tự trong cloud sandbox cô lập (an toàn). Dùng AGENTS.md cho project instructions. Tích hợp sâu với OpenAI models (GPT-4o, o3, codex-mini). Phù hợp cho automated tasks, CI/CD integration, và batch processing. Dùng credits từ ChatGPT plan.",
+          "detail": "Codex CLI là coding agent mã nguồn mở (Apache-2.0) của OpenAI, viết bằng Rust. Agent làm việc trên repo local — đọc file, sửa code, chạy lệnh trong sandbox cấp hệ điều hành, với các chế độ duyệt quyết định khi nào được sửa hay chạy lệnh mà không hỏi. Hướng dẫn dự án đặt trong AGENTS.md (tạo bằng /init); mở rộng bằng MCP servers, skills, plugins, và codex exec chạy không tương tác trong script và CI. Họ sản phẩm Codex còn có extension IDE, desktop app và cloud tasks (codex cloud). Đăng nhập bằng gói ChatGPT (đã kèm Codex) hoặc dùng API key. Mặc định dùng model OpenAI; hỗ trợ thêm model mở qua Ollama (--oss) và provider tùy chỉnh.",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "Codex GitHub",
               "url": "https://github.com/openai/codex"
             },
             {
-              "title": "Docs",
-              "url": "https://developers.openai.com/codex/cli/"
+              "title": "Codex CLI Docs",
+              "url": "https://learn.chatgpt.com/docs/codex/cli"
+            },
+            {
+              "title": "Codex Pricing",
+              "url": "https://learn.chatgpt.com/docs/pricing"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Cần coding agent tích hợp sâu với OpenAI models (GPT-5.3-Codex)",
-            "Muốn setup nhanh với ChatGPT subscription có sẵn",
-            "Cần CI/CD automation với GitHub Action hoặc Codex Autofix"
+            "Đã trả phí ChatGPT và muốn coding agent terminal có sẵn trong gói",
+            "Muốn agent mã nguồn mở có sandbox local và chế độ duyệt rõ ràng",
+            "Tự động hóa bằng script hoặc CI với codex exec"
           ],
           "whenNotToUse": [
-            "Cần dùng local models hoặc provider khác (chỉ hỗ trợ OpenAI)",
-            "Không muốn phụ thuộc vendor cloud cho coding workflow",
-            "Budget hạn chế — cần subscription ChatGPT Plus trở lên"
+            "Muốn trải nghiệm IDE-first có completion inline (Cursor, Copilot)",
+            "Muốn model ngoài OpenAI là lựa chọn chính — model OpenAI là mặc định và được hỗ trợ tốt nhất"
           ],
           "compatibleWith": [
             "mcp",
@@ -1776,46 +1783,50 @@
           "languages": [
             "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 67954,
+          "github_stars": 128775,
           "license": "Apache-2.0"
         },
         {
-          "name": "Windsurf",
+          "name": "Devin Desktop (formerly Windsurf)",
           "slug": "windsurf",
           "icon": "🌊",
           "mono": true,
-          "desc": "IDE AI giá $15/tháng — kiến trúc Cascade Flow, hỗ trợ nhiều model và plugin JetBrains.",
+          "desc": "IDE AI của Cognition, trước đây là Windsurf — agent Devin Local, Tab completions, agent local và cloud trong một editor.",
           "added_date": "2026-02-03",
           "tags": [
             "IDE",
-            "Budget-friendly",
+            "Devin Local",
             "MCP support"
           ],
-          "detail": "AI IDE với Cascade — agent chạy đa bước tự động: đọc code → phân tích → sửa → test → commit. Có Flows để tạo workflow tự động. Hỗ trợ JetBrains plugin (IntelliJ, WebStorm...). Free tier hào phóng. Best for: developers dùng JetBrains ecosystem hoặc cần budget-friendly option.",
+          "detail": "Windsurf được Cognition (đội làm Devin) đổi tên thành Devin Desktop năm 2026; người dùng Windsurf nhận bản cập nhật và giữ nguyên gói. Đây là IDE AI độc lập cho macOS, Windows, Linux, import được settings từ VS Code và Cursor. Agent chính giờ là Devin Local, kế nhiệm Cascade (Cascade cũ dùng được đến 1/7/2026), dùng chung harness với Devin CLI. Agent Command Center quản lý agent local và Devin Cloud; chạy được các agent tương thích ACP như Codex hay Claude Agent ngay trong editor. Ngoài ra: Tab completions, Workflows, Memories, Rules, MCP, xem trước trong editor và deploy app. Plugin Windsurf cho JetBrains đang ở chế độ bảo trì; người dùng JetBrains được khuyên dùng Devin qua ACP.",
           "sources": [
             {
-              "title": "Windsurf Official",
-              "url": "https://windsurf.com/"
+              "title": "Cognition — Windsurf is now Devin Desktop",
+              "url": "https://devin.ai/blog/windsurf-is-now-devin-desktop"
             },
             {
-              "title": "Windsurf Docs",
-              "url": "https://docs.windsurf.com/"
+              "title": "Devin Desktop Docs",
+              "url": "https://docs.devin.ai/desktop/getting-started"
+            },
+            {
+              "title": "Devin Desktop FAQ",
+              "url": "https://docs.devin.ai/desktop/devin-desktop-faq"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Muốn agentic IDE với Cascade multi-step workflow",
-            "Free tier rộng rãi — 25 credits kèm unlimited Tab completions",
-            "Enterprise cần security compliance docs và hybrid deployment"
+            "Muốn IDE AI độc lập chạy agent local và giao việc tiếp cho cloud agent (Devin)",
+            "Chuyển từ VS Code hoặc Cursor — import được settings",
+            "Muốn điều khiển nhiều agent (Devin Local, Codex, Claude Agent qua ACP) trong một editor"
           ],
           "whenNotToUse": [
-            "Đã quen Cursor — chức năng tương tự, Windsurf community nhỏ hơn",
-            "Cần mature ecosystem — sản phẩm mới hơn Copilot và Cursor",
-            "Cascade agent vẫn đang evolving — chưa ổn định cho production critical"
+            "Làm việc trên JetBrains — plugin Windsurf đang ở chế độ bảo trì",
+            "Phụ thuộc vào extension VS Code cụ thể — marketplace extension bị giới hạn",
+            "Cần giá ổn định — các gói còn đang chuyển đổi sau khi đổi tên"
           ],
           "compatibleWith": [
             "mcp"
@@ -1833,7 +1844,7 @@
             "go",
             "rust"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -1843,14 +1854,14 @@
           "slug": "github-copilot",
           "icon": "🤖",
           "mono": true,
-          "desc": "Trợ lý code của Microsoft tích hợp sẵn trong VS Code — có Agent mode, mạnh cho doanh nghiệp.",
+          "desc": "Trợ lý code AI của GitHub — extension IDE có agent mode, cloud agent làm việc từ issue, Copilot CLI và review PR.",
           "added_date": "2026-02-03",
           "tags": [
             "VS Code",
             "Enterprise",
             "Multi-model"
           ],
-          "detail": "AI pair programmer của GitHub/Microsoft — tích hợp trong VS Code, JetBrains, Neovim. Copilot Chat hỏi đáp về code, Copilot Agent mode (preview) tự thực hiện task phức tạp. Lợi thế lớn nhất: access toàn bộ GitHub ecosystem (repos, issues, PRs, Actions). $10/tháng (Individual), $19 (Business).",
+          "detail": "GitHub Copilot chạy trong VS Code, Visual Studio, JetBrains IDEs, Xcode, Eclipse và Neovim với code completions, chat và agent mode (đã GA). Cloud agent nhận issue được giao, làm việc nền rồi mở pull request; Copilot code review bình luận trên PR; Copilot CLI đưa agent ra terminal với MCP, hooks, skills và custom agents. Gói trả phí được chọn model của Anthropic, OpenAI và các hãng khác; gói Free dùng chọn model tự động. Từ tháng 6/2026, mức dùng tính bằng GitHub AI credits; code completions vẫn không giới hạn ở gói trả phí. Lợi thế lớn nhất: tích hợp sâu với repo, issue, PR và Actions của GitHub, cùng các công cụ quản trị, policy và allow-list MCP cho doanh nghiệp.",
           "sources": [
             {
               "title": "GitHub Copilot",
@@ -1859,20 +1870,24 @@
             {
               "title": "Copilot Docs",
               "url": "https://docs.github.com/en/copilot"
+            },
+            {
+              "title": "Copilot Plans",
+              "url": "https://docs.github.com/en/copilot/get-started/plans"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Đã dùng VS Code hoặc JetBrains — thêm extension không đổi workflow",
-            "Ngân sách thấp — Pro $10/mo rẻ nhất trong IDE agents",
-            "Teams cần enterprise admin controls và centralized management"
+            "Muốn AI hỗ trợ ngay trong IDE đang dùng (VS Code, JetBrains, Visual Studio, Xcode…) mà không đổi editor",
+            "Team làm việc trên GitHub, muốn agent bắt đầu từ issue và tự mở PR",
+            "Tổ chức cần quản trị tập trung, policy và allow-list MCP"
           ],
           "whenNotToUse": [
-            "Cần agentic IDE đầy đủ — Copilot là extension, không phải standalone IDE",
-            "Muốn tự chọn AI model — Free/Pro model access hạn chế",
-            "Cần offline coding — inference 100% cloud"
+            "Muốn trải nghiệm IDE AI-native chuyên biệt (Cursor, Devin Desktop)",
+            "Dùng agent nhiều với ngân sách cố định — chat và agent tiêu AI credits",
+            "Cần inference offline hoặc tự host — Copilot chạy trên cloud của GitHub"
           ],
           "compatibleWith": [
             "mcp"
@@ -1892,7 +1907,7 @@
             "ruby",
             "csharp"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -1902,39 +1917,43 @@
           "slug": "gemini-cli",
           "icon": "💎",
           "mono": true,
-          "desc": "Agent CLI của Google — context lên tới 1M token, hỗ trợ Skills và tích hợp ADK.",
+          "desc": "Agent terminal mã nguồn mở của Google cho model Gemini — MCP, extensions, skills. Từ 6/2026 cần API key trả phí hoặc license Code Assist.",
           "added_date": "2026-02-03",
           "tags": [
-            "Free tier",
-            "Skills",
-            "Extensions"
+            "Open source",
+            "Extensions",
+            "Skills"
           ],
-          "detail": "Agent CLI của Google — miễn phí cho cá nhân, 1M token context (lớn nhất). Tích hợp Google ADK, hỗ trợ MCP servers, Gemini 2.5 Pro/Flash. Đọc được files/folders cực lớn nhờ context khủng. Có extensions cho Google Workspace (Docs, Sheets, Drive). Best for: dự án cần đọc nhiều code/docs, Google ecosystem.",
+          "detail": "Gemini CLI là AI agent mã nguồn mở (Apache-2.0) của Google cho terminal, viết bằng TypeScript. Agent đọc và sửa file local, chạy lệnh shell, lấy nội dung web; mở rộng bằng MCP servers, extensions, agent skills, hooks và file ngữ cảnh GEMINI.md; model Gemini có context window rất lớn để đọc codebase lớn. Quyền truy cập thay đổi năm 2026: từ 18/6/2026 Google ngừng phục vụ Gemini CLI cho thuê bao Google AI Pro/Ultra và Gemini Code Assist miễn phí cho cá nhân, chuyển họ sang Antigravity CLI mới. Gemini CLI vẫn dùng được với Gemini API key trả phí và license Gemini Code Assist Standard hoặc Enterprise. Best for: tổ chức đã dùng Gemini Code Assist hoặc Gemini API trả phí, muốn agent CLI mã nguồn mở.",
           "sources": [
             {
               "title": "Gemini CLI GitHub",
               "url": "https://github.com/google-gemini/gemini-cli"
             },
             {
-              "title": "Google — Introducing Gemini CLI",
-              "url": "https://blog.google/technology/developers/gemini-cli/"
+              "title": "Gemini CLI Docs",
+              "url": "https://geminicli.com/docs/"
+            },
+            {
+              "title": "Google — Transitioning Gemini CLI to Antigravity CLI",
+              "url": "https://developers.googleblog.com/an-important-update-transitioning-gemini-cli-to-antigravity-cli/"
             }
           ],
-          "pricing": "free",
+          "pricing": "paid",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Cần AI coding agent miễn phí với context window lớn (1M tokens)",
-            "Workflow terminal-first, không muốn dùng IDE-based agents",
-            "Đang dùng Google Cloud/Firebase ecosystem"
+            "Tổ chức có license Gemini Code Assist Standard/Enterprise hoặc Gemini API key trả phí",
+            "Muốn agent terminal-first mã nguồn mở, xem và mở rộng được",
+            "Muốn model Gemini với context window rất lớn cho codebase lớn"
           ],
           "whenNotToUse": [
-            "Cần tab-completion hoặc inline suggestions trong IDE",
-            "Muốn dùng models từ providers khác (chỉ Gemini models)"
+            "Muốn coding agent cá nhân miễn phí — quyền dùng miễn phí cho cá nhân đã kết thúc từ 6/2026 (Google chuyển sang Antigravity CLI)",
+            "Cần tab completion hoặc gợi ý inline trong IDE",
+            "Muốn dùng model của provider khác (chỉ model Gemini)"
           ],
           "compatibleWith": [
-            "mcp",
-            "google-adk"
+            "mcp"
           ],
           "useCases": [
             "agentic-coding",
@@ -1945,45 +1964,49 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 99269,
+          "github_stars": 107296,
           "license": "Apache-2.0"
         },
         {
-          "name": "Cline / RooCode",
+          "name": "Cline",
           "slug": "cline-roocode",
           "icon": "⚡",
           "mono": true,
-          "desc": "Extension VS Code mã nguồn mở — hỗ trợ nhiều model AI và MCP, phát triển bởi cộng đồng.",
+          "desc": "Coding agent mã nguồn mở cho VS Code, JetBrains và terminal — chế độ Plan/Act, MCP, dùng được mọi model provider kể cả model local.",
           "added_date": "2026-02-03",
           "tags": [
             "Open source",
-            "Extension",
-            "Flexible"
+            "Plan/Act",
+            "Any model"
           ],
-          "detail": "Extension VS Code mã nguồn mở — agent AI chạy trực tiếp trong editor. Hỗ trợ MCP servers, multi-model (Claude, GPT, Gemini, local models). Cline = bản gốc (open-source), RooCode = fork với thêm features (custom modes, model routing). Best for: developers muốn tùy chỉnh hoàn toàn, dùng local/self-hosted models.",
+          "detail": "Cline là coding agent tự chủ mã nguồn mở (Apache-2.0), có dạng extension VS Code, plugin JetBrains, CLI (tương tác hoặc headless cho CI) và SDK. Plan mode đề xuất hướng làm, Act mode thực hiện với duyệt từng bước hoặc tự động duyệt tùy chọn; checkpoints cho phép hoàn tác chỉnh sửa của agent. Hỗ trợ MCP servers và các provider như Anthropic, OpenAI, Google, OpenRouter, Bedrock, mọi API tương thích OpenAI, cùng model local qua Ollama hoặc LM Studio. Dùng API key riêng không cần subscription, hoặc dùng billing của Cline; gói Enterprise thêm SSO và RBAC. Lưu ý: card này trước đây gộp cả Roo Code (fork của Cline) — Roo Code đã ngừng hoạt động và repo bị archive ngày 15/5/2026.",
           "sources": [
             {
               "title": "Cline GitHub",
               "url": "https://github.com/cline/cline"
             },
             {
-              "title": "RooCode GitHub",
-              "url": "https://github.com/RooVetGit/Roo-Code"
+              "title": "Cline Docs",
+              "url": "https://docs.cline.bot/"
+            },
+            {
+              "title": "Cline Pricing",
+              "url": "https://cline.bot/pricing"
             }
           ],
-          "pricing": "free",
+          "pricing": "freemium",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Muốn kiểm soát chi phí API và chọn model linh hoạt",
-            "Cần autonomous multi-step coding agent trong VS Code",
-            "Muốn giữ VS Code workflow hiện tại thay vì chuyển IDE"
+            "Muốn kiểm soát chi phí API và tự chọn model, kể cả model local",
+            "Cần agent tự chủ có duyệt từng bước ngay trong VS Code hoặc JetBrains",
+            "Muốn giữ IDE hiện tại thay vì đổi editor"
           ],
           "whenNotToUse": [
-            "Cần inline tab-completion nhanh (Copilot/Cursor phù hợp hơn)",
-            "Không muốn quản lý API keys và chi phí riêng"
+            "Chủ yếu cần tab completion inline nhanh (Copilot hoặc Cursor phù hợp hơn)",
+            "Không muốn tự quản lý việc chọn model và chi phí sử dụng"
           ],
           "compatibleWith": [
             "mcp",
@@ -1998,7 +2021,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": 59307,
           "license": "Apache-2.0"
@@ -2008,36 +2031,40 @@
           "slug": "kiro-aws",
           "icon": "🌀",
           "mono": true,
-          "desc": "IDE AI của AWS theo hướng spec-first — từ yêu cầu → thiết kế → kế hoạch → code tự động.",
+          "desc": "IDE và CLI agentic của AWS theo hướng spec-driven — biến requirements thành design, tasks và code, có steering files và hooks dẫn hướng.",
           "added_date": "2026-02-03",
           "tags": [
             "Spec-first",
             "AWS",
             "IDE + CLI"
           ],
-          "detail": "AI IDE của Amazon Web Services (preview 2025) — spec-driven development: viết requirements → Kiro tự generate code + tests. Tích hợp sâu AWS services (Lambda, DynamoDB, S3...). Steering files hướng dẫn AI theo project conventions. Có hooks tự động chạy actions khi file thay đổi. Best for: dự án AWS-centric.",
+          "detail": "Kiro là nền tảng phát triển agentic do AWS xây dựng và vận hành, GA từ tháng 11/2025. Ý tưởng cốt lõi là spec-driven development: viết requirements, để Kiro tạo design và danh sách task, rồi triển khai và test (kể cả property-based test). Steering files giữ agent theo quy ước dự án; hooks chạy hành động khi file đổi, khi dùng tool hoặc khi xong task; mở rộng bằng MCP, Powers, skills và subagents chạy song song. Có dạng IDE (dựa trên Code OSS), Kiro CLI (kế nhiệm Amazon Q Developer CLI) và Kiro Web với cloud sandbox, dùng chung cấu hình .kiro/. Model từ Anthropic, OpenAI và các họ open-weight, có chế độ Auto, tính phí bằng credits. Không cần tài khoản AWS — đăng nhập bằng AWS Builder ID hoặc tài khoản mạng xã hội. Best for: team muốn làm việc có cấu trúc, spec-first thay vì prompt tùy hứng.",
           "sources": [
             {
-              "title": "Kiro Official",
+              "title": "Kiro",
               "url": "https://kiro.dev/"
             },
             {
-              "title": "AWS — Introducing Kiro",
-              "url": "https://aws.amazon.com/blogs/aws/kiro-ai-powered-ide/"
+              "title": "Kiro — Introducing Kiro",
+              "url": "https://kiro.dev/blog/introducing-kiro/"
+            },
+            {
+              "title": "Kiro Docs",
+              "url": "https://kiro.dev/docs/"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Spec-driven development — requirements rõ ràng trước khi code",
-            "AWS ecosystem — tích hợp Amazon Q Developer Pro",
-            "Cần tự động hóa docs và tests qua agent hooks"
+            "Spec-driven development — requirements và design rõ ràng trước khi code",
+            "Team chuyển từ Amazon Q Developer — Kiro CLI là bản kế nhiệm",
+            "Tự động hóa docs, tests và kiểm tra qua agent hooks"
           ],
           "whenNotToUse": [
-            "Quick prototyping — spec workflow overhead cho tasks nhỏ",
-            "Chi phí credit khó dự đoán — complex prompts tiêu nhiều credits",
-            "Không muốn AWS vendor dependency"
+            "Prototype nhanh — quy trình spec tạo thêm overhead cho task nhỏ",
+            "Cần chi phí dễ dự đoán — yêu cầu phức tạp tiêu nhiều credits",
+            "Không muốn phụ thuộc dịch vụ do AWS vận hành"
           ],
           "compatibleWith": [
             "mcp"
@@ -2057,7 +2084,7 @@
             "csharp",
             "ruby"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -2067,35 +2094,39 @@
           "slug": "replit-agent",
           "icon": "🎨",
           "mono": true,
-          "desc": "Agent trên cloud — tạo app full-stack nhanh, không cần cài đặt. Tốt nhất cho người mới bắt đầu.",
+          "desc": "Agent chạy trên trình duyệt, dựng và publish app full-stack từ một prompt — không cần cài đặt. Tốt nhất cho người mới và prototype nhanh.",
           "added_date": "2026-02-03",
           "tags": [
             "Cloud",
             "Deploy",
             "No setup"
           ],
-          "detail": "AI agent tích hợp trong Replit IDE cloud — tạo app từ mô tả bằng tiếng Anh, tự setup environment, deploy tự động. Không cần cài đặt gì — chạy hoàn toàn trên browser. Phù hợp cho prototyping nhanh, học lập trình, hoặc khi không muốn setup local dev environment.",
+          "detail": "Replit Agent (Agent 4 từ tháng 3/2026) chạy trong workspace cloud của Replit: mô tả điều bạn muốn, agent lên kế hoạch, dựng, test và publish web app, mobile app, dashboard… Plan mode và design canvas đi trước khi viết code; checkpoints cho phép quay lại; auth, database, hosting và monitoring có sẵn nên không phải setup. Connectors kết nối các dịch vụ như Slack, Notion, Linear, BigQuery. Agent tính phí theo effort (theo từng checkpoint, trừ vào credits hằng tháng), nên chi phí phụ thuộc độ lớn của từng task. Best for: prototype nhanh, học lập trình, công cụ nội bộ khi không muốn dựng môi trường dev local.",
           "sources": [
             {
-              "title": "Replit Official",
+              "title": "Replit",
               "url": "https://replit.com/"
             },
             {
               "title": "Replit Agent Docs",
               "url": "https://docs.replit.com/replitai/agent"
+            },
+            {
+              "title": "Replit AI Billing",
+              "url": "https://docs.replit.com/billing/ai-billing"
             }
           ],
           "pricing": "freemium",
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "Tạo web app nhanh từ mô tả ngôn ngữ tự nhiên",
-            "Prototype ý tưởng mà không cần setup môi trường local",
-            "Deploy trực tiếp lên cloud từ browser"
+            "Biến ý tưởng thành web app chạy được, có hosting, từ mô tả ngôn ngữ tự nhiên",
+            "Prototype mà không cần setup môi trường local",
+            "Muốn auth, database và hosting đi kèm sẵn khi build"
           ],
           "whenNotToUse": [
-            "Dự án cần kiểm soát chi phí chặt chẽ (effort-based pricing khó dự đoán)",
-            "Cần chạy offline hoặc trên máy local"
+            "Dự án cần kiểm soát chi phí chặt — giá agent theo effort thay đổi theo task",
+            "Cần làm việc offline hoặc trên máy / hạ tầng của mình"
           ],
           "compatibleWith": [
             "mcp"
@@ -2110,7 +2141,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-02-26",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -2118,31 +2149,40 @@
         {
           "name": "OpenCode",
           "slug": "opencode",
-          "desc": "Coding agent mã nguồn mở chạy trên terminal — hỗ trợ mọi LLM provider, 122K+ stars, MIT license",
+          "desc": "Coding agent mã nguồn mở có giao diện terminal, desktop app và extension IDE — dùng được gần như mọi model provider hoặc model local. Giấy phép MIT.",
           "added_date": "2026-02-04",
-          "detail": "OpenCode do SST team phát triển, là open-source alternative cho Claude Code với 122K+ GitHub stars (Top 100 repos). Hỗ trợ OpenAI, Anthropic, Google, Groq, local models — không bị lock vào 1 provider. TUI đẹp (Bubble Tea), có LSP integration, session management, và multi-file editing. Viết bằng Go, cài qua npm/brew/curl. Tích hợp GitHub Actions để review PR tự động.",
+          "tags": [
+            "Open source",
+            "Terminal",
+            "Multi-provider"
+          ],
+          "detail": "OpenCode là coding agent mã nguồn mở (MIT) do Anomaly — đội làm SST — phát triển; repo hiện ở anomalyco/opencode. Viết bằng TypeScript với giao diện terminal OpenTUI riêng, ngoài ra có desktop app (beta), extension IDE, web UI và tích hợp GitHub/GitLab. Hai agent có sẵn — build (toàn quyền) và plan (chỉ đọc) — chuyển bằng phím Tab, cùng subagents cho việc phụ. Kết nối nhiều provider qua Models.dev, đăng nhập được bằng gói GitHub Copilot hoặc ChatGPT, hỗ trợ model local; tự nạp LSP server để hiểu code. Mở rộng bằng MCP servers, plugins, custom agents, skills và tools. Miễn phí khi dùng key riêng; có model hosted trả phí tùy chọn (Zen, Go).",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "OpenCode GitHub",
               "url": "https://github.com/anomalyco/opencode"
             },
             {
-              "title": "Website",
+              "title": "OpenCode",
               "url": "https://opencode.ai/"
+            },
+            {
+              "title": "OpenCode Docs",
+              "url": "https://opencode.ai/docs/"
             }
           ],
-          "pricing": "free",
+          "pricing": "freemium",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Muốn coding agent OSS với cộng đồng lớn nhất (122K+ stars, 700+ contributors)",
-            "Thích terminal-first workflow với TUI chất lượng cao",
-            "Cần plan/build agent switching — phân tích trước khi code"
+            "Muốn một lựa chọn mã nguồn mở, không phụ thuộc provider, thay cho Claude Code hoặc Codex CLI",
+            "Thích workflow terminal-first với TUI chất lượng cao",
+            "Cần chuyển giữa agent plan và build — phân tích trước khi sửa code"
           ],
           "whenNotToUse": [
-            "Cần IDE-native experience — OpenCode thiên về terminal",
-            "Không quen cấu hình LLM provider riêng",
-            "Cần coding agent ổn định lâu dài — project phát triển rất nhanh, API có thể thay đổi"
+            "Thích trải nghiệm IDE đầy đủ — desktop app vẫn đang beta",
+            "Không muốn tự cấu hình model provider",
+            "Cần lệnh và cấu hình ổn định lâu dài — dự án thay đổi rất nhanh"
           ],
           "compatibleWith": [
             "mcp",
@@ -2156,39 +2196,47 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 131307,
+          "github_stars": 216102,
           "license": "MIT"
         },
         {
           "name": "Goose",
           "slug": "goose",
-          "desc": "Coding agent mã nguồn mở từ Block (Square) — không chỉ gợi ý mà còn cài đặt, chạy, debug với mọi LLM",
+          "desc": "AI agent mã nguồn mở chạy local, có desktop app và CLI — tự chạy lệnh, sửa code, tự động hóa workflow với mọi LLM. Nay thuộc Linux Foundation.",
           "added_date": "2026-02-04",
-          "detail": "Goose là open-source coding agent từ Block (formerly Square), viết bằng Rust cho performance cao. Khác Claude Code/Cursor ở chỗ: Goose tự chạy commands, install dependencies, debug errors — không chỉ suggest code. Mở rộng qua MCP extensions, có desktop app + CLI. 33K stars, Apache-2.0 license, hỗ trợ mọi LLM provider.",
+          "tags": [
+            "Open source",
+            "MCP",
+            "Recipes"
+          ],
+          "detail": "goose là AI agent đa năng mã nguồn mở (Apache-2.0) do Block tạo ra và trao cho Agentic AI Foundation (AAIF) thuộc Linux Foundation vào tháng 12/2025, cùng với MCP và AGENTS.md; repo nay là aaif-goose/goose, docs chuyển sang goose-docs.ai. Viết bằng Rust, chạy trên máy bạn dưới dạng desktop app (macOS, Linux, Windows), CLI hoặc API nhúng. Agent tự chạy lệnh, cài dependencies và debug chứ không chỉ gợi ý code, và còn được dùng cho nghiên cứu, viết lách, xử lý dữ liệu. Mở rộng bằng MCP extensions; Recipes là workflow YAML mang đi được, chia sẻ và chạy trong CI. Dùng được nhiều provider (Anthropic, OpenAI, Google, OpenRouter, Bedrock…), subscription sẵn có qua ACP, hoặc model local hoàn toàn qua Ollama.",
           "sources": [
             {
-              "title": "GitHub",
-              "url": "https://github.com/block/goose"
+              "title": "goose GitHub",
+              "url": "https://github.com/aaif-goose/goose"
             },
             {
-              "title": "Website",
-              "url": "https://block.github.io/goose/"
+              "title": "goose Docs",
+              "url": "https://goose-docs.ai/"
+            },
+            {
+              "title": "Linux Foundation — Agentic AI Foundation",
+              "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"
             }
           ],
           "pricing": "free",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần coding agent LLM-agnostic, chạy với bất kỳ provider nào",
-            "Muốn tự động hóa workflow phức tạp bằng recipes (YAML)",
-            "Team yêu cầu data privacy — chạy hoàn toàn local với Ollama"
+            "Cần agent không phụ thuộc LLM, chạy với bất kỳ provider nào",
+            "Muốn tự động hóa workflow lặp lại bằng recipes YAML chia sẻ được",
+            "Coi trọng data privacy — chạy hoàn toàn local với Ollama"
           ],
           "whenNotToUse": [
-            "Muốn setup đơn giản, không cần cấu hình LLM provider",
-            "Cần coding accuracy cao nhất out-of-the-box mà không tùy chỉnh model",
-            "Không quen terminal workflow — cần kinh nghiệm CLI"
+            "Muốn dùng ngay không cần setup — phải cấu hình model provider trước",
+            "Cần độ chính xác coding cao nhất ngay từ đầu mà không tinh chỉnh lựa chọn model"
           ],
           "compatibleWith": [
             "mcp",
@@ -2202,9 +2250,9 @@
           "languages": [
             "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-20",
           "verification_source": "docs",
-          "github_stars": 33522,
+          "github_stars": 55405,
           "license": "Apache-2.0"
         }
       ]
@@ -4184,7 +4232,7 @@
       "id": "coding-agents",
       "title": "So sánh AI Coding Agents",
       "sectionId": "coding-agents",
-      "as_of": "2026-02-09",
+      "as_of": "2026-10-20",
       "layout": "flip",
       "criteria": [
         "Phù hợp cho",
@@ -4209,20 +4257,20 @@
             "Mức tự chủ": "Tự chủ cao",
             "Tích hợp workflow": "Mạnh — GitHub Actions, GitLab CI, hooks, chế độ PR",
             "Hiểu repo": "Mạnh — lập chỉ mục repo, CLAUDE.md, bộ nhớ, sub-agents",
-            "Hỗ trợ model": "Anthropic là chính",
-            "Giá": "Freemium (Pro $20/Max $100–200/tháng)"
+            "Hỗ trợ model": "Chỉ model Claude",
+            "Giá": "Trả phí (Claude Pro $20 / Max từ $100/tháng, hoặc API)"
           }
         },
         {
           "cardId": "cursor",
           "values": {
             "Phù hợp cho": "Phát triển AI tích hợp IDE, refactor đa file",
-            "Dạng sử dụng": "IDE (fork VS Code)",
+            "Dạng sử dụng": "IDE (fork VS Code) + CLI + cloud agents",
             "Mức tự chủ": "Bán tự chủ",
-            "Tích hợp workflow": "Tốt — chế độ agent, review PR GitHub, background agents",
+            "Tích hợp workflow": "Tốt — Agent, cloud agents, Bugbot review PR, CLI",
             "Hiểu repo": "Mạnh — embedding toàn codebase, chỉnh sửa đa file",
             "Hỗ trợ model": "Đa nhà cung cấp",
-            "Giá": "Freemium (Pro $20/Pro+ $60/Ultra $200/tháng)"
+            "Giá": "Freemium (Plus $8 / Premium $30 / Ultra $200/tháng; model bên thứ ba tính thêm)"
           }
         },
         {
@@ -4233,68 +4281,68 @@
             "Mức tự chủ": "Tự chủ cao",
             "Tích hợp workflow": "Mạnh — CLI local + tác vụ cloud, AGENTS.md, Skills, PR GitHub",
             "Hiểu repo": "Tốt — preload repo, AGENTS.md, môi trường local + cloud",
-            "Hỗ trợ model": "OpenAI là chính",
-            "Giá": "Freemium (ChatGPT Plus $20/Pro $200/tháng)"
+            "Hỗ trợ model": "OpenAI là chính (model mở qua Ollama)",
+            "Giá": "Freemium (kèm trong gói ChatGPT; CLI từ Plus $20/tháng; hoặc API key)"
           }
         },
         {
           "cardId": "windsurf",
           "values": {
             "Phù hợp cho": "IDE AI-native, lập trình tự chủ đa bước",
-            "Dạng sử dụng": "IDE (độc lập)",
+            "Dạng sử dụng": "IDE (độc lập, nay là Devin Desktop)",
             "Mức tự chủ": "Tự chủ cao",
-            "Tích hợp workflow": "Tốt — agent Cascade, thay đổi đa file, tự xác minh",
+            "Tích hợp workflow": "Tốt — agent Devin Local, Workflows, chuyển việc sang Devin Cloud",
             "Hiểu repo": "Tốt — phân tích codebase, nhận biết cấu trúc dự án",
             "Hỗ trợ model": "Đa nhà cung cấp",
-            "Giá": "Freemium (Free 25 credits/Pro $15/Teams $30/tháng)"
+            "Giá": "Freemium (các gói đang chuyển đổi sau khi đổi tên)"
           }
         },
         {
           "cardId": "github-copilot",
           "values": {
             "Phù hợp cho": "Gợi ý inline, triển khai team, review PR",
-            "Dạng sử dụng": "Extension IDE (VS Code, JetBrains, Eclipse, Xcode, Neovim)",
+            "Dạng sử dụng": "Extension IDE (VS Code, JetBrains, Visual Studio, Xcode, Eclipse, Neovim) + CLI + cloud agent",
             "Mức tự chủ": "Bán tự chủ",
             "Tích hợp workflow": "Mạnh — coding agent trên issues/PRs, AGENTS.md, chế độ plan, MCP",
             "Hiểu repo": "Tốt — lập chỉ mục repo, chế độ agent đa file",
             "Hỗ trợ model": "Đa model (tùy gói)",
-            "Giá": "Freemium (Free/Pro $10/Pro+ $39/Biz $19/Ent $39/người/tháng)"
+            "Giá": "Freemium (Free / Pro $10 / Pro+ $39 / Max $100; Business $19 / Enterprise $39 mỗi người/tháng; AI credits)"
           }
         },
         {
           "cardId": "gemini-cli",
           "values": {
-            "Phù hợp cho": "Lập trình terminal miễn phí, hệ sinh thái Google",
+            "Phù hợp cho": "Agent terminal mã nguồn mở cho người dùng Gemini Code Assist / API trả phí",
             "Dạng sử dụng": "CLI",
             "Mức tự chủ": "Bán tự chủ",
             "Tích hợp workflow": "Cơ bản — lệnh shell, thao tác file, web fetch, MCP",
             "Hiểu repo": "Tốt — đọc file local, ngữ cảnh dựa trên tool",
             "Hỗ trợ model": "Google là chính",
-            "Giá": "Miễn phí (free tier rộng rãi; BYO key để dùng thêm)"
+            "Giá": "API key trả phí hoặc license Code Assist (miễn phí cho cá nhân đã dừng từ 6/2026)"
           }
         },
         {
           "cardId": "cline-roocode",
           "values": {
             "Phù hợp cho": "Agent OSS tùy chỉnh, con người kiểm soát",
-            "Dạng sử dụng": "Extension VS Code",
+            "Dạng sử dụng": "Extension VS Code + JetBrains, CLI",
             "Mức tự chủ": "Bán tự chủ",
-            "Tích hợp workflow": "Tốt — chế độ Plan/Act, terminal, MCP, Orchestrator (Roo)",
+            "Tích hợp workflow": "Tốt — chế độ Plan/Act, terminal, MCP, checkpoints",
             "Hiểu repo": "Tốt — phân tích tree-sitter, đọc toàn dự án, đa file",
             "Hỗ trợ model": "Đa nhà cung cấp",
-            "Giá": "Miễn phí/OSS (trả phí nhà cung cấp API)"
+            "Giá": "Miễn phí/OSS (trả phí nhà cung cấp API; có gói trả phí tùy chọn)"
           }
         },
         {
           "cardId": "kiro-aws",
           "values": {
             "Phù hợp cho": "Phát triển theo spec, dự án AWS doanh nghiệp",
-            "Dạng sử dụng": "IDE (fork Code OSS)",
+            "Dạng sử dụng": "IDE (fork Code OSS) + CLI + Web",
             "Mức tự chủ": "Tự chủ cao",
             "Tích hợp workflow": "Mạnh — agent hooks (tự test, lint, docs khi lưu), spec→design→tasks",
             "Hiểu repo": "Tốt — specs có cấu trúc, theo dõi requirements, ngữ cảnh bền vững",
-            "Hỗ trợ model": "AWS là chính (Claude qua Bedrock)",
-            "Giá": "Freemium (credits theo prompt)"
+            "Hỗ trợ model": "Đa nhà cung cấp (Claude, GPT, open-weight)",
+            "Giá": "Freemium (Free / Pro $20 / Pro+ $40 / Pro Max $100 / Power $200; credits)"
           }
         },
         {
@@ -4306,19 +4354,19 @@
             "Tích hợp workflow": "Cơ bản — deploy tích hợp, không có Git/PR workflow",
             "Hiểu repo": "Cơ bản — ngữ cảnh dự án trong Replit workspace",
             "Hỗ trợ model": "Replit proprietary",
-            "Giá": "Freemium (Free tier/Core $25/tháng)"
+            "Giá": "Freemium (Starter miễn phí / Core $20 / Pro $100/tháng; agent tính theo effort)"
           }
         },
         {
           "cardId": "opencode",
           "values": {
             "Phù hợp cho": "Agent terminal OSS, tích hợp LSP",
-            "Dạng sử dụng": "CLI",
+            "Dạng sử dụng": "CLI/TUI + desktop (beta) + extension IDE",
             "Mức tự chủ": "Bán tự chủ",
-            "Tích hợp workflow": "Cơ bản — chỉnh sửa file, lệnh shell, LSP",
+            "Tích hợp workflow": "Tốt — agent build/plan, MCP, GitHub/GitLab",
             "Hiểu repo": "Tốt — code intelligence qua LSP, quét dự án",
             "Hỗ trợ model": "Đa nhà cung cấp",
-            "Giá": "Miễn phí/OSS"
+            "Giá": "Miễn phí/OSS (có model hosted trả phí tùy chọn)"
           }
         },
         {
@@ -4330,7 +4378,7 @@
             "Tích hợp workflow": "Tốt — Recipes (workflow thực thi), MCP, tự tạo PR",
             "Hiểu repo": "Tốt — ngữ cảnh dự án, MCP servers toàn cục",
             "Hỗ trợ model": "Đa nhà cung cấp",
-            "Giá": "Miễn phí/OSS (bởi Block)"
+            "Giá": "Miễn phí/OSS (Linux Foundation AAIF)"
           }
         }
       ]
