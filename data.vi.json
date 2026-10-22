@@ -399,7 +399,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Xây agent production hoặc workflow nhiều agent trên .NET hoặc Python",

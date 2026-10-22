@@ -399,7 +399,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "You are building production agents or multi-agent workflows in .NET or Python",
