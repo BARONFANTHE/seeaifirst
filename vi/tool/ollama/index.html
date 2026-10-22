@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Ollama — See AI First</title>
-<meta name="description" content="Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong">
+<meta name="description" content="Cách đơn giản nhất để chạy LLM mở trên máy mình — vài lệnh là chạy, API tương thích OpenAI">
 <meta property="og:title" content="Ollama — See AI First">
-<meta property="og:description" content="Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong">
+<meta property="og:description" content="Cách đơn giản nhất để chạy LLM mở trên máy mình — vài lệnh là chạy, API tương thích OpenAI">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/ollama">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Ollama — See AI First">
-<meta name="twitter:description" content="Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong">
+<meta name="twitter:description" content="Cách đơn giản nhất để chạy LLM mở trên máy mình — vài lệnh là chạy, API tương thích OpenAI">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/ollama">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Ollama","url":"https://seeaifirst.com/vi/tool/ollama","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong","keywords":["AI Infrastructure — Hạ tầng chạy và triển khai model","go"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/ollama/ollama","https://ollama.com","https://ollama.com/library"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Ollama","url":"https://seeaifirst.com/vi/tool/ollama","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Cách đơn giản nhất để chạy LLM mở trên máy mình — vài lệnh là chạy, API tương thích OpenAI","keywords":["AI Infrastructure — Hạ tầng chạy và triển khai model","go"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/ollama/ollama","https://ollama.com","https://ollama.com/library"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,32 +1090,31 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/infrastructure">AI Infrastructure — Hạ tầng chạy và triển khai model</a> › Ollama</nav>
     <article>
       <h1>Ollama</h1>
-      <p>Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong</p>
-      <p>Tool phổ biến nhất để chạy LLM local. Hỗ trợ Llama, DeepSeek, Gemma, Qwen, Phi và 100+ models khác. Cài đặt cực đơn giản: curl install → ollama pull → ollama run. Tự động quản lý GPU/CPU, quantization, model storage. API tương thích OpenAI format. Chạy trên macOS, Linux, Windows. Phù hợp cho developer muốn thử nghiệm LLM trên máy cá nhân mà không tốn API costs.</p>
+      <p>Cách đơn giản nhất để chạy LLM mở trên máy mình — vài lệnh là chạy, API tương thích OpenAI</p>
+      <p>Ollama chạy các model mở như Llama, DeepSeek, Gemma, Qwen, Mistral ngay trên máy với thiết lập tối thiểu: cài đặt (script trên macOS/Linux, trình cài trên Windows), pull model rồi chạy. Ollama tự lo tải model, định dạng lượng tử hóa và dùng GPU/CPU, đồng thời mở API local tương thích định dạng OpenAI. Chạy trên macOS, Linux, Windows. Chạy model local là miễn phí, không giới hạn; từ 2025 Ollama có thêm cloud model cho các model lớn, với các gói trả phí kèm credit sử dụng. Phù hợp developer muốn thử LLM ngay trên máy mà không tốn phí API, hoặc prototype trước khi chuyển sang stack serving. Kết hợp tốt với: LiteLLM (gateway) · Dify · Công cụ RAG mã nguồn mở · Promptfoo (test với model local)</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
         <li>Chạy LLM trên máy local không cần GPU server</li>
-        <li>Prototype nhanh với open-source models mà không cần API key</li>
+        <li>Prototype nhanh với model mở mà không cần API key</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Cần production-scale serving với high throughput</li>
-        <li>Chạy models cần multi-GPU cluster</li>
+        <li>Cần serving quy mô production, throughput cao (xem vLLM)</li>
+        <li>Chạy model cần cluster nhiều GPU</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
-        <dt>Chi phí</dt><dd>Miễn phí</dd>
-        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Chi phí</dt><dd>Freemium</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Cơ bản</dd>
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>go</dd>
         <dt>Ứng dụng</dt><dd>local inference, model experimentation, privacy first ai</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
         <li><a href="/vi/tool/litellm">LiteLLM</a></li>
-        <li><a href="/vi/tool/localai">LocalAI</a></li>
         <li><a href="/vi/tool/dify">Dify</a></li>
         <li><a href="/vi/tool/flowise">Flowise</a></li>
       </ul>
@@ -1128,7 +1127,7 @@ html, body {
       <p><a href="/vi/section/infrastructure">Xem tất cả 4 công cụ trong AI Infrastructure — Hạ tầng chạy và triển khai model →</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/ollama/ollama" rel="noopener noreferrer">GitHub (165K+ ⭐)</a></li>
+        <li><a href="https://github.com/ollama/ollama" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://ollama.com" rel="noopener noreferrer">Website</a></li>
         <li><a href="https://ollama.com/library" rel="noopener noreferrer">Models Library</a></li>
       </ul>

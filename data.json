@@ -2793,12 +2793,12 @@
         {
           "name": "Langfuse",
           "slug": "langfuse",
-          "desc": "Open-source observability platform for LLMs — tracing, evals, prompt management",
+          "desc": "Open-source observability platform for LLM apps — tracing, evals, prompt management",
           "added_date": "2026-02-08",
-          "detail": "Most popular LLM engineering platform. Provides OpenTelemetry-standard tracing, automated evaluation, prompt management with versioning, experimentation playground, and datasets for fine-tuning. Integrates with 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-hostable, YC W23 backed. Use when you need end-to-end monitoring of production LLM apps.",
+          "detail": "Langfuse is an open-source LLM engineering platform for teams running LLM apps in production. It records traces built on OpenTelemetry (inputs, outputs, tool calls, latency, cost), runs automated and human evaluations, manages prompts with versioning, and provides a playground and datasets for experiments. SDKs for Python and TypeScript plus integrations with common frameworks and gateways (LangChain, LlamaIndex, OpenAI SDK, LiteLLM, Dify and more). Self-host it with Docker or Kubernetes, or use Langfuse Cloud. ClickHouse acquired Langfuse in early 2026; the team says it stays open source and self-hostable with no planned licence changes. The core is MIT; enterprise features live in separate ee/ directories under their own licence. Use it when you need end-to-end monitoring and evaluation of production LLM apps.\n\nWorks well with: LiteLLM (gateway traces) · LangGraph · LlamaIndex · Dify · vLLM",
           "sources": [
             {
-              "title": "GitHub (20K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/langfuse/langfuse"
             },
             {
@@ -2814,21 +2814,21 @@
             "OpenTelemetry",
             "Tracing",
             "Self-hosted",
-            "MIT License",
-            "YC W23"
+            "MIT core",
+            "Prompt Management"
           ],
           "hot": true,
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "theo dõi LLM traces và chi phí",
-            "quản lý prompt phiên bản",
-            "đánh giá chất lượng LLM output"
+            "You need to trace LLM calls, latency and cost in production",
+            "You want versioned prompt management shared by the team",
+            "You need to evaluate LLM output quality with automated and human scoring"
           ],
           "whenNotToUse": [
-            "chỉ cần eval đơn giản không cần tracing",
-            "dự án không dùng LLM"
+            "You only need simple offline evals without tracing",
+            "Your project does not use LLMs"
           ],
           "compatibleWith": [
             "litellm",
@@ -2846,20 +2846,20 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 23659,
+          "github_stars": 36169,
           "license": "MIT"
         },
         {
           "name": "DeepEval",
           "slug": "deepeval",
-          "desc": "LLM evaluation framework like Pytest — 50+ metrics, CI/CD integration, red-teaming",
+          "desc": "Open-source LLM evaluation framework in the style of Pytest — research-based metrics, agent and multi-turn evals, CI/CD",
           "added_date": "2026-02-08",
-          "detail": "\"Pytest for LLMs\". Specialized unit testing framework for LLM outputs: 50+ research-based metrics (G-Eval, hallucination detection, faithfulness, relevancy, RAGAs). Integrates with CI/CD pipelines, automatically detects regression. Includes synthetic data generation and red-teaming for 40+ vulnerability types. Confident AI platform (optional) for cloud dashboard.",
+          "detail": "DeepEval is \"Pytest for LLMs\": you write test cases for LLM outputs and assert on metrics such as G-Eval, hallucination, faithfulness, answer relevancy and contextual precision/recall for RAG. It also covers agentic evals (tool use, task completion) and multi-turn conversations, generates synthetic test data, and runs in CI/CD to catch regressions. Python is the main SDK, and TypeScript integrations exist for frameworks such as the Vercel AI SDK and Mastra. Red teaming has moved to Confident AI's companion project DeepTeam. Confident AI is the optional hosted platform for dashboards, datasets and tracing. Use it when you want evaluation to be part of your test suite.\n\nWorks well with: LangGraph · LlamaIndex · RAG pipelines · CI (GitHub Actions)",
           "sources": [
             {
-              "title": "GitHub (12.6K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/confident-ai/deepeval"
             },
             {
@@ -2868,27 +2868,27 @@
             },
             {
               "title": "Docs",
-              "url": "https://docs.confident-ai.com"
+              "url": "https://deepeval.com/docs/getting-started"
             }
           ],
           "tags": [
             "Pytest-style",
-            "50+ Metrics",
+            "LLM Metrics",
             "CI/CD",
             "Apache 2.0",
-            "Red-teaming"
+            "Agent Evals"
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "unit test LLM output trong CI/CD",
-            "đánh giá RAG pipeline",
-            "red team LLM application"
+            "You want to unit-test LLM output in CI/CD",
+            "You need to evaluate a RAG pipeline or an agent",
+            "You want research-backed metrics without building your own eval harness"
           ],
           "whenNotToUse": [
-            "cần full observability platform",
-            "không dùng Python"
+            "You need a full production observability platform",
+            "You mainly need red teaming (use its companion project DeepTeam or Promptfoo)"
           ],
           "compatibleWith": [
             "langgraph",
@@ -2901,22 +2901,23 @@
             "ci-cd-testing"
           ],
           "languages": [
-            "python"
+            "python",
+            "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 14256,
+          "github_stars": 19031,
           "license": "Apache-2.0"
         },
         {
           "name": "Promptfoo",
           "slug": "promptfoo",
-          "desc": "CLI tool for prompt testing, model comparison, and LLM red-teaming/security scanning",
+          "desc": "Open-source CLI for prompt testing, model comparison and LLM red teaming / security scanning",
           "added_date": "2026-02-08",
-          "detail": "Open-source CLI tool for developers to test and secure LLM apps. Configure via YAML, compare outputs side-by-side across multiple models (GPT, Claude, Gemini, Llama...). Built-in red-teaming for 50+ vulnerability types: prompt injection, PII exposure, jailbreak. Runs in CI/CD via GitHub Actions. Used by 51K+ developers. Ideal for teams needing a security-first approach.",
+          "detail": "Promptfoo is an open-source (MIT) CLI and library for testing and securing LLM apps. You describe prompts, providers and assertions in YAML, then compare outputs side by side across models (GPT, Claude, Gemini, Llama, local models via Ollama) and catch regressions. Its red-teaming module probes apps for issues such as prompt injection, jailbreaks and PII leaks, and it runs in CI/CD, for example through GitHub Actions. OpenAI announced an agreement to acquire Promptfoo in March 2026; the team says the open-source tools will remain open source. An enterprise edition adds team features and managed options. Ideal for teams that want a security-first testing workflow.\n\nWorks well with: Ollama · LiteLLM · GitHub Actions · Any LLM provider",
           "sources": [
             {
-              "title": "GitHub (8.3K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/promptfoo/promptfoo"
             },
             {
@@ -2939,13 +2940,13 @@
           "deployment": "local",
           "difficulty": "beginner",
           "whenToUse": [
-            "so sánh output giữa các LLM",
-            "kiểm tra prompt regression",
-            "red team và bảo mật LLM"
+            "You want to compare outputs across LLMs",
+            "You need to catch prompt regressions before release",
+            "You want red teaming and security scans for an LLM app"
           ],
           "whenNotToUse": [
-            "cần production observability real-time",
-            "cần tracing distributed system"
+            "You need real-time production observability",
+            "You need distributed tracing across services"
           ],
           "compatibleWith": [
             "ollama",
@@ -2960,17 +2961,17 @@
           "languages": [
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 18619,
+          "github_stars": 26258,
           "license": "MIT"
         },
         {
           "name": "LangSmith",
           "slug": "langsmith",
-          "desc": "LangChain's observability platform — tracing, evaluation, prompt hub for LangChain/LangGraph",
+          "desc": "Observability and evaluation platform from the LangChain team — tracing, evals, prompt hub; works with any framework",
           "added_date": "2026-02-08",
-          "detail": "Observability & evaluation platform by the LangChain team. Deep integration with the LangChain/LangGraph ecosystem: full-stack tracing (inputs, outputs, tool calls, decision steps), evaluation framework (automated + human review), Prompt Hub with versioning. Playground for prompt testing and cross-model comparison. Free tier available. De facto standard if you're already using the LangChain stack.",
+          "detail": "LangSmith is the LangChain team's platform for observing, evaluating and improving LLM apps and agents. It traces every step (inputs, outputs, tool calls, intermediate decisions), runs automated and human evaluations with annotation queues, and manages prompts with versioning and a playground for cross-model testing. Integration with LangChain and LangGraph is deepest, but tracing is framework-agnostic: it works with the OpenAI and Anthropic SDKs, the Vercel AI SDK, LlamaIndex or custom code, and can ingest OpenTelemetry data. Available as managed cloud with a free tier, bring-your-own-cloud, or self-hosted for Enterprise. A natural default if you already build with LangChain or LangGraph.\n\nWorks well with: LangGraph · LlamaIndex · LiteLLM · OpenTelemetry",
           "sources": [
             {
               "title": "Website",
@@ -2978,31 +2979,31 @@
             },
             {
               "title": "Docs",
-              "url": "https://docs.smith.langchain.com"
+              "url": "https://docs.langchain.com/langsmith/home"
             },
             {
-              "title": "Prompt Hub",
-              "url": "https://smith.langchain.com/hub"
+              "title": "Prompt engineering",
+              "url": "https://docs.langchain.com/langsmith/prompt-engineering"
             }
           ],
           "tags": [
-            "LangChain Native",
+            "Framework-agnostic",
             "Prompt Hub",
-            "Playground",
+            "OpenTelemetry",
             "Proprietary",
             "Free Tier"
           ],
           "pricing": "freemium",
-          "deployment": "cloud",
+          "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "debug LangChain và LangGraph applications",
-            "theo dõi agent execution traces",
-            "đánh giá chất lượng với annotation queues"
+            "Debugging LangChain and LangGraph applications",
+            "Tracing agent execution step by step",
+            "Evaluating quality with datasets and annotation queues"
           ],
           "whenNotToUse": [
-            "cần self-hosted hoàn toàn miễn phí",
-            "không dùng LangChain ecosystem"
+            "You need a fully free, self-hosted tool (self-hosting is an Enterprise option)",
+            "You need an open-source tool you can modify"
           ],
           "compatibleWith": [
             "langgraph",
@@ -3019,7 +3020,7 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -3027,21 +3028,21 @@
         {
           "name": "Arize Phoenix",
           "slug": "arize-phoenix",
-          "desc": "Open-source AI observability platform — tracing, evaluation, RAG debugging, embeddings analysis",
+          "desc": "Open-source AI observability platform — tracing, evaluation, prompt management, RAG debugging",
           "added_date": "2026-02-08",
-          "detail": "Open-source observability platform designed for experimentation and troubleshooting. Excels at RAG debugging via embedding visualization and semantic drift detection. Built on OpenTelemetry, vendor-agnostic, supports LlamaIndex, LangChain, DSPy, smolagents. Self-hostable via Docker/Kubernetes. Prompt management with version control and tagging. Ideal for research teams and RAG-heavy applications.",
+          "detail": "Arize Phoenix is an open-source observability platform for experimenting with and troubleshooting LLM apps. Built on OpenTelemetry (OpenInference instrumentation), it is vendor-agnostic and traces apps built with LlamaIndex, LangChain, DSPy, smolagents, the OpenAI SDK and more. It runs LLM-as-judge and code-based evaluations, datasets and experiments, and prompt management with versioning and a playground; inference analysis with embedding visualisation helps debug retrieval in RAG apps. Run it locally, in a notebook, or self-host it with Docker or Kubernetes. Licensed under Elastic License 2.0 (source-available: free to use and self-host, but not to offer as a managed service); Arize AX is the company's separate commercial platform. Good fit for research teams and RAG-heavy applications.\n\nWorks well with: LlamaIndex · LangGraph · LiteLLM · OpenTelemetry",
           "sources": [
             {
-              "title": "GitHub (8.5K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/Arize-ai/phoenix"
             },
             {
               "title": "Website",
-              "url": "https://phoenix.arize.com"
+              "url": "https://arize.com/phoenix/"
             },
             {
               "title": "Docs",
-              "url": "https://docs.arize.com/phoenix"
+              "url": "https://arize.com/docs/phoenix"
             }
           ],
           "tags": [
@@ -3055,13 +3056,13 @@
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "debug RAG retrieval quality",
-            "phân tích traces với OpenTelemetry",
-            "chạy evaluation trong notebook workflow"
+            "Debugging RAG retrieval quality",
+            "Analysing traces with OpenTelemetry instrumentation",
+            "Running evaluations inside notebook workflows"
           ],
           "whenNotToUse": [
-            "cần cung cấp như managed service cho bên thứ ba",
-            "cần license permissive cho thương mại"
+            "You want to offer it to third parties as a managed service (Elastic License 2.0 forbids this)",
+            "You need an OSI-approved permissive licence"
           ],
           "compatibleWith": [
             "langgraph",
@@ -3078,9 +3079,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 9011,
+          "github_stars": 11947,
           "license": "Elastic-2.0"
         }
       ]
@@ -3094,12 +3095,12 @@
         {
           "name": "Ollama",
           "slug": "ollama",
-          "desc": "The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started",
+          "desc": "The simplest way to run open LLMs on your own machine — a few commands to start, OpenAI-compatible API",
           "added_date": "2026-02-08",
-          "detail": "The most popular tool for running LLMs locally. Supports Llama, DeepSeek, Gemma, Qwen, Phi, and 100+ other models. Dead-simple setup: curl install → ollama pull → ollama run. Automatically manages GPU/CPU, quantization, model storage. API compatible with OpenAI format. Runs on macOS, Linux, Windows. Perfect for developers who want to experiment with LLMs on their own machine without API costs.",
+          "detail": "Ollama runs open models such as Llama, DeepSeek, Gemma, Qwen and Mistral on your own machine with minimal setup: install it (a script on macOS/Linux, an installer on Windows), pull a model and run it. It manages model downloads, quantised formats and GPU/CPU use for you, and exposes a local API that is compatible with the OpenAI format. Runs on macOS, Linux and Windows. Running models locally is free and unlimited; since 2025 Ollama also offers cloud models for larger models, with paid plans that add usage credits. Perfect for developers who want to experiment with LLMs locally without API costs, or prototype before moving to a serving stack.\n\nWorks well with: LiteLLM (gateway) · Dify · Open-source RAG tools · Promptfoo (local model tests)",
           "sources": [
             {
-              "title": "GitHub (165K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/ollama/ollama"
             },
             {
@@ -3113,26 +3114,25 @@
           ],
           "tags": [
             "Local LLM",
-            "100+ Models",
+            "Cloud Models",
             "OpenAI Compatible",
             "MIT License",
             "macOS/Linux/Win"
           ],
           "hot": true,
-          "pricing": "free",
-          "deployment": "local",
+          "pricing": "freemium",
+          "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Chạy LLM trên máy local không cần GPU server",
-            "Prototype nhanh với open-source models mà không cần API key"
+            "Running LLMs on a local machine without a GPU server",
+            "Prototyping quickly with open models without an API key"
           ],
           "whenNotToUse": [
-            "Cần production-scale serving với high throughput",
-            "Chạy models cần multi-GPU cluster"
+            "You need production-scale, high-throughput serving (see vLLM)",
+            "You need models that require a multi-GPU cluster"
           ],
           "compatibleWith": [
             "litellm",
-            "localai",
             "dify",
             "flowise"
           ],
@@ -3144,20 +3144,20 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 166008,
+          "github_stars": 184104,
           "license": "MIT"
         },
         {
           "name": "vLLM",
           "slug": "vllm",
-          "desc": "High-performance production inference engine — PagedAttention, 2-4× throughput over baseline",
+          "desc": "High-throughput inference and serving engine for LLMs in production — PagedAttention, continuous batching",
           "added_date": "2026-02-08",
-          "detail": "LLM serving engine built for production. PagedAttention technology optimizes GPU memory, achieving 2-4× throughput over FasterTransformer/Orca. Supports continuous batching, tensor parallelism, speculative decoding. Compatible with OpenAI API server. Used by major companies for high-throughput serving. Supports most popular model architectures (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
+          "detail": "vLLM is an open-source (Apache 2.0) engine for serving LLMs at high throughput. PagedAttention manages GPU memory for the KV cache efficiently, and continuous batching keeps hardware busy under many concurrent requests. It supports tensor and pipeline parallelism, speculative decoding, quantisation and prefix caching, and serves an OpenAI-compatible API server. It runs on NVIDIA and AMD GPUs and other accelerators, with CPU support for x86, ARM and PowerPC, and covers most popular open model architectures (Llama, Mistral, Qwen, DeepSeek and more). vLLM has been hosted by the PyTorch Foundation since May 2025. Use it when you need to serve open models to many users.\n\nWorks well with: LiteLLM (gateway in front of vLLM) · Langfuse (tracing) · Kubernetes",
           "sources": [
             {
-              "title": "GitHub (73K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/vllm-project/vllm"
             },
             {
@@ -3180,12 +3180,12 @@
           "deployment": "self-hosted",
           "difficulty": "advanced",
           "whenToUse": [
-            "Cần high-throughput LLM serving cho production",
-            "Tối ưu GPU memory với PagedAttention"
+            "You need high-throughput LLM serving in production",
+            "You want to make the most of GPU memory and concurrency"
           ],
           "whenNotToUse": [
-            "Chạy trên máy không có GPU",
-            "Chỉ cần inference đơn giản trên local"
+            "You just want to run a model on a laptop (Ollama is simpler)",
+            "You have no GPU or accelerator and need fast responses (CPU support is slower)"
           ],
           "compatibleWith": [
             "litellm",
@@ -3199,20 +3199,20 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 74513,
+          "github_stars": 95063,
           "license": "Apache-2.0"
         },
         {
           "name": "LocalAI",
           "slug": "localai",
-          "desc": "Self-hosted OpenAI alternative — run LLMs, image gen, audio on consumer hardware, no GPU required",
+          "desc": "Self-hosted, OpenAI-compatible AI server — run LLMs, image, audio and video models on your own hardware, GPU optional",
           "added_date": "2026-02-08",
-          "detail": "Self-hosted OpenAI API replacement. Runs on consumer hardware with NO GPU required. Supports text generation, image generation, audio transcription, embeddings — all via OpenAI-compatible API. Compatible with Anthropic API format, Responses API, MCP integration. One-command Docker deployment. Ideal for teams wanting to self-host their entire AI stack on their own infrastructure, keeping data in-house.",
+          "detail": "LocalAI is a self-hosted drop-in replacement for the OpenAI API that runs on your own hardware, with no GPU required (GPUs are used when available). One server covers text generation, embeddings, image and video generation, speech-to-text, text-to-speech and vision, all behind OpenAI-compatible endpoints; it also speaks the Anthropic and ElevenLabs API formats and the Responses API, and can run agents that use MCP tools. Deploy it with a single Docker command or a binary. MIT licensed. Ideal for teams that want to keep their whole AI stack and data in-house.\n\nWorks well with: MCP (agent tools) · Dify (as a model provider) · Docker/Kubernetes",
           "sources": [
             {
-              "title": "GitHub (43.6K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/mudler/LocalAI"
             },
             {
@@ -3235,17 +3235,16 @@
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần drop-in replacement cho OpenAI API trên local",
-            "Chạy nhiều loại model (text, image, audio, video) trên 1 platform"
+            "You need a drop-in replacement for the OpenAI API on your own infrastructure",
+            "You want one server for several model types (text, image, audio, video)"
           ],
           "whenNotToUse": [
-            "Chỉ cần chạy 1 model đơn giản — Ollama đơn giản hơn",
-            "Cần tối ưu throughput cực cao — vLLM phù hợp hơn"
+            "You only need to run one model simply — Ollama is simpler",
+            "You need maximum serving throughput — vLLM fits better"
           ],
           "compatibleWith": [
-            "ollama",
-            "litellm",
-            "mcp"
+            "mcp",
+            "dify"
           ],
           "useCases": [
             "openai-compatible-local",
@@ -3255,20 +3254,20 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 44173,
+          "github_stars": 49848,
           "license": "MIT"
         },
         {
           "name": "LiteLLM",
           "slug": "litellm",
-          "desc": "Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API",
+          "desc": "Open-source AI gateway and SDK for many LLM providers — one API, cost tracking, load balancing, fallbacks",
           "added_date": "2026-02-08",
-          "detail": "Unified gateway/proxy for accessing 100+ LLM providers. Call OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... through a single API format. Built-in cost tracking per request, load balancing across providers, automatic fallback when a provider goes down. Manages API keys, rate limits, budget alerts. Python SDK and proxy server for any language. Ideal for teams using multiple LLM providers who need to optimize costs.",
+          "detail": "LiteLLM gives you one OpenAI-style API for many LLM providers — OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama, vLLM and more. Use it as a Python SDK or run the proxy server (AI gateway) so any language can call it. The gateway tracks cost per request, user and key, enforces budgets and rate limits, load-balances across deployments and falls back automatically when a provider fails; it sends logs and traces to tools such as Langfuse and LangSmith. A Rust-based gateway is in beta (since mid-2026). The code is MIT apart from an enterprise/ directory under a separate commercial licence (enterprise features need a licence key). Ideal for teams using several LLM providers who want central control of keys and spend.\n\nWorks well with: Ollama · vLLM · Langfuse · LangSmith",
           "sources": [
             {
-              "title": "GitHub (39K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/BerriAI/litellm"
             },
             {
@@ -3281,22 +3280,22 @@
             }
           ],
           "tags": [
-            "100+ Providers",
+            "Multi-provider",
             "Cost Tracking",
             "Load Balancing",
-            "MIT License",
+            "MIT core",
             "Proxy Server"
           ],
           "pricing": "open-core",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần gọi 100+ LLM APIs qua 1 interface thống nhất",
-            "Cần cost tracking, rate limiting, load balancing cho multi-model"
+            "You need to call many LLM APIs through one interface",
+            "You need cost tracking, rate limits and load balancing across models"
           ],
           "whenNotToUse": [
-            "Chỉ dùng 1 LLM provider duy nhất",
-            "Không cần proxy layer — gọi API trực tiếp đủ rồi"
+            "You only use a single LLM provider",
+            "You do not need a proxy layer — calling the API directly is enough"
           ],
           "compatibleWith": [
             "ollama",
@@ -3310,11 +3309,12 @@
             "multi-provider-routing"
           ],
           "languages": [
-            "python"
+            "python",
+            "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 40170,
+          "github_stars": 61679,
           "license": "MIT"
         }
       ]

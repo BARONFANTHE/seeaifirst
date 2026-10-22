@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>DeepEval — See AI First</title>
-<meta name="description" content="Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming">
+<meta name="description" content="Framework đánh giá LLM mã nguồn mở kiểu Pytest — metric dựa trên nghiên cứu, eval cho agent và hội thoại nhiều lượt, CI/CD">
 <meta property="og:title" content="DeepEval — See AI First">
-<meta property="og:description" content="Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming">
+<meta property="og:description" content="Framework đánh giá LLM mã nguồn mở kiểu Pytest — metric dựa trên nghiên cứu, eval cho agent và hội thoại nhiều lượt, CI/CD">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/deepeval">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="DeepEval — See AI First">
-<meta name="twitter:description" content="Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming">
+<meta name="twitter:description" content="Framework đánh giá LLM mã nguồn mở kiểu Pytest — metric dựa trên nghiên cứu, eval cho agent và hội thoại nhiều lượt, CI/CD">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/deepeval">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"DeepEval","url":"https://seeaifirst.com/vi/tool/deepeval","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming","keywords":["Observability & Evaluation — Giám sát và đánh giá AI","python"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/confident-ai/deepeval","https://www.confident-ai.com","https://docs.confident-ai.com"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"DeepEval","url":"https://seeaifirst.com/vi/tool/deepeval","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework đánh giá LLM mã nguồn mở kiểu Pytest — metric dựa trên nghiên cứu, eval cho agent và hội thoại nhiều lượt, CI/CD","keywords":["Observability & Evaluation — Giám sát và đánh giá AI","python","js"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/confident-ai/deepeval","https://www.confident-ai.com","https://deepeval.com/docs/getting-started"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,18 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> › DeepEval</nav>
     <article>
       <h1>DeepEval</h1>
-      <p>Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming</p>
-      <p>&quot;Pytest cho LLMs&quot;. Unit testing framework chuyên biệt cho LLM outputs: 50+ metrics dựa trên nghiên cứu (G-Eval, hallucination detection, faithfulness, relevancy, RAGAs). Tích hợp CI/CD pipelines, tự động phát hiện regression. Bao gồm synthetic data generation và red-teaming cho 40+ loại vulnerabilities. Confident AI platform (optional) cho cloud dashboard.</p>
+      <p>Framework đánh giá LLM mã nguồn mở kiểu Pytest — metric dựa trên nghiên cứu, eval cho agent và hội thoại nhiều lượt, CI/CD</p>
+      <p>DeepEval là &quot;Pytest cho LLM&quot;: viết test case cho output LLM và assert theo các metric như G-Eval, hallucination, faithfulness, answer relevancy, contextual precision/recall cho RAG. Có cả eval cho agent (dùng tool, hoàn thành tác vụ) và hội thoại nhiều lượt, sinh dữ liệu test tổng hợp, chạy trong CI/CD để bắt regression. SDK chính là Python, có tích hợp TypeScript cho các framework như Vercel AI SDK và Mastra. Red teaming đã chuyển sang dự án đi kèm DeepTeam của Confident AI. Confident AI là nền tảng hosted tùy chọn cho dashboard, dataset và tracing. Dùng khi muốn đưa việc đánh giá LLM vào bộ test. Kết hợp tốt với: LangGraph · LlamaIndex · RAG pipeline · CI (GitHub Actions)</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>unit test LLM output trong CI/CD</li>
-        <li>đánh giá RAG pipeline</li>
-        <li>red team LLM application</li>
+        <li>Unit test output LLM trong CI/CD</li>
+        <li>Đánh giá RAG pipeline hoặc agent</li>
+        <li>Muốn metric có cơ sở nghiên cứu mà không tự dựng eval harness</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>cần full observability platform</li>
-        <li>không dùng Python</li>
+        <li>Cần nền tảng observability production đầy đủ</li>
+        <li>Chủ yếu cần red teaming (dùng dự án đi kèm DeepTeam hoặc Promptfoo)</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1109,9 +1109,9 @@ html, body {
         <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Cơ bản</dd>
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
-        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js</dd>
         <dt>Ứng dụng</dt><dd>llm evaluation, rag testing, red teaming, ci cd testing</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1128,9 +1128,9 @@ html, body {
       <p><a href="/vi/section/observability">Xem tất cả 5 công cụ trong Observability &amp; Evaluation — Giám sát và đánh giá AI →</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/confident-ai/deepeval" rel="noopener noreferrer">GitHub (12.6K+ ⭐)</a></li>
+        <li><a href="https://github.com/confident-ai/deepeval" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://www.confident-ai.com" rel="noopener noreferrer">Website</a></li>
-        <li><a href="https://docs.confident-ai.com" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://deepeval.com/docs/getting-started" rel="noopener noreferrer">Docs</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> trên See AI First.</p>

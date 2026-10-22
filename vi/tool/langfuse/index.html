@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Langfuse — See AI First</title>
-<meta name="description" content="Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management">
+<meta name="description" content="Nền tảng observability mã nguồn mở cho LLM app — tracing, evals, prompt management">
 <meta property="og:title" content="Langfuse — See AI First">
-<meta property="og:description" content="Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management">
+<meta property="og:description" content="Nền tảng observability mã nguồn mở cho LLM app — tracing, evals, prompt management">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/langfuse">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Langfuse — See AI First">
-<meta name="twitter:description" content="Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management">
+<meta name="twitter:description" content="Nền tảng observability mã nguồn mở cho LLM app — tracing, evals, prompt management">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/langfuse">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Langfuse","url":"https://seeaifirst.com/vi/tool/langfuse","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management","keywords":["Observability & Evaluation — Giám sát và đánh giá AI","python","js"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/langfuse/langfuse","https://langfuse.com","https://langfuse.com/docs"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Langfuse","url":"https://seeaifirst.com/vi/tool/langfuse","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Nền tảng observability mã nguồn mở cho LLM app — tracing, evals, prompt management","keywords":["Observability & Evaluation — Giám sát và đánh giá AI","python","js"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/langfuse/langfuse","https://langfuse.com","https://langfuse.com/docs"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,18 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> › Langfuse</nav>
     <article>
       <h1>Langfuse</h1>
-      <p>Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management</p>
-      <p>LLM engineering platform phổ biến nhất. Cung cấp tracing theo chuẩn OpenTelemetry, evaluation tự động, prompt management với versioning, playground thử nghiệm, và datasets cho fine-tuning. Tích hợp 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-host được, YC W23 backed. Dùng khi cần giám sát production LLM apps end-to-end.</p>
+      <p>Nền tảng observability mã nguồn mở cho LLM app — tracing, evals, prompt management</p>
+      <p>Langfuse là nền tảng LLM engineering mã nguồn mở cho các team đang chạy LLM app ở production. Ghi trace dựa trên OpenTelemetry (input, output, tool call, độ trễ, chi phí), chạy đánh giá tự động và đánh giá bởi người, quản lý prompt có phiên bản, kèm playground và dataset để thử nghiệm. Có SDK Python và TypeScript cùng tích hợp với các framework và gateway phổ biến (LangChain, LlamaIndex, OpenAI SDK, LiteLLM, Dify…). Tự host bằng Docker hoặc Kubernetes, hoặc dùng Langfuse Cloud. ClickHouse mua Langfuse đầu năm 2026; team cho biết vẫn giữ mã nguồn mở, tự host được và không có kế hoạch đổi license. Phần lõi theo MIT; tính năng enterprise nằm trong thư mục ee/ với license riêng. Dùng khi cần giám sát và đánh giá đầu-cuối cho LLM app ở production. Kết hợp tốt với: LiteLLM (trace qua gateway) · LangGraph · LlamaIndex · Dify · vLLM</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>theo dõi LLM traces và chi phí</li>
-        <li>quản lý prompt phiên bản</li>
-        <li>đánh giá chất lượng LLM output</li>
+        <li>Theo dõi LLM call, độ trễ và chi phí ở production</li>
+        <li>Quản lý prompt có phiên bản dùng chung trong team</li>
+        <li>Đánh giá chất lượng output LLM bằng chấm điểm tự động và thủ công</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>chỉ cần eval đơn giản không cần tracing</li>
-        <li>dự án không dùng LLM</li>
+        <li>Chỉ cần eval offline đơn giản, không cần tracing</li>
+        <li>Dự án không dùng LLM</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1111,7 +1111,7 @@ html, body {
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>python, js</dd>
         <dt>Ứng dụng</dt><dd>llm observability, prompt management, cost tracking, evaluation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1130,7 +1130,7 @@ html, body {
       <p><a href="/vi/section/observability">Xem tất cả 5 công cụ trong Observability &amp; Evaluation — Giám sát và đánh giá AI →</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/langfuse/langfuse" rel="noopener noreferrer">GitHub (20K+ ⭐)</a></li>
+        <li><a href="https://github.com/langfuse/langfuse" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://langfuse.com" rel="noopener noreferrer">Website</a></li>
         <li><a href="https://langfuse.com/docs" rel="noopener noreferrer">Docs</a></li>
       </ul>

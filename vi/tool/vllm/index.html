@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>vLLM — See AI First</title>
-<meta name="description" content="Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline">
+<meta name="description" content="Engine inference và serving throughput cao cho LLM ở production — PagedAttention, continuous batching">
 <meta property="og:title" content="vLLM — See AI First">
-<meta property="og:description" content="Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline">
+<meta property="og:description" content="Engine inference và serving throughput cao cho LLM ở production — PagedAttention, continuous batching">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/vllm">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="vLLM — See AI First">
-<meta name="twitter:description" content="Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline">
+<meta name="twitter:description" content="Engine inference và serving throughput cao cho LLM ở production — PagedAttention, continuous batching">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/vllm">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"vLLM","url":"https://seeaifirst.com/vi/tool/vllm","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline","keywords":["AI Infrastructure — Hạ tầng chạy và triển khai model","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/vllm-project/vllm","https://vllm.ai","https://docs.vllm.ai"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"vLLM","url":"https://seeaifirst.com/vi/tool/vllm","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Engine inference và serving throughput cao cho LLM ở production — PagedAttention, continuous batching","keywords":["AI Infrastructure — Hạ tầng chạy và triển khai model","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/vllm-project/vllm","https://vllm.ai","https://docs.vllm.ai"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,17 +1090,17 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/infrastructure">AI Infrastructure — Hạ tầng chạy và triển khai model</a> › vLLM</nav>
     <article>
       <h1>vLLM</h1>
-      <p>Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline</p>
-      <p>Engine serving LLM cho production. Công nghệ PagedAttention giúp tối ưu GPU memory, đạt throughput gấp 2-4× so với FasterTransformer/Orca. Hỗ trợ continuous batching, tensor parallelism, speculative decoding. Tương thích OpenAI API server. Dùng bởi các công ty lớn cho high-throughput serving. Hỗ trợ hầu hết model architectures phổ biến (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.</p>
+      <p>Engine inference và serving throughput cao cho LLM ở production — PagedAttention, continuous batching</p>
+      <p>vLLM là engine mã nguồn mở (Apache 2.0) để serve LLM với throughput cao. PagedAttention quản lý bộ nhớ GPU cho KV cache hiệu quả, continuous batching giữ phần cứng luôn bận khi có nhiều request đồng thời. Hỗ trợ tensor và pipeline parallelism, speculative decoding, lượng tử hóa, prefix caching, và có API server tương thích OpenAI. Chạy trên GPU NVIDIA, AMD và các accelerator khác, hỗ trợ CPU x86, ARM, PowerPC, bao phủ hầu hết kiến trúc model mở phổ biến (Llama, Mistral, Qwen, DeepSeek…). vLLM được PyTorch Foundation bảo trợ từ 05/2025. Dùng khi cần serve model mở cho nhiều người dùng. Kết hợp tốt với: LiteLLM (gateway đặt trước vLLM) · Langfuse (tracing) · Kubernetes</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần high-throughput LLM serving cho production</li>
-        <li>Tối ưu GPU memory với PagedAttention</li>
+        <li>Cần serving LLM throughput cao cho production</li>
+        <li>Muốn tận dụng tối đa bộ nhớ GPU và khả năng xử lý đồng thời</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Chạy trên máy không có GPU</li>
-        <li>Chỉ cần inference đơn giản trên local</li>
+        <li>Chỉ muốn chạy model trên laptop (Ollama đơn giản hơn)</li>
+        <li>Không có GPU hay accelerator mà cần phản hồi nhanh (chạy CPU chậm hơn)</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1110,7 +1110,7 @@ html, body {
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
         <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>production inference, high throughput serving, gpu optimization</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1126,7 +1126,7 @@ html, body {
       <p><a href="/vi/section/infrastructure">Xem tất cả 4 công cụ trong AI Infrastructure — Hạ tầng chạy và triển khai model →</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/vllm-project/vllm" rel="noopener noreferrer">GitHub (73K+ ⭐)</a></li>
+        <li><a href="https://github.com/vllm-project/vllm" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://vllm.ai" rel="noopener noreferrer">Website</a></li>
         <li><a href="https://docs.vllm.ai" rel="noopener noreferrer">Docs</a></li>
       </ul>

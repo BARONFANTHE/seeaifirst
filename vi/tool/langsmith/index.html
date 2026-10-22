@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>LangSmith — See AI First</title>
-<meta name="description" content="Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph">
+<meta name="description" content="Nền tảng observability và evaluation của team LangChain — tracing, evals, prompt hub; dùng được với mọi framework">
 <meta property="og:title" content="LangSmith — See AI First">
-<meta property="og:description" content="Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph">
+<meta property="og:description" content="Nền tảng observability và evaluation của team LangChain — tracing, evals, prompt hub; dùng được với mọi framework">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/langsmith">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="LangSmith — See AI First">
-<meta name="twitter:description" content="Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph">
+<meta name="twitter:description" content="Nền tảng observability và evaluation của team LangChain — tracing, evals, prompt hub; dùng được với mọi framework">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/langsmith">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LangSmith","url":"https://seeaifirst.com/vi/tool/langsmith","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph","keywords":["Observability & Evaluation — Giám sát và đánh giá AI","python","js"],"isAccessibleForFree":true,"sameAs":["https://www.langchain.com/langsmith","https://docs.smith.langchain.com","https://smith.langchain.com/hub"],"datePublished":"2026-02-08","dateModified":"2026-02-12","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LangSmith","url":"https://seeaifirst.com/vi/tool/langsmith","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Nền tảng observability và evaluation của team LangChain — tracing, evals, prompt hub; dùng được với mọi framework","keywords":["Observability & Evaluation — Giám sát và đánh giá AI","python","js"],"isAccessibleForFree":true,"sameAs":["https://www.langchain.com/langsmith","https://docs.langchain.com/langsmith/home","https://docs.langchain.com/langsmith/prompt-engineering"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,27 +1090,27 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> › LangSmith</nav>
     <article>
       <h1>LangSmith</h1>
-      <p>Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph</p>
-      <p>Platform observability &amp; evaluation của LangChain team. Tích hợp sâu với LangChain/LangGraph ecosystem: full-stack tracing (inputs, outputs, tool calls, decision steps), evaluation framework (automated + human review), Prompt Hub với versioning. Playground cho prompt testing và cross-model comparison. Free tier available. De facto standard nếu đã dùng LangChain stack.</p>
+      <p>Nền tảng observability và evaluation của team LangChain — tracing, evals, prompt hub; dùng được với mọi framework</p>
+      <p>LangSmith là nền tảng của team LangChain để quan sát, đánh giá và cải thiện LLM app và agent. Ghi trace từng bước (input, output, tool call, quyết định trung gian), chạy đánh giá tự động và thủ công với annotation queue, quản lý prompt có phiên bản cùng playground để thử trên nhiều model. Tích hợp sâu nhất với LangChain và LangGraph, nhưng tracing không phụ thuộc framework: dùng được với OpenAI và Anthropic SDK, Vercel AI SDK, LlamaIndex hoặc code tự viết, và nhận được dữ liệu OpenTelemetry. Có bản cloud managed (có gói miễn phí), bring-your-own-cloud, hoặc tự host cho Enterprise. Lựa chọn mặc định hợp lý nếu đang xây bằng LangChain hoặc LangGraph. Kết hợp tốt với: LangGraph · LlamaIndex · LiteLLM · OpenTelemetry</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>debug LangChain và LangGraph applications</li>
-        <li>theo dõi agent execution traces</li>
-        <li>đánh giá chất lượng với annotation queues</li>
+        <li>Debug ứng dụng LangChain và LangGraph</li>
+        <li>Theo dõi từng bước thực thi của agent</li>
+        <li>Đánh giá chất lượng bằng dataset và annotation queue</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>cần self-hosted hoàn toàn miễn phí</li>
-        <li>không dùng LangChain ecosystem</li>
+        <li>Cần công cụ tự host hoàn toàn miễn phí (tự host là tùy chọn Enterprise)</li>
+        <li>Cần công cụ mã nguồn mở để tự sửa</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
         <dt>Chi phí</dt><dd>Freemium</dd>
-        <dt>Triển khai</dt><dd>Cloud</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Cơ bản</dd>
         <dt>Ngôn ngữ</dt><dd>python, js</dd>
         <dt>Ứng dụng</dt><dd>llm observability, agent debugging, evaluation, prompt management</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-02-12 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1129,8 +1129,8 @@ html, body {
       <h2>Nguồn</h2>
       <ul>
         <li><a href="https://www.langchain.com/langsmith" rel="noopener noreferrer">Website</a></li>
-        <li><a href="https://docs.smith.langchain.com" rel="noopener noreferrer">Docs</a></li>
-        <li><a href="https://smith.langchain.com/hub" rel="noopener noreferrer">Prompt Hub</a></li>
+        <li><a href="https://docs.langchain.com/langsmith/home" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://docs.langchain.com/langsmith/prompt-engineering" rel="noopener noreferrer">Prompt engineering</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/observability">Observability &amp; Evaluation — Giám sát và đánh giá AI</a> trên See AI First.</p>
