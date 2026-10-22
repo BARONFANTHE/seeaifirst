@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-<title>AutoGen — See AI First</title>
-<meta name="description" content="Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.">
-<meta property="og:title" content="AutoGen — See AI First">
-<meta property="og:description" content="Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.">
-<meta property="og:url" content="https://seeaifirst.com/vi/tool/autogen">
+<title>AgentScope — See AI First</title>
+<meta name="description" content="Framework agent Python mã nguồn mở kèm sẵn agent service — ReAct agent, agent team, MCP và A2A, tool chạy trong sandbox">
+<meta property="og:title" content="AgentScope — See AI First">
+<meta property="og:description" content="Framework agent Python mã nguồn mở kèm sẵn agent service — ReAct agent, agent team, MCP và A2A, tool chạy trong sandbox">
+<meta property="og:url" content="https://seeaifirst.com/vi/tool/agentscope">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
-<meta name="twitter:title" content="AutoGen — See AI First">
-<meta name="twitter:description" content="Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.">
-<link rel="canonical" href="https://seeaifirst.com/vi/tool/autogen">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AutoGen","url":"https://seeaifirst.com/vi/tool/autogen","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.","keywords":["Agent Frameworks — Xây dựng AI agents","python","csharp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/autogen","https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/","https://github.com/microsoft/agent-framework"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"vi"}</script>
+<meta name="twitter:title" content="AgentScope — See AI First">
+<meta name="twitter:description" content="Framework agent Python mã nguồn mở kèm sẵn agent service — ReAct agent, agent team, MCP và A2A, tool chạy trong sandbox">
+<link rel="canonical" href="https://seeaifirst.com/vi/tool/agentscope">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AgentScope","url":"https://seeaifirst.com/vi/tool/agentscope","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework agent Python mã nguồn mở kèm sẵn agent service — ReAct agent, agent team, MCP và A2A, tool chạy trong sandbox","keywords":["Agent Frameworks — Xây dựng AI agents","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/agentscope-ai/agentscope","https://docs.agentscope.io/","https://github.com/agentscope-ai/agentscope-java"],"datePublished":"2026-10-22","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1087,53 +1087,54 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
-    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › AutoGen</nav>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> › AgentScope</nav>
     <article>
-      <h1>AutoGen</h1>
-      <p>Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.</p>
-      <p>AutoGen là framework mã nguồn mở của Microsoft cho ứng dụng multi-agent, dùng với Python và .NET. API chia lớp gồm Core (runtime điều khiển theo sự kiện), AgentChat (group chat, nhóm agent) và Extensions (model, tool, chạy code), có hỗ trợ human-in-the-loop. Dự án hiện ở chế độ bảo trì: không thêm tính năng mới, do cộng đồng quản lý, và README khuyên người dùng mới bắt đầu với Microsoft Agent Framework — bản kế nhiệm cho doanh nghiệp, thay cả Semantic Kernel; có hướng dẫn chuyển đổi chính thức. Code theo giấy phép MIT. Best for: duy trì hệ thống AutoGen đang có và prototype nghiên cứu — không dành cho dự án mới.</p>
+      <h1>AgentScope</h1>
+      <p>Framework agent Python mã nguồn mở kèm sẵn agent service — ReAct agent, agent team, MCP và A2A, tool chạy trong sandbox</p>
+      <p>AgentScope là framework mã nguồn mở (Apache 2.0) để xây và vận hành LLM agent. Bản 2.0 (2026) được làm lại quanh các model có năng lực agent: vòng lặp ReAct có structured output và ngắt giữa chừng, toolkit quản lý tool Python, MCP server và skill, nén ngữ cảnh, middleware hook, phân quyền chi tiết có human-in-the-loop, và chạy tool/code cô lập trong sandbox local, Docker hoặc cloud. Long-term memory đổi được backend (ReMe, Mem0). Ngoài SDK còn có agent service — backend FastAPI kèm web UI — bổ sung session multi-tenant, agent team kiểu leader–worker, RAG service, kênh chat (IM) và lập lịch. Gọi được agent từ xa qua A2A, hỗ trợ các model provider lớn, cả model local qua Ollama, và có realtime voice agent (thử nghiệm). Card này là bản Python (Python 3.11+); bản Java phát triển ở repo riêng. Kết hợp tốt với: MCP · A2A · Ollama · Docker</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Duy trì hoặc mở rộng hệ thống AutoGen đang chạy</li>
-        <li>Prototype nghiên cứu về hội thoại multi-agent</li>
-        <li>Học các pattern multi-agent (group chat, teams) trên codebase đã chín</li>
+        <li>Muốn framework Python kèm sẵn lớp service (session, web UI, team) cho ứng dụng agent</li>
+        <li>Cần agent chạy tool và code trong sandbox có kiểm soát quyền</li>
+        <li>Muốn dùng tool MCP và agent từ xa qua A2A trong cùng framework</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Dự án mới — nên bắt đầu với Microsoft Agent Framework</li>
-        <li>Cần tính năng mới hoặc lộ trình dài hạn</li>
-        <li>Stack chỉ dùng TypeScript</li>
+        <li>Muốn SDK tối giản, ít abstraction — xem OpenAI Agents SDK hoặc Pydantic AI</li>
+        <li>Stack chỉ dùng TypeScript — xem Mastra</li>
+        <li>Cần workflow dạng graph bền vững làm mô hình chính — xem LangGraph hoặc Microsoft Agent Framework</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
         <dt>Chi phí</dt><dd>Miễn phí</dd>
         <dt>Triển khai</dt><dd>Tự host</dd>
-        <dt>Độ khó</dt><dd>Nâng cao</dd>
-        <dt>Giấy phép</dt><dd>MIT</dd>
-        <dt>Ngôn ngữ</dt><dd>python, csharp</dd>
-        <dt>Ứng dụng</dt><dd>multi agent, research, conversation ai, workflow automation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-10-20 (tài liệu chính thức)</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>Apache-2.0</dd>
+        <dt>Ngôn ngữ</dt><dd>python</dd>
+        <dt>Ứng dụng</dt><dd>multi agent, agent framework, agent orchestration, voice assistant</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
         <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a></li>
+        <li><a href="/vi/tool/a2a">A2A — Agent2Agent Protocol</a></li>
         <li><a href="/vi/tool/ollama">Ollama</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
         <li><a href="/vi/tool/crewai">CrewAI</a></li>
-        <li><a href="/vi/tool/langgraph">LangGraph</a></li>
+        <li><a href="/vi/tool/microsoft-agent-framework">Microsoft Agent Framework</a></li>
         <li><a href="/vi/tool/openai-agents-sdk">OpenAI Agents SDK</a></li>
-        <li><a href="/vi/tool/mastra">Mastra</a></li>
+        <li><a href="/vi/tool/langgraph">LangGraph</a></li>
         <li><a href="/vi/tool/google-adk">Google ADK</a></li>
       </ul>
       <p><a href="/vi/section/frameworks">Xem tất cả 10 công cụ trong Agent Frameworks — Xây dựng AI agents →</a></p>
       <p><a href="/vi/compare/frameworks">⚖️ So sánh Agent Frameworks</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/microsoft/autogen" rel="noopener noreferrer">AutoGen GitHub</a></li>
-        <li><a href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/" rel="noopener noreferrer">Microsoft — Migrate from AutoGen to Agent Framework</a></li>
-        <li><a href="https://github.com/microsoft/agent-framework" rel="noopener noreferrer">Microsoft Agent Framework GitHub</a></li>
+        <li><a href="https://github.com/agentscope-ai/agentscope" rel="noopener noreferrer">GitHub (Python)</a></li>
+        <li><a href="https://docs.agentscope.io/" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://github.com/agentscope-ai/agentscope-java" rel="noopener noreferrer">AgentScope Java (separate repo)</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/frameworks">Agent Frameworks — Xây dựng AI agents</a> trên See AI First.</p>
@@ -1324,7 +1325,7 @@ function applyUiStrings() {
 const SITE_URL = 'https://seeaifirst.com';
 
 const START_HERE_CONFIG = [
-  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'flowise'],              ctaTarget: 'coding-agents' },
+  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'anythingllm'],          ctaTarget: 'coding-agents' },
   { id: 'build-agent',     labelKey: 'startHere_path2', tools: ['langgraph', 'openai-agents-sdk', 'pydantic-ai'], ctaTarget: 'frameworks' },
   { id: 'rag-chatbot',     labelKey: 'startHere_path3', tools: ['llamaindex', 'ragflow', 'pgvector'],            ctaTarget: 'rag-systems' },
   { id: 'local-opensource', labelKey: 'startHere_path4', tools: ['ollama', 'vllm', 'litellm'],                    ctaTarget: 'infrastructure' }

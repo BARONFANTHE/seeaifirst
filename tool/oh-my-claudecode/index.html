@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-<title>Flowise — See AI First</title>
-<meta name="description" content="No-code drag-and-drop builder for LLM apps and RAG pipelines on LangChain — archived, end of life since August 2026">
-<meta property="og:title" content="Flowise — See AI First">
-<meta property="og:description" content="No-code drag-and-drop builder for LLM apps and RAG pipelines on LangChain — archived, end of life since August 2026">
-<meta property="og:url" content="https://seeaifirst.com/tool/flowise">
+<title>oh-my-claudecode — See AI First</title>
+<meta name="description" content="Team-based multi-agent orchestration plugin for Claude Code — staged plan → build → verify pipeline, autopilot, Codex/Gemini workers">
+<meta property="og:title" content="oh-my-claudecode — See AI First">
+<meta property="og:description" content="Team-based multi-agent orchestration plugin for Claude Code — staged plan → build → verify pipeline, autopilot, Codex/Gemini workers">
+<meta property="og:url" content="https://seeaifirst.com/tool/oh-my-claudecode">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
-<meta name="twitter:title" content="Flowise — See AI First">
-<meta name="twitter:description" content="No-code drag-and-drop builder for LLM apps and RAG pipelines on LangChain — archived, end of life since August 2026">
-<link rel="canonical" href="https://seeaifirst.com/tool/flowise">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Flowise","url":"https://seeaifirst.com/tool/flowise","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"No-code drag-and-drop builder for LLM apps and RAG pipelines on LangChain — archived, end of life since August 2026","keywords":["RAG Systems — Retrieval-Augmented Generation","js"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/FlowiseAI/Flowise","https://flowiseai.com/sunset","https://flowiseai.com"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
+<meta name="twitter:title" content="oh-my-claudecode — See AI First">
+<meta name="twitter:description" content="Team-based multi-agent orchestration plugin for Claude Code — staged plan → build → verify pipeline, autopilot, Codex/Gemini workers">
+<link rel="canonical" href="https://seeaifirst.com/tool/oh-my-claudecode">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"oh-my-claudecode","url":"https://seeaifirst.com/tool/oh-my-claudecode","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Team-based multi-agent orchestration plugin for Claude Code — staged plan → build → verify pipeline, autopilot, Codex/Gemini workers","keywords":["Orchestration — Multi-Agent Coordination","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/Yeachan-Heo/oh-my-claudecode","https://yeachan-heo.github.io/oh-my-claudecode-website"],"datePublished":"2026-10-22","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1087,57 +1087,52 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
-    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> › Flowise</nav>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> › oh-my-claudecode</nav>
     <article>
-      <h1>Flowise</h1>
-      <p>No-code drag-and-drop builder for LLM apps and RAG pipelines on LangChain — archived, end of life since August 2026</p>
-      <p>Status: Flowise has been sunset. Workday acquired Flowise in August 2025; on 29 July 2026 the team froze the code, the GitHub repository was archived in August 2026, and end of life was 31 August 2026. The code stays on GitHub under Apache 2.0 (apart from an enterprise directory under a commercial licence) and the team suggests forking it; no new features or fixes are planned. What it is: a visual canvas on top of LangChain — connect nodes (LLM, retriever, memory, tools) into a flow, expose it as an API endpoint and run it with Docker or npm. It shipped many integration nodes (document loaders, text splitters, embedding models, vector stores) and community templates. For new projects, pick a maintained tool in this section: Dify for a visual builder, RAGFlow for document-heavy RAG. Works well with (archived code): LangChain ecosystem · Ollama · Langfuse · Chroma/Milvus/Qdrant/pgvector</p>
+      <h1>oh-my-claudecode</h1>
+      <p>Team-based multi-agent orchestration plugin for Claude Code — staged plan → build → verify pipeline, autopilot, Codex/Gemini workers</p>
+      <p>oh-my-claudecode (OMC) is an open-source (MIT) plugin and CLI that adds multi-agent orchestration on top of Claude Code. Its main surface is Team mode: a staged pipeline that plans the task, writes a spec, executes with several agents, verifies the result and loops on fixes. Autopilot runs a task end to end through configurable stages, Ralph keeps working until the result is verified, and Deep Interview clarifies vague requirements before any code is written. From the terminal, `omc team` can start tmux worker panes running Claude, Codex, Gemini, Antigravity or Cursor CLIs, and `omc ask` routes a question to another provider. Install it from the Claude Code plugin marketplace or via npm; it needs a working Claude Code setup. Compared with Ruflo (formerly Claude-Flow), which is a broader swarm and memory harness, OMC focuses on phase-by-phase team workflows inside Claude Code. Works well with: Claude Code · Codex CLI · Gemini CLI · tmux</p>
       <h2>When to use</h2>
       <ul>
-        <li>You already run Flowise and need time to plan a migration</li>
-        <li>You want to fork and maintain an Apache-2.0 visual LangChain builder yourself</li>
+        <li>You use Claude Code and want a team of agents to plan, build and verify a task in stages</li>
+        <li>You want to hand a task to autopilot and get back verified work</li>
+        <li>You want Codex or Gemini CLI workers alongside Claude in one workflow</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>You are starting a new project — the repository is archived and gets no fixes</li>
-        <li>You need vendor support or security updates</li>
-        <li>You need deep document processing (Flowise focused on orchestration)</li>
+        <li>You do not use Claude Code (the Codex edition is a separate project)</li>
+        <li>You want a broad swarm/memory platform across many agents — see Ruflo (Claude-Flow)</li>
+        <li>You need a VS Code extension or a hosted service — OMC is a plugin and terminal CLI</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
-        <dt>Pricing</dt><dd>Open core</dd>
-        <dt>Deployment</dt><dd>Hybrid</dd>
-        <dt>Difficulty</dt><dd>Beginner</dd>
-        <dt>License</dt><dd>Apache-2.0</dd>
+        <dt>Pricing</dt><dd>Free</dd>
+        <dt>Deployment</dt><dd>Local</dd>
+        <dt>Difficulty</dt><dd>Intermediate</dd>
+        <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>js</dd>
-        <dt>Use cases</dt><dd>rag pipeline, chatbot, ai workflow, rapid prototyping</dd>
+        <dt>Use cases</dt><dd>multi agent orchestration, parallel development, workflow automation, code review</dd>
         <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
-        <li><a href="/tool/ollama">Ollama</a></li>
-        <li><a href="/tool/langfuse">Langfuse</a></li>
-        <li><a href="/tool/milvus">Milvus</a></li>
-        <li><a href="/tool/pgvector">pgvector</a></li>
-        <li><a href="/tool/qdrant">Qdrant</a></li>
-        <li><a href="/tool/chroma">Chroma</a></li>
+        <li><a href="/tool/claude-code">Claude Code</a></li>
+        <li><a href="/tool/codex-cli">Codex CLI</a></li>
+        <li><a href="/tool/gemini-cli">Gemini CLI</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
-        <li><a href="/tool/dify">Dify</a></li>
-        <li><a href="/tool/ragflow">RAGFlow</a></li>
-        <li><a href="/tool/lightrag">LightRAG</a></li>
+        <li><a href="/tool/claude-flow">Claude-Flow</a></li>
+        <li><a href="/tool/openclaw">OpenClaw</a></li>
       </ul>
-      <p><a href="/section/rag-systems">See all 4 tools in RAG Systems — Retrieval-Augmented Generation →</a></p>
-      <p><a href="/compare/rag-systems">⚖️ Compare RAG Systems</a></p>
+      <p><a href="/section/orchestration">See all 3 tools in Orchestration — Multi-Agent Coordination →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/FlowiseAI/Flowise" rel="noopener noreferrer">GitHub (archived)</a></li>
-        <li><a href="https://flowiseai.com/sunset" rel="noopener noreferrer">Sunset notice</a></li>
-        <li><a href="https://flowiseai.com" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://github.com/Yeachan-Heo/oh-my-claudecode" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://yeachan-heo.github.io/oh-my-claudecode-website" rel="noopener noreferrer">Documentation</a></li>
       </ul>
       <footer>
-        <p>Part of <a href="/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> on See AI First.</p>
+        <p>Part of <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> on See AI First.</p>
       </footer>
     </article>
   </main>
@@ -1325,7 +1320,7 @@ function applyUiStrings() {
 const SITE_URL = 'https://seeaifirst.com';
 
 const START_HERE_CONFIG = [
-  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'flowise'],              ctaTarget: 'coding-agents' },
+  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'anythingllm'],          ctaTarget: 'coding-agents' },
   { id: 'build-agent',     labelKey: 'startHere_path2', tools: ['langgraph', 'openai-agents-sdk', 'pydantic-ai'], ctaTarget: 'frameworks' },
   { id: 'rag-chatbot',     labelKey: 'startHere_path3', tools: ['llamaindex', 'ragflow', 'pgvector'],            ctaTarget: 'rag-systems' },
   { id: 'local-opensource', labelKey: 'startHere_path4', tools: ['ollama', 'vllm', 'litellm'],                    ctaTarget: 'infrastructure' }

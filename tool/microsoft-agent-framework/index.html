@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-<title>AutoGen — See AI First</title>
-<meta name="description" content="Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.">
-<meta property="og:title" content="AutoGen — See AI First">
-<meta property="og:description" content="Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.">
-<meta property="og:url" content="https://seeaifirst.com/tool/autogen">
+<title>Microsoft Agent Framework — See AI First</title>
+<meta name="description" content="Microsoft&#039;s open-source framework for production agents and multi-agent workflows in .NET and Python — the direct successor to AutoGen and Semantic Kernel">
+<meta property="og:title" content="Microsoft Agent Framework — See AI First">
+<meta property="og:description" content="Microsoft&#039;s open-source framework for production agents and multi-agent workflows in .NET and Python — the direct successor to AutoGen and Semantic Kernel">
+<meta property="og:url" content="https://seeaifirst.com/tool/microsoft-agent-framework">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
-<meta name="twitter:title" content="AutoGen — See AI First">
-<meta name="twitter:description" content="Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.">
-<link rel="canonical" href="https://seeaifirst.com/tool/autogen">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AutoGen","url":"https://seeaifirst.com/tool/autogen","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Microsoft's multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.","keywords":["Agent Frameworks — Building AI Agents","python","csharp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/autogen","https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/","https://github.com/microsoft/agent-framework"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
+<meta name="twitter:title" content="Microsoft Agent Framework — See AI First">
+<meta name="twitter:description" content="Microsoft&#039;s open-source framework for production agents and multi-agent workflows in .NET and Python — the direct successor to AutoGen and Semantic Kernel">
+<link rel="canonical" href="https://seeaifirst.com/tool/microsoft-agent-framework">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Microsoft Agent Framework","url":"https://seeaifirst.com/tool/microsoft-agent-framework","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Microsoft's open-source framework for production agents and multi-agent workflows in .NET and Python — the direct successor to AutoGen and Semantic Kernel","keywords":["Agent Frameworks — Building AI Agents","python","csharp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/agent-framework","https://learn.microsoft.com/en-us/agent-framework/overview/","https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/"],"datePublished":"2026-10-22","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1087,53 +1087,53 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
-    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> › AutoGen</nav>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> › Microsoft Agent Framework</nav>
     <article>
-      <h1>AutoGen</h1>
-      <p>Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.</p>
-      <p>AutoGen is Microsoft&#039;s open-source framework for multi-agent applications in Python and .NET. Its layered API offers Core (an event-driven runtime), AgentChat (group chats and teams of agents) and Extensions (models, tools, code execution), with human-in-the-loop support. The project is now in maintenance mode: it gets no new features, is community-managed, and its README tells new users to start with Microsoft Agent Framework, the enterprise-ready successor that also replaces Semantic Kernel; an official migration guide is available. Code is MIT-licensed. Best for: maintaining existing AutoGen systems and research prototypes — not new projects.</p>
+      <h1>Microsoft Agent Framework</h1>
+      <p>Microsoft&#039;s open-source framework for production agents and multi-agent workflows in .NET and Python — the direct successor to AutoGen and Semantic Kernel</p>
+      <p>Microsoft Agent Framework (MAF) is Microsoft&#039;s open-source (MIT) framework for building, orchestrating and operating AI agents in .NET and Python, with a Go SDK in preview in a separate repository. Microsoft describes it as the direct successor to both AutoGen and Semantic Kernel, built by the same teams, and publishes migration guides from each; version 1.0 shipped in April 2026 with stable APIs and long-term support. Agents call tools and MCP servers; graph-based workflows coordinate agents and functions in sequential, concurrent, handoff and group-chat patterns, with state management for long-running and human-in-the-loop runs. It adds middleware, OpenTelemetry tracing, declarative YAML agents, a developer UI, A2A support and optional hosting of agents on Microsoft Foundry. If you run AutoGen today, this is where Microsoft points you next. Works well with: MCP · A2A · Azure / Microsoft Foundry · OpenTelemetry</p>
       <h2>When to use</h2>
       <ul>
-        <li>Maintaining or extending an existing AutoGen system</li>
-        <li>Research prototypes of multi-agent conversations</li>
-        <li>Learning multi-agent patterns (group chat, teams) on a mature codebase</li>
+        <li>You are building production agents or multi-agent workflows in .NET or Python</li>
+        <li>You are migrating from AutoGen or Semantic Kernel</li>
+        <li>You need workflows with checkpointing, human-in-the-loop and OpenTelemetry tracing</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>Greenfield projects — start with Microsoft Agent Framework</li>
-        <li>You need new features or a long-term roadmap</li>
-        <li>TypeScript-only stack</li>
+        <li>Your stack is TypeScript-only — see Mastra</li>
+        <li>You want the smallest possible SDK for a single agent — see OpenAI Agents SDK</li>
+        <li>You need a full Go SDK today (Go is in preview)</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
-        <dt>Deployment</dt><dd>Self-hosted</dd>
-        <dt>Difficulty</dt><dd>Advanced</dd>
+        <dt>Deployment</dt><dd>Hybrid</dd>
+        <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>python, csharp</dd>
-        <dt>Use cases</dt><dd>multi agent, research, conversation ai, workflow automation</dd>
-        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
+        <dt>Use cases</dt><dd>multi agent, workflow automation, agent orchestration, enterprise automation</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/mcp">MCP — Model Context Protocol</a></li>
-        <li><a href="/tool/ollama">Ollama</a></li>
+        <li><a href="/tool/a2a">A2A — Agent2Agent Protocol</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
         <li><a href="/tool/crewai">CrewAI</a></li>
         <li><a href="/tool/langgraph">LangGraph</a></li>
-        <li><a href="/tool/openai-agents-sdk">OpenAI Agents SDK</a></li>
+        <li><a href="/tool/agentscope">AgentScope</a></li>
         <li><a href="/tool/mastra">Mastra</a></li>
-        <li><a href="/tool/google-adk">Google ADK</a></li>
+        <li><a href="/tool/openai-agents-sdk">OpenAI Agents SDK</a></li>
       </ul>
       <p><a href="/section/frameworks">See all 10 tools in Agent Frameworks — Building AI Agents →</a></p>
       <p><a href="/compare/frameworks">⚖️ Compare Agent Frameworks</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/microsoft/autogen" rel="noopener noreferrer">AutoGen GitHub</a></li>
-        <li><a href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/" rel="noopener noreferrer">Microsoft — Migrate from AutoGen to Agent Framework</a></li>
-        <li><a href="https://github.com/microsoft/agent-framework" rel="noopener noreferrer">Microsoft Agent Framework GitHub</a></li>
+        <li><a href="https://github.com/microsoft/agent-framework" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/agent-framework/overview/" rel="noopener noreferrer">Microsoft Learn — Overview</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/" rel="noopener noreferrer">Microsoft — Migrate from AutoGen</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> on See AI First.</p>
@@ -1324,7 +1324,7 @@ function applyUiStrings() {
 const SITE_URL = 'https://seeaifirst.com';
 
 const START_HERE_CONFIG = [
-  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'flowise'],              ctaTarget: 'coding-agents' },
+  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'anythingllm'],          ctaTarget: 'coding-agents' },
   { id: 'build-agent',     labelKey: 'startHere_path2', tools: ['langgraph', 'openai-agents-sdk', 'pydantic-ai'], ctaTarget: 'frameworks' },
   { id: 'rag-chatbot',     labelKey: 'startHere_path3', tools: ['llamaindex', 'ragflow', 'pgvector'],            ctaTarget: 'rag-systems' },
   { id: 'local-opensource', labelKey: 'startHere_path4', tools: ['ollama', 'vllm', 'litellm'],                    ctaTarget: 'infrastructure' }

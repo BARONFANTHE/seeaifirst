@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-<title>Claude Squad — See AI First</title>
-<meta name="description" content="Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.">
-<meta property="og:title" content="Claude Squad — See AI First">
-<meta property="og:description" content="Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.">
-<meta property="og:url" content="https://seeaifirst.com/tool/claude-squad">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="vi_VN">
-<meta name="twitter:title" content="Claude Squad — See AI First">
-<meta name="twitter:description" content="Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.">
-<link rel="canonical" href="https://seeaifirst.com/tool/claude-squad">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Claude Squad","url":"https://seeaifirst.com/tool/claude-squad","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.","keywords":["Orchestration — Multi-Agent Coordination","go"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/smtg-ai/claude-squad"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<title>oh-my-claudecode — See AI First</title>
+<meta name="description" content="Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini">
+<meta property="og:title" content="oh-my-claudecode — See AI First">
+<meta property="og:description" content="Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini">
+<meta property="og:url" content="https://seeaifirst.com/vi/tool/oh-my-claudecode">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:title" content="oh-my-claudecode — See AI First">
+<meta name="twitter:description" content="Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini">
+<link rel="canonical" href="https://seeaifirst.com/vi/tool/oh-my-claudecode">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"oh-my-claudecode","url":"https://seeaifirst.com/vi/tool/oh-my-claudecode","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini","keywords":["Orchestration — Điều phối multi-agent","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/Yeachan-Heo/oh-my-claudecode","https://yeachan-heo.github.io/oh-my-claudecode-website"],"datePublished":"2026-10-22","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1087,54 +1087,52 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
-    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> › Claude Squad</nav>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> › oh-my-claudecode</nav>
     <article>
-      <h1>Claude Squad</h1>
-      <p>Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.</p>
-      <p>Tool for managing multiple parallel Claude Code sessions within a single terminal. Each session runs in its own workspace, handling separate tasks without conflicts. Supports Aider integration, multi-workspace management. Ideal when running multiple agents concurrently on different parts of a project.</p>
-      <h2>When to use</h2>
+      <h1>oh-my-claudecode</h1>
+      <p>Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini</p>
+      <p>oh-my-claudecode (OMC) là plugin và CLI mã nguồn mở (MIT) bổ sung khả năng điều phối nhiều agent cho Claude Code. Tính năng chính là Team mode: một pipeline theo giai đoạn — lập kế hoạch, viết spec, nhiều agent cùng thực thi, kiểm chứng kết quả và lặp lại để sửa lỗi. Autopilot chạy một task từ đầu đến cuối qua các giai đoạn cấu hình được, Ralph làm tiếp cho đến khi kết quả được kiểm chứng, Deep Interview làm rõ yêu cầu mơ hồ trước khi viết code. Từ terminal, `omc team` mở các worker tmux chạy CLI của Claude, Codex, Gemini, Antigravity hoặc Cursor, còn `omc ask` chuyển câu hỏi sang provider khác. Cài từ plugin marketplace của Claude Code hoặc qua npm; cần Claude Code đang hoạt động. So với Ruflo (trước là Claude-Flow) — một harness swarm và memory rộng hơn — OMC tập trung vào workflow team theo từng giai đoạn ngay trong Claude Code. Kết hợp tốt với: Claude Code · Codex CLI · Gemini CLI · tmux</p>
+      <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>managing multiple AI coding agents simultaneously</li>
-        <li>parallel task execution across branches</li>
-        <li>background code generation</li>
-        <li>multi-agent development with git isolation</li>
+        <li>Dùng Claude Code và muốn một team agent lập kế hoạch, xây và kiểm chứng task theo giai đoạn</li>
+        <li>Muốn giao task cho autopilot và nhận lại kết quả đã kiểm chứng</li>
+        <li>Muốn có worker Codex hoặc Gemini CLI chạy cùng Claude trong một workflow</li>
       </ul>
-      <h2>When not to use</h2>
+      <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>single-task workflow</li>
-        <li>non-terminal environments</li>
-        <li>projects without git</li>
+        <li>Không dùng Claude Code (bản cho Codex là dự án riêng)</li>
+        <li>Cần nền tảng swarm/memory rộng cho nhiều agent — xem Ruflo (Claude-Flow)</li>
+        <li>Cần extension VS Code hoặc dịch vụ hosted — OMC là plugin và CLI terminal</li>
       </ul>
-      <h2>At a glance</h2>
+      <h2>Thông tin nhanh</h2>
       <dl>
-        <dt>Pricing</dt><dd>Free</dd>
-        <dt>Deployment</dt><dd>Local</dd>
-        <dt>Difficulty</dt><dd>Intermediate</dd>
-        <dt>License</dt><dd>MIT</dd>
-        <dt>Languages</dt><dd>go</dd>
-        <dt>Use cases</dt><dd>parallel development, multi agent management, background tasks, git workflow</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>js</dd>
+        <dt>Ứng dụng</dt><dd>multi agent orchestration, parallel development, workflow automation, code review</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
-      <h2>Works well with</h2>
+      <h2>Kết hợp tốt với</h2>
       <ul>
-        <li><a href="/tool/claude-code">Claude Code</a></li>
-        <li><a href="/tool/codex-cli">Codex CLI</a></li>
-        <li><a href="/tool/opencode">OpenCode</a></li>
-        <li><a href="/tool/gemini-cli">Gemini CLI</a></li>
-        <li><a href="/tool/goose">Goose</a></li>
+        <li><a href="/vi/tool/claude-code">Claude Code</a></li>
+        <li><a href="/vi/tool/codex-cli">Codex CLI</a></li>
+        <li><a href="/vi/tool/gemini-cli">Gemini CLI</a></li>
       </ul>
-      <h2>Alternatives in this category</h2>
+      <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
-        <li><a href="/tool/claude-flow">Claude-Flow</a></li>
-        <li><a href="/tool/openclaw">OpenClaw</a></li>
+        <li><a href="/vi/tool/claude-flow">Claude-Flow</a></li>
+        <li><a href="/vi/tool/openclaw">OpenClaw</a></li>
       </ul>
-      <p><a href="/section/orchestration">See all 3 tools in Orchestration — Multi-Agent Coordination →</a></p>
-      <h2>Sources</h2>
+      <p><a href="/vi/section/orchestration">Xem tất cả 3 công cụ trong Orchestration — Điều phối multi-agent →</a></p>
+      <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/smtg-ai/claude-squad" rel="noopener noreferrer">Claude Squad GitHub</a></li>
+        <li><a href="https://github.com/Yeachan-Heo/oh-my-claudecode" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://yeachan-heo.github.io/oh-my-claudecode-website" rel="noopener noreferrer">Documentation</a></li>
       </ul>
       <footer>
-        <p>Part of <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> on See AI First.</p>
+        <p>Thuộc danh mục <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> trên See AI First.</p>
       </footer>
     </article>
   </main>
@@ -1322,7 +1320,7 @@ function applyUiStrings() {
 const SITE_URL = 'https://seeaifirst.com';
 
 const START_HERE_CONFIG = [
-  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'flowise'],              ctaTarget: 'coding-agents' },
+  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'anythingllm'],          ctaTarget: 'coding-agents' },
   { id: 'build-agent',     labelKey: 'startHere_path2', tools: ['langgraph', 'openai-agents-sdk', 'pydantic-ai'], ctaTarget: 'frameworks' },
   { id: 'rag-chatbot',     labelKey: 'startHere_path3', tools: ['llamaindex', 'ragflow', 'pgvector'],            ctaTarget: 'rag-systems' },
   { id: 'local-opensource', labelKey: 'startHere_path4', tools: ['ollama', 'vllm', 'litellm'],                    ctaTarget: 'infrastructure' }

@@ -1,4 +1,13 @@
 {
+  "redirects": [
+    { "source": "/tool/autogen", "destination": "/tool/microsoft-agent-framework", "permanent": true },
+    { "source": "/tool/autogen/", "destination": "/tool/microsoft-agent-framework", "permanent": true },
+    { "source": "/vi/tool/autogen", "destination": "/vi/tool/microsoft-agent-framework", "permanent": true },
+    { "source": "/vi/tool/autogen/", "destination": "/vi/tool/microsoft-agent-framework", "permanent": true }
+  ],
+  "routes": [
+    { "src": "^/(vi/)?tool/(claude-squad|rasa|flowise)/?$", "status": 410, "dest": "/$1retired/$2/index.html" }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
