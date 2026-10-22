@@ -273,8 +273,8 @@
               "url": "https://www.langchain.com/langsmith/deployment"
             }
           ],
-          "pricing": "open-core",
-          "deployment": "hybrid",
+          "pricing": "free",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Stateful, multi-step agent workflows",
@@ -515,7 +515,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Building agents in the Google Cloud / Gemini ecosystem",
