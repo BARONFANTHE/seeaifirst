@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Ollama — See AI First</title>
-<meta name="description" content="The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started">
+<meta name="description" content="The simplest way to run open LLMs on your own machine — a few commands to start, OpenAI-compatible API">
 <meta property="og:title" content="Ollama — See AI First">
-<meta property="og:description" content="The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started">
+<meta property="og:description" content="The simplest way to run open LLMs on your own machine — a few commands to start, OpenAI-compatible API">
 <meta property="og:url" content="https://seeaifirst.com/tool/ollama">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Ollama — See AI First">
-<meta name="twitter:description" content="The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started">
+<meta name="twitter:description" content="The simplest way to run open LLMs on your own machine — a few commands to start, OpenAI-compatible API">
 <link rel="canonical" href="https://seeaifirst.com/tool/ollama">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Ollama","url":"https://seeaifirst.com/tool/ollama","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started","keywords":["AI Infrastructure — Model Serving & Deployment","go"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/ollama/ollama","https://ollama.com","https://ollama.com/library"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Ollama","url":"https://seeaifirst.com/tool/ollama","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"The simplest way to run open LLMs on your own machine — a few commands to start, OpenAI-compatible API","keywords":["AI Infrastructure — Model Serving & Deployment","go"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/ollama/ollama","https://ollama.com","https://ollama.com/library"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,22 +1090,31 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/infrastructure">AI Infrastructure — Model Serving &amp; Deployment</a> › Ollama</nav>
     <article>
       <h1>Ollama</h1>
-      <p>The easiest way to run LLMs locally — supports 100+ models, 3 commands to get started</p>
-      <p>The most popular tool for running LLMs locally. Supports Llama, DeepSeek, Gemma, Qwen, Phi, and 100+ other models. Dead-simple setup: curl install → ollama pull → ollama run. Automatically manages GPU/CPU, quantization, model storage. API compatible with OpenAI format. Runs on macOS, Linux, Windows. Perfect for developers who want to experiment with LLMs on their own machine without API costs.</p>
+      <p>The simplest way to run open LLMs on your own machine — a few commands to start, OpenAI-compatible API</p>
+      <p>Ollama runs open models such as Llama, DeepSeek, Gemma, Qwen and Mistral on your own machine with minimal setup: install it (a script on macOS/Linux, an installer on Windows), pull a model and run it. It manages model downloads, quantised formats and GPU/CPU use for you, and exposes a local API that is compatible with the OpenAI format. Runs on macOS, Linux and Windows. Running models locally is free and unlimited; since 2025 Ollama also offers cloud models for larger models, with paid plans that add usage credits. Perfect for developers who want to experiment with LLMs locally without API costs, or prototype before moving to a serving stack. Works well with: LiteLLM (gateway) · Dify · Open-source RAG tools · Promptfoo (local model tests)</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Running LLMs on a local machine without a GPU server</li>
+        <li>Prototyping quickly with open models without an API key</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You need production-scale, high-throughput serving (see vLLM)</li>
+        <li>You need models that require a multi-GPU cluster</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
-        <dt>Pricing</dt><dd>Free</dd>
-        <dt>Deployment</dt><dd>Local</dd>
+        <dt>Pricing</dt><dd>Freemium</dd>
+        <dt>Deployment</dt><dd>Hybrid</dd>
         <dt>Difficulty</dt><dd>Beginner</dd>
         <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>go</dd>
         <dt>Use cases</dt><dd>local inference, model experimentation, privacy first ai</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/litellm">LiteLLM</a></li>
-        <li><a href="/tool/localai">LocalAI</a></li>
         <li><a href="/tool/dify">Dify</a></li>
         <li><a href="/tool/flowise">Flowise</a></li>
       </ul>
@@ -1118,7 +1127,7 @@ html, body {
       <p><a href="/section/infrastructure">See all 4 tools in AI Infrastructure — Model Serving &amp; Deployment →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/ollama/ollama" rel="noopener noreferrer">GitHub (165K+ ⭐)</a></li>
+        <li><a href="https://github.com/ollama/ollama" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://ollama.com" rel="noopener noreferrer">Website</a></li>
         <li><a href="https://ollama.com/library" rel="noopener noreferrer">Models Library</a></li>
       </ul>

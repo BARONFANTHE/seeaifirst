@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>LiteLLM — See AI First</title>
-<meta name="description" content="Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API">
+<meta name="description" content="Open-source AI gateway and SDK for many LLM providers — one API, cost tracking, load balancing, fallbacks">
 <meta property="og:title" content="LiteLLM — See AI First">
-<meta property="og:description" content="Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API">
+<meta property="og:description" content="Open-source AI gateway and SDK for many LLM providers — one API, cost tracking, load balancing, fallbacks">
 <meta property="og:url" content="https://seeaifirst.com/tool/litellm">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="LiteLLM — See AI First">
-<meta name="twitter:description" content="Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API">
+<meta name="twitter:description" content="Open-source AI gateway and SDK for many LLM providers — one API, cost tracking, load balancing, fallbacks">
 <link rel="canonical" href="https://seeaifirst.com/tool/litellm">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LiteLLM","url":"https://seeaifirst.com/tool/litellm","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API","keywords":["AI Infrastructure — Model Serving & Deployment","python"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/BerriAI/litellm","https://www.litellm.ai","https://docs.litellm.ai"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LiteLLM","url":"https://seeaifirst.com/tool/litellm","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source AI gateway and SDK for many LLM providers — one API, cost tracking, load balancing, fallbacks","keywords":["AI Infrastructure — Model Serving & Deployment","python","rust"],"isAccessibleForFree":true,"license":"MIT","sameAs":["https://github.com/BerriAI/litellm","https://www.litellm.ai","https://docs.litellm.ai"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,17 +1090,27 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/infrastructure">AI Infrastructure — Model Serving &amp; Deployment</a> › LiteLLM</nav>
     <article>
       <h1>LiteLLM</h1>
-      <p>Unified AI Gateway for 100+ LLM providers — cost tracking, load balancing, unified API</p>
-      <p>Unified gateway/proxy for accessing 100+ LLM providers. Call OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... through a single API format. Built-in cost tracking per request, load balancing across providers, automatic fallback when a provider goes down. Manages API keys, rate limits, budget alerts. Python SDK and proxy server for any language. Ideal for teams using multiple LLM providers who need to optimize costs.</p>
+      <p>Open-source AI gateway and SDK for many LLM providers — one API, cost tracking, load balancing, fallbacks</p>
+      <p>LiteLLM gives you one OpenAI-style API for many LLM providers — OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama, vLLM and more. Use it as a Python SDK or run the proxy server (AI gateway) so any language can call it. The gateway tracks cost per request, user and key, enforces budgets and rate limits, load-balances across deployments and falls back automatically when a provider fails; it sends logs and traces to tools such as Langfuse and LangSmith. A Rust-based gateway is in beta (since mid-2026). The code is MIT apart from an enterprise/ directory under a separate commercial licence (enterprise features need a licence key). Ideal for teams using several LLM providers who want central control of keys and spend. Works well with: Ollama · vLLM · Langfuse · LangSmith</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You need to call many LLM APIs through one interface</li>
+        <li>You need cost tracking, rate limits and load balancing across models</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You only use a single LLM provider</li>
+        <li>You do not need a proxy layer — calling the API directly is enough</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Open core</dd>
-        <dt>Deployment</dt><dd>Hybrid</dd>
+        <dt>Deployment</dt><dd>Self-hosted</dd>
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>License</dt><dd>MIT</dd>
-        <dt>Languages</dt><dd>python</dd>
+        <dt>Languages</dt><dd>python, rust</dd>
         <dt>Use cases</dt><dd>llm gateway, cost optimization, multi provider routing</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1118,7 +1128,7 @@ html, body {
       <p><a href="/section/infrastructure">See all 4 tools in AI Infrastructure — Model Serving &amp; Deployment →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/BerriAI/litellm" rel="noopener noreferrer">GitHub (39K+ ⭐)</a></li>
+        <li><a href="https://github.com/BerriAI/litellm" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://www.litellm.ai" rel="noopener noreferrer">Website</a></li>
         <li><a href="https://docs.litellm.ai" rel="noopener noreferrer">Docs</a></li>
       </ul>

@@ -7,7 +7,7 @@
   <url><loc>https://seeaifirst.com/tool/ai-drug-discovery</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/ai-governance</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/ai-infrastructure</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/tool/arize-phoenix</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/tool/arize-phoenix</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/autogen</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/browser-use</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/chatgpt</loc><lastmod>2026-10-20</lastmod></url>
@@ -22,7 +22,7 @@
   <url><loc>https://seeaifirst.com/tool/codex-cli</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/crewai</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/cursor</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/tool/deepeval</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/tool/deepeval</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/dify</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/flowise</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/garak</loc><lastmod>2026-10-20</lastmod></url>
@@ -34,13 +34,13 @@
   <url><loc>https://seeaifirst.com/tool/guardrails-ai</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/he-thong-memory-khac</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/kiro-aws</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/tool/langfuse</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/tool/langfuse</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/langgraph</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/tool/langsmith</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/tool/langsmith</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/lightrag</loc><lastmod>2026-10-22</lastmod></url>
-  <url><loc>https://seeaifirst.com/tool/litellm</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/tool/litellm</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/llamaindex</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/tool/localai</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/tool/localai</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/mastra</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/mcp</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/mechanistic-interpretability</loc><lastmod>2026-10-20</lastmod></url>
@@ -48,7 +48,7 @@
   <url><loc>https://seeaifirst.com/tool/milvus</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/multi-agent-systems</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/nemo-guardrails</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/tool/ollama</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/tool/ollama</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/openai-agents-sdk</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/openclaw</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/opencode</loc><lastmod>2026-10-20</lastmod></url>
@@ -56,7 +56,7 @@
   <url><loc>https://seeaifirst.com/tool/planning-with-files</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/post-training-pre-training</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/presidio</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/tool/promptfoo</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/tool/promptfoo</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/pydantic-ai</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/qdrant</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/ragflow</loc><lastmod>2026-10-22</lastmod></url>
@@ -65,7 +65,7 @@
   <url><loc>https://seeaifirst.com/tool/skill-categories-dang-chu-y</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/superpowers</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/universal-agent-skills</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/tool/vllm</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/tool/vllm</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/windsurf</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/tool/world-models</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/a2a</loc><lastmod>2026-10-20</lastmod></url>
@@ -73,7 +73,7 @@
   <url><loc>https://seeaifirst.com/vi/tool/ai-drug-discovery</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/ai-governance</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/ai-infrastructure</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/tool/arize-phoenix</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/tool/arize-phoenix</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/autogen</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/browser-use</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/chatgpt</loc><lastmod>2026-10-20</lastmod></url>
@@ -88,7 +88,7 @@
   <url><loc>https://seeaifirst.com/vi/tool/codex-cli</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/crewai</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/cursor</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/tool/deepeval</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/tool/deepeval</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/dify</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/flowise</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/garak</loc><lastmod>2026-10-20</lastmod></url>
@@ -100,13 +100,13 @@
   <url><loc>https://seeaifirst.com/vi/tool/guardrails-ai</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/he-thong-memory-khac</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/kiro-aws</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/tool/langfuse</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/tool/langfuse</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/langgraph</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/tool/langsmith</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/tool/langsmith</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/lightrag</loc><lastmod>2026-10-22</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/tool/litellm</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/tool/litellm</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/llamaindex</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/tool/localai</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/tool/localai</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/mastra</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/mcp</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/mechanistic-interpretability</loc><lastmod>2026-10-20</lastmod></url>
@@ -114,7 +114,7 @@
   <url><loc>https://seeaifirst.com/vi/tool/milvus</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/multi-agent-systems</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/nemo-guardrails</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/tool/ollama</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/tool/ollama</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/openai-agents-sdk</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/openclaw</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/opencode</loc><lastmod>2026-10-20</lastmod></url>
@@ -122,7 +122,7 @@
   <url><loc>https://seeaifirst.com/vi/tool/planning-with-files</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/post-training-pre-training</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/presidio</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/tool/promptfoo</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/tool/promptfoo</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/pydantic-ai</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/qdrant</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/ragflow</loc><lastmod>2026-10-22</lastmod></url>
@@ -131,7 +131,7 @@
   <url><loc>https://seeaifirst.com/vi/tool/skill-categories-dang-chu-y</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/superpowers</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/universal-agent-skills</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/tool/vllm</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/tool/vllm</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/windsurf</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/tool/world-models</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/compare/coding-agents</loc><lastmod>2026-10-20</lastmod></url>
@@ -144,9 +144,9 @@
   <url><loc>https://seeaifirst.com/vi/compare/vector-databases</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/section/coding-agents</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/section/frameworks</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/section/infrastructure</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/section/infrastructure</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/section/memory</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/section/observability</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/section/observability</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/section/orchestration</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/section/platforms</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/section/protocols</loc><lastmod>2026-10-20</lastmod></url>
@@ -157,9 +157,9 @@
   <url><loc>https://seeaifirst.com/section/vector-databases</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/section/coding-agents</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/section/frameworks</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/section/infrastructure</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/section/infrastructure</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/section/memory</loc><lastmod>2026-10-20</lastmod></url>
-  <url><loc>https://seeaifirst.com/vi/section/observability</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://seeaifirst.com/vi/section/observability</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/section/orchestration</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/section/platforms</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://seeaifirst.com/vi/section/protocols</loc><lastmod>2026-10-20</lastmod></url>

@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>LocalAI — See AI First</title>
-<meta name="description" content="Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU">
+<meta name="description" content="AI server tự host, tương thích OpenAI — chạy LLM, model ảnh, âm thanh, video trên phần cứng của mình, GPU không bắt buộc">
 <meta property="og:title" content="LocalAI — See AI First">
-<meta property="og:description" content="Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU">
+<meta property="og:description" content="AI server tự host, tương thích OpenAI — chạy LLM, model ảnh, âm thanh, video trên phần cứng của mình, GPU không bắt buộc">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/localai">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="LocalAI — See AI First">
-<meta name="twitter:description" content="Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU">
+<meta name="twitter:description" content="AI server tự host, tương thích OpenAI — chạy LLM, model ảnh, âm thanh, video trên phần cứng của mình, GPU không bắt buộc">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/localai">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LocalAI","url":"https://seeaifirst.com/vi/tool/localai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU","keywords":["AI Infrastructure — Hạ tầng chạy và triển khai model","go"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/mudler/LocalAI","https://localai.io","https://localai.io/docs"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LocalAI","url":"https://seeaifirst.com/vi/tool/localai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"AI server tự host, tương thích OpenAI — chạy LLM, model ảnh, âm thanh, video trên phần cứng của mình, GPU không bắt buộc","keywords":["AI Infrastructure — Hạ tầng chạy và triển khai model","go"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/mudler/LocalAI","https://localai.io","https://localai.io/docs"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,17 +1090,17 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/infrastructure">AI Infrastructure — Hạ tầng chạy và triển khai model</a> › LocalAI</nav>
     <article>
       <h1>LocalAI</h1>
-      <p>Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU</p>
-      <p>Nền tảng self-hosted thay thế OpenAI API. Chạy được trên consumer hardware KHÔNG cần GPU. Hỗ trợ text generation, image generation, audio transcription, embeddings — tất cả qua OpenAI-compatible API. Tương thích Anthropic API format, Responses API, MCP integration. Chạy qua Docker một lệnh. Phù hợp cho teams muốn self-host toàn bộ AI stack trên infrastructure riêng, giữ data không ra ngoài.</p>
+      <p>AI server tự host, tương thích OpenAI — chạy LLM, model ảnh, âm thanh, video trên phần cứng của mình, GPU không bắt buộc</p>
+      <p>LocalAI là bản thay thế tự host cho OpenAI API, chạy trên phần cứng của bạn, không bắt buộc GPU (có GPU thì tận dụng). Một server lo cả sinh văn bản, embedding, sinh ảnh và video, speech-to-text, text-to-speech và vision, tất cả qua endpoint tương thích OpenAI; ngoài ra hỗ trợ định dạng API của Anthropic, ElevenLabs và Responses API, và chạy được agent dùng tool MCP. Triển khai bằng một lệnh Docker hoặc file binary. License MIT. Phù hợp team muốn giữ toàn bộ AI stack và dữ liệu trong nội bộ. Kết hợp tốt với: MCP (tool cho agent) · Dify (làm model provider) · Docker/Kubernetes</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần drop-in replacement cho OpenAI API trên local</li>
-        <li>Chạy nhiều loại model (text, image, audio, video) trên 1 platform</li>
+        <li>Cần bản thay thế OpenAI API trên hạ tầng của mình</li>
+        <li>Muốn một server cho nhiều loại model (văn bản, ảnh, âm thanh, video)</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Chỉ cần chạy 1 model đơn giản — Ollama đơn giản hơn</li>
-        <li>Cần tối ưu throughput cực cao — vLLM phù hợp hơn</li>
+        <li>Chỉ cần chạy một model đơn giản — Ollama đơn giản hơn</li>
+        <li>Cần throughput serving tối đa — vLLM phù hợp hơn</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1110,13 +1110,12 @@ html, body {
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>go</dd>
         <dt>Ứng dụng</dt><dd>openai compatible local, multi modal inference, privacy first ai</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
-        <li><a href="/vi/tool/ollama">Ollama</a></li>
-        <li><a href="/vi/tool/litellm">LiteLLM</a></li>
         <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a></li>
+        <li><a href="/vi/tool/dify">Dify</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
@@ -1127,7 +1126,7 @@ html, body {
       <p><a href="/vi/section/infrastructure">Xem tất cả 4 công cụ trong AI Infrastructure — Hạ tầng chạy và triển khai model →</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/mudler/LocalAI" rel="noopener noreferrer">GitHub (43.6K+ ⭐)</a></li>
+        <li><a href="https://github.com/mudler/LocalAI" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://localai.io" rel="noopener noreferrer">Website</a></li>
         <li><a href="https://localai.io/docs" rel="noopener noreferrer">Docs</a></li>
       </ul>

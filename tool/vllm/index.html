@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>vLLM — See AI First</title>
-<meta name="description" content="High-performance production inference engine — PagedAttention, 2-4× throughput over baseline">
+<meta name="description" content="High-throughput inference and serving engine for LLMs in production — PagedAttention, continuous batching">
 <meta property="og:title" content="vLLM — See AI First">
-<meta property="og:description" content="High-performance production inference engine — PagedAttention, 2-4× throughput over baseline">
+<meta property="og:description" content="High-throughput inference and serving engine for LLMs in production — PagedAttention, continuous batching">
 <meta property="og:url" content="https://seeaifirst.com/tool/vllm">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="vLLM — See AI First">
-<meta name="twitter:description" content="High-performance production inference engine — PagedAttention, 2-4× throughput over baseline">
+<meta name="twitter:description" content="High-throughput inference and serving engine for LLMs in production — PagedAttention, continuous batching">
 <link rel="canonical" href="https://seeaifirst.com/tool/vllm">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"vLLM","url":"https://seeaifirst.com/tool/vllm","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"High-performance production inference engine — PagedAttention, 2-4× throughput over baseline","keywords":["AI Infrastructure — Model Serving & Deployment","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/vllm-project/vllm","https://vllm.ai","https://docs.vllm.ai"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"vLLM","url":"https://seeaifirst.com/tool/vllm","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"High-throughput inference and serving engine for LLMs in production — PagedAttention, continuous batching","keywords":["AI Infrastructure — Model Serving & Deployment","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/vllm-project/vllm","https://vllm.ai","https://docs.vllm.ai"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/infrastructure">AI Infrastructure — Model Serving &amp; Deployment</a> › vLLM</nav>
     <article>
       <h1>vLLM</h1>
-      <p>High-performance production inference engine — PagedAttention, 2-4× throughput over baseline</p>
-      <p>LLM serving engine built for production. PagedAttention technology optimizes GPU memory, achieving 2-4× throughput over FasterTransformer/Orca. Supports continuous batching, tensor parallelism, speculative decoding. Compatible with OpenAI API server. Used by major companies for high-throughput serving. Supports most popular model architectures (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.</p>
+      <p>High-throughput inference and serving engine for LLMs in production — PagedAttention, continuous batching</p>
+      <p>vLLM is an open-source (Apache 2.0) engine for serving LLMs at high throughput. PagedAttention manages GPU memory for the KV cache efficiently, and continuous batching keeps hardware busy under many concurrent requests. It supports tensor and pipeline parallelism, speculative decoding, quantisation and prefix caching, and serves an OpenAI-compatible API server. It runs on NVIDIA and AMD GPUs and other accelerators, with CPU support for x86, ARM and PowerPC, and covers most popular open model architectures (Llama, Mistral, Qwen, DeepSeek and more). vLLM has been hosted by the PyTorch Foundation since May 2025. Use it when you need to serve open models to many users. Works well with: LiteLLM (gateway in front of vLLM) · Langfuse (tracing) · Kubernetes</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You need high-throughput LLM serving in production</li>
+        <li>You want to make the most of GPU memory and concurrency</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You just want to run a model on a laptop (Ollama is simpler)</li>
+        <li>You have no GPU or accelerator and need fast responses (CPU support is slower)</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1100,7 +1110,7 @@ html, body {
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>production inference, high throughput serving, gpu optimization</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1116,7 +1126,7 @@ html, body {
       <p><a href="/section/infrastructure">See all 4 tools in AI Infrastructure — Model Serving &amp; Deployment →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/vllm-project/vllm" rel="noopener noreferrer">GitHub (73K+ ⭐)</a></li>
+        <li><a href="https://github.com/vllm-project/vllm" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://vllm.ai" rel="noopener noreferrer">Website</a></li>
         <li><a href="https://docs.vllm.ai" rel="noopener noreferrer">Docs</a></li>
       </ul>

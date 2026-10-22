@@ -2793,12 +2793,12 @@
         {
           "name": "Langfuse",
           "slug": "langfuse",
-          "desc": "Nền tảng observability mã nguồn mở cho LLM — tracing, evals, prompt management",
+          "desc": "Nền tảng observability mã nguồn mở cho LLM app — tracing, evals, prompt management",
           "added_date": "2026-02-08",
-          "detail": "LLM engineering platform phổ biến nhất. Cung cấp tracing theo chuẩn OpenTelemetry, evaluation tự động, prompt management với versioning, playground thử nghiệm, và datasets cho fine-tuning. Tích hợp 50+ frameworks (LangChain, LlamaIndex, OpenAI SDK...). Self-host được, YC W23 backed. Dùng khi cần giám sát production LLM apps end-to-end.",
+          "detail": "Langfuse là nền tảng LLM engineering mã nguồn mở cho các team đang chạy LLM app ở production. Ghi trace dựa trên OpenTelemetry (input, output, tool call, độ trễ, chi phí), chạy đánh giá tự động và đánh giá bởi người, quản lý prompt có phiên bản, kèm playground và dataset để thử nghiệm. Có SDK Python và TypeScript cùng tích hợp với các framework và gateway phổ biến (LangChain, LlamaIndex, OpenAI SDK, LiteLLM, Dify…). Tự host bằng Docker hoặc Kubernetes, hoặc dùng Langfuse Cloud. ClickHouse mua Langfuse đầu năm 2026; team cho biết vẫn giữ mã nguồn mở, tự host được và không có kế hoạch đổi license. Phần lõi theo MIT; tính năng enterprise nằm trong thư mục ee/ với license riêng. Dùng khi cần giám sát và đánh giá đầu-cuối cho LLM app ở production.\n\nKết hợp tốt với: LiteLLM (trace qua gateway) · LangGraph · LlamaIndex · Dify · vLLM",
           "sources": [
             {
-              "title": "GitHub (20K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/langfuse/langfuse"
             },
             {
@@ -2814,21 +2814,21 @@
             "OpenTelemetry",
             "Tracing",
             "Self-hosted",
-            "MIT License",
-            "YC W23"
+            "MIT core",
+            "Prompt Management"
           ],
           "hot": true,
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "theo dõi LLM traces và chi phí",
-            "quản lý prompt phiên bản",
-            "đánh giá chất lượng LLM output"
+            "Theo dõi LLM call, độ trễ và chi phí ở production",
+            "Quản lý prompt có phiên bản dùng chung trong team",
+            "Đánh giá chất lượng output LLM bằng chấm điểm tự động và thủ công"
           ],
           "whenNotToUse": [
-            "chỉ cần eval đơn giản không cần tracing",
-            "dự án không dùng LLM"
+            "Chỉ cần eval offline đơn giản, không cần tracing",
+            "Dự án không dùng LLM"
           ],
           "compatibleWith": [
             "litellm",
@@ -2846,20 +2846,20 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 23659,
+          "github_stars": 36169,
           "license": "MIT"
         },
         {
           "name": "DeepEval",
           "slug": "deepeval",
-          "desc": "Framework đánh giá LLM như Pytest — 50+ metrics, CI/CD integration, red-teaming",
+          "desc": "Framework đánh giá LLM mã nguồn mở kiểu Pytest — metric dựa trên nghiên cứu, eval cho agent và hội thoại nhiều lượt, CI/CD",
           "added_date": "2026-02-08",
-          "detail": "\"Pytest cho LLMs\". Unit testing framework chuyên biệt cho LLM outputs: 50+ metrics dựa trên nghiên cứu (G-Eval, hallucination detection, faithfulness, relevancy, RAGAs). Tích hợp CI/CD pipelines, tự động phát hiện regression. Bao gồm synthetic data generation và red-teaming cho 40+ loại vulnerabilities. Confident AI platform (optional) cho cloud dashboard.",
+          "detail": "DeepEval là \"Pytest cho LLM\": viết test case cho output LLM và assert theo các metric như G-Eval, hallucination, faithfulness, answer relevancy, contextual precision/recall cho RAG. Có cả eval cho agent (dùng tool, hoàn thành tác vụ) và hội thoại nhiều lượt, sinh dữ liệu test tổng hợp, chạy trong CI/CD để bắt regression. SDK chính là Python, có tích hợp TypeScript cho các framework như Vercel AI SDK và Mastra. Red teaming đã chuyển sang dự án đi kèm DeepTeam của Confident AI. Confident AI là nền tảng hosted tùy chọn cho dashboard, dataset và tracing. Dùng khi muốn đưa việc đánh giá LLM vào bộ test.\n\nKết hợp tốt với: LangGraph · LlamaIndex · RAG pipeline · CI (GitHub Actions)",
           "sources": [
             {
-              "title": "GitHub (12.6K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/confident-ai/deepeval"
             },
             {
@@ -2868,27 +2868,27 @@
             },
             {
               "title": "Docs",
-              "url": "https://docs.confident-ai.com"
+              "url": "https://deepeval.com/docs/getting-started"
             }
           ],
           "tags": [
             "Pytest-style",
-            "50+ Metrics",
+            "LLM Metrics",
             "CI/CD",
             "Apache 2.0",
-            "Red-teaming"
+            "Agent Evals"
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "unit test LLM output trong CI/CD",
-            "đánh giá RAG pipeline",
-            "red team LLM application"
+            "Unit test output LLM trong CI/CD",
+            "Đánh giá RAG pipeline hoặc agent",
+            "Muốn metric có cơ sở nghiên cứu mà không tự dựng eval harness"
           ],
           "whenNotToUse": [
-            "cần full observability platform",
-            "không dùng Python"
+            "Cần nền tảng observability production đầy đủ",
+            "Chủ yếu cần red teaming (dùng dự án đi kèm DeepTeam hoặc Promptfoo)"
           ],
           "compatibleWith": [
             "langgraph",
@@ -2901,22 +2901,23 @@
             "ci-cd-testing"
           ],
           "languages": [
-            "python"
+            "python",
+            "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 14256,
+          "github_stars": 19031,
           "license": "Apache-2.0"
         },
         {
           "name": "Promptfoo",
           "slug": "promptfoo",
-          "desc": "CLI tool cho prompt testing, model comparison và LLM red-teaming/security scanning",
+          "desc": "CLI mã nguồn mở cho prompt testing, so sánh model và red teaming / quét bảo mật LLM",
           "added_date": "2026-02-08",
-          "detail": "Công cụ CLI mã nguồn mở cho developer test và bảo mật LLM apps. Config bằng YAML, so sánh output side-by-side giữa nhiều models (GPT, Claude, Gemini, Llama...). Tích hợp red-teaming cho 50+ vulnerability types: prompt injection, PII exposure, jailbreak. Chạy trong CI/CD qua GitHub Actions. 51K+ developers sử dụng. Phù hợp cho teams cần security-first approach.",
+          "detail": "Promptfoo là CLI và thư viện mã nguồn mở (MIT) để kiểm thử và bảo mật LLM app. Mô tả prompt, provider và assertion bằng YAML, rồi so sánh output song song giữa các model (GPT, Claude, Gemini, Llama, model local qua Ollama) và bắt regression. Module red teaming dò các lỗi như prompt injection, jailbreak, lộ PII, và chạy được trong CI/CD, ví dụ qua GitHub Actions. Tháng 03/2026 OpenAI công bố thỏa thuận mua Promptfoo; team cho biết các công cụ mã nguồn mở vẫn giữ mã nguồn mở. Bản enterprise bổ sung tính năng cho team và tùy chọn managed. Phù hợp với team muốn quy trình test đặt bảo mật lên trước.\n\nKết hợp tốt với: Ollama · LiteLLM · GitHub Actions · Mọi LLM provider",
           "sources": [
             {
-              "title": "GitHub (8.3K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/promptfoo/promptfoo"
             },
             {
@@ -2939,13 +2940,13 @@
           "deployment": "local",
           "difficulty": "beginner",
           "whenToUse": [
-            "so sánh output giữa các LLM",
-            "kiểm tra prompt regression",
-            "red team và bảo mật LLM"
+            "So sánh output giữa các LLM",
+            "Bắt prompt regression trước khi phát hành",
+            "Red teaming và quét bảo mật cho LLM app"
           ],
           "whenNotToUse": [
-            "cần production observability real-time",
-            "cần tracing distributed system"
+            "Cần observability production theo thời gian thực",
+            "Cần distributed tracing giữa nhiều service"
           ],
           "compatibleWith": [
             "ollama",
@@ -2960,17 +2961,17 @@
           "languages": [
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 18619,
+          "github_stars": 26258,
           "license": "MIT"
         },
         {
           "name": "LangSmith",
           "slug": "langsmith",
-          "desc": "Nền tảng observability của LangChain — tracing, evaluation, prompt hub cho LangChain/LangGraph",
+          "desc": "Nền tảng observability và evaluation của team LangChain — tracing, evals, prompt hub; dùng được với mọi framework",
           "added_date": "2026-02-08",
-          "detail": "Platform observability & evaluation của LangChain team. Tích hợp sâu với LangChain/LangGraph ecosystem: full-stack tracing (inputs, outputs, tool calls, decision steps), evaluation framework (automated + human review), Prompt Hub với versioning. Playground cho prompt testing và cross-model comparison. Free tier available. De facto standard nếu đã dùng LangChain stack.",
+          "detail": "LangSmith là nền tảng của team LangChain để quan sát, đánh giá và cải thiện LLM app và agent. Ghi trace từng bước (input, output, tool call, quyết định trung gian), chạy đánh giá tự động và thủ công với annotation queue, quản lý prompt có phiên bản cùng playground để thử trên nhiều model. Tích hợp sâu nhất với LangChain và LangGraph, nhưng tracing không phụ thuộc framework: dùng được với OpenAI và Anthropic SDK, Vercel AI SDK, LlamaIndex hoặc code tự viết, và nhận được dữ liệu OpenTelemetry. Có bản cloud managed (có gói miễn phí), bring-your-own-cloud, hoặc tự host cho Enterprise. Lựa chọn mặc định hợp lý nếu đang xây bằng LangChain hoặc LangGraph.\n\nKết hợp tốt với: LangGraph · LlamaIndex · LiteLLM · OpenTelemetry",
           "sources": [
             {
               "title": "Website",
@@ -2978,31 +2979,31 @@
             },
             {
               "title": "Docs",
-              "url": "https://docs.smith.langchain.com"
+              "url": "https://docs.langchain.com/langsmith/home"
             },
             {
-              "title": "Prompt Hub",
-              "url": "https://smith.langchain.com/hub"
+              "title": "Prompt engineering",
+              "url": "https://docs.langchain.com/langsmith/prompt-engineering"
             }
           ],
           "tags": [
-            "LangChain Native",
+            "Framework-agnostic",
             "Prompt Hub",
-            "Playground",
+            "OpenTelemetry",
             "Proprietary",
             "Free Tier"
           ],
           "pricing": "freemium",
-          "deployment": "cloud",
+          "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "debug LangChain và LangGraph applications",
-            "theo dõi agent execution traces",
-            "đánh giá chất lượng với annotation queues"
+            "Debug ứng dụng LangChain và LangGraph",
+            "Theo dõi từng bước thực thi của agent",
+            "Đánh giá chất lượng bằng dataset và annotation queue"
           ],
           "whenNotToUse": [
-            "cần self-hosted hoàn toàn miễn phí",
-            "không dùng LangChain ecosystem"
+            "Cần công cụ tự host hoàn toàn miễn phí (tự host là tùy chọn Enterprise)",
+            "Cần công cụ mã nguồn mở để tự sửa"
           ],
           "compatibleWith": [
             "langgraph",
@@ -3019,7 +3020,7 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -3027,21 +3028,21 @@
         {
           "name": "Arize Phoenix",
           "slug": "arize-phoenix",
-          "desc": "AI observability platform mã nguồn mở — tracing, evaluation, RAG debugging, embeddings analysis",
+          "desc": "Nền tảng AI observability mã nguồn mở — tracing, evaluation, prompt management, debug RAG",
           "added_date": "2026-02-08",
-          "detail": "Platform observability mã nguồn mở thiết kế cho experimentation và troubleshooting. Nổi bật với RAG debugging qua embedding visualization, phát hiện semantic drift. Xây trên OpenTelemetry, vendor-agnostic, hỗ trợ LlamaIndex, LangChain, DSPy, smolagents. Self-host được qua Docker/Kubernetes. Prompt management với version control và tagging. Phù hợp cho research teams và RAG-heavy applications.",
+          "detail": "Arize Phoenix là nền tảng observability mã nguồn mở để thử nghiệm và xử lý sự cố LLM app. Xây trên OpenTelemetry (instrumentation OpenInference), không phụ thuộc nhà cung cấp, trace được app viết bằng LlamaIndex, LangChain, DSPy, smolagents, OpenAI SDK và nhiều framework khác. Có đánh giá kiểu LLM-as-judge và bằng code, dataset và experiment, quản lý prompt có phiên bản kèm playground; phân tích inference với trực quan hóa embedding giúp debug truy xuất trong RAG app. Chạy local, trong notebook, hoặc tự host bằng Docker hay Kubernetes. License Elastic License 2.0 (source-available: dùng và tự host miễn phí, nhưng không được cung cấp như dịch vụ managed); Arize AX là nền tảng thương mại riêng của công ty. Phù hợp team nghiên cứu và ứng dụng nặng về RAG.\n\nKết hợp tốt với: LlamaIndex · LangGraph · LiteLLM · OpenTelemetry",
           "sources": [
             {
-              "title": "GitHub (8.5K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/Arize-ai/phoenix"
             },
             {
               "title": "Website",
-              "url": "https://phoenix.arize.com"
+              "url": "https://arize.com/phoenix/"
             },
             {
               "title": "Docs",
-              "url": "https://docs.arize.com/phoenix"
+              "url": "https://arize.com/docs/phoenix"
             }
           ],
           "tags": [
@@ -3055,13 +3056,13 @@
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "debug RAG retrieval quality",
-            "phân tích traces với OpenTelemetry",
-            "chạy evaluation trong notebook workflow"
+            "Debug chất lượng truy xuất RAG",
+            "Phân tích trace với instrumentation OpenTelemetry",
+            "Chạy evaluation trong workflow notebook"
           ],
           "whenNotToUse": [
-            "cần cung cấp như managed service cho bên thứ ba",
-            "cần license permissive cho thương mại"
+            "Muốn cung cấp cho bên thứ ba như dịch vụ managed (Elastic License 2.0 không cho phép)",
+            "Cần license permissive được OSI công nhận"
           ],
           "compatibleWith": [
             "langgraph",
@@ -3078,9 +3079,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 9011,
+          "github_stars": 11947,
           "license": "Elastic-2.0"
         }
       ]
@@ -3094,12 +3095,12 @@
         {
           "name": "Ollama",
           "slug": "ollama",
-          "desc": "Chạy LLM trên máy local dễ nhất — hỗ trợ 100+ models, 3 lệnh là xong",
+          "desc": "Cách đơn giản nhất để chạy LLM mở trên máy mình — vài lệnh là chạy, API tương thích OpenAI",
           "added_date": "2026-02-08",
-          "detail": "Tool phổ biến nhất để chạy LLM local. Hỗ trợ Llama, DeepSeek, Gemma, Qwen, Phi và 100+ models khác. Cài đặt cực đơn giản: curl install → ollama pull → ollama run. Tự động quản lý GPU/CPU, quantization, model storage. API tương thích OpenAI format. Chạy trên macOS, Linux, Windows. Phù hợp cho developer muốn thử nghiệm LLM trên máy cá nhân mà không tốn API costs.",
+          "detail": "Ollama chạy các model mở như Llama, DeepSeek, Gemma, Qwen, Mistral ngay trên máy với thiết lập tối thiểu: cài đặt (script trên macOS/Linux, trình cài trên Windows), pull model rồi chạy. Ollama tự lo tải model, định dạng lượng tử hóa và dùng GPU/CPU, đồng thời mở API local tương thích định dạng OpenAI. Chạy trên macOS, Linux, Windows. Chạy model local là miễn phí, không giới hạn; từ 2025 Ollama có thêm cloud model cho các model lớn, với các gói trả phí kèm credit sử dụng. Phù hợp developer muốn thử LLM ngay trên máy mà không tốn phí API, hoặc prototype trước khi chuyển sang stack serving.\n\nKết hợp tốt với: LiteLLM (gateway) · Dify · Công cụ RAG mã nguồn mở · Promptfoo (test với model local)",
           "sources": [
             {
-              "title": "GitHub (165K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/ollama/ollama"
             },
             {
@@ -3113,26 +3114,25 @@
           ],
           "tags": [
             "Local LLM",
-            "100+ Models",
+            "Cloud Models",
             "OpenAI Compatible",
             "MIT License",
             "macOS/Linux/Win"
           ],
           "hot": true,
-          "pricing": "free",
-          "deployment": "local",
+          "pricing": "freemium",
+          "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
             "Chạy LLM trên máy local không cần GPU server",
-            "Prototype nhanh với open-source models mà không cần API key"
+            "Prototype nhanh với model mở mà không cần API key"
           ],
           "whenNotToUse": [
-            "Cần production-scale serving với high throughput",
-            "Chạy models cần multi-GPU cluster"
+            "Cần serving quy mô production, throughput cao (xem vLLM)",
+            "Chạy model cần cluster nhiều GPU"
           ],
           "compatibleWith": [
             "litellm",
-            "localai",
             "dify",
             "flowise"
           ],
@@ -3144,20 +3144,20 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 166008,
+          "github_stars": 184104,
           "license": "MIT"
         },
         {
           "name": "vLLM",
           "slug": "vllm",
-          "desc": "Production inference engine hiệu suất cao — PagedAttention, throughput gấp 2-4× so với baseline",
+          "desc": "Engine inference và serving throughput cao cho LLM ở production — PagedAttention, continuous batching",
           "added_date": "2026-02-08",
-          "detail": "Engine serving LLM cho production. Công nghệ PagedAttention giúp tối ưu GPU memory, đạt throughput gấp 2-4× so với FasterTransformer/Orca. Hỗ trợ continuous batching, tensor parallelism, speculative decoding. Tương thích OpenAI API server. Dùng bởi các công ty lớn cho high-throughput serving. Hỗ trợ hầu hết model architectures phổ biến (Llama, Mistral, Qwen, GPT-NeoX...). Apache 2.0 license.",
+          "detail": "vLLM là engine mã nguồn mở (Apache 2.0) để serve LLM với throughput cao. PagedAttention quản lý bộ nhớ GPU cho KV cache hiệu quả, continuous batching giữ phần cứng luôn bận khi có nhiều request đồng thời. Hỗ trợ tensor và pipeline parallelism, speculative decoding, lượng tử hóa, prefix caching, và có API server tương thích OpenAI. Chạy trên GPU NVIDIA, AMD và các accelerator khác, hỗ trợ CPU x86, ARM, PowerPC, bao phủ hầu hết kiến trúc model mở phổ biến (Llama, Mistral, Qwen, DeepSeek…). vLLM được PyTorch Foundation bảo trợ từ 05/2025. Dùng khi cần serve model mở cho nhiều người dùng.\n\nKết hợp tốt với: LiteLLM (gateway đặt trước vLLM) · Langfuse (tracing) · Kubernetes",
           "sources": [
             {
-              "title": "GitHub (73K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/vllm-project/vllm"
             },
             {
@@ -3180,12 +3180,12 @@
           "deployment": "self-hosted",
           "difficulty": "advanced",
           "whenToUse": [
-            "Cần high-throughput LLM serving cho production",
-            "Tối ưu GPU memory với PagedAttention"
+            "Cần serving LLM throughput cao cho production",
+            "Muốn tận dụng tối đa bộ nhớ GPU và khả năng xử lý đồng thời"
           ],
           "whenNotToUse": [
-            "Chạy trên máy không có GPU",
-            "Chỉ cần inference đơn giản trên local"
+            "Chỉ muốn chạy model trên laptop (Ollama đơn giản hơn)",
+            "Không có GPU hay accelerator mà cần phản hồi nhanh (chạy CPU chậm hơn)"
           ],
           "compatibleWith": [
             "litellm",
@@ -3199,20 +3199,20 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 74513,
+          "github_stars": 95063,
           "license": "Apache-2.0"
         },
         {
           "name": "LocalAI",
           "slug": "localai",
-          "desc": "Self-hosted OpenAI alternative — chạy LLM, image gen, audio trên consumer hardware, không cần GPU",
+          "desc": "AI server tự host, tương thích OpenAI — chạy LLM, model ảnh, âm thanh, video trên phần cứng của mình, GPU không bắt buộc",
           "added_date": "2026-02-08",
-          "detail": "Nền tảng self-hosted thay thế OpenAI API. Chạy được trên consumer hardware KHÔNG cần GPU. Hỗ trợ text generation, image generation, audio transcription, embeddings — tất cả qua OpenAI-compatible API. Tương thích Anthropic API format, Responses API, MCP integration. Chạy qua Docker một lệnh. Phù hợp cho teams muốn self-host toàn bộ AI stack trên infrastructure riêng, giữ data không ra ngoài.",
+          "detail": "LocalAI là bản thay thế tự host cho OpenAI API, chạy trên phần cứng của bạn, không bắt buộc GPU (có GPU thì tận dụng). Một server lo cả sinh văn bản, embedding, sinh ảnh và video, speech-to-text, text-to-speech và vision, tất cả qua endpoint tương thích OpenAI; ngoài ra hỗ trợ định dạng API của Anthropic, ElevenLabs và Responses API, và chạy được agent dùng tool MCP. Triển khai bằng một lệnh Docker hoặc file binary. License MIT. Phù hợp team muốn giữ toàn bộ AI stack và dữ liệu trong nội bộ.\n\nKết hợp tốt với: MCP (tool cho agent) · Dify (làm model provider) · Docker/Kubernetes",
           "sources": [
             {
-              "title": "GitHub (43.6K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/mudler/LocalAI"
             },
             {
@@ -3235,17 +3235,16 @@
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần drop-in replacement cho OpenAI API trên local",
-            "Chạy nhiều loại model (text, image, audio, video) trên 1 platform"
+            "Cần bản thay thế OpenAI API trên hạ tầng của mình",
+            "Muốn một server cho nhiều loại model (văn bản, ảnh, âm thanh, video)"
           ],
           "whenNotToUse": [
-            "Chỉ cần chạy 1 model đơn giản — Ollama đơn giản hơn",
-            "Cần tối ưu throughput cực cao — vLLM phù hợp hơn"
+            "Chỉ cần chạy một model đơn giản — Ollama đơn giản hơn",
+            "Cần throughput serving tối đa — vLLM phù hợp hơn"
           ],
           "compatibleWith": [
-            "ollama",
-            "litellm",
-            "mcp"
+            "mcp",
+            "dify"
           ],
           "useCases": [
             "openai-compatible-local",
@@ -3255,20 +3254,20 @@
           "languages": [
             "go"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 44173,
+          "github_stars": 49848,
           "license": "MIT"
         },
         {
           "name": "LiteLLM",
           "slug": "litellm",
-          "desc": "AI Gateway thống nhất 100+ LLM providers — cost tracking, load balancing, unified API",
+          "desc": "AI gateway và SDK mã nguồn mở cho nhiều LLM provider — một API, theo dõi chi phí, cân bằng tải, fallback",
           "added_date": "2026-02-08",
-          "detail": "Gateway/proxy thống nhất truy cập 100+ LLM providers. Gọi OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama... qua cùng một API format. Tích hợp cost tracking theo từng request, load balancing giữa providers, fallback tự động khi provider down. Quản lý API keys, rate limits, budget alerts. SDK cho Python và proxy server cho mọi ngôn ngữ. Phù hợp cho teams dùng nhiều LLM providers và cần tối ưu chi phí.",
+          "detail": "LiteLLM cho một API kiểu OpenAI để gọi nhiều LLM provider — OpenAI, Anthropic, Google, Azure, AWS Bedrock, Ollama, vLLM và nhiều nữa. Dùng như SDK Python hoặc chạy proxy server (AI gateway) để mọi ngôn ngữ gọi được. Gateway theo dõi chi phí theo request, người dùng và key, áp ngân sách và rate limit, cân bằng tải giữa các deployment và tự fallback khi provider lỗi; gửi log và trace sang Langfuse, LangSmith… Gateway viết bằng Rust đang ở bản beta (từ giữa 2026). Code theo MIT, trừ thư mục enterprise/ theo license thương mại riêng (tính năng enterprise cần license key). Phù hợp team dùng nhiều LLM provider muốn quản lý key và chi tiêu tập trung.\n\nKết hợp tốt với: Ollama · vLLM · Langfuse · LangSmith",
           "sources": [
             {
-              "title": "GitHub (39K+ ⭐)",
+              "title": "GitHub",
               "url": "https://github.com/BerriAI/litellm"
             },
             {
@@ -3281,22 +3280,22 @@
             }
           ],
           "tags": [
-            "100+ Providers",
+            "Multi-provider",
             "Cost Tracking",
             "Load Balancing",
-            "MIT License",
+            "MIT core",
             "Proxy Server"
           ],
           "pricing": "open-core",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần gọi 100+ LLM APIs qua 1 interface thống nhất",
-            "Cần cost tracking, rate limiting, load balancing cho multi-model"
+            "Cần gọi nhiều LLM API qua một interface thống nhất",
+            "Cần theo dõi chi phí, rate limit, cân bằng tải cho nhiều model"
           ],
           "whenNotToUse": [
-            "Chỉ dùng 1 LLM provider duy nhất",
-            "Không cần proxy layer — gọi API trực tiếp đủ rồi"
+            "Chỉ dùng một LLM provider duy nhất",
+            "Không cần lớp proxy — gọi API trực tiếp là đủ"
           ],
           "compatibleWith": [
             "ollama",
@@ -3310,11 +3309,12 @@
             "multi-provider-routing"
           ],
           "languages": [
-            "python"
+            "python",
+            "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 40170,
+          "github_stars": 61679,
           "license": "MIT"
         }
       ]
