@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="pgvector — See AI First">
 <meta name="twitter:description" content="Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/pgvector">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"pgvector","url":"https://seeaifirst.com/vi/tool/pgvector","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc","keywords":["Vector Databases — Lưu trữ & Tìm kiếm Vector","python","js","go","rust"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"PostgreSQL","sameAs":["https://github.com/pgvector/pgvector","https://supabase.com/docs/guides/ai"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"pgvector","url":"https://seeaifirst.com/vi/tool/pgvector","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc","keywords":["Vector Databases — Lưu trữ & Tìm kiếm Vector","python","js","go","rust"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"PostgreSQL","sameAs":["https://github.com/pgvector/pgvector","https://supabase.com/docs/guides/ai"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1091,17 +1091,17 @@ html, body {
     <article>
       <h1>pgvector</h1>
       <p>Extension biến PostgreSQL thành vector database — không cần DB riêng, dùng SQL quen thuộc</p>
-      <p>pgvector là extension cho PostgreSQL thêm khả năng lưu trữ và tìm kiếm vector trực tiếp trong database quan hệ có sẵn. Ý tưởng đơn giản nhưng cực kỳ thực tế: thay vì triển khai thêm một vector database riêng biệt (Milvus, Qdrant...), developers có thể thêm cột vector vào bảng PostgreSQL hiện tại và query bằng SQL quen thuộc. Hỗ trợ HNSW và IVFFlat indexing cho approximate nearest neighbor search, nhiều distance metrics (L2, cosine, inner product). Đặc biệt phù hợp với hệ sinh thái Supabase (tích hợp sẵn pgvector), Neon, và các managed Postgres services. Ứng dụng thực tế: thêm semantic search vào web app đang dùng Postgres, RAG pipeline đơn giản không muốn thêm infrastructure, hoặc khi dữ liệu vector cần JOIN với dữ liệu quan hệ (users, orders, products) trong cùng một query. Kết hợp tốt với: PostgreSQL/Supabase · LangChain · LlamaIndex · Django/Rails/Express (web frameworks) · pgvectorscale (Timescale — performance addon)</p>
+      <p>pgvector là extension của PostgreSQL thêm khả năng lưu vector và tìm kiếm tương đồng vào chính database quan hệ đang chạy. Thay vì triển khai thêm vector database riêng, chỉ cần thêm cột vector vào bảng có sẵn và truy vấn bằng SQL. Hỗ trợ tìm kiếm chính xác và gần đúng (index HNSW và IVFFlat), nhiều kiểu vector (độ chính xác đơn và half, nhị phân, sparse) và các thước đo khoảng cách L2, cosine, inner product, L1, Hamming, Jaccard. Iterative index scan giữ kết quả chính xác khi điều kiện WHERE loại bớt nhiều ứng viên. Có sẵn trên hầu hết dịch vụ Postgres managed như Supabase, Neon, Amazon RDS. Ứng dụng thực tế: thêm semantic search vào web app đang dùng Postgres, RAG pipeline đơn giản không cần thêm hạ tầng, hoặc truy vấn JOIN vector với dữ liệu quan hệ (users, orders, products). Kết hợp tốt với: PostgreSQL/Supabase · LangChain · LlamaIndex · Dify · LightRAG · pgvectorscale (TigerData — addon hiệu năng)</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>đã dùng PostgreSQL và cần thêm vector search</li>
-        <li>cần ACID compliance và JOIN với relational data</li>
-        <li>không muốn thêm database riêng cho vectors</li>
+        <li>Đã dùng PostgreSQL và cần thêm vector search</li>
+        <li>Cần giao dịch ACID và JOIN với dữ liệu quan hệ</li>
+        <li>Không muốn chạy thêm database riêng cho vector</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>cần vector search scale hàng tỷ vectors</li>
-        <li>không dùng PostgreSQL</li>
+        <li>Vector search trên hàng tỷ vector</li>
+        <li>Không dùng PostgreSQL</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1111,13 +1111,13 @@ html, body {
         <dt>Giấy phép</dt><dd>PostgreSQL</dd>
         <dt>Ngôn ngữ</dt><dd>python, js, go, rust</dd>
         <dt>Ứng dụng</dt><dd>vector search, rag pipeline, hybrid search</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
-        <li><a href="/vi/tool/langgraph">LangGraph</a></li>
         <li><a href="/vi/tool/llamaindex">LlamaIndex</a></li>
         <li><a href="/vi/tool/dify">Dify</a></li>
+        <li><a href="/vi/tool/lightrag">LightRAG</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>

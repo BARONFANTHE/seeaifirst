@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="pgvector — See AI First">
 <meta name="twitter:description" content="Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL">
 <link rel="canonical" href="https://seeaifirst.com/tool/pgvector">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"pgvector","url":"https://seeaifirst.com/tool/pgvector","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL","keywords":["Vector Databases — Vector Storage & Search","python","js","go","rust"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"PostgreSQL","sameAs":["https://github.com/pgvector/pgvector","https://supabase.com/docs/guides/ai"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"pgvector","url":"https://seeaifirst.com/tool/pgvector","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL","keywords":["Vector Databases — Vector Storage & Search","python","js","go","rust"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"PostgreSQL","sameAs":["https://github.com/pgvector/pgvector","https://supabase.com/docs/guides/ai"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1091,7 +1091,18 @@ html, body {
     <article>
       <h1>pgvector</h1>
       <p>Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL</p>
-      <p>pgvector is a PostgreSQL extension that adds vector storage and search capabilities directly into an existing relational database. The idea is simple yet highly practical: instead of deploying a separate vector database (Milvus, Qdrant...), developers can add a vector column to existing PostgreSQL tables and query with familiar SQL. Supports HNSW and IVFFlat indexing for approximate nearest neighbor search, with multiple distance metrics (L2, cosine, inner product). Especially well-suited for the Supabase ecosystem (pgvector built-in), Neon, and managed Postgres services. Practical applications: adding semantic search to a web app already using Postgres, simple RAG pipelines without extra infrastructure, or when vector data needs to JOIN with relational data (users, orders, products) in a single query. Works well with: PostgreSQL/Supabase · LangChain · LlamaIndex · Django/Rails/Express (web frameworks) · pgvectorscale (Timescale — performance addon)</p>
+      <p>pgvector is a PostgreSQL extension that adds vector storage and similarity search to the relational database you already run. Instead of deploying a separate vector database, you add a vector column to existing tables and query it with SQL. It supports exact and approximate search (HNSW and IVFFlat indexes), several vector types (single and half precision, binary and sparse), and distance metrics including L2, cosine, inner product, L1, Hamming and Jaccard. Iterative index scans keep filtered queries accurate when a WHERE clause removes many candidates. It is available on most managed Postgres services, including Supabase, Neon and Amazon RDS. Practical applications: adding semantic search to a web app that already uses Postgres, simple RAG pipelines without extra infrastructure, or queries that JOIN vectors with relational data (users, orders, products). Works well with: PostgreSQL/Supabase · LangChain · LlamaIndex · Dify · LightRAG · pgvectorscale (TigerData, performance add-on)</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You already use PostgreSQL and need vector search</li>
+        <li>You need ACID transactions and JOINs with relational data</li>
+        <li>You do not want to run a separate database for vectors</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>Vector search over billions of vectors</li>
+        <li>You do not use PostgreSQL</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1100,13 +1111,13 @@ html, body {
         <dt>License</dt><dd>PostgreSQL</dd>
         <dt>Languages</dt><dd>python, js, go, rust</dd>
         <dt>Use cases</dt><dd>vector search, rag pipeline, hybrid search</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
-        <li><a href="/tool/langgraph">LangGraph</a></li>
         <li><a href="/tool/llamaindex">LlamaIndex</a></li>
         <li><a href="/tool/dify">Dify</a></li>
+        <li><a href="/tool/lightrag">LightRAG</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>

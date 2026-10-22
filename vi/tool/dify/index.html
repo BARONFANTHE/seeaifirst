@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Dify — See AI First</title>
-<meta name="description" content="Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn">
+<meta name="description" content="Nền tảng mã nguồn mở xây dựng AI app và agent bằng visual workflow builder, có sẵn RAG pipeline">
 <meta property="og:title" content="Dify — See AI First">
-<meta property="og:description" content="Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn">
+<meta property="og:description" content="Nền tảng mã nguồn mở xây dựng AI app và agent bằng visual workflow builder, có sẵn RAG pipeline">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/dify">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Dify — See AI First">
-<meta name="twitter:description" content="Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn">
+<meta name="twitter:description" content="Nền tảng mã nguồn mở xây dựng AI app và agent bằng visual workflow builder, có sẵn RAG pipeline">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/dify">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Dify","url":"https://seeaifirst.com/vi/tool/dify","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn","keywords":["RAG Systems — Retrieval-Augmented Generation","python","js"],"isAccessibleForFree":true,"license":"Dify-OSL","sameAs":["https://github.com/langgenius/dify","https://dify.ai","https://docs.dify.ai"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Dify","url":"https://seeaifirst.com/vi/tool/dify","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Nền tảng mã nguồn mở xây dựng AI app và agent bằng visual workflow builder, có sẵn RAG pipeline","keywords":["RAG Systems — Retrieval-Augmented Generation","python","js"],"isAccessibleForFree":true,"license":"Dify-OSL","sameAs":["https://github.com/langgenius/dify","https://dify.ai","https://docs.dify.ai"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,19 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> › Dify</nav>
     <article>
       <h1>Dify</h1>
-      <p>Nền tảng mã nguồn mở xây dựng AI apps với visual workflow builder, tích hợp RAG pipeline sẵn</p>
-      <p>Dify là nền tảng all-in-one cho phép tạo ứng dụng AI từ chatbot đến agent phức tạp mà không cần viết nhiều code. Điểm mạnh cốt lõi là visual workflow builder dạng drag-drop — người dùng kéo thả các node (LLM, retrieval, tool, logic) để thiết kế luồng xử lý hoàn chỉnh. RAG pipeline tích hợp sẵn: upload tài liệu, tự động chunking, embedding, và truy xuất — không cần setup vector DB riêng. Hỗ trợ kết nối 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click deploy lên production, và monitoring dashboard theo dõi usage/cost. Ứng dụng thực tế: xây dựng internal knowledge base chatbot cho doanh nghiệp, customer support tự động, AI assistant xử lý tài liệu nội bộ, hoặc prototype nhanh ý tưởng AI app trước khi đầu tư phát triển custom. Lưu ý: Dify là platform scope rộng (RAG + agent + workflow), license có Additional Terms ngoài Apache 2.0 — cần kiểm tra khi dùng thương mại. Kết hợp tốt với: Ollama (chạy LLM local) · Langfuse (observability nâng cao) · Milvus/Qdrant (thay thế vector DB mặc định) · MCP (mở rộng tool access)</p>
+      <p>Nền tảng mã nguồn mở xây dựng AI app và agent bằng visual workflow builder, có sẵn RAG pipeline</p>
+      <p>Dify là nền tảng all-in-one để xây ứng dụng AI, từ chatbot đến agent, mà không cần viết nhiều code. Cốt lõi là visual workflow builder kéo-thả: nối các node (LLM, truy xuất knowledge, tool, logic) thành luồng hoàn chỉnh rồi xuất bản thành app hoặc API. RAG pipeline có sẵn lo phần upload, chunking, embedding và truy xuất với hybrid search và reranking; bộ Docker Compose mặc định kèm sẵn vector store (Weaviate), có thể đổi sang Milvus, Qdrant, pgvector, Chroma và các loại khác. Agent gọi được tool trên Marketplace và MCP server, chạy lệnh trong sandbox riêng. Model provider (OpenAI, Anthropic, Gemini, Ollama, mọi endpoint tương thích OpenAI) cài dưới dạng plugin. Có sẵn LLMOps (log, annotation) và tích hợp tracing như Langfuse, Opik, Arize Phoenix. Chạy bằng Docker Compose, dùng Dify Cloud, hoặc Dify Enterprise cho tổ chức tự host. Ứng dụng thực tế: chatbot knowledge base nội bộ, trợ lý chăm sóc khách hàng, workflow xử lý tài liệu, và prototype ý tưởng AI app trước khi đầu tư code riêng. Lưu ý: Dify Open Source License là Apache 2.0 kèm điều kiện — chạy dịch vụ multi-tenant cần được cho phép bằng văn bản và phải giữ logo, bản quyền ở frontend — kiểm tra trước khi dùng thương mại. Kết hợp tốt với: Ollama (chạy LLM local) · Langfuse (observability) · Milvus/Qdrant/pgvector (thay vector store mặc định) · LiteLLM (cổng model) · MCP (mở rộng tool)</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần visual workflow builder cho RAG và AI agents</li>
-        <li>Muốn deploy nhanh ứng dụng LLM từ prototype đến production</li>
-        <li>Team cần platform tích hợp sẵn RAG pipeline, model management, observability</li>
+        <li>Cần visual workflow builder cho RAG app và AI agent</li>
+        <li>Muốn đưa LLM app từ prototype lên production nhanh (tự host hoặc Dify Cloud)</li>
+        <li>Team muốn RAG, quản lý model, agent và LLMOps trong một nền tảng</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Cần license OSS thuần cho multi-tenant SaaS (Dify-OSL có điều kiện bổ sung)</li>
-        <li>Chỉ cần RAG engine nhẹ, không cần full platform</li>
-        <li>Muốn stack tối giản, tránh phụ thuộc nhiều service (PostgreSQL, Redis, MinIO)</li>
+        <li>Cần license OSI thuần cho SaaS multi-tenant (license Dify yêu cầu cho phép bằng văn bản)</li>
+        <li>Chỉ cần RAG engine nhẹ, không cần cả nền tảng</li>
+        <li>Muốn stack tối giản — bản triển khai mặc định chạy PostgreSQL hoặc MySQL, Redis, Weaviate, sandbox chạy code và plugin daemon</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1112,7 +1112,7 @@ html, body {
         <dt>Giấy phép</dt><dd>Dify-OSL</dd>
         <dt>Ngôn ngữ</dt><dd>python, js</dd>
         <dt>Ứng dụng</dt><dd>rag pipeline, chatbot, ai workflow, document qa</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>

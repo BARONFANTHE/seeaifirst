@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Chroma — See AI First</title>
-<meta name="description" content="Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG">
+<meta name="description" content="Hạ tầng tìm kiếm mã nguồn mở cho AI app — bắt đầu dạng nhúng không cần cấu hình, có full-text và hybrid search">
 <meta property="og:title" content="Chroma — See AI First">
-<meta property="og:description" content="Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG">
+<meta property="og:description" content="Hạ tầng tìm kiếm mã nguồn mở cho AI app — bắt đầu dạng nhúng không cần cấu hình, có full-text và hybrid search">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/chroma">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Chroma — See AI First">
-<meta name="twitter:description" content="Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG">
+<meta name="twitter:description" content="Hạ tầng tìm kiếm mã nguồn mở cho AI app — bắt đầu dạng nhúng không cần cấu hình, có full-text và hybrid search">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/chroma">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Chroma","url":"https://seeaifirst.com/vi/tool/chroma","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG","keywords":["Vector Databases — Lưu trữ & Tìm kiếm Vector","python","js"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/chroma-core/chroma","https://trychroma.com"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Chroma","url":"https://seeaifirst.com/vi/tool/chroma","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Hạ tầng tìm kiếm mã nguồn mở cho AI app — bắt đầu dạng nhúng không cần cấu hình, có full-text và hybrid search","keywords":["Vector Databases — Lưu trữ & Tìm kiếm Vector","python","js","rust"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/chroma-core/chroma","https://www.trychroma.com/","https://docs.trychroma.com/reference/architecture/overview"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,18 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/vector-databases">Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</a> › Chroma</nav>
     <article>
       <h1>Chroma</h1>
-      <p>Vector database đơn giản nhất cho AI apps — embedded mode, zero-config, lý tưởng để bắt đầu với RAG</p>
-      <p>Chroma là vector database thiết kế theo triết lý &quot;developer-first&quot; — cài đặt bằng một dòng pip install, chạy embedded ngay trong Python process mà không cần server riêng. Lưu trữ và tìm kiếm vector embeddings thông qua API đơn giản: add documents → query bằng ngôn ngữ tự nhiên → nhận kết quả tương tự nhất. Tự động xử lý embedding nếu dùng built-in models, hoặc mang embedding riêng từ OpenAI/Cohere/HuggingFace. Xuất hiện trong hầu hết tutorials và courses về RAG, là &quot;vector DB đầu tiên&quot; của nhiều developers. Phù hợp nhất cho prototyping, side projects, ứng dụng quy mô nhỏ-trung bình. Khi cần scale lên production với hàng triệu vectors, nên cân nhắc chuyển sang Milvus hoặc Qdrant. Kết hợp tốt với: LangChain · LlamaIndex · Flowise · Dify · OpenAI Embeddings · HuggingFace models</p>
+      <p>Hạ tầng tìm kiếm mã nguồn mở cho AI app — bắt đầu dạng nhúng không cần cấu hình, có full-text và hybrid search</p>
+      <p>Chroma là database tìm kiếm cho AI, mã nguồn mở (Apache 2.0), API thiết kế cho developer: pip install rồi chạy nhúng ngay trong tiến trình Python, hoặc chạy dạng server. Thêm tài liệu, truy vấn bằng ngôn ngữ tự nhiên và nhận về kết quả giống nhất; Chroma tự embedding bằng model có sẵn hoặc nhận embedding của bạn. Ngoài vector search còn có lọc metadata, full-text search (cả regex), truy xuất sparse (BM25, SPLADE) và truy vấn hybrid. Tài liệu mô tả ba chế độ: local (nhúng, để prototype), single-node (một server cho tải vừa phải) và distributed — cung cấp qua Chroma Cloud (managed, tính theo mức dùng, có credit miễn phí ban đầu) hoặc BYOC. Có SDK cho Python, TypeScript và Rust. Phù hợp nhất cho prototype, dự án phụ và ứng dụng nhỏ-vừa, có đường lên bản managed khi cần mở rộng. Kết hợp tốt với: LangChain · LlamaIndex · CrewAI (knowledge store mặc định) · Dify · OpenAI embeddings · Hugging Face models</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>prototype RAG nhanh với API đơn giản</li>
-        <li>embedded vector store trong Python app</li>
-        <li>developer cần zero-config setup</li>
+        <li>Prototype RAG nhanh với API đơn giản</li>
+        <li>Vector store nhúng trong Python app</li>
+        <li>Developer muốn bắt đầu không cần cấu hình</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>production scale hàng tỷ vectors</li>
-        <li>cần distributed high-availability cluster</li>
+        <li>Muốn tự host cluster phân tán, sẵn sàng cao (bản distributed có qua Chroma Cloud hoặc BYOC)</li>
+        <li>Tải production rất lớn trên hạ tầng của mình</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1109,15 +1109,15 @@ html, body {
         <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Cơ bản</dd>
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
-        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ngôn ngữ</dt><dd>python, js, rust</dd>
         <dt>Ứng dụng</dt><dd>vector search, rag pipeline, prototyping, semantic search</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
-        <li><a href="/vi/tool/langgraph">LangGraph</a></li>
         <li><a href="/vi/tool/llamaindex">LlamaIndex</a></li>
         <li><a href="/vi/tool/crewai">CrewAI</a></li>
+        <li><a href="/vi/tool/dify">Dify</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
@@ -1130,7 +1130,8 @@ html, body {
       <h2>Nguồn</h2>
       <ul>
         <li><a href="https://github.com/chroma-core/chroma" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://trychroma.com" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://www.trychroma.com/" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://docs.trychroma.com/reference/architecture/overview" rel="noopener noreferrer">Docs: deployment modes</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/vector-databases">Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</a> trên See AI First.</p>

@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>LightRAG — See AI First</title>
-<meta name="description" content="Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025)">
+<meta name="description" content="Framework RAG nhẹ dựa trên knowledge graph — dựng đồ thị tri thức từ tài liệu (nghiên cứu HKU, Findings of EMNLP 2025)">
 <meta property="og:title" content="LightRAG — See AI First">
-<meta property="og:description" content="Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025)">
+<meta property="og:description" content="Framework RAG nhẹ dựa trên knowledge graph — dựng đồ thị tri thức từ tài liệu (nghiên cứu HKU, Findings of EMNLP 2025)">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/lightrag">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="LightRAG — See AI First">
-<meta name="twitter:description" content="Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025)">
+<meta name="twitter:description" content="Framework RAG nhẹ dựa trên knowledge graph — dựng đồ thị tri thức từ tài liệu (nghiên cứu HKU, Findings of EMNLP 2025)">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/lightrag">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LightRAG","url":"https://seeaifirst.com/vi/tool/lightrag","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025)","keywords":["RAG Systems — Retrieval-Augmented Generation","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/HKUDS/LightRAG","https://aclanthology.org/2025.findings-emnlp.568/"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LightRAG","url":"https://seeaifirst.com/vi/tool/lightrag","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Framework RAG nhẹ dựa trên knowledge graph — dựng đồ thị tri thức từ tài liệu (nghiên cứu HKU, Findings of EMNLP 2025)","keywords":["RAG Systems — Retrieval-Augmented Generation","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/HKUDS/LightRAG","https://aclanthology.org/2025.findings-emnlp.568/"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,29 +1090,29 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> › LightRAG</nav>
     <article>
       <h1>LightRAG</h1>
-      <p>Framework RAG nhẹ dựa trên knowledge graph — tiếp cận GraphRAG từ nghiên cứu HKU (EMNLP 2025)</p>
-      <p>LightRAG mang cách tiếp cận khác biệt so với RAG truyền thống: thay vì chỉ vector search đơn thuần, hệ thống tự động xây dựng knowledge graph từ tài liệu — nhận diện entities và mối quan hệ giữa chúng — rồi kết hợp graph traversal với vector retrieval để trả lời chính xác hơn. Xuất phát từ nghiên cứu tại ĐH Hong Kong, paper đạt EMNLP 2025, và benchmark cho thấy vượt trội so với nhiều phương pháp RAG khác trên nhiều chiều đánh giá. Thiết kế nhẹ, chạy được trên CPU/laptop thông thường mà không cần GPU. Ứng dụng thực tế: knowledge management systems, research Q&amp;A cần hiểu quan hệ giữa concepts, hoặc bất kỳ bài toán nào mà &quot;ai liên quan đến ai/cái gì&quot; quan trọng hơn &quot;đoạn text nào giống nhau&quot;. Kết hợp tốt với: Ollama (chạy LLM local) · Neo4j (graph storage nâng cao) · LlamaIndex (xem thêm ở Agent Frameworks) · OpenAI/Claude APIs</p>
+      <p>Framework RAG nhẹ dựa trên knowledge graph — dựng đồ thị tri thức từ tài liệu (nghiên cứu HKU, Findings of EMNLP 2025)</p>
+      <p>LightRAG đi hướng khác với RAG vector thuần: dùng LLM trích xuất thực thể và quan hệ giữa chúng từ tài liệu, dựng knowledge graph, rồi kết hợp duyệt đồ thị với truy xuất vector ở hai cấp local và global khi trả lời. Xuất phát từ nghiên cứu tại Đại học Hồng Kông; bài báo đăng ở Findings of EMNLP 2025 cho kết quả tốt hơn một số phương pháp RAG nền. Dùng như thư viện Python hoặc chạy LightRAG Server có REST API và web UI để quản lý tài liệu và truy vấn đồ thị. Storage thay được: mặc định in-memory để thử nghiệm, và PostgreSQL (khuyến nghị cho production), Neo4j, Memgraph, MongoDB, OpenSearch, Milvus hoặc Qdrant cho tải thật. Ứng dụng thực tế: quản lý tri thức, hỏi đáp nghiên cứu cần hiểu quan hệ giữa các khái niệm, hoặc bài toán mà &quot;ai liên quan đến cái gì&quot; quan trọng hơn &quot;đoạn nào giống nhau&quot;. Kết hợp tốt với: Ollama (LLM local) · PostgreSQL/pgvector (storage production) · Neo4j (graph storage) · LlamaIndex (xem Agent Frameworks)</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần graph-based RAG với knowledge graph tự động từ tài liệu</li>
-        <li>Muốn framework nhẹ, dễ tích hợp vào codebase Python hiện có</li>
-        <li>Research hoặc prototype cần so sánh graph RAG vs vector RAG</li>
+        <li>Cần graph RAG với knowledge graph tự dựng từ tài liệu</li>
+        <li>Muốn engine nhẹ nhúng vào Python hoặc gọi qua REST API</li>
+        <li>Nghiên cứu hoặc prototype so sánh graph RAG với vector RAG</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Muốn UI quản lý sẵn — LightRAG là thư viện code-first</li>
-        <li>Cần production platform với monitoring và team collaboration</li>
-        <li>Team chưa quen concepts knowledge graph và entity extraction</li>
+        <li>Cần nền tảng đầy đủ cho team: app builder, quản lý người dùng, monitoring</li>
+        <li>Team chưa sẵn sàng tinh chỉnh trích xuất thực thể và chất lượng knowledge graph</li>
+        <li>Cần chi phí index thấp — dựng đồ thị gọi LLM cho mọi tài liệu</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
         <dt>Chi phí</dt><dd>Miễn phí</dd>
-        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Triển khai</dt><dd>Tự host</dd>
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>rag pipeline, knowledge graph, research, document qa</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1132,7 +1132,7 @@ html, body {
       <h2>Nguồn</h2>
       <ul>
         <li><a href="https://github.com/HKUDS/LightRAG" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://aclanthology.org/2025.findings-emnlp.568/" rel="noopener noreferrer">Paper (EMNLP 2025)</a></li>
+        <li><a href="https://aclanthology.org/2025.findings-emnlp.568/" rel="noopener noreferrer">Paper (Findings of EMNLP 2025)</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> trên See AI First.</p>

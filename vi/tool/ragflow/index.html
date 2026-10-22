@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>RAGFlow — See AI First</title>
-<meta name="description" content="RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn">
+<meta name="description" content="RAG engine mã nguồn mở dựa trên deep document understanding — phân tích layout, chunking theo template, trích dẫn có nguồn">
 <meta property="og:title" content="RAGFlow — See AI First">
-<meta property="og:description" content="RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn">
+<meta property="og:description" content="RAG engine mã nguồn mở dựa trên deep document understanding — phân tích layout, chunking theo template, trích dẫn có nguồn">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/ragflow">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="RAGFlow — See AI First">
-<meta name="twitter:description" content="RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn">
+<meta name="twitter:description" content="RAG engine mã nguồn mở dựa trên deep document understanding — phân tích layout, chunking theo template, trích dẫn có nguồn">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/ragflow">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"RAGFlow","url":"https://seeaifirst.com/vi/tool/ragflow","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn","keywords":["RAG Systems — Retrieval-Augmented Generation","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/infiniflow/ragflow","https://ragflow.io","https://demo.ragflow.io"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"RAGFlow","url":"https://seeaifirst.com/vi/tool/ragflow","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"RAG engine mã nguồn mở dựa trên deep document understanding — phân tích layout, chunking theo template, trích dẫn có nguồn","keywords":["RAG Systems — Retrieval-Augmented Generation","python","go","js"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/infiniflow/ragflow","https://ragflow.io","https://cloud.ragflow.io"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,36 +1090,34 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> › RAGFlow</nav>
     <article>
       <h1>RAGFlow</h1>
-      <p>RAG engine mã nguồn mở chuyên deep document understanding — chunking thông minh, trích dẫn có nguồn</p>
-      <p>RAGFlow là engine RAG tập trung vào chất lượng xử lý tài liệu — bước thường bị bỏ qua nhưng quyết định 80% độ chính xác của câu trả lời. Hệ thống tự động phân tích cấu trúc document phức tạp: bảng biểu, hình ảnh, PDF scan, slides — và chunking theo template với khả năng preview trực quan để người dùng can thiệp khi cần. Mỗi câu trả lời đi kèm trích dẫn nguồn cụ thể (grounded citations), giảm đáng kể tình trạng hallucination. Tích hợp agent toolkit cho phép không chỉ truy xuất text mà còn gọi API, tool bên ngoài. Ứng dụng thực tế: hệ thống Q&amp;A nội bộ doanh nghiệp xử lý hợp đồng, báo cáo kỹ thuật, tài liệu pháp lý — những loại document mà chunking đơn giản cho kết quả kém. Kết hợp tốt với: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Bất kỳ LLM provider nào (OpenAI, Claude, Gemini)</p>
+      <p>RAG engine mã nguồn mở dựa trên deep document understanding — phân tích layout, chunking theo template, trích dẫn có nguồn</p>
+      <p>RAGFlow là RAG engine tập trung vào chất lượng xử lý tài liệu — bước thường quyết định câu trả lời đúng hay sai. Pipeline DeepDoc phân tích tài liệu phức tạp (bảng, hình ảnh, PDF scan, slide) bằng OCR và nhận dạng layout, rồi chunking theo template có xem trước trực quan để người dùng chỉnh lại khi cần. Mỗi câu trả lời kèm trích dẫn về đúng đoạn nguồn, giúp phát hiện hallucination dễ hơn. Ngoài truy xuất còn có agent builder gọi tool, agentic retrieval chọn được mức độ suy luận, và biên soạn tri thức thành wiki, đồ thị, mind map, dòng thời gian. Tài liệu được index bằng Elasticsearch mặc định, có thể đổi sang Infinity. Tự host bằng Docker Compose (Apache 2.0) hoặc dùng RAGFlow Cloud chính thức, có gói miễn phí và gói trả phí cho team. Ứng dụng thực tế: hệ thống hỏi đáp nội bộ doanh nghiệp trên hợp đồng, báo cáo kỹ thuật, văn bản pháp lý — loại tài liệu mà chunking đơn giản cho kết quả kém. Kết hợp tốt với: Ollama (LLM backend) · Elasticsearch/Infinity (document engine) · Dify (làm knowledge base bên ngoài) · Mọi LLM provider (OpenAI, Claude, Gemini)</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Cần RAG engine chuyên sâu xử lý tài liệu phức tạp (PDF, bảng, scan)</li>
-        <li>Muốn self-host hoàn toàn với deep document understanding</li>
-        <li>Cần traceable citations và giải thích kết quả truy vấn</li>
+        <li>Cần RAG engine xử lý tài liệu phức tạp (PDF, bảng, scan)</li>
+        <li>Muốn deep document understanding và tự host hoàn toàn</li>
+        <li>Cần trích dẫn truy được nguồn cho mọi câu trả lời</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Muốn managed cloud service (RAGFlow chưa có official cloud offering)</li>
-        <li>Cần setup tối giản — RAGFlow yêu cầu Elasticsearch, MinIO, MySQL</li>
-        <li>Team nhỏ muốn low-code/no-code builder</li>
+        <li>Muốn builder no-code cho team không chuyên kỹ thuật</li>
+        <li>Muốn setup tối giản — tự host chạy Elasticsearch, MySQL, MinIO và các service khác, cần máy cấu hình khá</li>
+        <li>Muốn lưu vector trong một database cụ thể như Milvus hay Qdrant (RAGFlow dùng document engine riêng)</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
-        <dt>Chi phí</dt><dd>Miễn phí</dd>
-        <dt>Triển khai</dt><dd>Tự host</dd>
+        <dt>Chi phí</dt><dd>Open core</dd>
+        <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
-        <dt>Ngôn ngữ</dt><dd>python, js</dd>
+        <dt>Ngôn ngữ</dt><dd>python, go, js</dd>
         <dt>Ứng dụng</dt><dd>rag pipeline, document qa, knowledge base, enterprise search</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
         <li><a href="/vi/tool/ollama">Ollama</a></li>
         <li><a href="/vi/tool/dify">Dify</a></li>
-        <li><a href="/vi/tool/milvus">Milvus</a></li>
-        <li><a href="/vi/tool/deepeval">DeepEval</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
@@ -1133,7 +1131,7 @@ html, body {
       <ul>
         <li><a href="https://github.com/infiniflow/ragflow" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://ragflow.io" rel="noopener noreferrer">Website</a></li>
-        <li><a href="https://demo.ragflow.io" rel="noopener noreferrer">Demo</a></li>
+        <li><a href="https://cloud.ragflow.io" rel="noopener noreferrer">RAGFlow Cloud</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> trên See AI First.</p>

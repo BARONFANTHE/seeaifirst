@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Qdrant — See AI First</title>
-<meta name="description" content="Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering">
+<meta name="description" content="Vector database written in Rust — fast, memory-efficient, with rich payload filtering built into search">
 <meta property="og:title" content="Qdrant — See AI First">
-<meta property="og:description" content="Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering">
+<meta property="og:description" content="Vector database written in Rust — fast, memory-efficient, with rich payload filtering built into search">
 <meta property="og:url" content="https://seeaifirst.com/tool/qdrant">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Qdrant — See AI First">
-<meta name="twitter:description" content="Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering">
+<meta name="twitter:description" content="Vector database written in Rust — fast, memory-efficient, with rich payload filtering built into search">
 <link rel="canonical" href="https://seeaifirst.com/tool/qdrant">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Qdrant","url":"https://seeaifirst.com/tool/qdrant","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering","keywords":["Vector Databases — Vector Storage & Search","python","js","rust","go"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/qdrant/qdrant","https://qdrant.tech","https://cloud.qdrant.io"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Qdrant","url":"https://seeaifirst.com/tool/qdrant","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Vector database written in Rust — fast, memory-efficient, with rich payload filtering built into search","keywords":["Vector Databases — Vector Storage & Search","python","js","rust","go"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/qdrant/qdrant","https://qdrant.tech","https://qdrant.tech/cloud/"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/vector-databases">Vector Databases — Vector Storage &amp; Search</a> › Qdrant</nav>
     <article>
       <h1>Qdrant</h1>
-      <p>Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering</p>
-      <p>Qdrant (pronounced &quot;quadrant&quot;) is a vector database focused on performance and production-readiness, written entirely in Rust for optimal speed and memory usage. Its standout feature is filtering: combining vector similarity search with complex conditions on metadata (boolean, range, geo, nested objects) — and filtering is integrated directly into the search process rather than post-filtering, so accuracy is preserved. Provides both REST and gRPC APIs with SDKs for multiple languages. Practical applications: personalized recommendations with user preference filtering, e-commerce search combining semantic + price/category filters, or multi-tenant RAG systems requiring isolation between tenants. Works well with: LangChain · LlamaIndex · Dify · Flowise · FastAPI/Express (backend) · Docker/Kubernetes (deploy)</p>
+      <p>Vector database written in Rust — fast, memory-efficient, with rich payload filtering built into search</p>
+      <p>Qdrant (pronounced &#039;quadrant&#039;) is a vector database built for production performance, written in Rust. Its standout feature is filtering: it combines vector similarity with conditions on payload metadata (boolean logic, ranges, geo, full-text, nested objects) inside the search itself rather than filtering afterwards, so results stay accurate. It supports dense, sparse and multi-vector search, hybrid queries and quantization to reduce memory use, with REST and gRPC APIs and official SDKs for several languages. Run it with Docker or Kubernetes, use Qdrant Cloud (free tier available), or Qdrant Hybrid Cloud to keep clusters in your own infrastructure. Practical applications: personalised recommendations, e-commerce search that combines semantics with price and category filters, and multi-tenant RAG that needs isolation between tenants. Works well with: LangChain · LangGraph · LlamaIndex · Dify · LightRAG · Docker/Kubernetes</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>High-performance vector search on a Rust engine</li>
+        <li>Similarity search combined with complex metadata filters</li>
+        <li>Recommendation and semantic search applications</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You want vectors inside your existing PostgreSQL database</li>
+        <li>You only need a simple embedded vector store</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Open core</dd>
@@ -1100,13 +1111,14 @@ html, body {
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>python, js, rust, go</dd>
         <dt>Use cases</dt><dd>vector search, rag pipeline, recommendation system, semantic search</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/langgraph">LangGraph</a></li>
         <li><a href="/tool/llamaindex">LlamaIndex</a></li>
         <li><a href="/tool/dify">Dify</a></li>
+        <li><a href="/tool/lightrag">LightRAG</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
@@ -1120,7 +1132,7 @@ html, body {
       <ul>
         <li><a href="https://github.com/qdrant/qdrant" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://qdrant.tech" rel="noopener noreferrer">Website</a></li>
-        <li><a href="https://cloud.qdrant.io" rel="noopener noreferrer">Cloud</a></li>
+        <li><a href="https://qdrant.tech/cloud/" rel="noopener noreferrer">Qdrant Cloud</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/vector-databases">Vector Databases — Vector Storage &amp; Search</a> on See AI First.</p>

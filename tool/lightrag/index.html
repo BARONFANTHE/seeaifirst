@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>LightRAG — See AI First</title>
-<meta name="description" content="Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025)">
+<meta name="description" content="Lightweight graph-based RAG framework — builds a knowledge graph from documents (HKU research, Findings of EMNLP 2025)">
 <meta property="og:title" content="LightRAG — See AI First">
-<meta property="og:description" content="Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025)">
+<meta property="og:description" content="Lightweight graph-based RAG framework — builds a knowledge graph from documents (HKU research, Findings of EMNLP 2025)">
 <meta property="og:url" content="https://seeaifirst.com/tool/lightrag">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="LightRAG — See AI First">
-<meta name="twitter:description" content="Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025)">
+<meta name="twitter:description" content="Lightweight graph-based RAG framework — builds a knowledge graph from documents (HKU research, Findings of EMNLP 2025)">
 <link rel="canonical" href="https://seeaifirst.com/tool/lightrag">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LightRAG","url":"https://seeaifirst.com/tool/lightrag","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025)","keywords":["RAG Systems — Retrieval-Augmented Generation","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/HKUDS/LightRAG","https://aclanthology.org/2025.findings-emnlp.568/"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"LightRAG","url":"https://seeaifirst.com/tool/lightrag","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Lightweight graph-based RAG framework — builds a knowledge graph from documents (HKU research, Findings of EMNLP 2025)","keywords":["RAG Systems — Retrieval-Augmented Generation","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/HKUDS/LightRAG","https://aclanthology.org/2025.findings-emnlp.568/"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,17 +1090,29 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> › LightRAG</nav>
     <article>
       <h1>LightRAG</h1>
-      <p>Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025)</p>
-      <p>LightRAG takes a fundamentally different approach from traditional RAG: instead of relying solely on vector search, the system automatically builds a knowledge graph from documents — identifying entities and relationships between them — then combines graph traversal with vector retrieval for more accurate answers. Originating from research at the University of Hong Kong, the paper was accepted at EMNLP 2025, with benchmarks showing it outperforms many other RAG methods across multiple evaluation dimensions. Lightweight by design, it runs on regular CPU/laptop without requiring a GPU. Practical applications: knowledge management systems, research Q&amp;A requiring understanding of relationships between concepts, or any problem where &quot;who is related to whom/what&quot; matters more than &quot;which text chunks are similar&quot;. Works well with: Ollama (local LLM) · Neo4j (advanced graph storage) · LlamaIndex (see Agent Frameworks) · OpenAI/Claude APIs</p>
+      <p>Lightweight graph-based RAG framework — builds a knowledge graph from documents (HKU research, Findings of EMNLP 2025)</p>
+      <p>LightRAG takes a different approach from plain vector RAG: it uses an LLM to extract entities and the relationships between them from documents, builds a knowledge graph, and combines graph traversal with vector retrieval at local and global levels when answering. It comes from research at the University of Hong Kong; the paper, published in Findings of EMNLP 2025, reports better results than several baseline RAG methods. Use it as a Python library or run LightRAG Server, which provides a REST API and a web UI for managing documents and querying the graph. Storage is pluggable: in-memory defaults for testing, and PostgreSQL (recommended for production), Neo4j, Memgraph, MongoDB, OpenSearch, Milvus or Qdrant for real workloads. Practical applications: knowledge management, research Q&amp;A that depends on relationships between concepts, or any problem where &#039;who is related to what&#039; matters more than &#039;which chunks are similar&#039;. Works well with: Ollama (local LLM) · PostgreSQL/pgvector (production storage) · Neo4j (graph storage) · LlamaIndex (see Agent Frameworks)</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You need graph-based RAG with a knowledge graph built automatically from documents</li>
+        <li>You want a lightweight engine you can embed in Python or call over a REST API</li>
+        <li>You are comparing graph RAG with vector RAG in research or a prototype</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You need a full team platform with an app builder, user management and monitoring</li>
+        <li>Your team is not ready to tune entity extraction and knowledge-graph quality</li>
+        <li>You need low indexing cost — building the graph calls the LLM for every document</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
-        <dt>Deployment</dt><dd>Local</dd>
+        <dt>Deployment</dt><dd>Self-hosted</dd>
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>rag pipeline, knowledge graph, research, document qa</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1120,7 +1132,7 @@ html, body {
       <h2>Sources</h2>
       <ul>
         <li><a href="https://github.com/HKUDS/LightRAG" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://aclanthology.org/2025.findings-emnlp.568/" rel="noopener noreferrer">Paper (EMNLP 2025)</a></li>
+        <li><a href="https://aclanthology.org/2025.findings-emnlp.568/" rel="noopener noreferrer">Paper (Findings of EMNLP 2025)</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> on See AI First.</p>
