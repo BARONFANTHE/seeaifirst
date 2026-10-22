@@ -338,8 +338,8 @@
               "url": "https://docs-platform.crewai.com/platform/en/introduction"
             }
           ],
-          "pricing": "open-core",
-          "deployment": "hybrid",
+          "pricing": "free",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Điều phối multi-agent với vai trò rõ ràng",
@@ -812,7 +812,7 @@
             }
           ],
           "pricing": "open-core",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Ứng dụng và agent AI viết bằng TypeScript",

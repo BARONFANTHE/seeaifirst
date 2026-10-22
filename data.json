@@ -338,8 +338,8 @@
               "url": "https://docs-platform.crewai.com/platform/en/introduction"
             }
           ],
-          "pricing": "open-core",
-          "deployment": "hybrid",
+          "pricing": "free",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Multi-agent orchestration with clear roles",
@@ -812,7 +812,7 @@
             }
           ],
           "pricing": "open-core",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "TypeScript AI applications and agents",
