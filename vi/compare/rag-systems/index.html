@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>So sánh RAG Systems — So sánh — See AI First</title>
-<meta name="description" content="So sánh 4 công cụ AI: Dify, RAGFlow, Flowise, LightRAG.">
+<meta name="description" content="So sánh 4 công cụ AI: Dify, RAGFlow, AnythingLLM, LightRAG.">
 <meta property="og:title" content="So sánh RAG Systems — So sánh — See AI First">
-<meta property="og:description" content="So sánh 4 công cụ AI: Dify, RAGFlow, Flowise, LightRAG.">
+<meta property="og:description" content="So sánh 4 công cụ AI: Dify, RAGFlow, AnythingLLM, LightRAG.">
 <meta property="og:url" content="https://seeaifirst.com/vi/compare/rag-systems">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="So sánh RAG Systems — So sánh — See AI First">
-<meta name="twitter:description" content="So sánh 4 công cụ AI: Dify, RAGFlow, Flowise, LightRAG.">
+<meta name="twitter:description" content="So sánh 4 công cụ AI: Dify, RAGFlow, AnythingLLM, LightRAG.">
 <link rel="canonical" href="https://seeaifirst.com/vi/compare/rag-systems">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@context":"https://schema.org","@type":"ItemList","name":"So sánh RAG Systems","url":"https://seeaifirst.com/vi/compare/rag-systems","inLanguage":"vi","numberOfItems":4,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"Dify","url":"https://seeaifirst.com/vi/tool/dify"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"RAGFlow","url":"https://seeaifirst.com/vi/tool/ragflow"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"Flowise","url":"https://seeaifirst.com/vi/tool/flowise"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"LightRAG","url":"https://seeaifirst.com/vi/tool/lightrag"}}]}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@context":"https://schema.org","@type":"ItemList","name":"So sánh RAG Systems","url":"https://seeaifirst.com/vi/compare/rag-systems","inLanguage":"vi","numberOfItems":4,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"Dify","url":"https://seeaifirst.com/vi/tool/dify"}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"RAGFlow","url":"https://seeaifirst.com/vi/tool/ragflow"}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"AnythingLLM","url":"https://seeaifirst.com/vi/tool/anythingllm"}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"LightRAG","url":"https://seeaifirst.com/vi/tool/lightrag"}}]}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1098,7 +1098,7 @@ html, body {
         <tbody>
           <tr><td><a href="/vi/tool/dify">Dify</a></td><td>Nền tảng AI toàn diện: agents + RAG + workflow + LLMOps</td><td>Low-code: workflow kéo-thả trực quan, hệ sinh thái plugin, template có sẵn</td><td>Tốt: truy xuất hybrid, cấu hình top-k, reranking, hỗ trợ đa định dạng</td><td>Docker Compose · Dify Cloud · Dify Enterprise (tự host)</td><td>Milvus, Langfuse, openai, anthropic</td><td>Dify Open Source License (Apache 2.0 + điều kiện)</td></tr>
           <tr><td><a href="/vi/tool/ragflow">RAGFlow</a></td><td>Hiểu tài liệu chuyên sâu, phân tích PDF/tài liệu scan phức tạp</td><td>Low-code: giao diện web với cấu hình chuyên sâu, phù hợp người dùng kỹ thuật</td><td>Xuất sắc: OCR, trích xuất bảng, phân tích layout, tài liệu scan, tìm kiếm hybrid</td><td>Docker Compose (tự host) · RAGFlow Cloud</td><td>elasticsearch, Ollama, openai</td><td>Apache-2.0</td></tr>
-          <tr><td><a href="/vi/tool/flowise">Flowise</a></td><td>Đã archive (hết vòng đời 08/2026) — chỉ cho flow đang chạy; trước đây: prototype chatbot trực quan nhanh</td><td>No-code: canvas kéo-thả trực quan, template có sẵn, setup nhanh nhất</td><td>Cơ bản: dựa trên LangChain document loaders, chunking tiêu chuẩn</td><td>Tự host từ code đã archive (Docker · npm)</td><td>langchain, openai, anthropic, Qdrant, Chroma</td><td>Apache-2.0 (thư mục enterprise theo license thương mại)</td></tr>
+          <tr><td><a href="/vi/tool/anythingllm">AnythingLLM</a></td><td>Chat riêng tư với tài liệu, ưu tiên chạy local, kèm agent — bản desktop hoặc server cho team</td><td>No-code: app desktop và web UI, flow agent không cần code, kèm API cho developer</td><td>Tốt: các loại tài liệu phổ biến (PDF, DOCX, TXT…), trích dẫn nguồn, embedder local tích hợp</td><td>Desktop (macOS · Windows · Linux) · Docker (nhiều người dùng) · bản hosted</td><td>Ollama, lancedb, pgvector, Qdrant, LiteLLM</td><td>MIT</td></tr>
           <tr><td><a href="/vi/tool/lightrag">LightRAG</a></td><td>RAG tăng cường đồ thị, quan hệ thực thể, suy luận đa bước</td><td>Code-first: Python API (cũng có Server Web UI)</td><td>Dựa trên đồ thị: trích xuất thực thể &amp; quan hệ, truy xuất hai cấp (local + global)</td><td>pip install · Docker Compose · LightRAG Server (REST API + Web UI)</td><td>neo4j, postgresql, faiss, Milvus, Qdrant, Ollama</td><td>MIT</td></tr>
         </tbody>
       </table>
@@ -1288,7 +1288,7 @@ function applyUiStrings() {
 const SITE_URL = 'https://seeaifirst.com';
 
 const START_HERE_CONFIG = [
-  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'flowise'],              ctaTarget: 'coding-agents' },
+  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'anythingllm'],          ctaTarget: 'coding-agents' },
   { id: 'build-agent',     labelKey: 'startHere_path2', tools: ['langgraph', 'openai-agents-sdk', 'pydantic-ai'], ctaTarget: 'frameworks' },
   { id: 'rag-chatbot',     labelKey: 'startHere_path3', tools: ['llamaindex', 'ragflow', 'pgvector'],            ctaTarget: 'rag-systems' },
   { id: 'local-opensource', labelKey: 'startHere_path4', tools: ['ollama', 'vllm', 'litellm'],                    ctaTarget: 'infrastructure' }

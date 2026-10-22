@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "claude-squad",
+    "name": "Claude Squad",
+    "section": "orchestration",
+    "retired_on": "2026-10-22",
+    "reason": {
+      "en": "Removed in our October 2026 card review: the Orchestration section now features a different tool for coordinating coding agents. This reflects our list, not the status of Claude Squad itself.",
+      "vi": "Đã rút khỏi danh sách trong đợt rà soát card tháng 10/2026: mục Orchestration nay giới thiệu một công cụ khác để điều phối coding agent. Đây là thay đổi của danh sách, không phản ánh tình trạng của Claude Squad."
+    }
+  },
+  {
+    "slug": "rasa",
+    "name": "Rasa",
+    "section": "frameworks",
+    "retired_on": "2026-10-22",
+    "reason": {
+      "en": "Removed in our October 2026 card review: the Agent Frameworks section now focuses on general-purpose LLM agent frameworks. Rasa remains an active conversational AI platform.",
+      "vi": "Đã rút khỏi danh sách trong đợt rà soát card tháng 10/2026: mục Agent Frameworks nay tập trung vào các framework LLM agent đa dụng. Rasa vẫn là nền tảng AI hội thoại đang hoạt động."
+    }
+  },
+  {
+    "slug": "flowise",
+    "name": "Flowise",
+    "section": "rag-systems",
+    "retired_on": "2026-10-22",
+    "reason": {
+      "en": "Removed because the Flowise project reached end of life on 31 August 2026 and its repository was archived.",
+      "vi": "Đã rút khỏi danh sách vì dự án Flowise kết thúc vòng đời ngày 31/08/2026 và repo đã được archive."
+    }
+  }
+]

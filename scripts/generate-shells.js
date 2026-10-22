@@ -3,8 +3,10 @@
 
 // Crawler-Visible Route Shells Generator (PR16)
 // Usage: node scripts/generate-shells.js
-// Reads: index.html (template), data.json, data.vi.json
+// Reads: index.html (template), data.json, data.vi.json, scripts/retired-tools.json
 // Writes: 167 new HTML files + updates root index.html (home EN)
+//         + standalone notice pages for retired tools: retired/<slug>/ and vi/retired/<slug>/
+//           (served with HTTP 410 at the old /tool/<slug> URLs via vercel.json routes)
 
 const fs = require('fs');
 const path = require('path');
@@ -341,7 +343,21 @@ for (const preset of viData.comparison_presets) {
   }
 }
 
-console.log(`✓ All assertions passed (${totalRoutes} routes, ${newFiles} new files)`);
+// Retired tools registry (cards removed from the list; old URLs answer 410 with a notice page)
+const retiredTools = JSON.parse(fs.readFileSync(path.join(__dirname, 'retired-tools.json'), 'utf8'));
+const retiredSlugs = new Set();
+for (const t of retiredTools) {
+  assert(/^[a-z0-9-]+$/.test(t.slug), `Retired slug "${t.slug}" has invalid characters`);
+  assert(!retiredSlugs.has(t.slug), `Retired slug "${t.slug}" listed twice`);
+  retiredSlugs.add(t.slug);
+  assert(!enSlugMap.has(t.slug) && !viSlugMap.has(t.slug), `Retired slug "${t.slug}" is still an active card`);
+  for (const data of [enData, viData]) {
+    assert(data.sections.some(s => s.id === t.section), `Retired "${t.slug}": unknown section "${t.section}"`);
+  }
+  assert(t.name && t.retired_on && t.reason && t.reason.en && t.reason.vi, `Retired "${t.slug}": missing name/retired_on/reason`);
+}
+
+console.log(`✓ All assertions passed (${totalRoutes} routes, ${newFiles} new files, ${retiredTools.length} retired tools)`);
 
 // ── Head content generator ──────────────────────────────────────────
 
@@ -790,6 +806,107 @@ for (const route of allRoutes) {
   generatedCount++;
 }
 
+// Retired tool notice pages — standalone HTML (no SPA script), noindex, not in sitemap
+const RETIRED_TEXT = {
+  en: {
+    title: (n) => `${n} — removed from See AI First`,
+    heading: (n) => `${n} is no longer listed`,
+    removed: 'Removed from the list on',
+    section: 'See the current tools in',
+    current: (s) => `Tools currently listed in ${s}`,
+    home: 'Browse all tools on See AI First',
+  },
+  vi: {
+    title: (n) => `${n} — đã rút khỏi See AI First`,
+    heading: (n) => `${n} không còn trong danh sách`,
+    removed: 'Rút khỏi danh sách ngày',
+    section: 'Xem các công cụ hiện có trong',
+    current: (s) => `Công cụ đang có trong ${s}`,
+    home: 'Xem tất cả công cụ trên See AI First',
+  },
+};
+
+function generateRetiredPage(tool, lang) {
+  const tx = RETIRED_TEXT[lang];
+  const urlPrefix = lang === 'vi' ? '/vi' : '';
+  const section = dataFor(lang).sections.find(s => s.id === tool.section);
+  const items = section.cards.map(c =>
+    `      <li><a href="${urlPrefix}/tool/${escapeHtml(c.slug)}">${escapeHtml(c.name)}</a> — ${escapeHtml(stripHtml(nullSafe(c.desc, '')))}</li>`
+  ).join('\n');
+  return `<!DOCTYPE html>
+<html lang="${lang}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>${escapeHtml(tx.title(tool.name))}</title>
+<meta name="description" content="${escapeHtml(tool.reason[lang])}">
+<style>
+:root{color-scheme:light dark;--bg:#fafaf9;--fg:#1c1917;--muted:#57534e;--link:#1d4ed8;--line:#e7e5e4}
+@media (prefers-color-scheme:dark){:root{--bg:#0c0a09;--fg:#f5f5f4;--muted:#a8a29e;--link:#93c5fd;--line:#292524}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:48px 16px}
+h1{font-size:1.6rem;line-height:1.3;margin:0 0 12px}
+h2{font-size:1.1rem;margin:32px 0 8px}
+p{margin:0 0 12px}
+.meta{color:var(--muted);font-size:.9rem}
+a{color:var(--link)}
+ul{padding-left:20px;margin:0}
+li{margin:6px 0}
+footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<main>
+  <h1>${escapeHtml(tx.heading(tool.name))}</h1>
+  <p class="meta">${escapeHtml(tx.removed)} ${escapeHtml(tool.retired_on)}</p>
+  <p>${escapeHtml(tool.reason[lang])}</p>
+  <p>${escapeHtml(tx.section)} <a href="${urlPrefix}/section/${escapeHtml(section.id)}">${escapeHtml(section.title)}</a>.</p>
+  <h2>${escapeHtml(tx.current(section.title))}</h2>
+  <ul>
+${items}
+  </ul>
+  <footer><a href="${urlPrefix}/">${escapeHtml(tx.home)}</a></footer>
+</main>
+</body>
+</html>
+`;
+}
+
+let retiredCount = 0;
+for (const tool of retiredTools) {
+  for (const lang of ['en', 'vi']) {
+    const outputPath = path.join(ROOT, lang === 'vi' ? 'vi' : '', 'retired', tool.slug, 'index.html');
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, generateRetiredPage(tool, lang), 'utf8');
+    retiredCount++;
+  }
+}
+
+// Stale route check: generated directories must match the manifest / registry exactly
+// (the generator only writes files, so a removed card would otherwise leave its old shell behind).
+function subdirs(rel) {
+  const abs = path.join(ROOT, rel);
+  if (!fs.existsSync(abs)) return [];
+  return fs.readdirSync(abs, { withFileTypes: true }).filter(e => e.isDirectory()).map(e => e.name).sort();
+}
+const expectDirs = (rel, names) => {
+  const actual = subdirs(rel);
+  const expected = [...new Set(names)].sort();
+  const extra = actual.filter(n => !expected.includes(n));
+  const missing = expected.filter(n => !actual.includes(n));
+  assert(extra.length === 0 && missing.length === 0,
+    `Stale or missing generated dirs under ${rel}/ — extra: [${extra.join(', ')}], missing: [${missing.join(', ')}]. Delete stale dirs (git rm -r).`);
+};
+expectDirs('tool', [...enSlugMap.keys()]);
+expectDirs('vi/tool', [...viSlugMap.keys()]);
+expectDirs('section', enData.sections.map(s => s.id));
+expectDirs('vi/section', viData.sections.map(s => s.id));
+expectDirs('compare', enData.comparison_presets.map(p => p.id));
+expectDirs('vi/compare', viData.comparison_presets.map(p => p.id));
+expectDirs('retired', retiredTools.map(t => t.slug));
+expectDirs('vi/retired', retiredTools.map(t => t.slug));
+
 // LAST: modify root index.html (home EN) — markers preserved
 const homeRoute = allRoutes.find(r => r.outputPath === null);
 let rootHtml = templateHtml;
@@ -807,5 +924,6 @@ rootHtml = rootHtml.replace(BODY_RE,
 fs.writeFileSync(path.join(ROOT, 'index.html'), rootHtml, 'utf8');
 
 console.log(`✅ Generated ${generatedCount} route shell files`);
+console.log(`✅ Generated ${retiredCount} retired-tool notice pages`);
 console.log(`✅ Updated root index.html with home EN content`);
 console.log(`✅ Total routes: ${totalRoutes}`);

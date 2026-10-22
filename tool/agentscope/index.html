@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-<title>AutoGen — See AI First</title>
-<meta name="description" content="Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.">
-<meta property="og:title" content="AutoGen — See AI First">
-<meta property="og:description" content="Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.">
-<meta property="og:url" content="https://seeaifirst.com/tool/autogen">
+<title>AgentScope — See AI First</title>
+<meta name="description" content="Open-source Python agent framework with a ready-made agent service — ReAct agents, agent teams, MCP and A2A, sandboxed tools">
+<meta property="og:title" content="AgentScope — See AI First">
+<meta property="og:description" content="Open-source Python agent framework with a ready-made agent service — ReAct agents, agent teams, MCP and A2A, sandboxed tools">
+<meta property="og:url" content="https://seeaifirst.com/tool/agentscope">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
-<meta name="twitter:title" content="AutoGen — See AI First">
-<meta name="twitter:description" content="Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.">
-<link rel="canonical" href="https://seeaifirst.com/tool/autogen">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AutoGen","url":"https://seeaifirst.com/tool/autogen","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Microsoft's multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.","keywords":["Agent Frameworks — Building AI Agents","python","csharp"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/autogen","https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/","https://github.com/microsoft/agent-framework"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
+<meta name="twitter:title" content="AgentScope — See AI First">
+<meta name="twitter:description" content="Open-source Python agent framework with a ready-made agent service — ReAct agents, agent teams, MCP and A2A, sandboxed tools">
+<link rel="canonical" href="https://seeaifirst.com/tool/agentscope">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"AgentScope","url":"https://seeaifirst.com/tool/agentscope","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source Python agent framework with a ready-made agent service — ReAct agents, agent teams, MCP and A2A, sandboxed tools","keywords":["Agent Frameworks — Building AI Agents","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/agentscope-ai/agentscope","https://docs.agentscope.io/","https://github.com/agentscope-ai/agentscope-java"],"datePublished":"2026-10-22","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1087,53 +1087,54 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
-    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> › AutoGen</nav>
+    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> › AgentScope</nav>
     <article>
-      <h1>AutoGen</h1>
-      <p>Microsoft&#039;s multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.</p>
-      <p>AutoGen is Microsoft&#039;s open-source framework for multi-agent applications in Python and .NET. Its layered API offers Core (an event-driven runtime), AgentChat (group chats and teams of agents) and Extensions (models, tools, code execution), with human-in-the-loop support. The project is now in maintenance mode: it gets no new features, is community-managed, and its README tells new users to start with Microsoft Agent Framework, the enterprise-ready successor that also replaces Semantic Kernel; an official migration guide is available. Code is MIT-licensed. Best for: maintaining existing AutoGen systems and research prototypes — not new projects.</p>
+      <h1>AgentScope</h1>
+      <p>Open-source Python agent framework with a ready-made agent service — ReAct agents, agent teams, MCP and A2A, sandboxed tools</p>
+      <p>AgentScope is an open-source (Apache 2.0) framework for building and running LLM agents. Version 2.0 (2026) rebuilt it around agentic models: a ReAct agent loop with structured output and interruption, a toolkit that manages Python tools, MCP servers and skills, context compaction, middleware hooks, fine-grained permissions with human-in-the-loop, and isolated execution in local, Docker or cloud sandboxes. Long-term memory has switchable backends (ReMe, Mem0). Beyond the SDK it ships an agent service — a FastAPI backend with a web UI — that adds multi-tenant sessions, leader–worker agent teams, a RAG service, IM channels and scheduling. It can call remote agents over A2A, supports major model providers including local models through Ollama, and has an experimental realtime voice agent. This card covers the Python framework (Python 3.11+); a Java edition is developed in a separate repository. Works well with: MCP · A2A · Ollama · Docker</p>
       <h2>When to use</h2>
       <ul>
-        <li>Maintaining or extending an existing AutoGen system</li>
-        <li>Research prototypes of multi-agent conversations</li>
-        <li>Learning multi-agent patterns (group chat, teams) on a mature codebase</li>
+        <li>You want a Python framework plus a ready-made service layer (sessions, web UI, teams) for agent apps</li>
+        <li>You need agents that run tools and code in sandboxes with permission controls</li>
+        <li>You want MCP tools and A2A remote agents in one framework</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>Greenfield projects — start with Microsoft Agent Framework</li>
-        <li>You need new features or a long-term roadmap</li>
-        <li>TypeScript-only stack</li>
+        <li>You want a minimal SDK with few abstractions — see OpenAI Agents SDK or Pydantic AI</li>
+        <li>Your stack is TypeScript-only — see Mastra</li>
+        <li>You need graph-based durable workflows as the core model — see LangGraph or Microsoft Agent Framework</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
         <dt>Deployment</dt><dd>Self-hosted</dd>
-        <dt>Difficulty</dt><dd>Advanced</dd>
-        <dt>License</dt><dd>MIT</dd>
-        <dt>Languages</dt><dd>python, csharp</dd>
-        <dt>Use cases</dt><dd>multi agent, research, conversation ai, workflow automation</dd>
-        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
+        <dt>Difficulty</dt><dd>Intermediate</dd>
+        <dt>License</dt><dd>Apache-2.0</dd>
+        <dt>Languages</dt><dd>python</dd>
+        <dt>Use cases</dt><dd>multi agent, agent framework, agent orchestration, voice assistant</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/mcp">MCP — Model Context Protocol</a></li>
+        <li><a href="/tool/a2a">A2A — Agent2Agent Protocol</a></li>
         <li><a href="/tool/ollama">Ollama</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
         <li><a href="/tool/crewai">CrewAI</a></li>
-        <li><a href="/tool/langgraph">LangGraph</a></li>
+        <li><a href="/tool/microsoft-agent-framework">Microsoft Agent Framework</a></li>
         <li><a href="/tool/openai-agents-sdk">OpenAI Agents SDK</a></li>
-        <li><a href="/tool/mastra">Mastra</a></li>
+        <li><a href="/tool/langgraph">LangGraph</a></li>
         <li><a href="/tool/google-adk">Google ADK</a></li>
       </ul>
       <p><a href="/section/frameworks">See all 10 tools in Agent Frameworks — Building AI Agents →</a></p>
       <p><a href="/compare/frameworks">⚖️ Compare Agent Frameworks</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/microsoft/autogen" rel="noopener noreferrer">AutoGen GitHub</a></li>
-        <li><a href="https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/" rel="noopener noreferrer">Microsoft — Migrate from AutoGen to Agent Framework</a></li>
-        <li><a href="https://github.com/microsoft/agent-framework" rel="noopener noreferrer">Microsoft Agent Framework GitHub</a></li>
+        <li><a href="https://github.com/agentscope-ai/agentscope" rel="noopener noreferrer">GitHub (Python)</a></li>
+        <li><a href="https://docs.agentscope.io/" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://github.com/agentscope-ai/agentscope-java" rel="noopener noreferrer">AgentScope Java (separate repo)</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> on See AI First.</p>
@@ -1324,7 +1325,7 @@ function applyUiStrings() {
 const SITE_URL = 'https://seeaifirst.com';
 
 const START_HERE_CONFIG = [
-  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'flowise'],              ctaTarget: 'coding-agents' },
+  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'anythingllm'],          ctaTarget: 'coding-agents' },
   { id: 'build-agent',     labelKey: 'startHere_path2', tools: ['langgraph', 'openai-agents-sdk', 'pydantic-ai'], ctaTarget: 'frameworks' },
   { id: 'rag-chatbot',     labelKey: 'startHere_path3', tools: ['llamaindex', 'ragflow', 'pgvector'],            ctaTarget: 'rag-systems' },
   { id: 'local-opensource', labelKey: 'startHere_path4', tools: ['ollama', 'vllm', 'litellm'],                    ctaTarget: 'infrastructure' }

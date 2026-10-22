@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-<title>Rasa — See AI First</title>
-<meta name="description" content="Conversational AI platform for chat and voice agents on your own infrastructure — Rasa Pro with CALM (LLM understanding + business-logic flows).">
-<meta property="og:title" content="Rasa — See AI First">
-<meta property="og:description" content="Conversational AI platform for chat and voice agents on your own infrastructure — Rasa Pro with CALM (LLM understanding + business-logic flows).">
-<meta property="og:url" content="https://seeaifirst.com/tool/rasa">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="vi_VN">
-<meta name="twitter:title" content="Rasa — See AI First">
-<meta name="twitter:description" content="Conversational AI platform for chat and voice agents on your own infrastructure — Rasa Pro with CALM (LLM understanding + business-logic flows).">
-<link rel="canonical" href="https://seeaifirst.com/tool/rasa">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Rasa","url":"https://seeaifirst.com/tool/rasa","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Conversational AI platform for chat and voice agents on your own infrastructure — Rasa Pro with CALM (LLM understanding + business-logic flows).","keywords":["Agent Frameworks — Building AI Agents","python"],"isAccessibleForFree":true,"sameAs":["https://rasa.com/docs/pro/intro","https://www.rasa.com/docs/reference/changelogs/rasa-pro-changelog","https://github.com/RasaHQ/rasa"],"datePublished":"2026-02-03","dateModified":"2026-10-20","@context":"https://schema.org","inLanguage":"en"}</script>
+<title>oh-my-claudecode — See AI First</title>
+<meta name="description" content="Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini">
+<meta property="og:title" content="oh-my-claudecode — See AI First">
+<meta property="og:description" content="Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini">
+<meta property="og:url" content="https://seeaifirst.com/vi/tool/oh-my-claudecode">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:title" content="oh-my-claudecode — See AI First">
+<meta name="twitter:description" content="Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini">
+<link rel="canonical" href="https://seeaifirst.com/vi/tool/oh-my-claudecode">
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"oh-my-claudecode","url":"https://seeaifirst.com/vi/tool/oh-my-claudecode","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini","keywords":["Orchestration — Điều phối multi-agent","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/Yeachan-Heo/oh-my-claudecode","https://yeachan-heo.github.io/oh-my-claudecode-website"],"datePublished":"2026-10-22","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1087,59 +1087,52 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
-    <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> › Rasa</nav>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> › oh-my-claudecode</nav>
     <article>
-      <h1>Rasa</h1>
-      <p>Conversational AI platform for chat and voice agents on your own infrastructure — Rasa Pro with CALM (LLM understanding + business-logic flows).</p>
-      <p>Rasa is a platform for enterprise chat and voice assistants that runs on your own infrastructure, with hosted or self-managed language models. The current product, Rasa Pro, is built on CALM: an LLM interprets what the user wants while flows define the business logic deterministically, with conversation-repair patterns, custom components, testing, analytics and tracing; Rasa Studio adds a no-code UI. Recent releases let a Rasa agent act as an A2A sub-agent and use MCP sub-agents, and support voice channels. Rasa Pro needs a license key — a free Developer Edition covers small volumes, production at scale needs an enterprise license. Rasa Open Source (Apache-2.0) is in maintenance mode; the project points new builds to CALM and the Hello Rasa playground.</p>
-      <h2>When to use</h2>
+      <h1>oh-my-claudecode</h1>
+      <p>Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini</p>
+      <p>oh-my-claudecode (OMC) là plugin và CLI mã nguồn mở (MIT) bổ sung khả năng điều phối nhiều agent cho Claude Code. Tính năng chính là Team mode: một pipeline theo giai đoạn — lập kế hoạch, viết spec, nhiều agent cùng thực thi, kiểm chứng kết quả và lặp lại để sửa lỗi. Autopilot chạy một task từ đầu đến cuối qua các giai đoạn cấu hình được, Ralph làm tiếp cho đến khi kết quả được kiểm chứng, Deep Interview làm rõ yêu cầu mơ hồ trước khi viết code. Từ terminal, `omc team` mở các worker tmux chạy CLI của Claude, Codex, Gemini, Antigravity hoặc Cursor, còn `omc ask` chuyển câu hỏi sang provider khác. Cài từ plugin marketplace của Claude Code hoặc qua npm; cần Claude Code đang hoạt động. So với Ruflo (trước là Claude-Flow) — một harness swarm và memory rộng hơn — OMC tập trung vào workflow team theo từng giai đoạn ngay trong Claude Code. Kết hợp tốt với: Claude Code · Codex CLI · Gemini CLI · tmux</p>
+      <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Enterprise conversational AI with strict business logic</li>
-        <li>On-premise chat or voice assistants that need full data control</li>
-        <li>Multi-channel text and voice assistants</li>
-        <li>Regulated industries with strict data governance</li>
+        <li>Dùng Claude Code và muốn một team agent lập kế hoạch, xây và kiểm chứng task theo giai đoạn</li>
+        <li>Muốn giao task cho autopilot và nhận lại kết quả đã kiểm chứng</li>
+        <li>Muốn có worker Codex hoặc Gemini CLI chạy cùng Claude trong một workflow</li>
       </ul>
-      <h2>When not to use</h2>
+      <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Quick LLM agent prototyping</li>
-        <li>You need a fully open-source stack — current Rasa Pro requires a license key</li>
-        <li>Simple Q&amp;A bot without complex dialogue flows</li>
+        <li>Không dùng Claude Code (bản cho Codex là dự án riêng)</li>
+        <li>Cần nền tảng swarm/memory rộng cho nhiều agent — xem Ruflo (Claude-Flow)</li>
+        <li>Cần extension VS Code hoặc dịch vụ hosted — OMC là plugin và CLI terminal</li>
       </ul>
-      <h2>At a glance</h2>
+      <h2>Thông tin nhanh</h2>
       <dl>
-        <dt>Pricing</dt><dd>Open core</dd>
-        <dt>Deployment</dt><dd>Self-hosted</dd>
-        <dt>Difficulty</dt><dd>Advanced</dd>
-        <dt>Languages</dt><dd>python</dd>
-        <dt>Use cases</dt><dd>conversational ai, customer support, enterprise chatbot, voice assistant</dd>
-        <dt>Last verified</dt><dd>2026-10-20 (official documentation)</dd>
+        <dt>Chi phí</dt><dd>Miễn phí</dd>
+        <dt>Triển khai</dt><dd>Chạy local</dd>
+        <dt>Độ khó</dt><dd>Trung bình</dd>
+        <dt>Giấy phép</dt><dd>MIT</dd>
+        <dt>Ngôn ngữ</dt><dd>js</dd>
+        <dt>Ứng dụng</dt><dd>multi agent orchestration, parallel development, workflow automation, code review</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
-      <h2>Works well with</h2>
+      <h2>Kết hợp tốt với</h2>
       <ul>
-        <li><a href="/tool/mcp">MCP — Model Context Protocol</a></li>
-        <li><a href="/tool/a2a">A2A — Agent2Agent Protocol</a></li>
-        <li><a href="/tool/langfuse">Langfuse</a></li>
-        <li><a href="/tool/ollama">Ollama</a></li>
-        <li><a href="/tool/litellm">LiteLLM</a></li>
+        <li><a href="/vi/tool/claude-code">Claude Code</a></li>
+        <li><a href="/vi/tool/codex-cli">Codex CLI</a></li>
+        <li><a href="/vi/tool/gemini-cli">Gemini CLI</a></li>
       </ul>
-      <h2>Alternatives in this category</h2>
+      <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
-        <li><a href="/tool/langgraph">LangGraph</a></li>
-        <li><a href="/tool/crewai">CrewAI</a></li>
-        <li><a href="/tool/autogen">AutoGen</a></li>
-        <li><a href="/tool/openai-agents-sdk">OpenAI Agents SDK</a></li>
-        <li><a href="/tool/google-adk">Google ADK</a></li>
+        <li><a href="/vi/tool/claude-flow">Claude-Flow</a></li>
+        <li><a href="/vi/tool/openclaw">OpenClaw</a></li>
       </ul>
-      <p><a href="/section/frameworks">See all 10 tools in Agent Frameworks — Building AI Agents →</a></p>
-      <p><a href="/compare/frameworks">⚖️ Compare Agent Frameworks</a></p>
-      <h2>Sources</h2>
+      <p><a href="/vi/section/orchestration">Xem tất cả 3 công cụ trong Orchestration — Điều phối multi-agent →</a></p>
+      <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://rasa.com/docs/pro/intro" rel="noopener noreferrer">Rasa Docs</a></li>
-        <li><a href="https://www.rasa.com/docs/reference/changelogs/rasa-pro-changelog" rel="noopener noreferrer">Rasa Pro Changelog</a></li>
-        <li><a href="https://github.com/RasaHQ/rasa" rel="noopener noreferrer">Rasa GitHub</a></li>
+        <li><a href="https://github.com/Yeachan-Heo/oh-my-claudecode" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://yeachan-heo.github.io/oh-my-claudecode-website" rel="noopener noreferrer">Documentation</a></li>
       </ul>
       <footer>
-        <p>Part of <a href="/section/frameworks">Agent Frameworks — Building AI Agents</a> on See AI First.</p>
+        <p>Thuộc danh mục <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> trên See AI First.</p>
       </footer>
     </article>
   </main>
@@ -1327,7 +1320,7 @@ function applyUiStrings() {
 const SITE_URL = 'https://seeaifirst.com';
 
 const START_HERE_CONFIG = [
-  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'flowise'],              ctaTarget: 'coding-agents' },
+  { id: 'new-to-ai',       labelKey: 'startHere_path1', tools: ['replit-agent', 'dify', 'anythingllm'],          ctaTarget: 'coding-agents' },
   { id: 'build-agent',     labelKey: 'startHere_path2', tools: ['langgraph', 'openai-agents-sdk', 'pydantic-ai'], ctaTarget: 'frameworks' },
   { id: 'rag-chatbot',     labelKey: 'startHere_path3', tools: ['llamaindex', 'ragflow', 'pgvector'],            ctaTarget: 'rag-systems' },
   { id: 'local-opensource', labelKey: 'startHere_path4', tools: ['ollama', 'vllm', 'litellm'],                    ctaTarget: 'infrastructure' }

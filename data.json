@@ -217,7 +217,7 @@
             "google-adk",
             "langgraph",
             "crewai",
-            "autogen",
+            "microsoft-agent-framework",
             "pydantic-ai"
           ],
           "useCases": [
@@ -372,61 +372,62 @@
           "license": "MIT"
         },
         {
-          "name": "AutoGen",
-          "slug": "autogen",
+          "name": "Microsoft Agent Framework",
+          "slug": "microsoft-agent-framework",
           "icon": "🔷",
           "mono": true,
-          "desc": "Microsoft's multi-agent conversation framework — now in maintenance mode; Microsoft Agent Framework is the recommended successor.",
-          "added_date": "2026-02-03",
+          "desc": "Microsoft's open-source framework for production agents and multi-agent workflows in .NET and Python — the direct successor to AutoGen and Semantic Kernel",
+          "added_date": "2026-10-22",
           "tags": [
             "Microsoft",
-            "Maintenance mode"
+            "Successor to AutoGen",
+            ".NET + Python"
           ],
-          "detail": "AutoGen is Microsoft's open-source framework for multi-agent applications in Python and .NET. Its layered API offers Core (an event-driven runtime), AgentChat (group chats and teams of agents) and Extensions (models, tools, code execution), with human-in-the-loop support. The project is now in maintenance mode: it gets no new features, is community-managed, and its README tells new users to start with Microsoft Agent Framework, the enterprise-ready successor that also replaces Semantic Kernel; an official migration guide is available. Code is MIT-licensed. Best for: maintaining existing AutoGen systems and research prototypes — not new projects.",
+          "detail": "Microsoft Agent Framework (MAF) is Microsoft's open-source (MIT) framework for building, orchestrating and operating AI agents in .NET and Python, with a Go SDK in preview in a separate repository. Microsoft describes it as the direct successor to both AutoGen and Semantic Kernel, built by the same teams, and publishes migration guides from each; version 1.0 shipped in April 2026 with stable APIs and long-term support. Agents call tools and MCP servers; graph-based workflows coordinate agents and functions in sequential, concurrent, handoff and group-chat patterns, with state management for long-running and human-in-the-loop runs. It adds middleware, OpenTelemetry tracing, declarative YAML agents, a developer UI, A2A support and optional hosting of agents on Microsoft Foundry. If you run AutoGen today, this is where Microsoft points you next.\n\nWorks well with: MCP · A2A · Azure / Microsoft Foundry · OpenTelemetry",
           "sources": [
             {
-              "title": "AutoGen GitHub",
-              "url": "https://github.com/microsoft/autogen"
-            },
-            {
-              "title": "Microsoft — Migrate from AutoGen to Agent Framework",
-              "url": "https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/"
-            },
-            {
-              "title": "Microsoft Agent Framework GitHub",
+              "title": "GitHub",
               "url": "https://github.com/microsoft/agent-framework"
+            },
+            {
+              "title": "Microsoft Learn — Overview",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/overview/"
+            },
+            {
+              "title": "Microsoft — Migrate from AutoGen",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
-          "difficulty": "advanced",
+          "difficulty": "intermediate",
           "whenToUse": [
-            "Maintaining or extending an existing AutoGen system",
-            "Research prototypes of multi-agent conversations",
-            "Learning multi-agent patterns (group chat, teams) on a mature codebase"
+            "You are building production agents or multi-agent workflows in .NET or Python",
+            "You are migrating from AutoGen or Semantic Kernel",
+            "You need workflows with checkpointing, human-in-the-loop and OpenTelemetry tracing"
           ],
           "whenNotToUse": [
-            "Greenfield projects — start with Microsoft Agent Framework",
-            "You need new features or a long-term roadmap",
-            "TypeScript-only stack"
+            "Your stack is TypeScript-only — see Mastra",
+            "You want the smallest possible SDK for a single agent — see OpenAI Agents SDK",
+            "You need a full Go SDK today (Go is in preview)"
           ],
           "compatibleWith": [
             "mcp",
-            "ollama"
+            "a2a"
           ],
           "useCases": [
             "multi-agent",
-            "research",
-            "conversation-ai",
-            "workflow-automation"
+            "workflow-automation",
+            "agent-orchestration",
+            "enterprise-automation"
           ],
           "languages": [
             "python",
             "csharp"
           ],
-          "verified_at": "2026-10-20",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 61495,
+          "github_stars": 14271,
           "license": "MIT"
         },
         {
@@ -613,65 +614,63 @@
           "license": "MIT"
         },
         {
-          "name": "Rasa",
-          "slug": "rasa",
-          "icon": "💬",
+          "name": "AgentScope",
+          "slug": "agentscope",
+          "icon": "🔭",
           "mono": true,
-          "desc": "Conversational AI platform for chat and voice agents on your own infrastructure — Rasa Pro with CALM (LLM understanding + business-logic flows).",
-          "added_date": "2026-02-03",
+          "desc": "Open-source Python agent framework with a ready-made agent service — ReAct agents, agent teams, MCP and A2A, sandboxed tools",
+          "added_date": "2026-10-22",
           "tags": [
-            "On-prem",
-            "Voice"
+            "Agent service",
+            "MCP + A2A",
+            "Sandboxed tools"
           ],
-          "detail": "Rasa is a platform for enterprise chat and voice assistants that runs on your own infrastructure, with hosted or self-managed language models. The current product, Rasa Pro, is built on CALM: an LLM interprets what the user wants while flows define the business logic deterministically, with conversation-repair patterns, custom components, testing, analytics and tracing; Rasa Studio adds a no-code UI. Recent releases let a Rasa agent act as an A2A sub-agent and use MCP sub-agents, and support voice channels. Rasa Pro needs a license key — a free Developer Edition covers small volumes, production at scale needs an enterprise license. Rasa Open Source (Apache-2.0) is in maintenance mode; the project points new builds to CALM and the Hello Rasa playground.",
+          "detail": "AgentScope is an open-source (Apache 2.0) framework for building and running LLM agents. Version 2.0 (2026) rebuilt it around agentic models: a ReAct agent loop with structured output and interruption, a toolkit that manages Python tools, MCP servers and skills, context compaction, middleware hooks, fine-grained permissions with human-in-the-loop, and isolated execution in local, Docker or cloud sandboxes. Long-term memory has switchable backends (ReMe, Mem0). Beyond the SDK it ships an agent service — a FastAPI backend with a web UI — that adds multi-tenant sessions, leader–worker agent teams, a RAG service, IM channels and scheduling. It can call remote agents over A2A, supports major model providers including local models through Ollama, and has an experimental realtime voice agent. This card covers the Python framework (Python 3.11+); a Java edition is developed in a separate repository.\n\nWorks well with: MCP · A2A · Ollama · Docker",
           "sources": [
             {
-              "title": "Rasa Docs",
-              "url": "https://rasa.com/docs/pro/intro"
+              "title": "GitHub (Python)",
+              "url": "https://github.com/agentscope-ai/agentscope"
             },
             {
-              "title": "Rasa Pro Changelog",
-              "url": "https://www.rasa.com/docs/reference/changelogs/rasa-pro-changelog"
+              "title": "Docs",
+              "url": "https://docs.agentscope.io/"
             },
             {
-              "title": "Rasa GitHub",
-              "url": "https://github.com/RasaHQ/rasa"
+              "title": "AgentScope Java (separate repo)",
+              "url": "https://github.com/agentscope-ai/agentscope-java"
             }
           ],
-          "pricing": "open-core",
+          "pricing": "free",
           "deployment": "self-hosted",
-          "difficulty": "advanced",
+          "difficulty": "intermediate",
           "whenToUse": [
-            "Enterprise conversational AI with strict business logic",
-            "On-premise chat or voice assistants that need full data control",
-            "Multi-channel text and voice assistants",
-            "Regulated industries with strict data governance"
+            "You want a Python framework plus a ready-made service layer (sessions, web UI, teams) for agent apps",
+            "You need agents that run tools and code in sandboxes with permission controls",
+            "You want MCP tools and A2A remote agents in one framework"
           ],
           "whenNotToUse": [
-            "Quick LLM agent prototyping",
-            "You need a fully open-source stack — current Rasa Pro requires a license key",
-            "Simple Q&A bot without complex dialogue flows"
+            "You want a minimal SDK with few abstractions — see OpenAI Agents SDK or Pydantic AI",
+            "Your stack is TypeScript-only — see Mastra",
+            "You need graph-based durable workflows as the core model — see LangGraph or Microsoft Agent Framework"
           ],
           "compatibleWith": [
             "mcp",
             "a2a",
-            "langfuse",
-            "ollama",
-            "litellm"
+            "ollama"
           ],
           "useCases": [
-            "conversational-ai",
-            "customer-support",
-            "enterprise-chatbot",
+            "multi-agent",
+            "agent-framework",
+            "agent-orchestration",
             "voice-assistant"
           ],
           "languages": [
             "python"
           ],
-          "verified_at": "2026-10-20",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 21354,
-          "license": null
+          "github_stars": 33637,
+          "license": "Apache-2.0"
         },
         {
           "name": "Browser-Use",
@@ -1033,8 +1032,7 @@
           ],
           "compatibleWith": [
             "mcp",
-            "claude-flow",
-            "claude-squad"
+            "claude-flow"
           ],
           "useCases": [
             "session-memory",
@@ -1101,8 +1099,7 @@
           "compatibleWith": [
             "langgraph",
             "crewai",
-            "llamaindex",
-            "flowise"
+            "llamaindex"
           ],
           "useCases": [
             "agent-memory",
@@ -1584,57 +1581,58 @@
           "license": "Apache-2.0"
         },
         {
-          "name": "Claude Squad",
-          "slug": "claude-squad",
-          "icon": "🐦",
+          "name": "oh-my-claudecode",
+          "slug": "oh-my-claudecode",
+          "icon": "🎼",
           "mono": true,
-          "desc": "Terminal app for running multiple Claude Code and Codex sessions simultaneously, each in its own workspace.",
-          "added_date": "2026-02-03",
+          "desc": "Team-based multi-agent orchestration plugin for Claude Code — staged plan → build → verify pipeline, autopilot, Codex/Gemini workers",
+          "added_date": "2026-10-22",
           "tags": [
-            "Multi-workspace",
-            "Parallel agents",
-            "+ Aider support"
+            "Claude Code plugin",
+            "Team pipeline",
+            "Codex/Gemini workers"
           ],
-          "detail": "Tool for managing multiple parallel Claude Code sessions within a single terminal. Each session runs in its own workspace, handling separate tasks without conflicts. Supports Aider integration, multi-workspace management. Ideal when running multiple agents concurrently on different parts of a project.",
+          "detail": "oh-my-claudecode (OMC) is an open-source (MIT) plugin and CLI that adds multi-agent orchestration on top of Claude Code. Its main surface is Team mode: a staged pipeline that plans the task, writes a spec, executes with several agents, verifies the result and loops on fixes. Autopilot runs a task end to end through configurable stages, Ralph keeps working until the result is verified, and Deep Interview clarifies vague requirements before any code is written. From the terminal, `omc team` can start tmux worker panes running Claude, Codex, Gemini, Antigravity or Cursor CLIs, and `omc ask` routes a question to another provider. Install it from the Claude Code plugin marketplace or via npm; it needs a working Claude Code setup. Compared with Ruflo (formerly Claude-Flow), which is a broader swarm and memory harness, OMC focuses on phase-by-phase team workflows inside Claude Code.\n\nWorks well with: Claude Code · Codex CLI · Gemini CLI · tmux",
           "sources": [
             {
-              "title": "Claude Squad GitHub",
-              "url": "https://github.com/smtg-ai/claude-squad"
+              "title": "GitHub",
+              "url": "https://github.com/Yeachan-Heo/oh-my-claudecode"
+            },
+            {
+              "title": "Documentation",
+              "url": "https://yeachan-heo.github.io/oh-my-claudecode-website"
             }
           ],
           "pricing": "free",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "managing multiple AI coding agents simultaneously",
-            "parallel task execution across branches",
-            "background code generation",
-            "multi-agent development with git isolation"
+            "You use Claude Code and want a team of agents to plan, build and verify a task in stages",
+            "You want to hand a task to autopilot and get back verified work",
+            "You want Codex or Gemini CLI workers alongside Claude in one workflow"
           ],
           "whenNotToUse": [
-            "single-task workflow",
-            "non-terminal environments",
-            "projects without git"
+            "You do not use Claude Code (the Codex edition is a separate project)",
+            "You want a broad swarm/memory platform across many agents — see Ruflo (Claude-Flow)",
+            "You need a VS Code extension or a hosted service — OMC is a plugin and terminal CLI"
           ],
           "compatibleWith": [
             "claude-code",
             "codex-cli",
-            "opencode",
-            "gemini-cli",
-            "goose"
+            "gemini-cli"
           ],
           "useCases": [
+            "multi-agent-orchestration",
             "parallel-development",
-            "multi-agent-management",
-            "background-tasks",
-            "git-workflow"
+            "workflow-automation",
+            "code-review"
           ],
           "languages": [
-            "go"
+            "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 6574,
+          "github_stars": 40173,
           "license": "MIT"
         }
       ]
@@ -2346,7 +2344,7 @@
           ],
           "compatibleWith": [
             "crewai",
-            "autogen",
+            "microsoft-agent-framework",
             "langgraph",
             "openai-agents-sdk",
             "google-adk",
@@ -3134,7 +3132,7 @@
           "compatibleWith": [
             "litellm",
             "dify",
-            "flowise"
+            "anythingllm"
           ],
           "useCases": [
             "local-inference",
@@ -3446,62 +3444,64 @@
           "license": "Apache-2.0"
         },
         {
-          "name": "Flowise",
-          "slug": "flowise",
-          "added_date": "2026-02-08",
-          "desc": "No-code drag-and-drop builder for LLM apps and RAG pipelines on LangChain — archived, end of life since August 2026",
-          "detail": "Status: Flowise has been sunset. Workday acquired Flowise in August 2025; on 29 July 2026 the team froze the code, the GitHub repository was archived in August 2026, and end of life was 31 August 2026. The code stays on GitHub under Apache 2.0 (apart from an enterprise directory under a commercial licence) and the team suggests forking it; no new features or fixes are planned. What it is: a visual canvas on top of LangChain — connect nodes (LLM, retriever, memory, tools) into a flow, expose it as an API endpoint and run it with Docker or npm. It shipped many integration nodes (document loaders, text splitters, embedding models, vector stores) and community templates. For new projects, pick a maintained tool in this section: Dify for a visual builder, RAGFlow for document-heavy RAG.\n\nWorks well with (archived code): LangChain ecosystem · Ollama · Langfuse · Chroma/Milvus/Qdrant/pgvector",
+          "name": "AnythingLLM",
+          "slug": "anythingllm",
+          "added_date": "2026-10-22",
+          "desc": "Local-first, all-in-one app to chat with your documents and run AI agents — desktop or multi-user Docker server",
+          "detail": "AnythingLLM is an open-source (MIT) application for chatting with your own documents and running AI agents without assembling a stack yourself. Install the desktop app on macOS, Windows or Linux, or run the Docker version, which adds multi-user workspaces with permissions and an embeddable chat widget; a paid hosted instance is also offered. Documents (PDF, DOCX, TXT and more) are split into workspaces and answered with citations. By default it uses a built-in local model engine, a built-in embedder and LanceDB as the vector store, so it can run on your own machine; you can instead connect cloud LLMs (OpenAI, Anthropic, Gemini and others), local servers such as Ollama or LM Studio, and vector databases such as PGVector, Chroma, Qdrant or Milvus — data then goes to whichever services you pick. Agents can browse the web and call MCP tools, built with a no-code flow builder. Anonymous telemetry is on by default and can be disabled.\n\nWorks well with: Ollama · LiteLLM · LocalAI · PGVector/Chroma/Qdrant/Milvus",
           "sources": [
             {
-              "title": "GitHub (archived)",
-              "url": "https://github.com/FlowiseAI/Flowise"
-            },
-            {
-              "title": "Sunset notice",
-              "url": "https://flowiseai.com/sunset"
+              "title": "GitHub",
+              "url": "https://github.com/Mintplex-Labs/anything-llm"
             },
             {
               "title": "Website",
-              "url": "https://flowiseai.com"
+              "url": "https://anythingllm.com"
+            },
+            {
+              "title": "Docs",
+              "url": "https://docs.anythingllm.com"
             }
           ],
           "tags": [
-            "55.5K⭐",
-            "Archived"
+            "67K⭐",
+            "MIT"
           ],
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "You already run Flowise and need time to plan a migration",
-            "You want to fork and maintain an Apache-2.0 visual LangChain builder yourself"
+            "You want private chat over your documents on a laptop with minimal setup",
+            "A small team needs a shared, self-hosted document assistant with user permissions",
+            "You want to try local or cloud models in one app before building a custom RAG stack"
           ],
           "whenNotToUse": [
-            "You are starting a new project — the repository is archived and gets no fixes",
-            "You need vendor support or security updates",
-            "You need deep document processing (Flowise focused on orchestration)"
+            "You need deep parsing of complex PDFs, tables and scans — see RAGFlow",
+            "You want to design multi-step AI workflows and publish them as apps or APIs — see Dify",
+            "You need graph-based retrieval across entities — see LightRAG"
           ],
           "compatibleWith": [
             "ollama",
-            "langfuse",
-            "milvus",
+            "litellm",
+            "localai",
             "pgvector",
+            "chroma",
             "qdrant",
-            "chroma"
+            "milvus"
           ],
           "useCases": [
             "rag-pipeline",
+            "document-qa",
             "chatbot",
-            "ai-workflow",
-            "rapid-prototyping"
+            "knowledge-base"
           ],
           "languages": [
             "js"
           ],
           "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 55516,
-          "license": "Apache-2.0"
+          "github_stars": 67437,
+          "license": "MIT"
         },
         {
           "name": "LightRAG",
@@ -4238,20 +4238,20 @@
           }
         },
         {
-          "cardId": "flowise",
+          "cardId": "anythingllm",
           "values": {
-            "Best for": "Archived (end of life Aug 2026) — existing flows only; was fast visual chatbot prototyping",
-            "No-code vs Code": "No-code: visual drag-and-drop canvas, prebuilt templates, fastest setup",
-            "Doc Understanding": "Basic: relies on LangChain document loaders, standard chunking",
-            "Deploy": "Self-host from archived code (Docker · npm)",
+            "Best for": "Private, local-first chat with your documents plus agents — desktop or team server",
+            "No-code vs Code": "No-code: desktop app and web UI, no-code agent flows, plus a developer API",
+            "Doc Understanding": "Good: common document types (PDF, DOCX, TXT…), citations, built-in local embedder",
+            "Deploy": "Desktop (macOS · Windows · Linux) · Docker (multi-user) · hosted instance",
             "Integrations": [
-              "langchain",
-              "openai",
-              "anthropic",
+              "ollama",
+              "lancedb",
+              "pgvector",
               "qdrant",
-              "chroma"
+              "litellm"
             ],
-            "License": "Apache-2.0 (enterprise directory under commercial licence)"
+            "License": "MIT"
           }
         },
         {
@@ -4433,7 +4433,7 @@
       "id": "frameworks",
       "title": "Compare Agent Frameworks",
       "sectionId": "frameworks",
-      "as_of": "2026-10-20",
+      "as_of": "2026-10-22",
       "layout": "flip",
       "criteria": [
         "Best for",
@@ -4469,21 +4469,21 @@
             "Learning curve": "Easy",
             "Ecosystem": "Good — standalone framework, Flows + CrewAI AMP platform, MCP + A2A",
             "Graph/Agent support": "Good — Sequential/hierarchical processes, event-driven Flows with state, routing and loops",
-            "Memory/RAG integration": "Strong — First-class: short-term (ChromaDB), long-term (SQLite3), entity memory, RagTool",
+            "Memory/RAG integration": "Strong — Unified Memory with scoped recall (similarity, recency, importance; LanceDB by default), Knowledge sources, RagTool",
             "Language": "Python",
             "License": "MIT"
           }
         },
         {
-          "cardId": "autogen",
+          "cardId": "microsoft-agent-framework",
           "values": {
-            "Best for": "Maintaining existing AutoGen systems (successor: Microsoft Agent Framework)",
+            "Best for": "Production agents and graph workflows in .NET or Python; successor to AutoGen",
             "Learning curve": "Medium",
-            "Ecosystem": "Maintenance mode — community managed; Microsoft Agent Framework is the successor",
-            "Graph/Agent support": "Good — AgentChat teams and group chat, event-driven Core runtime",
-            "Memory/RAG integration": "Basic — memory and RAG via extensions and external tools",
-            "Language": "Python",
-            "License": "MIT (code)"
+            "Ecosystem": "Strong — Microsoft-backed, migration guides from AutoGen and Semantic Kernel, Foundry hosted agents, DevUI",
+            "Graph/Agent support": "Strong — Graph workflows (sequential, concurrent, handoff, group chat), human-in-the-loop, A2A",
+            "Memory/RAG integration": "Good — State management for long-running workflows, context providers, MCP tools",
+            "Language": "Multi (Python, .NET; Go in preview)",
+            "License": "MIT"
           }
         },
         {
@@ -4523,15 +4523,15 @@
           }
         },
         {
-          "cardId": "rasa",
+          "cardId": "agentscope",
           "values": {
-            "Best for": "Enterprise conversational AI with strict business logic",
-            "Learning curve": "Hard",
-            "Ecosystem": "Strong — Rasa Pro + CALM, Studio; Rasa Open Source in maintenance mode",
-            "Graph/Agent support": "Good — Flow-based dialogue; CALM combines LLM understanding with deterministic business logic; A2A/MCP sub-agents",
-            "Memory/RAG integration": "Basic — Dialogue state tracking (slot filling), no built-in RAG pipeline",
+            "Best for": "Agent apps that need a ready-made service layer (sessions, web UI, teams) and sandboxed tools",
+            "Learning curve": "Medium",
+            "Ecosystem": "Good — agent service with web UI, MCP and skill hub, IM channels; Java edition in a separate repo",
+            "Graph/Agent support": "Good — ReAct agents, leader–worker agent teams, pipelines, remote A2A agents",
+            "Memory/RAG integration": "Good — Long-term memory backends (ReMe, Mem0), RAG service, context compaction",
             "Language": "Python",
-            "License": "Rasa Pro: license key (free Developer Edition); OSS: Apache 2.0"
+            "License": "Apache 2.0"
           }
         },
         {

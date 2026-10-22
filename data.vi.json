@@ -217,7 +217,7 @@
             "google-adk",
             "langgraph",
             "crewai",
-            "autogen",
+            "microsoft-agent-framework",
             "pydantic-ai"
           ],
           "useCases": [
@@ -372,61 +372,62 @@
           "license": "MIT"
         },
         {
-          "name": "AutoGen",
-          "slug": "autogen",
+          "name": "Microsoft Agent Framework",
+          "slug": "microsoft-agent-framework",
           "icon": "🔷",
           "mono": true,
-          "desc": "Framework hội thoại multi-agent của Microsoft — nay ở chế độ bảo trì; Microsoft Agent Framework là bản kế nhiệm được khuyến nghị.",
-          "added_date": "2026-02-03",
+          "desc": "Framework mã nguồn mở của Microsoft cho agent production và workflow nhiều agent trên .NET và Python — bản kế nhiệm trực tiếp của AutoGen và Semantic Kernel",
+          "added_date": "2026-10-22",
           "tags": [
             "Microsoft",
-            "Maintenance mode"
+            "Successor to AutoGen",
+            ".NET + Python"
           ],
-          "detail": "AutoGen là framework mã nguồn mở của Microsoft cho ứng dụng multi-agent, dùng với Python và .NET. API chia lớp gồm Core (runtime điều khiển theo sự kiện), AgentChat (group chat, nhóm agent) và Extensions (model, tool, chạy code), có hỗ trợ human-in-the-loop. Dự án hiện ở chế độ bảo trì: không thêm tính năng mới, do cộng đồng quản lý, và README khuyên người dùng mới bắt đầu với Microsoft Agent Framework — bản kế nhiệm cho doanh nghiệp, thay cả Semantic Kernel; có hướng dẫn chuyển đổi chính thức. Code theo giấy phép MIT. Best for: duy trì hệ thống AutoGen đang có và prototype nghiên cứu — không dành cho dự án mới.",
+          "detail": "Microsoft Agent Framework (MAF) là framework mã nguồn mở (MIT) của Microsoft để xây, điều phối và vận hành AI agent trên .NET và Python, có Go SDK đang preview ở repo riêng. Microsoft mô tả đây là bản kế nhiệm trực tiếp của cả AutoGen và Semantic Kernel, do cùng các team đó phát triển, và có hướng dẫn chuyển đổi chính thức từ từng framework; bản 1.0 ra 04/2026 với API ổn định và hỗ trợ dài hạn. Agent gọi tool và MCP server; workflow dạng graph điều phối agent và hàm theo các pattern tuần tự, song song, handoff và group chat, có quản lý trạng thái cho tác vụ chạy lâu và human-in-the-loop. Ngoài ra có middleware, tracing OpenTelemetry, agent khai báo bằng YAML, giao diện cho developer, hỗ trợ A2A và tùy chọn host agent trên Microsoft Foundry. Nếu đang chạy AutoGen, đây là hướng Microsoft khuyến nghị chuyển sang.\n\nKết hợp tốt với: MCP · A2A · Azure / Microsoft Foundry · OpenTelemetry",
           "sources": [
             {
-              "title": "AutoGen GitHub",
-              "url": "https://github.com/microsoft/autogen"
-            },
-            {
-              "title": "Microsoft — Migrate from AutoGen to Agent Framework",
-              "url": "https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/"
-            },
-            {
-              "title": "Microsoft Agent Framework GitHub",
+              "title": "GitHub",
               "url": "https://github.com/microsoft/agent-framework"
+            },
+            {
+              "title": "Microsoft Learn — Overview",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/overview/"
+            },
+            {
+              "title": "Microsoft — Migrate from AutoGen",
+              "url": "https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
-          "difficulty": "advanced",
+          "difficulty": "intermediate",
           "whenToUse": [
-            "Duy trì hoặc mở rộng hệ thống AutoGen đang chạy",
-            "Prototype nghiên cứu về hội thoại multi-agent",
-            "Học các pattern multi-agent (group chat, teams) trên codebase đã chín"
+            "Xây agent production hoặc workflow nhiều agent trên .NET hoặc Python",
+            "Đang chuyển từ AutoGen hoặc Semantic Kernel",
+            "Cần workflow có checkpoint, human-in-the-loop và tracing OpenTelemetry"
           ],
           "whenNotToUse": [
-            "Dự án mới — nên bắt đầu với Microsoft Agent Framework",
-            "Cần tính năng mới hoặc lộ trình dài hạn",
-            "Stack chỉ dùng TypeScript"
+            "Stack chỉ dùng TypeScript — xem Mastra",
+            "Muốn SDK nhỏ nhất cho một agent — xem OpenAI Agents SDK",
+            "Cần Go SDK đầy đủ ngay bây giờ (Go đang preview)"
           ],
           "compatibleWith": [
             "mcp",
-            "ollama"
+            "a2a"
           ],
           "useCases": [
             "multi-agent",
-            "research",
-            "conversation-ai",
-            "workflow-automation"
+            "workflow-automation",
+            "agent-orchestration",
+            "enterprise-automation"
           ],
           "languages": [
             "python",
             "csharp"
           ],
-          "verified_at": "2026-10-20",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 61495,
+          "github_stars": 14271,
           "license": "MIT"
         },
         {
@@ -613,65 +614,63 @@
           "license": "MIT"
         },
         {
-          "name": "Rasa",
-          "slug": "rasa",
-          "icon": "💬",
+          "name": "AgentScope",
+          "slug": "agentscope",
+          "icon": "🔭",
           "mono": true,
-          "desc": "Nền tảng AI hội thoại cho chat và voice agent chạy trên hạ tầng của bạn — Rasa Pro với CALM (LLM hiểu ý + flows giữ logic nghiệp vụ).",
-          "added_date": "2026-02-03",
+          "desc": "Framework agent Python mã nguồn mở kèm sẵn agent service — ReAct agent, agent team, MCP và A2A, tool chạy trong sandbox",
+          "added_date": "2026-10-22",
           "tags": [
-            "On-prem",
-            "Voice"
+            "Agent service",
+            "MCP + A2A",
+            "Sandboxed tools"
           ],
-          "detail": "Rasa là nền tảng trợ lý chat và voice cho doanh nghiệp, chạy trên hạ tầng riêng, dùng model ngôn ngữ hosted hoặc tự quản lý. Sản phẩm hiện tại là Rasa Pro, xây trên CALM: LLM hiểu ý người dùng còn flows định nghĩa logic nghiệp vụ một cách xác định, kèm pattern sửa hội thoại, component tùy chỉnh, testing, analytics và tracing; Rasa Studio thêm giao diện không cần code. Các bản gần đây cho Rasa agent làm A2A sub-agent, dùng MCP sub-agents và hỗ trợ kênh voice. Rasa Pro cần license key — Developer Edition miễn phí cho lượng hội thoại nhỏ, production quy mô lớn cần license doanh nghiệp. Rasa Open Source (Apache-2.0) đang ở chế độ bảo trì; dự án hướng người dùng mới sang CALM và playground Hello Rasa.",
+          "detail": "AgentScope là framework mã nguồn mở (Apache 2.0) để xây và vận hành LLM agent. Bản 2.0 (2026) được làm lại quanh các model có năng lực agent: vòng lặp ReAct có structured output và ngắt giữa chừng, toolkit quản lý tool Python, MCP server và skill, nén ngữ cảnh, middleware hook, phân quyền chi tiết có human-in-the-loop, và chạy tool/code cô lập trong sandbox local, Docker hoặc cloud. Long-term memory đổi được backend (ReMe, Mem0). Ngoài SDK còn có agent service — backend FastAPI kèm web UI — bổ sung session multi-tenant, agent team kiểu leader–worker, RAG service, kênh chat (IM) và lập lịch. Gọi được agent từ xa qua A2A, hỗ trợ các model provider lớn, cả model local qua Ollama, và có realtime voice agent (thử nghiệm). Card này là bản Python (Python 3.11+); bản Java phát triển ở repo riêng.\n\nKết hợp tốt với: MCP · A2A · Ollama · Docker",
           "sources": [
             {
-              "title": "Rasa Docs",
-              "url": "https://rasa.com/docs/pro/intro"
+              "title": "GitHub (Python)",
+              "url": "https://github.com/agentscope-ai/agentscope"
             },
             {
-              "title": "Rasa Pro Changelog",
-              "url": "https://www.rasa.com/docs/reference/changelogs/rasa-pro-changelog"
+              "title": "Docs",
+              "url": "https://docs.agentscope.io/"
             },
             {
-              "title": "Rasa GitHub",
-              "url": "https://github.com/RasaHQ/rasa"
+              "title": "AgentScope Java (separate repo)",
+              "url": "https://github.com/agentscope-ai/agentscope-java"
             }
           ],
-          "pricing": "open-core",
+          "pricing": "free",
           "deployment": "self-hosted",
-          "difficulty": "advanced",
+          "difficulty": "intermediate",
           "whenToUse": [
-            "AI hội thoại doanh nghiệp với logic nghiệp vụ chặt chẽ",
-            "Trợ lý chat hoặc voice on-premise cần toàn quyền kiểm soát dữ liệu",
-            "Trợ lý đa kênh cả text và voice",
-            "Ngành có quy định chặt về quản trị dữ liệu"
+            "Muốn framework Python kèm sẵn lớp service (session, web UI, team) cho ứng dụng agent",
+            "Cần agent chạy tool và code trong sandbox có kiểm soát quyền",
+            "Muốn dùng tool MCP và agent từ xa qua A2A trong cùng framework"
           ],
           "whenNotToUse": [
-            "Prototype LLM agent nhanh",
-            "Cần stack hoàn toàn mã nguồn mở — Rasa Pro hiện tại cần license key",
-            "Bot hỏi đáp đơn giản, không có luồng hội thoại phức tạp"
+            "Muốn SDK tối giản, ít abstraction — xem OpenAI Agents SDK hoặc Pydantic AI",
+            "Stack chỉ dùng TypeScript — xem Mastra",
+            "Cần workflow dạng graph bền vững làm mô hình chính — xem LangGraph hoặc Microsoft Agent Framework"
           ],
           "compatibleWith": [
             "mcp",
             "a2a",
-            "langfuse",
-            "ollama",
-            "litellm"
+            "ollama"
           ],
           "useCases": [
-            "conversational-ai",
-            "customer-support",
-            "enterprise-chatbot",
+            "multi-agent",
+            "agent-framework",
+            "agent-orchestration",
             "voice-assistant"
           ],
           "languages": [
             "python"
           ],
-          "verified_at": "2026-10-20",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 21354,
-          "license": null
+          "github_stars": 33637,
+          "license": "Apache-2.0"
         },
         {
           "name": "Browser-Use",
@@ -1033,8 +1032,7 @@
           ],
           "compatibleWith": [
             "mcp",
-            "claude-flow",
-            "claude-squad"
+            "claude-flow"
           ],
           "useCases": [
             "session-memory",
@@ -1101,8 +1099,7 @@
           "compatibleWith": [
             "langgraph",
             "crewai",
-            "llamaindex",
-            "flowise"
+            "llamaindex"
           ],
           "useCases": [
             "agent-memory",
@@ -1584,57 +1581,58 @@
           "license": "Apache-2.0"
         },
         {
-          "name": "Claude Squad",
-          "slug": "claude-squad",
-          "icon": "🐦",
+          "name": "oh-my-claudecode",
+          "slug": "oh-my-claudecode",
+          "icon": "🎼",
           "mono": true,
-          "desc": "Ứng dụng terminal giúp chạy nhiều phiên Claude Code và Codex cùng lúc, mỗi phiên một workspace riêng.",
-          "added_date": "2026-02-03",
+          "desc": "Plugin điều phối nhiều agent theo team cho Claude Code — pipeline theo giai đoạn plan → build → verify, autopilot, worker Codex/Gemini",
+          "added_date": "2026-10-22",
           "tags": [
-            "Multi-workspace",
-            "Parallel agents",
-            "+ Aider support"
+            "Claude Code plugin",
+            "Team pipeline",
+            "Codex/Gemini workers"
           ],
-          "detail": "Tool quản lý nhiều phiên Claude Code song song trong cùng terminal. Mỗi phiên chạy trên workspace riêng, làm task riêng, không xung đột. Hỗ trợ Aider integration, multi-workspace management. Phù hợp khi cần chạy nhiều agent đồng thời trên các phần khác nhau của dự án.",
+          "detail": "oh-my-claudecode (OMC) là plugin và CLI mã nguồn mở (MIT) bổ sung khả năng điều phối nhiều agent cho Claude Code. Tính năng chính là Team mode: một pipeline theo giai đoạn — lập kế hoạch, viết spec, nhiều agent cùng thực thi, kiểm chứng kết quả và lặp lại để sửa lỗi. Autopilot chạy một task từ đầu đến cuối qua các giai đoạn cấu hình được, Ralph làm tiếp cho đến khi kết quả được kiểm chứng, Deep Interview làm rõ yêu cầu mơ hồ trước khi viết code. Từ terminal, `omc team` mở các worker tmux chạy CLI của Claude, Codex, Gemini, Antigravity hoặc Cursor, còn `omc ask` chuyển câu hỏi sang provider khác. Cài từ plugin marketplace của Claude Code hoặc qua npm; cần Claude Code đang hoạt động. So với Ruflo (trước là Claude-Flow) — một harness swarm và memory rộng hơn — OMC tập trung vào workflow team theo từng giai đoạn ngay trong Claude Code.\n\nKết hợp tốt với: Claude Code · Codex CLI · Gemini CLI · tmux",
           "sources": [
             {
-              "title": "Claude Squad GitHub",
-              "url": "https://github.com/smtg-ai/claude-squad"
+              "title": "GitHub",
+              "url": "https://github.com/Yeachan-Heo/oh-my-claudecode"
+            },
+            {
+              "title": "Documentation",
+              "url": "https://yeachan-heo.github.io/oh-my-claudecode-website"
             }
           ],
           "pricing": "free",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "managing multiple AI coding agents simultaneously",
-            "parallel task execution across branches",
-            "background code generation",
-            "multi-agent development with git isolation"
+            "Dùng Claude Code và muốn một team agent lập kế hoạch, xây và kiểm chứng task theo giai đoạn",
+            "Muốn giao task cho autopilot và nhận lại kết quả đã kiểm chứng",
+            "Muốn có worker Codex hoặc Gemini CLI chạy cùng Claude trong một workflow"
           ],
           "whenNotToUse": [
-            "single-task workflow",
-            "non-terminal environments",
-            "projects without git"
+            "Không dùng Claude Code (bản cho Codex là dự án riêng)",
+            "Cần nền tảng swarm/memory rộng cho nhiều agent — xem Ruflo (Claude-Flow)",
+            "Cần extension VS Code hoặc dịch vụ hosted — OMC là plugin và CLI terminal"
           ],
           "compatibleWith": [
             "claude-code",
             "codex-cli",
-            "opencode",
-            "gemini-cli",
-            "goose"
+            "gemini-cli"
           ],
           "useCases": [
+            "multi-agent-orchestration",
             "parallel-development",
-            "multi-agent-management",
-            "background-tasks",
-            "git-workflow"
+            "workflow-automation",
+            "code-review"
           ],
           "languages": [
-            "go"
+            "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 6574,
+          "github_stars": 40173,
           "license": "MIT"
         }
       ]
@@ -2346,7 +2344,7 @@
           ],
           "compatibleWith": [
             "crewai",
-            "autogen",
+            "microsoft-agent-framework",
             "langgraph",
             "openai-agents-sdk",
             "google-adk",
@@ -3134,7 +3132,7 @@
           "compatibleWith": [
             "litellm",
             "dify",
-            "flowise"
+            "anythingllm"
           ],
           "useCases": [
             "local-inference",
@@ -3446,62 +3444,64 @@
           "license": "Apache-2.0"
         },
         {
-          "name": "Flowise",
-          "slug": "flowise",
-          "added_date": "2026-02-08",
-          "desc": "Công cụ no-code kéo-thả xây LLM app và RAG pipeline trên LangChain — đã archive, hết vòng đời từ 08/2026",
-          "detail": "Tình trạng: Flowise đã ngừng phát triển. Workday mua Flowise vào 08/2025; ngày 29/07/2026 team đóng băng code, repo GitHub được archive trong 08/2026 và kết thúc vòng đời (end of life) ngày 31/08/2026. Code vẫn trên GitHub theo Apache 2.0 (trừ thư mục enterprise theo license thương mại) và team khuyên tự fork; không còn tính năng mới hay bản sửa lỗi. Flowise là gì: canvas trực quan trên nền LangChain — nối các node (LLM, retriever, memory, tool) thành luồng, xuất thành API endpoint và chạy bằng Docker hoặc npm. Có nhiều node tích hợp (document loader, text splitter, embedding model, vector store) và template cộng đồng. Với dự án mới, nên chọn công cụ còn được duy trì trong section này: Dify nếu cần visual builder, RAGFlow nếu RAG nặng về tài liệu.\n\nKết hợp tốt với (code đã archive): Hệ sinh thái LangChain · Ollama · Langfuse · Chroma/Milvus/Qdrant/pgvector",
+          "name": "AnythingLLM",
+          "slug": "anythingllm",
+          "added_date": "2026-10-22",
+          "desc": "Ứng dụng all-in-one ưu tiên chạy local để chat với tài liệu và chạy AI agent — bản desktop hoặc server Docker nhiều người dùng",
+          "detail": "AnythingLLM là ứng dụng mã nguồn mở (MIT) để chat với tài liệu của bạn và chạy AI agent mà không phải tự lắp stack. Cài bản desktop trên macOS, Windows hoặc Linux, hoặc chạy bản Docker — bản này thêm workspace nhiều người dùng có phân quyền và widget chat nhúng vào website; ngoài ra có bản hosted trả phí. Tài liệu (PDF, DOCX, TXT…) được chia theo workspace, câu trả lời kèm trích dẫn nguồn. Mặc định dùng engine model local tích hợp, embedder tích hợp và LanceDB làm vector store, nên chạy được hoàn toàn trên máy của bạn; cũng có thể nối LLM trên cloud (OpenAI, Anthropic, Gemini…), server local như Ollama hay LM Studio, và vector database như PGVector, Chroma, Qdrant, Milvus — khi đó dữ liệu đi tới dịch vụ bạn chọn. Agent duyệt web và gọi tool MCP được, tạo bằng flow builder không cần code. Telemetry ẩn danh bật mặc định, tắt được.\n\nKết hợp tốt với: Ollama · LiteLLM · LocalAI · PGVector/Chroma/Qdrant/Milvus",
           "sources": [
             {
-              "title": "GitHub (archived)",
-              "url": "https://github.com/FlowiseAI/Flowise"
-            },
-            {
-              "title": "Sunset notice",
-              "url": "https://flowiseai.com/sunset"
+              "title": "GitHub",
+              "url": "https://github.com/Mintplex-Labs/anything-llm"
             },
             {
               "title": "Website",
-              "url": "https://flowiseai.com"
+              "url": "https://anythingllm.com"
+            },
+            {
+              "title": "Docs",
+              "url": "https://docs.anythingllm.com"
             }
           ],
           "tags": [
-            "55.5K⭐",
-            "Archived"
+            "67K⭐",
+            "MIT"
           ],
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Đang chạy Flowise và cần thời gian lên kế hoạch chuyển đổi",
-            "Muốn tự fork và duy trì một visual builder LangChain theo Apache 2.0"
+            "Muốn chat riêng tư với tài liệu trên laptop, cài đặt tối thiểu",
+            "Team nhỏ cần trợ lý tài liệu dùng chung, tự host, có phân quyền người dùng",
+            "Muốn thử model local hoặc cloud trong một app trước khi tự xây RAG stack"
           ],
           "whenNotToUse": [
-            "Bắt đầu dự án mới — repo đã archive, không còn bản sửa lỗi",
-            "Cần hỗ trợ từ nhà phát triển hoặc cập nhật bảo mật",
-            "Cần xử lý tài liệu chuyên sâu (Flowise thiên về orchestration)"
+            "Cần phân tích sâu PDF, bảng, bản scan phức tạp — xem RAGFlow",
+            "Muốn thiết kế workflow AI nhiều bước rồi xuất bản thành app hoặc API — xem Dify",
+            "Cần truy xuất dựa trên đồ thị thực thể — xem LightRAG"
           ],
           "compatibleWith": [
             "ollama",
-            "langfuse",
-            "milvus",
+            "litellm",
+            "localai",
             "pgvector",
+            "chroma",
             "qdrant",
-            "chroma"
+            "milvus"
           ],
           "useCases": [
             "rag-pipeline",
+            "document-qa",
             "chatbot",
-            "ai-workflow",
-            "rapid-prototyping"
+            "knowledge-base"
           ],
           "languages": [
             "js"
           ],
           "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 55516,
-          "license": "Apache-2.0"
+          "github_stars": 67437,
+          "license": "MIT"
         },
         {
           "name": "LightRAG",
@@ -4238,20 +4238,20 @@
           }
         },
         {
-          "cardId": "flowise",
+          "cardId": "anythingllm",
           "values": {
-            "Phù hợp cho": "Đã archive (hết vòng đời 08/2026) — chỉ cho flow đang chạy; trước đây: prototype chatbot trực quan nhanh",
-            "No-code vs Code": "No-code: canvas kéo-thả trực quan, template có sẵn, setup nhanh nhất",
-            "Hiểu tài liệu": "Cơ bản: dựa trên LangChain document loaders, chunking tiêu chuẩn",
-            "Triển khai": "Tự host từ code đã archive (Docker · npm)",
+            "Phù hợp cho": "Chat riêng tư với tài liệu, ưu tiên chạy local, kèm agent — bản desktop hoặc server cho team",
+            "No-code vs Code": "No-code: app desktop và web UI, flow agent không cần code, kèm API cho developer",
+            "Hiểu tài liệu": "Tốt: các loại tài liệu phổ biến (PDF, DOCX, TXT…), trích dẫn nguồn, embedder local tích hợp",
+            "Triển khai": "Desktop (macOS · Windows · Linux) · Docker (nhiều người dùng) · bản hosted",
             "Tích hợp": [
-              "langchain",
-              "openai",
-              "anthropic",
+              "ollama",
+              "lancedb",
+              "pgvector",
               "qdrant",
-              "chroma"
+              "litellm"
             ],
-            "Giấy phép": "Apache-2.0 (thư mục enterprise theo license thương mại)"
+            "Giấy phép": "MIT"
           }
         },
         {
@@ -4433,7 +4433,7 @@
       "id": "frameworks",
       "title": "So sánh Agent Frameworks",
       "sectionId": "frameworks",
-      "as_of": "2026-10-20",
+      "as_of": "2026-10-22",
       "layout": "flip",
       "criteria": [
         "Phù hợp cho",
@@ -4469,21 +4469,21 @@
             "Độ khó": "Dễ",
             "Hệ sinh thái": "Tốt — framework độc lập, Flows + nền tảng CrewAI AMP, MCP + A2A",
             "Hỗ trợ Graph/Agent": "Tốt — Quy trình tuần tự/phân cấp, Flows theo sự kiện có state, routing và vòng lặp",
-            "Tích hợp Memory/RAG": "Mạnh — Hạng nhất: ngắn hạn (ChromaDB), dài hạn (SQLite3), entity memory, RagTool",
+            "Tích hợp Memory/RAG": "Mạnh — Memory hợp nhất, truy hồi theo phạm vi (tương đồng, độ mới, mức quan trọng; mặc định LanceDB), Knowledge sources, RagTool",
             "Ngôn ngữ": "Python",
             "Giấy phép": "MIT"
           }
         },
         {
-          "cardId": "autogen",
+          "cardId": "microsoft-agent-framework",
           "values": {
-            "Phù hợp cho": "Duy trì hệ thống AutoGen đang có (kế nhiệm: Microsoft Agent Framework)",
+            "Phù hợp cho": "Agent production và workflow dạng graph trên .NET hoặc Python; kế nhiệm AutoGen",
             "Độ khó": "Trung bình",
-            "Hệ sinh thái": "Chế độ bảo trì — cộng đồng quản lý; Microsoft Agent Framework là bản kế nhiệm",
-            "Hỗ trợ Graph/Agent": "Tốt — Teams và group chat trong AgentChat, runtime Core theo sự kiện",
-            "Tích hợp Memory/RAG": "Cơ bản — memory và RAG qua extensions và công cụ bên ngoài",
-            "Ngôn ngữ": "Python",
-            "Giấy phép": "MIT (code)"
+            "Hệ sinh thái": "Mạnh — Microsoft hậu thuẫn, hướng dẫn chuyển từ AutoGen và Semantic Kernel, host agent trên Foundry, DevUI",
+            "Hỗ trợ Graph/Agent": "Mạnh — Workflow dạng graph (tuần tự, song song, handoff, group chat), human-in-the-loop, A2A",
+            "Tích hợp Memory/RAG": "Tốt — Quản lý trạng thái cho workflow chạy lâu, context provider, tool MCP",
+            "Ngôn ngữ": "Đa ngôn ngữ (Python, .NET; Go đang preview)",
+            "Giấy phép": "MIT"
           }
         },
         {
@@ -4523,15 +4523,15 @@
           }
         },
         {
-          "cardId": "rasa",
+          "cardId": "agentscope",
           "values": {
-            "Phù hợp cho": "AI hội thoại doanh nghiệp với logic nghiệp vụ nghiêm ngặt",
-            "Độ khó": "Khó",
-            "Hệ sinh thái": "Mạnh — Rasa Pro + CALM, Studio; Rasa Open Source ở chế độ bảo trì",
-            "Hỗ trợ Graph/Agent": "Tốt — Hội thoại theo flow; CALM kết hợp LLM hiểu ý với logic nghiệp vụ xác định; sub-agent A2A/MCP",
-            "Tích hợp Memory/RAG": "Cơ bản — Theo dõi trạng thái hội thoại (slot filling), không có RAG pipeline tích hợp",
+            "Phù hợp cho": "Ứng dụng agent cần sẵn lớp service (session, web UI, team) và tool chạy trong sandbox",
+            "Độ khó": "Trung bình",
+            "Hệ sinh thái": "Tốt — agent service có web UI, MCP và skill hub, kênh IM; bản Java ở repo riêng",
+            "Hỗ trợ Graph/Agent": "Tốt — ReAct agent, agent team kiểu leader–worker, pipeline, agent từ xa qua A2A",
+            "Tích hợp Memory/RAG": "Tốt — Backend long-term memory (ReMe, Mem0), RAG service, nén ngữ cảnh",
             "Ngôn ngữ": "Python",
-            "Giấy phép": "Rasa Pro: cần license key (Developer Edition miễn phí); OSS: Apache 2.0"
+            "Giấy phép": "Apache 2.0"
           }
         },
         {
