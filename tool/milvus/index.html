@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Milvus — See AI First</title>
-<meta name="description" content="Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation">
+<meta name="description" content="Open-source, cloud-native vector database for large-scale search — a graduated LF AI &amp; Data Foundation project">
 <meta property="og:title" content="Milvus — See AI First">
-<meta property="og:description" content="Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation">
+<meta property="og:description" content="Open-source, cloud-native vector database for large-scale search — a graduated LF AI &amp; Data Foundation project">
 <meta property="og:url" content="https://seeaifirst.com/tool/milvus">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Milvus — See AI First">
-<meta name="twitter:description" content="Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation">
+<meta name="twitter:description" content="Open-source, cloud-native vector database for large-scale search — a graduated LF AI &amp; Data Foundation project">
 <link rel="canonical" href="https://seeaifirst.com/tool/milvus">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Milvus","url":"https://seeaifirst.com/tool/milvus","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation","keywords":["Vector Databases — Vector Storage & Search","python","go","java"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/milvus-io/milvus","https://milvus.io","https://zilliz.com"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Milvus","url":"https://seeaifirst.com/tool/milvus","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source, cloud-native vector database for large-scale search — a graduated LF AI & Data Foundation project","keywords":["Vector Databases — Vector Storage & Search","python","go","java"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/milvus-io/milvus","https://milvus.io","https://zilliz.com"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/vector-databases">Vector Databases — Vector Storage &amp; Search</a> › Milvus</nav>
     <article>
       <h1>Milvus</h1>
-      <p>Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation</p>
-      <p>Milvus is a vector database designed for large scale from the ground up: distributed architecture on Kubernetes, supporting storage and search of billions of vectors with sub-millisecond latency. Offers the widest range of index types among vector DBs (IVF, HNSW, DiskANN, PQ...), allowing trade-offs between speed, accuracy and cost per use case. A graduated project of the LF AI &amp; Data Foundation (Linux Foundation), ensuring strong governance and sustainable development. Cloud version Zilliz provides a managed service. Practical applications: large-scale recommendation systems, image/video similarity search, semantic search for enterprises with millions of documents, or any problem requiring similarity search over large datasets. Works well with: LangChain · LlamaIndex · Dify · RAGFlow · Towhee (ETL pipeline) · Any embedding model (OpenAI, Cohere, HuggingFace)</p>
+      <p>Open-source, cloud-native vector database for large-scale search — a graduated LF AI &amp; Data Foundation project</p>
+      <p>Milvus is a vector database designed for scale: it runs as an embedded library (Milvus Lite), a single Docker container, or a distributed cluster on Kubernetes that scales horizontally to billions of vectors. It supports many index types (HNSW, IVF, DiskANN and quantized variants), dense and sparse vectors, full-text (BM25) and hybrid search, and metadata filtering, so you can trade off speed, recall and cost per workload. Its 2026 major release went &#039;lake-native&#039;: Milvus can query data kept in external Parquet, Lance, Iceberg or Vortex files in place, add or drop fields online, and take snapshots. Milvus is a graduated project of the LF AI &amp; Data Foundation; Zilliz offers it as a managed service (Zilliz Cloud, with a free tier). Practical applications: large-scale recommendation, image and video similarity search, semantic search over millions of documents, and multi-tenant RAG backends. Works well with: LlamaIndex · Dify · LightRAG · LangChain · Any embedding model (OpenAI, Cohere, Hugging Face)</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Vector search at very large scale (billions of vectors)</li>
+        <li>Hybrid search combining keyword (BM25) and semantic retrieval</li>
+        <li>Multi-tenant production workloads with strict performance needs</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>A small prototype that needs the simplest possible setup</li>
+        <li>You already run PostgreSQL and only need basic vector search</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Open core</dd>
@@ -1100,13 +1111,13 @@ html, body {
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>python, go, java</dd>
         <dt>Use cases</dt><dd>vector search, rag pipeline, recommendation system, image search</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
-        <li><a href="/tool/langgraph">LangGraph</a></li>
         <li><a href="/tool/llamaindex">LlamaIndex</a></li>
         <li><a href="/tool/dify">Dify</a></li>
+        <li><a href="/tool/lightrag">LightRAG</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>

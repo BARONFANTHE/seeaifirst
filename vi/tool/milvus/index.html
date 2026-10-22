@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Milvus — See AI First</title>
-<meta name="description" content="Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation">
+<meta name="description" content="Vector database mã nguồn mở, cloud-native cho tìm kiếm quy mô lớn — dự án tốt nghiệp của LF AI &amp; Data Foundation">
 <meta property="og:title" content="Milvus — See AI First">
-<meta property="og:description" content="Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation">
+<meta property="og:description" content="Vector database mã nguồn mở, cloud-native cho tìm kiếm quy mô lớn — dự án tốt nghiệp của LF AI &amp; Data Foundation">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/milvus">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Milvus — See AI First">
-<meta name="twitter:description" content="Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation">
+<meta name="twitter:description" content="Vector database mã nguồn mở, cloud-native cho tìm kiếm quy mô lớn — dự án tốt nghiệp của LF AI &amp; Data Foundation">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/milvus">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Milvus","url":"https://seeaifirst.com/vi/tool/milvus","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation","keywords":["Vector Databases — Lưu trữ & Tìm kiếm Vector","python","go","java"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/milvus-io/milvus","https://milvus.io","https://zilliz.com"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Milvus","url":"https://seeaifirst.com/vi/tool/milvus","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Vector database mã nguồn mở, cloud-native cho tìm kiếm quy mô lớn — dự án tốt nghiệp của LF AI & Data Foundation","keywords":["Vector Databases — Lưu trữ & Tìm kiếm Vector","python","go","java"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/milvus-io/milvus","https://milvus.io","https://zilliz.com"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,18 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/vector-databases">Vector Databases — Lưu trữ &amp; Tìm kiếm Vector</a> › Milvus</nav>
     <article>
       <h1>Milvus</h1>
-      <p>Vector database mã nguồn mở lớn nhất — cloud-native, scale tỷ vectors, nền tảng LF AI Foundation</p>
-      <p>Milvus là vector database được thiết kế cho quy mô lớn từ đầu: kiến trúc distributed trên Kubernetes, hỗ trợ lưu trữ và tìm kiếm hàng tỷ vectors với latency dưới mili-giây. Cung cấp nhiều loại index nhất trong các vector DB (IVF, HNSW, DiskANN, PQ...), cho phép cân bằng giữa tốc độ, accuracy và chi phí tùy use case. Là dự án tốt nghiệp của LF AI &amp; Data Foundation (Linux Foundation), đảm bảo governance và phát triển bền vững. Cloud version Zilliz cung cấp managed service. Ứng dụng thực tế: recommendation systems quy mô lớn, image/video similarity search, semantic search cho enterprise với hàng triệu documents, hoặc bất kỳ bài toán nào cần tìm kiếm tương tự trên dữ liệu lớn. Kết hợp tốt với: LangChain · LlamaIndex · Dify · RAGFlow · Towhee (ETL pipeline) · Bất kỳ embedding model nào (OpenAI, Cohere, HuggingFace)</p>
+      <p>Vector database mã nguồn mở, cloud-native cho tìm kiếm quy mô lớn — dự án tốt nghiệp của LF AI &amp; Data Foundation</p>
+      <p>Milvus là vector database thiết kế cho quy mô lớn: chạy dạng thư viện nhúng (Milvus Lite), một container Docker, hoặc cluster phân tán trên Kubernetes mở rộng ngang tới hàng tỷ vector. Hỗ trợ nhiều loại index (HNSW, IVF, DiskANN và các biến thể lượng tử hóa), vector dense và sparse, full-text (BM25) và hybrid search, lọc metadata — cho phép cân bằng tốc độ, độ chính xác và chi phí theo từng bài toán. Bản lớn năm 2026 chuyển sang hướng &quot;lake-native&quot;: Milvus truy vấn trực tiếp dữ liệu nằm trong file Parquet, Lance, Iceberg hoặc Vortex bên ngoài, thêm/bớt field khi đang chạy, và tạo snapshot. Milvus là dự án tốt nghiệp (graduated) của LF AI &amp; Data Foundation; Zilliz cung cấp bản managed (Zilliz Cloud, có gói miễn phí). Ứng dụng thực tế: hệ gợi ý quy mô lớn, tìm kiếm ảnh/video tương tự, semantic search trên hàng triệu tài liệu, và backend RAG multi-tenant. Kết hợp tốt với: LlamaIndex · Dify · LightRAG · LangChain · Mọi embedding model (OpenAI, Cohere, Hugging Face)</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>vector search quy mô lớn hàng tỷ vectors</li>
-        <li>hybrid search kết hợp keyword và semantic</li>
-        <li>multi-tenant production với yêu cầu cao</li>
+        <li>Vector search quy mô rất lớn (hàng tỷ vector)</li>
+        <li>Hybrid search kết hợp từ khóa (BM25) và ngữ nghĩa</li>
+        <li>Production multi-tenant với yêu cầu hiệu năng cao</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>prototype nhỏ cần setup đơn giản</li>
-        <li>đã có PostgreSQL và chỉ cần basic vector search</li>
+        <li>Prototype nhỏ cần setup đơn giản nhất</li>
+        <li>Đã có PostgreSQL và chỉ cần vector search cơ bản</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1111,13 +1111,13 @@ html, body {
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
         <dt>Ngôn ngữ</dt><dd>python, go, java</dd>
         <dt>Ứng dụng</dt><dd>vector search, rag pipeline, recommendation system, image search</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-22 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
-        <li><a href="/vi/tool/langgraph">LangGraph</a></li>
         <li><a href="/vi/tool/llamaindex">LlamaIndex</a></li>
         <li><a href="/vi/tool/dify">Dify</a></li>
+        <li><a href="/vi/tool/lightrag">LightRAG</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>

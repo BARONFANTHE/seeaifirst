@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>RAGFlow — See AI First</title>
-<meta name="description" content="Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations">
+<meta name="description" content="Open-source RAG engine built on deep document understanding — layout-aware parsing, template chunking, grounded citations">
 <meta property="og:title" content="RAGFlow — See AI First">
-<meta property="og:description" content="Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations">
+<meta property="og:description" content="Open-source RAG engine built on deep document understanding — layout-aware parsing, template chunking, grounded citations">
 <meta property="og:url" content="https://seeaifirst.com/tool/ragflow">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="RAGFlow — See AI First">
-<meta name="twitter:description" content="Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations">
+<meta name="twitter:description" content="Open-source RAG engine built on deep document understanding — layout-aware parsing, template chunking, grounded citations">
 <link rel="canonical" href="https://seeaifirst.com/tool/ragflow">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"RAGFlow","url":"https://seeaifirst.com/tool/ragflow","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations","keywords":["RAG Systems — Retrieval-Augmented Generation","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/infiniflow/ragflow","https://ragflow.io","https://demo.ragflow.io"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"RAGFlow","url":"https://seeaifirst.com/tool/ragflow","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source RAG engine built on deep document understanding — layout-aware parsing, template chunking, grounded citations","keywords":["RAG Systems — Retrieval-Augmented Generation","python","go","js"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/infiniflow/ragflow","https://ragflow.io","https://cloud.ragflow.io"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,24 +1090,34 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> › RAGFlow</nav>
     <article>
       <h1>RAGFlow</h1>
-      <p>Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations</p>
-      <p>RAGFlow is a RAG engine focused on document processing quality — the step often overlooked but responsible for 80% of answer accuracy. The system automatically analyzes complex document structures: tables, images, scanned PDFs, slides — and chunks by template with visual preview so users can intervene when needed. Every answer comes with specific source citations (grounded citations), significantly reducing hallucination. Integrated agent toolkit enables not just text retrieval but also external API and tool calls. Real-world use cases: enterprise internal Q&amp;A systems handling contracts, technical reports, legal documents — the kinds of documents where simple chunking yields poor results. Works well with: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Any LLM provider (OpenAI, Claude, Gemini)</p>
+      <p>Open-source RAG engine built on deep document understanding — layout-aware parsing, template chunking, grounded citations</p>
+      <p>RAGFlow is a RAG engine focused on document-processing quality, the step that most often decides whether answers are right. Its DeepDoc pipeline parses complex documents — tables, images, scanned PDFs, slides — with OCR and layout recognition, then chunks them by template with a visual preview so users can adjust the result. Every answer carries citations back to the source chunks, which makes hallucinations easier to spot. Beyond retrieval it offers an agent builder with tool calls, agentic retrieval with selectable reasoning depth, and knowledge compilation into wikis, graphs, mind maps and timelines. Documents are indexed in Elasticsearch by default, with Infinity as an alternative engine. Self-host it with Docker Compose (Apache 2.0) or use the official RAGFlow Cloud, which has a free plan and paid team plans. Real-world use cases: enterprise Q&amp;A over contracts, technical reports and legal documents — documents where naive chunking gives poor answers. Works well with: Ollama (LLM backend) · Elasticsearch/Infinity (document engine) · Dify (as an external knowledge base) · Any LLM provider (OpenAI, Claude, Gemini)</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You need a RAG engine that handles complex documents (PDFs, tables, scans)</li>
+        <li>You want deep document understanding that you can fully self-host</li>
+        <li>You need traceable citations for every answer</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You want a no-code builder for a non-technical team</li>
+        <li>You want a minimal setup — self-hosting runs Elasticsearch, MySQL, MinIO and other services and needs a well-provisioned server</li>
+        <li>You want to store vectors in a specific database such as Milvus or Qdrant (RAGFlow uses its own document engines)</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
-        <dt>Pricing</dt><dd>Free</dd>
-        <dt>Deployment</dt><dd>Self-hosted</dd>
+        <dt>Pricing</dt><dd>Open core</dd>
+        <dt>Deployment</dt><dd>Hybrid</dd>
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>License</dt><dd>Apache-2.0</dd>
-        <dt>Languages</dt><dd>python, js</dd>
+        <dt>Languages</dt><dd>python, go, js</dd>
         <dt>Use cases</dt><dd>rag pipeline, document qa, knowledge base, enterprise search</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/ollama">Ollama</a></li>
         <li><a href="/tool/dify">Dify</a></li>
-        <li><a href="/tool/milvus">Milvus</a></li>
-        <li><a href="/tool/deepeval">DeepEval</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
@@ -1121,7 +1131,7 @@ html, body {
       <ul>
         <li><a href="https://github.com/infiniflow/ragflow" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://ragflow.io" rel="noopener noreferrer">Website</a></li>
-        <li><a href="https://demo.ragflow.io" rel="noopener noreferrer">Demo</a></li>
+        <li><a href="https://cloud.ragflow.io" rel="noopener noreferrer">RAGFlow Cloud</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> on See AI First.</p>

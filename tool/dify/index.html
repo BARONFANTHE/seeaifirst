@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Dify — See AI First</title>
-<meta name="description" content="Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline">
+<meta name="description" content="Open-source platform for building AI apps and agents with a visual workflow builder and built-in RAG pipeline">
 <meta property="og:title" content="Dify — See AI First">
-<meta property="og:description" content="Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline">
+<meta property="og:description" content="Open-source platform for building AI apps and agents with a visual workflow builder and built-in RAG pipeline">
 <meta property="og:url" content="https://seeaifirst.com/tool/dify">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Dify — See AI First">
-<meta name="twitter:description" content="Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline">
+<meta name="twitter:description" content="Open-source platform for building AI apps and agents with a visual workflow builder and built-in RAG pipeline">
 <link rel="canonical" href="https://seeaifirst.com/tool/dify">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Dify","url":"https://seeaifirst.com/tool/dify","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline","keywords":["RAG Systems — Retrieval-Augmented Generation","python","js"],"isAccessibleForFree":true,"license":"Dify-OSL","sameAs":["https://github.com/langgenius/dify","https://dify.ai","https://docs.dify.ai"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Dify","url":"https://seeaifirst.com/tool/dify","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source platform for building AI apps and agents with a visual workflow builder and built-in RAG pipeline","keywords":["RAG Systems — Retrieval-Augmented Generation","python","js"],"isAccessibleForFree":true,"license":"Dify-OSL","sameAs":["https://github.com/langgenius/dify","https://dify.ai","https://docs.dify.ai"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,20 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/rag-systems">RAG Systems — Retrieval-Augmented Generation</a> › Dify</nav>
     <article>
       <h1>Dify</h1>
-      <p>Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline</p>
-      <p>Dify is an all-in-one platform for creating AI applications from chatbots to complex agents without writing much code. Its core strength is a drag-and-drop visual workflow builder — users drag nodes (LLM, retrieval, tool, logic) to design complete processing flows. Built-in RAG pipeline: upload documents, automatic chunking, embedding, and retrieval — no separate vector DB setup needed. Supports 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click production deployment, and a monitoring dashboard for tracking usage/cost. Real-world use cases: building internal knowledge base chatbots for enterprises, automated customer support, AI assistants for processing internal documents, or rapidly prototyping AI app ideas before investing in custom development. Note: Dify is a broad-scope platform (RAG + agent + workflow), its license has Additional Terms beyond Apache 2.0 — check before commercial use. Works well with: Ollama (local LLM) · Langfuse (advanced observability) · Milvus/Qdrant (replace default vector DB) · MCP (extend tool access)</p>
+      <p>Open-source platform for building AI apps and agents with a visual workflow builder and built-in RAG pipeline</p>
+      <p>Dify is an all-in-one platform for building AI applications, from chatbots to agents, with little code. Its core is a drag-and-drop visual workflow builder: connect nodes (LLM, knowledge retrieval, tools, logic) into a complete flow and publish it as an app or API. The built-in RAG pipeline handles upload, chunking, embedding and retrieval with hybrid search and reranking; the default Docker Compose stack bundles a vector store (Weaviate), and you can switch to Milvus, Qdrant, pgvector, Chroma and others. Agents can call Marketplace tools and MCP servers and run commands in their own sandbox. Model providers (OpenAI, Anthropic, Gemini, Ollama, any OpenAI-compatible endpoint) are installed as plugins. LLMOps logs and annotations are built in, with tracing integrations such as Langfuse, Opik and Arize Phoenix. Run it with Docker Compose, use Dify Cloud, or use Dify Enterprise for self-hosted organisations. Real-world use cases: internal knowledge-base chatbots, customer-support assistants, document-processing workflows, and prototyping AI app ideas before building custom code. Note: the Dify Open Source License is Apache 2.0 plus conditions — running a multi-tenant service needs written permission and the frontend logo and copyright must stay — check it before commercial use. Works well with: Ollama (local LLM) · Langfuse (observability) · Milvus/Qdrant/pgvector (replace the default vector store) · LiteLLM (model gateway) · MCP (tool access)</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You need a visual workflow builder for RAG apps and AI agents</li>
+        <li>You want to take an LLM app from prototype to production quickly (self-host or Dify Cloud)</li>
+        <li>Your team wants RAG, model management, agents and LLMOps in one platform</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You need a pure OSI license for a multi-tenant SaaS (the Dify license requires written permission)</li>
+        <li>You only need a lightweight RAG engine, not a full platform</li>
+        <li>You want a minimal stack — the default deployment runs PostgreSQL or MySQL, Redis, Weaviate, a code sandbox and a plugin daemon</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Open core</dd>
@@ -1100,7 +1112,7 @@ html, body {
         <dt>License</dt><dd>Dify-OSL</dd>
         <dt>Languages</dt><dd>python, js</dd>
         <dt>Use cases</dt><dd>rag pipeline, chatbot, ai workflow, document qa</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>

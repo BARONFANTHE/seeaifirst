@@ -3330,8 +3330,8 @@
           "slug": "dify",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "Open-source platform for building AI apps with visual workflow builder and built-in RAG pipeline",
-          "detail": "Dify is an all-in-one platform for creating AI applications from chatbots to complex agents without writing much code. Its core strength is a drag-and-drop visual workflow builder — users drag nodes (LLM, retrieval, tool, logic) to design complete processing flows. Built-in RAG pipeline: upload documents, automatic chunking, embedding, and retrieval — no separate vector DB setup needed. Supports 100+ LLM providers (OpenAI, Claude, Gemini, open-source models), one-click production deployment, and a monitoring dashboard for tracking usage/cost. Real-world use cases: building internal knowledge base chatbots for enterprises, automated customer support, AI assistants for processing internal documents, or rapidly prototyping AI app ideas before investing in custom development. Note: Dify is a broad-scope platform (RAG + agent + workflow), its license has Additional Terms beyond Apache 2.0 — check before commercial use.\n\nWorks well with: Ollama (local LLM) · Langfuse (advanced observability) · Milvus/Qdrant (replace default vector DB) · MCP (extend tool access)",
+          "desc": "Open-source platform for building AI apps and agents with a visual workflow builder and built-in RAG pipeline",
+          "detail": "Dify is an all-in-one platform for building AI applications, from chatbots to agents, with little code. Its core is a drag-and-drop visual workflow builder: connect nodes (LLM, knowledge retrieval, tools, logic) into a complete flow and publish it as an app or API. The built-in RAG pipeline handles upload, chunking, embedding and retrieval with hybrid search and reranking; the default Docker Compose stack bundles a vector store (Weaviate), and you can switch to Milvus, Qdrant, pgvector, Chroma and others. Agents can call Marketplace tools and MCP servers and run commands in their own sandbox. Model providers (OpenAI, Anthropic, Gemini, Ollama, any OpenAI-compatible endpoint) are installed as plugins. LLMOps logs and annotations are built in, with tracing integrations such as Langfuse, Opik and Arize Phoenix. Run it with Docker Compose, use Dify Cloud, or use Dify Enterprise for self-hosted organisations. Real-world use cases: internal knowledge-base chatbots, customer-support assistants, document-processing workflows, and prototyping AI app ideas before building custom code. Note: the Dify Open Source License is Apache 2.0 plus conditions — running a multi-tenant service needs written permission and the frontend logo and copyright must stay — check it before commercial use.\n\nWorks well with: Ollama (local LLM) · Langfuse (observability) · Milvus/Qdrant/pgvector (replace the default vector store) · LiteLLM (model gateway) · MCP (tool access)",
           "sources": [
             {
               "title": "GitHub",
@@ -3347,21 +3347,21 @@
             }
           ],
           "tags": [
-            "134.5K⭐",
-            "Apache 2.0+"
+            "159K⭐",
+            "Dify OSL"
           ],
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần visual workflow builder cho RAG và AI agents",
-            "Muốn deploy nhanh ứng dụng LLM từ prototype đến production",
-            "Team cần platform tích hợp sẵn RAG pipeline, model management, observability"
+            "You need a visual workflow builder for RAG apps and AI agents",
+            "You want to take an LLM app from prototype to production quickly (self-host or Dify Cloud)",
+            "Your team wants RAG, model management, agents and LLMOps in one platform"
           ],
           "whenNotToUse": [
-            "Cần license OSS thuần cho multi-tenant SaaS (Dify-OSL có điều kiện bổ sung)",
-            "Chỉ cần RAG engine nhẹ, không cần full platform",
-            "Muốn stack tối giản, tránh phụ thuộc nhiều service (PostgreSQL, Redis, MinIO)"
+            "You need a pure OSI license for a multi-tenant SaaS (the Dify license requires written permission)",
+            "You only need a lightweight RAG engine, not a full platform",
+            "You want a minimal stack — the default deployment runs PostgreSQL or MySQL, Redis, Weaviate, a code sandbox and a plugin daemon"
           ],
           "compatibleWith": [
             "ollama",
@@ -3382,9 +3382,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 134720,
+          "github_stars": 159117,
           "license": "Dify-OSL"
         },
         {
@@ -3392,8 +3392,8 @@
           "slug": "ragflow",
           "hot": true,
           "added_date": "2026-02-08",
-          "desc": "Open-source RAG engine specializing in deep document understanding — smart chunking, grounded citations",
-          "detail": "RAGFlow is a RAG engine focused on document processing quality — the step often overlooked but responsible for 80% of answer accuracy. The system automatically analyzes complex document structures: tables, images, scanned PDFs, slides — and chunks by template with visual preview so users can intervene when needed. Every answer comes with specific source citations (grounded citations), significantly reducing hallucination. Integrated agent toolkit enables not just text retrieval but also external API and tool calls. Real-world use cases: enterprise internal Q&A systems handling contracts, technical reports, legal documents — the kinds of documents where simple chunking yields poor results.\n\nWorks well with: Ollama/vLLM (LLM backend) · Milvus/Qdrant (vector storage) · Elasticsearch (hybrid search) · Any LLM provider (OpenAI, Claude, Gemini)",
+          "desc": "Open-source RAG engine built on deep document understanding — layout-aware parsing, template chunking, grounded citations",
+          "detail": "RAGFlow is a RAG engine focused on document-processing quality, the step that most often decides whether answers are right. Its DeepDoc pipeline parses complex documents — tables, images, scanned PDFs, slides — with OCR and layout recognition, then chunks them by template with a visual preview so users can adjust the result. Every answer carries citations back to the source chunks, which makes hallucinations easier to spot. Beyond retrieval it offers an agent builder with tool calls, agentic retrieval with selectable reasoning depth, and knowledge compilation into wikis, graphs, mind maps and timelines. Documents are indexed in Elasticsearch by default, with Infinity as an alternative engine. Self-host it with Docker Compose (Apache 2.0) or use the official RAGFlow Cloud, which has a free plan and paid team plans. Real-world use cases: enterprise Q&A over contracts, technical reports and legal documents — documents where naive chunking gives poor answers.\n\nWorks well with: Ollama (LLM backend) · Elasticsearch/Infinity (document engine) · Dify (as an external knowledge base) · Any LLM provider (OpenAI, Claude, Gemini)",
           "sources": [
             {
               "title": "GitHub",
@@ -3404,32 +3404,30 @@
               "url": "https://ragflow.io"
             },
             {
-              "title": "Demo",
-              "url": "https://demo.ragflow.io"
+              "title": "RAGFlow Cloud",
+              "url": "https://cloud.ragflow.io"
             }
           ],
           "tags": [
-            "76K⭐",
+            "92.5K⭐",
             "Apache 2.0"
           ],
-          "pricing": "free",
-          "deployment": "self-hosted",
+          "pricing": "open-core",
+          "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần RAG engine chuyên sâu xử lý tài liệu phức tạp (PDF, bảng, scan)",
-            "Muốn self-host hoàn toàn với deep document understanding",
-            "Cần traceable citations và giải thích kết quả truy vấn"
+            "You need a RAG engine that handles complex documents (PDFs, tables, scans)",
+            "You want deep document understanding that you can fully self-host",
+            "You need traceable citations for every answer"
           ],
           "whenNotToUse": [
-            "Muốn managed cloud service (RAGFlow chưa có official cloud offering)",
-            "Cần setup tối giản — RAGFlow yêu cầu Elasticsearch, MinIO, MySQL",
-            "Team nhỏ muốn low-code/no-code builder"
+            "You want a no-code builder for a non-technical team",
+            "You want a minimal setup — self-hosting runs Elasticsearch, MySQL, MinIO and other services and needs a well-provisioned server",
+            "You want to store vectors in a specific database such as Milvus or Qdrant (RAGFlow uses its own document engines)"
           ],
           "compatibleWith": [
             "ollama",
-            "dify",
-            "milvus",
-            "deepeval"
+            "dify"
           ],
           "useCases": [
             "rag-pipeline",
@@ -3439,23 +3437,28 @@
           ],
           "languages": [
             "python",
+            "go",
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 76386,
+          "github_stars": 92635,
           "license": "Apache-2.0"
         },
         {
           "name": "Flowise",
           "slug": "flowise",
           "added_date": "2026-02-08",
-          "desc": "No-code tool for building RAG pipelines and LLM apps with drag-and-drop UI — built on LangChain",
-          "detail": "Flowise turns LangChain into a visual drag-drop interface — users drag and connect nodes (LLM, retriever, memory, tools) to create complete pipelines without writing Python code. Each flow can be exported as an API endpoint and deployed with a single Docker command. Supports over 100 built-in integration nodes: from document loaders, text splitters, embedding models to vector stores and output parsers. A community marketplace provides ready-made templates for common use cases. Practical applications: rapid prototyping of RAG chatbots, building internal tools for non-technical teams, or using as a visual debugging tool to understand data flow in RAG pipelines before writing production code.\n\nWorks well with: LangChain ecosystem · OpenAI/Claude APIs · Chroma/Milvus/Qdrant (vector stores) · Any LLM supported by LangChain",
+          "desc": "No-code drag-and-drop builder for LLM apps and RAG pipelines on LangChain — archived, end of life since August 2026",
+          "detail": "Status: Flowise has been sunset. Workday acquired Flowise in August 2025; on 29 July 2026 the team froze the code, the GitHub repository was archived in August 2026, and end of life was 31 August 2026. The code stays on GitHub under Apache 2.0 (apart from an enterprise directory under a commercial licence) and the team suggests forking it; no new features or fixes are planned. What it is: a visual canvas on top of LangChain — connect nodes (LLM, retriever, memory, tools) into a flow, expose it as an API endpoint and run it with Docker or npm. It shipped many integration nodes (document loaders, text splitters, embedding models, vector stores) and community templates. For new projects, pick a maintained tool in this section: Dify for a visual builder, RAGFlow for document-heavy RAG.\n\nWorks well with (archived code): LangChain ecosystem · Ollama · Langfuse · Chroma/Milvus/Qdrant/pgvector",
           "sources": [
             {
-              "title": "GitHub",
+              "title": "GitHub (archived)",
               "url": "https://github.com/FlowiseAI/Flowise"
+            },
+            {
+              "title": "Sunset notice",
+              "url": "https://flowiseai.com/sunset"
             },
             {
               "title": "Website",
@@ -3463,21 +3466,20 @@
             }
           ],
           "tags": [
-            "51K⭐",
-            "Apache 2.0"
+            "55.5K⭐",
+            "Archived"
           ],
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "Cần low-code/no-code builder để prototype AI workflows nhanh",
-            "Muốn drag-and-drop UI tích hợp LangChain components",
-            "Team ít kinh nghiệm code muốn xây chatbot hoặc RAG pipeline"
+            "You already run Flowise and need time to plan a migration",
+            "You want to fork and maintain an Apache-2.0 visual LangChain builder yourself"
           ],
           "whenNotToUse": [
-            "Cần custom logic phức tạp vượt khả năng visual builder",
-            "Yêu cầu governance và audit trail nâng cao (cần Enterprise plan)",
-            "Muốn deep document processing chuyên sâu (Flowise thiên về orchestration)"
+            "You are starting a new project — the repository is archived and gets no fixes",
+            "You need vendor support or security updates",
+            "You need deep document processing (Flowise focused on orchestration)"
           ],
           "compatibleWith": [
             "ollama",
@@ -3496,43 +3498,43 @@
           "languages": [
             "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 51040,
+          "github_stars": 55516,
           "license": "Apache-2.0"
         },
         {
           "name": "LightRAG",
           "slug": "lightrag",
           "added_date": "2026-02-08",
-          "desc": "Lightweight RAG framework based on knowledge graphs — GraphRAG approach from HKU research (EMNLP 2025)",
-          "detail": "LightRAG takes a fundamentally different approach from traditional RAG: instead of relying solely on vector search, the system automatically builds a knowledge graph from documents — identifying entities and relationships between them — then combines graph traversal with vector retrieval for more accurate answers. Originating from research at the University of Hong Kong, the paper was accepted at EMNLP 2025, with benchmarks showing it outperforms many other RAG methods across multiple evaluation dimensions. Lightweight by design, it runs on regular CPU/laptop without requiring a GPU. Practical applications: knowledge management systems, research Q&A requiring understanding of relationships between concepts, or any problem where \"who is related to whom/what\" matters more than \"which text chunks are similar\".\n\nWorks well with: Ollama (local LLM) · Neo4j (advanced graph storage) · LlamaIndex (see Agent Frameworks) · OpenAI/Claude APIs",
+          "desc": "Lightweight graph-based RAG framework — builds a knowledge graph from documents (HKU research, Findings of EMNLP 2025)",
+          "detail": "LightRAG takes a different approach from plain vector RAG: it uses an LLM to extract entities and the relationships between them from documents, builds a knowledge graph, and combines graph traversal with vector retrieval at local and global levels when answering. It comes from research at the University of Hong Kong; the paper, published in Findings of EMNLP 2025, reports better results than several baseline RAG methods. Use it as a Python library or run LightRAG Server, which provides a REST API and a web UI for managing documents and querying the graph. Storage is pluggable: in-memory defaults for testing, and PostgreSQL (recommended for production), Neo4j, Memgraph, MongoDB, OpenSearch, Milvus or Qdrant for real workloads. Practical applications: knowledge management, research Q&A that depends on relationships between concepts, or any problem where 'who is related to what' matters more than 'which chunks are similar'.\n\nWorks well with: Ollama (local LLM) · PostgreSQL/pgvector (production storage) · Neo4j (graph storage) · LlamaIndex (see Agent Frameworks)",
           "sources": [
             {
               "title": "GitHub",
               "url": "https://github.com/HKUDS/LightRAG"
             },
             {
-              "title": "Paper (EMNLP 2025)",
+              "title": "Paper (Findings of EMNLP 2025)",
               "url": "https://aclanthology.org/2025.findings-emnlp.568/"
             }
           ],
           "tags": [
-            "30K⭐",
+            "40K⭐",
             "MIT"
           ],
           "pricing": "free",
-          "deployment": "local",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần graph-based RAG với knowledge graph tự động từ tài liệu",
-            "Muốn framework nhẹ, dễ tích hợp vào codebase Python hiện có",
-            "Research hoặc prototype cần so sánh graph RAG vs vector RAG"
+            "You need graph-based RAG with a knowledge graph built automatically from documents",
+            "You want a lightweight engine you can embed in Python or call over a REST API",
+            "You are comparing graph RAG with vector RAG in research or a prototype"
           ],
           "whenNotToUse": [
-            "Muốn UI quản lý sẵn — LightRAG là thư viện code-first",
-            "Cần production platform với monitoring và team collaboration",
-            "Team chưa quen concepts knowledge graph và entity extraction"
+            "You need a full team platform with an app builder, user management and monitoring",
+            "Your team is not ready to tune entity extraction and knowledge-graph quality",
+            "You need low indexing cost — building the graph calls the LLM for every document"
           ],
           "compatibleWith": [
             "ollama",
@@ -3549,9 +3551,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 30429,
+          "github_stars": 40261,
           "license": "MIT"
         }
       ]
@@ -3566,8 +3568,8 @@
           "name": "Milvus",
           "slug": "milvus",
           "added_date": "2026-02-08",
-          "desc": "Largest open-source vector database — cloud-native, scales to billions of vectors, backed by LF AI Foundation",
-          "detail": "Milvus is a vector database designed for large scale from the ground up: distributed architecture on Kubernetes, supporting storage and search of billions of vectors with sub-millisecond latency. Offers the widest range of index types among vector DBs (IVF, HNSW, DiskANN, PQ...), allowing trade-offs between speed, accuracy and cost per use case. A graduated project of the LF AI & Data Foundation (Linux Foundation), ensuring strong governance and sustainable development. Cloud version Zilliz provides a managed service. Practical applications: large-scale recommendation systems, image/video similarity search, semantic search for enterprises with millions of documents, or any problem requiring similarity search over large datasets.\n\nWorks well with: LangChain · LlamaIndex · Dify · RAGFlow · Towhee (ETL pipeline) · Any embedding model (OpenAI, Cohere, HuggingFace)",
+          "desc": "Open-source, cloud-native vector database for large-scale search — a graduated LF AI & Data Foundation project",
+          "detail": "Milvus is a vector database designed for scale: it runs as an embedded library (Milvus Lite), a single Docker container, or a distributed cluster on Kubernetes that scales horizontally to billions of vectors. It supports many index types (HNSW, IVF, DiskANN and quantized variants), dense and sparse vectors, full-text (BM25) and hybrid search, and metadata filtering, so you can trade off speed, recall and cost per workload. Its 2026 major release went 'lake-native': Milvus can query data kept in external Parquet, Lance, Iceberg or Vortex files in place, add or drop fields online, and take snapshots. Milvus is a graduated project of the LF AI & Data Foundation; Zilliz offers it as a managed service (Zilliz Cloud, with a free tier). Practical applications: large-scale recommendation, image and video similarity search, semantic search over millions of documents, and multi-tenant RAG backends.\n\nWorks well with: LlamaIndex · Dify · LightRAG · LangChain · Any embedding model (OpenAI, Cohere, Hugging Face)",
           "sources": [
             {
               "title": "GitHub",
@@ -3583,25 +3585,25 @@
             }
           ],
           "tags": [
-            "43.5K⭐",
+            "46K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "advanced",
           "whenToUse": [
-            "vector search quy mô lớn hàng tỷ vectors",
-            "hybrid search kết hợp keyword và semantic",
-            "multi-tenant production với yêu cầu cao"
+            "Vector search at very large scale (billions of vectors)",
+            "Hybrid search combining keyword (BM25) and semantic retrieval",
+            "Multi-tenant production workloads with strict performance needs"
           ],
           "whenNotToUse": [
-            "prototype nhỏ cần setup đơn giản",
-            "đã có PostgreSQL và chỉ cần basic vector search"
+            "A small prototype that needs the simplest possible setup",
+            "You already run PostgreSQL and only need basic vector search"
           ],
           "compatibleWith": [
-            "langgraph",
             "llamaindex",
-            "dify"
+            "dify",
+            "lightrag"
           ],
           "useCases": [
             "vector-search",
@@ -3614,17 +3616,17 @@
             "go",
             "java"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 43500,
+          "github_stars": 46457,
           "license": "Apache-2.0"
         },
         {
           "name": "Qdrant",
           "slug": "qdrant",
           "added_date": "2026-02-08",
-          "desc": "Vector database written in Rust — fast, memory-efficient, best-in-class payload filtering",
-          "detail": "Qdrant (pronounced \"quadrant\") is a vector database focused on performance and production-readiness, written entirely in Rust for optimal speed and memory usage. Its standout feature is filtering: combining vector similarity search with complex conditions on metadata (boolean, range, geo, nested objects) — and filtering is integrated directly into the search process rather than post-filtering, so accuracy is preserved. Provides both REST and gRPC APIs with SDKs for multiple languages. Practical applications: personalized recommendations with user preference filtering, e-commerce search combining semantic + price/category filters, or multi-tenant RAG systems requiring isolation between tenants.\n\nWorks well with: LangChain · LlamaIndex · Dify · Flowise · FastAPI/Express (backend) · Docker/Kubernetes (deploy)",
+          "desc": "Vector database written in Rust — fast, memory-efficient, with rich payload filtering built into search",
+          "detail": "Qdrant (pronounced 'quadrant') is a vector database built for production performance, written in Rust. Its standout feature is filtering: it combines vector similarity with conditions on payload metadata (boolean logic, ranges, geo, full-text, nested objects) inside the search itself rather than filtering afterwards, so results stay accurate. It supports dense, sparse and multi-vector search, hybrid queries and quantization to reduce memory use, with REST and gRPC APIs and official SDKs for several languages. Run it with Docker or Kubernetes, use Qdrant Cloud (free tier available), or Qdrant Hybrid Cloud to keep clusters in your own infrastructure. Practical applications: personalised recommendations, e-commerce search that combines semantics with price and category filters, and multi-tenant RAG that needs isolation between tenants.\n\nWorks well with: LangChain · LangGraph · LlamaIndex · Dify · LightRAG · Docker/Kubernetes",
           "sources": [
             {
               "title": "GitHub",
@@ -3635,30 +3637,31 @@
               "url": "https://qdrant.tech"
             },
             {
-              "title": "Cloud",
-              "url": "https://cloud.qdrant.io"
+              "title": "Qdrant Cloud",
+              "url": "https://qdrant.tech/cloud/"
             }
           ],
           "tags": [
-            "29.5K⭐",
+            "35K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "vector search hiệu năng cao với Rust backend",
-            "kết hợp filtering phức tạp với similarity search",
-            "ứng dụng recommendation và semantic search"
+            "High-performance vector search on a Rust engine",
+            "Similarity search combined with complex metadata filters",
+            "Recommendation and semantic search applications"
           ],
           "whenNotToUse": [
-            "cần tích hợp sâu với PostgreSQL ecosystem",
-            "dự án chỉ cần embedded vector store đơn giản"
+            "You want vectors inside your existing PostgreSQL database",
+            "You only need a simple embedded vector store"
           ],
           "compatibleWith": [
             "langgraph",
             "llamaindex",
-            "dify"
+            "dify",
+            "lightrag"
           ],
           "useCases": [
             "vector-search",
@@ -3672,17 +3675,17 @@
             "rust",
             "go"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 29794,
+          "github_stars": 35182,
           "license": "Apache-2.0"
         },
         {
           "name": "Chroma",
           "slug": "chroma",
           "added_date": "2026-02-08",
-          "desc": "Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG",
-          "detail": "Chroma is a vector database built with a \"developer-first\" philosophy — install with a single pip install, runs embedded directly in the Python process with no separate server needed. Stores and searches vector embeddings through a simple API: add documents → query in natural language → get the most similar results. Automatically handles embedding with built-in models, or bring your own embeddings from OpenAI/Cohere/HuggingFace. Featured in most RAG tutorials and courses, it is the \"first vector DB\" for many developers. Best suited for prototyping, side projects, and small-to-medium scale applications. When scaling to production with millions of vectors, consider switching to Milvus or Qdrant.\n\nWorks well with: LangChain · LlamaIndex · Flowise · Dify · OpenAI Embeddings · HuggingFace models",
+          "desc": "Open-source search infrastructure for AI apps — starts embedded with zero config, adds full-text and hybrid search",
+          "detail": "Chroma is an open-source (Apache 2.0) database for AI search with a developer-first API: pip install it and run it embedded in your Python process, or start it as a server. You add documents, query in natural language and get back the most similar results; Chroma can embed text with built-in models or take your own embeddings. Beyond vector search it supports metadata filtering, full-text search including regex, sparse retrieval (BM25, SPLADE) and hybrid queries. The docs describe three modes: local (embedded, for prototyping), single-node (one server for modest workloads) and distributed — offered as Chroma Cloud, a usage-based managed service with free starter credits, or as BYOC. SDKs exist for Python, TypeScript and Rust. Best suited for prototypes, side projects and small-to-medium apps, with a managed path when you need to scale.\n\nWorks well with: LangChain · LlamaIndex · CrewAI (default knowledge store) · Dify · OpenAI embeddings · Hugging Face models",
           "sources": [
             {
               "title": "GitHub",
@@ -3690,29 +3693,33 @@
             },
             {
               "title": "Website",
-              "url": "https://trychroma.com"
+              "url": "https://www.trychroma.com/"
+            },
+            {
+              "title": "Docs: deployment modes",
+              "url": "https://docs.trychroma.com/reference/architecture/overview"
             }
           ],
           "tags": [
-            "26.5K⭐",
+            "29.5K⭐",
             "Apache 2.0"
           ],
           "pricing": "open-core",
           "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
-            "prototype RAG nhanh với API đơn giản",
-            "embedded vector store trong Python app",
-            "developer cần zero-config setup"
+            "Prototyping RAG quickly with a simple API",
+            "An embedded vector store inside a Python app",
+            "Developers who want a zero-config start"
           ],
           "whenNotToUse": [
-            "production scale hàng tỷ vectors",
-            "cần distributed high-availability cluster"
+            "You want to self-host a distributed, highly available cluster (distributed Chroma comes as Chroma Cloud or BYOC)",
+            "Very large production workloads on your own infrastructure"
           ],
           "compatibleWith": [
-            "langgraph",
             "llamaindex",
-            "crewai"
+            "crewai",
+            "dify"
           ],
           "useCases": [
             "vector-search",
@@ -3722,11 +3729,12 @@
           ],
           "languages": [
             "python",
-            "js"
+            "js",
+            "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 26800,
+          "github_stars": 29548,
           "license": "Apache-2.0"
         },
         {
@@ -3734,7 +3742,7 @@
           "slug": "pgvector",
           "added_date": "2026-02-08",
           "desc": "Extension that turns PostgreSQL into a vector database — no separate DB needed, uses familiar SQL",
-          "detail": "pgvector is a PostgreSQL extension that adds vector storage and search capabilities directly into an existing relational database. The idea is simple yet highly practical: instead of deploying a separate vector database (Milvus, Qdrant...), developers can add a vector column to existing PostgreSQL tables and query with familiar SQL. Supports HNSW and IVFFlat indexing for approximate nearest neighbor search, with multiple distance metrics (L2, cosine, inner product). Especially well-suited for the Supabase ecosystem (pgvector built-in), Neon, and managed Postgres services. Practical applications: adding semantic search to a web app already using Postgres, simple RAG pipelines without extra infrastructure, or when vector data needs to JOIN with relational data (users, orders, products) in a single query.\n\nWorks well with: PostgreSQL/Supabase · LangChain · LlamaIndex · Django/Rails/Express (web frameworks) · pgvectorscale (Timescale — performance addon)",
+          "detail": "pgvector is a PostgreSQL extension that adds vector storage and similarity search to the relational database you already run. Instead of deploying a separate vector database, you add a vector column to existing tables and query it with SQL. It supports exact and approximate search (HNSW and IVFFlat indexes), several vector types (single and half precision, binary and sparse), and distance metrics including L2, cosine, inner product, L1, Hamming and Jaccard. Iterative index scans keep filtered queries accurate when a WHERE clause removes many candidates. It is available on most managed Postgres services, including Supabase, Neon and Amazon RDS. Practical applications: adding semantic search to a web app that already uses Postgres, simple RAG pipelines without extra infrastructure, or queries that JOIN vectors with relational data (users, orders, products).\n\nWorks well with: PostgreSQL/Supabase · LangChain · LlamaIndex · Dify · LightRAG · pgvectorscale (TigerData, performance add-on)",
           "sources": [
             {
               "title": "GitHub",
@@ -3746,25 +3754,25 @@
             }
           ],
           "tags": [
-            "20K⭐",
+            "23K⭐",
             "PostgreSQL License"
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "đã dùng PostgreSQL và cần thêm vector search",
-            "cần ACID compliance và JOIN với relational data",
-            "không muốn thêm database riêng cho vectors"
+            "You already use PostgreSQL and need vector search",
+            "You need ACID transactions and JOINs with relational data",
+            "You do not want to run a separate database for vectors"
           ],
           "whenNotToUse": [
-            "cần vector search scale hàng tỷ vectors",
-            "không dùng PostgreSQL"
+            "Vector search over billions of vectors",
+            "You do not use PostgreSQL"
           ],
           "compatibleWith": [
-            "langgraph",
             "llamaindex",
-            "dify"
+            "dify",
+            "lightrag"
           ],
           "useCases": [
             "vector-search",
@@ -3777,9 +3785,9 @@
             "go",
             "rust"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-22",
           "verification_source": "docs",
-          "github_stars": 20420,
+          "github_stars": 23432,
           "license": "PostgreSQL"
         }
       ]
@@ -4101,7 +4109,7 @@
     {
       "id": "vector-databases",
       "title": "Compare Vector Databases",
-      "as_of": "2026-02-10",
+      "as_of": "2026-10-22",
       "criteria": [
         "Best for",
         "Scale",
@@ -4118,15 +4126,15 @@
         {
           "cardId": "milvus",
           "values": {
-            "Best for": "Billion-scale enterprise AI, multimodal search",
-            "Scale": "Distributed (K8s), billion→tens-of-billions (workload-dependent)",
-            "Filtering": "Advanced: metadata filtering, hybrid dense+sparse, full-text BM25, JSON Path Index (100x faster)",
+            "Best for": "Billion-scale enterprise AI, multimodal and hybrid search",
+            "Scale": "Distributed (K8s), scales horizontally to billions of vectors",
+            "Filtering": "Advanced: metadata filtering, hybrid dense + sparse, full-text BM25",
             "Deploy": "Milvus Lite (pip) · Standalone (Docker) · Distributed (K8s) · Zilliz Cloud",
             "Integrations": [
               "langchain",
               "llamaindex",
               "dify",
-              "haystack"
+              "lightrag"
             ],
             "License": "Apache-2.0"
           }
@@ -4136,8 +4144,8 @@
           "values": {
             "Best for": "Production RAG & recommendation, Rust performance",
             "Scale": "Cluster-scale (sharding/replication)",
-            "Filtering": "Rich: payload filtering with boolean (AND/OR/NOT), geo, full-text, pre-filter integrated in search",
-            "Deploy": "Docker · K8s · Qdrant Cloud (AWS/GCP/Azure) · Hybrid Cloud · Edge",
+            "Filtering": "Rich: payload filtering with boolean (AND/OR/NOT), ranges, geo, full-text, applied inside the search",
+            "Deploy": "Docker · K8s · Qdrant Cloud (free tier) · Hybrid Cloud",
             "Integrations": [
               "langchain",
               "llamaindex",
@@ -4151,14 +4159,14 @@
         {
           "cardId": "chroma",
           "values": {
-            "Best for": "Rapid prototyping, lightweight embedded apps",
-            "Scale": "Millions self-host, billions via Chroma Cloud — object-storage tiered architecture",
-            "Filtering": "Document filter (contains / where_document) + basic metadata filters",
-            "Deploy": "pip install (embedded) · Docker (client/server) · Chroma Cloud (serverless)",
+            "Best for": "Rapid prototyping and embedded apps, with a managed path to scale",
+            "Scale": "Embedded or single node for modest workloads; distributed via Chroma Cloud / BYOC",
+            "Filtering": "Metadata filtering + full-text (incl. regex) + sparse BM25/SPLADE, hybrid search",
+            "Deploy": "pip install (embedded) · Docker (single node) · Chroma Cloud · BYOC",
             "Integrations": [
               "langchain",
               "llamaindex",
-              "hugging-face"
+              "crewai"
             ],
             "License": "Apache-2.0"
           }
@@ -4173,8 +4181,8 @@
             "Integrations": [
               "langchain",
               "llamaindex",
-              "django",
-              "rails"
+              "dify",
+              "supabase"
             ],
             "License": "PostgreSQL License"
           }
@@ -4184,7 +4192,7 @@
     {
       "id": "rag-systems",
       "title": "Compare RAG Systems",
-      "as_of": "2026-02-10",
+      "as_of": "2026-10-22",
       "criteria": [
         "Best for",
         "No-code vs Code",
@@ -4201,17 +4209,17 @@
         {
           "cardId": "dify",
           "values": {
-            "Best for": "Full-platform AI apps: agents + RAG + workflow + monitoring",
+            "Best for": "Full-platform AI apps: agents + RAG + workflow + LLMOps",
             "No-code vs Code": "Low-code: drag-and-drop visual workflow, plugin ecosystem, built-in templates",
             "Doc Understanding": "Good: hybrid retrieval, configurable top-k, reranking, multi-format support",
-            "Deploy": "Docker Compose · Dify Cloud · K8s (enterprise)",
+            "Deploy": "Docker Compose · Dify Cloud · Dify Enterprise (self-hosted)",
             "Integrations": [
               "milvus",
               "langfuse",
               "openai",
               "anthropic"
             ],
-            "License": "Source-available"
+            "License": "Dify Open Source License (Apache 2.0 + conditions)"
           }
         },
         {
@@ -4220,7 +4228,7 @@
             "Best for": "Deep document understanding, complex PDF/scanned doc parsing",
             "No-code vs Code": "Low-code: web UI with deep configuration, suited for technical users",
             "Doc Understanding": "Excellent: OCR, table extraction, layout-aware parsing, scanned documents, hybrid search",
-            "Deploy": "Docker (slim 2GB / full 9GB) · self-host only",
+            "Deploy": "Docker Compose (self-host) · RAGFlow Cloud",
             "Integrations": [
               "elasticsearch",
               "ollama",
@@ -4232,10 +4240,10 @@
         {
           "cardId": "flowise",
           "values": {
-            "Best for": "Fast visual chatbot prototyping, LangChain canvas",
+            "Best for": "Archived (end of life Aug 2026) — existing flows only; was fast visual chatbot prototyping",
             "No-code vs Code": "No-code: visual drag-and-drop canvas, prebuilt templates, fastest setup",
             "Doc Understanding": "Basic: relies on LangChain document loaders, standard chunking",
-            "Deploy": "Docker · npm install · Flowise Cloud",
+            "Deploy": "Self-host from archived code (Docker · npm)",
             "Integrations": [
               "langchain",
               "openai",
@@ -4243,7 +4251,7 @@
               "qdrant",
               "chroma"
             ],
-            "License": "Apache-2.0"
+            "License": "Apache-2.0 (enterprise directory under commercial licence)"
           }
         },
         {
@@ -4252,12 +4260,13 @@
             "Best for": "Graph-enhanced RAG, entity relationships, multi-hop reasoning",
             "No-code vs Code": "Code-first: Python API (also offers Server Web UI)",
             "Doc Understanding": "Graph-based: extracts entities & relationships, dual-level retrieval (local + global)",
-            "Deploy": "pip install · Docker · Railway · self-host",
+            "Deploy": "pip install · Docker Compose · LightRAG Server (REST API + Web UI)",
             "Integrations": [
               "neo4j",
+              "postgresql",
               "faiss",
-              "chroma",
               "milvus",
+              "qdrant",
               "ollama"
             ],
             "License": "MIT"

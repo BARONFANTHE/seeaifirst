@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Chroma — See AI First</title>
-<meta name="description" content="Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG">
+<meta name="description" content="Open-source search infrastructure for AI apps — starts embedded with zero config, adds full-text and hybrid search">
 <meta property="og:title" content="Chroma — See AI First">
-<meta property="og:description" content="Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG">
+<meta property="og:description" content="Open-source search infrastructure for AI apps — starts embedded with zero config, adds full-text and hybrid search">
 <meta property="og:url" content="https://seeaifirst.com/tool/chroma">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Chroma — See AI First">
-<meta name="twitter:description" content="Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG">
+<meta name="twitter:description" content="Open-source search infrastructure for AI apps — starts embedded with zero config, adds full-text and hybrid search">
 <link rel="canonical" href="https://seeaifirst.com/tool/chroma">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Chroma","url":"https://seeaifirst.com/tool/chroma","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG","keywords":["Vector Databases — Vector Storage & Search","python","js"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/chroma-core/chroma","https://trychroma.com"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Chroma","url":"https://seeaifirst.com/tool/chroma","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source search infrastructure for AI apps — starts embedded with zero config, adds full-text and hybrid search","keywords":["Vector Databases — Vector Storage & Search","python","js","rust"],"isAccessibleForFree":true,"license":"Apache-2.0","sameAs":["https://github.com/chroma-core/chroma","https://www.trychroma.com/","https://docs.trychroma.com/reference/architecture/overview"],"datePublished":"2026-02-08","dateModified":"2026-10-22","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,23 +1090,34 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/vector-databases">Vector Databases — Vector Storage &amp; Search</a> › Chroma</nav>
     <article>
       <h1>Chroma</h1>
-      <p>Simplest vector database for AI apps — embedded mode, zero-config, ideal for getting started with RAG</p>
-      <p>Chroma is a vector database built with a &quot;developer-first&quot; philosophy — install with a single pip install, runs embedded directly in the Python process with no separate server needed. Stores and searches vector embeddings through a simple API: add documents → query in natural language → get the most similar results. Automatically handles embedding with built-in models, or bring your own embeddings from OpenAI/Cohere/HuggingFace. Featured in most RAG tutorials and courses, it is the &quot;first vector DB&quot; for many developers. Best suited for prototyping, side projects, and small-to-medium scale applications. When scaling to production with millions of vectors, consider switching to Milvus or Qdrant. Works well with: LangChain · LlamaIndex · Flowise · Dify · OpenAI Embeddings · HuggingFace models</p>
+      <p>Open-source search infrastructure for AI apps — starts embedded with zero config, adds full-text and hybrid search</p>
+      <p>Chroma is an open-source (Apache 2.0) database for AI search with a developer-first API: pip install it and run it embedded in your Python process, or start it as a server. You add documents, query in natural language and get back the most similar results; Chroma can embed text with built-in models or take your own embeddings. Beyond vector search it supports metadata filtering, full-text search including regex, sparse retrieval (BM25, SPLADE) and hybrid queries. The docs describe three modes: local (embedded, for prototyping), single-node (one server for modest workloads) and distributed — offered as Chroma Cloud, a usage-based managed service with free starter credits, or as BYOC. SDKs exist for Python, TypeScript and Rust. Best suited for prototypes, side projects and small-to-medium apps, with a managed path when you need to scale. Works well with: LangChain · LlamaIndex · CrewAI (default knowledge store) · Dify · OpenAI embeddings · Hugging Face models</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Prototyping RAG quickly with a simple API</li>
+        <li>An embedded vector store inside a Python app</li>
+        <li>Developers who want a zero-config start</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You want to self-host a distributed, highly available cluster (distributed Chroma comes as Chroma Cloud or BYOC)</li>
+        <li>Very large production workloads on your own infrastructure</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Open core</dd>
         <dt>Deployment</dt><dd>Hybrid</dd>
         <dt>Difficulty</dt><dd>Beginner</dd>
         <dt>License</dt><dd>Apache-2.0</dd>
-        <dt>Languages</dt><dd>python, js</dd>
+        <dt>Languages</dt><dd>python, js, rust</dd>
         <dt>Use cases</dt><dd>vector search, rag pipeline, prototyping, semantic search</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-22 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
-        <li><a href="/tool/langgraph">LangGraph</a></li>
         <li><a href="/tool/llamaindex">LlamaIndex</a></li>
         <li><a href="/tool/crewai">CrewAI</a></li>
+        <li><a href="/tool/dify">Dify</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
@@ -1119,7 +1130,8 @@ html, body {
       <h2>Sources</h2>
       <ul>
         <li><a href="https://github.com/chroma-core/chroma" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://trychroma.com" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://www.trychroma.com/" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://docs.trychroma.com/reference/architecture/overview" rel="noopener noreferrer">Docs: deployment modes</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/vector-databases">Vector Databases — Vector Storage &amp; Search</a> on See AI First.</p>
