@@ -2009,14 +2009,14 @@
           "slug": "cline-roocode",
           "icon": "⚡",
           "mono": true,
-          "desc": "Coding agent mã nguồn mở cho VS Code, JetBrains và terminal — chế độ Plan/Act, MCP, dùng được mọi model provider kể cả model local.",
+          "desc": "Coding agent mã nguồn mở (Apache-2.0) cho VS Code và terminal, kèm client JetBrains riêng chưa mở mã nguồn — chế độ Plan/Act, MCP, dùng được mọi model provider kể cả model local.",
           "added_date": "2026-02-03",
           "tags": [
             "Open source",
             "Plan/Act",
             "Any model"
           ],
-          "detail": "Cline là coding agent tự chủ mã nguồn mở (Apache-2.0), có dạng extension VS Code, plugin JetBrains, CLI (tương tác hoặc headless cho CI) và SDK. Plan mode đề xuất hướng làm, Act mode thực hiện với duyệt từng bước hoặc tự động duyệt tùy chọn; checkpoints cho phép hoàn tác chỉnh sửa của agent. Hỗ trợ MCP servers và các provider như Anthropic, OpenAI, Google, OpenRouter, Bedrock, mọi API tương thích OpenAI, cùng model local qua Ollama hoặc LM Studio. Dùng API key riêng không cần subscription, hoặc dùng billing của Cline; gói Enterprise thêm SSO và RBAC. Lưu ý: card này trước đây gộp cả Roo Code (fork của Cline) — Roo Code đã ngừng hoạt động và repo bị archive ngày 15/5/2026.",
+          "detail": "Cline là coding agent tự chủ. Phần mã nguồn mở (Apache-2.0) gồm extension VS Code, CLI (tương tác hoặc headless cho CI) và SDK, dùng chung một agent core. Plugin JetBrains là client riêng chưa mở mã nguồn; trang pricing của Cline xếp client này vào gói Enterprise. Plan mode đề xuất hướng làm, Act mode thực hiện với duyệt từng bước hoặc tự động duyệt tùy chọn; checkpoints cho phép hoàn tác chỉnh sửa của agent. Hỗ trợ MCP servers và các provider như Anthropic, OpenAI, Google, OpenRouter, Bedrock, mọi API tương thích OpenAI, cùng model local qua Ollama hoặc LM Studio. Dùng API key riêng không cần subscription, hoặc trả phí inference qua billing của Cline; gói Enterprise thêm SSO, RBAC và quản trị team. Lưu ý: card này trước đây gộp cả Roo Code (fork của Cline) — Roo Code đã ngừng hoạt động và repo bị archive ngày 15/5/2026.",
           "sources": [
             {
               "title": "Cline GitHub",
@@ -2031,7 +2031,7 @@
               "url": "https://cline.bot/pricing"
             }
           ],
-          "pricing": "freemium",
+          "pricing": "free",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
@@ -2206,7 +2206,7 @@
               "url": "https://opencode.ai/docs/"
             }
           ],
-          "pricing": "freemium",
+          "pricing": "free",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
@@ -3410,8 +3410,8 @@
             "92.5K⭐",
             "Apache 2.0"
           ],
-          "pricing": "open-core",
-          "deployment": "hybrid",
+          "pricing": "free",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Cần RAG engine xử lý tài liệu phức tạp (PDF, bảng, scan)",

@@ -2009,14 +2009,14 @@
           "slug": "cline-roocode",
           "icon": "⚡",
           "mono": true,
-          "desc": "Open-source coding agent for VS Code, JetBrains and the terminal — Plan/Act modes, MCP, any model provider including local models.",
+          "desc": "Open-source (Apache-2.0) coding agent for VS Code and the terminal, plus a separate closed-source JetBrains client — Plan/Act modes, MCP, any model provider including local models.",
           "added_date": "2026-02-03",
           "tags": [
             "Open source",
             "Plan/Act",
             "Any model"
           ],
-          "detail": "Cline is an open-source (Apache-2.0) autonomous coding agent available as a VS Code extension, a JetBrains plugin, a CLI (interactive or headless for CI) and an SDK. Plan mode proposes a strategy and Act mode carries it out with per-action approval or optional auto-approve; checkpoints let you undo the agent's edits. Supports MCP servers and providers such as Anthropic, OpenAI, Google, OpenRouter, Bedrock and any OpenAI-compatible API, plus local models via Ollama or LM Studio. Bring your own API key with no subscription, or use Cline's own usage billing; an Enterprise tier adds SSO and RBAC. Note: this card previously also covered Roo Code, a Cline fork — Roo Code was shut down and its repository archived on 15 May 2026.",
+          "detail": "Cline is an autonomous coding agent. Its open-source part (Apache-2.0) is the VS Code extension, the CLI (interactive or headless for CI) and the SDK, built on a shared agent core. The JetBrains plugin is a separate client that is not open source; Cline's pricing page lists it under Enterprise. Plan mode proposes a strategy and Act mode carries it out with per-action approval or optional auto-approve; checkpoints let you undo the agent's edits. Supports MCP servers and providers such as Anthropic, OpenAI, Google, OpenRouter, Bedrock and any OpenAI-compatible API, plus local models via Ollama or LM Studio. Bring your own API key with no subscription, or pay for inference through Cline's own usage billing; the Enterprise plan adds SSO, RBAC and team administration. Note: this card previously also covered Roo Code, a Cline fork — Roo Code was shut down and its repository archived on 15 May 2026.",
           "sources": [
             {
               "title": "Cline GitHub",
@@ -2031,7 +2031,7 @@
               "url": "https://cline.bot/pricing"
             }
           ],
-          "pricing": "freemium",
+          "pricing": "free",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
@@ -2206,7 +2206,7 @@
               "url": "https://opencode.ai/docs/"
             }
           ],
-          "pricing": "freemium",
+          "pricing": "free",
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
@@ -3410,8 +3410,8 @@
             "92.5K⭐",
             "Apache 2.0"
           ],
-          "pricing": "open-core",
-          "deployment": "hybrid",
+          "pricing": "free",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "You need a RAG engine that handles complex documents (PDFs, tables, scans)",
