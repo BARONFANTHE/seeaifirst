@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>MemOS — See AI First</title>
-<meta name="description" content="Unified memory operating system for LLMs — manages memory via MemCube with short-term and long-term support">
+<meta name="description" content="Memory operating system for LLMs and agents — manages memory as MemCubes across plaintext, activation and parameter memory.">
 <meta property="og:title" content="MemOS — See AI First">
-<meta property="og:description" content="Unified memory operating system for LLMs — manages memory via MemCube with short-term and long-term support">
+<meta property="og:description" content="Memory operating system for LLMs and agents — manages memory as MemCubes across plaintext, activation and parameter memory.">
 <meta property="og:url" content="https://seeaifirst.com/tool/memos">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="MemOS — See AI First">
-<meta name="twitter:description" content="Unified memory operating system for LLMs — manages memory via MemCube with short-term and long-term support">
+<meta name="twitter:description" content="Memory operating system for LLMs and agents — manages memory as MemCubes across plaintext, activation and parameter memory.">
 <link rel="canonical" href="https://seeaifirst.com/tool/memos">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"MemOS","url":"https://seeaifirst.com/tool/memos","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Unified memory operating system for LLMs — manages memory via MemCube with short-term and long-term support","keywords":["Memory Systems — Cross-Session Memory","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/MemTensor/MemOS"],"datePublished":"2026-02-04","dateModified":"2026-03-15","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"MemOS","url":"https://seeaifirst.com/tool/memos","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Memory operating system for LLMs and agents — manages memory as MemCubes across plaintext, activation and parameter memory.","keywords":["Memory Systems — Cross-Session Memory","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/MemTensor/MemOS","https://arxiv.org/abs/2507.03724"],"datePublished":"2026-02-04","dateModified":"2026-10-26","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/memory">Memory Systems — Cross-Session Memory</a> › MemOS</nav>
     <article>
       <h1>MemOS</h1>
-      <p>Unified memory operating system for LLMs — manages memory via MemCube with short-term and long-term support</p>
-      <p>MemOS provides a standardized memory layer architecture for AI agents with MemCube — the basic memory unit containing both data and metadata. Supports multiple memory types (parametric, activation, long-term) and integrates with popular frameworks. ~6.9K stars, active development (v2.0.4, Jan 2026). Unique for providing a unified memory interface that Mem0/Zep haven&#039;t fully addressed.</p>
+      <p>Memory operating system for LLMs and agents — manages memory as MemCubes across plaintext, activation and parameter memory.</p>
+      <p>MemOS treats memory as a system resource for AI agents. The basic unit is the MemCube, which bundles memory content with metadata such as provenance and versioning. It covers three memory types — plaintext (explicit knowledge), activation (KV-cache) and parameter (model weights, for example adapters) — and schedules memory between them. It offers an API and integrations with agent frameworks and MCP, can run self-hosted, and has a hosted MemOS Cloud. Treat the benchmark results published by the project as vendor-reported.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Agents that need persistent, reusable memory across tasks</li>
+        <li>Multi-agent systems that need a shared memory layer</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You only need simple key-value memory</li>
+        <li>Small projects that do not need a full memory system</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1100,7 +1110,7 @@ html, body {
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>skill memory, agent memory os, cross task reuse</dd>
-        <dt>Last verified</dt><dd>2026-03-15 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-26 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1116,6 +1126,7 @@ html, body {
       <h2>Sources</h2>
       <ul>
         <li><a href="https://github.com/MemTensor/MemOS" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://arxiv.org/abs/2507.03724" rel="noopener noreferrer">Paper (arXiv 2507.03724)</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/memory">Memory Systems — Cross-Session Memory</a> on See AI First.</p>

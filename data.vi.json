@@ -94,47 +94,49 @@
           "icon": "🔌",
           "mono": true,
           "hot": true,
-          "desc": "Chuẩn kết nối của <strong>Anthropic</strong> — giúp AI giao tiếp với mọi công cụ, database, API theo một giao thức thống nhất. Được ví như 'USB-C cho AI'.",
+          "desc": "Chuẩn mở do <strong>Anthropic</strong> tạo ra, nay do Agentic AI Foundation quản lý — cho AI app kết nối mọi tool, nguồn dữ liệu, API qua một giao thức. Thường gọi là \"USB-C cho AI\".",
           "added_date": "2026-02-03",
-          "detail": "<strong>Agent ↔ Tool</strong> communication · Giống \"USB-C cho AI\" · Được OpenAI, Google DeepMind, Cursor, Replit, Sourcegraph adopt<br><strong>MCP Apps</strong> (Jan 2026): Extension mới — tools trả về interactive UI (dashboards, forms) trực tiếp trong conversation<br><strong>Skills over MCP</strong>: Experimental — skill discovery & distribution qua MCP primitives",
+          "detail": "Giao tiếp <strong>Agent ↔ Tool</strong> · \"USB-C cho AI\" · Host (AI app) kết nối qua client tới server cung cấp tool, resource, prompt bằng JSON-RPC<br><strong>Quản trị</strong>: Anthropic chuyển giao MCP cho Agentic AI Foundation (quỹ thuộc Linux Foundation) tháng 12/2025<br><strong>Spec 2026-07-28</strong>: lõi stateless, thương lượng capability theo từng request, khung extension chính thức<br><strong>Extension</strong>: Tasks (tác vụ chạy lâu), MCP Apps (UI tương tác ngay trong hội thoại), Skills over MCP (khám phá và phân phối skill) — tùy chọn, thương lượng theo từng kết nối",
           "tags": [
-            "Python SDK 21k⭐",
-            "TS SDK 11k⭐",
-            "C# (Microsoft)",
-            "Kotlin (JetBrains)",
-            "Swift",
-            "Linux Foundation"
+            "Open standard",
+            "Agentic AI Foundation",
+            "Official SDKs",
+            "MCP Apps"
           ],
           "sources": [
+            {
+              "title": "MCP Specification (2026-07-28)",
+              "url": "https://modelcontextprotocol.io/specification/2026-07-28"
+            },
+            {
+              "title": "MCP GitHub (spec + docs)",
+              "url": "https://github.com/modelcontextprotocol/modelcontextprotocol"
+            },
+            {
+              "title": "Anthropic — Donating MCP to the Agentic AI Foundation",
+              "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation"
+            },
             {
               "title": "Anthropic — Introducing MCP",
               "url": "https://www.anthropic.com/news/model-context-protocol"
             },
             {
-              "title": "MCP Specification",
-              "url": "https://modelcontextprotocol.io/specification/2025-11-25"
-            },
-            {
               "title": "Wikipedia — Model Context Protocol",
               "url": "https://en.wikipedia.org/wiki/Model_Context_Protocol"
-            },
-            {
-              "title": "MCP GitHub",
-              "url": "https://github.com/modelcontextprotocol"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "tool integration for LLMs",
-            "connecting AI apps to external data sources",
-            "building standardized AI plugins",
-            "cross-platform tool sharing"
+            "Tích hợp tool cho LLM",
+            "Kết nối AI app với nguồn dữ liệu bên ngoài",
+            "Xây plugin/connector AI theo chuẩn",
+            "Dùng chung một tool server cho nhiều AI client"
           ],
           "whenNotToUse": [
-            "agent-to-agent communication (use A2A)",
-            "simple REST API calls without AI context"
+            "Giao tiếp giữa các agent (dùng A2A)",
+            "Gọi REST API đơn giản không cần ngữ cảnh AI"
           ],
           "compatibleWith": [
             "a2a",
@@ -163,9 +165,9 @@
             "swift",
             "ruby"
           ],
-          "verified_at": "2026-02-11",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 6400,
+          "github_stars": 9533,
           "license": "Apache-2.0"
         },
         {
@@ -174,51 +176,54 @@
           "icon": "🤝",
           "mono": true,
           "hot": true,
-          "desc": "Giao thức của <strong>Google</strong> — giúp các AI agent nói chuyện và hợp tác với nhau, dù được xây từ bất kỳ nền tảng nào.",
+          "desc": "Giao thức mở do <strong>Google</strong> khởi xướng, nay là dự án của Linux Foundation — cho các AI agent tìm thấy, trao đổi và giao việc cho nhau bất kể xây bằng framework nào.",
           "added_date": "2026-02-03",
-          "detail": "<strong>Agent ↔ Agent</strong> communication · Bổ sung MCP (MCP = tools, A2A = agents)<br><strong>Agent Cards</strong>: JSON mô tả capabilities, cho phép agent discover nhau<br><strong>v0.3</strong> (Jul 2025): gRPC support, security cards, Python SDK mở rộng<br>150+ organizations support · Linux Foundation hosted",
+          "detail": "Giao tiếp <strong>Agent ↔ Agent</strong> · Bổ sung cho MCP (MCP = tool, A2A = agent)<br><strong>Agent Card</strong>: mô tả năng lực dạng JSON để khám phá agent và skill của chúng<br><strong>v1.0</strong> (03/2026): đặc tả ổn định với binding JSON-RPC, gRPC và HTTP+JSON/REST, streaming và push notification<br><strong>Quản trị</strong>: dự án Linux Foundation từ 06/2025; gia nhập Agentic AI Foundation tháng 08/2026, cùng với MCP",
           "tags": [
-            "Google ADK native",
-            "HTTP/SSE/JSON-RPC",
-            "LangGraph",
-            "CrewAI",
-            "Semantic Kernel"
+            "Linux Foundation",
+            "Agentic AI Foundation",
+            "JSON-RPC/gRPC/REST",
+            "Agent Cards"
           ],
-          "note": "💡 Dùng <strong>MCP cho tools</strong>, <strong>A2A cho agents</strong> — 2 protocol bổ sung nhau, không thay thế!",
+          "note": "💡 Dùng <strong>MCP cho tool</strong>, <strong>A2A cho agent</strong> — hai giao thức bổ sung cho nhau, không thay thế nhau.",
           "sources": [
             {
-              "title": "Google — Announcing A2A",
-              "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
+              "title": "A2A Specification",
+              "url": "https://a2a-protocol.org/latest/specification/"
             },
             {
               "title": "A2A GitHub",
-              "url": "https://github.com/google/A2A"
+              "url": "https://github.com/a2aproject/A2A"
             },
             {
-              "title": "A2A Protocol Documentation",
-              "url": "https://google.github.io/A2A/"
+              "title": "A2A joins the Agentic AI Foundation",
+              "url": "https://a2a-protocol.org/latest/blog/2026/08/27/a-new-chapter-for-a2a-joining-the-agentic-ai-foundation/"
+            },
+            {
+              "title": "Google — Announcing A2A",
+              "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "agent-to-agent communication",
-            "cross-framework agent collaboration",
-            "enterprise multi-agent workflows",
-            "multi-vendor agent interop"
+            "Giao tiếp giữa các agent",
+            "Phối hợp agent xây trên các framework khác nhau",
+            "Workflow nhiều agent trong doanh nghiệp",
+            "Liên thông agent của nhiều nhà cung cấp"
           ],
           "whenNotToUse": [
-            "tool integration for LLMs (use MCP)",
-            "single-agent applications"
+            "Tích hợp tool cho LLM (dùng MCP)",
+            "Ứng dụng chỉ có một agent"
           ],
           "compatibleWith": [
             "mcp",
             "google-adk",
-            "langgraph",
             "crewai",
             "microsoft-agent-framework",
-            "pydantic-ai"
+            "pydantic-ai",
+            "agentscope"
           ],
           "useCases": [
             "multi-agent-systems",
@@ -234,9 +239,9 @@
             "rust",
             "csharp"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 22864,
+          "github_stars": 26297,
           "license": "Apache-2.0"
         }
       ]
@@ -857,34 +862,34 @@
           "slug": "claude-ai",
           "icon": "🌐",
           "mono": true,
-          "desc": "Giao diện chat/workspace của Anthropic — có bộ nhớ, tìm kiếm web, Claude Cowork, và plugin/connectors cho workflow doanh nghiệp.",
+          "desc": "Ứng dụng Claude của Anthropic trên web, desktop và mobile — chat với project, memory, research, connector, cùng Cowork cho công việc tri thức kiểu agent.",
           "added_date": "2026-02-03",
           "tags": [
             "Projects",
             "Artifacts",
             "Memory",
-            "Knowledge"
+            "Cowork"
           ],
-          "detail": "Giao diện chat/workspace chính của Anthropic. Có Projects để tổ chức conversations, web search tích hợp, memory xuyên phiên, và Artifacts (tạo code, documents, charts trực tiếp trong chat). Hỗ trợ Claude Opus 4.6, Sonnet 4.6 và Haiku 4.5. Hệ sinh thái mở rộng: Claude Cowork là desktop agent dạng research preview cho knowledge work, mang các khả năng agentic của Claude Code vượt ra ngoài coding. Teams có thể tùy biến Claude bằng plugin và connectors cho các workflow chuyên biệt, phân phối qua private plugin marketplaces, và orchestration xuyên ứng dụng Excel và PowerPoint.",
+          "detail": "Claude là ứng dụng trợ lý của Anthropic trên web, desktop và mobile, có các gói Free, Pro, Max, Team, Enterprise và Education. Project gom hội thoại và file theo dự án, memory giữ ngữ cảnh giữa các cuộc chat, Research và web search tìm nguồn. Artifact cho Claude tạo code, tài liệu, thiết kế, slide và doc ngay trong hội thoại. Connector (xây trên MCP) và plugin nối Claude với ứng dụng của bạn; tổ chức có thể phân phối plugin qua marketplace riêng. Cowork — chính thức từ 04/2026 và nay có trong mọi cuộc hội thoại — cho Claude làm các việc tri thức dài, nhiều bước với file và tool. Sản phẩm liên quan: Claude Code (cả Claude Code trên web), Claude in Chrome, Claude cho Excel và PowerPoint.",
           "sources": [
             {
               "title": "Claude.ai",
               "url": "https://claude.ai/"
             },
             {
-              "title": "Claude Docs",
-              "url": "https://docs.claude.com/"
+              "title": "Claude plans",
+              "url": "https://claude.com/pricing"
             },
             {
-              "title": "Claude Support",
-              "url": "https://support.claude.com/"
+              "title": "Claude release notes",
+              "url": "https://support.claude.com/en/articles/12138966-release-notes"
             },
             {
               "title": "Customize Cowork with plugins",
               "url": "https://claude.com/blog/cowork-plugins"
             },
             {
-              "title": "Cowork and plugins across the enterprise",
+              "title": "Cowork and plugins for teams across the enterprise",
               "url": "https://claude.com/blog/cowork-plugins-across-enterprise"
             }
           ],
@@ -892,16 +897,15 @@
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "general AI assistant with projects",
-            "research and document analysis",
-            "artifact creation (code, docs, diagrams)",
-            "project-based knowledge management",
-            "Xây plugin và MCP connector cho workflow Cowork trong doanh nghiệp"
+            "Trợ lý AI tổng quát, làm việc theo project",
+            "Nghiên cứu và phân tích tài liệu",
+            "Tạo artifact (code, tài liệu, thiết kế, slide)",
+            "Công việc tri thức kiểu agent với Cowork, plugin và connector MCP"
           ],
           "whenNotToUse": [
-            "automated CI/CD pipelines (use API)",
-            "local or offline usage",
-            "high-volume batch processing"
+            "Pipeline CI/CD tự động (dùng API)",
+            "Dùng local hoặc offline",
+            "Xử lý batch khối lượng lớn"
           ],
           "compatibleWith": [
             "mcp",
@@ -918,7 +922,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-18",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -928,42 +932,45 @@
           "slug": "chatgpt",
           "icon": "💬",
           "mono": true,
-          "desc": "Chat AI phổ biến nhất của OpenAI — có GPTs, search, tools và hệ thống nhớ riêng.",
+          "desc": "Trợ lý AI của OpenAI trên web, desktop và mobile — chat, search, deep research, project, memory, tạo ảnh, plugin và Codex.",
           "added_date": "2026-02-03",
           "tags": [
-            "GPTs",
-            "Canvas",
+            "Projects",
             "Memory",
-            "Apps"
+            "Plugins",
+            "Codex"
           ],
-          "detail": "Chat AI phổ biến nhất thế giới của OpenAI với hàng trăm triệu user/tuần. Có GPTs (custom chatbots), Custom Instructions (cá nhân hóa), web browse, DALL-E (tạo ảnh), Code Interpreter, và plugin ecosystem. Hỗ trợ GPT-4o, GPT-4o-mini, o1, o3. ChatGPT Plus $20/tháng, Team $25/user/tháng.",
+          "detail": "ChatGPT là ứng dụng trợ lý của OpenAI, có các gói Free, Go, Plus, Pro, Business, Enterprise và Edu. Gồm chat có web search, deep research, project, memory và custom instructions, tạo ảnh, voice, phân tích file và scheduled tasks. ChatGPT Work (2026) là agent cho các việc dài, phức tạp; Codex — coding agent của OpenAI — nằm cạnh chat trong app desktop và mobile; Sites (public beta) biến kết quả làm việc thành website tương tác. Plugin Directory thay App Directory từ 07/2026, và OpenAI đã công bố kế hoạch ngừng custom GPT, chuyển sang plugin. Danh sách model thay đổi thường xuyên, xem trang gói để biết mỗi gói có gì.",
           "sources": [
             {
               "title": "ChatGPT",
               "url": "https://chatgpt.com/"
             },
             {
-              "title": "OpenAI Platform",
-              "url": "https://platform.openai.com/"
+              "title": "ChatGPT plans",
+              "url": "https://chatgpt.com/pricing"
+            },
+            {
+              "title": "ChatGPT release notes",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
             }
           ],
           "pricing": "freemium",
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "general AI assistant",
-            "code generation and debugging",
-            "image generation with DALL-E",
-            "web browsing and research"
+            "Trợ lý AI tổng quát",
+            "Sinh code và debug",
+            "Tạo ảnh",
+            "Tìm kiếm web và báo cáo deep research"
           ],
           "whenNotToUse": [
-            "automated pipelines (use OpenAI API)",
-            "local or offline usage",
-            "enterprise data isolation requirements"
+            "Pipeline tự động (dùng OpenAI API)",
+            "Dùng local hoặc offline",
+            "Yêu cầu cô lập dữ liệu nghiêm ngặt trên gói cá nhân"
           ],
           "compatibleWith": [
-            "mcp",
-            "openai-agents-sdk"
+            "mcp"
           ],
           "useCases": [
             "ai-assistant",
@@ -976,7 +983,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-02-11",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -996,43 +1003,47 @@
           "mono": true,
           "hot": true,
           "extraBadges": [
-            "plugin",
-            "949⭐/24h"
+            "plugin"
           ],
-          "desc": "Plugin giúp <strong>Claude Code</strong> có trí nhớ dài hạn — tự ghi lại kinh nghiệm, nén thông minh và nhớ cho lần làm việc sau.",
+          "desc": "Plugin cho <strong>Claude Code</strong> và các coding agent khác bộ nhớ dài hạn — ghi lại những gì diễn ra trong mỗi phiên, nén lại và đưa ngữ cảnh liên quan trở lại ở phiên sau.",
           "added_date": "2026-02-03",
-          "detail": "<strong>Kiến trúc:</strong> 5 lifecycle hooks (SessionStart → UserPromptSubmit → PostToolUse → Summary → SessionEnd)<br><strong>RAD</strong> (Retrieval Augmented Decisions): open standard mới — RAG captures knowledge, RAD captures intelligence<br><strong>Endless Mode</strong>: ~1000 tool uses (vs 50 mặc định), O(N) scaling",
+          "detail": "<strong>Kiến trúc:</strong> lifecycle hook (SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop, SessionEnd) đẩy dữ liệu vào worker service local, lưu session, observation và summary trong SQLite (FTS5), dùng Chroma cho semantic search<br><strong>Progressive disclosure:</strong> tool search MCP chia ba lớp — index gọn, timeline quanh kết quả, rồi mới lấy observation đầy đủ cho đúng ID cần<br><strong>Host:</strong> plugin Claude Code, kèm trình cài cho OpenCode, các tool dựa trên Codex và agent khác<br><strong>Riêng tư:</strong> bọc nội dung trong thẻ &lt;private&gt; để không lưu; gói hosted tùy chọn (CMEM) thêm đồng bộ cloud",
           "levels": [
-            "Lv.1 — Tra danh mục",
-            "Lv.2 — Tra kĩ hơn",
-            "Lv.3 — Deep search"
+            "Lv.1 — Tra index",
+            "Lv.2 — Xem timeline",
+            "Lv.3 — Observation đầy đủ"
           ],
           "tags": [
             "SQLite + FTS5",
             "Chroma vectors",
-            "Web viewer :37777",
-            "AGPL-3.0"
+            "Lifecycle hooks",
+            "MCP search"
           ],
           "sources": [
             {
               "title": "Claude-Mem GitHub",
-              "url": "https://github.com/sdairs/claude-mem"
+              "url": "https://github.com/thedotmack/claude-mem"
+            },
+            {
+              "title": "Claude-Mem Docs",
+              "url": "https://docs.claude-mem.ai/"
             }
           ],
           "pricing": "free",
           "deployment": "local",
           "difficulty": "beginner",
           "whenToUse": [
-            "Cần giữ context giữa các phiên Claude Code",
-            "Dự án lớn cần session continuity và compound learning"
+            "Cần giữ ngữ cảnh giữa các phiên Claude Code",
+            "Dự án lớn cần liên tục giữa các phiên và tích lũy bài học"
           ],
           "whenNotToUse": [
-            "Chỉ dùng sessions ngắn, độc lập",
-            "Cần memory cho non-Claude agents"
+            "Chỉ chạy các phiên ngắn, độc lập",
+            "Không muốn chạy thêm worker service và database local"
           ],
           "compatibleWith": [
             "mcp",
-            "claude-flow"
+            "claude-code",
+            "opencode"
           ],
           "useCases": [
             "session-memory",
@@ -1042,9 +1053,9 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 24000,
+          "github_stars": 103183,
           "license": "AGPL-3.0"
         },
         {
@@ -1055,26 +1066,26 @@
           "subItems": [
             {
               "title": "CLAUDE.md (native)",
-              "desc": "Bộ nhớ tích hợp sẵn của Claude Code: 4 cấp hierarchy (user → project → local → managed). Import files với @path syntax."
+              "desc": "Bộ nhớ tích hợp sẵn của Claude Code: file hướng dẫn ở cấp tổ chức (managed), user, project và local, import file bằng cú pháp @path."
             },
             {
               "title": "OpenClaw Session Memory",
-              "desc": "Per-agent session files + SOUL.md personality. Cross-session nhưng isolated per workspace."
+              "desc": "File session riêng cho từng agent cùng file tính cách SOUL.md; nhớ qua nhiều phiên nhưng tách riêng theo workspace."
             },
             {
               "title": "ByteRover",
-              "desc": "Self-improving memory layer cho AI coding agents. Unify \"vibe-coding\" memories across projects & teams qua MCP."
+              "desc": "Lớp memory cho AI coding agent, chia sẻ memory giữa các dự án và team qua MCP."
             },
             {
-              "title": "MemGPT / Letta",
-              "desc": "Stateful agents with persistent memory — kiến trúc tiered memory (core/archival/recall)."
+              "title": "Letta (trước là MemGPT)",
+              "desc": "Agent có trạng thái với memory bền vững; phát triển hiện tiếp tục ở Letta Code (memory block, ngữ cảnh theo dõi bằng git, chạy local hoặc Letta Cloud)."
             }
           ],
-          "detail": "Ngoài Claude-Mem, có nhiều hệ thống memory khác: MemGPT/Letta — tự quản lý context window như OS quản lý RAM, có paging cơ chế. Mem0 — memory layer cho LLM apps, dùng vector search. Zep — long-term memory cho chatbots với auto-summarization. ByteRover — tìm kiếm memory từ kho GitHub. Mỗi hệ thống giải quyết 1 khía cạnh khác nhau của bài toán 'AI nhớ được'.",
+          "detail": "Ngoài Claude-Mem, nhiều hệ thống memory giải quyết các phần khác nhau của bài toán 'AI biết nhớ'. Letta (trước là MemGPT) xây agent có trạng thái, memory giữ qua các phiên; nơi phát triển hiện tại là Letta Code. Mem0 là lớp memory cho LLM app, trích xuất, lưu và truy xuất memory bằng vector search, có tích hợp với các agent framework phổ biến. Zep là nền tảng context graph dạng managed cho memory của agent, xây trên knowledge graph theo thời gian Graphiti mã nguồn mở. ByteRover chia sẻ memory cho coding agent giữa các dự án và team qua MCP.",
           "sources": [
             {
-              "title": "MemGPT/Letta",
-              "url": "https://github.com/letta-ai/letta"
+              "title": "Letta Code (formerly MemGPT)",
+              "url": "https://github.com/letta-ai/letta-code"
             },
             {
               "title": "Mem0 GitHub",
@@ -1083,18 +1094,22 @@
             {
               "title": "Zep",
               "url": "https://www.getzep.com/"
+            },
+            {
+              "title": "Graphiti (Zep open source)",
+              "url": "https://github.com/getzep/graphiti"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Agent cần nhớ user preferences qua nhiều conversations",
-            "Xây dựng AI assistant có personalization dài hạn"
+            "Agent cần nhớ sở thích người dùng qua nhiều cuộc hội thoại",
+            "Xây trợ lý AI cá nhân hóa dài hạn"
           ],
           "whenNotToUse": [
-            "Chỉ cần short-term context trong 1 session",
-            "Ứng dụng stateless không cần nhớ user history"
+            "Chỉ cần ngữ cảnh ngắn hạn trong một phiên",
+            "Ứng dụng stateless không cần lịch sử người dùng"
           ],
           "compatibleWith": [
             "langgraph",
@@ -1110,33 +1125,37 @@
             "python",
             "typescript"
           ],
-          "verified_at": "2026-02-12",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-26",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
         {
           "name": "MemOS",
           "slug": "memos",
-          "desc": "Hệ điều hành bộ nhớ thống nhất cho LLM — quản lý memory qua MemCube với hỗ trợ short-term và long-term",
+          "desc": "Hệ điều hành memory cho LLM và agent — quản lý memory dưới dạng MemCube trên ba loại: plaintext, activation và parameter.",
           "added_date": "2026-02-04",
-          "detail": "MemOS cung cấp kiến trúc memory layer chuẩn hóa cho AI agents với MemCube — đơn vị bộ nhớ cơ bản chứa cả dữ liệu và metadata. Hỗ trợ nhiều loại memory (parametric, activation, long-term) và tích hợp được với các framework phổ biến. ~6.9K stars, active development (v2.0.4, Jan 2026). Unique vì cung cấp unified memory interface mà Mem0/Zep chưa giải quyết trọn vẹn.",
+          "detail": "MemOS coi memory là tài nguyên hệ thống của AI agent. Đơn vị cơ bản là MemCube, gói nội dung memory cùng metadata như nguồn gốc và phiên bản. Hỗ trợ ba loại memory — plaintext (tri thức tường minh), activation (KV-cache) và parameter (trọng số model, ví dụ adapter) — và điều phối memory giữa chúng. Có API, tích hợp với agent framework và MCP, chạy tự host được, và có bản hosted MemOS Cloud. Kết quả benchmark do dự án công bố nên xem là số liệu của nhà phát triển.",
           "sources": [
             {
               "title": "GitHub",
               "url": "https://github.com/MemTensor/MemOS"
+            },
+            {
+              "title": "Paper (arXiv 2507.03724)",
+              "url": "https://arxiv.org/abs/2507.03724"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "advanced",
           "whenToUse": [
-            "Cần persistent skill memory cho agent cross-task reuse",
-            "Xây hệ thống multi-agent cần shared memory layer"
+            "Agent cần memory bền vững, dùng lại được giữa các task",
+            "Hệ thống nhiều agent cần lớp memory dùng chung"
           ],
           "whenNotToUse": [
-            "Chỉ cần simple key-value memory",
-            "Project nhỏ không cần memory OS phức tạp"
+            "Chỉ cần memory dạng key-value đơn giản",
+            "Dự án nhỏ không cần hệ thống memory đầy đủ"
           ],
           "compatibleWith": [
             "openclaw",
@@ -1150,9 +1169,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 5000,
+          "github_stars": 12095,
           "license": "Apache-2.0"
         }
       ]
@@ -1168,41 +1187,44 @@
           "name": "Universal Agent Skills",
           "slug": "universal-agent-skills",
           "icon": "📚",
-          "desc": "Skill là file .md chứa hướng dẫn cho AI agent — đơn giản nhưng hiệu quả, chạy được trên mọi AI coding tool.",
+          "desc": "Agent Skills: thư mục có file SKILL.md dạy AI agent làm các việc chuyên biệt — chuẩn mở, do Anthropic khởi xướng, được nhiều coding agent hỗ trợ.",
           "added_date": "2026-02-03",
-          "detail": "Hệ sinh thái Agent Skills đang bùng nổ — Anthropic đã chuẩn hóa format SKILL.md để dạy AI agents kỹ năng chuyên biệt. Antigravity Awesome Skills (631+ skills, V4.0) là bộ sưu tập lớn nhất, hỗ trợ Claude Code, Gemini CLI, Codex CLI, Cursor, OpenCode. VoltAgent cung cấp 200+ skills từ các team chính thức (Stripe, Cloudflare, Hugging Face, Sentry). Cài đặt đơn giản: npx antigravity-awesome-skills hoặc clone vào .agent/skills/.",
+          "detail": "Một skill là thư mục chứa file SKILL.md — frontmatter YAML (name, description) cùng hướng dẫn Markdown — và có thể kèm scripts, references, assets. Agent chỉ nạp name và description lúc khởi động, đọc toàn bộ hướng dẫn khi task cần đến skill (progressive disclosure). Định dạng bắt đầu từ Anthropic, nay là chuẩn mở có đặc tả riêng và công cụ kiểm tra tham chiếu; client hỗ trợ gồm Claude Code, Codex, Gemini CLI, Cursor, OpenCode, Goose, GitHub Copilot và Kiro. Các bộ sưu tập cộng đồng như Agentic Awesome Skills và VoltAgent Awesome Agent Skills tập hợp skill từ các công ty và cộng đồng; cài theo hướng dẫn của từng dự án cho từng tool.",
           "tags": [
-            "Google Labs",
-            "Hugging Face",
-            "Supabase",
-            "Vercel",
+            "Open standard",
+            "SKILL.md",
+            "Cross-agent",
             "Community"
           ],
           "sources": [
             {
-              "title": "Antigravity Skills",
-              "url": "https://github.com/sickn33/antigravity-awesome-skills"
+              "title": "Agent Skills specification",
+              "url": "https://agentskills.io/specification"
             },
             {
-              "title": "VoltAgent Skills",
+              "title": "Agent Skills GitHub",
+              "url": "https://github.com/agentskills/agentskills"
+            },
+            {
+              "title": "Agentic Awesome Skills (formerly Antigravity Awesome Skills)",
+              "url": "https://github.com/sickn33/agentic-awesome-skills"
+            },
+            {
+              "title": "VoltAgent Awesome Agent Skills",
               "url": "https://github.com/VoltAgent/awesome-agent-skills"
-            },
-            {
-              "title": "Agent Skills (Anthropic)",
-              "url": "https://github.com/agentskills"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "Khi cần mở rộng khả năng của AI agents với kiến thức chuyên biệt",
-            "Khi muốn tạo reusable workflows cho team",
-            "Khi cần chuẩn hóa quy trình phát triển với coding agents"
+            "Mở rộng AI agent bằng kiến thức và quy trình chuyên biệt",
+            "Chia sẻ workflow dùng lại được trong team",
+            "Chuẩn hóa quy trình phát triển trên nhiều coding agent khác nhau"
           ],
           "whenNotToUse": [
-            "Khi cần logic phức tạp hơn instructions — dùng MCP servers",
-            "Khi cần custom runtime hoặc API integration — dùng frameworks"
+            "Cần truy cập trực tiếp hệ thống hoặc API bên ngoài — dùng MCP server",
+            "Cần runtime riêng hoặc điều phối phức tạp — dùng agent framework"
           ],
           "compatibleWith": [
             "claude-code",
@@ -1223,8 +1245,8 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-26",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-26",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -1235,42 +1257,46 @@
           "added_date": "2026-02-03",
           "subItems": [
             {
-              "title": "Engineering & DevOps",
-              "desc": "API testing, React components, security blue books, deep research, N8n automation"
+              "title": "Phương pháp phát triển",
+              "desc": "Bộ skill áp một quy trình — brainstorm, lập kế hoạch, TDD, debug và code review (xem Superpowers)."
             },
             {
-              "title": "Cross-Agent Orchestration",
-              "desc": "Codex Skill — prompt Codex từ Claude Code. Session handoff giữa CC ↔ Codex CLI."
+              "title": "Agent và plugin chuyên ngành",
+              "desc": "Plugin theo lĩnh vực, gói agent, skill và command cho kiến trúc, hạ tầng, bảo mật, dữ liệu… (xem wshobson/agents)."
             },
             {
-              "title": "AI/ML Research",
-              "desc": "77 AI research skills (model arch, fine-tuning, distributed training, inference, MLOps)"
+              "title": "Lập kế hoạch và ngữ cảnh",
+              "desc": "Lập kế hoạch bằng file, giữ mục tiêu và phát hiện trên đĩa qua nhiều phiên (xem Planning with Files)."
             },
             {
-              "title": "Claude Code Ecosystem",
-              "desc": "Claude Task Master, Happy Coder (mobile), Claude Swarm, Context Engineering Kit"
+              "title": "Skills over MCP",
+              "desc": "Extension chính thức của MCP để khám phá và phân phối skill qua MCP server."
             }
           ],
-          "detail": "Các category chính: Engineering & DevOps (API testing, Docker, CI/CD), Web Development (React, Tailwind, animations), AI/ML Research (77 skills cho paper reading, fine-tuning), Cross-Agent Orchestration (handoff giữa Claude Code ↔ Codex ↔ Cursor), Claude Code Ecosystem (Task Master, Claude Swarm, session management). Skills là file .md — cross-platform, dùng được trên bất kỳ AI agent nào.",
+          "detail": "Skill thường chia thành vài nhóm: phương pháp phát triển (quy trình brainstorm → lập kế hoạch → test → review có cấu trúc), agent chuyên ngành và plugin theo lĩnh vực, quản lý kế hoạch và ngữ cảnh qua nhiều phiên, và phân phối — thư mục skill local, plugin marketplace, extension Skills over MCP để cung cấp skill từ MCP server. Vì skill theo định dạng mở Agent Skills, nhiều skill chạy được trên nhiều coding agent; xem từng dự án để biết host được hỗ trợ.",
           "sources": [
             {
-              "title": "Skills Documentation",
-              "url": "https://docs.claude.com/en/docs/claude-code/skills"
+              "title": "Claude Code — Skills",
+              "url": "https://code.claude.com/docs/en/skills"
             },
             {
-              "title": "MCP Skills Interest Group",
-              "url": "https://github.com/modelcontextprotocol/experimental-ext-skills"
+              "title": "Agent Skills specification",
+              "url": "https://agentskills.io/specification"
+            },
+            {
+              "title": "Skills over MCP extension",
+              "url": "https://github.com/modelcontextprotocol/ext-skills"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "Khi muốn hiểu tổng quan các loại skills có sẵn trong hệ sinh thái",
-            "Khi cần chọn đúng loại skill cho use case cụ thể"
+            "Muốn nắm tổng quan các loại skill hiện có",
+            "Cần chọn đúng loại skill cho từng use case"
           ],
           "whenNotToUse": [
-            "Khi đã biết chính xác skill/plugin cần dùng — xem trực tiếp card cụ thể"
+            "Đã biết chính xác skill/plugin cần dùng — xem trực tiếp card đó"
           ],
           "compatibleWith": [
             "universal-agent-skills",
@@ -1288,9 +1314,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-26",
-          "verification_source": "inferred",
-          "github_stars": 39,
+          "verified_at": "2026-10-26",
+          "verification_source": "docs",
+          "github_stars": 749,
           "license": "Apache-2.0"
         },
         {
@@ -1298,14 +1324,14 @@
           "slug": "superpowers",
           "id": "superpowers",
           "icon": "⚡",
-          "desc": "Framework kỹ năng dạng agent cho Claude Code — tự động kích hoạt skills phù hợp khi làm việc.",
-          "detail": "Superpowers là framework skills hàng đầu cho Claude Code với 20+ skills sẵn có: brainstorming, TDD, debugging, code review, git worktrees... Skills tự động kích hoạt theo context — ví dụ khi debug thì systematic-debugging skill tự chạy. Hỗ trợ subagent-driven development: chia task thành nhiều subtask, mỗi subtask do subagent thực hiện rồi review. Claude có thể tự chạy hàng giờ không cần can thiệp. Cài đặt qua plugin marketplace của Claude Code. Cũng hỗ trợ Codex và OpenCode.",
+          "desc": "Framework skill và phương pháp phát triển cho coding agent — skill phù hợp tự kích hoạt theo ngữ cảnh.",
+          "detail": "Superpowers là framework skill kiêm phương pháp phát triển phần mềm cho coding agent. Các skill gồm brainstorm, viết kế hoạch, TDD, debug có hệ thống, code review và git worktree, tự kích hoạt theo ngữ cảnh — ví dụ skill debug khi bạn bắt đầu điều tra lỗi. Subagent-driven development chia việc thành task cho subagent làm và reviewer kiểm, nên agent có thể làm việc lâu với các cổng review. Ban đầu là plugin Claude Code (plugin marketplace chính thức), nay hỗ trợ cả Codex, Cursor, Gemini CLI, GitHub Copilot CLI, OpenCode và các host khác. Có telemetry tùy chọn, tắt được.",
           "tags": [
-            "claude-code",
             "skills",
             "TDD",
             "subagents",
-            "plugin"
+            "plugin",
+            "multi-agent hosts"
           ],
           "sources": [
             {
@@ -1323,19 +1349,21 @@
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Khi muốn structured software development workflow cho coding agents",
-            "Khi cần TDD enforcement và code review tự động",
-            "Khi muốn subagent-driven development với review gates"
+            "Muốn quy trình phát triển có cấu trúc cho coding agent",
+            "Cần ép TDD và code review tự động",
+            "Muốn phát triển theo subagent có cổng review"
           ],
           "whenNotToUse": [
-            "Khi chỉ cần quick code generation đơn giản",
-            "Khi dự án quá nhỏ cho full TDD workflow"
+            "Chỉ cần sinh code nhanh, đơn giản",
+            "Dự án quá nhỏ cho quy trình TDD đầy đủ"
           ],
           "compatibleWith": [
             "claude-code",
             "codex-cli",
             "opencode",
-            "gemini-cli"
+            "gemini-cli",
+            "cursor",
+            "github-copilot"
           ],
           "useCases": [
             "agentic-coding",
@@ -1348,9 +1376,9 @@
             "python",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 117604,
+          "github_stars": 301262,
           "license": "MIT"
         },
         {
@@ -1358,14 +1386,14 @@
           "slug": "agents-wshobson",
           "id": "agents-wshobson",
           "icon": "🤖",
-          "desc": "Bộ sưu tập 112 agents + 146 skills + 73 plugins chuyên biệt cho Claude Code — lớn nhất hiện tại.",
-          "detail": "Agents là hệ thống production-ready kết hợp 112 AI agents chuyên biệt, 16 workflow orchestrators, 146 skills, và 79 development tools — tất cả tổ chức thành 73 plugins đơn mục đích cho Claude Code. Các agents chia theo domain: architecture, languages, infrastructure, security, data/AI, documentation, business operations, SEO. Cài từng plugin riêng lẻ để tối ưu token usage. Hỗ trợ Sonnet + Haiku routing tự động theo độ phức tạp task.",
+          "desc": "Plugin marketplace gồm agent chuyên biệt, skill, command và bộ điều phối workflow cho coding agent — chỉ cài plugin cần dùng.",
+          "detail": "Agents (của Seth Hobson) là plugin marketplace cho nhiều harness, gói agent AI chuyên biệt, skill, slash command và bộ điều phối workflow thành các plugin đơn mục đích. Plugin chia theo lĩnh vực — kiến trúc, ngôn ngữ lập trình, hạ tầng, bảo mật, dữ liệu và AI, tài liệu, vận hành kinh doanh, SEO — nên mỗi dự án chỉ cài phần cần thiết, giữ ngữ cảnh gọn. Nhắm tới Claude Code, đồng thời hỗ trợ Codex CLI, Cursor, OpenCode, GitHub Copilot và các harness khác. Agent khai báo cấp model (ví dụ opus, sonnet, haiku), mỗi harness tự ánh xạ sang model của mình.",
           "tags": [
-            "claude-code",
             "multi-agent",
             "plugins",
             "skills",
-            "orchestration"
+            "orchestration",
+            "multi-harness"
           ],
           "sources": [
             {
@@ -1383,16 +1411,20 @@
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Khi cần multi-agent orchestration với specialized domain agents",
-            "Khi muốn plugin architecture mô-đun — chỉ load agents cần thiết",
-            "Khi cần workflow orchestrators cho full-stack, security, ML pipelines"
+            "Muốn agent chuyên ngành và bộ điều phối workflow nhiều agent",
+            "Muốn kiến trúc plugin mô-đun, chỉ nạp agent cần thiết",
+            "Cần sẵn bộ điều phối cho full-stack, bảo mật hoặc pipeline ML"
           ],
           "whenNotToUse": [
-            "Khi chỉ cần 1-2 skills đơn giản — Superpowers nhẹ hơn",
-            "Khi không dùng Claude Code"
+            "Chỉ cần một hai skill đơn giản — Superpowers nhẹ hơn",
+            "Muốn tự viết và duy trì một bộ agent nhỏ của riêng mình"
           ],
           "compatibleWith": [
             "claude-code",
+            "codex-cli",
+            "cursor",
+            "opencode",
+            "github-copilot",
             "mcp"
           ],
           "useCases": [
@@ -1405,9 +1437,9 @@
             "python",
             "csharp"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 31400,
+          "github_stars": 41720,
           "license": "MIT"
         },
         {
@@ -1415,14 +1447,14 @@
           "slug": "planning-with-files",
           "id": "planning-with-files",
           "icon": "📋",
-          "desc": "Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.",
-          "detail": "Planning-with-files triển khai mô hình lập kế hoạch bền vững bằng 3 file markdown: task_plan.md (mục tiêu + phases), findings.md (ghi chép phát hiện), progress.md (log tiến trình). Tuân thủ '2-Action Rule' — sau mỗi 2 thao tác view/search phải ghi lại findings. Có hooks tự động đọc lại task_plan trước mỗi thao tác write để tránh drift khỏi mục tiêu ban đầu. Lấy cảm hứng từ workflow của Manus (được Meta mua lại $2B). Hỗ trợ Claude Code, Codex, Gemini CLI, Cursor.",
+          "desc": "Skill lập kế hoạch bằng file Markdown lấy cảm hứng từ Manus — giữ mục tiêu, phát hiện và tiến độ trên đĩa để ngữ cảnh còn qua các phiên.",
+          "detail": "Planning with Files lập kế hoạch bền vững bằng ba file Markdown: task_plan.md (mục tiêu và giai đoạn), findings.md (ghi chú phát hiện) và progress.md (nhật ký tiến độ). Theo quy tắc '2-Action Rule' — cứ sau hai thao tác xem hoặc tìm kiếm thì phải ghi lại phát hiện. Hook đưa kế hoạch trở lại mỗi lượt và chạy trước, sau khi dùng tool để agent không lệch khỏi mục tiêu ban đầu, có kiểm tra toàn vẹn kế hoạch và cổng hoàn thành tùy chọn. Cách làm lấy cảm hứng từ context engineering dựa trên file của Manus. Có dạng plugin hoặc skill cho Claude Code, Codex CLI, OpenCode và các host khác, kèm hướng dẫn cài cho Cursor, GitHub Copilot, Gemini CLI và Kiro.",
           "tags": [
-            "claude-code",
             "planning",
             "markdown",
             "context-engineering",
-            "skill"
+            "skill",
+            "hooks"
           ],
           "sources": [
             {
@@ -1436,18 +1468,19 @@
           "deployment": "local",
           "difficulty": "beginner",
           "whenToUse": [
-            "Khi cần persistent planning across sessions (survive /clear)",
-            "Khi dự án phức tạp cần structured task tracking",
-            "Khi muốn Manus-style workflow với markdown planning files"
+            "Cần kế hoạch bền vững qua nhiều phiên (còn sau /clear)",
+            "Dự án phức tạp cần theo dõi task có cấu trúc",
+            "Muốn workflow kiểu Manus với file kế hoạch Markdown"
           ],
           "whenNotToUse": [
-            "Khi dự án đơn giản không cần planning phase",
-            "Khi đã dùng Superpowers (có planning skills riêng)"
+            "Việc đơn giản không cần giai đoạn lập kế hoạch",
+            "Đã dùng Superpowers (có skill lập kế hoạch riêng)"
           ],
           "compatibleWith": [
             "claude-code",
-            "gemini-cli",
             "codex-cli",
+            "opencode",
+            "gemini-cli",
             "cursor"
           ],
           "useCases": [
@@ -1458,9 +1491,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 17038,
+          "github_stars": 27649,
           "license": "MIT"
         }
       ]

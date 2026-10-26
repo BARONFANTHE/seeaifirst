@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="Other Memory Systems — See AI First">
 <meta name="twitter:description" content="">
 <link rel="canonical" href="https://seeaifirst.com/tool/he-thong-memory-khac">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Other Memory Systems","url":"https://seeaifirst.com/tool/he-thong-memory-khac","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","keywords":["Memory Systems — Cross-Session Memory","python","typescript"],"isAccessibleForFree":true,"sameAs":["https://github.com/letta-ai/letta","https://github.com/mem0ai/mem0","https://www.getzep.com/"],"datePublished":"2026-02-03","dateModified":"2026-02-12","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Other Memory Systems","url":"https://seeaifirst.com/tool/he-thong-memory-khac","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","keywords":["Memory Systems — Cross-Session Memory","python","typescript"],"isAccessibleForFree":true,"sameAs":["https://github.com/letta-ai/letta-code","https://github.com/mem0ai/mem0","https://www.getzep.com/","https://github.com/getzep/graphiti"],"datePublished":"2026-02-03","dateModified":"2026-10-26","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,7 +1090,17 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/memory">Memory Systems — Cross-Session Memory</a> › Other Memory Systems</nav>
     <article>
       <h1>Other Memory Systems</h1>
-      <p>Beyond Claude-Mem, several other memory systems exist: MemGPT/Letta — self-manages context windows like an OS manages RAM, with a paging mechanism. Mem0 — memory layer for LLM apps using vector search. Zep — long-term memory for chatbots with auto-summarization. ByteRover — searches memory from GitHub repositories. Each system tackles a different aspect of the &#039;AI that remembers&#039; problem.</p>
+      <p>Beyond Claude-Mem, several memory systems tackle different parts of the &#039;AI that remembers&#039; problem. Letta (formerly MemGPT) builds stateful agents whose memory persists across sessions; its current home is Letta Code. Mem0 is a memory layer for LLM apps that extracts, stores and retrieves memories with vector search, with integrations for common agent frameworks. Zep is a managed context-graph platform for agent memory, built on its open-source Graphiti temporal knowledge graph. ByteRover shares memories for coding agents across projects and teams via MCP.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>An agent must remember user preferences across many conversations</li>
+        <li>Building an AI assistant with long-term personalization</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You only need short-term context within one session</li>
+        <li>Stateless apps that do not need user history</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Freemium</dd>
@@ -1098,7 +1108,7 @@ html, body {
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>Languages</dt><dd>python, typescript</dd>
         <dt>Use cases</dt><dd>agent memory, personalization, long term context</dd>
-        <dt>Last verified</dt><dd>2026-02-12 (inference from documented facts)</dd>
+        <dt>Last verified</dt><dd>2026-10-26 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1114,9 +1124,10 @@ html, body {
       <p><a href="/section/memory">See all 3 tools in Memory Systems — Cross-Session Memory →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/letta-ai/letta" rel="noopener noreferrer">MemGPT/Letta</a></li>
+        <li><a href="https://github.com/letta-ai/letta-code" rel="noopener noreferrer">Letta Code (formerly MemGPT)</a></li>
         <li><a href="https://github.com/mem0ai/mem0" rel="noopener noreferrer">Mem0 GitHub</a></li>
         <li><a href="https://www.getzep.com/" rel="noopener noreferrer">Zep</a></li>
+        <li><a href="https://github.com/getzep/graphiti" rel="noopener noreferrer">Graphiti (Zep open source)</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/memory">Memory Systems — Cross-Session Memory</a> on See AI First.</p>

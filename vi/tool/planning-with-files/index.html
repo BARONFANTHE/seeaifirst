@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Planning with Files — See AI First</title>
-<meta name="description" content="Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.">
+<meta name="description" content="Skill lập kế hoạch bằng file Markdown lấy cảm hứng từ Manus — giữ mục tiêu, phát hiện và tiến độ trên đĩa để ngữ cảnh còn qua các phiên.">
 <meta property="og:title" content="Planning with Files — See AI First">
-<meta property="og:description" content="Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.">
+<meta property="og:description" content="Skill lập kế hoạch bằng file Markdown lấy cảm hứng từ Manus — giữ mục tiêu, phát hiện và tiến độ trên đĩa để ngữ cảnh còn qua các phiên.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/planning-with-files">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Planning with Files — See AI First">
-<meta name="twitter:description" content="Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.">
+<meta name="twitter:description" content="Skill lập kế hoạch bằng file Markdown lấy cảm hứng từ Manus — giữ mục tiêu, phát hiện và tiến độ trên đĩa để ngữ cảnh còn qua các phiên.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/planning-with-files">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Planning with Files","url":"https://seeaifirst.com/vi/tool/planning-with-files","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.","keywords":["Skills Ecosystem — \"Bigger than MCP\"","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/OthmanAdi/planning-with-files"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Planning with Files","url":"https://seeaifirst.com/vi/tool/planning-with-files","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Skill lập kế hoạch bằng file Markdown lấy cảm hứng từ Manus — giữ mục tiêu, phát hiện và tiến độ trên đĩa để ngữ cảnh còn qua các phiên.","keywords":["Skills Ecosystem — \"Bigger than MCP\"","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/OthmanAdi/planning-with-files"],"datePublished":"2026-02-08","dateModified":"2026-10-26","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,18 +1090,18 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> › Planning with Files</nav>
     <article>
       <h1>Planning with Files</h1>
-      <p>Skill lập kế hoạch bằng markdown files theo phong cách Manus — giữ context qua nhiều phiên làm việc.</p>
-      <p>Planning-with-files triển khai mô hình lập kế hoạch bền vững bằng 3 file markdown: task_plan.md (mục tiêu + phases), findings.md (ghi chép phát hiện), progress.md (log tiến trình). Tuân thủ &#039;2-Action Rule&#039; — sau mỗi 2 thao tác view/search phải ghi lại findings. Có hooks tự động đọc lại task_plan trước mỗi thao tác write để tránh drift khỏi mục tiêu ban đầu. Lấy cảm hứng từ workflow của Manus (được Meta mua lại $2B). Hỗ trợ Claude Code, Codex, Gemini CLI, Cursor.</p>
+      <p>Skill lập kế hoạch bằng file Markdown lấy cảm hứng từ Manus — giữ mục tiêu, phát hiện và tiến độ trên đĩa để ngữ cảnh còn qua các phiên.</p>
+      <p>Planning with Files lập kế hoạch bền vững bằng ba file Markdown: task_plan.md (mục tiêu và giai đoạn), findings.md (ghi chú phát hiện) và progress.md (nhật ký tiến độ). Theo quy tắc &#039;2-Action Rule&#039; — cứ sau hai thao tác xem hoặc tìm kiếm thì phải ghi lại phát hiện. Hook đưa kế hoạch trở lại mỗi lượt và chạy trước, sau khi dùng tool để agent không lệch khỏi mục tiêu ban đầu, có kiểm tra toàn vẹn kế hoạch và cổng hoàn thành tùy chọn. Cách làm lấy cảm hứng từ context engineering dựa trên file của Manus. Có dạng plugin hoặc skill cho Claude Code, Codex CLI, OpenCode và các host khác, kèm hướng dẫn cài cho Cursor, GitHub Copilot, Gemini CLI và Kiro.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Khi cần persistent planning across sessions (survive /clear)</li>
-        <li>Khi dự án phức tạp cần structured task tracking</li>
-        <li>Khi muốn Manus-style workflow với markdown planning files</li>
+        <li>Cần kế hoạch bền vững qua nhiều phiên (còn sau /clear)</li>
+        <li>Dự án phức tạp cần theo dõi task có cấu trúc</li>
+        <li>Muốn workflow kiểu Manus với file kế hoạch Markdown</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Khi dự án đơn giản không cần planning phase</li>
-        <li>Khi đã dùng Superpowers (có planning skills riêng)</li>
+        <li>Việc đơn giản không cần giai đoạn lập kế hoạch</li>
+        <li>Đã dùng Superpowers (có skill lập kế hoạch riêng)</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1111,13 +1111,14 @@ html, body {
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>project continuity, agentic coding, task automation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-26 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
         <li><a href="/vi/tool/claude-code">Claude Code</a></li>
-        <li><a href="/vi/tool/gemini-cli">Gemini CLI</a></li>
         <li><a href="/vi/tool/codex-cli">Codex CLI</a></li>
+        <li><a href="/vi/tool/opencode">OpenCode</a></li>
+        <li><a href="/vi/tool/gemini-cli">Gemini CLI</a></li>
         <li><a href="/vi/tool/cursor">Cursor</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
