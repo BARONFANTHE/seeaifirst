@@ -1007,7 +1007,7 @@
           ],
           "desc": "Plugin that gives <strong>Claude Code</strong> and other coding agents persistent long-term memory — it records what happens in each session, compresses it and brings relevant context back later.",
           "added_date": "2026-02-03",
-          "detail": "<strong>Architecture:</strong> lifecycle hooks (SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop, SessionEnd) feed a local worker service that stores sessions, observations and summaries in SQLite (FTS5) with Chroma for semantic search<br><strong>Progressive disclosure:</strong> MCP search tools work in three layers — compact index, timeline around a result, then full observations only for the IDs you need<br><strong>Hosts:</strong> Claude Code plugin, plus installers for OpenCode, Codex-based tools and other agents<br><strong>Privacy:</strong> wrap content in &lt;private&gt; tags to keep it out of storage; an optional hosted tier (CMEM) adds cloud sync",
+          "detail": "<strong>Architecture:</strong> lifecycle hooks (SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop, SessionEnd) feed a local worker service that stores sessions, observations and summaries in SQLite (FTS5) with Chroma for semantic search<br><strong>Progressive disclosure:</strong> MCP search tools work in three layers — compact index, timeline around a result, then full observations only for the IDs you need<br><strong>Hosts:</strong> Claude Code plugin, plus installers for OpenCode, Codex-based tools and other agents<br><strong>Privacy:</strong> wrap content in &lt;private&gt; tags to keep it out of storage<br><strong>Local engine vs CMEM Pro:</strong> the local engine is free and open source (Apache-2.0); CMEM Pro is a separate paid hosted service for observation and cloud sync (with a free trial). The installer offers CMEM Pro sign-in first — skip it to keep memory on your machine",
           "levels": [
             "Lv.1 — Search index",
             "Lv.2 — Timeline context",
@@ -1056,7 +1056,7 @@
           "verified_at": "2026-10-26",
           "verification_source": "docs",
           "github_stars": 103183,
-          "license": "AGPL-3.0"
+          "license": "Apache-2.0"
         },
         {
           "name": "Other Memory Systems",
@@ -1147,7 +1147,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "advanced",
           "whenToUse": [
             "Agents that need persistent, reusable memory across tasks",
@@ -1215,7 +1215,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "cloud",
+          "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
             "Extending AI agents with specialized knowledge and procedures",
@@ -1289,7 +1289,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "cloud",
+          "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
             "Getting an overview of the kinds of skills available",
@@ -1316,8 +1316,8 @@
           ],
           "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 749,
-          "license": "Apache-2.0"
+          "github_stars": null,
+          "license": null
         },
         {
           "name": "Superpowers",

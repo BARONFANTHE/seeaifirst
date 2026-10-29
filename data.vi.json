@@ -1007,7 +1007,7 @@
           ],
           "desc": "Plugin cho <strong>Claude Code</strong> và các coding agent khác bộ nhớ dài hạn — ghi lại những gì diễn ra trong mỗi phiên, nén lại và đưa ngữ cảnh liên quan trở lại ở phiên sau.",
           "added_date": "2026-02-03",
-          "detail": "<strong>Kiến trúc:</strong> lifecycle hook (SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop, SessionEnd) đẩy dữ liệu vào worker service local, lưu session, observation và summary trong SQLite (FTS5), dùng Chroma cho semantic search<br><strong>Progressive disclosure:</strong> tool search MCP chia ba lớp — index gọn, timeline quanh kết quả, rồi mới lấy observation đầy đủ cho đúng ID cần<br><strong>Host:</strong> plugin Claude Code, kèm trình cài cho OpenCode, các tool dựa trên Codex và agent khác<br><strong>Riêng tư:</strong> bọc nội dung trong thẻ &lt;private&gt; để không lưu; gói hosted tùy chọn (CMEM) thêm đồng bộ cloud",
+          "detail": "<strong>Kiến trúc:</strong> lifecycle hook (SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop, SessionEnd) đẩy dữ liệu vào worker service local, lưu session, observation và summary trong SQLite (FTS5), dùng Chroma cho semantic search<br><strong>Progressive disclosure:</strong> tool search MCP chia ba lớp — index gọn, timeline quanh kết quả, rồi mới lấy observation đầy đủ cho đúng ID cần<br><strong>Host:</strong> plugin Claude Code, kèm trình cài cho OpenCode, các tool dựa trên Codex và agent khác<br><strong>Riêng tư:</strong> bọc nội dung trong thẻ &lt;private&gt; để không lưu<br><strong>Engine local và CMEM Pro:</strong> engine local miễn phí, mã nguồn mở (Apache-2.0); CMEM Pro là dịch vụ hosted trả phí riêng cho observation và đồng bộ cloud (có dùng thử miễn phí). Trình cài mời đăng nhập CMEM Pro trước — bỏ qua bước này để memory chỉ nằm trên máy bạn",
           "levels": [
             "Lv.1 — Tra index",
             "Lv.2 — Xem timeline",
@@ -1056,7 +1056,7 @@
           "verified_at": "2026-10-26",
           "verification_source": "docs",
           "github_stars": 103183,
-          "license": "AGPL-3.0"
+          "license": "Apache-2.0"
         },
         {
           "name": "Hệ thống Memory khác",
@@ -1147,7 +1147,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "advanced",
           "whenToUse": [
             "Agent cần memory bền vững, dùng lại được giữa các task",
@@ -1215,7 +1215,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "cloud",
+          "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
             "Mở rộng AI agent bằng kiến thức và quy trình chuyên biệt",
@@ -1289,7 +1289,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "cloud",
+          "deployment": "hybrid",
           "difficulty": "beginner",
           "whenToUse": [
             "Muốn nắm tổng quan các loại skill hiện có",
@@ -1316,8 +1316,8 @@
           ],
           "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 749,
-          "license": "Apache-2.0"
+          "github_stars": null,
+          "license": null
         },
         {
           "name": "Superpowers",
