@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Planning with Files — See AI First</title>
-<meta name="description" content="Markdown-file-based planning skill inspired by Manus — maintains context across multiple work sessions.">
+<meta name="description" content="Markdown-file planning skill inspired by Manus — keeps goals, findings and progress on disk so context survives across sessions.">
 <meta property="og:title" content="Planning with Files — See AI First">
-<meta property="og:description" content="Markdown-file-based planning skill inspired by Manus — maintains context across multiple work sessions.">
+<meta property="og:description" content="Markdown-file planning skill inspired by Manus — keeps goals, findings and progress on disk so context survives across sessions.">
 <meta property="og:url" content="https://seeaifirst.com/tool/planning-with-files">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Planning with Files — See AI First">
-<meta name="twitter:description" content="Markdown-file-based planning skill inspired by Manus — maintains context across multiple work sessions.">
+<meta name="twitter:description" content="Markdown-file planning skill inspired by Manus — keeps goals, findings and progress on disk so context survives across sessions.">
 <link rel="canonical" href="https://seeaifirst.com/tool/planning-with-files">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Planning with Files","url":"https://seeaifirst.com/tool/planning-with-files","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Markdown-file-based planning skill inspired by Manus — maintains context across multiple work sessions.","keywords":["Skills Ecosystem — \"Bigger than MCP\"","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/OthmanAdi/planning-with-files"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Planning with Files","url":"https://seeaifirst.com/tool/planning-with-files","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Markdown-file planning skill inspired by Manus — keeps goals, findings and progress on disk so context survives across sessions.","keywords":["Skills Ecosystem — \"Bigger than MCP\"","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/OthmanAdi/planning-with-files"],"datePublished":"2026-02-08","dateModified":"2026-10-26","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> › Planning with Files</nav>
     <article>
       <h1>Planning with Files</h1>
-      <p>Markdown-file-based planning skill inspired by Manus — maintains context across multiple work sessions.</p>
-      <p>Planning-with-files implements a persistent planning model using 3 markdown files: task_plan.md (goals + phases), findings.md (discovery notes), progress.md (progress log). Follows the &#039;2-Action Rule&#039; — after every 2 view/search actions, findings must be recorded. Includes hooks that auto-read task_plan before every write action to prevent drifting from original goals. Inspired by the Manus workflow (acquired by Meta for $2B). Supports Claude Code, Codex, Gemini CLI, Cursor.</p>
+      <p>Markdown-file planning skill inspired by Manus — keeps goals, findings and progress on disk so context survives across sessions.</p>
+      <p>Planning with Files implements persistent planning with three Markdown files: task_plan.md (goals and phases), findings.md (discovery notes) and progress.md (progress log). It follows a &#039;2-Action Rule&#039; — after every two view or search actions, findings are written down. Hooks re-inject the plan each turn and run before and after tool use so the agent does not drift from the original goal, with optional plan-integrity checks and a completion gate. The approach is inspired by Manus&#039;s file-based context engineering. It ships as a plugin or skill for Claude Code, Codex CLI, OpenCode and other hosts, with setup guides for Cursor, GitHub Copilot, Gemini CLI and Kiro.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You need planning that persists across sessions (survives /clear)</li>
+        <li>Complex projects that need structured task tracking</li>
+        <li>You want a Manus-style workflow with Markdown planning files</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>Simple tasks that need no planning phase</li>
+        <li>You already use Superpowers, which has its own planning skills</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1100,13 +1111,14 @@ html, body {
         <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>project continuity, agentic coding, task automation</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-26 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/claude-code">Claude Code</a></li>
-        <li><a href="/tool/gemini-cli">Gemini CLI</a></li>
         <li><a href="/tool/codex-cli">Codex CLI</a></li>
+        <li><a href="/tool/opencode">OpenCode</a></li>
+        <li><a href="/tool/gemini-cli">Gemini CLI</a></li>
         <li><a href="/tool/cursor">Cursor</a></li>
       </ul>
       <h2>Alternatives in this category</h2>

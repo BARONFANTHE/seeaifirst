@@ -15,7 +15,7 @@
 <meta name="twitter:title" content="Hệ thống Memory khác — See AI First">
 <meta name="twitter:description" content="">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/he-thong-memory-khac">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Hệ thống Memory khác","url":"https://seeaifirst.com/vi/tool/he-thong-memory-khac","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","keywords":["Memory Systems — Bộ nhớ xuyên phiên","python","typescript"],"isAccessibleForFree":true,"sameAs":["https://github.com/letta-ai/letta","https://github.com/mem0ai/mem0","https://www.getzep.com/"],"datePublished":"2026-02-03","dateModified":"2026-02-12","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Hệ thống Memory khác","url":"https://seeaifirst.com/vi/tool/he-thong-memory-khac","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","keywords":["Memory Systems — Bộ nhớ xuyên phiên","python","typescript"],"isAccessibleForFree":true,"sameAs":["https://github.com/letta-ai/letta-code","https://github.com/mem0ai/mem0","https://www.getzep.com/","https://github.com/getzep/graphiti"],"datePublished":"2026-02-03","dateModified":"2026-10-26","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,16 +1090,16 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/memory">Memory Systems — Bộ nhớ xuyên phiên</a> › Hệ thống Memory khác</nav>
     <article>
       <h1>Hệ thống Memory khác</h1>
-      <p>Ngoài Claude-Mem, có nhiều hệ thống memory khác: MemGPT/Letta — tự quản lý context window như OS quản lý RAM, có paging cơ chế. Mem0 — memory layer cho LLM apps, dùng vector search. Zep — long-term memory cho chatbots với auto-summarization. ByteRover — tìm kiếm memory từ kho GitHub. Mỗi hệ thống giải quyết 1 khía cạnh khác nhau của bài toán &#039;AI nhớ được&#039;.</p>
+      <p>Ngoài Claude-Mem, nhiều hệ thống memory giải quyết các phần khác nhau của bài toán &#039;AI biết nhớ&#039;. Letta (trước là MemGPT) xây agent có trạng thái, memory giữ qua các phiên; nơi phát triển hiện tại là Letta Code. Mem0 là lớp memory cho LLM app, trích xuất, lưu và truy xuất memory bằng vector search, có tích hợp với các agent framework phổ biến. Zep là nền tảng context graph dạng managed cho memory của agent, xây trên knowledge graph theo thời gian Graphiti mã nguồn mở. ByteRover chia sẻ memory cho coding agent giữa các dự án và team qua MCP.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Agent cần nhớ user preferences qua nhiều conversations</li>
-        <li>Xây dựng AI assistant có personalization dài hạn</li>
+        <li>Agent cần nhớ sở thích người dùng qua nhiều cuộc hội thoại</li>
+        <li>Xây trợ lý AI cá nhân hóa dài hạn</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>Chỉ cần short-term context trong 1 session</li>
-        <li>Ứng dụng stateless không cần nhớ user history</li>
+        <li>Chỉ cần ngữ cảnh ngắn hạn trong một phiên</li>
+        <li>Ứng dụng stateless không cần lịch sử người dùng</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1108,7 +1108,7 @@ html, body {
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Ngôn ngữ</dt><dd>python, typescript</dd>
         <dt>Ứng dụng</dt><dd>agent memory, personalization, long term context</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-02-12 (suy luận từ dữ liệu đã công bố)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-26 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1124,9 +1124,10 @@ html, body {
       <p><a href="/vi/section/memory">Xem tất cả 3 công cụ trong Memory Systems — Bộ nhớ xuyên phiên →</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/letta-ai/letta" rel="noopener noreferrer">MemGPT/Letta</a></li>
+        <li><a href="https://github.com/letta-ai/letta-code" rel="noopener noreferrer">Letta Code (formerly MemGPT)</a></li>
         <li><a href="https://github.com/mem0ai/mem0" rel="noopener noreferrer">Mem0 GitHub</a></li>
         <li><a href="https://www.getzep.com/" rel="noopener noreferrer">Zep</a></li>
+        <li><a href="https://github.com/getzep/graphiti" rel="noopener noreferrer">Graphiti (Zep open source)</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/memory">Memory Systems — Bộ nhớ xuyên phiên</a> trên See AI First.</p>

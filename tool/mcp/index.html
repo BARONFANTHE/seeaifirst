@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>MCP — Model Context Protocol — See AI First</title>
-<meta name="description" content="Anthropic&#039;s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called &#039;USB-C for AI&#039;.">
+<meta name="description" content="Open standard, created by Anthropic and now governed by the Agentic AI Foundation, that lets AI apps connect to any tool, data source or API through one prot...">
 <meta property="og:title" content="MCP — Model Context Protocol — See AI First">
-<meta property="og:description" content="Anthropic&#039;s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called &#039;USB-C for AI&#039;.">
+<meta property="og:description" content="Open standard, created by Anthropic and now governed by the Agentic AI Foundation, that lets AI apps connect to any tool, data source or API through one prot...">
 <meta property="og:url" content="https://seeaifirst.com/tool/mcp">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="MCP — Model Context Protocol — See AI First">
-<meta name="twitter:description" content="Anthropic&#039;s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called &#039;USB-C for AI&#039;.">
+<meta name="twitter:description" content="Open standard, created by Anthropic and now governed by the Agentic AI Foundation, that lets AI apps connect to any tool, data source or API through one prot...">
 <link rel="canonical" href="https://seeaifirst.com/tool/mcp">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"MCP — Model Context Protocol","url":"https://seeaifirst.com/tool/mcp","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Anthropic's connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called 'USB-C for AI'.","keywords":["Protocols — Standardized Communication Layer","python","js","java","csharp","go","rust","swift","ruby"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://www.anthropic.com/news/model-context-protocol","https://modelcontextprotocol.io/specification/2025-11-25","https://en.wikipedia.org/wiki/Model_Context_Protocol","https://github.com/modelcontextprotocol"],"datePublished":"2026-02-03","dateModified":"2026-02-11","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"MCP — Model Context Protocol","url":"https://seeaifirst.com/tool/mcp","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open standard, created by Anthropic and now governed by the Agentic AI Foundation, that lets AI apps connect to any tool, data source or API through one protocol. Often called \"USB-C for AI\".","keywords":["Protocols — Standardized Communication Layer","python","js","java","csharp","go","rust","swift","ruby"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://modelcontextprotocol.io/specification/2026-07-28","https://github.com/modelcontextprotocol/modelcontextprotocol","https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation","https://www.anthropic.com/news/model-context-protocol","https://en.wikipedia.org/wiki/Model_Context_Protocol"],"datePublished":"2026-02-03","dateModified":"2026-10-26","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,19 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/protocols">Protocols — Standardized Communication Layer</a> › MCP — Model Context Protocol</nav>
     <article>
       <h1>MCP — Model Context Protocol</h1>
-      <p>Anthropic&#039;s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called &#039;USB-C for AI&#039;.</p>
-      <p>Agent ↔ Tool communication · The &quot;USB-C for AI&quot; · Adopted by OpenAI, Google DeepMind, Cursor, Replit, SourcegraphMCP Apps (Jan 2026): New extension — tools return interactive UI (dashboards, forms) directly in conversationSkills over MCP: Experimental — skill discovery &amp; distribution via MCP primitives</p>
+      <p>Open standard, created by Anthropic and now governed by the Agentic AI Foundation, that lets AI apps connect to any tool, data source or API through one protocol. Often called &quot;USB-C for AI&quot;.</p>
+      <p>Agent ↔ Tool communication · The &quot;USB-C for AI&quot; · Hosts (AI apps) connect through clients to servers that expose tools, resources and prompts over JSON-RPCGovernance: Anthropic donated MCP to the Agentic AI Foundation (a Linux Foundation fund) in December 2025Spec 2026-07-28: stateless core with per-request capability negotiation and a formal extensions frameworkExtensions: Tasks (long-running work), MCP Apps (interactive UI inside conversations), Skills over MCP (skill discovery and distribution) — opt-in, negotiated per connection</p>
       <h2>When to use</h2>
       <ul>
-        <li>tool integration for LLMs</li>
-        <li>connecting AI apps to external data sources</li>
-        <li>building standardized AI plugins</li>
-        <li>cross-platform tool sharing</li>
+        <li>Tool integration for LLMs</li>
+        <li>Connecting AI apps to external data sources</li>
+        <li>Building standardized AI plugins and connectors</li>
+        <li>Sharing one tool server across several AI clients</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>agent-to-agent communication (use A2A)</li>
-        <li>simple REST API calls without AI context</li>
+        <li>Agent-to-agent communication (use A2A)</li>
+        <li>Simple REST API calls without AI context</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
@@ -1112,7 +1112,7 @@ html, body {
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>python, js, java, csharp, go, rust, swift, ruby</dd>
         <dt>Use cases</dt><dd>tool integration, data access, ai plugin system, ide extension</dd>
-        <dt>Last verified</dt><dd>2026-02-11 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-26 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1133,10 +1133,11 @@ html, body {
       <p><a href="/section/protocols">See all 2 tools in Protocols — Standardized Communication Layer →</a></p>
       <h2>Sources</h2>
       <ul>
+        <li><a href="https://modelcontextprotocol.io/specification/2026-07-28" rel="noopener noreferrer">MCP Specification (2026-07-28)</a></li>
+        <li><a href="https://github.com/modelcontextprotocol/modelcontextprotocol" rel="noopener noreferrer">MCP GitHub (spec + docs)</a></li>
+        <li><a href="https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" rel="noopener noreferrer">Anthropic — Donating MCP to the Agentic AI Foundation</a></li>
         <li><a href="https://www.anthropic.com/news/model-context-protocol" rel="noopener noreferrer">Anthropic — Introducing MCP</a></li>
-        <li><a href="https://modelcontextprotocol.io/specification/2025-11-25" rel="noopener noreferrer">MCP Specification</a></li>
         <li><a href="https://en.wikipedia.org/wiki/Model_Context_Protocol" rel="noopener noreferrer">Wikipedia — Model Context Protocol</a></li>
-        <li><a href="https://github.com/modelcontextprotocol" rel="noopener noreferrer">MCP GitHub</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/protocols">Protocols — Standardized Communication Layer</a> on See AI First.</p>

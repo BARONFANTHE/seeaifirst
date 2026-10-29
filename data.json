@@ -94,47 +94,49 @@
           "icon": "🔌",
           "mono": true,
           "hot": true,
-          "desc": "<strong>Anthropic</strong>'s connection standard — lets AI talk to any tool, database, or API through one unified protocol. Often called 'USB-C for AI'.",
+          "desc": "Open standard, created by <strong>Anthropic</strong> and now governed by the Agentic AI Foundation, that lets AI apps connect to any tool, data source or API through one protocol. Often called \"USB-C for AI\".",
           "added_date": "2026-02-03",
-          "detail": "<strong>Agent ↔ Tool</strong> communication · The \"USB-C for AI\" · Adopted by OpenAI, Google DeepMind, Cursor, Replit, Sourcegraph<br><strong>MCP Apps</strong> (Jan 2026): New extension — tools return interactive UI (dashboards, forms) directly in conversation<br><strong>Skills over MCP</strong>: Experimental — skill discovery & distribution via MCP primitives",
+          "detail": "<strong>Agent ↔ Tool</strong> communication · The \"USB-C for AI\" · Hosts (AI apps) connect through clients to servers that expose tools, resources and prompts over JSON-RPC<br><strong>Governance</strong>: Anthropic donated MCP to the Agentic AI Foundation (a Linux Foundation fund) in December 2025<br><strong>Spec 2026-07-28</strong>: stateless core with per-request capability negotiation and a formal extensions framework<br><strong>Extensions</strong>: Tasks (long-running work), MCP Apps (interactive UI inside conversations), Skills over MCP (skill discovery and distribution) — opt-in, negotiated per connection",
           "tags": [
-            "Python SDK 21k⭐",
-            "TS SDK 11k⭐",
-            "C# (Microsoft)",
-            "Kotlin (JetBrains)",
-            "Swift",
-            "Linux Foundation"
+            "Open standard",
+            "Agentic AI Foundation",
+            "Official SDKs",
+            "MCP Apps"
           ],
           "sources": [
+            {
+              "title": "MCP Specification (2026-07-28)",
+              "url": "https://modelcontextprotocol.io/specification/2026-07-28"
+            },
+            {
+              "title": "MCP GitHub (spec + docs)",
+              "url": "https://github.com/modelcontextprotocol/modelcontextprotocol"
+            },
+            {
+              "title": "Anthropic — Donating MCP to the Agentic AI Foundation",
+              "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation"
+            },
             {
               "title": "Anthropic — Introducing MCP",
               "url": "https://www.anthropic.com/news/model-context-protocol"
             },
             {
-              "title": "MCP Specification",
-              "url": "https://modelcontextprotocol.io/specification/2025-11-25"
-            },
-            {
               "title": "Wikipedia — Model Context Protocol",
               "url": "https://en.wikipedia.org/wiki/Model_Context_Protocol"
-            },
-            {
-              "title": "MCP GitHub",
-              "url": "https://github.com/modelcontextprotocol"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "tool integration for LLMs",
-            "connecting AI apps to external data sources",
-            "building standardized AI plugins",
-            "cross-platform tool sharing"
+            "Tool integration for LLMs",
+            "Connecting AI apps to external data sources",
+            "Building standardized AI plugins and connectors",
+            "Sharing one tool server across several AI clients"
           ],
           "whenNotToUse": [
-            "agent-to-agent communication (use A2A)",
-            "simple REST API calls without AI context"
+            "Agent-to-agent communication (use A2A)",
+            "Simple REST API calls without AI context"
           ],
           "compatibleWith": [
             "a2a",
@@ -163,9 +165,9 @@
             "swift",
             "ruby"
           ],
-          "verified_at": "2026-02-11",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 6400,
+          "github_stars": 9533,
           "license": "Apache-2.0"
         },
         {
@@ -174,51 +176,54 @@
           "icon": "🤝",
           "mono": true,
           "hot": true,
-          "desc": "<strong>Google</strong>'s protocol — lets AI agents communicate and collaborate with each other, regardless of their underlying framework.",
+          "desc": "Open protocol, started by <strong>Google</strong> and now a Linux Foundation project, that lets AI agents discover, talk to and delegate work to each other regardless of the framework they are built with.",
           "added_date": "2026-02-03",
-          "detail": "<strong>Agent ↔ Agent</strong> communication · Complements MCP (MCP = tools, A2A = agents)<br><strong>Agent Cards</strong>: JSON-based capability descriptors for agent discovery<br><strong>v0.3</strong> (Jul 2025): gRPC support, security cards, expanded Python SDK<br>150+ organizations support · Linux Foundation hosted",
+          "detail": "<strong>Agent ↔ Agent</strong> communication · Complements MCP (MCP = tools, A2A = agents)<br><strong>Agent Cards</strong>: JSON capability descriptors for discovering agents and their skills<br><strong>v1.0</strong> (March 2026): stable specification with JSON-RPC, gRPC and HTTP+JSON/REST bindings, streaming and push notifications<br><strong>Governance</strong>: Linux Foundation project since June 2025; joined the Agentic AI Foundation in August 2026, alongside MCP",
           "tags": [
-            "Google ADK native",
-            "HTTP/SSE/JSON-RPC",
-            "LangGraph",
-            "CrewAI",
-            "Semantic Kernel"
+            "Linux Foundation",
+            "Agentic AI Foundation",
+            "JSON-RPC/gRPC/REST",
+            "Agent Cards"
           ],
-          "note": "💡 Dùng <strong>MCP cho tools</strong>, <strong>A2A cho agents</strong> — 2 protocol bổ sung nhau, không thay thế!",
+          "note": "💡 Use <strong>MCP for tools</strong> and <strong>A2A for agents</strong> — the two protocols complement each other rather than compete.",
           "sources": [
             {
-              "title": "Google — Announcing A2A",
-              "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
+              "title": "A2A Specification",
+              "url": "https://a2a-protocol.org/latest/specification/"
             },
             {
               "title": "A2A GitHub",
-              "url": "https://github.com/google/A2A"
+              "url": "https://github.com/a2aproject/A2A"
             },
             {
-              "title": "A2A Protocol Documentation",
-              "url": "https://google.github.io/A2A/"
+              "title": "A2A joins the Agentic AI Foundation",
+              "url": "https://a2a-protocol.org/latest/blog/2026/08/27/a-new-chapter-for-a2a-joining-the-agentic-ai-foundation/"
+            },
+            {
+              "title": "Google — Announcing A2A",
+              "url": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "agent-to-agent communication",
-            "cross-framework agent collaboration",
-            "enterprise multi-agent workflows",
-            "multi-vendor agent interop"
+            "Agent-to-agent communication",
+            "Collaboration between agents built on different frameworks",
+            "Enterprise multi-agent workflows",
+            "Interoperability between agents from different vendors"
           ],
           "whenNotToUse": [
-            "tool integration for LLMs (use MCP)",
-            "single-agent applications"
+            "Tool integration for LLMs (use MCP)",
+            "Single-agent applications"
           ],
           "compatibleWith": [
             "mcp",
             "google-adk",
-            "langgraph",
             "crewai",
             "microsoft-agent-framework",
-            "pydantic-ai"
+            "pydantic-ai",
+            "agentscope"
           ],
           "useCases": [
             "multi-agent-systems",
@@ -234,9 +239,9 @@
             "rust",
             "csharp"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 22864,
+          "github_stars": 26297,
           "license": "Apache-2.0"
         }
       ]
@@ -857,34 +862,34 @@
           "slug": "claude-ai",
           "icon": "🌐",
           "mono": true,
-          "desc": "Anthropic's chat workspace — with memory, web search, Claude Cowork, and team plugins/connectors for enterprise workflows.",
+          "desc": "Anthropic's Claude app on web, desktop and mobile — chat with projects, memory, research and connectors, plus Cowork for agentic knowledge work.",
           "added_date": "2026-02-03",
           "tags": [
             "Projects",
             "Artifacts",
             "Memory",
-            "Knowledge"
+            "Cowork"
           ],
-          "detail": "Anthropic's primary chat workspace. Features Projects for organizing conversations, built-in web search, cross-session memory, and Artifacts (create code, documents, charts directly in chat). Supports Claude Opus 4.6, Sonnet 4.6, and Haiku 4.5. Extended ecosystem: Claude Cowork is a research-preview desktop agent for knowledge work that brings Claude Code's agentic capabilities beyond coding. Teams can customize Claude with plugins and connectors for specialized workflows, distribute them through private plugin marketplaces, and orchestrate work across Excel and PowerPoint.",
+          "detail": "Claude is Anthropic's assistant app for web, desktop and mobile, with Free, Pro, Max, Team, Enterprise and Education plans. Projects keep conversations and files together, memory carries context across chats, and Research and web search gather sources. Artifacts let Claude build code, documents, designs, slides and docs directly in the conversation. Connectors (built on MCP) and plugins link Claude to your own apps, and organizations can distribute plugins through private marketplaces. Cowork — generally available since April 2026 and now part of every conversation — lets Claude carry out longer, multi-step knowledge work with files and tools. Related products: Claude Code (including Claude Code on the web), Claude in Chrome, and Claude for Excel and PowerPoint.",
           "sources": [
             {
               "title": "Claude.ai",
               "url": "https://claude.ai/"
             },
             {
-              "title": "Claude Docs",
-              "url": "https://docs.claude.com/"
+              "title": "Claude plans",
+              "url": "https://claude.com/pricing"
             },
             {
-              "title": "Claude Support",
-              "url": "https://support.claude.com/"
+              "title": "Claude release notes",
+              "url": "https://support.claude.com/en/articles/12138966-release-notes"
             },
             {
               "title": "Customize Cowork with plugins",
               "url": "https://claude.com/blog/cowork-plugins"
             },
             {
-              "title": "Cowork and plugins across the enterprise",
+              "title": "Cowork and plugins for teams across the enterprise",
               "url": "https://claude.com/blog/cowork-plugins-across-enterprise"
             }
           ],
@@ -892,16 +897,15 @@
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "general AI assistant with projects",
-            "research and document analysis",
-            "artifact creation (code, docs, diagrams)",
-            "project-based knowledge management",
-            "Build plugins/MCP connectors for enterprise Cowork deployments"
+            "General AI assistant organized by projects",
+            "Research and document analysis",
+            "Creating artifacts (code, documents, designs, slides)",
+            "Agentic knowledge work with Cowork, plugins and MCP connectors"
           ],
           "whenNotToUse": [
-            "automated CI/CD pipelines (use API)",
-            "local or offline usage",
-            "high-volume batch processing"
+            "Automated CI/CD pipelines (use the API)",
+            "Local or offline use",
+            "High-volume batch processing"
           ],
           "compatibleWith": [
             "mcp",
@@ -918,7 +922,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-03-18",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -928,42 +932,45 @@
           "slug": "chatgpt",
           "icon": "💬",
           "mono": true,
-          "desc": "OpenAI's most popular AI chat — with GPTs, search, tools, and a built-in memory system.",
+          "desc": "OpenAI's AI assistant on web, desktop and mobile — chat, search, deep research, projects, memory, image generation, plugins and Codex.",
           "added_date": "2026-02-03",
           "tags": [
-            "GPTs",
-            "Canvas",
+            "Projects",
             "Memory",
-            "Apps"
+            "Plugins",
+            "Codex"
           ],
-          "detail": "The world's most popular AI chat by OpenAI with hundreds of millions of weekly users. Features GPTs (custom chatbots), Custom Instructions (personalization), web browsing, DALL-E (image generation), Code Interpreter, and plugin ecosystem. Supports GPT-4o, GPT-4o-mini, o1, o3. ChatGPT Plus $20/month, Team $25/user/month.",
+          "detail": "ChatGPT is OpenAI's assistant app, with Free, Go, Plus, Pro, Business, Enterprise and Edu plans. It covers chat with web search, deep research, projects, memory and custom instructions, image generation, voice, file analysis and scheduled tasks. ChatGPT Work (2026) is an agent for longer, more involved tasks; Codex, OpenAI's coding agent, sits alongside chat in the desktop app and on mobile; Sites (public beta) turns work into interactive websites. The Plugin Directory replaced the App Directory in July 2026, and OpenAI has announced plans to retire custom GPTs in favour of plugins. Model line-ups change often, so check the plans page for what each tier includes.",
           "sources": [
             {
               "title": "ChatGPT",
               "url": "https://chatgpt.com/"
             },
             {
-              "title": "OpenAI Platform",
-              "url": "https://platform.openai.com/"
+              "title": "ChatGPT plans",
+              "url": "https://chatgpt.com/pricing"
+            },
+            {
+              "title": "ChatGPT release notes",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
             }
           ],
           "pricing": "freemium",
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "general AI assistant",
-            "code generation and debugging",
-            "image generation with DALL-E",
-            "web browsing and research"
+            "General AI assistant",
+            "Code generation and debugging",
+            "Image generation",
+            "Web research and deep research reports"
           ],
           "whenNotToUse": [
-            "automated pipelines (use OpenAI API)",
-            "local or offline usage",
-            "enterprise data isolation requirements"
+            "Automated pipelines (use the OpenAI API)",
+            "Local or offline use",
+            "Strict data-isolation requirements on consumer plans"
           ],
           "compatibleWith": [
-            "mcp",
-            "openai-agents-sdk"
+            "mcp"
           ],
           "useCases": [
             "ai-assistant",
@@ -976,7 +983,7 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-02-11",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
           "github_stars": null,
           "license": null
@@ -996,43 +1003,47 @@
           "mono": true,
           "hot": true,
           "extraBadges": [
-            "plugin",
-            "949⭐/24h"
+            "plugin"
           ],
-          "desc": "Plugin that gives <strong>Claude Code</strong> persistent long-term memory — automatically records experience, compresses intelligently, and remembers across sessions.",
+          "desc": "Plugin that gives <strong>Claude Code</strong> and other coding agents persistent long-term memory — it records what happens in each session, compresses it and brings relevant context back later.",
           "added_date": "2026-02-03",
-          "detail": "<strong>Architecture:</strong> 5 lifecycle hooks (SessionStart → UserPromptSubmit → PostToolUse → Summary → SessionEnd)<br><strong>RAD</strong> (Retrieval Augmented Decisions): a new open standard — RAG captures knowledge, RAD captures intelligence<br><strong>Endless Mode</strong>: ~1000 tool uses (vs 50 default), O(N) scaling",
+          "detail": "<strong>Architecture:</strong> lifecycle hooks (SessionStart, UserPromptSubmit, PreToolUse, PostToolUse, Stop, SessionEnd) feed a local worker service that stores sessions, observations and summaries in SQLite (FTS5) with Chroma for semantic search<br><strong>Progressive disclosure:</strong> MCP search tools work in three layers — compact index, timeline around a result, then full observations only for the IDs you need<br><strong>Hosts:</strong> Claude Code plugin, plus installers for OpenCode, Codex-based tools and other agents<br><strong>Privacy:</strong> wrap content in &lt;private&gt; tags to keep it out of storage; an optional hosted tier (CMEM) adds cloud sync",
           "levels": [
-            "Lv.1 — Tra danh mục",
-            "Lv.2 — Tra kĩ hơn",
-            "Lv.3 — Deep search"
+            "Lv.1 — Search index",
+            "Lv.2 — Timeline context",
+            "Lv.3 — Full observations"
           ],
           "tags": [
             "SQLite + FTS5",
             "Chroma vectors",
-            "Web viewer :37777",
-            "AGPL-3.0"
+            "Lifecycle hooks",
+            "MCP search"
           ],
           "sources": [
             {
               "title": "Claude-Mem GitHub",
-              "url": "https://github.com/sdairs/claude-mem"
+              "url": "https://github.com/thedotmack/claude-mem"
+            },
+            {
+              "title": "Claude-Mem Docs",
+              "url": "https://docs.claude-mem.ai/"
             }
           ],
           "pricing": "free",
           "deployment": "local",
           "difficulty": "beginner",
           "whenToUse": [
-            "Cần giữ context giữa các phiên Claude Code",
-            "Dự án lớn cần session continuity và compound learning"
+            "You need context to carry over between Claude Code sessions",
+            "Large projects that benefit from session continuity and accumulated learnings"
           ],
           "whenNotToUse": [
-            "Chỉ dùng sessions ngắn, độc lập",
-            "Cần memory cho non-Claude agents"
+            "You only run short, independent sessions",
+            "You do not want an extra local worker service and database running"
           ],
           "compatibleWith": [
             "mcp",
-            "claude-flow"
+            "claude-code",
+            "opencode"
           ],
           "useCases": [
             "session-memory",
@@ -1042,9 +1053,9 @@
           "languages": [
             "typescript"
           ],
-          "verified_at": "2026-02-12",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 24000,
+          "github_stars": 103183,
           "license": "AGPL-3.0"
         },
         {
@@ -1055,26 +1066,26 @@
           "subItems": [
             {
               "title": "CLAUDE.md (native)",
-              "desc": "Bộ nhớ tích hợp sẵn của Claude Code: 4 cấp hierarchy (user → project → local → managed). Import files với @path syntax."
+              "desc": "Claude Code's built-in memory: instruction files at organization (managed), user, project and local level, with @path imports."
             },
             {
               "title": "OpenClaw Session Memory",
-              "desc": "Per-agent session files + SOUL.md personality. Cross-session nhưng isolated per workspace."
+              "desc": "Per-agent session files plus a SOUL.md personality file; persists across sessions but stays isolated per workspace."
             },
             {
               "title": "ByteRover",
-              "desc": "Self-improving memory layer cho AI coding agents. Unify \"vibe-coding\" memories across projects & teams qua MCP."
+              "desc": "Memory layer for AI coding agents that shares memories across projects and teams via MCP."
             },
             {
-              "title": "MemGPT / Letta",
-              "desc": "Stateful agents with persistent memory — kiến trúc tiered memory (core/archival/recall)."
+              "title": "Letta (formerly MemGPT)",
+              "desc": "Stateful agents with persistent memory; development now continues in Letta Code (memory blocks, git-tracked context, local or Letta Cloud)."
             }
           ],
-          "detail": "Beyond Claude-Mem, several other memory systems exist: MemGPT/Letta — self-manages context windows like an OS manages RAM, with a paging mechanism. Mem0 — memory layer for LLM apps using vector search. Zep — long-term memory for chatbots with auto-summarization. ByteRover — searches memory from GitHub repositories. Each system tackles a different aspect of the 'AI that remembers' problem.",
+          "detail": "Beyond Claude-Mem, several memory systems tackle different parts of the 'AI that remembers' problem. Letta (formerly MemGPT) builds stateful agents whose memory persists across sessions; its current home is Letta Code. Mem0 is a memory layer for LLM apps that extracts, stores and retrieves memories with vector search, with integrations for common agent frameworks. Zep is a managed context-graph platform for agent memory, built on its open-source Graphiti temporal knowledge graph. ByteRover shares memories for coding agents across projects and teams via MCP.",
           "sources": [
             {
-              "title": "MemGPT/Letta",
-              "url": "https://github.com/letta-ai/letta"
+              "title": "Letta Code (formerly MemGPT)",
+              "url": "https://github.com/letta-ai/letta-code"
             },
             {
               "title": "Mem0 GitHub",
@@ -1083,18 +1094,22 @@
             {
               "title": "Zep",
               "url": "https://www.getzep.com/"
+            },
+            {
+              "title": "Graphiti (Zep open source)",
+              "url": "https://github.com/getzep/graphiti"
             }
           ],
           "pricing": "freemium",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Agent cần nhớ user preferences qua nhiều conversations",
-            "Xây dựng AI assistant có personalization dài hạn"
+            "An agent must remember user preferences across many conversations",
+            "Building an AI assistant with long-term personalization"
           ],
           "whenNotToUse": [
-            "Chỉ cần short-term context trong 1 session",
-            "Ứng dụng stateless không cần nhớ user history"
+            "You only need short-term context within one session",
+            "Stateless apps that do not need user history"
           ],
           "compatibleWith": [
             "langgraph",
@@ -1110,33 +1125,37 @@
             "python",
             "typescript"
           ],
-          "verified_at": "2026-02-12",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-26",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
         {
           "name": "MemOS",
           "slug": "memos",
-          "desc": "Unified memory operating system for LLMs — manages memory via MemCube with short-term and long-term support",
+          "desc": "Memory operating system for LLMs and agents — manages memory as MemCubes across plaintext, activation and parameter memory.",
           "added_date": "2026-02-04",
-          "detail": "MemOS provides a standardized memory layer architecture for AI agents with MemCube — the basic memory unit containing both data and metadata. Supports multiple memory types (parametric, activation, long-term) and integrates with popular frameworks. ~6.9K stars, active development (v2.0.4, Jan 2026). Unique for providing a unified memory interface that Mem0/Zep haven't fully addressed.",
+          "detail": "MemOS treats memory as a system resource for AI agents. The basic unit is the MemCube, which bundles memory content with metadata such as provenance and versioning. It covers three memory types — plaintext (explicit knowledge), activation (KV-cache) and parameter (model weights, for example adapters) — and schedules memory between them. It offers an API and integrations with agent frameworks and MCP, can run self-hosted, and has a hosted MemOS Cloud. Treat the benchmark results published by the project as vendor-reported.",
           "sources": [
             {
               "title": "GitHub",
               "url": "https://github.com/MemTensor/MemOS"
+            },
+            {
+              "title": "Paper (arXiv 2507.03724)",
+              "url": "https://arxiv.org/abs/2507.03724"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "advanced",
           "whenToUse": [
-            "Cần persistent skill memory cho agent cross-task reuse",
-            "Xây hệ thống multi-agent cần shared memory layer"
+            "Agents that need persistent, reusable memory across tasks",
+            "Multi-agent systems that need a shared memory layer"
           ],
           "whenNotToUse": [
-            "Chỉ cần simple key-value memory",
-            "Project nhỏ không cần memory OS phức tạp"
+            "You only need simple key-value memory",
+            "Small projects that do not need a full memory system"
           ],
           "compatibleWith": [
             "openclaw",
@@ -1150,9 +1169,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-15",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 5000,
+          "github_stars": 12095,
           "license": "Apache-2.0"
         }
       ]
@@ -1168,41 +1187,44 @@
           "name": "Universal Agent Skills",
           "slug": "universal-agent-skills",
           "icon": "📚",
-          "desc": "Skills are .md files with instructions for AI agents — simple yet effective, runnable on any AI coding tool.",
+          "desc": "Agent Skills: folders with a SKILL.md file that teach AI agents specialized tasks — an open standard, originally developed by Anthropic, supported by many coding agents.",
           "added_date": "2026-02-03",
-          "detail": "The Agent Skills ecosystem is booming — Anthropic has standardized the SKILL.md format to teach AI agents specialized abilities. Antigravity Awesome Skills (631+ skills, V4.0) is the largest collection, supporting Claude Code, Gemini CLI, Codex CLI, Cursor, OpenCode. VoltAgent offers 200+ skills from official teams (Stripe, Cloudflare, Hugging Face, Sentry). Simple setup: npx antigravity-awesome-skills or clone into .agent/skills/.",
+          "detail": "A skill is a folder containing a SKILL.md file — YAML frontmatter (name, description) plus Markdown instructions — and optional scripts, references and assets. Agents load only the name and description at startup and read the full instructions when a task calls for the skill (progressive disclosure). The format started at Anthropic and is now an open standard with its own specification and reference validator; clients include Claude Code, Codex, Gemini CLI, Cursor, OpenCode, Goose, GitHub Copilot and Kiro. Community collections such as Agentic Awesome Skills and VoltAgent Awesome Agent Skills gather skills from companies and the community; install them per tool according to each project's instructions.",
           "tags": [
-            "Google Labs",
-            "Hugging Face",
-            "Supabase",
-            "Vercel",
+            "Open standard",
+            "SKILL.md",
+            "Cross-agent",
             "Community"
           ],
           "sources": [
             {
-              "title": "Antigravity Skills",
-              "url": "https://github.com/sickn33/antigravity-awesome-skills"
+              "title": "Agent Skills specification",
+              "url": "https://agentskills.io/specification"
             },
             {
-              "title": "VoltAgent Skills",
+              "title": "Agent Skills GitHub",
+              "url": "https://github.com/agentskills/agentskills"
+            },
+            {
+              "title": "Agentic Awesome Skills (formerly Antigravity Awesome Skills)",
+              "url": "https://github.com/sickn33/agentic-awesome-skills"
+            },
+            {
+              "title": "VoltAgent Awesome Agent Skills",
               "url": "https://github.com/VoltAgent/awesome-agent-skills"
-            },
-            {
-              "title": "Agent Skills (Anthropic)",
-              "url": "https://github.com/agentskills"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "Khi cần mở rộng khả năng của AI agents với kiến thức chuyên biệt",
-            "Khi muốn tạo reusable workflows cho team",
-            "Khi cần chuẩn hóa quy trình phát triển với coding agents"
+            "Extending AI agents with specialized knowledge and procedures",
+            "Sharing reusable workflows across a team",
+            "Standardizing development workflows across different coding agents"
           ],
           "whenNotToUse": [
-            "Khi cần logic phức tạp hơn instructions — dùng MCP servers",
-            "Khi cần custom runtime hoặc API integration — dùng frameworks"
+            "You need live access to external systems or APIs — use MCP servers",
+            "You need a custom runtime or complex orchestration — use an agent framework"
           ],
           "compatibleWith": [
             "claude-code",
@@ -1223,8 +1245,8 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-26",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-26",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -1235,42 +1257,46 @@
           "added_date": "2026-02-03",
           "subItems": [
             {
-              "title": "Engineering & DevOps",
-              "desc": "API testing, React components, security blue books, deep research, N8n automation"
+              "title": "Development methodology",
+              "desc": "Skill sets that enforce a workflow — brainstorming, planning, TDD, debugging and code review (see Superpowers)."
             },
             {
-              "title": "Cross-Agent Orchestration",
-              "desc": "Codex Skill — prompt Codex từ Claude Code. Session handoff giữa CC ↔ Codex CLI."
+              "title": "Specialist agents and plugins",
+              "desc": "Domain plugins that bundle agents, skills and commands for architecture, infrastructure, security, data and more (see wshobson/agents)."
             },
             {
-              "title": "AI/ML Research",
-              "desc": "77 AI research skills (model arch, fine-tuning, distributed training, inference, MLOps)"
+              "title": "Planning and context",
+              "desc": "File-based planning that keeps goals and findings on disk across sessions (see Planning with Files)."
             },
             {
-              "title": "Claude Code Ecosystem",
-              "desc": "Claude Task Master, Happy Coder (mobile), Claude Swarm, Context Engineering Kit"
+              "title": "Skills over MCP",
+              "desc": "Official MCP extension for discovering and distributing skills through MCP servers."
             }
           ],
-          "detail": "Key categories: Engineering & DevOps (API testing, Docker, CI/CD), Web Development (React, Tailwind, animations), AI/ML Research (77 skills for paper reading, fine-tuning), Cross-Agent Orchestration (handoff between Claude Code ↔ Codex ↔ Cursor), Claude Code Ecosystem (Task Master, Claude Swarm, session management). Skills are .md files — cross-platform, usable on any AI agent.",
+          "detail": "Skills tend to fall into a few groups: development methodology (structured brainstorm → plan → test → review workflows), specialist agents and domain plugins, planning and context management across sessions, and distribution — local skill folders, plugin marketplaces, and the Skills over MCP extension for serving skills from MCP servers. Because skills follow the open Agent Skills format, many of them work across several coding agents; check each project for supported hosts.",
           "sources": [
             {
-              "title": "Skills Documentation",
-              "url": "https://docs.claude.com/en/docs/claude-code/skills"
+              "title": "Claude Code — Skills",
+              "url": "https://code.claude.com/docs/en/skills"
             },
             {
-              "title": "MCP Skills Interest Group",
-              "url": "https://github.com/modelcontextprotocol/experimental-ext-skills"
+              "title": "Agent Skills specification",
+              "url": "https://agentskills.io/specification"
+            },
+            {
+              "title": "Skills over MCP extension",
+              "url": "https://github.com/modelcontextprotocol/ext-skills"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "beginner",
           "whenToUse": [
-            "Khi muốn hiểu tổng quan các loại skills có sẵn trong hệ sinh thái",
-            "Khi cần chọn đúng loại skill cho use case cụ thể"
+            "Getting an overview of the kinds of skills available",
+            "Choosing the right type of skill for a use case"
           ],
           "whenNotToUse": [
-            "Khi đã biết chính xác skill/plugin cần dùng — xem trực tiếp card cụ thể"
+            "You already know the exact skill or plugin you need — see its card directly"
           ],
           "compatibleWith": [
             "universal-agent-skills",
@@ -1288,9 +1314,9 @@
             "python",
             "js"
           ],
-          "verified_at": "2026-02-26",
-          "verification_source": "inferred",
-          "github_stars": 39,
+          "verified_at": "2026-10-26",
+          "verification_source": "docs",
+          "github_stars": 749,
           "license": "Apache-2.0"
         },
         {
@@ -1298,14 +1324,14 @@
           "slug": "superpowers",
           "id": "superpowers",
           "icon": "⚡",
-          "desc": "Agent-style skills framework for Claude Code — automatically activates the right skills based on context.",
-          "detail": "Superpowers is the leading skills framework for Claude Code with 20+ built-in skills: brainstorming, TDD, debugging, code review, git worktrees... Skills auto-activate based on context — for example, the systematic-debugging skill triggers automatically when debugging. Supports subagent-driven development: splits tasks into subtasks, each handled by a subagent then reviewed. Claude can run autonomously for hours without intervention. Install via Claude Code's plugin marketplace. Also supports Codex and OpenCode.",
+          "desc": "Skills framework and development methodology for coding agents — the right skill activates automatically from context.",
+          "detail": "Superpowers is a skills framework and software-development methodology for coding agents. Its skills cover brainstorming, writing plans, test-driven development, systematic debugging, code review and git worktrees, and they activate automatically from context — for example, the debugging skill when you start investigating a bug. Subagent-driven development splits work into tasks that subagents implement and reviewers check, so the agent can work for long stretches with review gates. It started as a Claude Code plugin (official plugin marketplace) and now also supports Codex, Cursor, Gemini CLI, GitHub Copilot CLI, OpenCode and other hosts. It includes optional telemetry that can be disabled.",
           "tags": [
-            "claude-code",
             "skills",
             "TDD",
             "subagents",
-            "plugin"
+            "plugin",
+            "multi-agent hosts"
           ],
           "sources": [
             {
@@ -1313,7 +1339,7 @@
               "url": "https://github.com/obra/superpowers"
             },
             {
-              "title": "Blog tác giả",
+              "title": "Author blog",
               "url": "https://blog.fsck.com/2025/10/09/superpowers/"
             }
           ],
@@ -1323,19 +1349,21 @@
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Khi muốn structured software development workflow cho coding agents",
-            "Khi cần TDD enforcement và code review tự động",
-            "Khi muốn subagent-driven development với review gates"
+            "You want a structured development workflow for coding agents",
+            "You want TDD enforcement and automatic code review",
+            "You want subagent-driven development with review gates"
           ],
           "whenNotToUse": [
-            "Khi chỉ cần quick code generation đơn giản",
-            "Khi dự án quá nhỏ cho full TDD workflow"
+            "You only need quick, simple code generation",
+            "The project is too small for a full TDD workflow"
           ],
           "compatibleWith": [
             "claude-code",
             "codex-cli",
             "opencode",
-            "gemini-cli"
+            "gemini-cli",
+            "cursor",
+            "github-copilot"
           ],
           "useCases": [
             "agentic-coding",
@@ -1348,9 +1376,9 @@
             "python",
             "typescript"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 117604,
+          "github_stars": 301262,
           "license": "MIT"
         },
         {
@@ -1358,14 +1386,14 @@
           "slug": "agents-wshobson",
           "id": "agents-wshobson",
           "icon": "🤖",
-          "desc": "Collection of 112 agents + 146 skills + 73 specialized plugins for Claude Code — the largest to date.",
-          "detail": "Agents is a production-ready system combining 112 specialized AI agents, 16 workflow orchestrators, 146 skills, and 79 development tools — all organized into 73 single-purpose plugins for Claude Code. Agents are categorized by domain: architecture, languages, infrastructure, security, data/AI, documentation, business operations, SEO. Install individual plugins to optimize token usage. Supports automatic Sonnet + Haiku routing based on task complexity.",
+          "desc": "Plugin marketplace of specialized agents, skills, commands and workflow orchestrators for coding agents — install only the plugins you need.",
+          "detail": "Agents (by Seth Hobson) is a multi-harness plugin marketplace that bundles specialized AI agents, skills, slash commands and workflow orchestrators into single-purpose plugins. Plugins are grouped by domain — architecture, programming languages, infrastructure, security, data and AI, documentation, business operations and SEO — so you install only what a project needs and keep context small. It targets Claude Code and also supports Codex CLI, Cursor, OpenCode, GitHub Copilot and other harnesses. Agents declare a model tier (for example opus, sonnet or haiku) that each harness maps to its own models.",
           "tags": [
-            "claude-code",
             "multi-agent",
             "plugins",
             "skills",
-            "orchestration"
+            "orchestration",
+            "multi-harness"
           ],
           "sources": [
             {
@@ -1373,7 +1401,7 @@
               "url": "https://github.com/wshobson/agents"
             },
             {
-              "title": "Tác giả",
+              "title": "Author",
               "url": "https://sethhobson.com/"
             }
           ],
@@ -1383,16 +1411,20 @@
           "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Khi cần multi-agent orchestration với specialized domain agents",
-            "Khi muốn plugin architecture mô-đun — chỉ load agents cần thiết",
-            "Khi cần workflow orchestrators cho full-stack, security, ML pipelines"
+            "You want domain-specialist agents and multi-agent workflow orchestrators",
+            "You want a modular plugin setup that loads only the agents you need",
+            "You need ready-made orchestrators for full-stack, security or ML pipelines"
           ],
           "whenNotToUse": [
-            "Khi chỉ cần 1-2 skills đơn giản — Superpowers nhẹ hơn",
-            "Khi không dùng Claude Code"
+            "You only need one or two simple skills — Superpowers is lighter",
+            "You prefer to write and maintain your own small set of agents"
           ],
           "compatibleWith": [
             "claude-code",
+            "codex-cli",
+            "cursor",
+            "opencode",
+            "github-copilot",
             "mcp"
           ],
           "useCases": [
@@ -1405,9 +1437,9 @@
             "python",
             "csharp"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 31400,
+          "github_stars": 41720,
           "license": "MIT"
         },
         {
@@ -1415,14 +1447,14 @@
           "slug": "planning-with-files",
           "id": "planning-with-files",
           "icon": "📋",
-          "desc": "Markdown-file-based planning skill inspired by Manus — maintains context across multiple work sessions.",
-          "detail": "Planning-with-files implements a persistent planning model using 3 markdown files: task_plan.md (goals + phases), findings.md (discovery notes), progress.md (progress log). Follows the '2-Action Rule' — after every 2 view/search actions, findings must be recorded. Includes hooks that auto-read task_plan before every write action to prevent drifting from original goals. Inspired by the Manus workflow (acquired by Meta for $2B). Supports Claude Code, Codex, Gemini CLI, Cursor.",
+          "desc": "Markdown-file planning skill inspired by Manus — keeps goals, findings and progress on disk so context survives across sessions.",
+          "detail": "Planning with Files implements persistent planning with three Markdown files: task_plan.md (goals and phases), findings.md (discovery notes) and progress.md (progress log). It follows a '2-Action Rule' — after every two view or search actions, findings are written down. Hooks re-inject the plan each turn and run before and after tool use so the agent does not drift from the original goal, with optional plan-integrity checks and a completion gate. The approach is inspired by Manus's file-based context engineering. It ships as a plugin or skill for Claude Code, Codex CLI, OpenCode and other hosts, with setup guides for Cursor, GitHub Copilot, Gemini CLI and Kiro.",
           "tags": [
-            "claude-code",
             "planning",
             "markdown",
             "context-engineering",
-            "skill"
+            "skill",
+            "hooks"
           ],
           "sources": [
             {
@@ -1436,18 +1468,19 @@
           "deployment": "local",
           "difficulty": "beginner",
           "whenToUse": [
-            "Khi cần persistent planning across sessions (survive /clear)",
-            "Khi dự án phức tạp cần structured task tracking",
-            "Khi muốn Manus-style workflow với markdown planning files"
+            "You need planning that persists across sessions (survives /clear)",
+            "Complex projects that need structured task tracking",
+            "You want a Manus-style workflow with Markdown planning files"
           ],
           "whenNotToUse": [
-            "Khi dự án đơn giản không cần planning phase",
-            "Khi đã dùng Superpowers (có planning skills riêng)"
+            "Simple tasks that need no planning phase",
+            "You already use Superpowers, which has its own planning skills"
           ],
           "compatibleWith": [
             "claude-code",
-            "gemini-cli",
             "codex-cli",
+            "opencode",
+            "gemini-cli",
             "cursor"
           ],
           "useCases": [
@@ -1458,9 +1491,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-26",
           "verification_source": "docs",
-          "github_stars": 17038,
+          "github_stars": 27649,
           "license": "MIT"
         }
       ]

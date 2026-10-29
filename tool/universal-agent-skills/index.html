@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Universal Agent Skills — See AI First</title>
-<meta name="description" content="Skills are .md files with instructions for AI agents — simple yet effective, runnable on any AI coding tool.">
+<meta name="description" content="Agent Skills: folders with a SKILL.md file that teach AI agents specialized tasks — an open standard, originally developed by Anthropic, supported by many co...">
 <meta property="og:title" content="Universal Agent Skills — See AI First">
-<meta property="og:description" content="Skills are .md files with instructions for AI agents — simple yet effective, runnable on any AI coding tool.">
+<meta property="og:description" content="Agent Skills: folders with a SKILL.md file that teach AI agents specialized tasks — an open standard, originally developed by Anthropic, supported by many co...">
 <meta property="og:url" content="https://seeaifirst.com/tool/universal-agent-skills">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Universal Agent Skills — See AI First">
-<meta name="twitter:description" content="Skills are .md files with instructions for AI agents — simple yet effective, runnable on any AI coding tool.">
+<meta name="twitter:description" content="Agent Skills: folders with a SKILL.md file that teach AI agents specialized tasks — an open standard, originally developed by Anthropic, supported by many co...">
 <link rel="canonical" href="https://seeaifirst.com/tool/universal-agent-skills">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Universal Agent Skills","url":"https://seeaifirst.com/tool/universal-agent-skills","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Skills are .md files with instructions for AI agents — simple yet effective, runnable on any AI coding tool.","keywords":["Skills Ecosystem — \"Bigger than MCP\"","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://github.com/sickn33/antigravity-awesome-skills","https://github.com/VoltAgent/awesome-agent-skills","https://github.com/agentskills"],"datePublished":"2026-02-03","dateModified":"2026-02-26","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Universal Agent Skills","url":"https://seeaifirst.com/tool/universal-agent-skills","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Agent Skills: folders with a SKILL.md file that teach AI agents specialized tasks — an open standard, originally developed by Anthropic, supported by many coding agents.","keywords":["Skills Ecosystem — \"Bigger than MCP\"","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://agentskills.io/specification","https://github.com/agentskills/agentskills","https://github.com/sickn33/agentic-awesome-skills","https://github.com/VoltAgent/awesome-agent-skills"],"datePublished":"2026-02-03","dateModified":"2026-10-26","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> › Universal Agent Skills</nav>
     <article>
       <h1>Universal Agent Skills</h1>
-      <p>Skills are .md files with instructions for AI agents — simple yet effective, runnable on any AI coding tool.</p>
-      <p>The Agent Skills ecosystem is booming — Anthropic has standardized the SKILL.md format to teach AI agents specialized abilities. Antigravity Awesome Skills (631+ skills, V4.0) is the largest collection, supporting Claude Code, Gemini CLI, Codex CLI, Cursor, OpenCode. VoltAgent offers 200+ skills from official teams (Stripe, Cloudflare, Hugging Face, Sentry). Simple setup: npx antigravity-awesome-skills or clone into .agent/skills/.</p>
+      <p>Agent Skills: folders with a SKILL.md file that teach AI agents specialized tasks — an open standard, originally developed by Anthropic, supported by many coding agents.</p>
+      <p>A skill is a folder containing a SKILL.md file — YAML frontmatter (name, description) plus Markdown instructions — and optional scripts, references and assets. Agents load only the name and description at startup and read the full instructions when a task calls for the skill (progressive disclosure). The format started at Anthropic and is now an open standard with its own specification and reference validator; clients include Claude Code, Codex, Gemini CLI, Cursor, OpenCode, Goose, GitHub Copilot and Kiro. Community collections such as Agentic Awesome Skills and VoltAgent Awesome Agent Skills gather skills from companies and the community; install them per tool according to each project&#039;s instructions.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Extending AI agents with specialized knowledge and procedures</li>
+        <li>Sharing reusable workflows across a team</li>
+        <li>Standardizing development workflows across different coding agents</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You need live access to external systems or APIs — use MCP servers</li>
+        <li>You need a custom runtime or complex orchestration — use an agent framework</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1099,7 +1110,7 @@ html, body {
         <dt>Difficulty</dt><dd>Beginner</dd>
         <dt>Languages</dt><dd>python, js</dd>
         <dt>Use cases</dt><dd>ai plugin system, tool integration, agentic coding, cross task reuse</dd>
-        <dt>Last verified</dt><dd>2026-02-26 (inference from documented facts)</dd>
+        <dt>Last verified</dt><dd>2026-10-26 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1121,9 +1132,10 @@ html, body {
       <p><a href="/section/skills">See all 5 tools in Skills Ecosystem — &quot;Bigger than MCP&quot; →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/sickn33/antigravity-awesome-skills" rel="noopener noreferrer">Antigravity Skills</a></li>
-        <li><a href="https://github.com/VoltAgent/awesome-agent-skills" rel="noopener noreferrer">VoltAgent Skills</a></li>
-        <li><a href="https://github.com/agentskills" rel="noopener noreferrer">Agent Skills (Anthropic)</a></li>
+        <li><a href="https://agentskills.io/specification" rel="noopener noreferrer">Agent Skills specification</a></li>
+        <li><a href="https://github.com/agentskills/agentskills" rel="noopener noreferrer">Agent Skills GitHub</a></li>
+        <li><a href="https://github.com/sickn33/agentic-awesome-skills" rel="noopener noreferrer">Agentic Awesome Skills (formerly Antigravity Awesome Skills)</a></li>
+        <li><a href="https://github.com/VoltAgent/awesome-agent-skills" rel="noopener noreferrer">VoltAgent Awesome Agent Skills</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/skills">Skills Ecosystem — &quot;Bigger than MCP&quot;</a> on See AI First.</p>
