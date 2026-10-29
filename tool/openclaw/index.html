@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>OpenClaw — See AI First</title>
-<meta name="description" content="Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo.">
+<meta name="description" content="Open-source personal AI assistant that runs on your own devices and talks to you in WhatsApp, Telegram, Slack, Discord, Zalo and other chat apps — with swapp...">
 <meta property="og:title" content="OpenClaw — See AI First">
-<meta property="og:description" content="Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo.">
+<meta property="og:description" content="Open-source personal AI assistant that runs on your own devices and talks to you in WhatsApp, Telegram, Slack, Discord, Zalo and other chat apps — with swapp...">
 <meta property="og:url" content="https://seeaifirst.com/tool/openclaw">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="OpenClaw — See AI First">
-<meta name="twitter:description" content="Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo.">
+<meta name="twitter:description" content="Open-source personal AI assistant that runs on your own devices and talks to you in WhatsApp, Telegram, Slack, Discord, Zalo and other chat apps — with swapp...">
 <link rel="canonical" href="https://seeaifirst.com/tool/openclaw">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"OpenClaw","url":"https://seeaifirst.com/tool/openclaw","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo.","keywords":["Orchestration — Multi-Agent Coordination","python","js","typescript"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/openclaw/openclaw"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"OpenClaw","url":"https://seeaifirst.com/tool/openclaw","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source personal AI assistant that runs on your own devices and talks to you in WhatsApp, Telegram, Slack, Discord, Zalo and other chat apps — with swappable models.","keywords":["Orchestration — Multi-Agent Coordination","typescript","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/openclaw/openclaw","https://docs.openclaw.ai"],"datePublished":"2026-02-03","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> › OpenClaw</nav>
     <article>
       <h1>OpenClaw</h1>
-      <p>Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo.</p>
-      <p>Evolution: Clawdbot → Moltbot → OpenClaw</p>
+      <p>Open-source personal AI assistant that runs on your own devices and talks to you in WhatsApp, Telegram, Slack, Discord, Zalo and other chat apps — with swappable models.</p>
+      <p>OpenClaw is an open-source personal assistant built around a local Gateway that owns sessions, tools and channel connections; it can run as an always-on background service on a laptop or your own server, and keeps state, memory and credentials on your hardware. Personality lives in SOUL.md, memory is plain Markdown in the workspace, and skills are SKILL.md folders, with community skills on ClawHub. Multi-agent routing binds channel accounts to isolated agents. It works with hosted or local models (Ollama), exposes an MCP server and can drive Claude Code or Codex as ACP harnesses. Tools run on the host unless you configure sandboxing. Formerly Clawdbot, then Moltbot; now stewarded by the OpenClaw Foundation. Best for: an always-on personal assistant in the chat apps you already use, on hardware you control. Works well with: MCP · A2A · Claude Code · Codex CLI · Ollama</p>
       <h2>When to use</h2>
       <ul>
-        <li>personal AI assistant always-on</li>
-        <li>messaging platform automation (Telegram, Discord, Slack)</li>
-        <li>multi-agent coordination</li>
-        <li>self-hosted AI with local file access</li>
+        <li>An always-on personal assistant reachable from your chat apps</li>
+        <li>Self-hosting an assistant that keeps state, memory and credentials on your hardware</li>
+        <li>Running several isolated agent personas routed per channel account</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>simple chatbot without tool use</li>
-        <li>enterprise deployment without customization</li>
-        <li>code-only development workflows</li>
+        <li>A simple chatbot without tools or persistent memory</li>
+        <li>Setups where you cannot sandbox host tools or vet inbound messages</li>
+        <li>Pure coding workflows that only need a terminal coding agent</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
@@ -1111,25 +1110,28 @@ html, body {
         <dt>Deployment</dt><dd>Hybrid</dd>
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>License</dt><dd>Apache-2.0</dd>
-        <dt>Languages</dt><dd>python, js, typescript</dd>
+        <dt>Languages</dt><dd>typescript, js</dd>
         <dt>Use cases</dt><dd>personal assistant, task automation, messaging agent, multi agent coordination</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-30 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/mcp">MCP — Model Context Protocol</a></li>
+        <li><a href="/tool/a2a">A2A — Agent2Agent Protocol</a></li>
         <li><a href="/tool/claude-code">Claude Code</a></li>
+        <li><a href="/tool/codex-cli">Codex CLI</a></li>
         <li><a href="/tool/ollama">Ollama</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
-        <li><a href="/tool/claude-flow">Claude-Flow</a></li>
+        <li><a href="/tool/claude-flow">Ruflo (formerly Claude Flow)</a></li>
         <li><a href="/tool/oh-my-claudecode">oh-my-claudecode</a></li>
       </ul>
       <p><a href="/section/orchestration">See all 3 tools in Orchestration — Multi-Agent Coordination →</a></p>
       <h2>Sources</h2>
       <ul>
         <li><a href="https://github.com/openclaw/openclaw" rel="noopener noreferrer">OpenClaw GitHub</a></li>
+        <li><a href="https://docs.openclaw.ai" rel="noopener noreferrer">OpenClaw Docs</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/orchestration">Orchestration — Multi-Agent Coordination</a> on See AI First.</p>

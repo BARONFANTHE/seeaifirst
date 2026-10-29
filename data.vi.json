@@ -1505,43 +1505,47 @@
       "gridCols": 3,
       "cards": [
         {
-          "name": "Claude-Flow",
+          "name": "Ruflo (trước đây là Claude Flow)",
           "slug": "claude-flow",
           "icon": "🌊",
           "mono": true,
-          "desc": "Nền tảng điều phối agent theo kiến trúc <strong>Queen + Workers</strong> — quản lý Claude, GPT, Gemini cùng lúc qua MCP.",
+          "desc": "Agent meta-harness cho <strong>Claude Code và Codex</strong> — swarm agent do Queen điều phối, HNSW vector memory và routing đa model, cài dạng plugin Claude Code hoặc MCP server.",
           "added_date": "2026-02-03",
           "tags": [
             "MIT",
             "Multi-agent swarm",
-            "HNSW vector",
-            "60+ coding agents"
+            "HNSW vector memory",
+            "Claude Code plugin"
           ],
-          "detail": "Framework điều phối multi-agent dạng Queen + Workers. Queen (Claude Opus) lập kế hoạch, phân công task cho Workers (có thể là Claude Code, Codex, hay Gemini CLI). Hỗ trợ: HNSW vector memory, swarm mode (60+ agents), multi-model routing qua MCP, parallel execution. MIT license.",
+          "detail": "Ruflo là tên mới của Claude Flow, do tác giả rUv đặt; tên npm claude-flow cũ vẫn dùng được. Ruflo bổ sung swarm coordination cho Claude Code và Codex với Queen-led hierarchy và consensus (Raft, Byzantine, Gossip), HNSW-indexed AgentDB memory, hook routing tự học, background workers, và routing model có failover giữa Claude, GPT, Gemini, Cohere, Ollama. Cài từ plugin marketplace của Claude Code hoặc chạy như MCP server cho Codex và các MCP client khác; có thể spawn Codex worker chạy headless từ Claude Code. Plugin chạy với quyền tài khoản của bạn, nên xem kỹ trước khi cài. MIT license. Phù hợp nhất: power user muốn Claude Code hoặc Codex chạy cả team multi-agent có shared memory.\n\nKết hợp tốt với: Claude Code · Codex CLI · MCP · Ollama",
           "sources": [
             {
-              "title": "Claude-Flow GitHub",
-              "url": "https://github.com/cyanheads/claude-flow"
+              "title": "Ruflo GitHub (trước đây là Claude Flow)",
+              "url": "https://github.com/ruvnet/ruflo"
+            },
+            {
+              "title": "Hướng dẫn sử dụng Ruflo",
+              "url": "https://github.com/ruvnet/ruflo/blob/main/docs/USERGUIDE.md"
             }
           ],
           "pricing": "free",
           "deployment": "local",
           "difficulty": "advanced",
           "whenToUse": [
-            "multi-agent swarm orchestration",
-            "parallel task execution with Claude Code",
-            "complex project automation",
-            "background worker workflows"
+            "Chạy swarm multi-agent có điều phối ngay trong Claude Code",
+            "Đẩy các task song song chạy nền cho Codex worker headless",
+            "Cần vector memory lâu dài và routing task tự học qua nhiều session"
           ],
           "whenNotToUse": [
-            "simple single-agent tasks",
-            "non-Claude environments",
-            "lightweight scripting"
+            "Task coding đơn giản, một agent là đủ",
+            "Team cần toolchain nhỏ gọn, dễ audit",
+            "Môi trường không cho plugin bên thứ ba chạy với quyền tài khoản của bạn"
           ],
           "compatibleWith": [
             "claude-code",
+            "codex-cli",
             "mcp",
-            "codex-cli"
+            "ollama"
           ],
           "useCases": [
             "multi-agent-orchestration",
@@ -1553,19 +1557,19 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-02-11",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 13900,
+          "github_stars": 78063,
           "license": "MIT"
         },
         {
           "name": "OpenClaw",
           "slug": "openclaw",
-          "icon": "🐕",
+          "icon": "🦞",
           "mono": true,
-          "desc": "Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo.",
+          "desc": "Trợ lý AI cá nhân open-source chạy <strong>trên thiết bị của bạn</strong>, chat với bạn qua WhatsApp, Telegram, Slack, Discord, Zalo và các app chat khác — đổi model tùy ý.",
           "added_date": "2026-02-03",
-          "detail": "Evolution: Clawdbot → Moltbot → OpenClaw",
+          "detail": "OpenClaw là trợ lý cá nhân open-source xoay quanh một Gateway chạy local, quản lý session, tool và kết nối các kênh chat; có thể chạy nền 24/7 dưới dạng background service trên laptop hoặc server riêng, giữ state, memory và credential trên máy của bạn. Tính cách agent nằm trong SOUL.md, memory là file Markdown trong workspace, skill là các thư mục SKILL.md, có kho skill cộng đồng trên ClawHub. Multi-agent routing gán từng tài khoản kênh chat cho một agent riêng biệt. Dùng được model hosted hoặc local (Ollama), có MCP server và điều khiển được Claude Code hoặc Codex qua ACP harness. Tool chạy trực tiếp trên host nếu bạn không cấu hình sandbox. Tên cũ: Clawdbot, rồi Moltbot; nay do OpenClaw Foundation quản lý. Phù hợp nhất: trợ lý cá nhân luôn bật ngay trong các app chat bạn đang dùng, chạy trên máy bạn tự kiểm soát.\n\nKết hợp tốt với: MCP · A2A · Claude Code · Codex CLI · Ollama",
           "tags": [
             "SOUL.md",
             "Skills/ClawHub",
@@ -1576,25 +1580,30 @@
             {
               "title": "OpenClaw GitHub",
               "url": "https://github.com/openclaw/openclaw"
+            },
+            {
+              "title": "Tài liệu OpenClaw",
+              "url": "https://docs.openclaw.ai"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "personal AI assistant always-on",
-            "messaging platform automation (Telegram, Discord, Slack)",
-            "multi-agent coordination",
-            "self-hosted AI with local file access"
+            "Cần trợ lý cá nhân luôn bật, nhắn được từ các app chat",
+            "Muốn tự host trợ lý, giữ state, memory và credential trên máy của mình",
+            "Chạy nhiều persona agent tách biệt, route theo từng tài khoản kênh chat"
           ],
           "whenNotToUse": [
-            "simple chatbot without tool use",
-            "enterprise deployment without customization",
-            "code-only development workflows"
+            "Chỉ cần chatbot đơn giản, không cần tool hay memory lâu dài",
+            "Môi trường không thể sandbox tool trên host hoặc kiểm soát tin nhắn đến",
+            "Workflow chỉ thuần coding, một coding agent trên terminal là đủ"
           ],
           "compatibleWith": [
             "mcp",
+            "a2a",
             "claude-code",
+            "codex-cli",
             "ollama"
           ],
           "useCases": [
@@ -1604,13 +1613,12 @@
             "multi-agent-coordination"
           ],
           "languages": [
-            "python",
-            "js",
-            "typescript"
+            "typescript",
+            "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 338187,
+          "github_stars": 386578,
           "license": "Apache-2.0"
         },
         {
@@ -2337,21 +2345,25 @@
           "slug": "multi-agent-systems",
           "icon": "🐝",
           "hot": true,
-          "desc": "Hệ thống nhiều agent AI phối hợp — Gartner ghi nhận tăng <strong>1,445%</strong> quan tâm. 40% app doanh nghiệp sẽ dùng agent cuối 2026.",
+          "desc": "Đội agent AI chuyên biệt cùng lập kế hoạch, phân công và kiểm tra chéo — ngày càng kết nối qua giao thức mở (MCP, A2A) do Agentic AI Foundation quản lý.",
           "added_date": "2026-02-03",
-          "detail": "Gartner ghi nhận lượng truy vấn về multi-agent systems tăng 1,445% từ Q1/2024 đến Q2/2025. Dự đoán 40% enterprise apps sẽ tích hợp AI agents cuối 2026 (vs 5% năm 2025). Đến 2027, 70% MAS sẽ dùng specialized agents thay vì general-purpose. Thị trường agentic AI từ $7.8B (2025) lên $52B (2030). Xu hướng: từ monolithic agents sang orchestrated teams — giống microservices revolution.",
+          "detail": "Thay vì một agent đa năng, multi-agent system chia việc cho nhiều agent chuyên biệt — thường là một orchestrator lập kế hoạch và giao việc cho các worker, mỗi worker có tools và context riêng. Gartner xếp Multiagent Systems vào nhóm xu hướng công nghệ chiến lược hàng đầu 2026, đồng thời cảnh báo các rào cản: độ tin cậy, chi phí khó lường và chuẩn interoperability chưa chín. Bài viết của Anthropic về hệ thống multi-agent research (06/2025) chỉ rõ khi nào pattern này đáng dùng — task rộng, chạy song song được — và khi nào không: tốn token hơn nhiều, còn việc gắn chặt với nhau như phần lớn coding thì lợi ít. Chuẩn kết nối đang hội tụ: Linux Foundation lập Agentic AI Foundation (AAIF) tháng 12/2025 với MCP, goose và AGENTS.md; A2A gia nhập tháng 08/2026. Xu hướng: từ agent nguyên khối sang đội agent được điều phối — giống làn sóng microservices.",
           "sources": [
             {
-              "title": "Gartner — 40% Enterprise Apps with AI Agents by 2026",
-              "url": "https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025"
+              "title": "Gartner — Top xu hướng công nghệ chiến lược 2026",
+              "url": "https://www.gartner.com/en/newsroom/press-releases/2025-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2026"
             },
             {
-              "title": "Gartner — Multiagent Systems in Enterprise AI",
+              "title": "Gartner — Multiagent Systems trong AI doanh nghiệp",
               "url": "https://www.gartner.com/en/articles/multiagent-systems"
             },
             {
-              "title": "7 Agentic AI Trends 2026",
-              "url": "https://machinelearningmastery.com/7-agentic-ai-trends-to-watch-in-2026/"
+              "title": "Anthropic — Cách xây hệ thống multi-agent research",
+              "url": "https://www.anthropic.com/engineering/multi-agent-research-system"
+            },
+            {
+              "title": "Linux Foundation — Thành lập Agentic AI Foundation",
+              "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"
             }
           ],
           "pricing": "free",
@@ -2363,17 +2375,17 @@
           ],
           "github_stars": null,
           "license": null,
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "whenToUse": [
-            "Cần phối hợp nhiều AI agents chuyên biệt cho workflow phức tạp",
+            "Workflow phức tạp tách được thành các subtask song song, hợp với agent chuyên biệt",
             "Tự động hóa quy trình end-to-end thay vì từng task riêng lẻ",
-            "Khi team/org cần agents phối hợp cross-functional"
+            "Khối lượng việc vượt một context window hoặc cần rất nhiều tools khác nhau"
           ],
           "whenNotToUse": [
-            "Task đơn giản chỉ cần 1 agent hoặc 1 LLM call",
-            "Chưa có observability/governance cho hệ thống phân tán",
-            "Prototype nhanh — overhead orchestration chưa cần thiết"
+            "Một agent hoặc một lần gọi LLM đã giải quyết được",
+            "Chưa có observability, kiểm soát chi phí hay governance cho hệ thống phân tán",
+            "Việc gắn chặt với nhau, agent nào cũng cần chung một context"
           ],
           "compatibleWith": [
             "crewai",
@@ -2381,6 +2393,7 @@
             "langgraph",
             "openai-agents-sdk",
             "google-adk",
+            "agentscope",
             "mcp",
             "a2a",
             "claude-flow"
@@ -2396,21 +2409,25 @@
           "name": "Mechanistic Interpretability",
           "slug": "mechanistic-interpretability",
           "icon": "🔍",
-          "desc": "Nghiên cứu cách AI 'suy nghĩ' bên trong — giúp hiểu và kiểm soát hành vi AI tốt hơn. Đột phá 2026 theo MIT.",
+          "desc": "Nghiên cứu \"giải phẫu\" cách model tính toán bên trong — features, circuits, đường suy luận — để giải thích và điều khiển hành vi AI. Đột phá 2026 theo MIT Tech Review.",
           "added_date": "2026-02-03",
-          "detail": "MIT Technology Review chọn là 1 trong 10 Breakthrough Technologies 2026. Anthropic dùng 'kính hiển vi AI' phát hiện 34 triệu features trong Claude — từ 'sarcasm' đến 'DNA sequences'. OpenAI xây 'AI lie detector' dựa trên model internals. Google DeepMind phát hành Gemma Scope 2 — bộ toolkit interpretability mã nguồn mở lớn nhất. Mục tiêu: biến AI từ 'hộp đen' thành 'hộp kính' — hiểu được tại sao AI đưa ra quyết định.",
+          "detail": "MIT Technology Review chọn mechanistic interpretability là 1 trong 10 Breakthrough Technologies 2026. \"Kính hiển vi AI\" của Anthropic trước tiên tìm ra các features gắn với khái niệm như cầu Golden Gate (2024), rồi tháng 03/2025 lần theo cả circuit từ prompt đến câu trả lời trong Claude 3.5 Haiku, và tháng 05/2025 open-source công cụ circuit tracing kèm giao diện Neuronpedia. Google DeepMind phát hành Gemma Scope 2 — sparse autoencoders và transcoders cho dòng Gemma 3 — tháng 12/2025, tự nhận là bản phát hành interpretability mã nguồn mở lớn nhất từ một AI lab. Một hướng nhẹ hơn là chain-of-thought monitoring: năm 2025 OpenAI dùng nó để bắt quả tang một reasoning model gian lận khi làm bài test coding. Mục tiêu: biến AI từ \"hộp đen\" thành thứ có thể audit — dù giới nghiên cứu vẫn tranh luận các phương pháp này scale được tới đâu.",
           "sources": [
             {
-              "title": "MIT Tech Review — Breakthrough 2026",
+              "title": "MIT Technology Review — Mechanistic interpretability: 10 công nghệ đột phá 2026",
               "url": "https://www.technologyreview.com/2026/01/12/1130003/mechanistic-interpretability-ai-research-models-2026-breakthrough-technologies/"
             },
             {
-              "title": "MIT Tech Review — LLMs like alien autopsy",
-              "url": "https://www.technologyreview.com/2026/01/12/1129782/ai-large-language-models-biology-alien-autopsy/"
+              "title": "Anthropic — Lần theo \"suy nghĩ\" của một large language model",
+              "url": "https://www.anthropic.com/research/tracing-thoughts-language-model"
             },
             {
-              "title": "Anthropic — Research",
-              "url": "https://www.anthropic.com/research"
+              "title": "Google DeepMind — Gemma Scope 2",
+              "url": "https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/"
+            },
+            {
+              "title": "OpenAI — Phát hiện hành vi sai ở reasoning model frontier",
+              "url": "https://openai.com/index/chain-of-thought-monitoring/"
             }
           ],
           "pricing": "free",
@@ -2421,24 +2438,23 @@
           ],
           "github_stars": null,
           "license": null,
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "whenToUse": [
-            "Cần hiểu internal mechanisms của LLM để debug hành vi bất thường",
-            "Nghiên cứu AI safety, alignment, phát hiện deception",
-            "Audit model trước khi deploy cho ứng dụng high-stakes"
+            "Debug hành vi bất thường của LLM bằng cách soi cơ chế bên trong model",
+            "Nghiên cứu AI safety, alignment, phát hiện deception hoặc reward hacking",
+            "Audit model open-weight trước khi deploy cho ứng dụng high-stakes"
           ],
           "whenNotToUse": [
-            "Chỉ cần evaluate output quality — dùng observability tools",
-            "Không có background ML/deep learning chuyên sâu",
-            "Cần giải pháp production nhanh, không phải research"
+            "Chỉ cần đánh giá chất lượng output — dùng công cụ evaluation/observability",
+            "Dùng model đóng qua API, không truy cập được weights hay activations",
+            "Cần giải pháp production nhanh, không phải nghiên cứu mở"
           ],
           "compatibleWith": [
-            "langfuse",
+            "garak",
             "deepeval",
-            "arize-phoenix",
-            "nemo-guardrails",
-            "garak"
+            "ai-governance",
+            "post-training-pre-training"
           ],
           "useCases": [
             "research",
@@ -2451,17 +2467,25 @@
           "name": "World Models",
           "slug": "world-models",
           "icon": "🌍",
-          "desc": "AI mô phỏng thế giới thực — AMI Labs, Google và các startup đang đua nhau phát triển. Ngành gaming là một động lực lớn.",
+          "desc": "AI học cách thế giới vận hành để dự đoán và mô phỏng kết quả của hành động — nền tảng cho thế giới 3D tương tác, robotics và xe tự lái.",
           "added_date": "2026-02-03",
-          "detail": "AI mô phỏng thế giới thực — LeCun đã rời Meta để đồng sáng lập AMI Labs, trong khi Google và các startup đang đua nhau phát triển. World models hiểu physics, dự đoán kết quả hành động trong môi trường 3D. Ứng dụng: tự lái xe, robotics, game development, simulation. Ngành gaming là một động lực lớn. Gần đây: Genie 2 (Google), video generation models chuyển thành world simulators.",
+          "detail": "World models học cách môi trường vận hành để dự đoán hệ quả của hành động, tạo cảnh tương tác, và cho agent lập kế hoạch hoặc training trong môi trường mô phỏng. Hai hướng đang chạy đua. Mô phỏng thế giới dạng generative: Genie 3 của Google DeepMind (08/2025) tạo thế giới đi lại được theo thời gian thực, và prototype Project Genie mở cho thuê bao AI Ultra tại Mỹ từ 01/2026; World Labs đưa world model 3D Marble ra bản chính thức tháng 11/2025. Mô hình dự đoán không generative: Yann LeCun rời Meta năm 2025 và đồng sáng lập AMI Labs, xây world model dự đoán trong không gian biểu diễn trừu tượng thay vì từng pixel. NVIDIA Cosmos cung cấp world foundation models mở cho robotics và xe tự lái. Gaming, robotics và simulation là các động lực chính.",
           "sources": [
             {
-              "title": "Yann LeCun — A Path Towards Autonomous AI",
-              "url": "https://openreview.net/pdf?id=BZ5a1r-kVsf"
+              "title": "Google DeepMind — Genie 3: chặng mới cho world models",
+              "url": "https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/"
             },
             {
-              "title": "Google DeepMind — Genie",
-              "url": "https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/"
+              "title": "AMI Labs — Advanced Machine Intelligence",
+              "url": "https://amilabs.xyz/"
+            },
+            {
+              "title": "World Labs — World model Marble",
+              "url": "https://www.worldlabs.ai/blog/marble-world-model"
+            },
+            {
+              "title": "NVIDIA Cosmos — World foundation models cho physical AI",
+              "url": "https://www.nvidia.com/en-us/ai/cosmos/"
             }
           ],
           "pricing": "free",
@@ -2472,23 +2496,21 @@
           ],
           "github_stars": null,
           "license": null,
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "whenToUse": [
-            "Xây dựng AI hiểu vật lý và spatial reasoning cho robotics",
-            "Training agents trong simulated environments trước khi deploy thực tế",
-            "Tạo interactive 3D environments cho gaming hoặc VR/AR"
+            "Xây AI cần hiểu vật lý và spatial reasoning, ví dụ robotics",
+            "Training hoặc test agent trong môi trường mô phỏng trước khi triển khai thực tế",
+            "Tạo môi trường 3D tương tác cho game, VR/AR hoặc synthetic data để training"
           ],
           "whenNotToUse": [
-            "Chỉ cần text processing hoặc chatbot thông thường",
-            "Không có GPU infrastructure đủ mạnh",
-            "Dự án không liên quan đến spatial/physical reasoning"
+            "Chỉ cần xử lý văn bản hoặc chatbot thông thường",
+            "Không có đủ GPU compute",
+            "Dự án không có yếu tố không gian, vật lý hay mô phỏng"
           ],
           "compatibleWith": [
-            "ollama",
-            "vllm",
             "ai-infrastructure",
-            "generative-coding"
+            "post-training-pre-training"
           ],
           "useCases": [
             "research",
@@ -2500,17 +2522,21 @@
           "name": "Generative Coding",
           "slug": "generative-coding",
           "icon": "💻",
-          "desc": "AI viết 30% code tại Microsoft, 25%+ tại Google. 'Tiếng Anh đang trở thành ngôn ngữ lập trình mới.'",
+          "desc": "AI viết, sửa, test và debug code từ chỉ dẫn bằng ngôn ngữ tự nhiên — tiến từ autocomplete lên agent làm việc trên cả repository.",
           "added_date": "2026-02-03",
-          "detail": "AI viết 30% code tại Microsoft, 25%+ tại Google. GitHub Copilot có tỷ lệ acceptance ~30% suggestions. MIT Technology Review chọn là Breakthrough 2026. Tuy nhiên Veracode phát hiện 45% code AI tạo ra chứa lỗ hổng bảo mật. Xu hướng: 'tiếng Anh đang trở thành ngôn ngữ lập trình mới' — developers chuyển từ viết code sang hướng dẫn AI viết code.",
+          "detail": "MIT Technology Review chọn generative coding là 1 trong 10 Breakthrough Technologies 2026. Công cụ đã tiến từ autocomplete trong editor lên coding agent biết lập kế hoạch thay đổi, sửa nhiều file, chạy test và mở pull request. Trong Stack Overflow Developer Survey 2026, coding assistant và agent đã thành use case AI số một của developer, nhưng niềm tin vẫn phụ thuộc vào việc kiểm chứng được output, và human-in-the-loop review vẫn là cách làm chủ đạo. Rủi ro vẫn còn: nghiên cứu của Veracode (07/2025) cho thấy model mới và lớn hơn viết code đúng hơn nhưng không an toàn hơn, AI vẫn vất vả với codebase lớn và phức tạp, còn \"vibe coding\" không review thì rủi ro khi lên production. Xu hướng: developer chuyển từ gõ code sang đặc tả, review và điều phối code do AI viết.",
           "sources": [
             {
-              "title": "MIT Tech Review — 10 Breakthrough Technologies 2026",
-              "url": "https://www.technologyreview.com/2026/01/06/1129144/10-breakthrough-technologies-2026/"
+              "title": "MIT Technology Review — Generative coding: 10 công nghệ đột phá 2026",
+              "url": "https://www.technologyreview.com/2026/01/12/1130027/generative-coding-ai-software-2026-breakthrough-technology/"
             },
             {
-              "title": "GitHub — State of AI Coding",
-              "url": "https://github.blog/news-insights/research/the-state-of-ai-coding/"
+              "title": "Stack Overflow Developer Survey 2026 — Phần AI",
+              "url": "https://survey.stackoverflow.co/2026/ai"
+            },
+            {
+              "title": "Veracode — Nghiên cứu bảo mật code do AI tạo ra",
+              "url": "https://www.veracode.com/press-release/ai-generated-code-poses-major-security-risks-in-nearly-half-of-all-development-tasks-veracode-research-reveals/"
             }
           ],
           "pricing": "free",
@@ -2523,17 +2549,17 @@
           ],
           "github_stars": null,
           "license": null,
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "whenToUse": [
-            "Tăng tốc development workflow với AI-assisted coding",
-            "Non-developers cần build apps/prototypes nhanh (vibe coding)",
-            "Cần generate, test, debug code tự động trong pipeline"
+            "Tăng tốc việc dev hằng ngày: boilerplate, test, refactor, debug",
+            "Build prototype hoặc tool nội bộ thật nhanh, kể cả người không chuyên code (vibe coding)",
+            "Tự động hóa sinh code, review hoặc chạy test trong CI pipeline"
           ],
           "whenNotToUse": [
-            "Security-critical code không có human review process",
-            "Codebase legacy phức tạp cần deep architectural understanding",
-            "Cần 100% deterministic, auditable code output"
+            "Code nhạy cảm về bảo mật mà không có quy trình human review",
+            "Codebase legacy lớn cần hiểu kiến trúc sâu, lại không có chuyên gia giám sát",
+            "Trường hợp đòi hỏi output hoàn toàn deterministic và audit được"
           ],
           "compatibleWith": [
             "claude-code",
@@ -2543,6 +2569,8 @@
             "codex-cli",
             "gemini-cli",
             "cline-roocode",
+            "opencode",
+            "goose",
             "replit-agent",
             "kiro-aws"
           ],
@@ -2557,41 +2585,45 @@
           "name": "Chinese Open-Source AI",
           "slug": "chinese-open-source-ai",
           "icon": "🇨🇳",
-          "desc": "DeepSeek R1 gây sốc giới AI — model suy luận mã nguồn mở từ Trung Quốc. Khoảng cách công nghệ giảm từ tháng xuống tuần.",
+          "desc": "Model open-weight từ các lab Trung Quốc — DeepSeek, Qwen, Kimi, GLM, MiniMax — sát frontier, đa phần license thoáng, thành lựa chọn mặc định khi self-host.",
           "added_date": "2026-02-03",
-          "detail": "DeepSeek R1 gây sốc — model reasoning mã nguồn mở từ Trung Quốc, hiệu suất gần bằng GPT-4 với chi phí thấp hơn nhiều. Qwen (Alibaba) liên tục cập nhật, cạnh tranh trực tiếp với frontier models. Khoảng cách công nghệ Mỹ-Trung giảm từ tháng xuống tuần. Xu hướng: China không chỉ 'copy' mà đang 'innovate' — đặc biệt ở efficiency và cost optimization.",
+          "detail": "DeepSeek-R1 (01/2025) chứng minh một reasoning model open-weight, train chủ yếu bằng reinforcement learning, có thể sánh với các reasoning model độc quyền hàng đầu; công trình sau đó được đăng trên Nature. Từ đó các lab Trung Quốc trở thành nguồn chính của model open-weight cỡ lớn. Báo cáo State of Open Models (hè 2026) của Hugging Face ghi nhận Qwen (Alibaba) và Tencent phát hành đủ mọi kích cỡ, còn Moonshot (Kimi), MiniMax và Z.ai (GLM) tập trung vào model rất lớn; đa số dùng license Apache 2.0 hoặc MIT — dù vài flagship gần đây đã thêm điều khoản non-commercial hoặc chia sẻ doanh thu. AI Index 2026 của Stanford cho thấy model Mỹ vẫn dẫn, nhưng cách biệt nhỏ. Lưu ý: đánh giá của NIST CAISI (09/2025) thấy model DeepSeek dễ bị agent hijacking và jailbreak hơn — hãy kiểm tra license từng model và tự chạy safety eval.",
           "sources": [
             {
-              "title": "DeepSeek Official",
-              "url": "https://www.deepseek.com/"
-            },
-            {
-              "title": "DeepSeek R1 Paper",
+              "title": "DeepSeek-R1: tăng năng lực suy luận của LLM bằng reinforcement learning (arXiv)",
               "url": "https://arxiv.org/abs/2501.12948"
             },
             {
-              "title": "Qwen (Alibaba)",
-              "url": "https://qwenlm.github.io/"
+              "title": "Hugging Face — Toàn cảnh open model: hè 2026",
+              "url": "https://huggingface.co/blog/state-of-open-models-summer-2026"
+            },
+            {
+              "title": "NIST — Đánh giá của CAISI về model DeepSeek: hạn chế và rủi ro",
+              "url": "https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks"
+            },
+            {
+              "title": "Stanford HAI — AI Index Report 2026",
+              "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần model mạnh chi phí thấp",
-            "Fine-tune cho use case riêng",
-            "Self-host LLM để kiểm soát dữ liệu",
-            "Xây prototype nhanh với model mở"
+            "Cần model mạnh chi phí thấp, hoặc self-host để giữ dữ liệu trong nhà",
+            "Fine-tune model open-weight cho domain/use case riêng",
+            "Làm prototype nhanh với model mở có thể chạy, soi và chỉnh sửa"
           ],
           "whenNotToUse": [
-            "Cần enterprise support chính hãng",
-            "Quy định nghiêm ngặt về nguồn gốc model",
-            "Không có hạ tầng GPU để chạy local"
+            "Cần enterprise support chính hãng và cam kết theo hợp đồng",
+            "Có quy định nghiêm ngặt về nguồn gốc model hoặc nơi xử lý dữ liệu",
+            "Không có hạ tầng GPU cho model lớn, hoặc không đủ nguồn lực tự chạy safety eval"
           ],
           "compatibleWith": [
             "ollama",
             "vllm",
             "litellm",
+            "localai",
             "dify",
             "ragflow"
           ],
@@ -2604,8 +2636,8 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -2613,32 +2645,39 @@
           "name": "Post-Training > Pre-Training",
           "slug": "post-training-pre-training",
           "icon": "🧠",
-          "desc": "Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.",
+          "desc": "Phần lớn tiến bộ gần đây của model đến từ giai đoạn sau pre-training — reinforcement learning, preference tuning, fine-tuning — chứ không chỉ từ việc tăng quy mô.",
           "added_date": "2026-02-03",
-          "detail": "Xu hướng lớn: thay vì train model lớn hơn (pre-training tốn $100M+), giờ tập trung tinh chỉnh sau huấn luyện (post-training) bằng RLHF, DPO, RLAIF. Fine-tuning trở thành chìa khóa — model nhỏ + fine-tune tốt có thể đánh bại model lớn. Reasoning models (o1, o3, DeepSeek R1) chứng minh post-training quan trọng hơn kích thước model.",
+          "detail": "Pre-training trên kho dữ liệu khổng lồ vẫn là nền móng, nhưng post-training giờ tạo ra phần lớn tiến bộ thấy được. o1 của OpenAI (09/2024) cho thấy khả năng suy luận tăng theo compute dành cho reinforcement learning và thời gian \"suy nghĩ\" lúc test; DeepSeek-R1 (01/2025) cho thấy RL với reward kiểm chứng được theo luật có thể khơi ra năng lực suy luận mạnh ở model mở. Kỹ thuật cốt lõi: supervised fine-tuning, RLHF, RLAIF (Constitutional AI của Anthropic, 2022), DPO (2023) và RL with verifiable rewards (RLVR). Các recipe mở như Tülu 3 của Ai2 (11/2024) công bố data, code và bộ evaluation để tái lập toàn bộ pipeline. Với developer: base model mạnh cộng fine-tuning hoặc RL nhắm đúng domain thường là con đường rẻ hơn so với chuyển sang model lớn hơn.",
           "sources": [
             {
-              "title": "Anthropic — RLHF Research",
-              "url": "https://www.anthropic.com/research"
+              "title": "OpenAI — Dạy LLM suy luận",
+              "url": "https://openai.com/index/learning-to-reason-with-llms/"
             },
             {
-              "title": "OpenAI — Learning to Reason",
-              "url": "https://openai.com/index/learning-to-reason-with-llms/"
+              "title": "DeepSeek-R1: tăng năng lực suy luận của LLM bằng reinforcement learning (arXiv)",
+              "url": "https://arxiv.org/abs/2501.12948"
+            },
+            {
+              "title": "Ai2 — Tülu 3: recipe post-training mở",
+              "url": "https://allenai.org/blog/tulu-3"
+            },
+            {
+              "title": "Anthropic — Constitutional AI: an toàn nhờ AI feedback",
+              "url": "https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "advanced",
           "whenToUse": [
-            "Align model với human preferences",
-            "Tăng reasoning qua reinforcement learning",
-            "Cải thiện model chi phí thấp hơn pre-training",
-            "Fine-tune cho domain chuyên biệt"
+            "Align model theo human preferences hoặc một style/policy cụ thể",
+            "Tăng khả năng suy luận cho task có đáp án kiểm chứng được bằng reinforcement learning",
+            "Chuyên biệt hóa model cho một domain với chi phí thấp hơn train hay dùng model lớn hơn"
           ],
           "whenNotToUse": [
             "Chưa có base model đủ mạnh",
-            "Không có preference data hoặc verifiable rewards",
-            "Task đơn giản dùng prompt engineering là đủ"
+            "Không có preference data, dữ liệu gán nhãn hay verifiable rewards",
+            "Prompt engineering hoặc RAG đã đủ giải quyết"
           ],
           "compatibleWith": [
             "deepeval",
@@ -2655,8 +2694,8 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -2664,38 +2703,44 @@
           "name": "AI Drug Discovery",
           "slug": "ai-drug-discovery",
           "icon": "🏥",
-          "desc": "Thuốc do AI khám phá bắt đầu thử nghiệm lâm sàng giai đoạn giữa/cuối. Tập trung: ung thư và bệnh hiếm.",
+          "desc": "AI tìm đích thuốc, dự đoán cấu trúc protein và thiết kế phân tử — một thuốc có đích và phân tử do AI tìm ra đã vào thử nghiệm Phase III năm 2026.",
           "added_date": "2026-02-03",
-          "detail": "AI đẩy nhanh phát hiện thuốc mới — từ 10-15 năm xuống còn 2-3 năm cho giai đoạn khám phá. AlphaFold dự đoán cấu trúc protein, Isomorphic Labs (Google) hợp tác với Eli Lilly và Novartis. Insilico Medicine đưa thuốc AI-designed vào thử nghiệm lâm sàng giai đoạn II. Tập trung: ung thư, bệnh hiếm, thuốc kháng sinh mới.",
+          "detail": "AI giờ có mặt xuyên suốt giai đoạn khám phá thuốc: xác định đích tác động, dự đoán cấu trúc protein, sinh phân tử và sàng lọc ứng viên. Những người tạo ra AlphaFold đồng nhận giải Nobel Hóa học 2024, và AlphaFold 3 (05/2024, cùng Isomorphic Labs) dự đoán cách protein tương tác với DNA, RNA, ligand và kháng thể. Isomorphic Labs, công ty tách ra từ Alphabet, hợp tác với Eli Lilly, Novartis và Johnson & Johnson, đang chuẩn bị các thử nghiệm lâm sàng đầu tiên. Tháng 09/2026, Insilico Medicine dùng liều cho bệnh nhân đầu tiên trong thử nghiệm Phase III của rentosertib — thuốc trị xơ phổi vô căn có đích tác động và phân tử đều được tìm bằng AI. Cơ quan quản lý đang thích nghi: hướng dẫn dự thảo của FDA (01/2025) đưa ra khung đánh giá độ tin cậy dựa trên rủi ro cho AI dùng trong hồ sơ thuốc. Lưu ý: AI rút ngắn giai đoạn khám phá, không rút ngắn thử nghiệm lâm sàng — rentosertib vẫn đang trong giai đoạn nghiên cứu.",
           "sources": [
             {
-              "title": "Isomorphic Labs",
-              "url": "https://www.isomorphiclabs.com/"
+              "title": "Google DeepMind — AlphaFold",
+              "url": "https://deepmind.google/technologies/alphafold/"
             },
             {
-              "title": "AlphaFold — Google DeepMind",
-              "url": "https://deepmind.google/technologies/alphafold/"
+              "title": "Isomorphic Labs — Đối tác",
+              "url": "https://www.isomorphiclabs.com/partnerships"
+            },
+            {
+              "title": "Insilico Medicine — Bệnh nhân đầu tiên dùng thuốc trong thử nghiệm Phase III GENESIS-IPF-3",
+              "url": "https://insilico.com/news/isn1009261-insilico-medicine-doses-first-patient-genesis-ipf-3"
+            },
+            {
+              "title": "FDA — Hướng dẫn dự thảo về dùng AI hỗ trợ ra quyết định quản lý thuốc và sinh phẩm",
+              "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "advanced",
           "whenToUse": [
-            "Dự đoán cấu trúc protein",
-            "Thiết kế phân tử thuốc mới",
-            "Sàng lọc ứng viên thuốc quy mô lớn",
-            "Tối ưu thuộc tính dược lý bằng AI"
+            "Dự đoán cấu trúc protein và tương tác phân tử",
+            "Sinh và sàng lọc ứng viên thuốc ở quy mô lớn",
+            "Ưu tiên đích tác động hoặc tối ưu thuộc tính phân tử trước khi làm thí nghiệm"
           ],
           "whenNotToUse": [
-            "Không có dữ liệu sinh học chuyên ngành",
-            "Cần kết quả lâm sàng ngay lập tức",
-            "Không có hạ tầng tính toán hiệu năng cao"
+            "Không có dữ liệu sinh học/hóa học chuyên ngành, hoặc không có thí nghiệm kiểm chứng",
+            "Kỳ vọng AI rút ngắn thử nghiệm lâm sàng hay thay thế bằng chứng cho cơ quan quản lý",
+            "Không có hạ tầng tính toán hiệu năng cao hoặc chuyên môn khoa học phù hợp"
           ],
           "compatibleWith": [
-            "langfuse",
-            "pydantic-ai",
             "llamaindex",
-            "pgvector"
+            "pgvector",
+            "ai-infrastructure"
           ],
           "useCases": [
             "research",
@@ -2705,8 +2750,8 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -2714,32 +2759,39 @@
           "name": "AI Infrastructure",
           "slug": "ai-infrastructure",
           "icon": "⚡",
-          "desc": "Data center khổng lồ 1GW+, dùng cả điện hạt nhân cho AI. Một mặt trận trọng yếu trong cuộc đua AI.",
+          "desc": "Data center quy mô gigawatt, siêu máy tính AI và hợp đồng điện dài hạn (cả hạt nhân) — compute và điện năng giờ là mặt trận cốt lõi của cuộc đua AI.",
           "added_date": "2026-02-03",
-          "detail": "Data center khổng lồ 1GW+ đang được xây dựng — dùng cả điện hạt nhân. Microsoft, Google và Amazon đều đang theo đuổi các thỏa thuận năng lượng hạt nhân dài hạn. Đầu tư cho AI infrastructure đang tăng tốc nhanh. Nguồn cung NVIDIA H100/H200 vẫn là một điểm nghẽn quan trọng.",
+          "detail": "MIT Technology Review đưa hyperscale AI data center vào 10 Breakthrough Technologies 2026 — cơ sở lớn nhất tiêu thụ hơn một gigawatt, ngang cả một thành phố. Gartner xếp AI supercomputing platform đứng đầu các xu hướng công nghệ chiến lược 2026. Điện năng giờ là giới hạn then chốt: báo cáo Energy and AI của IEA phân tích nhu cầu điện của data center sẽ được đáp ứng ra sao, và từ 2024 các nhà cung cấp cloud lớn nhất đều đã ký thỏa thuận điện hạt nhân dài hạn — từ khởi động lại nhà máy cũ đến mua điện từ lò phản ứng mô-đun nhỏ (SMR) tương lai (Google với Kairos Power, 10/2024). Điểm nghẽn đã chuyển từ nguồn cung chip sang điện, công suất lưới và nước, còn cộng đồng địa phương ngày càng phản đối vì hóa đơn điện tăng và tác động tại chỗ.",
           "sources": [
             {
-              "title": "Gartner — Top Tech Trends 2026",
-              "url": "https://www.gartner.com/en/newsroom/press-releases/2025-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2026"
+              "title": "MIT Technology Review — Hyperscale AI data center: 10 công nghệ đột phá 2026",
+              "url": "https://www.technologyreview.com/2026/01/12/1129982/hyperscale-ai-data-centers-energy-usage-2026-breakthrough-technology/"
             },
             {
-              "title": "IEA — Data Centres and Energy",
-              "url": "https://www.iea.org/energy-system/buildings/data-centres-and-data-transmission-networks"
+              "title": "IEA — Năng lượng và AI",
+              "url": "https://www.iea.org/reports/energy-and-ai"
+            },
+            {
+              "title": "Google — Thỏa thuận điện hạt nhân sạch với Kairos Power",
+              "url": "https://blog.google/outreach-initiatives/sustainability/google-kairos-power-nuclear-energy-agreement/"
+            },
+            {
+              "title": "Gartner — Top xu hướng công nghệ chiến lược 2026",
+              "url": "https://www.gartner.com/en/newsroom/press-releases/2025-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2026"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Triển khai AI ở quy mô production",
-            "Tối ưu chi phí GPU và compute",
-            "Xây hạ tầng inference gần người dùng",
-            "Quản lý cluster training phân tán"
+            "Triển khai AI ở quy mô production, kể cả self-host inference",
+            "Tối ưu chi phí GPU/compute hoặc đặt inference gần người dùng",
+            "Lên kế hoạch hoặc vận hành cluster training phân tán"
           ],
           "whenNotToUse": [
-            "Chỉ dùng API cloud có sẵn",
-            "Prototype nhỏ không cần scale",
-            "Không có ngân sách hạ tầng chuyên dụng"
+            "API cloud có sẵn đã đáp ứng đủ",
+            "Prototype nhỏ chưa cần scale",
+            "Không có ngân sách hoặc đội ngũ cho hạ tầng chuyên dụng"
           ],
           "compatibleWith": [
             "ollama",
@@ -2756,8 +2808,8 @@
             "python",
             "go"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -2765,38 +2817,46 @@
           "name": "AI Governance",
           "slug": "ai-governance",
           "icon": "🔐",
-          "desc": "Agent AI giám sát các agent AI khác — đặt rào chắn an toàn và giữ con người trong vòng kiểm soát.",
+          "desc": "Luật, framework và công cụ giúp AI an toàn, minh bạch trách nhiệm và tuân thủ — từ EU AI Act, NIST AI RMF đến guardrails và giám sát của con người với agent.",
           "added_date": "2026-02-03",
-          "detail": "Agent AI giám sát agent AI khác — 'governance agents' phát hiện policy violations. EU AI Act có hiệu lực đầy đủ 2026. Gartner dự đoán 2,000+ vụ kiện 'death by AI' cuối 2026 do thiếu guardrails. 'Bounded autonomy' — agent có giới hạn hành động rõ ràng, escalation paths khi không chắc chắn. Xu hướng: compliance-by-design thay vì compliance-as-afterthought.",
+          "detail": "Quản trị AI đang chuyển từ văn bản chính sách sang thực hành kỹ thuật. EU AI Act có hiệu lực từ 08/2024: lệnh cấm các hành vi bị cấm áp dụng từ 02/2025, nghĩa vụ cho general-purpose AI từ 08/2025, và phần lớn quy định còn lại, gồm nghĩa vụ minh bạch, từ 02/08/2026. Gói AI Omnibus (thông qua năm 2026) lùi yêu cầu cho hệ thống high-risk sang 02/12/2027 với các ứng dụng độc lập như tuyển dụng, giáo dục, và sang 02/08/2028 với AI tích hợp trong sản phẩm được quản lý chuyên ngành. Ở Mỹ, AI Risk Management Framework của NIST (2023) và Generative AI Profile (2024) là chuẩn tự nguyện phổ biến. Với agent, OWASP Top 10 for Agentic Applications (12/2025) liệt kê các rủi ro chính, và thực tiễn hội tụ về \"bounded autonomy\": quyền tối thiểu, bước phê duyệt, audit log và agent giám sát. Xu hướng: compliance-by-design thay vì compliance-as-afterthought.",
           "sources": [
             {
-              "title": "EU AI Act",
-              "url": "https://artificialintelligenceact.eu/"
+              "title": "Ủy ban châu Âu — AI Act (khung pháp lý về AI)",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
             },
             {
-              "title": "Gartner — Strategic Predictions 2026",
-              "url": "https://www.gartner.com/en/articles/strategic-predictions-for-2026"
+              "title": "Future of Privacy Forum — Lộ trình áp dụng AI Act sau AI Omnibus",
+              "url": "https://fpf.org/blog/the-ai-act-implementation-timeline-what-changes-under-the-ai-omnibus"
+            },
+            {
+              "title": "NIST — AI Risk Management Framework",
+              "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+            },
+            {
+              "title": "OWASP — Top 10 rủi ro cho ứng dụng agentic 2026",
+              "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Tuân thủ EU AI Act hoặc quy định AI",
-            "Đánh giá rủi ro hệ thống AI",
-            "Xây dựng quy trình AI có trách nhiệm",
-            "Kiểm soát bias và fairness trong model"
+            "Tuân thủ EU AI Act hoặc quy định AI khác ở thị trường bạn phục vụ",
+            "Đánh giá rủi ro trước khi triển khai AI ảnh hưởng tới khách hàng hoặc nhân viên",
+            "Đặt guardrails, bước phê duyệt và audit trail cho agent tự hành"
           ],
           "whenNotToUse": [
-            "Prototype giai đoạn rất sớm",
-            "AI chỉ dùng nội bộ không ảnh hưởng end-user",
-            "Không hoạt động trong thị trường có quy định"
+            "Prototype rất sớm, chưa có người dùng hay dữ liệu thật",
+            "Thử nghiệm thuần nội bộ, không ảnh hưởng end user",
+            "Use case rủi ro thấp ngoài thị trường có quy định, nơi chương trình governance đầy đủ là quá mức — bắt đầu bằng guardrails gọn nhẹ"
           ],
           "compatibleWith": [
             "garak",
             "nemo-guardrails",
             "presidio",
             "guardrails-ai",
+            "promptfoo",
             "langfuse"
           ],
           "useCases": [
@@ -2808,8 +2868,8 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         }
@@ -3834,43 +3894,41 @@
         {
           "name": "garak",
           "slug": "garak",
-          "desc": "LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI",
+          "desc": "LLM vulnerability scanner open-source do NVIDIA hậu thuẫn — dò jailbreak, prompt injection, rò rỉ dữ liệu và nhiều lỗi khác ở model lẫn ứng dụng LLM",
           "hot": true,
           "added_date": "2026-02-08",
           "tags": [
-            "7K⭐",
             "NVIDIA",
             "Apache 2.0"
           ],
           "tagColor": "#76b900",
-          "detail": "garak là \"nmap cho LLM\" – công cụ quét lỗ hổng bảo mật dành riêng cho mô hình ngôn ngữ lớn, được NVIDIA phát triển. Hỗ trợ kiểm tra hallucination, data leakage, prompt injection, jailbreak, toxicity generation và nhiều attack vector khác. garak hoạt động theo kiến trúc modular với probes (tạo tương tác thử), detectors (phát hiện hành vi xấu), và evaluators (đánh giá kết quả). Hỗ trợ scan model từ Hugging Face, OpenAI, Ollama, LiteLLM và hầu hết mọi endpoint REST.\n\nKết hợp tốt với: NeMo Guardrails · Ollama · LiteLLM · Promptfoo",
+          "detail": "garak (Generative AI Red-teaming & Assessment Kit) là công cụ dòng lệnh open-source kiểm tra xem một LLM hoặc ứng dụng chạy trên LLM có thể bị ép hoạt động sai theo những cách không mong muốn hay không — thường được ví là \"nmap cho LLM\". Dự án do NVIDIA hậu thuẫn, có thêm đóng góp từ cộng đồng. garak dò hallucination, data leakage, prompt injection, misinformation, toxicity generation, jailbreak và nhiều điểm yếu khác, kết hợp probe tĩnh, động và thích ứng. Mỗi lần chạy ghép generators (kết nối tới target), probes (prompt tấn công), detectors (phát hiện lỗi), harness (điều phối lần chạy) và evaluators (chấm kết quả), sau đó xuất report JSONL kèm hit log ghi lại các tấn công đã thành công. Target hỗ trợ gồm model Hugging Face, OpenAI, AWS Bedrock, LiteLLM, Ollama, endpoint NVIDIA NIM, server tương thích OpenAI, cấu hình NeMo Guardrails và hầu hết mọi endpoint REST. garak là công cụ đánh giá, không phải bộ lọc runtime: nó chỉ ra hệ thống vỡ ở đâu, không chặn traffic. Phù hợp nhất: team security và ML cần red-team model, chatbot hoặc cấu hình guardrail trước khi release và quét lại sau mỗi thay đổi.\n\nKết hợp tốt với: NeMo Guardrails · Ollama · LiteLLM · vLLM",
           "sources": [
             {
               "title": "GitHub",
               "url": "https://github.com/NVIDIA/garak"
             },
             {
-              "title": "Website",
+              "title": "Trang chủ",
               "url": "https://garak.ai/"
             },
             {
-              "title": "Docs",
-              "url": "https://garak.readthedocs.io/"
+              "title": "Hướng dẫn sử dụng",
+              "url": "https://docs.garak.ai/garak/"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "LLM security assessment and vulnerability scanning before deployment",
-            "red-teaming LLM applications for jailbreaks and prompt injection",
-            "automated probe-based testing across multiple failure modes",
-            "CI/CD integration for ongoing LLM security regression testing"
+            "Red-team model hoặc chatbot để tìm jailbreak, prompt injection và data leakage trước khi release",
+            "Đo xem thay đổi guardrail hoặc system prompt thực sự giảm tỉ lệ tấn công thành công bao nhiêu",
+            "Chạy lại cùng bộ probe sau mỗi lần đổi model, prompt hoặc config để bắt lỗi bảo mật tái phát"
           ],
           "whenNotToUse": [
-            "runtime protection or guardrails (use NeMo Guardrails or Guardrails AI)",
-            "non-LLM application security testing",
-            "when need real-time blocking rather than assessment reports"
+            "Cần bảo vệ runtime, chặn input/output xấu trên production (dùng NeMo Guardrails hoặc Guardrails AI)",
+            "Kiểm thử bảo mật phần mềm không dùng LLM như web app, mạng hay hạ tầng",
+            "Muốn dịch vụ red-teaming hosted, bấm là chạy — garak là CLI bạn tự vận hành"
           ],
           "compatibleWith": [
             "ollama",
@@ -3887,23 +3945,22 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 7353,
+          "github_stars": 9768,
           "license": "Apache-2.0"
         },
         {
           "name": "NeMo Guardrails",
           "slug": "nemo-guardrails",
-          "desc": "Programmable guardrails cho LLM với Colang DSL – kiểm soát dialog và an toàn",
+          "desc": "Toolkit open-source của NVIDIA để thêm programmable guardrails cho ứng dụng LLM — input, dialog, retrieval, execution và output rails, định nghĩa bằng Colang",
           "added_date": "2026-02-08",
           "tags": [
-            "5.5K⭐",
             "NVIDIA",
             "Apache 2.0"
           ],
           "tagColor": "#76b900",
-          "detail": "NeMo Guardrails là toolkit open-source từ NVIDIA cho phép thêm guardrails lập trình được vào ứng dụng LLM. Sử dụng Colang – ngôn ngữ DSL riêng để định nghĩa luồng hội thoại, topic control, fact-checking và jailbreak prevention. Hỗ trợ cả input/output rails, dialog rails, và retrieval rails. Tích hợp sẵn với LangChain, LlamaIndex, và các NVIDIA NIM microservices cho content safety, topic control. Đặc biệt phù hợp cho enterprise AI cần kiểm soát chặt chẽ luồng tương tác.\n\nKết hợp tốt với: garak · LangGraph · LlamaIndex · Ollama",
+          "detail": "NeMo Guardrails là thư viện Python open-source của NVIDIA để chèn programmable guardrails vào giữa code ứng dụng và LLM. Rails chạy ở năm giai đoạn — input, dialog, retrieval (các chunk RAG), execution (lời gọi tool/action) và output — và có thể chặn, viết lại hoặc mask nội dung. Luồng hội thoại và logic guardrail được viết bằng Colang (hỗ trợ cả 1.0 và 2.0), còn model và cấu hình rail khai báo bằng YAML. Thư viện có sẵn các rail: LLM self-check (moderation, fact-checking, hallucination), phát hiện jailbreak và injection, topic control, mask PII qua Presidio, cùng các safety model NVIDIA NemoGuard cho content safety, topic control và jailbreak detection, chạy được dưới dạng NIM microservices. Ngoài ra có thể gọi check bên thứ ba như validator của Guardrails AI hay Llama Guard. Dùng qua Python API hoặc guardrails server kiểu OpenAI; tích hợp LangChain/LangGraph là tùy chọn. Khi cần chạy production trên Kubernetes, NVIDIA có NeMo Guardrails microservice trong gói NVIDIA AI Enterprise. Mặc định thư viện gửi telemetry ẩn danh về NVIDIA (tắt bằng biến môi trường). Phù hợp nhất: team xây chatbot, trợ lý RAG hoặc agent cần kiểm soát theo policy, có thể audit, đối với mọi thứ đi vào và đi ra khỏi model.\n\nKết hợp tốt với: LangGraph · Presidio · Guardrails AI · garak · Ollama · vLLM",
           "sources": [
             {
               "title": "GitHub",
@@ -3918,22 +3975,22 @@
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "topic control and content filtering for LLM chatbots",
-            "jailbreak detection in production conversational agents",
-            "multi-rail orchestration with configurable policies",
-            "dialog flow control with Colang DSL"
+            "Giữ chatbot hoặc trợ lý RAG trong phạm vi chủ đề cho phép và ép theo luồng hội thoại định sẵn bằng Colang",
+            "Xếp lớp các check jailbreak, content safety và PII lên input người dùng, chunk truy xuất và output của model",
+            "Kết hợp model NVIDIA NemoGuard với check bên thứ ba (Presidio, Guardrails AI, Llama Guard) trong cùng một guardrails config"
           ],
           "whenNotToUse": [
-            "non-conversational LLM use cases (batch processing, code gen)",
-            "when minimal added latency is critical",
-            "simple output format validation only (Guardrails AI may suffice)"
+            "Luồng xử lý cực nhạy với độ trễ, không chấp nhận thêm một lần gọi model cho mỗi rail dựa trên LLM",
+            "Chỉ cần validate schema hoặc kiểu dữ liệu của output LLM (Guardrails AI hoặc Pydantic thuần nhẹ hơn)",
+            "Cần tìm lỗ hổng trước khi release — hãy quét bằng garak trước rồi mới thêm rails"
           ],
           "compatibleWith": [
             "langgraph",
-            "llamaindex",
-            "litellm",
             "presidio",
-            "langfuse"
+            "guardrails-ai",
+            "garak",
+            "ollama",
+            "vllm"
           ],
           "useCases": [
             "chatbot-safety",
@@ -3944,51 +4001,53 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 5847,
+          "github_stars": 7397,
           "license": "Apache-2.0"
         },
         {
           "name": "Presidio",
           "slug": "presidio",
-          "desc": "PII detection & anonymization cho text và image – bảo vệ dữ liệu cá nhân",
+          "desc": "PII detection & anonymization open-source cho text, image và structured data — do cộng đồng quản trị, khởi nguồn từ Microsoft",
           "added_date": "2026-02-08",
           "tags": [
-            "7K⭐",
-            "Microsoft",
+            "Data Privacy Stack",
             "MIT"
           ],
           "tagColor": "#0078d4",
-          "detail": "Presidio là framework open-source từ Microsoft giúp phát hiện, redact, mask và anonymize dữ liệu nhạy cảm (PII) trong text, images và structured data. Sử dụng kết hợp NLP (spaCy, transformers), regex patterns, rule-based logic và checksum để nhận diện credit card, tên, địa chỉ, SSN, email, số điện thoại và nhiều loại PII khác. Hỗ trợ đa ngôn ngữ, có thể mở rộng với custom recognizers. Triển khai qua Python packages hoặc Docker containers, tích hợp tốt với LLM pipelines để sanitize data trước khi gửi vào model.\n\nKết hợp tốt với: LangChain · LiteLLM · Guardrails AI · NeMo Guardrails",
+          "detail": "Presidio là SDK open-source để phát hiện và de-identify dữ liệu nhạy cảm (PII). Dự án ban đầu được tạo ra tại Microsoft, nay là dự án độc lập do cộng đồng quản trị, thuộc tổ chức GitHub Data Privacy Stack; giấy phép vẫn là MIT, và link microsoft/presidio cũ tự chuyển hướng sang địa chỉ mới. Presidio có bốn module: Analyzer (phát hiện PII trong text), Anonymizer (replace, mask, redact hoặc encrypt các entity tìm được, có thể decrypt để khôi phục), Image Redactor (che PII trong ảnh bằng OCR, kể cả ảnh y tế DICOM) và Structured (dữ liệu dạng bảng và bán cấu trúc). Cơ chế nhận diện kết hợp NER model (spaCy, Stanza, transformers), regex, rule-based logic, checksum và ngữ cảnh xung quanh, hỗ trợ nhiều ngôn ngữ và có thể gọi model ngoài như GLiNER. Chạy được từ Python hoặc PySpark, bằng Docker container (nay phát hành trên GitHub Container Registry) hoặc trên Kubernetes. Trong pipeline LLM, Presidio thường được dùng để mask prompt trước khi gửi tới model, ví dụ qua guardrail PII masking của LiteLLM proxy, sensitive-data rails của NeMo Guardrails hoặc validator detect_pii của Guardrails AI. Tài liệu cảnh báo phát hiện tự động vẫn có thể bỏ sót PII, nên hãy coi đây là một lớp bảo vệ, không phải bảo đảm tuyệt đối. Phù hợp nhất: team cần loại bỏ hoặc mask dữ liệu cá nhân trước khi ghi log, train model, index RAG hoặc gửi prompt sang LLM bên thứ ba.\n\nKết hợp tốt với: NeMo Guardrails · LiteLLM · Guardrails AI",
           "sources": [
             {
               "title": "GitHub",
-              "url": "https://github.com/microsoft/presidio"
+              "url": "https://github.com/data-privacy-stack/presidio"
             },
             {
-              "title": "Website",
-              "url": "https://microsoft.github.io/presidio/"
+              "title": "Tài liệu",
+              "url": "https://presidio.dataprivacystack.org/"
+            },
+            {
+              "title": "Thông báo chuyển giao dự án",
+              "url": "https://presidio.dataprivacystack.org/project_transition/"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "PII detection and anonymization in LLM pipelines",
-            "text de-identification before model training or logging",
-            "privacy-aware data preprocessing for RAG systems",
-            "custom PII recognizer development with NLP/regex"
+            "Mask PII trong prompt trước khi gửi tới LLM bên thứ ba, ví dụ đặt sau LiteLLM proxy",
+            "De-identify text, bảng dữ liệu hoặc ảnh trước khi ghi log, train model hoặc index RAG",
+            "Xây custom recognizer cho mã định danh đặc thù theo ngành hoặc quốc gia, hỗ trợ nhiều ngôn ngữ"
           ],
           "whenNotToUse": [
-            "real-time high-throughput stream processing without tuning",
-            "non-text PII detection (audio, video) beyond image redaction",
-            "when only simple regex-based masking is needed"
+            "Cần bảo đảm xóa sạch toàn bộ PII — tài liệu cảnh báo phát hiện tự động có thể bỏ sót",
+            "PII nằm trong audio hoặc video (chỉ hỗ trợ text, ảnh kể cả DICOM, và structured data)",
+            "Chỉ cần mask dữ liệu có định dạng cố định mà vài regex đã xử lý được"
           ],
           "compatibleWith": [
             "nemo-guardrails",
             "litellm",
-            "dify"
+            "guardrails-ai"
           ],
           "useCases": [
             "pii-detection",
@@ -3999,54 +4058,57 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 7368,
+          "github_stars": 11582,
           "license": "MIT"
         },
         {
           "name": "Guardrails AI",
           "slug": "guardrails-ai",
-          "desc": "I/O validation framework cho LLM – structured output + 100+ validators",
+          "desc": "Python framework cho input/output guards và structured output đã được validate từ LLM — validators ghép được, cài dưới dạng package PyPI",
           "added_date": "2026-02-08",
           "tags": [
-            "6.5K⭐",
-            "MIT"
+            "Apache 2.0"
           ],
           "tagColor": "#8b5cf6",
-          "detail": "Guardrails AI là Python framework giúp xây dựng ứng dụng AI đáng tin cậy bằng cách chạy Input/Output Guards phát hiện, đo lường và giảm thiểu các loại rủi ro. Guardrails Hub cung cấp 100+ validators sẵn có bao gồm: detect PII, toxic language, competitor mentions, bias, prompt injection và nhiều loại khác. Hỗ trợ validate structured data từ LLM output, tự động reask khi output không đạt tiêu chuẩn. Có thể deploy như standalone service qua REST API, tích hợp dễ dàng với OpenAI, Anthropic, và mọi LLM provider.\n\nKết hợp tốt với: LangChain · Presidio · Promptfoo · LiteLLM",
+          "detail": "Guardrails AI là Python framework open-source (Apache 2.0) đảm nhận hai việc. Thứ nhất, nó chạy Input/Output Guards để phát hiện, đo lường và giảm thiểu các loại rủi ro cụ thể trong traffic LLM. Thứ hai, nó giúp sinh structured data từ LLM theo Pydantic model hoặc RAIL spec, tự động reask khi output không qua được validation. Guard được ghép từ các validator như regex match, competitor mentions, toxic language, PII detection (dựa trên Presidio) hay jailbreak detection, tra cứu được trong catalog Guardrails Hub. Từ tháng 8/2026, mỗi validator được cài như một package PyPI riêng (guardrails-ai-<name>): lệnh hub install cũ, private registry và dịch vụ remote inference hosted miễn phí đã ngừng hoạt động, nên các validator dùng model giờ chạy local hoặc trên endpoint bạn tự host. Guard chạy trực tiếp trong process hoặc qua Guardrails Server (Flask, có endpoint tương thích OpenAI), dùng được với OpenAI, Anthropic, các model LiteLLM hỗ trợ, LangChain và LlamaIndex. Lưu ý về tình trạng dự án: tháng 9/2026 Harvey mua lại Guardrails AI, thông báo không đưa ra cam kết công khai nào về lộ trình open-source, vì vậy hãy xem hoạt động gần đây của repo trước khi áp dụng. Phù hợp nhất: team Python cần output LLM có kiểu dữ liệu rõ ràng, đã được validate, cùng các check input/output nhẹ, ghép linh hoạt.\n\nKết hợp tốt với: LiteLLM · NeMo Guardrails · Presidio · LlamaIndex",
           "sources": [
             {
               "title": "GitHub",
               "url": "https://github.com/guardrails-ai/guardrails"
             },
             {
-              "title": "Website",
-              "url": "https://www.guardrailsai.com/"
+              "title": "Tài liệu",
+              "url": "https://guardrailsai.com/docs"
             },
             {
-              "title": "Docs",
-              "url": "https://guardrailsai.com/docs"
+              "title": "Danh mục validator (Guardrails Hub)",
+              "url": "https://www.guardrailsai.com/hub"
+            },
+            {
+              "title": "Thông báo ngừng Hub và hướng dẫn chuyển đổi",
+              "url": "https://github.com/guardrails-ai/guardrails/issues/1560"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "beginner",
           "whenToUse": [
-            "structured output validation and type enforcement from LLMs",
-            "composable input/output guards with Hub validators",
-            "risk detection and mitigation via validator marketplace",
-            "LLM reliability improvement with auto-reask on failure"
+            "Ép output LLM theo Pydantic schema, tự động reask khi validation thất bại",
+            "Ghép các check input/output (PII, toxicity, nhắc tên đối thủ, jailbreak) từ validator có sẵn",
+            "Đưa guard ra thành endpoint tương thích OpenAI qua Guardrails Server"
           ],
           "whenNotToUse": [
-            "conversational flow control (NeMo Guardrails is more suitable)",
-            "LLM vulnerability scanning and red-teaming (use garak)",
-            "non-Python tech stacks without REST API bridge"
+            "Cần điều khiển luồng hội thoại và topic control cho chatbot nhiều lượt (NeMo Guardrails phù hợp hơn)",
+            "Quét lỗ hổng và red-team LLM (dùng garak)",
+            "Cần lộ trình dài hạn có vendor đứng sau — công ty đã được Harvey mua lại năm 2026 và chưa có cam kết công khai về việc duy trì bản open-source"
           ],
           "compatibleWith": [
             "litellm",
-            "langfuse",
-            "deepeval"
+            "nemo-guardrails",
+            "presidio",
+            "llamaindex"
           ],
           "useCases": [
             "output-validation",
@@ -4057,9 +4119,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 6582,
+          "github_stars": 7569,
           "license": "Apache-2.0"
         }
       ]

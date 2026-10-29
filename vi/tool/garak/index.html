@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>garak — See AI First</title>
-<meta name="description" content="LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI">
+<meta name="description" content="LLM vulnerability scanner open-source do NVIDIA hậu thuẫn — dò jailbreak, prompt injection, rò rỉ dữ liệu và nhiều lỗi khác ở model lẫn ứng dụng LLM">
 <meta property="og:title" content="garak — See AI First">
-<meta property="og:description" content="LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI">
+<meta property="og:description" content="LLM vulnerability scanner open-source do NVIDIA hậu thuẫn — dò jailbreak, prompt injection, rò rỉ dữ liệu và nhiều lỗi khác ở model lẫn ứng dụng LLM">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/garak">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="garak — See AI First">
-<meta name="twitter:description" content="LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI">
+<meta name="twitter:description" content="LLM vulnerability scanner open-source do NVIDIA hậu thuẫn — dò jailbreak, prompt injection, rò rỉ dữ liệu và nhiều lỗi khác ở model lẫn ứng dụng LLM">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/garak">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"garak","url":"https://seeaifirst.com/vi/tool/garak","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI","keywords":["Security & Guardrails – Bảo vệ ứng dụng AI","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/NVIDIA/garak","https://garak.ai/","https://garak.readthedocs.io/"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"garak","url":"https://seeaifirst.com/vi/tool/garak","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"LLM vulnerability scanner open-source do NVIDIA hậu thuẫn — dò jailbreak, prompt injection, rò rỉ dữ liệu và nhiều lỗi khác ở model lẫn ứng dụng LLM","keywords":["Security & Guardrails – Bảo vệ ứng dụng AI","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/NVIDIA/garak","https://garak.ai/","https://docs.garak.ai/garak/"],"datePublished":"2026-02-08","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> › garak</nav>
     <article>
       <h1>garak</h1>
-      <p>LLM vulnerability scanner – quét lỗ hổng bảo mật cho mô hình AI</p>
-      <p>garak là &quot;nmap cho LLM&quot; – công cụ quét lỗ hổng bảo mật dành riêng cho mô hình ngôn ngữ lớn, được NVIDIA phát triển. Hỗ trợ kiểm tra hallucination, data leakage, prompt injection, jailbreak, toxicity generation và nhiều attack vector khác. garak hoạt động theo kiến trúc modular với probes (tạo tương tác thử), detectors (phát hiện hành vi xấu), và evaluators (đánh giá kết quả). Hỗ trợ scan model từ Hugging Face, OpenAI, Ollama, LiteLLM và hầu hết mọi endpoint REST. Kết hợp tốt với: NeMo Guardrails · Ollama · LiteLLM · Promptfoo</p>
+      <p>LLM vulnerability scanner open-source do NVIDIA hậu thuẫn — dò jailbreak, prompt injection, rò rỉ dữ liệu và nhiều lỗi khác ở model lẫn ứng dụng LLM</p>
+      <p>garak (Generative AI Red-teaming &amp; Assessment Kit) là công cụ dòng lệnh open-source kiểm tra xem một LLM hoặc ứng dụng chạy trên LLM có thể bị ép hoạt động sai theo những cách không mong muốn hay không — thường được ví là &quot;nmap cho LLM&quot;. Dự án do NVIDIA hậu thuẫn, có thêm đóng góp từ cộng đồng. garak dò hallucination, data leakage, prompt injection, misinformation, toxicity generation, jailbreak và nhiều điểm yếu khác, kết hợp probe tĩnh, động và thích ứng. Mỗi lần chạy ghép generators (kết nối tới target), probes (prompt tấn công), detectors (phát hiện lỗi), harness (điều phối lần chạy) và evaluators (chấm kết quả), sau đó xuất report JSONL kèm hit log ghi lại các tấn công đã thành công. Target hỗ trợ gồm model Hugging Face, OpenAI, AWS Bedrock, LiteLLM, Ollama, endpoint NVIDIA NIM, server tương thích OpenAI, cấu hình NeMo Guardrails và hầu hết mọi endpoint REST. garak là công cụ đánh giá, không phải bộ lọc runtime: nó chỉ ra hệ thống vỡ ở đâu, không chặn traffic. Phù hợp nhất: team security và ML cần red-team model, chatbot hoặc cấu hình guardrail trước khi release và quét lại sau mỗi thay đổi. Kết hợp tốt với: NeMo Guardrails · Ollama · LiteLLM · vLLM</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>LLM security assessment and vulnerability scanning before deployment</li>
-        <li>red-teaming LLM applications for jailbreaks and prompt injection</li>
-        <li>automated probe-based testing across multiple failure modes</li>
-        <li>CI/CD integration for ongoing LLM security regression testing</li>
+        <li>Red-team model hoặc chatbot để tìm jailbreak, prompt injection và data leakage trước khi release</li>
+        <li>Đo xem thay đổi guardrail hoặc system prompt thực sự giảm tỉ lệ tấn công thành công bao nhiêu</li>
+        <li>Chạy lại cùng bộ probe sau mỗi lần đổi model, prompt hoặc config để bắt lỗi bảo mật tái phát</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>runtime protection or guardrails (use NeMo Guardrails or Guardrails AI)</li>
-        <li>non-LLM application security testing</li>
-        <li>when need real-time blocking rather than assessment reports</li>
+        <li>Cần bảo vệ runtime, chặn input/output xấu trên production (dùng NeMo Guardrails hoặc Guardrails AI)</li>
+        <li>Kiểm thử bảo mật phần mềm không dùng LLM như web app, mạng hay hạ tầng</li>
+        <li>Muốn dịch vụ red-teaming hosted, bấm là chạy — garak là CLI bạn tự vận hành</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1113,7 +1112,7 @@ html, body {
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
         <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>llm red teaming, vulnerability scanning, jailbreak testing, security audit</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-30 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1132,8 +1131,8 @@ html, body {
       <h2>Nguồn</h2>
       <ul>
         <li><a href="https://github.com/NVIDIA/garak" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://garak.ai/" rel="noopener noreferrer">Website</a></li>
-        <li><a href="https://garak.readthedocs.io/" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://garak.ai/" rel="noopener noreferrer">Trang chủ</a></li>
+        <li><a href="https://docs.garak.ai/garak/" rel="noopener noreferrer">Hướng dẫn sử dụng</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> trên See AI First.</p>

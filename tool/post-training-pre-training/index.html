@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Post-Training &gt; Pre-Training — See AI First</title>
-<meta name="description" content="Trend toward post-training refinement instead of building larger models — RL and fine-tuning become the key.">
+<meta name="description" content="Much of the recent progress in model capability comes after pre-training — from reinforcement learning, preference tuning and fine-tuning — not from scale al...">
 <meta property="og:title" content="Post-Training &gt; Pre-Training — See AI First">
-<meta property="og:description" content="Trend toward post-training refinement instead of building larger models — RL and fine-tuning become the key.">
+<meta property="og:description" content="Much of the recent progress in model capability comes after pre-training — from reinforcement learning, preference tuning and fine-tuning — not from scale al...">
 <meta property="og:url" content="https://seeaifirst.com/tool/post-training-pre-training">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Post-Training &gt; Pre-Training — See AI First">
-<meta name="twitter:description" content="Trend toward post-training refinement instead of building larger models — RL and fine-tuning become the key.">
+<meta name="twitter:description" content="Much of the recent progress in model capability comes after pre-training — from reinforcement learning, preference tuning and fine-tuning — not from scale al...">
 <link rel="canonical" href="https://seeaifirst.com/tool/post-training-pre-training">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Post-Training > Pre-Training","url":"https://seeaifirst.com/tool/post-training-pre-training","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Trend toward post-training refinement instead of building larger models — RL and fine-tuning become the key.","keywords":["AI Trends 2026 — Trends Shaping the Future","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.anthropic.com/research","https://openai.com/index/learning-to-reason-with-llms/"],"datePublished":"2026-02-03","dateModified":"2026-02-27","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Post-Training > Pre-Training","url":"https://seeaifirst.com/tool/post-training-pre-training","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Much of the recent progress in model capability comes after pre-training — from reinforcement learning, preference tuning and fine-tuning — not from scale alone.","keywords":["AI Trends 2026 — Trends Shaping the Future","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://openai.com/index/learning-to-reason-with-llms/","https://arxiv.org/abs/2501.12948","https://allenai.org/blog/tulu-3","https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback"],"datePublished":"2026-02-03","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,20 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/trends">AI Trends 2026 — Trends Shaping the Future</a> › Post-Training &gt; Pre-Training</nav>
     <article>
       <h1>Post-Training &gt; Pre-Training</h1>
-      <p>Trend toward post-training refinement instead of building larger models — RL and fine-tuning become the key.</p>
-      <p>Major trend: instead of training larger models (pre-training costs $100M+), focus shifts to post-training refinement using RLHF, DPO, RLAIF. Fine-tuning becomes the key — small models + good fine-tuning can beat larger models. Reasoning models (o1, o3, DeepSeek R1) prove post-training matters more than model size.</p>
+      <p>Much of the recent progress in model capability comes after pre-training — from reinforcement learning, preference tuning and fine-tuning — not from scale alone.</p>
+      <p>Pre-training on huge corpora is still the foundation, but post-training now drives much of the visible progress. OpenAI&#039;s o1 (September 2024) showed that reasoning improves with more reinforcement-learning compute and more test-time &quot;thinking&quot;; DeepSeek-R1 (January 2025) showed that RL with rule-based, verifiable rewards can elicit strong reasoning in an open model. Core techniques: supervised fine-tuning, RLHF, RLAIF (Anthropic&#039;s Constitutional AI, 2022), DPO (2023) and RL with verifiable rewards (RLVR). Open recipes such as Ai2&#039;s Tülu 3 (November 2024) publish the data, code and evaluation needed to reproduce the full pipeline. For developers: a strong base model plus targeted fine-tuning or RL on your domain is often a cheaper path than moving to a bigger model.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Aligning a model with human preferences or a specific style and policy</li>
+        <li>Improving reasoning on tasks with checkable answers via reinforcement learning</li>
+        <li>Specializing a model for a domain more cheaply than training or adopting a larger one</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You don&#039;t have a sufficiently capable base model</li>
+        <li>No preference data, labeled examples or verifiable rewards</li>
+        <li>Prompt engineering or RAG already gets the task done</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1099,7 +1111,7 @@ html, body {
         <dt>Difficulty</dt><dd>Advanced</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>model experimentation, research, evaluation</dd>
-        <dt>Last verified</dt><dd>2026-02-27 (inference from documented facts)</dd>
+        <dt>Last verified</dt><dd>2026-10-30 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1120,8 +1132,10 @@ html, body {
       <p><a href="/section/trends">See all 9 tools in AI Trends 2026 — Trends Shaping the Future →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://www.anthropic.com/research" rel="noopener noreferrer">Anthropic — RLHF Research</a></li>
-        <li><a href="https://openai.com/index/learning-to-reason-with-llms/" rel="noopener noreferrer">OpenAI — Learning to Reason</a></li>
+        <li><a href="https://openai.com/index/learning-to-reason-with-llms/" rel="noopener noreferrer">OpenAI — Learning to reason with LLMs</a></li>
+        <li><a href="https://arxiv.org/abs/2501.12948" rel="noopener noreferrer">DeepSeek-R1 (arXiv)</a></li>
+        <li><a href="https://allenai.org/blog/tulu-3" rel="noopener noreferrer">Ai2 — Tülu 3: open post-training recipes</a></li>
+        <li><a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback" rel="noopener noreferrer">Anthropic — Constitutional AI: Harmlessness from AI Feedback</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/trends">AI Trends 2026 — Trends Shaping the Future</a> on See AI First.</p>

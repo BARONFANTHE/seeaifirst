@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Mechanistic Interpretability — See AI First</title>
-<meta name="description" content="Research into how AI &#039;thinks&#039; internally — enabling better understanding and control of AI behavior. 2026 breakthrough per MIT.">
+<meta name="description" content="Research that reverse-engineers how models compute internally — features, circuits, reasoning paths — to explain and steer AI behavior. An MIT Tech Review 20...">
 <meta property="og:title" content="Mechanistic Interpretability — See AI First">
-<meta property="og:description" content="Research into how AI &#039;thinks&#039; internally — enabling better understanding and control of AI behavior. 2026 breakthrough per MIT.">
+<meta property="og:description" content="Research that reverse-engineers how models compute internally — features, circuits, reasoning paths — to explain and steer AI behavior. An MIT Tech Review 20...">
 <meta property="og:url" content="https://seeaifirst.com/tool/mechanistic-interpretability">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Mechanistic Interpretability — See AI First">
-<meta name="twitter:description" content="Research into how AI &#039;thinks&#039; internally — enabling better understanding and control of AI behavior. 2026 breakthrough per MIT.">
+<meta name="twitter:description" content="Research that reverse-engineers how models compute internally — features, circuits, reasoning paths — to explain and steer AI behavior. An MIT Tech Review 20...">
 <link rel="canonical" href="https://seeaifirst.com/tool/mechanistic-interpretability">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Mechanistic Interpretability","url":"https://seeaifirst.com/tool/mechanistic-interpretability","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Research into how AI 'thinks' internally — enabling better understanding and control of AI behavior. 2026 breakthrough per MIT.","keywords":["AI Trends 2026 — Trends Shaping the Future","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.technologyreview.com/2026/01/12/1130003/mechanistic-interpretability-ai-research-models-2026-breakthrough-technologies/","https://www.technologyreview.com/2026/01/12/1129782/ai-large-language-models-biology-alien-autopsy/","https://www.anthropic.com/research"],"datePublished":"2026-02-03","dateModified":"2026-02-27","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Mechanistic Interpretability","url":"https://seeaifirst.com/tool/mechanistic-interpretability","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Research that reverse-engineers how models compute internally — features, circuits, reasoning paths — to explain and steer AI behavior. An MIT Tech Review 2026 breakthrough.","keywords":["AI Trends 2026 — Trends Shaping the Future","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.technologyreview.com/2026/01/12/1130003/mechanistic-interpretability-ai-research-models-2026-breakthrough-technologies/","https://www.anthropic.com/research/tracing-thoughts-language-model","https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/","https://openai.com/index/chain-of-thought-monitoring/"],"datePublished":"2026-02-03","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,20 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/trends">AI Trends 2026 — Trends Shaping the Future</a> › Mechanistic Interpretability</nav>
     <article>
       <h1>Mechanistic Interpretability</h1>
-      <p>Research into how AI &#039;thinks&#039; internally — enabling better understanding and control of AI behavior. 2026 breakthrough per MIT.</p>
-      <p>MIT Technology Review selected this as one of the 10 Breakthrough Technologies of 2026. Anthropic used an &#039;AI microscope&#039; to discover 34 million features in Claude — from &#039;sarcasm&#039; to &#039;DNA sequences&#039;. OpenAI built an &#039;AI lie detector&#039; based on model internals. Google DeepMind released Gemma Scope 2 — the largest open-source interpretability toolkit. Goal: turning AI from a &#039;black box&#039; into a &#039;glass box&#039; — understanding why AI makes its decisions.</p>
+      <p>Research that reverse-engineers how models compute internally — features, circuits, reasoning paths — to explain and steer AI behavior. An MIT Tech Review 2026 breakthrough.</p>
+      <p>MIT Technology Review named mechanistic interpretability one of its 10 Breakthrough Technologies of 2026. Anthropic&#039;s &quot;AI microscope&quot; first located features tied to concepts such as the Golden Gate Bridge (2024), then in March 2025 traced whole circuits from prompt to answer in Claude 3.5 Haiku, and in May 2025 open-sourced its circuit-tracing tools with a Neuronpedia frontend. Google DeepMind released Gemma Scope 2 — sparse autoencoders and transcoders for the Gemma 3 family — in December 2025, calling it the largest open interpretability release by an AI lab. A lighter-weight cousin is chain-of-thought monitoring, which OpenAI used in 2025 to catch a reasoning model cheating on coding tests. Goal: turn AI from a &quot;black box&quot; into something auditable — though researchers still disagree on how far these methods can scale.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>Debugging unexpected LLM behavior by inspecting the model&#039;s internal mechanisms</li>
+        <li>AI safety and alignment research, including detecting deception or reward hacking</li>
+        <li>Auditing an open-weight model before deploying it in a high-stakes application</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You only need to evaluate output quality — use evaluation/observability tools instead</li>
+        <li>You use closed models through an API with no access to weights or activations</li>
+        <li>You need a production fix fast rather than open-ended research</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1099,15 +1111,14 @@ html, body {
         <dt>Difficulty</dt><dd>Advanced</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>research, llm evaluation, llm red teaming, security audit</dd>
-        <dt>Last verified</dt><dd>2026-02-27 (inference from documented facts)</dd>
+        <dt>Last verified</dt><dd>2026-10-30 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
-        <li><a href="/tool/langfuse">Langfuse</a></li>
-        <li><a href="/tool/deepeval">DeepEval</a></li>
-        <li><a href="/tool/arize-phoenix">Arize Phoenix</a></li>
-        <li><a href="/tool/nemo-guardrails">NeMo Guardrails</a></li>
         <li><a href="/tool/garak">garak</a></li>
+        <li><a href="/tool/deepeval">DeepEval</a></li>
+        <li><a href="/tool/ai-governance">AI Governance</a></li>
+        <li><a href="/tool/post-training-pre-training">Post-Training &gt; Pre-Training</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
@@ -1120,9 +1131,10 @@ html, body {
       <p><a href="/section/trends">See all 9 tools in AI Trends 2026 — Trends Shaping the Future →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://www.technologyreview.com/2026/01/12/1130003/mechanistic-interpretability-ai-research-models-2026-breakthrough-technologies/" rel="noopener noreferrer">MIT Tech Review — Breakthrough 2026</a></li>
-        <li><a href="https://www.technologyreview.com/2026/01/12/1129782/ai-large-language-models-biology-alien-autopsy/" rel="noopener noreferrer">MIT Tech Review — LLMs like alien autopsy</a></li>
-        <li><a href="https://www.anthropic.com/research" rel="noopener noreferrer">Anthropic — Research</a></li>
+        <li><a href="https://www.technologyreview.com/2026/01/12/1130003/mechanistic-interpretability-ai-research-models-2026-breakthrough-technologies/" rel="noopener noreferrer">MIT Technology Review — Mechanistic interpretability: 10 Breakthrough Technologies 2026</a></li>
+        <li><a href="https://www.anthropic.com/research/tracing-thoughts-language-model" rel="noopener noreferrer">Anthropic — Tracing the thoughts of a large language model</a></li>
+        <li><a href="https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/" rel="noopener noreferrer">Google DeepMind — Gemma Scope 2</a></li>
+        <li><a href="https://openai.com/index/chain-of-thought-monitoring/" rel="noopener noreferrer">OpenAI — Detecting misbehavior in frontier reasoning models</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/trends">AI Trends 2026 — Trends Shaping the Future</a> on See AI First.</p>

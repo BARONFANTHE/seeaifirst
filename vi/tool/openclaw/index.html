@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>OpenClaw — See AI First</title>
-<meta name="description" content="Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo.">
+<meta name="description" content="Trợ lý AI cá nhân open-source chạy trên thiết bị của bạn, chat với bạn qua WhatsApp, Telegram, Slack, Discord, Zalo và các app chat khác — đổi model tùy ý.">
 <meta property="og:title" content="OpenClaw — See AI First">
-<meta property="og:description" content="Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo.">
+<meta property="og:description" content="Trợ lý AI cá nhân open-source chạy trên thiết bị của bạn, chat với bạn qua WhatsApp, Telegram, Slack, Discord, Zalo và các app chat khác — đổi model tùy ý.">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/openclaw">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="OpenClaw — See AI First">
-<meta name="twitter:description" content="Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo.">
+<meta name="twitter:description" content="Trợ lý AI cá nhân open-source chạy trên thiết bị của bạn, chat với bạn qua WhatsApp, Telegram, Slack, Discord, Zalo và các app chat khác — đổi model tùy ý.">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/openclaw">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"OpenClaw","url":"https://seeaifirst.com/vi/tool/openclaw","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo.","keywords":["Orchestration — Điều phối multi-agent","python","js","typescript"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/openclaw/openclaw"],"datePublished":"2026-02-03","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"OpenClaw","url":"https://seeaifirst.com/vi/tool/openclaw","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Trợ lý AI cá nhân open-source chạy trên thiết bị của bạn, chat với bạn qua WhatsApp, Telegram, Slack, Discord, Zalo và các app chat khác — đổi model tùy ý.","keywords":["Orchestration — Điều phối multi-agent","typescript","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/openclaw/openclaw","https://docs.openclaw.ai"],"datePublished":"2026-02-03","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> › OpenClaw</nav>
     <article>
       <h1>OpenClaw</h1>
-      <p>Trợ lý AI cá nhân hoạt động 24/7 — chat qua 15+ kênh như WhatsApp, Telegram, Zalo.</p>
-      <p>Evolution: Clawdbot → Moltbot → OpenClaw</p>
+      <p>Trợ lý AI cá nhân open-source chạy trên thiết bị của bạn, chat với bạn qua WhatsApp, Telegram, Slack, Discord, Zalo và các app chat khác — đổi model tùy ý.</p>
+      <p>OpenClaw là trợ lý cá nhân open-source xoay quanh một Gateway chạy local, quản lý session, tool và kết nối các kênh chat; có thể chạy nền 24/7 dưới dạng background service trên laptop hoặc server riêng, giữ state, memory và credential trên máy của bạn. Tính cách agent nằm trong SOUL.md, memory là file Markdown trong workspace, skill là các thư mục SKILL.md, có kho skill cộng đồng trên ClawHub. Multi-agent routing gán từng tài khoản kênh chat cho một agent riêng biệt. Dùng được model hosted hoặc local (Ollama), có MCP server và điều khiển được Claude Code hoặc Codex qua ACP harness. Tool chạy trực tiếp trên host nếu bạn không cấu hình sandbox. Tên cũ: Clawdbot, rồi Moltbot; nay do OpenClaw Foundation quản lý. Phù hợp nhất: trợ lý cá nhân luôn bật ngay trong các app chat bạn đang dùng, chạy trên máy bạn tự kiểm soát. Kết hợp tốt với: MCP · A2A · Claude Code · Codex CLI · Ollama</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>personal AI assistant always-on</li>
-        <li>messaging platform automation (Telegram, Discord, Slack)</li>
-        <li>multi-agent coordination</li>
-        <li>self-hosted AI with local file access</li>
+        <li>Cần trợ lý cá nhân luôn bật, nhắn được từ các app chat</li>
+        <li>Muốn tự host trợ lý, giữ state, memory và credential trên máy của mình</li>
+        <li>Chạy nhiều persona agent tách biệt, route theo từng tài khoản kênh chat</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>simple chatbot without tool use</li>
-        <li>enterprise deployment without customization</li>
-        <li>code-only development workflows</li>
+        <li>Chỉ cần chatbot đơn giản, không cần tool hay memory lâu dài</li>
+        <li>Môi trường không thể sandbox tool trên host hoặc kiểm soát tin nhắn đến</li>
+        <li>Workflow chỉ thuần coding, một coding agent trên terminal là đủ</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1111,25 +1110,28 @@ html, body {
         <dt>Triển khai</dt><dd>Hybrid</dd>
         <dt>Độ khó</dt><dd>Trung bình</dd>
         <dt>Giấy phép</dt><dd>Apache-2.0</dd>
-        <dt>Ngôn ngữ</dt><dd>python, js, typescript</dd>
+        <dt>Ngôn ngữ</dt><dd>typescript, js</dd>
         <dt>Ứng dụng</dt><dd>personal assistant, task automation, messaging agent, multi agent coordination</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-30 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
         <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a></li>
+        <li><a href="/vi/tool/a2a">A2A — Agent2Agent Protocol</a></li>
         <li><a href="/vi/tool/claude-code">Claude Code</a></li>
+        <li><a href="/vi/tool/codex-cli">Codex CLI</a></li>
         <li><a href="/vi/tool/ollama">Ollama</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
-        <li><a href="/vi/tool/claude-flow">Claude-Flow</a></li>
+        <li><a href="/vi/tool/claude-flow">Ruflo (trước đây là Claude Flow)</a></li>
         <li><a href="/vi/tool/oh-my-claudecode">oh-my-claudecode</a></li>
       </ul>
       <p><a href="/vi/section/orchestration">Xem tất cả 3 công cụ trong Orchestration — Điều phối multi-agent →</a></p>
       <h2>Nguồn</h2>
       <ul>
         <li><a href="https://github.com/openclaw/openclaw" rel="noopener noreferrer">OpenClaw GitHub</a></li>
+        <li><a href="https://docs.openclaw.ai" rel="noopener noreferrer">Tài liệu OpenClaw</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> trên See AI First.</p>

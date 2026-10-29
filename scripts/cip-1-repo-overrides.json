@@ -4,6 +4,5 @@
   "claude-ai": { "mode": "skip", "reason": "no canonical GitHub repo" },
   "chatgpt": { "mode": "skip", "reason": "no canonical GitHub repo" },
   "github-copilot": { "mode": "skip", "reason": "product page URL, not a repo" },
-  "he-thong-memory-khac": { "mode": "skip", "reason": "multi-repo card, github_stars absent" },
-  "openclaw": { "mode": "manual", "reason": "source URL pending correction" }
+  "he-thong-memory-khac": { "mode": "skip", "reason": "multi-repo card, github_stars absent" }
 }

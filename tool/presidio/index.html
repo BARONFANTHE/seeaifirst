@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Presidio — See AI First</title>
-<meta name="description" content="PII detection &amp; anonymization for text and images – protecting personal data">
+<meta name="description" content="Open-source PII detection and anonymization for text, images and structured data — community-governed, originally created at Microsoft">
 <meta property="og:title" content="Presidio — See AI First">
-<meta property="og:description" content="PII detection &amp; anonymization for text and images – protecting personal data">
+<meta property="og:description" content="Open-source PII detection and anonymization for text, images and structured data — community-governed, originally created at Microsoft">
 <meta property="og:url" content="https://seeaifirst.com/tool/presidio">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Presidio — See AI First">
-<meta name="twitter:description" content="PII detection &amp; anonymization for text and images – protecting personal data">
+<meta name="twitter:description" content="Open-source PII detection and anonymization for text, images and structured data — community-governed, originally created at Microsoft">
 <link rel="canonical" href="https://seeaifirst.com/tool/presidio">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Presidio","url":"https://seeaifirst.com/tool/presidio","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"PII detection & anonymization for text and images – protecting personal data","keywords":["Security & Guardrails – Protecting AI Applications","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/presidio","https://microsoft.github.io/presidio/"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Presidio","url":"https://seeaifirst.com/tool/presidio","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source PII detection and anonymization for text, images and structured data — community-governed, originally created at Microsoft","keywords":["Security & Guardrails – Protecting AI Applications","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/data-privacy-stack/presidio","https://presidio.dataprivacystack.org/","https://presidio.dataprivacystack.org/project_transition/"],"datePublished":"2026-02-08","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> › Presidio</nav>
     <article>
       <h1>Presidio</h1>
-      <p>PII detection &amp; anonymization for text and images – protecting personal data</p>
-      <p>Presidio is an open-source framework from Microsoft for detecting, redacting, masking and anonymizing sensitive data (PII) in text, images and structured data. Combines NLP (spaCy, transformers), regex patterns, rule-based logic and checksums to identify credit cards, names, addresses, SSNs, emails, phone numbers and many other PII types. Supports multiple languages and can be extended with custom recognizers. Deployable via Python packages or Docker containers, integrates well with LLM pipelines to sanitize data before sending to models. Works well with: LangChain · LiteLLM · Guardrails AI · NeMo Guardrails</p>
+      <p>Open-source PII detection and anonymization for text, images and structured data — community-governed, originally created at Microsoft</p>
+      <p>Presidio is an open-source SDK for finding and de-identifying sensitive data (PII). It was originally created at Microsoft and is now an independent, community-governed project under the Data Privacy Stack GitHub organization; it is still MIT-licensed, and old microsoft/presidio links redirect to the new home. It has four modules: Analyzer (detects PII in text), Anonymizer (replace, mask, redact or encrypt detected entities, with reversible decryption), Image Redactor (OCR-based redaction, including DICOM medical images) and Structured (tabular and semi-structured data). Detection combines NER models (spaCy, Stanza, transformers), regex, rule-based logic, checksums and surrounding context, works across multiple languages and can call external models such as GLiNER. It runs from Python or PySpark, as Docker containers (now published on GitHub Container Registry) or on Kubernetes. In LLM pipelines it is commonly used to mask prompts before they reach a model, for example through the LiteLLM proxy PII-masking guardrail, NeMo Guardrails sensitive-data rails or the Guardrails AI detect_pii validator. The docs warn that automated detection can miss PII, so treat it as one protective layer, not a guarantee. Best for: teams that must strip or mask personal data before logging, model training, RAG indexing or sending prompts to third-party LLMs. Works well with: NeMo Guardrails · LiteLLM · Guardrails AI</p>
       <h2>When to use</h2>
       <ul>
-        <li>PII detection and anonymization in LLM pipelines</li>
-        <li>text de-identification before model training or logging</li>
-        <li>privacy-aware data preprocessing for RAG systems</li>
-        <li>custom PII recognizer development with NLP/regex</li>
+        <li>Masking PII in prompts before they reach a third-party LLM, e.g. behind a LiteLLM proxy</li>
+        <li>De-identifying text, tables or images before logging, model training or RAG indexing</li>
+        <li>Building custom recognizers for domain- or country-specific identifiers in multiple languages</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>real-time high-throughput stream processing without tuning</li>
-        <li>non-text PII detection (audio, video) beyond image redaction</li>
-        <li>when only simple regex-based masking is needed</li>
+        <li>You need guaranteed, complete PII removal — the docs warn automated detection can miss entities</li>
+        <li>PII in audio or video (coverage is text, images including DICOM, and structured data)</li>
+        <li>Simple fixed-format masking that a few regular expressions already handle</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
@@ -1113,13 +1112,13 @@ html, body {
         <dt>License</dt><dd>MIT</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>pii detection, data anonymization, privacy preprocessing, llm preprocessing</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-30 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/nemo-guardrails">NeMo Guardrails</a></li>
         <li><a href="/tool/litellm">LiteLLM</a></li>
-        <li><a href="/tool/dify">Dify</a></li>
+        <li><a href="/tool/guardrails-ai">Guardrails AI</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
@@ -1130,8 +1129,9 @@ html, body {
       <p><a href="/section/security">See all 4 tools in Security &amp; Guardrails – Protecting AI Applications →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://github.com/microsoft/presidio" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://microsoft.github.io/presidio/" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://github.com/data-privacy-stack/presidio" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://presidio.dataprivacystack.org/" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://presidio.dataprivacystack.org/project_transition/" rel="noopener noreferrer">Project transition update</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> on See AI First.</p>

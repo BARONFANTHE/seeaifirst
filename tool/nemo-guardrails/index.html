@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>NeMo Guardrails — See AI First</title>
-<meta name="description" content="Programmable guardrails for LLMs with Colang DSL – dialog control and safety">
+<meta name="description" content="NVIDIA&#039;s open-source toolkit for programmable guardrails on LLM apps — input, dialog, retrieval, execution and output rails, defined with Colang">
 <meta property="og:title" content="NeMo Guardrails — See AI First">
-<meta property="og:description" content="Programmable guardrails for LLMs with Colang DSL – dialog control and safety">
+<meta property="og:description" content="NVIDIA&#039;s open-source toolkit for programmable guardrails on LLM apps — input, dialog, retrieval, execution and output rails, defined with Colang">
 <meta property="og:url" content="https://seeaifirst.com/tool/nemo-guardrails">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="NeMo Guardrails — See AI First">
-<meta name="twitter:description" content="Programmable guardrails for LLMs with Colang DSL – dialog control and safety">
+<meta name="twitter:description" content="NVIDIA&#039;s open-source toolkit for programmable guardrails on LLM apps — input, dialog, retrieval, execution and output rails, defined with Colang">
 <link rel="canonical" href="https://seeaifirst.com/tool/nemo-guardrails">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"NeMo Guardrails","url":"https://seeaifirst.com/tool/nemo-guardrails","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Programmable guardrails for LLMs with Colang DSL – dialog control and safety","keywords":["Security & Guardrails – Protecting AI Applications","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/NVIDIA-NeMo/Guardrails","https://docs.nvidia.com/nemo/guardrails/latest/index.html"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"NeMo Guardrails","url":"https://seeaifirst.com/tool/nemo-guardrails","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"NVIDIA's open-source toolkit for programmable guardrails on LLM apps — input, dialog, retrieval, execution and output rails, defined with Colang","keywords":["Security & Guardrails – Protecting AI Applications","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/NVIDIA-NeMo/Guardrails","https://docs.nvidia.com/nemo/guardrails/latest/index.html"],"datePublished":"2026-02-08","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> › NeMo Guardrails</nav>
     <article>
       <h1>NeMo Guardrails</h1>
-      <p>Programmable guardrails for LLMs with Colang DSL – dialog control and safety</p>
-      <p>NeMo Guardrails is an open-source toolkit from NVIDIA for adding programmable guardrails to LLM applications. Uses Colang – a custom DSL for defining conversation flows, topic control, fact-checking and jailbreak prevention. Supports input/output rails, dialog rails, and retrieval rails. Integrates natively with LangChain, LlamaIndex, and NVIDIA NIM microservices for content safety and topic control. Especially suited for enterprise AI requiring strict control over interaction flows. Works well with: garak · LangGraph · LlamaIndex · Ollama</p>
+      <p>NVIDIA&#039;s open-source toolkit for programmable guardrails on LLM apps — input, dialog, retrieval, execution and output rails, defined with Colang</p>
+      <p>NeMo Guardrails is NVIDIA&#039;s open-source Python library for adding programmable guardrails between your application code and the LLM. Rails run at five stages — input, dialog, retrieval (RAG chunks), execution (tool and action calls) and output — and can block, rewrite or mask content. Dialog flows and guardrail logic are written in Colang (versions 1.0 and 2.0 are supported), with YAML for models and rail settings. The built-in catalog covers LLM self-checks (moderation, fact-checking, hallucination), jailbreak and injection detection, topic control, PII masking via Presidio, and NVIDIA NemoGuard safety models for content safety, topic control and jailbreak detection, which can run as NIM microservices. It can also call third-party checks such as Guardrails AI validators and Llama Guard. You use it through the Python API or an OpenAI-style guardrails server; LangChain and LangGraph integration is optional. For production on Kubernetes, NVIDIA offers a NeMo Guardrails microservice through NVIDIA AI Enterprise. The library sends anonymous usage telemetry to NVIDIA by default (opt out with an environment variable). Best for: teams building chatbots, RAG assistants or agents that need policy-driven, auditable control over what goes into and comes out of the model. Works well with: LangGraph · Presidio · Guardrails AI · garak · Ollama · vLLM</p>
       <h2>When to use</h2>
       <ul>
-        <li>topic control and content filtering for LLM chatbots</li>
-        <li>jailbreak detection in production conversational agents</li>
-        <li>multi-rail orchestration with configurable policies</li>
-        <li>dialog flow control with Colang DSL</li>
+        <li>Keeping a chatbot or RAG assistant on approved topics and enforcing scripted dialog flows with Colang</li>
+        <li>Layering jailbreak, content-safety and PII checks on user input, retrieved chunks and model output</li>
+        <li>Combining NVIDIA NemoGuard models with third-party checks (Presidio, Guardrails AI, Llama Guard) in one guardrails config</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>non-conversational LLM use cases (batch processing, code gen)</li>
-        <li>when minimal added latency is critical</li>
-        <li>simple output format validation only (Guardrails AI may suffice)</li>
+        <li>Latency-critical paths where an extra model call per LLM-based rail is unacceptable</li>
+        <li>You only need schema or type validation of LLM output (Guardrails AI or plain Pydantic validation is lighter)</li>
+        <li>Finding vulnerabilities before release — scan with garak first, then add rails</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
@@ -1113,15 +1112,16 @@ html, body {
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>chatbot safety, topic control, jailbreak detection, content moderation</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-30 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/langgraph">LangGraph</a></li>
-        <li><a href="/tool/llamaindex">LlamaIndex</a></li>
-        <li><a href="/tool/litellm">LiteLLM</a></li>
         <li><a href="/tool/presidio">Presidio</a></li>
-        <li><a href="/tool/langfuse">Langfuse</a></li>
+        <li><a href="/tool/guardrails-ai">Guardrails AI</a></li>
+        <li><a href="/tool/garak">garak</a></li>
+        <li><a href="/tool/ollama">Ollama</a></li>
+        <li><a href="/tool/vllm">vLLM</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>

@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Guardrails AI — See AI First</title>
-<meta name="description" content="I/O validation framework for LLMs – structured output + 100+ validators">
+<meta name="description" content="Python framework for LLM input/output guards and validated structured output — composable validators installed as PyPI packages">
 <meta property="og:title" content="Guardrails AI — See AI First">
-<meta property="og:description" content="I/O validation framework for LLMs – structured output + 100+ validators">
+<meta property="og:description" content="Python framework for LLM input/output guards and validated structured output — composable validators installed as PyPI packages">
 <meta property="og:url" content="https://seeaifirst.com/tool/guardrails-ai">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Guardrails AI — See AI First">
-<meta name="twitter:description" content="I/O validation framework for LLMs – structured output + 100+ validators">
+<meta name="twitter:description" content="Python framework for LLM input/output guards and validated structured output — composable validators installed as PyPI packages">
 <link rel="canonical" href="https://seeaifirst.com/tool/guardrails-ai">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Guardrails AI","url":"https://seeaifirst.com/tool/guardrails-ai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"I/O validation framework for LLMs – structured output + 100+ validators","keywords":["Security & Guardrails – Protecting AI Applications","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/guardrails-ai/guardrails","https://www.guardrailsai.com/","https://guardrailsai.com/docs"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Guardrails AI","url":"https://seeaifirst.com/tool/guardrails-ai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Python framework for LLM input/output guards and validated structured output — composable validators installed as PyPI packages","keywords":["Security & Guardrails – Protecting AI Applications","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/guardrails-ai/guardrails","https://guardrailsai.com/docs","https://www.guardrailsai.com/hub","https://github.com/guardrails-ai/guardrails/issues/1560"],"datePublished":"2026-02-08","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> › Guardrails AI</nav>
     <article>
       <h1>Guardrails AI</h1>
-      <p>I/O validation framework for LLMs – structured output + 100+ validators</p>
-      <p>Guardrails AI is a Python framework for building reliable AI applications by running Input/Output Guards that detect, measure and mitigate various risk types. Guardrails Hub provides 100+ ready-made validators including: PII detection, toxic language, competitor mentions, bias, prompt injection and many more. Supports validating structured data from LLM output with automatic reask when output fails to meet standards. Can be deployed as a standalone service via REST API, integrates easily with OpenAI, Anthropic, and any LLM provider. Works well with: LangChain · Presidio · Promptfoo · LiteLLM</p>
+      <p>Python framework for LLM input/output guards and validated structured output — composable validators installed as PyPI packages</p>
+      <p>Guardrails AI is an open-source (Apache 2.0) Python framework that does two jobs. It runs Input/Output Guards that detect, quantify and mitigate specific risks in LLM traffic, and it helps generate structured data from LLMs using Pydantic models or RAIL specs, automatically re-asking the model when output fails validation. Guards are built from validators — such as regex match, competitor mentions, toxic language, PII detection (Presidio-based) and jailbreak detection — browsable in the Guardrails Hub catalog. Since August 2026 each validator installs as a standalone PyPI package (guardrails-ai-): the old hub install command, the private registry and the free hosted remote-inference endpoints were shut down, so model-based validators now run locally or on your own endpoint. Guards run in-process or behind Guardrails Server (Flask, with OpenAI-compatible endpoints) and work with OpenAI, Anthropic, LiteLLM-supported models, LangChain and LlamaIndex. Status note: in September 2026 Harvey acquired Guardrails AI, and the announcement made no public commitment about the open-source roadmap, so check recent repository activity before adopting it. Best for: Python teams that need typed, validated LLM output and lightweight, composable input/output checks. Works well with: LiteLLM · NeMo Guardrails · Presidio · LlamaIndex</p>
       <h2>When to use</h2>
       <ul>
-        <li>structured output validation and type enforcement from LLMs</li>
-        <li>composable input/output guards with Hub validators</li>
-        <li>risk detection and mitigation via validator marketplace</li>
-        <li>LLM reliability improvement with auto-reask on failure</li>
+        <li>Enforcing a Pydantic schema on LLM output, with automatic re-ask when validation fails</li>
+        <li>Composing input/output checks (PII, toxicity, competitor mentions, jailbreak) from ready-made validators</li>
+        <li>Serving guards as an OpenAI-compatible endpoint through Guardrails Server</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>conversational flow control (NeMo Guardrails is more suitable)</li>
+        <li>Dialog flow and topic control for multi-turn chatbots (NeMo Guardrails fits better)</li>
         <li>LLM vulnerability scanning and red-teaming (use garak)</li>
-        <li>non-Python tech stacks without REST API bridge</li>
+        <li>You need a vendor-backed long-term roadmap — the company was acquired by Harvey in 2026 and open-source maintenance is not publicly committed</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
@@ -1113,13 +1112,14 @@ html, body {
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>output validation, structured data extraction, risk mitigation, llm reliability</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-30 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/litellm">LiteLLM</a></li>
-        <li><a href="/tool/langfuse">Langfuse</a></li>
-        <li><a href="/tool/deepeval">DeepEval</a></li>
+        <li><a href="/tool/nemo-guardrails">NeMo Guardrails</a></li>
+        <li><a href="/tool/presidio">Presidio</a></li>
+        <li><a href="/tool/llamaindex">LlamaIndex</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
@@ -1131,8 +1131,9 @@ html, body {
       <h2>Sources</h2>
       <ul>
         <li><a href="https://github.com/guardrails-ai/guardrails" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://www.guardrailsai.com/" rel="noopener noreferrer">Website</a></li>
         <li><a href="https://guardrailsai.com/docs" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://www.guardrailsai.com/hub" rel="noopener noreferrer">Validator catalog (Guardrails Hub)</a></li>
+        <li><a href="https://github.com/guardrails-ai/guardrails/issues/1560" rel="noopener noreferrer">Hub sunset and migration notice</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> on See AI First.</p>

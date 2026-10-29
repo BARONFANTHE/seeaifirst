@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Chinese Open-Source AI — See AI First</title>
-<meta name="description" content="DeepSeek R1 shook the AI world — open-source reasoning model from China. Technology gap shrinking from months to weeks.">
+<meta name="description" content="Open-weight models from Chinese labs — DeepSeek, Qwen, Kimi, GLM, MiniMax — close to the frontier, mostly permissively licensed, and a default choice for sel...">
 <meta property="og:title" content="Chinese Open-Source AI — See AI First">
-<meta property="og:description" content="DeepSeek R1 shook the AI world — open-source reasoning model from China. Technology gap shrinking from months to weeks.">
+<meta property="og:description" content="Open-weight models from Chinese labs — DeepSeek, Qwen, Kimi, GLM, MiniMax — close to the frontier, mostly permissively licensed, and a default choice for sel...">
 <meta property="og:url" content="https://seeaifirst.com/tool/chinese-open-source-ai">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Chinese Open-Source AI — See AI First">
-<meta name="twitter:description" content="DeepSeek R1 shook the AI world — open-source reasoning model from China. Technology gap shrinking from months to weeks.">
+<meta name="twitter:description" content="Open-weight models from Chinese labs — DeepSeek, Qwen, Kimi, GLM, MiniMax — close to the frontier, mostly permissively licensed, and a default choice for sel...">
 <link rel="canonical" href="https://seeaifirst.com/tool/chinese-open-source-ai">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Chinese Open-Source AI","url":"https://seeaifirst.com/tool/chinese-open-source-ai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"DeepSeek R1 shook the AI world — open-source reasoning model from China. Technology gap shrinking from months to weeks.","keywords":["AI Trends 2026 — Trends Shaping the Future","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.deepseek.com/","https://arxiv.org/abs/2501.12948","https://qwenlm.github.io/"],"datePublished":"2026-02-03","dateModified":"2026-02-27","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Chinese Open-Source AI","url":"https://seeaifirst.com/tool/chinese-open-source-ai","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-weight models from Chinese labs — DeepSeek, Qwen, Kimi, GLM, MiniMax — close to the frontier, mostly permissively licensed, and a default choice for self-hosting.","keywords":["AI Trends 2026 — Trends Shaping the Future","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://arxiv.org/abs/2501.12948","https://huggingface.co/blog/state-of-open-models-summer-2026","https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks","https://hai.stanford.edu/ai-index/2026-ai-index-report"],"datePublished":"2026-02-03","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,20 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/trends">AI Trends 2026 — Trends Shaping the Future</a> › Chinese Open-Source AI</nav>
     <article>
       <h1>Chinese Open-Source AI</h1>
-      <p>DeepSeek R1 shook the AI world — open-source reasoning model from China. Technology gap shrinking from months to weeks.</p>
-      <p>DeepSeek R1 caused shockwaves — open-source reasoning model from China, performance near GPT-4 at much lower cost. Qwen (Alibaba) continuously updated, competing directly with frontier models. US-China technology gap shrinking from months to weeks. Trend: China is no longer just &#039;copying&#039; but &#039;innovating&#039; — especially in efficiency and cost optimization.</p>
+      <p>Open-weight models from Chinese labs — DeepSeek, Qwen, Kimi, GLM, MiniMax — close to the frontier, mostly permissively licensed, and a default choice for self-hosting.</p>
+      <p>DeepSeek-R1 (January 2025) showed that an open-weight reasoning model trained largely with reinforcement learning could rival leading proprietary reasoning models; the work was later published in Nature. Chinese labs have since become the main source of large open-weight models. Hugging Face&#039;s State of Open Models (Summer 2026) notes that Alibaba&#039;s Qwen and Tencent release across all sizes, Moonshot (Kimi), MiniMax and Z.ai (GLM) focus on very large models, and most releases use Apache 2.0 or MIT licenses — though some recent flagships added non-commercial or revenue-share terms. Stanford&#039;s 2026 AI Index finds US models still lead, but by a small margin. Caveat: a NIST CAISI evaluation (September 2025) found DeepSeek models more vulnerable to agent hijacking and jailbreaks — check each license and run your own safety evals.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>You need a strong model at low cost, or want to self-host to keep data in-house</li>
+        <li>Fine-tuning an open-weight model for your own domain or use case</li>
+        <li>Rapid prototyping with open models you can run, inspect and modify</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>You need official enterprise support and contractual guarantees</li>
+        <li>Strict compliance rules on model origin or data jurisdiction apply</li>
+        <li>No GPU infrastructure to run large models, or no capacity to run your own safety evals</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1099,13 +1111,14 @@ html, body {
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>local inference, model experimentation, rag pipeline, content creation</dd>
-        <dt>Last verified</dt><dd>2026-02-27 (inference from documented facts)</dd>
+        <dt>Last verified</dt><dd>2026-10-30 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
         <li><a href="/tool/ollama">Ollama</a></li>
         <li><a href="/tool/vllm">vLLM</a></li>
         <li><a href="/tool/litellm">LiteLLM</a></li>
+        <li><a href="/tool/localai">LocalAI</a></li>
         <li><a href="/tool/dify">Dify</a></li>
         <li><a href="/tool/ragflow">RAGFlow</a></li>
       </ul>
@@ -1120,9 +1133,10 @@ html, body {
       <p><a href="/section/trends">See all 9 tools in AI Trends 2026 — Trends Shaping the Future →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://www.deepseek.com/" rel="noopener noreferrer">DeepSeek Official</a></li>
-        <li><a href="https://arxiv.org/abs/2501.12948" rel="noopener noreferrer">DeepSeek R1 Paper</a></li>
-        <li><a href="https://qwenlm.github.io/" rel="noopener noreferrer">Qwen (Alibaba)</a></li>
+        <li><a href="https://arxiv.org/abs/2501.12948" rel="noopener noreferrer">DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (arXiv)</a></li>
+        <li><a href="https://huggingface.co/blog/state-of-open-models-summer-2026" rel="noopener noreferrer">Hugging Face — State of Open Models: Summer 2026 Observations</a></li>
+        <li><a href="https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks" rel="noopener noreferrer">NIST — CAISI Evaluation of DeepSeek AI Models Finds Shortcomings and Risks</a></li>
+        <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report" rel="noopener noreferrer">Stanford HAI — AI Index Report 2026</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/trends">AI Trends 2026 — Trends Shaping the Future</a> on See AI First.</p>
