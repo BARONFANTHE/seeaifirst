@@ -1569,7 +1569,7 @@
           "mono": true,
           "desc": "Open-source personal AI assistant that runs <strong>on your own devices</strong> and talks to you in WhatsApp, Telegram, Slack, Discord, Zalo and other chat apps — with swappable models.",
           "added_date": "2026-02-03",
-          "detail": "OpenClaw is an open-source personal assistant built around a local Gateway that owns sessions, tools and channel connections; it can run as an always-on background service on a laptop or your own server, and keeps state, memory and credentials on your hardware. Personality lives in SOUL.md, memory is plain Markdown in the workspace, and skills are SKILL.md folders, with community skills on ClawHub. Multi-agent routing binds channel accounts to isolated agents. It works with hosted or local models (Ollama), exposes an MCP server and can drive Claude Code or Codex as ACP harnesses. Tools run on the host unless you configure sandboxing. Formerly Clawdbot, then Moltbot; now stewarded by the OpenClaw Foundation. Best for: an always-on personal assistant in the chat apps you already use, on hardware you control.\n\nWorks well with: MCP · A2A · Claude Code · Codex CLI · Ollama",
+          "detail": "OpenClaw is an open-source personal assistant built around a local Gateway that owns sessions, tools and channel connections; it can run as an always-on background service on a laptop or your own server, and keeps state, memory and credentials on your hardware. Personality lives in SOUL.md, memory is plain Markdown in the workspace, and skills are SKILL.md folders, with community skills on ClawHub. Multi-agent routing binds channel accounts to isolated agents. It works with hosted or local models (Ollama), exposes an MCP server and can drive Claude Code or Codex as ACP harnesses. Tools run on the host unless you configure sandboxing. Formerly Clawdbot, then Moltbot; now stewarded by the OpenClaw Foundation. MIT license. Best for: an always-on personal assistant in the chat apps you already use, on hardware you control.\n\nWorks well with: MCP · A2A · Claude Code · Codex CLI · Ollama",
           "tags": [
             "SOUL.md",
             "Skills/ClawHub",
@@ -1587,7 +1587,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "An always-on personal assistant reachable from your chat apps",
@@ -1619,7 +1619,7 @@
           "verified_at": "2026-10-30",
           "verification_source": "docs",
           "github_stars": 386578,
-          "license": "Apache-2.0"
+          "license": "MIT"
         },
         {
           "name": "oh-my-claudecode",
@@ -3918,7 +3918,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "self-hosted",
+          "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
             "Red-teaming a model or chatbot for jailbreaks, prompt injection and data leakage before release",
@@ -4032,7 +4032,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Masking PII in prompts before they reach a third-party LLM, e.g. behind a LiteLLM proxy",

@@ -1569,7 +1569,7 @@
           "mono": true,
           "desc": "Trợ lý AI cá nhân open-source chạy <strong>trên thiết bị của bạn</strong>, chat với bạn qua WhatsApp, Telegram, Slack, Discord, Zalo và các app chat khác — đổi model tùy ý.",
           "added_date": "2026-02-03",
-          "detail": "OpenClaw là trợ lý cá nhân open-source xoay quanh một Gateway chạy local, quản lý session, tool và kết nối các kênh chat; có thể chạy nền 24/7 dưới dạng background service trên laptop hoặc server riêng, giữ state, memory và credential trên máy của bạn. Tính cách agent nằm trong SOUL.md, memory là file Markdown trong workspace, skill là các thư mục SKILL.md, có kho skill cộng đồng trên ClawHub. Multi-agent routing gán từng tài khoản kênh chat cho một agent riêng biệt. Dùng được model hosted hoặc local (Ollama), có MCP server và điều khiển được Claude Code hoặc Codex qua ACP harness. Tool chạy trực tiếp trên host nếu bạn không cấu hình sandbox. Tên cũ: Clawdbot, rồi Moltbot; nay do OpenClaw Foundation quản lý. Phù hợp nhất: trợ lý cá nhân luôn bật ngay trong các app chat bạn đang dùng, chạy trên máy bạn tự kiểm soát.\n\nKết hợp tốt với: MCP · A2A · Claude Code · Codex CLI · Ollama",
+          "detail": "OpenClaw là trợ lý cá nhân open-source xoay quanh một Gateway chạy local, quản lý session, tool và kết nối các kênh chat; có thể chạy nền 24/7 dưới dạng background service trên laptop hoặc server riêng, giữ state, memory và credential trên máy của bạn. Tính cách agent nằm trong SOUL.md, memory là file Markdown trong workspace, skill là các thư mục SKILL.md, có kho skill cộng đồng trên ClawHub. Multi-agent routing gán từng tài khoản kênh chat cho một agent riêng biệt. Dùng được model hosted hoặc local (Ollama), có MCP server và điều khiển được Claude Code hoặc Codex qua ACP harness. Tool chạy trực tiếp trên host nếu bạn không cấu hình sandbox. Tên cũ: Clawdbot, rồi Moltbot; nay do OpenClaw Foundation quản lý. MIT license. Phù hợp nhất: trợ lý cá nhân luôn bật ngay trong các app chat bạn đang dùng, chạy trên máy bạn tự kiểm soát.\n\nKết hợp tốt với: MCP · A2A · Claude Code · Codex CLI · Ollama",
           "tags": [
             "SOUL.md",
             "Skills/ClawHub",
@@ -1587,7 +1587,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Cần trợ lý cá nhân luôn bật, nhắn được từ các app chat",
@@ -1619,7 +1619,7 @@
           "verified_at": "2026-10-30",
           "verification_source": "docs",
           "github_stars": 386578,
-          "license": "Apache-2.0"
+          "license": "MIT"
         },
         {
           "name": "oh-my-claudecode",
@@ -3918,7 +3918,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "self-hosted",
+          "deployment": "local",
           "difficulty": "intermediate",
           "whenToUse": [
             "Red-team model hoặc chatbot để tìm jailbreak, prompt injection và data leakage trước khi release",
@@ -4032,7 +4032,7 @@
             }
           ],
           "pricing": "free",
-          "deployment": "hybrid",
+          "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
             "Mask PII trong prompt trước khi gửi tới LLM bên thứ ba, ví dụ đặt sau LiteLLM proxy",
