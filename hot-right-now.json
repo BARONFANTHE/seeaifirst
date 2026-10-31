@@ -1,46 +1,46 @@
 {
-  "updated": "2026-03-09",
+  "updated": "2026-10-30",
   "items": [
     {
       "slug": "multi-agent-systems",
       "reason": {
-        "en": "The hottest architecture pattern — agents collaborating, delegating, and solving complex tasks together",
-        "vi": "Kiến trúc nóng nhất hiện tại — các agent phối hợp, phân công và giải quyết task phức tạp cùng nhau"
+        "en": "Orchestrated teams of specialized agents are becoming the default for complex workflows — now backed by open, foundation-governed protocols",
+        "vi": "Đội agent chuyên biệt được điều phối đang thành lựa chọn mặc định cho workflow phức tạp — có giao thức mở do foundation quản lý làm nền"
       }
     },
     {
       "slug": "generative-coding",
       "reason": {
-        "en": "AI-generated code is reshaping how developers build — from autocomplete to full app generation",
-        "vi": "Code do AI tạo ra đang thay đổi cách developer làm việc — từ autocomplete đến sinh toàn bộ ứng dụng"
+        "en": "Coding agents are now developers' top AI use case — from autocomplete to agents that edit files, run tests and open pull requests",
+        "vi": "Coding agent giờ là use case AI số một của developer — từ autocomplete đến agent sửa file, chạy test và mở pull request"
       }
     },
     {
       "slug": "ai-governance",
       "reason": {
-        "en": "As AI scales, governance frameworks become critical — safety, compliance, and responsible deployment",
-        "vi": "Khi AI mở rộng, quản trị trở nên thiết yếu — an toàn, tuân thủ và triển khai có trách nhiệm"
+        "en": "Most EU AI Act rules apply from August 2026, with high-risk duties moved to 2027–2028 — compliance and agent guardrails are now engineering work",
+        "vi": "Phần lớn quy định EU AI Act áp dụng từ 08/2026, nghĩa vụ high-risk lùi sang 2027–2028 — tuân thủ và guardrails cho agent giờ là việc của kỹ thuật"
       }
     },
     {
       "slug": "universal-agent-skills",
       "reason": {
-        "en": "Core capabilities every AI agent needs — browsing, coding, file handling, and tool use",
-        "vi": "Năng lực cốt lõi mọi AI agent cần có — duyệt web, code, xử lý file và sử dụng công cụ"
+        "en": "Agent Skills is an open standard for packaging know-how as SKILL.md folders that agents load on demand — supported by most major coding agents",
+        "vi": "Agent Skills là chuẩn mở đóng gói kiến thức thành thư mục SKILL.md để agent nạp khi cần — được hầu hết coding agent lớn hỗ trợ"
       }
     },
     {
       "slug": "claude-mem",
       "reason": {
-        "en": "Persistent memory for Claude — enabling context-aware, long-running agent workflows",
-        "vi": "Bộ nhớ bền vững cho Claude — hỗ trợ workflow agent dài hạn, nhận biết ngữ cảnh"
+        "en": "Plugin that gives Claude Code and other coding agents persistent memory — it captures, compresses and recalls context across sessions",
+        "vi": "Plugin mang bộ nhớ bền vững cho Claude Code và các coding agent khác — ghi lại, nén và gợi lại context qua các phiên làm việc"
       }
     },
     {
       "slug": "a2a",
       "reason": {
-        "en": "Google's Agent2Agent protocol — the emerging standard for agents to communicate across platforms",
-        "vi": "Giao thức Agent2Agent của Google — tiêu chuẩn mới để các agent giao tiếp xuyên nền tảng"
+        "en": "Open Agent2Agent protocol, started by Google and now in the Linux Foundation's Agentic AI Foundation — lets agents discover and delegate to each other",
+        "vi": "Giao thức mở Agent2Agent, khởi đầu từ Google và nay thuộc Agentic AI Foundation của Linux Foundation — giúp các agent tìm thấy và giao việc cho nhau"
       }
     }
   ]

@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
-<title>Claude-Flow — See AI First</title>
-<meta name="description" content="Nền tảng điều phối agent theo kiến trúc Queen + Workers — quản lý Claude, GPT, Gemini cùng lúc qua MCP.">
-<meta property="og:title" content="Claude-Flow — See AI First">
-<meta property="og:description" content="Nền tảng điều phối agent theo kiến trúc Queen + Workers — quản lý Claude, GPT, Gemini cùng lúc qua MCP.">
+<title>Ruflo (trước đây là Claude Flow) — See AI First</title>
+<meta name="description" content="Agent meta-harness cho Claude Code và Codex — swarm agent do Queen điều phối, HNSW vector memory và routing đa model, cài dạng plugin Claude Code hoặc MCP se...">
+<meta property="og:title" content="Ruflo (trước đây là Claude Flow) — See AI First">
+<meta property="og:description" content="Agent meta-harness cho Claude Code và Codex — swarm agent do Queen điều phối, HNSW vector memory và routing đa model, cài dạng plugin Claude Code hoặc MCP se...">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/claude-flow">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
-<meta name="twitter:title" content="Claude-Flow — See AI First">
-<meta name="twitter:description" content="Nền tảng điều phối agent theo kiến trúc Queen + Workers — quản lý Claude, GPT, Gemini cùng lúc qua MCP.">
+<meta name="twitter:title" content="Ruflo (trước đây là Claude Flow) — See AI First">
+<meta name="twitter:description" content="Agent meta-harness cho Claude Code và Codex — swarm agent do Queen điều phối, HNSW vector memory và routing đa model, cài dạng plugin Claude Code hoặc MCP se...">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/claude-flow">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Claude-Flow","url":"https://seeaifirst.com/vi/tool/claude-flow","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Nền tảng điều phối agent theo kiến trúc Queen + Workers — quản lý Claude, GPT, Gemini cùng lúc qua MCP.","keywords":["Orchestration — Điều phối multi-agent","js","typescript"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/cyanheads/claude-flow"],"datePublished":"2026-02-03","dateModified":"2026-02-11","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Ruflo (trước đây là Claude Flow)","url":"https://seeaifirst.com/vi/tool/claude-flow","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Agent meta-harness cho Claude Code và Codex — swarm agent do Queen điều phối, HNSW vector memory và routing đa model, cài dạng plugin Claude Code hoặc MCP server.","keywords":["Orchestration — Điều phối multi-agent","js","typescript"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/ruvnet/ruflo","https://github.com/ruvnet/ruflo/blob/main/docs/USERGUIDE.md"],"datePublished":"2026-02-03","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1087,23 +1087,22 @@ html, body {
 <body>
 <div id="prerender-content">
   <main>
-    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> › Claude-Flow</nav>
+    <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> › Ruflo (trước đây là Claude Flow)</nav>
     <article>
-      <h1>Claude-Flow</h1>
-      <p>Nền tảng điều phối agent theo kiến trúc Queen + Workers — quản lý Claude, GPT, Gemini cùng lúc qua MCP.</p>
-      <p>Framework điều phối multi-agent dạng Queen + Workers. Queen (Claude Opus) lập kế hoạch, phân công task cho Workers (có thể là Claude Code, Codex, hay Gemini CLI). Hỗ trợ: HNSW vector memory, swarm mode (60+ agents), multi-model routing qua MCP, parallel execution. MIT license.</p>
+      <h1>Ruflo (trước đây là Claude Flow)</h1>
+      <p>Agent meta-harness cho Claude Code và Codex — swarm agent do Queen điều phối, HNSW vector memory và routing đa model, cài dạng plugin Claude Code hoặc MCP server.</p>
+      <p>Ruflo là tên mới của Claude Flow, do tác giả rUv đặt; tên npm claude-flow cũ vẫn dùng được. Ruflo bổ sung swarm coordination cho Claude Code và Codex với Queen-led hierarchy và consensus (Raft, Byzantine, Gossip), HNSW-indexed AgentDB memory, hook routing tự học, background workers, và routing model có failover giữa Claude, GPT, Gemini, Cohere, Ollama. Cài từ plugin marketplace của Claude Code hoặc chạy như MCP server cho Codex và các MCP client khác; có thể spawn Codex worker chạy headless từ Claude Code. Plugin chạy với quyền tài khoản của bạn, nên xem kỹ trước khi cài. MIT license. Phù hợp nhất: power user muốn Claude Code hoặc Codex chạy cả team multi-agent có shared memory. Kết hợp tốt với: Claude Code · Codex CLI · MCP · Ollama</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>multi-agent swarm orchestration</li>
-        <li>parallel task execution with Claude Code</li>
-        <li>complex project automation</li>
-        <li>background worker workflows</li>
+        <li>Chạy swarm multi-agent có điều phối ngay trong Claude Code</li>
+        <li>Đẩy các task song song chạy nền cho Codex worker headless</li>
+        <li>Cần vector memory lâu dài và routing task tự học qua nhiều session</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>simple single-agent tasks</li>
-        <li>non-Claude environments</li>
-        <li>lightweight scripting</li>
+        <li>Task coding đơn giản, một agent là đủ</li>
+        <li>Team cần toolchain nhỏ gọn, dễ audit</li>
+        <li>Môi trường không cho plugin bên thứ ba chạy với quyền tài khoản của bạn</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1113,13 +1112,14 @@ html, body {
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>js, typescript</dd>
         <dt>Ứng dụng</dt><dd>multi agent orchestration, swarm intelligence, parallel development, workflow automation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-02-11 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-30 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
         <li><a href="/vi/tool/claude-code">Claude Code</a></li>
-        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a></li>
         <li><a href="/vi/tool/codex-cli">Codex CLI</a></li>
+        <li><a href="/vi/tool/mcp">MCP — Model Context Protocol</a></li>
+        <li><a href="/vi/tool/ollama">Ollama</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
@@ -1129,7 +1129,8 @@ html, body {
       <p><a href="/vi/section/orchestration">Xem tất cả 3 công cụ trong Orchestration — Điều phối multi-agent →</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/cyanheads/claude-flow" rel="noopener noreferrer">Claude-Flow GitHub</a></li>
+        <li><a href="https://github.com/ruvnet/ruflo" rel="noopener noreferrer">Ruflo GitHub (trước đây là Claude Flow)</a></li>
+        <li><a href="https://github.com/ruvnet/ruflo/blob/main/docs/USERGUIDE.md" rel="noopener noreferrer">Hướng dẫn sử dụng Ruflo</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/orchestration">Orchestration — Điều phối multi-agent</a> trên See AI First.</p>

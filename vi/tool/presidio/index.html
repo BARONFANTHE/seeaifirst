@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Presidio — See AI First</title>
-<meta name="description" content="PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân">
+<meta name="description" content="PII detection &amp; anonymization open-source cho text, image và structured data — do cộng đồng quản trị, khởi nguồn từ Microsoft">
 <meta property="og:title" content="Presidio — See AI First">
-<meta property="og:description" content="PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân">
+<meta property="og:description" content="PII detection &amp; anonymization open-source cho text, image và structured data — do cộng đồng quản trị, khởi nguồn từ Microsoft">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/presidio">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Presidio — See AI First">
-<meta name="twitter:description" content="PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân">
+<meta name="twitter:description" content="PII detection &amp; anonymization open-source cho text, image và structured data — do cộng đồng quản trị, khởi nguồn từ Microsoft">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/presidio">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Presidio","url":"https://seeaifirst.com/vi/tool/presidio","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"PII detection & anonymization cho text và image – bảo vệ dữ liệu cá nhân","keywords":["Security & Guardrails – Bảo vệ ứng dụng AI","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/microsoft/presidio","https://microsoft.github.io/presidio/"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Presidio","url":"https://seeaifirst.com/vi/tool/presidio","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"PII detection & anonymization open-source cho text, image và structured data — do cộng đồng quản trị, khởi nguồn từ Microsoft","keywords":["Security & Guardrails – Bảo vệ ứng dụng AI","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"MIT","sameAs":["https://github.com/data-privacy-stack/presidio","https://presidio.dataprivacystack.org/","https://presidio.dataprivacystack.org/project_transition/"],"datePublished":"2026-02-08","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> › Presidio</nav>
     <article>
       <h1>Presidio</h1>
-      <p>PII detection &amp; anonymization cho text và image – bảo vệ dữ liệu cá nhân</p>
-      <p>Presidio là framework open-source từ Microsoft giúp phát hiện, redact, mask và anonymize dữ liệu nhạy cảm (PII) trong text, images và structured data. Sử dụng kết hợp NLP (spaCy, transformers), regex patterns, rule-based logic và checksum để nhận diện credit card, tên, địa chỉ, SSN, email, số điện thoại và nhiều loại PII khác. Hỗ trợ đa ngôn ngữ, có thể mở rộng với custom recognizers. Triển khai qua Python packages hoặc Docker containers, tích hợp tốt với LLM pipelines để sanitize data trước khi gửi vào model. Kết hợp tốt với: LangChain · LiteLLM · Guardrails AI · NeMo Guardrails</p>
+      <p>PII detection &amp; anonymization open-source cho text, image và structured data — do cộng đồng quản trị, khởi nguồn từ Microsoft</p>
+      <p>Presidio là SDK open-source để phát hiện và de-identify dữ liệu nhạy cảm (PII). Dự án ban đầu được tạo ra tại Microsoft, nay là dự án độc lập do cộng đồng quản trị, thuộc tổ chức GitHub Data Privacy Stack; giấy phép vẫn là MIT, và link microsoft/presidio cũ tự chuyển hướng sang địa chỉ mới. Presidio có bốn module: Analyzer (phát hiện PII trong text), Anonymizer (replace, mask, redact hoặc encrypt các entity tìm được, có thể decrypt để khôi phục), Image Redactor (che PII trong ảnh bằng OCR, kể cả ảnh y tế DICOM) và Structured (dữ liệu dạng bảng và bán cấu trúc). Cơ chế nhận diện kết hợp NER model (spaCy, Stanza, transformers), regex, rule-based logic, checksum và ngữ cảnh xung quanh, hỗ trợ nhiều ngôn ngữ và có thể gọi model ngoài như GLiNER. Chạy được từ Python hoặc PySpark, bằng Docker container (nay phát hành trên GitHub Container Registry) hoặc trên Kubernetes. Trong pipeline LLM, Presidio thường được dùng để mask prompt trước khi gửi tới model, ví dụ qua guardrail PII masking của LiteLLM proxy, sensitive-data rails của NeMo Guardrails hoặc validator detect_pii của Guardrails AI. Tài liệu cảnh báo phát hiện tự động vẫn có thể bỏ sót PII, nên hãy coi đây là một lớp bảo vệ, không phải bảo đảm tuyệt đối. Phù hợp nhất: team cần loại bỏ hoặc mask dữ liệu cá nhân trước khi ghi log, train model, index RAG hoặc gửi prompt sang LLM bên thứ ba. Kết hợp tốt với: NeMo Guardrails · LiteLLM · Guardrails AI</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>PII detection and anonymization in LLM pipelines</li>
-        <li>text de-identification before model training or logging</li>
-        <li>privacy-aware data preprocessing for RAG systems</li>
-        <li>custom PII recognizer development with NLP/regex</li>
+        <li>Mask PII trong prompt trước khi gửi tới LLM bên thứ ba, ví dụ đặt sau LiteLLM proxy</li>
+        <li>De-identify text, bảng dữ liệu hoặc ảnh trước khi ghi log, train model hoặc index RAG</li>
+        <li>Xây custom recognizer cho mã định danh đặc thù theo ngành hoặc quốc gia, hỗ trợ nhiều ngôn ngữ</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
-        <li>real-time high-throughput stream processing without tuning</li>
-        <li>non-text PII detection (audio, video) beyond image redaction</li>
-        <li>when only simple regex-based masking is needed</li>
+        <li>Cần bảo đảm xóa sạch toàn bộ PII — tài liệu cảnh báo phát hiện tự động có thể bỏ sót</li>
+        <li>PII nằm trong audio hoặc video (chỉ hỗ trợ text, ảnh kể cả DICOM, và structured data)</li>
+        <li>Chỉ cần mask dữ liệu có định dạng cố định mà vài regex đã xử lý được</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1113,13 +1112,13 @@ html, body {
         <dt>Giấy phép</dt><dd>MIT</dd>
         <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>pii detection, data anonymization, privacy preprocessing, llm preprocessing</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-03-24 (tài liệu chính thức)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-30 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
         <li><a href="/vi/tool/nemo-guardrails">NeMo Guardrails</a></li>
         <li><a href="/vi/tool/litellm">LiteLLM</a></li>
-        <li><a href="/vi/tool/dify">Dify</a></li>
+        <li><a href="/vi/tool/guardrails-ai">Guardrails AI</a></li>
       </ul>
       <h2>Lựa chọn khác cùng danh mục</h2>
       <ul>
@@ -1130,8 +1129,9 @@ html, body {
       <p><a href="/vi/section/security">Xem tất cả 4 công cụ trong Security &amp; Guardrails – Bảo vệ ứng dụng AI →</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://github.com/microsoft/presidio" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://microsoft.github.io/presidio/" rel="noopener noreferrer">Website</a></li>
+        <li><a href="https://github.com/data-privacy-stack/presidio" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://presidio.dataprivacystack.org/" rel="noopener noreferrer">Tài liệu</a></li>
+        <li><a href="https://presidio.dataprivacystack.org/project_transition/" rel="noopener noreferrer">Thông báo chuyển giao dự án</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/security">Security &amp; Guardrails – Bảo vệ ứng dụng AI</a> trên See AI First.</p>

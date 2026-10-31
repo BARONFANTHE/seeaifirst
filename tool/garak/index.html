@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>garak — See AI First</title>
-<meta name="description" content="LLM vulnerability scanner – probes security flaws in AI models">
+<meta name="description" content="Open-source LLM vulnerability scanner backed by NVIDIA — probes models and LLM apps for jailbreaks, prompt injection, data leakage and more">
 <meta property="og:title" content="garak — See AI First">
-<meta property="og:description" content="LLM vulnerability scanner – probes security flaws in AI models">
+<meta property="og:description" content="Open-source LLM vulnerability scanner backed by NVIDIA — probes models and LLM apps for jailbreaks, prompt injection, data leakage and more">
 <meta property="og:url" content="https://seeaifirst.com/tool/garak">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="garak — See AI First">
-<meta name="twitter:description" content="LLM vulnerability scanner – probes security flaws in AI models">
+<meta name="twitter:description" content="Open-source LLM vulnerability scanner backed by NVIDIA — probes models and LLM apps for jailbreaks, prompt injection, data leakage and more">
 <link rel="canonical" href="https://seeaifirst.com/tool/garak">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"garak","url":"https://seeaifirst.com/tool/garak","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"LLM vulnerability scanner – probes security flaws in AI models","keywords":["Security & Guardrails – Protecting AI Applications","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/NVIDIA/garak","https://garak.ai/","https://garak.readthedocs.io/"],"datePublished":"2026-02-08","dateModified":"2026-03-24","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"garak","url":"https://seeaifirst.com/tool/garak","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Open-source LLM vulnerability scanner backed by NVIDIA — probes models and LLM apps for jailbreaks, prompt injection, data leakage and more","keywords":["Security & Guardrails – Protecting AI Applications","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"license":"Apache-2.0","sameAs":["https://github.com/NVIDIA/garak","https://garak.ai/","https://docs.garak.ai/garak/"],"datePublished":"2026-02-08","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> › garak</nav>
     <article>
       <h1>garak</h1>
-      <p>LLM vulnerability scanner – probes security flaws in AI models</p>
-      <p>garak is the &quot;nmap for LLMs&quot; – a vulnerability scanner built specifically for large language models, developed by NVIDIA. Tests for hallucination, data leakage, prompt injection, jailbreak, toxicity generation and many other attack vectors. garak operates on a modular architecture with probes (generate test interactions), detectors (identify bad behavior), and evaluators (assess results). Supports scanning models from Hugging Face, OpenAI, Ollama, LiteLLM and virtually any REST endpoint. Works well with: NeMo Guardrails · Ollama · LiteLLM · Promptfoo</p>
+      <p>Open-source LLM vulnerability scanner backed by NVIDIA — probes models and LLM apps for jailbreaks, prompt injection, data leakage and more</p>
+      <p>garak (Generative AI Red-teaming &amp; Assessment Kit) is an open-source command-line scanner that checks whether an LLM or an LLM-backed application can be made to fail in ways you don&#039;t want — often described as &quot;nmap for LLMs&quot;. It is backed by NVIDIA, with community contributions. garak probes for hallucination, data leakage, prompt injection, misinformation, toxicity generation, jailbreaks and other weaknesses, combining static, dynamic and adaptive probes. A run wires together generators (connectors to the target), probes (attack prompts), detectors (spot failures), a harness (orchestrates the run) and evaluators (score results), then writes a JSONL report plus a hit log of attacks that succeeded. Targets include Hugging Face models, OpenAI, AWS Bedrock, LiteLLM, Ollama, NVIDIA NIM endpoints, OpenAI-compatible servers, NeMo Guardrails configurations and almost any REST endpoint. garak is an assessment tool, not a runtime filter: it shows where a system breaks, it does not block traffic. Best for: security and ML teams red-teaming a model, chatbot or guardrail setup before release, and re-scanning after changes. Works well with: NeMo Guardrails · Ollama · LiteLLM · vLLM</p>
       <h2>When to use</h2>
       <ul>
-        <li>LLM security assessment and vulnerability scanning before deployment</li>
-        <li>red-teaming LLM applications for jailbreaks and prompt injection</li>
-        <li>automated probe-based testing across multiple failure modes</li>
-        <li>CI/CD integration for ongoing LLM security regression testing</li>
+        <li>Red-teaming a model or chatbot for jailbreaks, prompt injection and data leakage before release</li>
+        <li>Measuring how much a guardrail or system-prompt change actually reduces attack success</li>
+        <li>Re-running the same probe set after model, prompt or config changes to catch security regressions</li>
       </ul>
       <h2>When not to use</h2>
       <ul>
-        <li>runtime protection or guardrails (use NeMo Guardrails or Guardrails AI)</li>
-        <li>non-LLM application security testing</li>
-        <li>when need real-time blocking rather than assessment reports</li>
+        <li>Runtime protection that blocks bad inputs or outputs in production (use NeMo Guardrails or Guardrails AI)</li>
+        <li>Security testing of non-LLM software such as web apps, networks or infrastructure</li>
+        <li>You want a hosted, point-and-click red-teaming service — garak is a CLI you run yourself</li>
       </ul>
       <h2>At a glance</h2>
       <dl>
@@ -1113,7 +1112,7 @@ html, body {
         <dt>License</dt><dd>Apache-2.0</dd>
         <dt>Languages</dt><dd>python</dd>
         <dt>Use cases</dt><dd>llm red teaming, vulnerability scanning, jailbreak testing, security audit</dd>
-        <dt>Last verified</dt><dd>2026-03-24 (official documentation)</dd>
+        <dt>Last verified</dt><dd>2026-10-30 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1133,7 +1132,7 @@ html, body {
       <ul>
         <li><a href="https://github.com/NVIDIA/garak" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://garak.ai/" rel="noopener noreferrer">Website</a></li>
-        <li><a href="https://garak.readthedocs.io/" rel="noopener noreferrer">Docs</a></li>
+        <li><a href="https://docs.garak.ai/garak/" rel="noopener noreferrer">User guide</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/security">Security &amp; Guardrails – Protecting AI Applications</a> on See AI First.</p>

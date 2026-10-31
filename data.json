@@ -1505,43 +1505,47 @@
       "gridCols": 3,
       "cards": [
         {
-          "name": "Claude-Flow",
+          "name": "Ruflo (formerly Claude Flow)",
           "slug": "claude-flow",
           "icon": "🌊",
           "mono": true,
-          "desc": "Agent orchestration platform with a <strong>Queen + Workers</strong> architecture — manages Claude, GPT, and Gemini simultaneously via MCP.",
+          "desc": "Agent meta-harness for <strong>Claude Code and Codex</strong> — queen-led agent swarms, HNSW vector memory and multi-provider model routing, installed as Claude Code plugins or an MCP server.",
           "added_date": "2026-02-03",
           "tags": [
             "MIT",
             "Multi-agent swarm",
-            "HNSW vector",
-            "60+ coding agents"
+            "HNSW vector memory",
+            "Claude Code plugin"
           ],
-          "detail": "Multi-agent orchestration framework using a Queen + Workers model. Queen (Claude Opus) plans and assigns tasks to Workers (which can be Claude Code, Codex, or Gemini CLI). Features: HNSW vector memory, swarm mode (60+ agents), multi-model routing via MCP, parallel execution. MIT license.",
+          "detail": "Ruflo is the new name of Claude Flow, given by its author rUv; the old claude-flow npm name still works. It adds swarm coordination to Claude Code and Codex with queen-led hierarchies and consensus (Raft, Byzantine, Gossip), HNSW-indexed AgentDB memory, self-learning routing hooks, background workers, and model routing with failover across Claude, GPT, Gemini, Cohere and Ollama. It installs from the Claude Code plugin marketplace or runs as an MCP server for Codex and other MCP clients, and can spawn headless Codex workers from Claude Code. Plugins run with your account's permissions, so review them before installing. MIT license. Best for: power users who want Claude Code or Codex to run coordinated multi-agent teams with shared memory.\n\nWorks well with: Claude Code · Codex CLI · MCP · Ollama",
           "sources": [
             {
-              "title": "Claude-Flow GitHub",
-              "url": "https://github.com/cyanheads/claude-flow"
+              "title": "Ruflo GitHub (formerly Claude Flow)",
+              "url": "https://github.com/ruvnet/ruflo"
+            },
+            {
+              "title": "Ruflo User Guide",
+              "url": "https://github.com/ruvnet/ruflo/blob/main/docs/USERGUIDE.md"
             }
           ],
           "pricing": "free",
           "deployment": "local",
           "difficulty": "advanced",
           "whenToUse": [
-            "multi-agent swarm orchestration",
-            "parallel task execution with Claude Code",
-            "complex project automation",
-            "background worker workflows"
+            "Running coordinated multi-agent swarms inside Claude Code",
+            "Offloading parallel background tasks to headless Codex workers",
+            "Persistent vector memory and learned task routing across sessions"
           ],
           "whenNotToUse": [
-            "simple single-agent tasks",
-            "non-Claude environments",
-            "lightweight scripting"
+            "Simple single-agent coding tasks",
+            "Teams that need a small, easily auditable toolchain",
+            "Environments where third-party plugins may not run with your account's permissions"
           ],
           "compatibleWith": [
             "claude-code",
+            "codex-cli",
             "mcp",
-            "codex-cli"
+            "ollama"
           ],
           "useCases": [
             "multi-agent-orchestration",
@@ -1553,19 +1557,19 @@
             "js",
             "typescript"
           ],
-          "verified_at": "2026-02-11",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 13900,
+          "github_stars": 78063,
           "license": "MIT"
         },
         {
           "name": "OpenClaw",
           "slug": "openclaw",
-          "icon": "🐕",
+          "icon": "🦞",
           "mono": true,
-          "desc": "Personal AI assistant running 24/7 — chat via 15+ channels including WhatsApp, Telegram, Zalo.",
+          "desc": "Open-source personal AI assistant that runs <strong>on your own devices</strong> and talks to you in WhatsApp, Telegram, Slack, Discord, Zalo and other chat apps — with swappable models.",
           "added_date": "2026-02-03",
-          "detail": "Evolution: Clawdbot → Moltbot → OpenClaw",
+          "detail": "OpenClaw is an open-source personal assistant built around a local Gateway that owns sessions, tools and channel connections; it can run as an always-on background service on a laptop or your own server, and keeps state, memory and credentials on your hardware. Personality lives in SOUL.md, memory is plain Markdown in the workspace, and skills are SKILL.md folders, with community skills on ClawHub. Multi-agent routing binds channel accounts to isolated agents. It works with hosted or local models (Ollama), exposes an MCP server and can drive Claude Code or Codex as ACP harnesses. Tools run on the host unless you configure sandboxing. Formerly Clawdbot, then Moltbot; now stewarded by the OpenClaw Foundation. Best for: an always-on personal assistant in the chat apps you already use, on hardware you control.\n\nWorks well with: MCP · A2A · Claude Code · Codex CLI · Ollama",
           "tags": [
             "SOUL.md",
             "Skills/ClawHub",
@@ -1576,25 +1580,30 @@
             {
               "title": "OpenClaw GitHub",
               "url": "https://github.com/openclaw/openclaw"
+            },
+            {
+              "title": "OpenClaw Docs",
+              "url": "https://docs.openclaw.ai"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "personal AI assistant always-on",
-            "messaging platform automation (Telegram, Discord, Slack)",
-            "multi-agent coordination",
-            "self-hosted AI with local file access"
+            "An always-on personal assistant reachable from your chat apps",
+            "Self-hosting an assistant that keeps state, memory and credentials on your hardware",
+            "Running several isolated agent personas routed per channel account"
           ],
           "whenNotToUse": [
-            "simple chatbot without tool use",
-            "enterprise deployment without customization",
-            "code-only development workflows"
+            "A simple chatbot without tools or persistent memory",
+            "Setups where you cannot sandbox host tools or vet inbound messages",
+            "Pure coding workflows that only need a terminal coding agent"
           ],
           "compatibleWith": [
             "mcp",
+            "a2a",
             "claude-code",
+            "codex-cli",
             "ollama"
           ],
           "useCases": [
@@ -1604,13 +1613,12 @@
             "multi-agent-coordination"
           ],
           "languages": [
-            "python",
-            "js",
-            "typescript"
+            "typescript",
+            "js"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 338187,
+          "github_stars": 386578,
           "license": "Apache-2.0"
         },
         {
@@ -2337,21 +2345,25 @@
           "slug": "multi-agent-systems",
           "icon": "🐝",
           "hot": true,
-          "desc": "Multi-agent AI systems working in coordination — Gartner reports <strong>1,445%</strong> surge in interest. 40% of enterprise apps will use agents by late 2026.",
+          "desc": "Teams of specialized AI agents that plan, delegate and check each other's work — increasingly connected through open protocols (MCP, A2A) governed by the Agentic AI Foundation.",
           "added_date": "2026-02-03",
-          "detail": "Gartner reports queries about multi-agent systems surged 1,445% from Q1/2024 to Q2/2025. Predicted 40% of enterprise apps will integrate AI agents by late 2026 (vs 5% in 2025). By 2027, 70% of MAS will use specialized agents instead of general-purpose ones. Agentic AI market from $7.8B (2025) to $52B (2030). Trend: from monolithic agents to orchestrated teams — similar to the microservices revolution.",
+          "detail": "Instead of one general-purpose agent, a multi-agent system splits work across specialized agents — typically an orchestrator that plans and delegates to workers, each with its own tools and context. Gartner named Multiagent Systems one of its top strategic technology trends for 2026, while flagging reliability, unpredictable cost and immature interoperability as barriers. Anthropic's write-up of its multi-agent research system (June 2025) shows where the pattern pays off — broad, parallelizable tasks — and where it doesn't: it burns far more tokens, and tightly coupled work such as most coding gains less. Interoperability is consolidating: the Linux Foundation formed the Agentic AI Foundation (AAIF) in December 2025 around MCP, goose and AGENTS.md, and A2A joined it in August 2026. Trend: from monolithic agents to orchestrated teams — similar to the shift to microservices.",
           "sources": [
             {
-              "title": "Gartner — 40% Enterprise Apps with AI Agents by 2026",
-              "url": "https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025"
+              "title": "Gartner — Top Strategic Technology Trends for 2026",
+              "url": "https://www.gartner.com/en/newsroom/press-releases/2025-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2026"
             },
             {
               "title": "Gartner — Multiagent Systems in Enterprise AI",
               "url": "https://www.gartner.com/en/articles/multiagent-systems"
             },
             {
-              "title": "7 Agentic AI Trends 2026",
-              "url": "https://machinelearningmastery.com/7-agentic-ai-trends-to-watch-in-2026/"
+              "title": "Anthropic — How we built our multi-agent research system",
+              "url": "https://www.anthropic.com/engineering/multi-agent-research-system"
+            },
+            {
+              "title": "Linux Foundation — Formation of the Agentic AI Foundation",
+              "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"
             }
           ],
           "pricing": "free",
@@ -2363,17 +2375,17 @@
           ],
           "github_stars": null,
           "license": null,
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "whenToUse": [
-            "Cần phối hợp nhiều AI agents chuyên biệt cho workflow phức tạp",
-            "Tự động hóa quy trình end-to-end thay vì từng task riêng lẻ",
-            "Khi team/org cần agents phối hợp cross-functional"
+            "A complex workflow splits into parallel subtasks that benefit from specialized agents",
+            "Automating an end-to-end process rather than isolated single tasks",
+            "The job exceeds one context window or needs many different tools"
           ],
           "whenNotToUse": [
-            "Task đơn giản chỉ cần 1 agent hoặc 1 LLM call",
-            "Chưa có observability/governance cho hệ thống phân tán",
-            "Prototype nhanh — overhead orchestration chưa cần thiết"
+            "A single agent or one LLM call already solves the task",
+            "No observability, cost controls or governance for a distributed system yet",
+            "Tightly coupled work where every agent needs the same shared context"
           ],
           "compatibleWith": [
             "crewai",
@@ -2381,6 +2393,7 @@
             "langgraph",
             "openai-agents-sdk",
             "google-adk",
+            "agentscope",
             "mcp",
             "a2a",
             "claude-flow"
@@ -2396,21 +2409,25 @@
           "name": "Mechanistic Interpretability",
           "slug": "mechanistic-interpretability",
           "icon": "🔍",
-          "desc": "Research into how AI 'thinks' internally — enabling better understanding and control of AI behavior. 2026 breakthrough per MIT.",
+          "desc": "Research that reverse-engineers how models compute internally — features, circuits, reasoning paths — to explain and steer AI behavior. An MIT Tech Review 2026 breakthrough.",
           "added_date": "2026-02-03",
-          "detail": "MIT Technology Review selected this as one of the 10 Breakthrough Technologies of 2026. Anthropic used an 'AI microscope' to discover 34 million features in Claude — from 'sarcasm' to 'DNA sequences'. OpenAI built an 'AI lie detector' based on model internals. Google DeepMind released Gemma Scope 2 — the largest open-source interpretability toolkit. Goal: turning AI from a 'black box' into a 'glass box' — understanding why AI makes its decisions.",
+          "detail": "MIT Technology Review named mechanistic interpretability one of its 10 Breakthrough Technologies of 2026. Anthropic's \"AI microscope\" first located features tied to concepts such as the Golden Gate Bridge (2024), then in March 2025 traced whole circuits from prompt to answer in Claude 3.5 Haiku, and in May 2025 open-sourced its circuit-tracing tools with a Neuronpedia frontend. Google DeepMind released Gemma Scope 2 — sparse autoencoders and transcoders for the Gemma 3 family — in December 2025, calling it the largest open interpretability release by an AI lab. A lighter-weight cousin is chain-of-thought monitoring, which OpenAI used in 2025 to catch a reasoning model cheating on coding tests. Goal: turn AI from a \"black box\" into something auditable — though researchers still disagree on how far these methods can scale.",
           "sources": [
             {
-              "title": "MIT Tech Review — Breakthrough 2026",
+              "title": "MIT Technology Review — Mechanistic interpretability: 10 Breakthrough Technologies 2026",
               "url": "https://www.technologyreview.com/2026/01/12/1130003/mechanistic-interpretability-ai-research-models-2026-breakthrough-technologies/"
             },
             {
-              "title": "MIT Tech Review — LLMs like alien autopsy",
-              "url": "https://www.technologyreview.com/2026/01/12/1129782/ai-large-language-models-biology-alien-autopsy/"
+              "title": "Anthropic — Tracing the thoughts of a large language model",
+              "url": "https://www.anthropic.com/research/tracing-thoughts-language-model"
             },
             {
-              "title": "Anthropic — Research",
-              "url": "https://www.anthropic.com/research"
+              "title": "Google DeepMind — Gemma Scope 2",
+              "url": "https://deepmind.google/blog/gemma-scope-2-helping-the-ai-safety-community-deepen-understanding-of-complex-language-model-behavior/"
+            },
+            {
+              "title": "OpenAI — Detecting misbehavior in frontier reasoning models",
+              "url": "https://openai.com/index/chain-of-thought-monitoring/"
             }
           ],
           "pricing": "free",
@@ -2421,24 +2438,23 @@
           ],
           "github_stars": null,
           "license": null,
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "whenToUse": [
-            "Cần hiểu internal mechanisms của LLM để debug hành vi bất thường",
-            "Nghiên cứu AI safety, alignment, phát hiện deception",
-            "Audit model trước khi deploy cho ứng dụng high-stakes"
+            "Debugging unexpected LLM behavior by inspecting the model's internal mechanisms",
+            "AI safety and alignment research, including detecting deception or reward hacking",
+            "Auditing an open-weight model before deploying it in a high-stakes application"
           ],
           "whenNotToUse": [
-            "Chỉ cần evaluate output quality — dùng observability tools",
-            "Không có background ML/deep learning chuyên sâu",
-            "Cần giải pháp production nhanh, không phải research"
+            "You only need to evaluate output quality — use evaluation/observability tools instead",
+            "You use closed models through an API with no access to weights or activations",
+            "You need a production fix fast rather than open-ended research"
           ],
           "compatibleWith": [
-            "langfuse",
+            "garak",
             "deepeval",
-            "arize-phoenix",
-            "nemo-guardrails",
-            "garak"
+            "ai-governance",
+            "post-training-pre-training"
           ],
           "useCases": [
             "research",
@@ -2451,17 +2467,25 @@
           "name": "World Models",
           "slug": "world-models",
           "icon": "🌍",
-          "desc": "AI simulating the real world — AMI Labs, Google, and startups are racing to develop it. Gaming is a major driver.",
+          "desc": "AI that learns how the world behaves to predict and simulate the results of actions — the basis for interactive 3D worlds, robotics and autonomous driving.",
           "added_date": "2026-02-03",
-          "detail": "AI simulating the real world — LeCun left Meta to cofound AMI Labs, while Google and startups are racing to develop it. World models understand physics, predict outcomes of actions in 3D environments. Applications: autonomous driving, robotics, game development, simulation. Gaming is a major driver. Recent: Genie 2 (Google), video generation models becoming world simulators.",
+          "detail": "World models learn how environments behave so they can predict the consequences of actions, generate interactive scenes, and let agents plan or train in simulation. Two approaches are racing. Generative world simulators: Google DeepMind's Genie 3 (August 2025) generates navigable worlds in real time, and its Project Genie prototype opened to US AI Ultra subscribers in January 2026; World Labs made its Marble 3D world model generally available in November 2025. Predictive, non-generative models: Yann LeCun left Meta in 2025 and cofounded AMI Labs, which builds world models that predict in an abstract representation space instead of pixels. NVIDIA Cosmos offers open world foundation models for robotics and autonomous vehicles. Gaming, robotics and simulation are the main drivers.",
           "sources": [
             {
-              "title": "Yann LeCun — A Path Towards Autonomous AI",
-              "url": "https://openreview.net/pdf?id=BZ5a1r-kVsf"
+              "title": "Google DeepMind — Genie 3: A new frontier for world models",
+              "url": "https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/"
             },
             {
-              "title": "Google DeepMind — Genie",
-              "url": "https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/"
+              "title": "AMI Labs — Advanced Machine Intelligence",
+              "url": "https://amilabs.xyz/"
+            },
+            {
+              "title": "World Labs — Marble world model",
+              "url": "https://www.worldlabs.ai/blog/marble-world-model"
+            },
+            {
+              "title": "NVIDIA Cosmos — World foundation models for physical AI",
+              "url": "https://www.nvidia.com/en-us/ai/cosmos/"
             }
           ],
           "pricing": "free",
@@ -2472,23 +2496,21 @@
           ],
           "github_stars": null,
           "license": null,
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "whenToUse": [
-            "Xây dựng AI hiểu vật lý và spatial reasoning cho robotics",
-            "Training agents trong simulated environments trước khi deploy thực tế",
-            "Tạo interactive 3D environments cho gaming hoặc VR/AR"
+            "Building AI that needs physical and spatial reasoning, e.g. robotics",
+            "Training or testing agents in simulated environments before real-world deployment",
+            "Generating interactive 3D environments for games, VR/AR or synthetic training data"
           ],
           "whenNotToUse": [
-            "Chỉ cần text processing hoặc chatbot thông thường",
-            "Không có GPU infrastructure đủ mạnh",
-            "Dự án không liên quan đến spatial/physical reasoning"
+            "You only need text processing or a standard chatbot",
+            "No access to substantial GPU compute",
+            "The project has no spatial, physical or simulation component"
           ],
           "compatibleWith": [
-            "ollama",
-            "vllm",
             "ai-infrastructure",
-            "generative-coding"
+            "post-training-pre-training"
           ],
           "useCases": [
             "research",
@@ -2500,17 +2522,21 @@
           "name": "Generative Coding",
           "slug": "generative-coding",
           "icon": "💻",
-          "desc": "AI writes 30% of code at Microsoft, 25%+ at Google. 'English is becoming the new programming language.'",
+          "desc": "AI that writes, edits, tests and debugs code from plain-language instructions — evolving from autocomplete into agents that work across whole repositories.",
           "added_date": "2026-02-03",
-          "detail": "AI writes 30% of code at Microsoft, 25%+ at Google. GitHub Copilot has ~30% suggestion acceptance rate. MIT Technology Review selected this as a 2026 Breakthrough. However, Veracode found 45% of AI-generated code contains security vulnerabilities. Trend: 'English is becoming the new programming language' — developers shifting from writing code to guiding AI to write code.",
+          "detail": "MIT Technology Review named generative coding one of its 10 Breakthrough Technologies of 2026. Tools have moved from inline autocomplete to coding agents that plan changes, edit many files, run tests and open pull requests. In the Stack Overflow Developer Survey 2026, coding assistants and agents became developers' top AI use case, but trust still depends on being able to verify the output, and human-in-the-loop review remains the norm. Risks persist: Veracode's research (July 2025) found that newer and larger models write more correct code but not more secure code, AI still struggles with large, complex codebases, and \"vibe coding\" without review is risky in production. Trend: developers shift from typing code to specifying, reviewing and orchestrating AI-written code.",
           "sources": [
             {
-              "title": "MIT Tech Review — 10 Breakthrough Technologies 2026",
-              "url": "https://www.technologyreview.com/2026/01/06/1129144/10-breakthrough-technologies-2026/"
+              "title": "MIT Technology Review — Generative coding: 10 Breakthrough Technologies 2026",
+              "url": "https://www.technologyreview.com/2026/01/12/1130027/generative-coding-ai-software-2026-breakthrough-technology/"
             },
             {
-              "title": "GitHub — State of AI Coding",
-              "url": "https://github.blog/news-insights/research/the-state-of-ai-coding/"
+              "title": "Stack Overflow Developer Survey 2026 — AI",
+              "url": "https://survey.stackoverflow.co/2026/ai"
+            },
+            {
+              "title": "Veracode — AI-generated code security research",
+              "url": "https://www.veracode.com/press-release/ai-generated-code-poses-major-security-risks-in-nearly-half-of-all-development-tasks-veracode-research-reveals/"
             }
           ],
           "pricing": "free",
@@ -2523,17 +2549,17 @@
           ],
           "github_stars": null,
           "license": null,
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "whenToUse": [
-            "Tăng tốc development workflow với AI-assisted coding",
-            "Non-developers cần build apps/prototypes nhanh (vibe coding)",
-            "Cần generate, test, debug code tự động trong pipeline"
+            "Speeding up everyday development: boilerplate, tests, refactors and debugging",
+            "Building prototypes or internal tools quickly, including by non-developers",
+            "Automating code generation, review or test runs inside CI pipelines"
           ],
           "whenNotToUse": [
-            "Security-critical code không có human review process",
-            "Codebase legacy phức tạp cần deep architectural understanding",
-            "Cần 100% deterministic, auditable code output"
+            "Security-critical code with no human review process",
+            "Large legacy codebases that need deep architectural understanding, without expert oversight",
+            "Situations requiring fully deterministic, auditable output"
           ],
           "compatibleWith": [
             "claude-code",
@@ -2543,6 +2569,8 @@
             "codex-cli",
             "gemini-cli",
             "cline-roocode",
+            "opencode",
+            "goose",
             "replit-agent",
             "kiro-aws"
           ],
@@ -2557,41 +2585,45 @@
           "name": "Chinese Open-Source AI",
           "slug": "chinese-open-source-ai",
           "icon": "🇨🇳",
-          "desc": "DeepSeek R1 shook the AI world — open-source reasoning model from China. Technology gap shrinking from months to weeks.",
+          "desc": "Open-weight models from Chinese labs — DeepSeek, Qwen, Kimi, GLM, MiniMax — close to the frontier, mostly permissively licensed, and a default choice for self-hosting.",
           "added_date": "2026-02-03",
-          "detail": "DeepSeek R1 caused shockwaves — open-source reasoning model from China, performance near GPT-4 at much lower cost. Qwen (Alibaba) continuously updated, competing directly with frontier models. US-China technology gap shrinking from months to weeks. Trend: China is no longer just 'copying' but 'innovating' — especially in efficiency and cost optimization.",
+          "detail": "DeepSeek-R1 (January 2025) showed that an open-weight reasoning model trained largely with reinforcement learning could rival leading proprietary reasoning models; the work was later published in Nature. Chinese labs have since become the main source of large open-weight models. Hugging Face's State of Open Models (Summer 2026) notes that Alibaba's Qwen and Tencent release across all sizes, Moonshot (Kimi), MiniMax and Z.ai (GLM) focus on very large models, and most releases use Apache 2.0 or MIT licenses — though some recent flagships added non-commercial or revenue-share terms. Stanford's 2026 AI Index finds US models still lead, but by a small margin. Caveat: a NIST CAISI evaluation (September 2025) found DeepSeek models more vulnerable to agent hijacking and jailbreaks — check each license and run your own safety evals.",
           "sources": [
             {
-              "title": "DeepSeek Official",
-              "url": "https://www.deepseek.com/"
-            },
-            {
-              "title": "DeepSeek R1 Paper",
+              "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (arXiv)",
               "url": "https://arxiv.org/abs/2501.12948"
             },
             {
-              "title": "Qwen (Alibaba)",
-              "url": "https://qwenlm.github.io/"
+              "title": "Hugging Face — State of Open Models: Summer 2026 Observations",
+              "url": "https://huggingface.co/blog/state-of-open-models-summer-2026"
+            },
+            {
+              "title": "NIST — CAISI Evaluation of DeepSeek AI Models Finds Shortcomings and Risks",
+              "url": "https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks"
+            },
+            {
+              "title": "Stanford HAI — AI Index Report 2026",
+              "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Cần model mạnh chi phí thấp",
-            "Fine-tune cho use case riêng",
-            "Self-host LLM để kiểm soát dữ liệu",
-            "Xây prototype nhanh với model mở"
+            "You need a strong model at low cost, or want to self-host to keep data in-house",
+            "Fine-tuning an open-weight model for your own domain or use case",
+            "Rapid prototyping with open models you can run, inspect and modify"
           ],
           "whenNotToUse": [
-            "Cần enterprise support chính hãng",
-            "Quy định nghiêm ngặt về nguồn gốc model",
-            "Không có hạ tầng GPU để chạy local"
+            "You need official enterprise support and contractual guarantees",
+            "Strict compliance rules on model origin or data jurisdiction apply",
+            "No GPU infrastructure to run large models, or no capacity to run your own safety evals"
           ],
           "compatibleWith": [
             "ollama",
             "vllm",
             "litellm",
+            "localai",
             "dify",
             "ragflow"
           ],
@@ -2604,8 +2636,8 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -2613,32 +2645,39 @@
           "name": "Post-Training > Pre-Training",
           "slug": "post-training-pre-training",
           "icon": "🧠",
-          "desc": "Trend toward post-training refinement instead of building larger models — RL and fine-tuning become the key.",
+          "desc": "Much of the recent progress in model capability comes after pre-training — from reinforcement learning, preference tuning and fine-tuning — not from scale alone.",
           "added_date": "2026-02-03",
-          "detail": "Major trend: instead of training larger models (pre-training costs $100M+), focus shifts to post-training refinement using RLHF, DPO, RLAIF. Fine-tuning becomes the key — small models + good fine-tuning can beat larger models. Reasoning models (o1, o3, DeepSeek R1) prove post-training matters more than model size.",
+          "detail": "Pre-training on huge corpora is still the foundation, but post-training now drives much of the visible progress. OpenAI's o1 (September 2024) showed that reasoning improves with more reinforcement-learning compute and more test-time \"thinking\"; DeepSeek-R1 (January 2025) showed that RL with rule-based, verifiable rewards can elicit strong reasoning in an open model. Core techniques: supervised fine-tuning, RLHF, RLAIF (Anthropic's Constitutional AI, 2022), DPO (2023) and RL with verifiable rewards (RLVR). Open recipes such as Ai2's Tülu 3 (November 2024) publish the data, code and evaluation needed to reproduce the full pipeline. For developers: a strong base model plus targeted fine-tuning or RL on your domain is often a cheaper path than moving to a bigger model.",
           "sources": [
             {
-              "title": "Anthropic — RLHF Research",
-              "url": "https://www.anthropic.com/research"
+              "title": "OpenAI — Learning to reason with LLMs",
+              "url": "https://openai.com/index/learning-to-reason-with-llms/"
             },
             {
-              "title": "OpenAI — Learning to Reason",
-              "url": "https://openai.com/index/learning-to-reason-with-llms/"
+              "title": "DeepSeek-R1 (arXiv)",
+              "url": "https://arxiv.org/abs/2501.12948"
+            },
+            {
+              "title": "Ai2 — Tülu 3: open post-training recipes",
+              "url": "https://allenai.org/blog/tulu-3"
+            },
+            {
+              "title": "Anthropic — Constitutional AI: Harmlessness from AI Feedback",
+              "url": "https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "advanced",
           "whenToUse": [
-            "Align model với human preferences",
-            "Tăng reasoning qua reinforcement learning",
-            "Cải thiện model chi phí thấp hơn pre-training",
-            "Fine-tune cho domain chuyên biệt"
+            "Aligning a model with human preferences or a specific style and policy",
+            "Improving reasoning on tasks with checkable answers via reinforcement learning",
+            "Specializing a model for a domain more cheaply than training or adopting a larger one"
           ],
           "whenNotToUse": [
-            "Chưa có base model đủ mạnh",
-            "Không có preference data hoặc verifiable rewards",
-            "Task đơn giản dùng prompt engineering là đủ"
+            "You don't have a sufficiently capable base model",
+            "No preference data, labeled examples or verifiable rewards",
+            "Prompt engineering or RAG already gets the task done"
           ],
           "compatibleWith": [
             "deepeval",
@@ -2655,8 +2694,8 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -2664,38 +2703,44 @@
           "name": "AI Drug Discovery",
           "slug": "ai-drug-discovery",
           "icon": "🏥",
-          "desc": "AI-discovered drugs entering mid/late-stage clinical trials. Focus: cancer and rare diseases.",
+          "desc": "AI for finding drug targets, predicting protein structures and designing molecules — a drug with an AI-found target and AI-designed molecule entered Phase III trials in 2026.",
           "added_date": "2026-02-03",
-          "detail": "AI accelerating new drug discovery — from 10-15 years down to 2-3 years for the discovery phase. AlphaFold predicts protein structures, Isomorphic Labs (Google) partnering with Eli Lilly and Novartis. Insilico Medicine advancing AI-designed drugs to Phase II clinical trials. Focus: cancer, rare diseases, new antibiotics.",
+          "detail": "AI now runs through early drug discovery: target identification, protein structure prediction, molecule generation and candidate screening. AlphaFold's creators shared the 2024 Nobel Prize in Chemistry, and AlphaFold 3 (May 2024, with Isomorphic Labs) predicts how proteins interact with DNA, RNA, ligands and antibodies. Isomorphic Labs, the Alphabet spin-off, partners with Eli Lilly, Novartis and Johnson & Johnson and is preparing its first clinical trials. In September 2026 Insilico Medicine dosed the first patient in a Phase III trial of rentosertib, a drug for idiopathic pulmonary fibrosis whose target and molecule were found with AI. Regulators are adapting: an FDA draft guidance (January 2025) sets a risk-based credibility framework for AI used in drug submissions. Caveat: AI shortens discovery, not clinical trials — rentosertib is still investigational.",
           "sources": [
             {
-              "title": "Isomorphic Labs",
-              "url": "https://www.isomorphiclabs.com/"
+              "title": "Google DeepMind — AlphaFold",
+              "url": "https://deepmind.google/technologies/alphafold/"
             },
             {
-              "title": "AlphaFold — Google DeepMind",
-              "url": "https://deepmind.google/technologies/alphafold/"
+              "title": "Isomorphic Labs — Partnerships",
+              "url": "https://www.isomorphiclabs.com/partnerships"
+            },
+            {
+              "title": "Insilico Medicine — First patient dosed in GENESIS-IPF-3 Phase III trial",
+              "url": "https://insilico.com/news/isn1009261-insilico-medicine-doses-first-patient-genesis-ipf-3"
+            },
+            {
+              "title": "FDA — Considerations for the Use of AI to Support Regulatory Decision-Making for Drug and Biological Products (draft guidance)",
+              "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-use-artificial-intelligence-support-regulatory-decision-making-drug-and-biological"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "advanced",
           "whenToUse": [
-            "Dự đoán cấu trúc protein",
-            "Thiết kế phân tử thuốc mới",
-            "Sàng lọc ứng viên thuốc quy mô lớn",
-            "Tối ưu thuộc tính dược lý bằng AI"
+            "Predicting protein structures and molecular interactions",
+            "Generating and screening drug candidates at scale",
+            "Prioritizing targets or optimizing molecular properties before lab work"
           ],
           "whenNotToUse": [
-            "Không có dữ liệu sinh học chuyên ngành",
-            "Cần kết quả lâm sàng ngay lập tức",
-            "Không có hạ tầng tính toán hiệu năng cao"
+            "No domain-specific biological or chemical data, or no wet-lab validation",
+            "You expect AI to shorten clinical trials or replace regulatory evidence",
+            "No access to high-performance compute or the relevant scientific expertise"
           ],
           "compatibleWith": [
-            "langfuse",
-            "pydantic-ai",
             "llamaindex",
-            "pgvector"
+            "pgvector",
+            "ai-infrastructure"
           ],
           "useCases": [
             "research",
@@ -2705,8 +2750,8 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -2714,32 +2759,39 @@
           "name": "AI Infrastructure",
           "slug": "ai-infrastructure",
           "icon": "⚡",
-          "desc": "Massive 1GW+ data centers, even using nuclear power for AI. A core battleground in the AI race.",
+          "desc": "Gigawatt-scale data centers, AI supercomputing and long-term power deals (including nuclear) — compute and electricity are now core battlegrounds in the AI race.",
           "added_date": "2026-02-03",
-          "detail": "Massive 1GW+ data centers being built — even using nuclear power. Microsoft, Google, and Amazon are pursuing long-term nuclear energy deals. AI infrastructure investment is accelerating rapidly. NVIDIA H100/H200 supply remains a key bottleneck.",
+          "detail": "MIT Technology Review listed hyperscale AI data centers among its 10 Breakthrough Technologies of 2026 — the largest facilities draw more than a gigawatt, as much as a city. Gartner ranks AI supercomputing platforms first among its strategic technology trends for 2026. Power is now the binding constraint: the IEA's Energy and AI report examines how data-centre electricity demand will be met, and since 2024 the largest cloud providers have signed long-term nuclear agreements — from restarting existing plants to buying power from future small modular reactors (Google with Kairos Power, October 2024). Bottlenecks have shifted from chip supply alone to electricity, grid capacity and water, and host communities increasingly push back on rising energy bills and local impact.",
           "sources": [
             {
-              "title": "Gartner — Top Tech Trends 2026",
-              "url": "https://www.gartner.com/en/newsroom/press-releases/2025-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2026"
+              "title": "MIT Technology Review — Hyperscale AI data centers: 10 Breakthrough Technologies 2026",
+              "url": "https://www.technologyreview.com/2026/01/12/1129982/hyperscale-ai-data-centers-energy-usage-2026-breakthrough-technology/"
             },
             {
-              "title": "IEA — Data Centres and Energy",
-              "url": "https://www.iea.org/energy-system/buildings/data-centres-and-data-transmission-networks"
+              "title": "IEA — Energy and AI",
+              "url": "https://www.iea.org/reports/energy-and-ai"
+            },
+            {
+              "title": "Google — New nuclear clean energy agreement with Kairos Power",
+              "url": "https://blog.google/outreach-initiatives/sustainability/google-kairos-power-nuclear-energy-agreement/"
+            },
+            {
+              "title": "Gartner — Top Strategic Technology Trends for 2026",
+              "url": "https://www.gartner.com/en/newsroom/press-releases/2025-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2026"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Triển khai AI ở quy mô production",
-            "Tối ưu chi phí GPU và compute",
-            "Xây hạ tầng inference gần người dùng",
-            "Quản lý cluster training phân tán"
+            "Deploying AI at production scale, including self-hosted inference",
+            "Optimizing GPU and compute costs or placing inference close to users",
+            "Planning or operating distributed training clusters"
           ],
           "whenNotToUse": [
-            "Chỉ dùng API cloud có sẵn",
-            "Prototype nhỏ không cần scale",
-            "Không có ngân sách hạ tầng chuyên dụng"
+            "Managed cloud APIs already cover your needs",
+            "Small prototypes that don't need to scale",
+            "No budget or team for dedicated infrastructure"
           ],
           "compatibleWith": [
             "ollama",
@@ -2756,8 +2808,8 @@
             "python",
             "go"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         },
@@ -2765,38 +2817,46 @@
           "name": "AI Governance",
           "slug": "ai-governance",
           "icon": "🔐",
-          "desc": "AI agents monitoring other AI agents — setting safety guardrails and keeping humans in the loop.",
+          "desc": "Laws, frameworks and tooling that keep AI safe, accountable and compliant — from the EU AI Act and NIST AI RMF to guardrails and human oversight for agents.",
           "added_date": "2026-02-03",
-          "detail": "AI agents monitoring other AI agents — 'governance agents' detecting policy violations. EU AI Act fully effective in 2026. Gartner predicts 2,000+ 'death by AI' lawsuits by late 2026 due to missing guardrails. 'Bounded autonomy' — agents with clear action limits, escalation paths when uncertain. Trend: compliance-by-design instead of compliance-as-afterthought.",
+          "detail": "Governance is moving from policy documents to engineering practice. The EU AI Act entered into force in August 2024: bans on prohibited practices apply from February 2025, general-purpose AI obligations from August 2025, and most other rules, including transparency duties, from 2 August 2026. The AI Omnibus, adopted in 2026, postponed high-risk requirements to 2 December 2027 for stand-alone uses such as hiring and education, and to 2 August 2028 for AI built into regulated products. In the US, NIST's AI Risk Management Framework (2023) and its Generative AI Profile (2024) are the common voluntary baseline. For agents, OWASP's Top 10 for Agentic Applications (December 2025) maps the main risks, and practice converges on \"bounded autonomy\": least privilege, approval gates, audit logs and monitoring agents. Trend: compliance-by-design, not compliance as an afterthought.",
           "sources": [
             {
-              "title": "EU AI Act",
-              "url": "https://artificialintelligenceact.eu/"
+              "title": "European Commission — AI Act (regulatory framework for AI)",
+              "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
             },
             {
-              "title": "Gartner — Strategic Predictions 2026",
-              "url": "https://www.gartner.com/en/articles/strategic-predictions-for-2026"
+              "title": "Future of Privacy Forum — The AI Act implementation timeline under the AI Omnibus",
+              "url": "https://fpf.org/blog/the-ai-act-implementation-timeline-what-changes-under-the-ai-omnibus"
+            },
+            {
+              "title": "NIST — AI Risk Management Framework",
+              "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+            },
+            {
+              "title": "OWASP — Top 10 for Agentic Applications for 2026",
+              "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/"
             }
           ],
           "pricing": "free",
           "deployment": "cloud",
           "difficulty": "intermediate",
           "whenToUse": [
-            "Tuân thủ EU AI Act hoặc quy định AI",
-            "Đánh giá rủi ro hệ thống AI",
-            "Xây dựng quy trình AI có trách nhiệm",
-            "Kiểm soát bias và fairness trong model"
+            "Complying with the EU AI Act or other AI regulation in the markets you serve",
+            "Assessing risk before deploying AI that affects customers or employees",
+            "Putting guardrails, approval steps and audit trails around autonomous agents"
           ],
           "whenNotToUse": [
-            "Prototype giai đoạn rất sớm",
-            "AI chỉ dùng nội bộ không ảnh hưởng end-user",
-            "Không hoạt động trong thị trường có quy định"
+            "Very early prototypes with no real users or real data yet",
+            "Purely internal experiments with no impact on end users",
+            "Low-risk use outside regulated markets, where a full formal program is overkill — start with lightweight guardrails"
           ],
           "compatibleWith": [
             "garak",
             "nemo-guardrails",
             "presidio",
             "guardrails-ai",
+            "promptfoo",
             "langfuse"
           ],
           "useCases": [
@@ -2808,8 +2868,8 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-02-27",
-          "verification_source": "inferred",
+          "verified_at": "2026-10-30",
+          "verification_source": "docs",
           "github_stars": null,
           "license": null
         }
@@ -3834,16 +3894,15 @@
         {
           "name": "garak",
           "slug": "garak",
-          "desc": "LLM vulnerability scanner – probes security flaws in AI models",
+          "desc": "Open-source LLM vulnerability scanner backed by NVIDIA — probes models and LLM apps for jailbreaks, prompt injection, data leakage and more",
           "hot": true,
           "added_date": "2026-02-08",
           "tags": [
-            "7K⭐",
             "NVIDIA",
             "Apache 2.0"
           ],
           "tagColor": "#76b900",
-          "detail": "garak is the \"nmap for LLMs\" – a vulnerability scanner built specifically for large language models, developed by NVIDIA. Tests for hallucination, data leakage, prompt injection, jailbreak, toxicity generation and many other attack vectors. garak operates on a modular architecture with probes (generate test interactions), detectors (identify bad behavior), and evaluators (assess results). Supports scanning models from Hugging Face, OpenAI, Ollama, LiteLLM and virtually any REST endpoint.\n\nWorks well with: NeMo Guardrails · Ollama · LiteLLM · Promptfoo",
+          "detail": "garak (Generative AI Red-teaming & Assessment Kit) is an open-source command-line scanner that checks whether an LLM or an LLM-backed application can be made to fail in ways you don't want — often described as \"nmap for LLMs\". It is backed by NVIDIA, with community contributions. garak probes for hallucination, data leakage, prompt injection, misinformation, toxicity generation, jailbreaks and other weaknesses, combining static, dynamic and adaptive probes. A run wires together generators (connectors to the target), probes (attack prompts), detectors (spot failures), a harness (orchestrates the run) and evaluators (score results), then writes a JSONL report plus a hit log of attacks that succeeded. Targets include Hugging Face models, OpenAI, AWS Bedrock, LiteLLM, Ollama, NVIDIA NIM endpoints, OpenAI-compatible servers, NeMo Guardrails configurations and almost any REST endpoint. garak is an assessment tool, not a runtime filter: it shows where a system breaks, it does not block traffic. Best for: security and ML teams red-teaming a model, chatbot or guardrail setup before release, and re-scanning after changes.\n\nWorks well with: NeMo Guardrails · Ollama · LiteLLM · vLLM",
           "sources": [
             {
               "title": "GitHub",
@@ -3854,23 +3913,22 @@
               "url": "https://garak.ai/"
             },
             {
-              "title": "Docs",
-              "url": "https://garak.readthedocs.io/"
+              "title": "User guide",
+              "url": "https://docs.garak.ai/garak/"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "LLM security assessment and vulnerability scanning before deployment",
-            "red-teaming LLM applications for jailbreaks and prompt injection",
-            "automated probe-based testing across multiple failure modes",
-            "CI/CD integration for ongoing LLM security regression testing"
+            "Red-teaming a model or chatbot for jailbreaks, prompt injection and data leakage before release",
+            "Measuring how much a guardrail or system-prompt change actually reduces attack success",
+            "Re-running the same probe set after model, prompt or config changes to catch security regressions"
           ],
           "whenNotToUse": [
-            "runtime protection or guardrails (use NeMo Guardrails or Guardrails AI)",
-            "non-LLM application security testing",
-            "when need real-time blocking rather than assessment reports"
+            "Runtime protection that blocks bad inputs or outputs in production (use NeMo Guardrails or Guardrails AI)",
+            "Security testing of non-LLM software such as web apps, networks or infrastructure",
+            "You want a hosted, point-and-click red-teaming service — garak is a CLI you run yourself"
           ],
           "compatibleWith": [
             "ollama",
@@ -3887,23 +3945,22 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 7353,
+          "github_stars": 9768,
           "license": "Apache-2.0"
         },
         {
           "name": "NeMo Guardrails",
           "slug": "nemo-guardrails",
-          "desc": "Programmable guardrails for LLMs with Colang DSL – dialog control and safety",
+          "desc": "NVIDIA's open-source toolkit for programmable guardrails on LLM apps — input, dialog, retrieval, execution and output rails, defined with Colang",
           "added_date": "2026-02-08",
           "tags": [
-            "5.5K⭐",
             "NVIDIA",
             "Apache 2.0"
           ],
           "tagColor": "#76b900",
-          "detail": "NeMo Guardrails is an open-source toolkit from NVIDIA for adding programmable guardrails to LLM applications. Uses Colang – a custom DSL for defining conversation flows, topic control, fact-checking and jailbreak prevention. Supports input/output rails, dialog rails, and retrieval rails. Integrates natively with LangChain, LlamaIndex, and NVIDIA NIM microservices for content safety and topic control. Especially suited for enterprise AI requiring strict control over interaction flows.\n\nWorks well with: garak · LangGraph · LlamaIndex · Ollama",
+          "detail": "NeMo Guardrails is NVIDIA's open-source Python library for adding programmable guardrails between your application code and the LLM. Rails run at five stages — input, dialog, retrieval (RAG chunks), execution (tool and action calls) and output — and can block, rewrite or mask content. Dialog flows and guardrail logic are written in Colang (versions 1.0 and 2.0 are supported), with YAML for models and rail settings. The built-in catalog covers LLM self-checks (moderation, fact-checking, hallucination), jailbreak and injection detection, topic control, PII masking via Presidio, and NVIDIA NemoGuard safety models for content safety, topic control and jailbreak detection, which can run as NIM microservices. It can also call third-party checks such as Guardrails AI validators and Llama Guard. You use it through the Python API or an OpenAI-style guardrails server; LangChain and LangGraph integration is optional. For production on Kubernetes, NVIDIA offers a NeMo Guardrails microservice through NVIDIA AI Enterprise. The library sends anonymous usage telemetry to NVIDIA by default (opt out with an environment variable). Best for: teams building chatbots, RAG assistants or agents that need policy-driven, auditable control over what goes into and comes out of the model.\n\nWorks well with: LangGraph · Presidio · Guardrails AI · garak · Ollama · vLLM",
           "sources": [
             {
               "title": "GitHub",
@@ -3918,22 +3975,22 @@
           "deployment": "self-hosted",
           "difficulty": "intermediate",
           "whenToUse": [
-            "topic control and content filtering for LLM chatbots",
-            "jailbreak detection in production conversational agents",
-            "multi-rail orchestration with configurable policies",
-            "dialog flow control with Colang DSL"
+            "Keeping a chatbot or RAG assistant on approved topics and enforcing scripted dialog flows with Colang",
+            "Layering jailbreak, content-safety and PII checks on user input, retrieved chunks and model output",
+            "Combining NVIDIA NemoGuard models with third-party checks (Presidio, Guardrails AI, Llama Guard) in one guardrails config"
           ],
           "whenNotToUse": [
-            "non-conversational LLM use cases (batch processing, code gen)",
-            "when minimal added latency is critical",
-            "simple output format validation only (Guardrails AI may suffice)"
+            "Latency-critical paths where an extra model call per LLM-based rail is unacceptable",
+            "You only need schema or type validation of LLM output (Guardrails AI or plain Pydantic validation is lighter)",
+            "Finding vulnerabilities before release — scan with garak first, then add rails"
           ],
           "compatibleWith": [
             "langgraph",
-            "llamaindex",
-            "litellm",
             "presidio",
-            "langfuse"
+            "guardrails-ai",
+            "garak",
+            "ollama",
+            "vllm"
           ],
           "useCases": [
             "chatbot-safety",
@@ -3944,51 +4001,53 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 5847,
+          "github_stars": 7397,
           "license": "Apache-2.0"
         },
         {
           "name": "Presidio",
           "slug": "presidio",
-          "desc": "PII detection & anonymization for text and images – protecting personal data",
+          "desc": "Open-source PII detection and anonymization for text, images and structured data — community-governed, originally created at Microsoft",
           "added_date": "2026-02-08",
           "tags": [
-            "7K⭐",
-            "Microsoft",
+            "Data Privacy Stack",
             "MIT"
           ],
           "tagColor": "#0078d4",
-          "detail": "Presidio is an open-source framework from Microsoft for detecting, redacting, masking and anonymizing sensitive data (PII) in text, images and structured data. Combines NLP (spaCy, transformers), regex patterns, rule-based logic and checksums to identify credit cards, names, addresses, SSNs, emails, phone numbers and many other PII types. Supports multiple languages and can be extended with custom recognizers. Deployable via Python packages or Docker containers, integrates well with LLM pipelines to sanitize data before sending to models.\n\nWorks well with: LangChain · LiteLLM · Guardrails AI · NeMo Guardrails",
+          "detail": "Presidio is an open-source SDK for finding and de-identifying sensitive data (PII). It was originally created at Microsoft and is now an independent, community-governed project under the Data Privacy Stack GitHub organization; it is still MIT-licensed, and old microsoft/presidio links redirect to the new home. It has four modules: Analyzer (detects PII in text), Anonymizer (replace, mask, redact or encrypt detected entities, with reversible decryption), Image Redactor (OCR-based redaction, including DICOM medical images) and Structured (tabular and semi-structured data). Detection combines NER models (spaCy, Stanza, transformers), regex, rule-based logic, checksums and surrounding context, works across multiple languages and can call external models such as GLiNER. It runs from Python or PySpark, as Docker containers (now published on GitHub Container Registry) or on Kubernetes. In LLM pipelines it is commonly used to mask prompts before they reach a model, for example through the LiteLLM proxy PII-masking guardrail, NeMo Guardrails sensitive-data rails or the Guardrails AI detect_pii validator. The docs warn that automated detection can miss PII, so treat it as one protective layer, not a guarantee. Best for: teams that must strip or mask personal data before logging, model training, RAG indexing or sending prompts to third-party LLMs.\n\nWorks well with: NeMo Guardrails · LiteLLM · Guardrails AI",
           "sources": [
             {
               "title": "GitHub",
-              "url": "https://github.com/microsoft/presidio"
+              "url": "https://github.com/data-privacy-stack/presidio"
             },
             {
-              "title": "Website",
-              "url": "https://microsoft.github.io/presidio/"
+              "title": "Docs",
+              "url": "https://presidio.dataprivacystack.org/"
+            },
+            {
+              "title": "Project transition update",
+              "url": "https://presidio.dataprivacystack.org/project_transition/"
             }
           ],
           "pricing": "free",
           "deployment": "hybrid",
           "difficulty": "intermediate",
           "whenToUse": [
-            "PII detection and anonymization in LLM pipelines",
-            "text de-identification before model training or logging",
-            "privacy-aware data preprocessing for RAG systems",
-            "custom PII recognizer development with NLP/regex"
+            "Masking PII in prompts before they reach a third-party LLM, e.g. behind a LiteLLM proxy",
+            "De-identifying text, tables or images before logging, model training or RAG indexing",
+            "Building custom recognizers for domain- or country-specific identifiers in multiple languages"
           ],
           "whenNotToUse": [
-            "real-time high-throughput stream processing without tuning",
-            "non-text PII detection (audio, video) beyond image redaction",
-            "when only simple regex-based masking is needed"
+            "You need guaranteed, complete PII removal — the docs warn automated detection can miss entities",
+            "PII in audio or video (coverage is text, images including DICOM, and structured data)",
+            "Simple fixed-format masking that a few regular expressions already handle"
           ],
           "compatibleWith": [
             "nemo-guardrails",
             "litellm",
-            "dify"
+            "guardrails-ai"
           ],
           "useCases": [
             "pii-detection",
@@ -3999,54 +4058,57 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 7368,
+          "github_stars": 11582,
           "license": "MIT"
         },
         {
           "name": "Guardrails AI",
           "slug": "guardrails-ai",
-          "desc": "I/O validation framework for LLMs – structured output + 100+ validators",
+          "desc": "Python framework for LLM input/output guards and validated structured output — composable validators installed as PyPI packages",
           "added_date": "2026-02-08",
           "tags": [
-            "6.5K⭐",
-            "MIT"
+            "Apache 2.0"
           ],
           "tagColor": "#8b5cf6",
-          "detail": "Guardrails AI is a Python framework for building reliable AI applications by running Input/Output Guards that detect, measure and mitigate various risk types. Guardrails Hub provides 100+ ready-made validators including: PII detection, toxic language, competitor mentions, bias, prompt injection and many more. Supports validating structured data from LLM output with automatic reask when output fails to meet standards. Can be deployed as a standalone service via REST API, integrates easily with OpenAI, Anthropic, and any LLM provider.\n\nWorks well with: LangChain · Presidio · Promptfoo · LiteLLM",
+          "detail": "Guardrails AI is an open-source (Apache 2.0) Python framework that does two jobs. It runs Input/Output Guards that detect, quantify and mitigate specific risks in LLM traffic, and it helps generate structured data from LLMs using Pydantic models or RAIL specs, automatically re-asking the model when output fails validation. Guards are built from validators — such as regex match, competitor mentions, toxic language, PII detection (Presidio-based) and jailbreak detection — browsable in the Guardrails Hub catalog. Since August 2026 each validator installs as a standalone PyPI package (guardrails-ai-<name>): the old hub install command, the private registry and the free hosted remote-inference endpoints were shut down, so model-based validators now run locally or on your own endpoint. Guards run in-process or behind Guardrails Server (Flask, with OpenAI-compatible endpoints) and work with OpenAI, Anthropic, LiteLLM-supported models, LangChain and LlamaIndex. Status note: in September 2026 Harvey acquired Guardrails AI, and the announcement made no public commitment about the open-source roadmap, so check recent repository activity before adopting it. Best for: Python teams that need typed, validated LLM output and lightweight, composable input/output checks.\n\nWorks well with: LiteLLM · NeMo Guardrails · Presidio · LlamaIndex",
           "sources": [
             {
               "title": "GitHub",
               "url": "https://github.com/guardrails-ai/guardrails"
             },
             {
-              "title": "Website",
-              "url": "https://www.guardrailsai.com/"
-            },
-            {
               "title": "Docs",
               "url": "https://guardrailsai.com/docs"
+            },
+            {
+              "title": "Validator catalog (Guardrails Hub)",
+              "url": "https://www.guardrailsai.com/hub"
+            },
+            {
+              "title": "Hub sunset and migration notice",
+              "url": "https://github.com/guardrails-ai/guardrails/issues/1560"
             }
           ],
           "pricing": "free",
           "deployment": "self-hosted",
           "difficulty": "beginner",
           "whenToUse": [
-            "structured output validation and type enforcement from LLMs",
-            "composable input/output guards with Hub validators",
-            "risk detection and mitigation via validator marketplace",
-            "LLM reliability improvement with auto-reask on failure"
+            "Enforcing a Pydantic schema on LLM output, with automatic re-ask when validation fails",
+            "Composing input/output checks (PII, toxicity, competitor mentions, jailbreak) from ready-made validators",
+            "Serving guards as an OpenAI-compatible endpoint through Guardrails Server"
           ],
           "whenNotToUse": [
-            "conversational flow control (NeMo Guardrails is more suitable)",
+            "Dialog flow and topic control for multi-turn chatbots (NeMo Guardrails fits better)",
             "LLM vulnerability scanning and red-teaming (use garak)",
-            "non-Python tech stacks without REST API bridge"
+            "You need a vendor-backed long-term roadmap — the company was acquired by Harvey in 2026 and open-source maintenance is not publicly committed"
           ],
           "compatibleWith": [
             "litellm",
-            "langfuse",
-            "deepeval"
+            "nemo-guardrails",
+            "presidio",
+            "llamaindex"
           ],
           "useCases": [
             "output-validation",
@@ -4057,9 +4119,9 @@
           "languages": [
             "python"
           ],
-          "verified_at": "2026-03-24",
+          "verified_at": "2026-10-30",
           "verification_source": "docs",
-          "github_stars": 6582,
+          "github_stars": 7569,
           "license": "Apache-2.0"
         }
       ]

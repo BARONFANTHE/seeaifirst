@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Post-Training &gt; Pre-Training — See AI First</title>
-<meta name="description" content="Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.">
+<meta name="description" content="Phần lớn tiến bộ gần đây của model đến từ giai đoạn sau pre-training — reinforcement learning, preference tuning, fine-tuning — chứ không chỉ từ việc tăng qu...">
 <meta property="og:title" content="Post-Training &gt; Pre-Training — See AI First">
-<meta property="og:description" content="Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.">
+<meta property="og:description" content="Phần lớn tiến bộ gần đây của model đến từ giai đoạn sau pre-training — reinforcement learning, preference tuning, fine-tuning — chứ không chỉ từ việc tăng qu...">
 <meta property="og:url" content="https://seeaifirst.com/vi/tool/post-training-pre-training">
 <meta property="og:locale" content="vi_VN">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:title" content="Post-Training &gt; Pre-Training — See AI First">
-<meta name="twitter:description" content="Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.">
+<meta name="twitter:description" content="Phần lớn tiến bộ gần đây của model đến từ giai đoạn sau pre-training — reinforcement learning, preference tuning, fine-tuning — chứ không chỉ từ việc tăng qu...">
 <link rel="canonical" href="https://seeaifirst.com/vi/tool/post-training-pre-training">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Post-Training > Pre-Training","url":"https://seeaifirst.com/vi/tool/post-training-pre-training","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.","keywords":["AI Trends 2026 — Xu hướng đang định hình tương lai","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.anthropic.com/research","https://openai.com/index/learning-to-reason-with-llms/"],"datePublished":"2026-02-03","dateModified":"2026-02-27","@context":"https://schema.org","inLanguage":"vi"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Post-Training > Pre-Training","url":"https://seeaifirst.com/vi/tool/post-training-pre-training","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Phần lớn tiến bộ gần đây của model đến từ giai đoạn sau pre-training — reinforcement learning, preference tuning, fine-tuning — chứ không chỉ từ việc tăng quy mô.","keywords":["AI Trends 2026 — Xu hướng đang định hình tương lai","python"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://openai.com/index/learning-to-reason-with-llms/","https://arxiv.org/abs/2501.12948","https://allenai.org/blog/tulu-3","https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback"],"datePublished":"2026-02-03","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"vi"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,20 +1090,19 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/vi/">See AI First</a> › <a href="/vi/section/trends">AI Trends 2026 — Xu hướng đang định hình tương lai</a> › Post-Training &gt; Pre-Training</nav>
     <article>
       <h1>Post-Training &gt; Pre-Training</h1>
-      <p>Xu hướng tinh chỉnh sau huấn luyện thay vì làm model lớn hơn — RL và fine-tuning trở thành chìa khóa.</p>
-      <p>Xu hướng lớn: thay vì train model lớn hơn (pre-training tốn $100M+), giờ tập trung tinh chỉnh sau huấn luyện (post-training) bằng RLHF, DPO, RLAIF. Fine-tuning trở thành chìa khóa — model nhỏ + fine-tune tốt có thể đánh bại model lớn. Reasoning models (o1, o3, DeepSeek R1) chứng minh post-training quan trọng hơn kích thước model.</p>
+      <p>Phần lớn tiến bộ gần đây của model đến từ giai đoạn sau pre-training — reinforcement learning, preference tuning, fine-tuning — chứ không chỉ từ việc tăng quy mô.</p>
+      <p>Pre-training trên kho dữ liệu khổng lồ vẫn là nền móng, nhưng post-training giờ tạo ra phần lớn tiến bộ thấy được. o1 của OpenAI (09/2024) cho thấy khả năng suy luận tăng theo compute dành cho reinforcement learning và thời gian &quot;suy nghĩ&quot; lúc test; DeepSeek-R1 (01/2025) cho thấy RL với reward kiểm chứng được theo luật có thể khơi ra năng lực suy luận mạnh ở model mở. Kỹ thuật cốt lõi: supervised fine-tuning, RLHF, RLAIF (Constitutional AI của Anthropic, 2022), DPO (2023) và RL with verifiable rewards (RLVR). Các recipe mở như Tülu 3 của Ai2 (11/2024) công bố data, code và bộ evaluation để tái lập toàn bộ pipeline. Với developer: base model mạnh cộng fine-tuning hoặc RL nhắm đúng domain thường là con đường rẻ hơn so với chuyển sang model lớn hơn.</p>
       <h2>Khi nào nên dùng</h2>
       <ul>
-        <li>Align model với human preferences</li>
-        <li>Tăng reasoning qua reinforcement learning</li>
-        <li>Cải thiện model chi phí thấp hơn pre-training</li>
-        <li>Fine-tune cho domain chuyên biệt</li>
+        <li>Align model theo human preferences hoặc một style/policy cụ thể</li>
+        <li>Tăng khả năng suy luận cho task có đáp án kiểm chứng được bằng reinforcement learning</li>
+        <li>Chuyên biệt hóa model cho một domain với chi phí thấp hơn train hay dùng model lớn hơn</li>
       </ul>
       <h2>Khi nào không nên dùng</h2>
       <ul>
         <li>Chưa có base model đủ mạnh</li>
-        <li>Không có preference data hoặc verifiable rewards</li>
-        <li>Task đơn giản dùng prompt engineering là đủ</li>
+        <li>Không có preference data, dữ liệu gán nhãn hay verifiable rewards</li>
+        <li>Prompt engineering hoặc RAG đã đủ giải quyết</li>
       </ul>
       <h2>Thông tin nhanh</h2>
       <dl>
@@ -1112,7 +1111,7 @@ html, body {
         <dt>Độ khó</dt><dd>Nâng cao</dd>
         <dt>Ngôn ngữ</dt><dd>python</dd>
         <dt>Ứng dụng</dt><dd>model experimentation, research, evaluation</dd>
-        <dt>Xác minh lần cuối</dt><dd>2026-02-27 (suy luận từ dữ liệu đã công bố)</dd>
+        <dt>Xác minh lần cuối</dt><dd>2026-10-30 (tài liệu chính thức)</dd>
       </dl>
       <h2>Kết hợp tốt với</h2>
       <ul>
@@ -1133,8 +1132,10 @@ html, body {
       <p><a href="/vi/section/trends">Xem tất cả 9 công cụ trong AI Trends 2026 — Xu hướng đang định hình tương lai →</a></p>
       <h2>Nguồn</h2>
       <ul>
-        <li><a href="https://www.anthropic.com/research" rel="noopener noreferrer">Anthropic — RLHF Research</a></li>
-        <li><a href="https://openai.com/index/learning-to-reason-with-llms/" rel="noopener noreferrer">OpenAI — Learning to Reason</a></li>
+        <li><a href="https://openai.com/index/learning-to-reason-with-llms/" rel="noopener noreferrer">OpenAI — Dạy LLM suy luận</a></li>
+        <li><a href="https://arxiv.org/abs/2501.12948" rel="noopener noreferrer">DeepSeek-R1: tăng năng lực suy luận của LLM bằng reinforcement learning (arXiv)</a></li>
+        <li><a href="https://allenai.org/blog/tulu-3" rel="noopener noreferrer">Ai2 — Tülu 3: recipe post-training mở</a></li>
+        <li><a href="https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback" rel="noopener noreferrer">Anthropic — Constitutional AI: an toàn nhờ AI feedback</a></li>
       </ul>
       <footer>
         <p>Thuộc danh mục <a href="/vi/section/trends">AI Trends 2026 — Xu hướng đang định hình tương lai</a> trên See AI First.</p>

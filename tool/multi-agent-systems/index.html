@@ -6,16 +6,16 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
 
 <title>Multi-Agent Systems — See AI First</title>
-<meta name="description" content="Multi-agent AI systems working in coordination — Gartner reports 1,445% surge in interest. 40% of enterprise apps will use agents by late 2026.">
+<meta name="description" content="Teams of specialized AI agents that plan, delegate and check each other&#039;s work — increasingly connected through open protocols (MCP, A2A) governed by the Age...">
 <meta property="og:title" content="Multi-Agent Systems — See AI First">
-<meta property="og:description" content="Multi-agent AI systems working in coordination — Gartner reports 1,445% surge in interest. 40% of enterprise apps will use agents by late 2026.">
+<meta property="og:description" content="Teams of specialized AI agents that plan, delegate and check each other&#039;s work — increasingly connected through open protocols (MCP, A2A) governed by the Age...">
 <meta property="og:url" content="https://seeaifirst.com/tool/multi-agent-systems">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="vi_VN">
 <meta name="twitter:title" content="Multi-Agent Systems — See AI First">
-<meta name="twitter:description" content="Multi-agent AI systems working in coordination — Gartner reports 1,445% surge in interest. 40% of enterprise apps will use agents by late 2026.">
+<meta name="twitter:description" content="Teams of specialized AI agents that plan, delegate and check each other&#039;s work — increasingly connected through open protocols (MCP, A2A) governed by the Age...">
 <link rel="canonical" href="https://seeaifirst.com/tool/multi-agent-systems">
-<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Multi-Agent Systems","url":"https://seeaifirst.com/tool/multi-agent-systems","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Multi-agent AI systems working in coordination — Gartner reports 1,445% surge in interest. 40% of enterprise apps will use agents by late 2026.","keywords":["AI Trends 2026 — Trends Shaping the Future","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025","https://www.gartner.com/en/articles/multiagent-systems","https://machinelearningmastery.com/7-agentic-ai-trends-to-watch-in-2026/"],"datePublished":"2026-02-03","dateModified":"2026-02-27","@context":"https://schema.org","inLanguage":"en"}</script>
+<script type="application/ld+json" id="seeaifirst-jsonld">{"@type":"SoftwareApplication","name":"Multi-Agent Systems","url":"https://seeaifirst.com/tool/multi-agent-systems","applicationCategory":"DeveloperApplication","operatingSystem":"Cross-platform","description":"Teams of specialized AI agents that plan, delegate and check each other's work — increasingly connected through open protocols (MCP, A2A) governed by the Agentic AI Foundation.","keywords":["AI Trends 2026 — Trends Shaping the Future","python","js"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://www.gartner.com/en/newsroom/press-releases/2025-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2026","https://www.gartner.com/en/articles/multiagent-systems","https://www.anthropic.com/engineering/multi-agent-research-system","https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"],"datePublished":"2026-02-03","dateModified":"2026-10-30","@context":"https://schema.org","inLanguage":"en"}</script>
 
 <!-- Static OG (shared across all routes) -->
 <meta property="og:type" content="website">
@@ -1090,8 +1090,20 @@ html, body {
     <nav aria-label="Breadcrumb"><a href="/">See AI First</a> › <a href="/section/trends">AI Trends 2026 — Trends Shaping the Future</a> › Multi-Agent Systems</nav>
     <article>
       <h1>Multi-Agent Systems</h1>
-      <p>Multi-agent AI systems working in coordination — Gartner reports 1,445% surge in interest. 40% of enterprise apps will use agents by late 2026.</p>
-      <p>Gartner reports queries about multi-agent systems surged 1,445% from Q1/2024 to Q2/2025. Predicted 40% of enterprise apps will integrate AI agents by late 2026 (vs 5% in 2025). By 2027, 70% of MAS will use specialized agents instead of general-purpose ones. Agentic AI market from $7.8B (2025) to $52B (2030). Trend: from monolithic agents to orchestrated teams — similar to the microservices revolution.</p>
+      <p>Teams of specialized AI agents that plan, delegate and check each other&#039;s work — increasingly connected through open protocols (MCP, A2A) governed by the Agentic AI Foundation.</p>
+      <p>Instead of one general-purpose agent, a multi-agent system splits work across specialized agents — typically an orchestrator that plans and delegates to workers, each with its own tools and context. Gartner named Multiagent Systems one of its top strategic technology trends for 2026, while flagging reliability, unpredictable cost and immature interoperability as barriers. Anthropic&#039;s write-up of its multi-agent research system (June 2025) shows where the pattern pays off — broad, parallelizable tasks — and where it doesn&#039;t: it burns far more tokens, and tightly coupled work such as most coding gains less. Interoperability is consolidating: the Linux Foundation formed the Agentic AI Foundation (AAIF) in December 2025 around MCP, goose and AGENTS.md, and A2A joined it in August 2026. Trend: from monolithic agents to orchestrated teams — similar to the shift to microservices.</p>
+      <h2>When to use</h2>
+      <ul>
+        <li>A complex workflow splits into parallel subtasks that benefit from specialized agents</li>
+        <li>Automating an end-to-end process rather than isolated single tasks</li>
+        <li>The job exceeds one context window or needs many different tools</li>
+      </ul>
+      <h2>When not to use</h2>
+      <ul>
+        <li>A single agent or one LLM call already solves the task</li>
+        <li>No observability, cost controls or governance for a distributed system yet</li>
+        <li>Tightly coupled work where every agent needs the same shared context</li>
+      </ul>
       <h2>At a glance</h2>
       <dl>
         <dt>Pricing</dt><dd>Free</dd>
@@ -1099,7 +1111,7 @@ html, body {
         <dt>Difficulty</dt><dd>Intermediate</dd>
         <dt>Languages</dt><dd>python, js</dd>
         <dt>Use cases</dt><dd>multi agent orchestration, enterprise automation, workflow orchestration, agent orchestration</dd>
-        <dt>Last verified</dt><dd>2026-02-27 (inference from documented facts)</dd>
+        <dt>Last verified</dt><dd>2026-10-30 (official documentation)</dd>
       </dl>
       <h2>Works well with</h2>
       <ul>
@@ -1108,9 +1120,10 @@ html, body {
         <li><a href="/tool/langgraph">LangGraph</a></li>
         <li><a href="/tool/openai-agents-sdk">OpenAI Agents SDK</a></li>
         <li><a href="/tool/google-adk">Google ADK</a></li>
+        <li><a href="/tool/agentscope">AgentScope</a></li>
         <li><a href="/tool/mcp">MCP — Model Context Protocol</a></li>
         <li><a href="/tool/a2a">A2A — Agent2Agent Protocol</a></li>
-        <li><a href="/tool/claude-flow">Claude-Flow</a></li>
+        <li><a href="/tool/claude-flow">Ruflo (formerly Claude Flow)</a></li>
       </ul>
       <h2>Alternatives in this category</h2>
       <ul>
@@ -1123,9 +1136,10 @@ html, body {
       <p><a href="/section/trends">See all 9 tools in AI Trends 2026 — Trends Shaping the Future →</a></p>
       <h2>Sources</h2>
       <ul>
-        <li><a href="https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025" rel="noopener noreferrer">Gartner — 40% Enterprise Apps with AI Agents by 2026</a></li>
+        <li><a href="https://www.gartner.com/en/newsroom/press-releases/2025-10-20-gartner-identifies-the-top-strategic-technology-trends-for-2026" rel="noopener noreferrer">Gartner — Top Strategic Technology Trends for 2026</a></li>
         <li><a href="https://www.gartner.com/en/articles/multiagent-systems" rel="noopener noreferrer">Gartner — Multiagent Systems in Enterprise AI</a></li>
-        <li><a href="https://machinelearningmastery.com/7-agentic-ai-trends-to-watch-in-2026/" rel="noopener noreferrer">7 Agentic AI Trends 2026</a></li>
+        <li><a href="https://www.anthropic.com/engineering/multi-agent-research-system" rel="noopener noreferrer">Anthropic — How we built our multi-agent research system</a></li>
+        <li><a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" rel="noopener noreferrer">Linux Foundation — Formation of the Agentic AI Foundation</a></li>
       </ul>
       <footer>
         <p>Part of <a href="/section/trends">AI Trends 2026 — Trends Shaping the Future</a> on See AI First.</p>
