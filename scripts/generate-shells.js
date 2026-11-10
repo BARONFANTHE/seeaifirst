@@ -357,6 +357,14 @@ for (const t of retiredTools) {
   assert(t.name && t.retired_on && t.reason && t.reason.en && t.reason.vi, `Retired "${t.slug}": missing name/retired_on/reason`);
 }
 
+// hreflang pairs: every EN route has a VI counterpart and vice versa
+{
+  const enUrls = new Set(enRoutes.map(r => r.url));
+  const viUrls = new Set(viRoutes.map(r => r.url));
+  for (const u of enUrls) assert(viUrls.has(u === '/' ? '/vi/' : '/vi' + u), `hreflang: EN route "${u}" has no VI counterpart`);
+  for (const u of viUrls) assert(enUrls.has(u === '/vi/' ? '/' : u.replace(/^\/vi/, '')), `hreflang: VI route "${u}" has no EN counterpart`);
+}
+
 console.log(`✓ All assertions passed (${totalRoutes} routes, ${newFiles} new files, ${retiredTools.length} retired tools)`);
 
 // ── Head content generator ──────────────────────────────────────────
@@ -426,10 +434,23 @@ function generateHeadContent(route) {
     `<meta property="og:locale:alternate" content="${altLocale}">`,
     `<meta name="twitter:title" content="${escapeHtml(title)}">`,
     `<meta name="twitter:description" content="${escapeHtml(description)}">`,
-    `<link rel="canonical" href="${escapeHtml(fullUrl)}">`
+    `<link rel="canonical" href="${escapeHtml(fullUrl)}">`,
+    ...generateHreflangTags(url)
   ].join('\n');
 
   return metaTags + '\n' + generateRouteJsonLd(route);
+}
+
+// hreflang (static): same values as updateHeadTags() in index.html, so the SPA's
+// cleanup (link[data-saf-hreflang]) replaces these tags instead of duplicating them.
+function generateHreflangTags(url) {
+  const enPath = url === '/vi/' ? '/' : url.replace(/^\/vi(?=\/)/, '');
+  const viPath = enPath === '/' ? '/vi/' : '/vi' + enPath;
+  return [
+    ['en', enPath],
+    ['vi', viPath],
+    ['x-default', enPath]
+  ].map(([lang, p]) => `<link rel="alternate" hreflang="${lang}" href="${escapeHtml(BASE_URL + p)}" data-saf-hreflang>`);
 }
 
 // ── JSON-LD generator (PR-AEO1) ─────────────────────────────────────
